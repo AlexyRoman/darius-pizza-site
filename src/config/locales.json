@@ -1,0 +1,33 @@
+{
+  "defaultLocale": "fr",
+  "locales": [
+    {
+      "code": "en",
+      "name": "English",
+      "nativeName": "English",
+      "flag": "🇺🇸",
+      "direction": "ltr",
+      "enabled": true,
+      "fallback": null
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "nativeName": "Français",
+      "flag": "🇫🇷",
+      "direction": "ltr",
+      "enabled": true,
+      "fallback": "en"
+    }
+  ],
+  "settings": {
+    "localeDetection": true,
+    "localePrefix": "always",
+    "pathnames": {
+      "/": "/",
+      "/home": "/home"
+    }
+  }
+}
+
+

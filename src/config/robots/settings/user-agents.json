@@ -1,0 +1,14 @@
+{
+  "default": "*",
+  "aiBots": [
+    "GPTBot",
+    "ChatGPT-User",
+    "CCBot",
+    "anthropic-ai",
+    "Amazonbot",
+    "Bytespider",
+    "omgili",
+    "omgilibot"
+  ]
+}
+

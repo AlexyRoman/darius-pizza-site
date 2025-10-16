@@ -1,0 +1,9 @@
+[
+  "/api/*",
+  "/login",
+  "/signup",
+  "/auth/*",
+  "/dashboard",
+  "/orders"
+]
+

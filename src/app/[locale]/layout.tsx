@@ -8,6 +8,7 @@ import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 
 import type { Metadata } from 'next';
+import { buildLocalizedMetadata, type SeoMessages } from '@/utils/seo';
 
 async function getMessages(locale: string) {
   try {
@@ -26,9 +27,12 @@ export async function generateMetadata(props: {
 }): Promise<Metadata> {
   const { locale } = await props.params;
   const messages = await getMessages(locale);
-  return {
-    title: messages?.common?.home ?? 'Home',
-  } satisfies Metadata;
+  return buildLocalizedMetadata({
+    locale,
+    messages: messages as SeoMessages,
+    basePath: '',
+    pageKey: 'home',
+  });
 }
 
 export default async function LocaleLayout(props: {

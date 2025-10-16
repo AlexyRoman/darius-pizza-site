@@ -7,7 +7,7 @@ import ThemeToggle from '@/components/header/ThemeToggle';
 import LocaleToggle from '@/components/header/LocaleToggle';
 import { withDebounce } from '@/lib/pacer';
 
-const RADIUS = 48; // distance from center (closer to settings)
+const RADIUS = 48;
 
 export function RadialSettings({ currentLocale }: { currentLocale: string }) {
   const [isOpen, _setIsOpen] = React.useState(false);

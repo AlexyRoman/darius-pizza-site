@@ -75,11 +75,14 @@ export function withThrottle<A extends unknown[]>(
       fn(...args);
     } else if (!scheduled) {
       scheduled = true;
-      setTimeout(() => {
-        scheduled = false;
-        last = Date.now();
-        fn(...args);
-      }, Math.max(0, waitMs - (now - last)));
+      setTimeout(
+        () => {
+          scheduled = false;
+          last = Date.now();
+          fn(...args);
+        },
+        Math.max(0, waitMs - (now - last))
+      );
     }
   };
 }

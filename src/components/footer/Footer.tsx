@@ -1,26 +1,76 @@
-import { useTranslations } from 'next-intl';
+import * as React from 'react';
+
+import { Separator } from '@/components/ui/separator';
+import FooterLeft from '@/components/footer/FooterLeft';
+import FooterLegal from '@/components/footer/FooterLegal';
+import FooterMenu from '@/components/footer/FooterMenu';
+import FooterSocial from '@/components/footer/FooterSocial';
+
+type LinkItem = { href: string; label: string };
 
 export function Footer() {
-  const t = useTranslations('footer');
+  const legalTitle = 'Legal';
+  const socialTitle = 'Social';
+  const menuTitle = 'Explore';
+  const brandSubtitle = 'Text.';
+  const rightsReservedText = 'All rights reserved.';
+  const designedByPrefix = 'Designed by';
+  const designedByName = 'Alexy Roman';
+
+  const legalLinks: LinkItem[] = [
+    { href: '#', label: 'Privacy' },
+    { href: '#', label: 'Terms' },
+    { href: '#', label: 'Imprint' },
+  ];
+  const menuLinks: LinkItem[] = [
+    { href: '/', label: 'Home' },
+    { href: '/menu', label: 'Menu' },
+    { href: '/info', label: 'Info' },
+  ];
+
   return (
-    <footer className='border-t mt-16'>
-      <div className='mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8'>
-        <div className='flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground'>
-          <div className='flex items-center gap-2'>
-            <span className='inline-block h-5 w-5 rounded bg-foreground/70'></span>
-            <span>© {new Date().getFullYear()} Alexy Roman</span>
+    <footer className='w-full border-t bg-background overflow-x-hidden pb-8 md:pb-0'>
+      <div className='mx-auto max-w-7xl px-4 md:px-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 py-10'>
+          <FooterLeft
+            className='flex items-start justify-center md:justify-start text-center md:text-left'
+            subtitle={brandSubtitle}
+          />
+
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center sm:place-items-start text-center sm:text-left w-full'>
+            {/* Social top-left */}
+            <FooterSocial
+              className='flex flex-col items-center sm:items-start md:justify-center text-center sm:text-left min-w-0 w-full order-1 sm:col-start-1 sm:row-start-1'
+              title={socialTitle}
+            />
+            {/* Explore top-right */}
+            <FooterMenu
+              className='flex flex-col items-center sm:items-start md:justify-center text-center sm:text-left min-w-0 w-full order-2 sm:col-start-2 sm:row-start-1 lg:col-start-2 lg:row-start-1'
+              title={menuTitle}
+              links={menuLinks}
+            />
+            {/* Legal under Explore when two columns */}
+            <FooterLegal
+              className='flex flex-col items-center sm:items-start md:justify-center text-center sm:text-left min-w-0 w-full order-3 sm:col-start-2 sm:row-start-2 lg:col-start-3 lg:row-start-1'
+              title={legalTitle}
+              links={legalLinks}
+            />
           </div>
-          <nav className='flex items-center gap-4'>
-            <a href='#' className='hover:underline'>
-              {t('legal.privacy', { fallback: 'Privacy' })}
+        </div>
+        <Separator className='my-2' />
+        <div className='py-6 text-xs text-muted-foreground space-y-1 text-center md:text-left'>
+          <div>
+            © {new Date().getFullYear()} {rightsReservedText}
+          </div>
+          <div>
+            <span className='mr-1'>{designedByPrefix}</span>
+            <a
+              className='underline underline-offset-4 hover:text-foreground'
+              href='#'
+            >
+              {designedByName}
             </a>
-            <a href='#' className='hover:underline'>
-              {t('legal.terms', { fallback: 'Terms' })}
-            </a>
-            <a href='#' className='hover:underline'>
-              {t('legal.imprint', { fallback: 'Imprint' })}
-            </a>
-          </nav>
+          </div>
         </div>
       </div>
     </footer>

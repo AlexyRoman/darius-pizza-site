@@ -16,7 +16,10 @@ describe('Localized Home', () => {
   it('renders welcome message in English', () => {
     render(
       <ThemeProvider>
-        <NextIntlClientProvider messages={en as unknown as Record<string, unknown>} locale='en'>
+        <NextIntlClientProvider
+          messages={en as unknown as Record<string, unknown>}
+          locale='en'
+        >
           <Home />
         </NextIntlClientProvider>
       </ThemeProvider>
@@ -25,5 +28,3 @@ describe('Localized Home', () => {
     expect(screen.getByText(/welcome/i)).toBeTruthy();
   });
 });
-
-

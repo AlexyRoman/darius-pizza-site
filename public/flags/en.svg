@@ -1,7 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40">
-  <rect width="60" height="40" fill="#fff"/>
-  <rect x="0" y="16" width="60" height="8" fill="#cf142b"/>
-  <rect x="26" y="0" width="8" height="40" fill="#cf142b"/>
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg">
+  <svg x="0" y="0" width="320" height="480">
+    <rect width="100%" height="100%" fill="#00247d" />
+    <path fill="#ffffff" d="M0,0L320,480M320,0L0,480" stroke-width="100" stroke="#ffffff" />
+    <path fill="#cf142b" d="M-22.6,0L320,502.6M342.6,0L0,502.6" stroke-width="50" stroke="#cf142b" />
+    <path fill="#ffffff" d="M-10,0L320,490L330,480L10,0L-10,0Z M0,490L330,0L320,-10L-10,480L0,490Z" />
+    <path fill="#cf142b" d="M0,0L320,480M320,0L0,480" stroke-width="20" stroke="#cf142b" />
+    <rect width="100%" height="100" y="190" fill="#ffffff" />
+    <rect width="100%" height="60" y="210" fill="#cf142b" />
+    <rect width="100" height="100%" x="110" fill="#ffffff" />
+    <rect width="60" height="100%" x="130" fill="#cf142b" />
+  </svg>
+  
+  <svg x="320" y="0" width="320" height="480">
+    <rect width="100%" height="100%" fill="#ffffff" />
+    <g>
+      <rect width="100%" height="30" fill="#b22234" />
+      <rect width="100%" height="30" y="60" fill="#b22234" />
+      <rect width="100%" height="30" y="120" fill="#b22234" />
+      <rect width="100%" height="30" y="180" fill="#b22234" />
+      <rect width="100%" height="30" y="240" fill="#b22234" />
+      <rect width="100%" height="30" y="300" fill="#b22234" />
+      <rect width="100%" height="30" y="360" fill="#b22234" />
+      <rect width="100%" height="30" y="420" fill="#b22234" />
+    </g>
+    <rect width="128" height="240" fill="#3c3b6e" />
+    <g fill="#ffffff">
+      <path id="star" d="M12.5,0l3.8,11.5L25,11.5L16.2,18.5L19.8,30L12.5,22.5L5.2,30L8.8,18.5L0,11.5L11.2,11.5L12.5,0Z" transform="scale(0.5)"/>
+      <g>
+        <use href="#star" x="10" y="10" />
+        <use href="#star" x="35" y="10" />
+        <use href="#star" x="60" y="10" />
+        <use href="#star" x="85" y="10" />
+        <use href="#star" x="110" y="10" />
+      </g>
+      <g>
+        <use href="#star" x="22.5" y="35" />
+        <use href="#star" x="47.5" y="35" />
+        <use href="#star" x="72.5" y="35" />
+        <use href="#star" x="97.5" y="35" />
+      </g>
+      <g>
+        <use href="#star" x="10" y="60" />
+        <use href="#star" x="35" y="60" />
+        <use href="#star" x="60" y="60" />
+        <use href="#star" x="85" y="60" />
+        <use href="#star" x="110" y="60" />
+      </g>
+      <g>
+        <use href="#star" x="22.5" y="85" />
+        <use href="#star" x="47.5" y="85" />
+        <use href="#star" x="72.5" y="85" />
+        <use href="#star" x="97.5" y="85" />
+      </g>
+      <g>
+        <use href="#star" x="10" y="110" />
+        <use href="#star" x="35" y="110" />
+        <use href="#star" x="60" y="110" />
+        <use href="#star" x="85" y="110" />
+        <use href="#star" x="110" y="110" />
+      </g>
+      <g>
+        <use href="#star" x="22.5" y="135" />
+        <use href="#star" x="47.5" y="135" />
+        <use href="#star" x="72.5" y="135" />
+        <use href="#star" x="97.5" y="135" />
+      </g>
+      <g>
+        <use href="#star" x="10" y="160" />
+        <use href="#star" x="35" y="160" />
+        <use href="#star" x="60" y="160" />
+        <use href="#star" x="85" y="160" />
+        <use href="#star" x="110" y="160" />
+      </g>
+      <g>
+        <use href="#star" x="22.5" y="185" />
+        <use href="#star" x="47.5" y="185" />
+        <use href="#star" x="72.5" y="185" />
+        <use href="#star" x="97.5" y="185" />
+      </g>
+      <g>
+        <use href="#star" x="10" y="210" />
+        <use href="#star" x="35" y="210" />
+        <use href="#star" x="60" y="210" />
+        <use href="#star" x="85" y="210" />
+        <use href="#star" x="110" y="210" />
+      </g>
+    </g>
+  </svg>
 </svg>
-
-

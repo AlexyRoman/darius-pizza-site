@@ -9,5 +9,3 @@ declare module 'next-intl/plugin' {
   const createNextIntlPlugin: (config?: unknown) => WithNextIntl;
   export default createNextIntlPlugin;
 }
-
-

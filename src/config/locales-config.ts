@@ -57,5 +57,3 @@ export const getLocaleDirection = (code: string): 'ltr' | 'rtl' => {
   const locale = getLocaleByCode(code);
   return locale?.direction || 'ltr';
 };
-
-

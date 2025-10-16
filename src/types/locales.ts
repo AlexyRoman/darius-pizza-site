@@ -38,5 +38,3 @@ export interface LocaleMessages {
     | LocaleMessages
     | Array<string | number | boolean | LocaleMessages>;
 }
-
-

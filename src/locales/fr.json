@@ -1,6 +1,16 @@
 {
   "common": {
     "welcome": "Bienvenue",
-    "home": "Accueil"
+    "home": "Accueil",
+    "menu": "Menu",
+    "info": "Infos",
+    "call": "Appeler"
+  },
+  "footer": {
+    "legal": {
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "imprint": "Mentions"
+    }
   }
 }

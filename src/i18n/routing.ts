@@ -14,5 +14,3 @@ export const routing = defineRouting({
   localePrefix: settings.localePrefix,
   localeDetection: settings.localeDetection,
 });
-
-

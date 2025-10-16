@@ -60,7 +60,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, isThemeLoaded }}>
+    <ThemeContext.Provider
+      value={{ theme, setTheme, toggleTheme, isThemeLoaded }}
+    >
       {children}
     </ThemeContext.Provider>
   );
@@ -68,8 +70,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
 export function useThemeContext(): ThemeContextType {
   const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error('useThemeContext must be used within ThemeProvider');
+  if (!ctx)
+    throw new Error('useThemeContext must be used within ThemeProvider');
   return ctx;
 }
-
-

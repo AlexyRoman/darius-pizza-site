@@ -1,6 +1,16 @@
 {
   "common": {
     "welcome": "Welcome",
-    "home": "Home"
+    "home": "Home",
+    "menu": "Menu",
+    "info": "Info",
+    "call": "Call"
+  },
+  "footer": {
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "imprint": "Imprint"
+    }
   }
 }

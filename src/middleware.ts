@@ -14,5 +14,3 @@ export default intl;
 export const config = {
   matcher: ['/((?!api|_next|_vercel|static|images|flags|[\\w-]+\\.\\w+).*)'],
 };
-
-

@@ -49,7 +49,7 @@ export function FooterSocial(props: FooterSocialProps) {
   const list = items ?? defaultSocialItems;
   return (
     <div className={className}>
-      <h3 className='text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wide'>
+      <h3 className='text-sm font-secondary font-semibold mb-3 text-primary uppercase tracking-wide'>
         {title}
       </h3>
       <div className='grid grid-cols-3 gap-3 place-items-start -ml-2 sm:-ml-2.5'>
@@ -62,7 +62,7 @@ export function FooterSocial(props: FooterSocialProps) {
             aria-label={item.label}
           >
             <Link
-              className='text-foreground/80 hover:text-foreground transition-colors'
+              className='text-foreground-secondary hover:text-primary transition-colors duration-200'
               href={item.href}
               aria-label={item.label}
               target='_blank'

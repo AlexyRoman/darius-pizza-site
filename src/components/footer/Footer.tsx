@@ -55,7 +55,7 @@ export function Footer(props: FooterProps) {
   ];
 
   return (
-    <footer className='w-full border-t bg-background overflow-x-hidden pb-8 md:pb-0'>
+    <footer className='w-full border-t border-border bg-gradient-to-b from-background-secondary to-background overflow-x-hidden pb-8 md:pb-0'>
       <div className='mx-auto max-w-7xl px-4 md:px-6'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 py-10'>
           <FooterLeft
@@ -84,14 +84,14 @@ export function Footer(props: FooterProps) {
           </div>
         </div>
         <Separator className='my-2' />
-        <div className='py-6 text-xs text-muted-foreground space-y-1 text-center md:text-left'>
+        <div className='py-6 text-xs text-foreground-secondary font-secondary space-y-1 text-center md:text-left'>
           <div>
             © {new Date().getFullYear()} {rightsReservedText}
           </div>
           <div>
             <span className='mr-1'>{designedByPrefix}</span>
             <a
-              className='underline underline-offset-4 hover:text-foreground'
+              className='underline underline-offset-4 hover:text-primary transition-colors duration-200'
               href='#'
             >
               {designedByName}

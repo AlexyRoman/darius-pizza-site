@@ -147,7 +147,7 @@ export const applyTheme = (theme: 'light' | 'dark'): void => {
   if (metaThemeColor) {
     metaThemeColor.setAttribute(
       'content',
-      theme === 'dark' ? '#1a1a1a' : '#fafafa'
+      theme === 'dark' ? 'oklch(0.12 0.02 45)' : 'oklch(0.98 0.01 85)'
     );
   }
 };

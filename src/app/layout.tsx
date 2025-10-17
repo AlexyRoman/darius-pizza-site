@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <head>
-        <meta name='theme-color' content='#fafafa' />
+        <meta name='theme-color' content='oklch(0.98 0.01 85)' />
       </head>
       <body className='font-secondary antialiased'>
         <script

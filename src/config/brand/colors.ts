@@ -35,8 +35,8 @@ export interface ThemeColors {
 
 export const brandColors: ThemeColors = {
   light: {
-    // Primary colors - Warm orange-red (pizza sauce)
-    primary: 'oklch(0.65 0.15 25)', // Warm orange-red
+    // Primary colors - Deep orange (pizza sauce)
+    primary: 'oklch(0.65 0.20 60)', // Deep orange
     secondary: 'oklch(0.45 0.08 45)', // Rich brown (crust)
     accent: 'oklch(0.75 0.12 85)', // Golden yellow (cheese)
     background: 'oklch(0.98 0.01 85)', // Cream/off-white
@@ -50,7 +50,7 @@ export const brandColors: ThemeColors = {
   },
   dark: {
     // Primary colors - Adjusted for dark theme
-    primary: 'oklch(0.70 0.15 25)', // Brighter orange-red
+    primary: 'oklch(0.70 0.20 60)', // Brighter deep orange
     secondary: 'oklch(0.55 0.08 45)', // Lighter brown
     accent: 'oklch(0.80 0.12 85)', // Brighter golden yellow
     background: 'oklch(0.12 0.02 45)', // Very dark brown
@@ -68,9 +68,9 @@ export const brandColors: ThemeColors = {
 export const colorVariations = {
   light: {
     // Primary variations
-    primaryHover: 'oklch(0.60 0.15 25)',
-    primaryActive: 'oklch(0.55 0.15 25)',
-    primaryDisabled: 'oklch(0.75 0.05 25)',
+    primaryHover: 'oklch(0.60 0.20 60)',
+    primaryActive: 'oklch(0.55 0.20 60)',
+    primaryDisabled: 'oklch(0.75 0.05 60)',
 
     // Secondary variations
     secondaryHover: 'oklch(0.40 0.08 45)',
@@ -95,9 +95,9 @@ export const colorVariations = {
   },
   dark: {
     // Primary variations
-    primaryHover: 'oklch(0.75 0.15 25)',
-    primaryActive: 'oklch(0.80 0.15 25)',
-    primaryDisabled: 'oklch(0.50 0.05 25)',
+    primaryHover: 'oklch(0.75 0.20 60)',
+    primaryActive: 'oklch(0.80 0.20 60)',
+    primaryDisabled: 'oklch(0.50 0.05 60)',
 
     // Secondary variations
     secondaryHover: 'oklch(0.60 0.08 45)',

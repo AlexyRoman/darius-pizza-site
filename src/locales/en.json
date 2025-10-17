@@ -7,7 +7,7 @@
     "call": "Call"
   },
   "seo": {
-    "siteName": "Alexy Roman"
+    "siteName": "Darius Pizza"
   },
   "footer": {
     "titles": {
@@ -15,10 +15,10 @@
       "social": "Social",
       "explore": "Explore"
     },
-    "brandSubtitle": "Text.",
-    "rightsReserved": "All rights reserved.",
-    "designedByPrefix": "Designed by",
-    "designedByName": "WebOustaou",
+    "brandSubtitle": "Authentic Italian pizza made with love, tradition, and the finest ingredients. Experience the taste of Italy in every bite.",
+    "rightsReserved": "Darius Pizza. All rights reserved.",
+    "designedByPrefix": "Crafted with passion by",
+    "designedByName": "Darius Pizza Team",
     "legal": {
       "privacy": "Privacy",
       "terms": "Terms",
@@ -61,5 +61,78 @@
     "lupin": "Lupin",
     "sulfites": "Sulfites",
     "molluscs": "Molluscs"
+  },
+  "notFound": {
+    "title": "Oops! Pizza Lost!",
+    "message": "Sometimes a pizza can lose itself! Don't worry, let's get you back to our delicious menu.",
+    "backHome": "Back to Home"
+  },
+  "info": {
+    "title": "Contact & Information",
+    "subtitle": "Get in touch with us",
+    "contactBanner": {
+      "title": "Get In Touch",
+      "description": "Have a question, feedback, or want to make a reservation? We'd love to hear from you. Choose how you'd like to contact us.",
+      "emailButton": "Email Us Directly",
+      "formButton": "Use Contact Form",
+      "quickInfo": "Email: info@dariuspizza.com • Phone: (123) 456-7890"
+    }
+  },
+  "hero": {
+    "badge": {
+      "currentlyClosed": "Currently Closed",
+      "openNow": "Open Now",
+      "openingIn": "Opening in {minutes} min{plural}",
+      "closed": "Closed"
+    },
+    "heading": {
+      "tasteThe": "Taste the",
+      "authentic": "Authentic",
+      "italianPizza": "Italian Pizza"
+    },
+    "description": "Handcrafted with love using traditional Italian recipes, fresh ingredients, and time-honored techniques passed down through generations.",
+    "features": {
+      "freshDaily": "Fresh Daily",
+      "localIngredients": "Local Ingredients",
+      "fiveStarRated": "5-Star Rated"
+    },
+    "cta": {
+      "viewMenu": "View Our Menu",
+      "orderNow": "Order Now"
+    },
+    "stats": {
+      "yearsExperience": "Years Experience",
+      "pizzaVarieties": "Pizza Varieties",
+      "happyCustomers": "Happy Customers"
+    },
+    "stickers": {
+      "freshDaily": "Fresh Daily",
+      "handmade": "Handmade"
+    }
+  },
+  "hours": {
+    "visitTitle": "Visit Us Today",
+    "visitSubtitle": "Experience authentic Italian pizza in a warm, welcoming atmosphere. We're here to serve you with passion and tradition.",
+    "currentClosing": {
+      "closedFromUntil": "Closed from {from} until {until}"
+    },
+    "card": {
+      "openingHours": "Opening Hours",
+      "locationContact": "Location & Contact",
+      "address": "Address",
+      "phone": "Phone",
+      "callNow": "Call Now",
+      "directions": "Directions",
+      "ourLocation": "Our Location"
+    },
+    "badge": {
+      "currentlyClosed": "Currently Closed",
+      "openUntil": "Open until {time}",
+      "openingAt": "Opening at {time}",
+      "temporarilyClosedNote": "Temporarily closed - see banner above",
+      "checkHoursBelow": "Check hours below"
+    },
+    "upcomingClosings": "Upcoming Closings",
+    "importantUpdates": "Important Updates"
   }
 }

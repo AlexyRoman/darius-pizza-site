@@ -7,7 +7,7 @@
     "call": "Chiama"
   },
   "seo": {
-    "siteName": "Alexy Roman"
+    "siteName": "Darius Pizza"
   },
   "footer": {
     "titles": {
@@ -15,10 +15,10 @@
       "social": "Social",
       "explore": "Esplora"
     },
-    "brandSubtitle": "Testo.",
-    "rightsReserved": "Tutti i diritti riservati.",
-    "designedByPrefix": "Progettato da",
-    "designedByName": "WebOustaou",
+    "brandSubtitle": "Pizza italiana autentica preparata con amore, tradizione e ingredienti di prima qualità. Sperimenta il sapore dell'Italia in ogni boccone.",
+    "rightsReserved": "Darius Pizza. Tutti i diritti riservati.",
+    "designedByPrefix": "Creato con passione da",
+    "designedByName": "Il team di Darius Pizza",
     "legal": {
       "privacy": "Privacy",
       "terms": "Termini",
@@ -61,5 +61,21 @@
     "lupin": "Lupini",
     "sulfites": "Solfiti",
     "molluscs": "Molluschi"
+  },
+  "notFound": {
+    "title": "Ops! Pizza persa!",
+    "message": "A volte una pizza può perdersi! Non preoccuparti, ti riportiamo al nostro delizioso menu.",
+    "backHome": "Torna alla Home"
+  },
+  "info": {
+    "title": "Contatto e Informazioni",
+    "subtitle": "Mettiti in contatto con noi",
+    "contactBanner": {
+      "title": "Mettiti in Contatto",
+      "description": "Hai una domanda, feedback o vuoi fare una prenotazione? Ci piacerebbe sentire da te. Scegli come contattarci.",
+      "emailButton": "Invia Email",
+      "formButton": "Usa Modulo di Contatto",
+      "quickInfo": "Email: info@dariuspizza.com • Telefono: (123) 456-7890"
+    }
   }
 }

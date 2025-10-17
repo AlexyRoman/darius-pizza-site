@@ -9,7 +9,7 @@
 @layer base {
   :root {
     /* Brand Colors - Light Theme */
-    --color-primary: oklch(0.65 0.15 25); /* Warm orange-red */
+    --color-primary: oklch(0.65 0.2 60); /* Deep orange */
     --color-secondary: oklch(0.45 0.08 45); /* Rich brown */
     --color-accent: oklch(0.75 0.12 85); /* Golden yellow */
     --color-background: oklch(0.98 0.01 85); /* Cream/off-white */
@@ -22,9 +22,9 @@
     --color-info: oklch(0.6 0.12 240); /* Deep blue */
 
     /* Primary Variations - Light Theme */
-    --color-primary-hover: oklch(0.6 0.15 25);
-    --color-primary-active: oklch(0.55 0.15 25);
-    --color-primary-disabled: oklch(0.75 0.05 25);
+    --color-primary-hover: oklch(0.6 0.2 60);
+    --color-primary-active: oklch(0.55 0.2 60);
+    --color-primary-disabled: oklch(0.75 0.05 60);
 
     /* Secondary Variations - Light Theme */
     --color-secondary-hover: oklch(0.4 0.08 45);
@@ -139,7 +139,7 @@
 
   .dark {
     /* Brand Colors - Dark Theme */
-    --color-primary: oklch(0.7 0.15 25); /* Brighter orange-red */
+    --color-primary: oklch(0.7 0.2 60); /* Brighter deep orange */
     --color-secondary: oklch(0.55 0.08 45); /* Lighter brown */
     --color-accent: oklch(0.8 0.12 85); /* Brighter golden yellow */
     --color-background: oklch(0.12 0.02 45); /* Very dark brown */
@@ -152,9 +152,9 @@
     --color-info: oklch(0.65 0.12 240); /* Brighter blue */
 
     /* Primary Variations - Dark Theme */
-    --color-primary-hover: oklch(0.75 0.15 25);
-    --color-primary-active: oklch(0.8 0.15 25);
-    --color-primary-disabled: oklch(0.5 0.05 25);
+    --color-primary-hover: oklch(0.75 0.2 60);
+    --color-primary-active: oklch(0.8 0.2 60);
+    --color-primary-disabled: oklch(0.5 0.05 60);
 
     /* Secondary Variations - Dark Theme */
     --color-secondary-hover: oklch(0.6 0.08 45);

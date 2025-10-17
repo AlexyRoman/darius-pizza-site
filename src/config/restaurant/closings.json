@@ -1,0 +1,56 @@
+{
+  "scheduledClosings": [
+    {
+      "id": "current-closing",
+      "title": "Staff Meeting",
+      "description": "We're currently closed for an important staff meeting. We'll reopen in 2 hours.",
+      "date": null,
+      "startDate": "2025-10-17T14:00:00Z",
+      "endDate": "2025-10-17T22:00:00Z",
+      "isRecurring": false,
+      "isActive": true
+    },
+    {
+      "id": "very-soon-closing",
+      "title": "Very Soon - Equipment Maintenance",
+      "description": "We'll be closed tomorrow for essential equipment maintenance and deep cleaning.",
+      "date": null,
+      "startDate": "2025-10-18T00:00:00Z",
+      "endDate": "2025-10-18T23:59:59Z",
+      "isRecurring": false,
+      "isActive": true
+    },
+    {
+      "id": "upcoming-closing",
+      "title": "Upcoming - Kitchen Renovation",
+      "description": "We're renovating our kitchen to bring you an even better dining experience! We'll be closed during this period but will reopen with exciting new features.",
+      "date": null,
+      "startDate": "2025-11-15T00:00:00Z",
+      "endDate": "2025-11-30T23:59:59Z",
+      "isRecurring": false,
+      "isActive": true
+    },
+    {
+      "id": "future-closing",
+      "title": "Future - Holiday Break",
+      "description": "We'll be taking a well-deserved holiday break to spend time with our families.",
+      "date": null,
+      "startDate": "2025-12-24T00:00:00Z",
+      "endDate": "2025-12-26T23:59:59Z",
+      "isRecurring": false,
+      "isActive": true
+    }
+  ],
+  "emergencyClosings": [
+    {
+      "id": "weather",
+      "title": "Weather Advisory",
+      "description": "Due to severe weather conditions, we may have limited hours or delivery service.",
+      "isActive": false,
+      "startDate": null,
+      "endDate": null,
+      "priority": 1
+    }
+  ],
+  "lastUpdated": "2024-01-15T10:00:00Z"
+}

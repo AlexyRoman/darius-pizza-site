@@ -1,0 +1,36 @@
+{
+  "starredPizzas": [
+    {
+      "id": "product-134505823",
+      "title": "The Darius",
+      "description": "Tomato Sauce, Mozzarella, Italian Coppa, Cherry Tomatoes, Stracciatella di Burrata, Arugula, Parmesan, Balsamic Vinegar",
+      "price": 17.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/1354298693/2280bc6f41f2d0f51ab7484630a82dcd_lg.jpg",
+      "category": "Signature Pizzas",
+      "isStarred": true,
+      "starReason": "Our signature creation - a perfect blend of Italian flavors"
+    },
+    {
+      "id": "product-224184492",
+      "title": "Al Tartufo",
+      "description": "Truffle Cream, Mozzarella, Thinly Sliced White Ham, Burrata, Arugula, Parmesan, Truffle Olive Oil",
+      "price": 17.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/1435719850/7b6ccd51339ef2cf1af5f32e3c859c95_lg.jpg",
+      "category": "Signature Pizzas",
+      "isStarred": true,
+      "starReason": "Premium truffle experience - luxury meets tradition"
+    },
+    {
+      "id": "product-1999478730",
+      "title": "The Parma",
+      "description": "Tomato Sauce, Fior di Latte Mozzarella, Parma Ham, Stracciatella di Burrata, Arugula, Parmesan Shavings",
+      "price": 16.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/1549807600/07453f1200ccb8b5d35401a3ede1a282_lg.jpg",
+      "category": "Signature Pizzas",
+      "isStarred": true,
+      "starReason": "Authentic Italian elegance with premium Parma ham"
+    }
+  ],
+  "lastUpdated": "2024-01-15T10:00:00Z",
+  "month": "January 2024"
+}

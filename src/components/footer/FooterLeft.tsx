@@ -26,12 +26,12 @@ export function FooterLeft(props: FooterLeftProps) {
             className='rounded-md select-none'
             priority
           />
-          <div className='text-3xl md:text-4xl font-extrabold tracking-tight'>
+          <div className='text-3xl md:text-4xl font-primary font-bold tracking-tight text-foreground'>
             {siteName}
           </div>
         </div>
         {subtitle ? (
-          <p className='text-sm text-muted-foreground text-center md:text-left max-w-[32ch]'>
+          <p className='text-sm text-foreground-secondary font-secondary text-center md:text-left max-w-[40ch] leading-relaxed'>
             {subtitle}
           </p>
         ) : null}

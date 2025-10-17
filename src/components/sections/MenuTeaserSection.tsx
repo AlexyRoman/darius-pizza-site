@@ -1,0 +1,129 @@
+'use client';
+
+import React from 'react';
+import { Star, Utensils, ArrowRight } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import starredPizzasConfig from '@/config/restaurant/starred-pizzas.json';
+import Link from 'next/link';
+
+interface StarredPizza {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  image: string;
+  category: string;
+  isStarred: boolean;
+  starReason: string;
+}
+
+export default function MenuTeaserSection() {
+  const starredPizzas = starredPizzasConfig.starredPizzas as StarredPizza[];
+
+  const formatPrice = (price: number) => {
+    return `$${price.toFixed(2)}`;
+  };
+
+  return (
+    <section className='py-16 bg-gradient-to-b from-background via-background-secondary to-background-secondary'>
+      <div className='container mx-auto px-4'>
+        {/* Section Header */}
+        <div className='text-center mb-12'>
+          <div className='flex items-center justify-center gap-2 mb-4'>
+            <Star className='h-6 w-6 text-primary fill-primary' />
+            <h2 className='text-3xl font-bold text-foreground'>
+              Featured This Month
+            </h2>
+            <Star className='h-6 w-6 text-primary fill-primary' />
+          </div>
+          <p className='text-lg text-foreground-secondary max-w-2xl mx-auto'>
+            Discover our chef{"'"}s selection of signature pizzas, crafted with
+            premium ingredients and authentic Italian tradition.
+          </p>
+        </div>
+
+        {/* Pizza Cards Grid */}
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12'>
+          {starredPizzas.map(pizza => (
+            <Card
+              key={pizza.id}
+              className='group bg-background-elevated border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden'
+            >
+              {/* Pizza Image */}
+              <div className='relative h-48 overflow-hidden'>
+                <img
+                  src={pizza.image}
+                  alt={pizza.title}
+                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300'
+                />
+                <div className='absolute top-3 right-3'>
+                  <Badge className='bg-primary text-primary-foreground shadow-lg'>
+                    <Star className='h-3 w-3 mr-1 fill-current' />
+                    Featured
+                  </Badge>
+                </div>
+                <div className='absolute bottom-3 left-3'>
+                  <Badge
+                    variant='secondary'
+                    className='bg-black/70 text-white backdrop-blur-sm border-white/20'
+                  >
+                    {pizza.category}
+                  </Badge>
+                </div>
+              </div>
+
+              <CardHeader className='pb-3'>
+                <div className='flex items-start justify-between'>
+                  <CardTitle className='text-xl font-bold text-foreground group-hover:text-primary transition-colors'>
+                    {pizza.title}
+                  </CardTitle>
+                  <div className='text-right'>
+                    <div className='text-2xl font-bold text-primary'>
+                      {formatPrice(pizza.price)}
+                    </div>
+                  </div>
+                </div>
+                <p className='text-sm text-primary font-medium'>
+                  {pizza.starReason}
+                </p>
+              </CardHeader>
+
+              <CardContent className='pt-0'>
+                <p className='text-foreground-secondary text-sm leading-relaxed mb-4'>
+                  {pizza.description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className='text-center'>
+          <div className='bg-background-elevated rounded-2xl p-8 shadow-lg border border-border/50'>
+            <div className='flex items-center justify-center gap-3 mb-4'>
+              <Utensils className='h-8 w-8 text-primary' />
+              <h3 className='text-2xl font-bold text-foreground'>
+                Hungry for More?
+              </h3>
+            </div>
+            <p className='text-foreground-secondary mb-6 max-w-md mx-auto'>
+              Explore our full menu with over 40 delicious pizzas, calzones, and
+              desserts.
+            </p>
+            <Link href='/menu'>
+              <Button
+                size='lg'
+                className='bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105'
+              >
+                View Full Menu
+                <ArrowRight className='ml-2 h-5 w-5' />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

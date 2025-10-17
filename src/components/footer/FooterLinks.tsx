@@ -18,7 +18,7 @@ export function FooterLinks(props: FooterLinksProps) {
 
   return (
     <div className={className}>
-      <h3 className='text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wide'>
+      <h3 className='text-sm font-secondary font-semibold mb-3 text-primary uppercase tracking-wide'>
         {title}
       </h3>
       <ul className='space-y-2 w-full max-w-full'>
@@ -26,7 +26,7 @@ export function FooterLinks(props: FooterLinksProps) {
           <li key={`${link.href}-${link.label}`}>
             <Link
               href={link.href}
-              className='block text-sm font-medium text-foreground/80 hover:text-foreground underline-offset-4 hover:underline break-words text-center sm:text-left'
+              className='block text-sm font-secondary font-medium text-foreground-secondary hover:text-primary underline-offset-4 hover:underline break-words text-center sm:text-left transition-colors duration-200'
             >
               {link.label}
             </Link>

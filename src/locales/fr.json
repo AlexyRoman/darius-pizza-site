@@ -7,7 +7,7 @@
     "call": "Appeler"
   },
   "seo": {
-    "siteName": "Alexy Roman"
+    "siteName": "Darius Pizza"
   },
   "footer": {
     "titles": {
@@ -15,10 +15,10 @@
       "social": "Réseaux",
       "explore": "Explorer"
     },
-    "brandSubtitle": "Texte.",
-    "rightsReserved": "Tous droits réservés.",
-    "designedByPrefix": "Conçu par",
-    "designedByName": "WebOustaou",
+    "brandSubtitle": "Pizza italienne authentique préparée avec amour, tradition et les meilleurs ingrédients. Découvrez le goût de l'Italie dans chaque bouchée.",
+    "rightsReserved": "Darius Pizza. Tous droits réservés.",
+    "designedByPrefix": "Créé avec passion par",
+    "designedByName": "L'équipe Darius Pizza",
     "legal": {
       "privacy": "Confidentialité",
       "terms": "Conditions",
@@ -61,5 +61,78 @@
     "lupin": "Lupin",
     "sulfites": "Sulfites",
     "molluscs": "Mollusques"
+  },
+  "notFound": {
+    "title": "Oups ! Pizza perdue !",
+    "message": "Parfois une pizza peut se perdre ! Ne vous inquiétez pas, nous vous ramenons à notre délicieux menu.",
+    "backHome": "Retour à l'Accueil"
+  },
+  "info": {
+    "title": "Contact et Informations",
+    "subtitle": "Contactez-nous",
+    "contactBanner": {
+      "title": "Nous Contacter",
+      "description": "Vous avez une question, des commentaires ou souhaitez faire une réservation ? Nous aimerions avoir de vos nouvelles. Choisissez comment nous contacter.",
+      "emailButton": "Envoyer un Email",
+      "formButton": "Utiliser le Formulaire de Contact",
+      "quickInfo": "Email : info@dariuspizza.com • Téléphone : (123) 456-7890"
+    }
+  },
+  "hero": {
+    "badge": {
+      "currentlyClosed": "Actuellement fermé",
+      "openNow": "Ouvert maintenant",
+      "openingIn": "Ouvre dans {minutes} min{plural}",
+      "closed": "Fermé"
+    },
+    "heading": {
+      "tasteThe": "Goûtez à",
+      "authentic": "l'Authentique",
+      "italianPizza": "Pizza Italienne"
+    },
+    "description": "Préparée avec amour selon des recettes italiennes traditionnelles, avec des ingrédients frais et un savoir-faire transmis de génération en génération.",
+    "features": {
+      "freshDaily": "Préparée sous vos yeux",
+      "localIngredients": "Ingrédients locaux",
+      "fiveStarRated": "Noté 5 étoiles"
+    },
+    "cta": {
+      "viewMenu": "Voir notre menu",
+      "orderNow": "Commander maintenant"
+    },
+    "stats": {
+      "yearsExperience": "Années d'expérience",
+      "pizzaVarieties": "Variétés de pizzas",
+      "happyCustomers": "Clients satisfaits"
+    },
+    "stickers": {
+      "freshDaily": "Préparé du jour",
+      "handmade": "Fait main"
+    }
+  },
+  "hours": {
+    "visitTitle": "Venez nous voir",
+    "visitSubtitle": "Découvrez une pizza italienne authentique dans une ambiance chaleureuse et accueillante. Nous vous servons avec passion et tradition.",
+    "currentClosing": {
+      "closedFromUntil": "Fermé de {from} à {until}"
+    },
+    "card": {
+      "openingHours": "Horaires d'ouverture",
+      "locationContact": "Localisation & Contact",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "callNow": "Appeler maintenant",
+      "directions": "Itinéraire",
+      "ourLocation": "Notre emplacement"
+    },
+    "badge": {
+      "currentlyClosed": "Actuellement fermé",
+      "openUntil": "Ouvert jusqu'à {time}",
+      "openingAt": "Ouvre à {time}",
+      "temporarilyClosedNote": "Fermeture temporaire - voir la bannière ci-dessus",
+      "checkHoursBelow": "Voir les horaires ci-dessous"
+    },
+    "upcomingClosings": "Fermetures à venir",
+    "importantUpdates": "Mises à jour importantes"
   }
 }

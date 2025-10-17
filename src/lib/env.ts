@@ -11,6 +11,7 @@ const PublicEnvSchema = z.object({
   NEXT_PUBLIC_SUPABASE_URL: urlOptional,
   NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().optional(),
   NEXT_PUBLIC_TURNSTILE_SITE_KEY: z.string().optional(),
+  NEXT_PUBLIC_CURRENCY: z.enum(['$', '€']).optional(),
   NEXT_PUBLIC_ENABLE_ITEM_CTA: z.string().optional(),
 });
 
@@ -38,6 +39,7 @@ const rawPublic = {
   NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
   NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   NEXT_PUBLIC_TURNSTILE_SITE_KEY: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
+  NEXT_PUBLIC_CURRENCY: process.env.NEXT_PUBLIC_CURRENCY,
   NEXT_PUBLIC_ENABLE_ITEM_CTA: process.env.NEXT_PUBLIC_ENABLE_ITEM_CTA,
 };
 const rawServer = {

@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "id": "margherita",
+      "title": "Margherita",
+      "description": "Sauce tomate, mozzarella fraîche, basilic, huile d'olive extra vierge.",
+      "categories": ["Pizza", "Végétarien"],
+      "badges": ["Végétarien"],
+      "price": 10.9,
+      "discount": 0,
+      "image": "/images/pizzas/margherita.jpg"
+    },
+    {
+      "id": "diavola",
+      "title": "Diavola",
+      "description": "Salami piquant, sauce tomate, mozzarella, huile pimentée.",
+      "categories": ["Pizza", "Épicé"],
+      "badges": ["Épicé"],
+      "price": 12.9,
+      "discount": 10,
+      "image": "/images/pizzas/diavola.jpg"
+    },
+    {
+      "id": "quattro-formaggi",
+      "title": "Quattro Formaggi",
+      "description": "Mélange de quatre fromages : mozzarella, gorgonzola, fontina, parmesan.",
+      "categories": ["Pizza"],
+      "badges": ["Fromage"],
+      "price": 13.5,
+      "discount": 0,
+      "image": "/images/pizzas/quattro-formaggi.jpg"
+    }
+  ]
+}

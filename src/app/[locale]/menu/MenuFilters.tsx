@@ -18,6 +18,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
+import { useTranslations } from 'next-intl';
 
 export type MenuFiltersProps = {
   categories: string[];
@@ -27,6 +28,7 @@ export type MenuFiltersProps = {
 
 export default function MenuFilters(props: MenuFiltersProps) {
   const { categories, value, onChange } = props;
+  const t = useTranslations('menu.filters');
   const [open, setOpen] = React.useState(false);
   const setCategory = React.useMemo(
     () =>
@@ -61,7 +63,7 @@ export default function MenuFilters(props: MenuFiltersProps) {
 
   return (
     <div className='flex w-full items-center gap-2'>
-      <div className='flex items-center gap-2'>
+      <div className='flex items-center gap-2 min-w-0 w-full sm:w-auto'>
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button
@@ -69,27 +71,29 @@ export default function MenuFilters(props: MenuFiltersProps) {
               role='combobox'
               aria-expanded={open}
               size='sm'
-              className='min-w-44 justify-between'
+              className='justify-between min-w-0 shrink-0 w-48 md:w-64 overflow-hidden text-ellipsis whitespace-nowrap'
             >
-              {value.category ?? 'All categories'}
+              <span className='truncate'>
+                {value.category ?? t('allCategories')}
+              </span>
               <ChevronsUpDownIcon className='ml-2 size-4 opacity-50' />
             </Button>
           </PopoverTrigger>
           <PopoverContent className='p-0 min-w-56' align='start'>
             <Command>
               <CommandInput
-                placeholder='Search categories...'
+                placeholder={t('searchCategories')}
                 className='h-10'
                 onValueChange={setQuery as unknown as (v: string) => void}
               />
               <CommandList>
-                <CommandEmpty>No category found.</CommandEmpty>
+                <CommandEmpty>{t('noCategoryFound')}</CommandEmpty>
                 <CommandGroup>
                   <CommandItem
                     value='__all__'
                     onSelect={() => setCategory(null)}
                   >
-                    All categories
+                    {t('allCategories')}
                     <CheckIcon
                       className={cn(
                         'ml-auto',
@@ -121,9 +125,10 @@ export default function MenuFilters(props: MenuFiltersProps) {
           variant='ghost'
           size='sm'
           onClick={onReset}
-          aria-label='Reset filters'
+          aria-label={t('reset')}
+          className='min-w-[7.5rem] justify-center shrink-0'
         >
-          Reset
+          {t('reset')}
         </Button>
       </div>
     </div>

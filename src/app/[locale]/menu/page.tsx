@@ -15,9 +15,12 @@ import Image from 'next/image';
 import { Wheat, Egg, Milk, UtensilsCrossed } from 'lucide-react';
 import * as React from 'react';
 import MenuFilters from './MenuFilters';
-import menuData from '@/content/menu.json';
+import menuEn from '@/content/menu/menu.en.json';
+import menuFr from '@/content/menu/menu.fr.json';
 import { isItemCtaEnabled } from '@/config/feature-flags';
+import { formatCurrency } from '@/config/site';
 import { AllergenLegend } from '@/components/header/AllergenLegend';
+import { useLocale, useTranslations } from 'next-intl';
 
 type MenuItem = {
   id: string;
@@ -30,9 +33,19 @@ type MenuItem = {
   image?: string;
 };
 
-const ALL_ITEMS: MenuItem[] = (menuData as { items: MenuItem[] }).items;
+function getMenuItemsForLocale(locale: string): MenuItem[] {
+  switch (locale) {
+    case 'fr':
+      return (menuFr as { items: MenuItem[] }).items;
+    case 'en':
+    default:
+      return (menuEn as { items: MenuItem[] }).items;
+  }
+}
 
 export default function MenuPage() {
+  const t = useTranslations('menu');
+  const locale = useLocale();
   const [filters, setFilters] = React.useState<{
     category: string | null;
     query: string;
@@ -41,9 +54,14 @@ export default function MenuPage() {
     query: '',
   });
 
+  const ALL_ITEMS: MenuItem[] = React.useMemo(
+    () => getMenuItemsForLocale(locale),
+    [locale]
+  );
+
   const categories = React.useMemo(() => {
     return Array.from(new Set(ALL_ITEMS.flatMap(i => i.categories)));
-  }, []);
+  }, [ALL_ITEMS]);
 
   const filtered = React.useMemo(() => {
     return ALL_ITEMS.filter(item => {
@@ -56,7 +74,7 @@ export default function MenuPage() {
         item.description.toLowerCase().includes(q);
       return matchCategory && matchQuery;
     });
-  }, [filters]);
+  }, [filters, ALL_ITEMS]);
 
   return (
     <section className='relative overflow-hidden'>
@@ -70,10 +88,10 @@ export default function MenuPage() {
               </span>
               <div>
                 <h1 className='text-xl md:text-3xl font-semibold tracking-tight'>
-                  Menu
+                  {t('title', { default: 'Menu' })}
                 </h1>
                 <p className='text-xs md:text-sm text-muted-foreground'>
-                  Discover our selection
+                  {t('subtitle', { default: 'Discover our selection' })}
                 </p>
               </div>
             </div>
@@ -81,14 +99,14 @@ export default function MenuPage() {
             {/* Top-right: allergens */}
             <div className='col-start-2 min-h-12 flex flex-row justify-end items-center gap-2'>
               <span className='text-xs md:text-xs text-muted-foreground'>
-                Allergens
+                {t('allergens', { default: 'Allergens' })}
               </span>
               <AllergenLegend />
             </div>
 
             {/* Bottom row full-width: filters (left) + items badge (right) */}
-            <div className='col-span-2 min-h-12 flex items-center justify-between gap-2'>
-              <div className='flex min-w-0 items-center'>
+            <div className='col-span-2 min-h-12 flex flex-wrap items-center gap-2'>
+              <div className='flex min-w-0 items-center flex-1'>
                 <MenuFilters
                   categories={categories}
                   value={filters}
@@ -97,9 +115,12 @@ export default function MenuPage() {
               </div>
               <Badge
                 variant='secondary'
-                className='px-2 py-1 text-xs md:text-sm shrink-0'
+                className='px-2 py-1 text-xs md:text-sm shrink-0 ml-auto w-full sm:w-auto text-right sm:text-left'
               >
-                {filtered.length} items
+                {t('itemsCount', {
+                  count: filtered.length,
+                  default: `${filtered.length} items`,
+                })}
               </Badge>
             </div>
           </div>
@@ -169,7 +190,7 @@ export default function MenuPage() {
                 <ItemActions className='min-w-[140px] self-center w-full flex flex-row items-center justify-between gap-3 md:w-auto md:flex-col md:justify-center md:text-center'>
                   <div className='flex items-center gap-2 md:flex-col'>
                     <div className='text-lg font-semibold order-1 md:order-2'>
-                      ${finalPrice.toFixed(2)}
+                      {formatCurrency(finalPrice)}
                     </div>
                     {hasDiscount && (
                       <Badge variant='secondary' className='order-2 md:order-1'>
@@ -179,7 +200,7 @@ export default function MenuPage() {
                   </div>
                   {isItemCtaEnabled() && (
                     <Button size='sm' variant='outline' className='md:mt-3'>
-                      Action
+                      {t('cta.action', { default: 'Action' })}
                     </Button>
                   )}
                 </ItemActions>

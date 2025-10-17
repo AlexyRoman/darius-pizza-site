@@ -30,5 +30,20 @@
       "facebook": "Facebook",
       "tripadvisor": "Tripadvisor"
     }
+  },
+  "menu": {
+    "title": "Menu",
+    "subtitle": "Discover our selection",
+    "allergens": "Allergens",
+    "itemsCount": "{count} items",
+    "filters": {
+      "allCategories": "All categories",
+      "searchCategories": "Search categories...",
+      "noCategoryFound": "No category found.",
+      "reset": "Reset"
+    },
+    "cta": {
+      "action": "Action"
+    }
   }
 }

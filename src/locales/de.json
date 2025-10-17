@@ -1,0 +1,65 @@
+{
+  "common": {
+    "welcome": "Willkommen",
+    "home": "Startseite",
+    "menu": "Speisekarte",
+    "info": "Info",
+    "call": "Anrufen"
+  },
+  "seo": {
+    "siteName": "Alexy Roman"
+  },
+  "footer": {
+    "titles": {
+      "legal": "Rechtliches",
+      "social": "Soziale Netzwerke",
+      "explore": "Entdecken"
+    },
+    "brandSubtitle": "Text.",
+    "rightsReserved": "Alle Rechte vorbehalten.",
+    "designedByPrefix": "Gestaltet von",
+    "designedByName": "WebOustaou",
+    "legal": {
+      "privacy": "Datenschutz",
+      "terms": "AGB",
+      "imprint": "Impressum"
+    },
+    "social": {
+      "googleMaps": "Google Maps",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "tripadvisor": "Tripadvisor"
+    }
+  },
+  "menu": {
+    "title": "Speisekarte",
+    "subtitle": "Entdecken Sie unsere Auswahl",
+    "allergens": "Allergene",
+    "itemsCount": "{count} Artikel",
+    "filters": {
+      "allCategories": "Alle Kategorien",
+      "searchCategories": "Kategorien suchen...",
+      "noCategoryFound": "Keine Kategorie gefunden.",
+      "reset": "Zurücksetzen"
+    },
+    "cta": {
+      "action": "Aktion"
+    }
+  },
+  "allergens": {
+    "gluten": "Gluten",
+    "eggs": "Eier",
+    "milk": "Milch",
+    "fish": "Fisch",
+    "peanuts": "Erdnüsse",
+    "crustaceans": "Krebstiere",
+    "nuts": "Schalenfrüchte",
+    "sesame": "Sesam",
+    "mustard": "Senf",
+    "soy": "Soja",
+    "celery": "Sellerie",
+    "lupin": "Lupinen",
+    "sulfites": "Sulfite",
+    "molluscs": "Weichtiere"
+  }
+}

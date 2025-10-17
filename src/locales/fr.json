@@ -45,5 +45,21 @@
     "cta": {
       "action": "Action"
     }
+  },
+  "allergens": {
+    "gluten": "Gluten",
+    "eggs": "Oeufs",
+    "milk": "Lait",
+    "fish": "Poissons",
+    "peanuts": "Arachides",
+    "crustaceans": "Crustacés",
+    "nuts": "Fruits à coques",
+    "sesame": "Sésame",
+    "mustard": "Moutarde",
+    "soy": "Soja",
+    "celery": "Céleri",
+    "lupin": "Lupin",
+    "sulfites": "Sulfites",
+    "molluscs": "Mollusques"
   }
 }

@@ -9,6 +9,7 @@ import {
   getAllLocales,
   getEnabledLocaleCodes,
   isLocaleEnabled,
+  getDefaultLocale,
 } from '@/config/locales-config';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import ReactCountryFlag from 'react-country-flag';
@@ -74,7 +75,7 @@ export function LocaleToggle({ currentLocale }: { currentLocale: string }) {
       if (segments.length > 0 && enabled.has(segments[0])) {
         segments.shift();
       }
-      const targetCode = isLocaleEnabled(code) ? code : 'en';
+      const targetCode = isLocaleEnabled(code) ? code : getDefaultLocale();
       const next = '/' + [targetCode, ...segments].join('/');
       router.push(next || '/');
     }, 400)

@@ -97,7 +97,7 @@ export function Header({
       <div className='fixed inset-x-0 bottom-0 z-50 md:hidden'>
         <div className='relative mx-auto h-[4.5rem] max-w-lg'>
           <nav className='relative z-10 mx-auto flex h-[4.5rem] max-w-lg items-center justify-center px-6 text-foreground pb-[env(safe-area-inset-bottom)]'>
-            <div className='flex items-center gap-1 rounded-full border border-white/10 bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 px-1 py-1.5 shadow-sm'>
+            <div className='flex items-center gap-1 rounded-full border border-white/10 ring-1 ring-border bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 px-1 py-1.5 shadow-sm'>
               <nav className='flex items-center gap-1'>
                 {nav.map(item => (
                   <Link

@@ -1,0 +1,65 @@
+{
+  "common": {
+    "welcome": "Benvenuto",
+    "home": "Home",
+    "menu": "Menu",
+    "info": "Info",
+    "call": "Chiama"
+  },
+  "seo": {
+    "siteName": "Alexy Roman"
+  },
+  "footer": {
+    "titles": {
+      "legal": "Legale",
+      "social": "Social",
+      "explore": "Esplora"
+    },
+    "brandSubtitle": "Testo.",
+    "rightsReserved": "Tutti i diritti riservati.",
+    "designedByPrefix": "Progettato da",
+    "designedByName": "WebOustaou",
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Termini",
+      "imprint": "Note Legali"
+    },
+    "social": {
+      "googleMaps": "Google Maps",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "tripadvisor": "Tripadvisor"
+    }
+  },
+  "menu": {
+    "title": "Menu",
+    "subtitle": "Scopri la nostra selezione",
+    "allergens": "Allergeni",
+    "itemsCount": "{count} articoli",
+    "filters": {
+      "allCategories": "Tutte le categorie",
+      "searchCategories": "Cerca categorie...",
+      "noCategoryFound": "Nessuna categoria trovata.",
+      "reset": "Reimposta"
+    },
+    "cta": {
+      "action": "Azione"
+    }
+  },
+  "allergens": {
+    "gluten": "Glutine",
+    "eggs": "Uova",
+    "milk": "Latte",
+    "fish": "Pesce",
+    "peanuts": "Arachidi",
+    "crustaceans": "Crostacei",
+    "nuts": "Frutta a guscio",
+    "sesame": "Sesamo",
+    "mustard": "Senape",
+    "soy": "Soia",
+    "celery": "Sedano",
+    "lupin": "Lupini",
+    "sulfites": "Solfiti",
+    "molluscs": "Molluschi"
+  }
+}

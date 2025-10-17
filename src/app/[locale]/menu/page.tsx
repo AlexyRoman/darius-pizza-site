@@ -12,11 +12,18 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
-import { Wheat, Egg, Milk, UtensilsCrossed } from 'lucide-react';
+import { Wheat, Egg, Milk, UtensilsCrossed, Fish, Shell, Bean, Nut, Sprout, Leaf, Flower, TriangleAlert } from 'lucide-react';
+import { } from '@/components/ui/tooltip';
+import { } from '@/components/ui/popover';
+// Tooltips/Popovers removed per request; render plain icons
+
 import * as React from 'react';
 import MenuFilters from './MenuFilters';
 import menuEn from '@/content/menu/menu.en.json';
 import menuFr from '@/content/menu/menu.fr.json';
+import menuDe from '@/content/menu/menu.de.json';
+import menuIt from '@/content/menu/menu.it.json';
+import menuEs from '@/content/menu/menu.es.json';
 import { isItemCtaEnabled } from '@/config/feature-flags';
 import { formatCurrency } from '@/config/site';
 import { AllergenLegend } from '@/components/header/AllergenLegend';
@@ -31,12 +38,19 @@ type MenuItem = {
   price: number;
   discount?: number; // percentage 0-100
   image?: string;
+  allergens?: string[]; // e.g., ["Gluten","Milk","Nuts"] always in EN keys
 };
 
 function getMenuItemsForLocale(locale: string): MenuItem[] {
   switch (locale) {
     case 'fr':
       return (menuFr as { items: MenuItem[] }).items;
+    case 'de':
+      return (menuDe as { items: MenuItem[] }).items;
+    case 'it':
+      return (menuIt as { items: MenuItem[] }).items;
+    case 'es':
+      return (menuEs as { items: MenuItem[] }).items;
     case 'en':
     default:
       return (menuEn as { items: MenuItem[] }).items;
@@ -45,6 +59,7 @@ function getMenuItemsForLocale(locale: string): MenuItem[] {
 
 export default function MenuPage() {
   const t = useTranslations('menu');
+  const tAllergens = useTranslations('allergens');
   const locale = useLocale();
   const [filters, setFilters] = React.useState<{
     category: string | null;
@@ -58,6 +73,17 @@ export default function MenuPage() {
     () => getMenuItemsForLocale(locale),
     [locale]
   );
+
+  const normalizeAllergenKey = React.useCallback((raw: string): string => {
+    const k = raw.toLowerCase().trim();
+    if (k === 'sulphites') return 'sulfites';
+    if (k === 'mollusks') return 'molluscs';
+    if (k === 'soya') return 'soy';
+    if (k === 'peanut') return 'peanuts';
+    if (k === 'egg') return 'eggs';
+    if (k === 'crustacean') return 'crustaceans';
+    return k;
+  }, []);
 
   const categories = React.useMemo(() => {
     return Array.from(new Set(ALL_ITEMS.flatMap(i => i.categories)));
@@ -172,17 +198,34 @@ export default function MenuPage() {
                         </Badge>
                       ))}
                     </div>
+                  {data.allergens && data.allergens.length > 0 && (
                     <div className='flex items-center gap-1'>
-                      <span className='flex size-6 items-center justify-center rounded-full border bg-muted text-muted-foreground'>
-                        <Wheat className='size-3' />
-                      </span>
-                      <span className='flex size-6 items-center justify-center rounded-full border bg-muted text-muted-foreground'>
-                        <Egg className='size-3' />
-                      </span>
-                      <span className='flex size-6 items-center justify-center rounded-full border bg-muted text-muted-foreground'>
-                        <Milk className='size-3' />
-                      </span>
+                      {data.allergens.map(key => {
+                        const k = normalizeAllergenKey(key);
+                        const Icon =
+                          k === 'gluten' ? Wheat :
+                          k === 'eggs' || k === 'egg' ? Egg :
+                          k === 'milk' ? Milk :
+                          k === 'fish' ? Fish :
+                          k === 'crustaceans' || k === 'crustacean' ? Shell :
+                          k === 'peanuts' ? Bean :
+                          k === 'nuts' ? Nut :
+                          k === 'sesame' ? Sprout :
+                          k === 'mustard' ? Leaf :
+                          k === 'soy' ? Bean :
+                          k === 'celery' ? Leaf :
+                          k === 'lupin' ? Flower :
+                          k === 'sulfites' ? TriangleAlert :
+                          k === 'molluscs' ? Shell :
+                          Shell;
+                        return (
+                          <span key={key} className='flex size-6 items-center justify-center rounded-full border bg-muted text-muted-foreground'>
+                            <Icon className='size-3' />
+                          </span>
+                        );
+                      })}
                     </div>
+                  )}
                   </div>
                   <ItemTitle>{data.title}</ItemTitle>
                   <ItemDescription>{data.description}</ItemDescription>

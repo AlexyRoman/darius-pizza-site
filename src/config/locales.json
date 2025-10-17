@@ -25,7 +25,7 @@
       "nativeName": "Deutsch",
       "flag": "🇩🇪",
       "direction": "ltr",
-      "enabled": false,
+      "enabled": true,
       "fallback": "en"
     },
     {
@@ -34,7 +34,7 @@
       "nativeName": "Italiano",
       "flag": "🇮🇹",
       "direction": "ltr",
-      "enabled": false,
+      "enabled": true,
       "fallback": "en"
     },
     {
@@ -43,7 +43,7 @@
       "nativeName": "Español",
       "flag": "🇪🇸",
       "direction": "ltr",
-      "enabled": false,
+      "enabled": true,
       "fallback": "en"
     }
   ],

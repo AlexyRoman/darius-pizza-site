@@ -1,0 +1,65 @@
+{
+  "common": {
+    "welcome": "Bienvenido",
+    "home": "Inicio",
+    "menu": "Menú",
+    "info": "Info",
+    "call": "Llamar"
+  },
+  "seo": {
+    "siteName": "Alexy Roman"
+  },
+  "footer": {
+    "titles": {
+      "legal": "Legal",
+      "social": "Social",
+      "explore": "Explorar"
+    },
+    "brandSubtitle": "Texto.",
+    "rightsReserved": "Todos los derechos reservados.",
+    "designedByPrefix": "Diseñado por",
+    "designedByName": "WebOustaou",
+    "legal": {
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "imprint": "Aviso Legal"
+    },
+    "social": {
+      "googleMaps": "Google Maps",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "tripadvisor": "Tripadvisor"
+    }
+  },
+  "menu": {
+    "title": "Menú",
+    "subtitle": "Descubre nuestra selección",
+    "allergens": "Alérgenos",
+    "itemsCount": "{count} artículos",
+    "filters": {
+      "allCategories": "Todas las categorías",
+      "searchCategories": "Buscar categorías...",
+      "noCategoryFound": "No se encontró ninguna categoría.",
+      "reset": "Restablecer"
+    },
+    "cta": {
+      "action": "Acción"
+    }
+  },
+  "allergens": {
+    "gluten": "Gluten",
+    "eggs": "Huevos",
+    "milk": "Leche",
+    "fish": "Pescado",
+    "peanuts": "Cacahuetes",
+    "crustaceans": "Crustáceos",
+    "nuts": "Frutos de cáscara",
+    "sesame": "Sésamo",
+    "mustard": "Mostaza",
+    "soy": "Soja",
+    "celery": "Apio",
+    "lupin": "Altramuces",
+    "sulfites": "Sulfitos",
+    "molluscs": "Moluscos"
+  }
+}

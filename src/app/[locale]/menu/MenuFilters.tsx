@@ -86,7 +86,7 @@ export default function MenuFilters(props: MenuFiltersProps) {
                 className='h-10'
                 onValueChange={setQuery as unknown as (v: string) => void}
               />
-              <CommandList>
+              <CommandList className='max-h-48 overflow-auto'>
                 <CommandEmpty>{t('noCategoryFound')}</CommandEmpty>
                 <CommandGroup>
                   <CommandItem

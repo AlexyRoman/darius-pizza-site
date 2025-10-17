@@ -45,5 +45,21 @@
     "cta": {
       "action": "Action"
     }
+  },
+  "allergens": {
+    "gluten": "Gluten",
+    "eggs": "Eggs",
+    "milk": "Milk",
+    "fish": "Fish",
+    "peanuts": "Peanuts",
+    "crustaceans": "Crustaceans",
+    "nuts": "Nuts",
+    "sesame": "Sesame",
+    "mustard": "Mustard",
+    "soy": "Soy",
+    "celery": "Celery",
+    "lupin": "Lupin",
+    "sulfites": "Sulfites",
+    "molluscs": "Molluscs"
   }
 }

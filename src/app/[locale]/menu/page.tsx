@@ -12,10 +12,22 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
-import { Wheat, Egg, Milk, UtensilsCrossed, Fish, Shell, Bean, Nut, Sprout, Leaf, Flower, TriangleAlert } from 'lucide-react';
-import { } from '@/components/ui/tooltip';
-import { } from '@/components/ui/popover';
-// Tooltips/Popovers removed per request; render plain icons
+import {
+  Wheat,
+  Egg,
+  Milk,
+  UtensilsCrossed,
+  Fish,
+  Shell,
+  Bean,
+  Nut,
+  Sprout,
+  Leaf,
+  Flower,
+  Bubbles,
+  Carrot,
+} from 'lucide-react';
+import {} from '@/components/ui/popover';
 
 import * as React from 'react';
 import MenuFilters from './MenuFilters';
@@ -68,6 +80,28 @@ export default function MenuPage() {
     category: null,
     query: '',
   });
+
+  const [visibleTooltip, setVisibleTooltip] = React.useState<string | null>(
+    null
+  );
+  const [hoveredTooltip, setHoveredTooltip] = React.useState<string | null>(
+    null
+  );
+
+  // Hide tooltip when clicking elsewhere (mobile only)
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.allergen-trigger')) {
+        setVisibleTooltip(null);
+      }
+    };
+
+    if (visibleTooltip) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
+  }, [visibleTooltip]);
 
   const ALL_ITEMS: MenuItem[] = React.useMemo(
     () => getMenuItemsForLocale(locale),
@@ -180,7 +214,7 @@ export default function MenuPage() {
                   />
                 </ItemMedia>
                 <ItemContent className='gap-2'>
-                  <div className='mb-3 flex items-center gap-3'>
+                  <div className='mb-3 flex items-center justify-between gap-3 md:justify-start'>
                     <div className='flex flex-wrap items-center gap-2'>
                       {(data.badges && data.badges.length > 0
                         ? data.badges
@@ -197,35 +231,152 @@ export default function MenuPage() {
                           {cat}
                         </Badge>
                       ))}
+                      {data.allergens && data.allergens.length > 0 && (
+                        <div className='hidden md:flex items-center gap-1'>
+                          {data.allergens.map(key => {
+                            const k = normalizeAllergenKey(key);
+                            const Icon =
+                              k === 'gluten'
+                                ? Wheat
+                                : k === 'eggs' || k === 'egg'
+                                  ? Egg
+                                  : k === 'milk'
+                                    ? Milk
+                                    : k === 'fish'
+                                      ? Fish
+                                      : k === 'crustaceans' ||
+                                          k === 'crustacean'
+                                        ? Fish
+                                        : k === 'peanuts'
+                                          ? Bean
+                                          : k === 'nuts'
+                                            ? Nut
+                                            : k === 'sesame'
+                                              ? Leaf
+                                              : k === 'mustard'
+                                                ? Sprout
+                                                : k === 'soy'
+                                                  ? Bean
+                                                  : k === 'celery'
+                                                    ? Carrot
+                                                    : k === 'lupin'
+                                                      ? Flower
+                                                      : k === 'sulfites'
+                                                        ? Bubbles
+                                                        : k === 'molluscs'
+                                                          ? Shell
+                                                          : Shell;
+                            const tooltipId = `${data.id}-${key}`;
+                            return (
+                              <div key={key} className='relative inline-block'>
+                                <span
+                                  className='allergen-trigger flex size-6 items-center justify-center rounded-full border border-orange-200 bg-orange-100 text-orange-600 cursor-pointer hover:bg-orange-200 transition-colors'
+                                  onClick={() =>
+                                    setVisibleTooltip(
+                                      visibleTooltip === tooltipId
+                                        ? null
+                                        : tooltipId
+                                    )
+                                  }
+                                  onMouseEnter={() =>
+                                    setHoveredTooltip(tooltipId)
+                                  }
+                                  onMouseLeave={() => setHoveredTooltip(null)}
+                                >
+                                  <Icon className='size-3' />
+                                </span>
+                                {/* Mobile: Click tooltip */}
+                                {visibleTooltip === tooltipId && (
+                                  <div className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-orange-600 text-white text-xs rounded shadow-lg whitespace-nowrap z-50 md:hidden'>
+                                    {tAllergens(k)}
+                                    <div className='absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-orange-600'></div>
+                                  </div>
+                                )}
+                                {/* Desktop: Hover tooltip */}
+                                {hoveredTooltip === tooltipId && (
+                                  <div className='hidden md:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-orange-600 text-white text-xs rounded shadow-lg whitespace-nowrap z-50'>
+                                    {tAllergens(k)}
+                                    <div className='absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-orange-600'></div>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
-                  {data.allergens && data.allergens.length > 0 && (
-                    <div className='flex items-center gap-1'>
-                      {data.allergens.map(key => {
-                        const k = normalizeAllergenKey(key);
-                        const Icon =
-                          k === 'gluten' ? Wheat :
-                          k === 'eggs' || k === 'egg' ? Egg :
-                          k === 'milk' ? Milk :
-                          k === 'fish' ? Fish :
-                          k === 'crustaceans' || k === 'crustacean' ? Shell :
-                          k === 'peanuts' ? Bean :
-                          k === 'nuts' ? Nut :
-                          k === 'sesame' ? Sprout :
-                          k === 'mustard' ? Leaf :
-                          k === 'soy' ? Bean :
-                          k === 'celery' ? Leaf :
-                          k === 'lupin' ? Flower :
-                          k === 'sulfites' ? TriangleAlert :
-                          k === 'molluscs' ? Shell :
-                          Shell;
-                        return (
-                          <span key={key} className='flex size-6 items-center justify-center rounded-full border bg-muted text-muted-foreground'>
-                            <Icon className='size-3' />
-                          </span>
-                        );
-                      })}
-                    </div>
-                  )}
+                    {data.allergens && data.allergens.length > 0 && (
+                      <div className='flex md:hidden items-center gap-1'>
+                        {data.allergens.map(key => {
+                          const k = normalizeAllergenKey(key);
+                          const Icon =
+                            k === 'gluten'
+                              ? Wheat
+                              : k === 'eggs' || k === 'egg'
+                                ? Egg
+                                : k === 'milk'
+                                  ? Milk
+                                  : k === 'fish'
+                                    ? Fish
+                                    : k === 'crustaceans' || k === 'crustacean'
+                                      ? Fish
+                                      : k === 'peanuts'
+                                        ? Bean
+                                        : k === 'nuts'
+                                          ? Nut
+                                          : k === 'sesame'
+                                            ? Leaf
+                                            : k === 'mustard'
+                                              ? Sprout
+                                              : k === 'soy'
+                                                ? Bean
+                                                : k === 'celery'
+                                                  ? Carrot
+                                                  : k === 'lupin'
+                                                    ? Flower
+                                                    : k === 'sulfites'
+                                                      ? Bubbles
+                                                      : k === 'molluscs'
+                                                        ? Shell
+                                                        : Shell;
+                          const tooltipId = `${data.id}-${key}`;
+                          return (
+                            <div key={key} className='relative inline-block'>
+                              <span
+                                className='allergen-trigger flex size-6 items-center justify-center rounded-full border border-orange-200 bg-orange-100 text-orange-600 cursor-pointer hover:bg-orange-200 transition-colors'
+                                onClick={() =>
+                                  setVisibleTooltip(
+                                    visibleTooltip === tooltipId
+                                      ? null
+                                      : tooltipId
+                                  )
+                                }
+                                onMouseEnter={() =>
+                                  setHoveredTooltip(tooltipId)
+                                }
+                                onMouseLeave={() => setHoveredTooltip(null)}
+                              >
+                                <Icon className='size-3' />
+                              </span>
+                              {/* Mobile: Click tooltip */}
+                              {visibleTooltip === tooltipId && (
+                                <div className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-orange-600 text-white text-xs rounded shadow-lg whitespace-nowrap z-50 md:hidden'>
+                                  {tAllergens(k)}
+                                  <div className='absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-orange-600'></div>
+                                </div>
+                              )}
+                              {/* Desktop: Hover tooltip */}
+                              {hoveredTooltip === tooltipId && (
+                                <div className='hidden md:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-orange-600 text-white text-xs rounded shadow-lg whitespace-nowrap z-50'>
+                                  {tAllergens(k)}
+                                  <div className='absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-orange-600'></div>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                   <ItemTitle>{data.title}</ItemTitle>
                   <ItemDescription>{data.description}</ItemDescription>

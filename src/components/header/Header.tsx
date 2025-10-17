@@ -4,7 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { Home, Phone, Info, UtensilsCrossed } from 'lucide-react';
+import { Home, Phone, Info, Pizza } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { LocaleToggle } from '@/components/header/LocaleToggle';
@@ -34,7 +34,7 @@ export function Header({
     {
       href: withLocale(PAGES.menu.path),
       label: t('menu'),
-      icon: <UtensilsCrossed />,
+      icon: <Pizza />,
     },
     { href: withLocale(PAGES.info.path), label: t('info'), icon: <Info /> },
   ];
@@ -99,18 +99,25 @@ export function Header({
           <nav className='relative z-10 mx-auto flex h-[4.5rem] max-w-lg items-center justify-center px-6 text-foreground pb-[env(safe-area-inset-bottom)]'>
             <div className='flex items-center gap-1 rounded-full border border-white/10 ring-1 ring-border bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 px-1 py-1.5 shadow-sm'>
               <nav className='flex items-center gap-1'>
-                {nav.map(item => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={cn(
-                      buttonVariants({ variant: 'ghost', size: 'icon' }),
-                      '[&_svg]:size-5'
+                {nav.map((item, index) => (
+                  <React.Fragment key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        buttonVariants({ variant: 'ghost', size: 'icon' }),
+                        '[&_svg]:size-5'
+                      )}
+                      aria-label={item.label}
+                    >
+                      {item.icon}
+                    </Link>
+                    {index < nav.length - 1 && (
+                      <div
+                        aria-hidden
+                        className='mx-1 h-6 w-[1px] shrink-0 bg-border'
+                      />
                     )}
-                    aria-label={item.label}
-                  >
-                    {item.icon}
-                  </Link>
+                  </React.Fragment>
                 ))}
               </nav>
               {/* Theme/Locale removed from mobile navbar */}

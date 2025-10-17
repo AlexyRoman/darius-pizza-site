@@ -13,7 +13,8 @@ import {
   Sprout,
   Leaf,
   Flower,
-  TriangleAlert,
+  Atom,
+  Carrot,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -33,14 +34,14 @@ export function AllergenLegend() {
     { key: 'milk', Icon: Milk },
     { key: 'fish', Icon: Fish },
     { key: 'peanuts', Icon: Bean },
-    { key: 'crustaceans', Icon: Shell },
+    { key: 'crustaceans', Icon: Fish },
     { key: 'nuts', Icon: Nut },
     { key: 'sesame', Icon: Sprout },
     { key: 'mustard', Icon: Leaf },
     { key: 'soy', Icon: Bean },
-    { key: 'celery', Icon: Leaf },
+    { key: 'celery', Icon: Carrot },
     { key: 'lupin', Icon: Flower },
-    { key: 'sulfites', Icon: TriangleAlert },
+    { key: 'sulfites', Icon: Atom },
     { key: 'molluscs', Icon: Shell },
   ];
   return (
@@ -59,7 +60,7 @@ export function AllergenLegend() {
         <ul className='max-h-56 overflow-auto pr-1 space-y-2'>
           {items.map(({ key, Icon }) => (
             <li key={key} className='flex items-center gap-2 text-sm'>
-              <span className='flex size-6 items-center justify-center rounded-full border bg-muted text-muted-foreground'>
+              <span className='flex size-6 items-center justify-center rounded-full border border-orange-200 bg-orange-100 text-orange-600'>
                 <Icon className='size-3.5' />
               </span>
               <span className='text-foreground truncate'>{t(key)}</span>

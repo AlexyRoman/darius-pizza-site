@@ -35,7 +35,7 @@
     "title": "Menu",
     "subtitle": "Scopri la nostra selezione",
     "allergens": "Allergeni",
-    "itemsCount": "{count} articoli",
+    "itemsCount": "{count} pizza{count, plural, =1 {} other {s}}",
     "filters": {
       "allCategories": "Tutte le categorie",
       "searchCategories": "Cerca categorie...",

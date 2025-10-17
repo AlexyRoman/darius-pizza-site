@@ -35,7 +35,7 @@
     "title": "Speisekarte",
     "subtitle": "Entdecken Sie unsere Auswahl",
     "allergens": "Allergene",
-    "itemsCount": "{count} Artikel",
+    "itemsCount": "{count} Pizza{count, plural, =1 {} other {s}}",
     "filters": {
       "allCategories": "Alle Kategorien",
       "searchCategories": "Kategorien suchen...",

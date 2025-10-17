@@ -49,7 +49,28 @@ export default async function LocaleLayout(props: {
     <NextIntlClientProvider messages={messages} locale={locale}>
       <Header currentLocale={locale} />
       <main className='pt-0 md:pt-16 pb-2 md:pb-0'>{children}</main>
-      <Footer />
+      <Footer
+        currentLocale={locale}
+        titles={{
+          legal: messages.footer.titles.legal,
+          social: messages.footer.titles.social,
+          explore: messages.footer.titles.explore,
+        }}
+        brandSubtitle={messages.footer.brandSubtitle}
+        rightsReservedText={messages.footer.rightsReserved}
+        designedByPrefix={messages.footer.designedByPrefix}
+        designedByName={messages.footer.designedByName}
+        legalLabels={{
+          privacy: messages.footer.legal.privacy,
+          terms: messages.footer.legal.terms,
+          imprint: messages.footer.legal.imprint,
+        }}
+        menuLabels={{
+          home: messages.common.home,
+          menu: messages.common.menu,
+          info: messages.common.info,
+        }}
+      />
     </NextIntlClientProvider>
   );
 }

@@ -1,5 +1,8 @@
+"use client";
+ 
 import * as React from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import {
   SiInstagram,
   SiFacebook,
@@ -18,13 +21,38 @@ type FooterSocialProps = {
 
 export function FooterSocial(props: FooterSocialProps) {
   const { title, items, className } = props;
-  const list = items ?? DefaultSocialItems;
+  const tSocial = useTranslations('footer.social');
+
+  const defaultSocialItems: SocialItem[] = [
+    {
+      href: 'https://maps.app.goo.gl/',
+      label: tSocial('googleMaps'),
+      icon: <SiGooglemaps className='size-5' />,
+    },
+    {
+      href: 'https://instagram.com',
+      label: tSocial('instagram'),
+      icon: <SiInstagram className='size-5' />,
+    },
+    {
+      href: 'https://facebook.com',
+      label: tSocial('facebook'),
+      icon: <SiFacebook className='size-5' />,
+    },
+    {
+      href: 'https://www.tripadvisor.com',
+      label: tSocial('tripadvisor'),
+      icon: <SiTripadvisor className='size-5' />,
+    },
+  ];
+
+  const list = items ?? defaultSocialItems;
   return (
     <div className={className}>
       <h3 className='text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wide'>
         {title}
       </h3>
-      <div className='grid grid-cols-3 gap-3 place-items-start'>
+      <div className='grid grid-cols-3 gap-3 place-items-start -ml-2 sm:-ml-2.5'>
         {list.map(item => (
           <Button
             asChild
@@ -48,28 +76,5 @@ export function FooterSocial(props: FooterSocialProps) {
     </div>
   );
 }
-
-export const DefaultSocialItems: SocialItem[] = [
-  {
-    href: 'https://maps.app.goo.gl/',
-    label: 'Google Maps',
-    icon: <SiGooglemaps className='size-5' />,
-  },
-  {
-    href: 'https://instagram.com',
-    label: 'Instagram',
-    icon: <SiInstagram className='size-5' />,
-  },
-  {
-    href: 'https://facebook.com',
-    label: 'Facebook',
-    icon: <SiFacebook className='size-5' />,
-  },
-  {
-    href: 'https://www.tripadvisor.com',
-    label: 'Tripadvisor',
-    icon: <SiTripadvisor className='size-5' />,
-  },
-];
 
 export default FooterSocial;

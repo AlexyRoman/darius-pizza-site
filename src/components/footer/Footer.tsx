@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 
 import { Separator } from '@/components/ui/separator';
@@ -8,24 +10,48 @@ import FooterSocial from '@/components/footer/FooterSocial';
 
 type LinkItem = { href: string; label: string };
 
-export function Footer() {
-  const legalTitle = 'Legal';
-  const socialTitle = 'Social';
-  const menuTitle = 'Explore';
-  const brandSubtitle = 'Text.';
-  const rightsReservedText = 'All rights reserved.';
-  const designedByPrefix = 'Designed by';
-  const designedByName = 'Alexy Roman';
+type FooterProps = {
+  currentLocale?: string;
+  titles?: { legal: string; social: string; explore: string };
+  brandSubtitle?: string;
+  rightsReservedText?: string;
+  designedByPrefix?: string;
+  designedByName?: string;
+  legalLabels?: { privacy: string; terms: string; imprint: string };
+  menuLabels?: { home: string; menu: string; info: string };
+};
+
+export function Footer(props: FooterProps) {
+  const {
+    currentLocale,
+    titles,
+    brandSubtitle,
+    rightsReservedText,
+    designedByPrefix,
+    designedByName,
+    legalLabels,
+    menuLabels,
+  } = props;
+  const locale = currentLocale ?? 'en';
+
+  const legalTitle = titles?.legal ?? 'Legal';
+  const socialTitle = titles?.social ?? 'Social';
+  const menuTitle = titles?.explore ?? 'Explore';
+
+  const withLocale = (path: string): string => {
+    if (path === '/') return `/${locale}`;
+    return `/${locale}${path}`;
+  };
 
   const legalLinks: LinkItem[] = [
-    { href: '#', label: 'Privacy' },
-    { href: '#', label: 'Terms' },
-    { href: '#', label: 'Imprint' },
+    { href: '#', label: legalLabels?.privacy ?? 'Privacy' },
+    { href: '#', label: legalLabels?.terms ?? 'Terms' },
+    { href: '#', label: legalLabels?.imprint ?? 'Imprint' },
   ];
   const menuLinks: LinkItem[] = [
-    { href: '/', label: 'Home' },
-    { href: '/menu', label: 'Menu' },
-    { href: '/info', label: 'Info' },
+    { href: withLocale('/'), label: menuLabels?.home ?? 'Home' },
+    { href: withLocale('/menu'), label: menuLabels?.menu ?? 'Menu' },
+    { href: withLocale('/info'), label: menuLabels?.info ?? 'Info' },
   ];
 
   return (

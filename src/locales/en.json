@@ -10,10 +10,25 @@
     "siteName": "Alexy Roman"
   },
   "footer": {
+    "titles": {
+      "legal": "Legal",
+      "social": "Social",
+      "explore": "Explore"
+    },
+    "brandSubtitle": "Text.",
+    "rightsReserved": "All rights reserved.",
+    "designedByPrefix": "Designed by",
+    "designedByName": "WebOustaou",
     "legal": {
       "privacy": "Privacy",
       "terms": "Terms",
       "imprint": "Imprint"
+    },
+    "social": {
+      "googleMaps": "Google Maps",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "tripadvisor": "Tripadvisor"
     }
   }
 }

@@ -18,7 +18,9 @@ export const ThemeContext = createContext<ThemeContextType | undefined>(
 function getInitialTheme(): ThemeMode {
   if (typeof window !== 'undefined') {
     try {
-      const saved = localStorage.getItem('theme') as ThemeMode | null;
+      const saved = localStorage.getItem(
+        'darius-pizza-theme'
+      ) as ThemeMode | null;
       if (saved === 'light' || saved === 'dark') return saved;
     } catch {}
     try {
@@ -53,7 +55,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const setTheme = (next: ThemeMode) => {
     setThemeState(next);
     try {
-      localStorage.setItem('theme', next);
+      localStorage.setItem('darius-pizza-theme', next);
     } catch {}
   };
 

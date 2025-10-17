@@ -69,7 +69,7 @@ export function Header({
                 </nav>
                 <div
                   aria-hidden
-                  className='mx-2 h-6 w-[1px] shrink-0 bg-border'
+                  className='mx-2 h-6 w-[1px] shrink-0 bg-foreground/20'
                 />
                 {/* Desktop: plain buttons (no glass wrapper) */}
                 <div className='hidden md:flex items-center gap-1'>
@@ -114,7 +114,7 @@ export function Header({
                     {index < nav.length - 1 && (
                       <div
                         aria-hidden
-                        className='mx-1 h-6 w-[1px] shrink-0 bg-border'
+                        className='mx-1 h-6 w-[1px] shrink-0 bg-foreground/20'
                       />
                     )}
                   </React.Fragment>

@@ -5,8 +5,11 @@ import { Heart, Users, Award, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export default function AboutUsSection() {
+  const t = useTranslations('aboutUs');
+  const tHome = useTranslations('aboutUs.homeAbout');
   return (
     <section className='py-16 lg:py-24 bg-gradient-to-b from-background-secondary via-background to-background-secondary'>
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
@@ -19,14 +22,11 @@ export default function AboutUsSection() {
                 <div className='flex items-center justify-center lg:justify-start gap-2'>
                   <Heart className='h-6 w-6 text-primary fill-primary' />
                   <h2 className='text-3xl sm:text-4xl lg:text-5xl font-primary font-bold text-foreground'>
-                    Our Story
+                    {tHome('title')}
                   </h2>
                 </div>
                 <p className='text-lg text-foreground-secondary font-secondary leading-relaxed'>
-                  Born from a passion for authentic Italian cuisine, our
-                  pizzeria brings the true taste of Italy to your table. Every
-                  pizza is crafted with love, using traditional recipes passed
-                  down through generations.
+                  {tHome('description')}
                 </p>
               </div>
 
@@ -36,21 +36,23 @@ export default function AboutUsSection() {
                   <div className='flex items-center justify-center lg:justify-start gap-2 mb-2'>
                     <Users className='h-5 w-5 text-primary' />
                     <h3 className='font-semibold text-foreground'>
-                      Family Owned
+                      {tHome('familyOwned')}
                     </h3>
                   </div>
                   <p className='text-sm text-foreground-secondary'>
-                    Three generations of pizza-making tradition
+                    {tHome('familyOwnedDesc')}
                   </p>
                 </div>
 
                 <div className='text-center lg:text-left'>
                   <div className='flex items-center justify-center lg:justify-start gap-2 mb-2'>
                     <Award className='h-5 w-5 text-primary' />
-                    <h3 className='font-semibold text-foreground'>Authentic</h3>
+                    <h3 className='font-semibold text-foreground'>
+                      {tHome('authentic')}
+                    </h3>
                   </div>
                   <p className='text-sm text-foreground-secondary'>
-                    Traditional Italian recipes and techniques
+                    {tHome('authenticDesc')}
                   </p>
                 </div>
 
@@ -58,11 +60,11 @@ export default function AboutUsSection() {
                   <div className='flex items-center justify-center lg:justify-start gap-2 mb-2'>
                     <Heart className='h-5 w-5 text-primary fill-primary' />
                     <h3 className='font-semibold text-foreground'>
-                      Made with Love
+                      {tHome('madeWithLove')}
                     </h3>
                   </div>
                   <p className='text-sm text-foreground-secondary'>
-                    Every dish prepared with passion and care
+                    {tHome('madeWithLoveDesc')}
                   </p>
                 </div>
               </div>
@@ -75,15 +77,15 @@ export default function AboutUsSection() {
                   className='bg-primary hover:bg-primary/90 text-primary-foreground'
                 >
                   <Link href='/info#contact'>
-                    Contact Us
+                    {tHome('contactUs')}
                     <ArrowRight className='ml-2 h-4 w-4' />
                   </Link>
                 </Button>
                 <Button asChild variant='outline' size='lg'>
-                  <Link href='/info'>Learn More About Us</Link>
+                  <Link href='/info'>{t('cta.learnMore')}</Link>
                 </Button>
                 <Button asChild variant='outline' size='lg'>
-                  <Link href='/menu'>View Our Menu</Link>
+                  <Link href='/menu'>{t('cta.viewMenu')}</Link>
                 </Button>
               </div>
             </div>
@@ -106,7 +108,7 @@ export default function AboutUsSection() {
                         <div className='flex items-center gap-2'>
                           <Award className='h-4 w-4 text-primary' />
                           <span className='text-sm font-medium text-foreground'>
-                            Since 1985
+                            {tHome('since1985')}
                           </span>
                         </div>
                       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import {
   Clock,
   MapPin,
@@ -52,6 +52,7 @@ interface Closing {
 export default function OpeningHoursSection() {
   const t = useTranslations('hours');
   const tHero = useTranslations('hero');
+  const locale = useLocale();
   const hours = hoursConfig.openingHours as OpeningHours;
   const messages = messagesConfig.specialMessages as SpecialMessage[];
   const closings = closingsConfig.scheduledClosings as Closing[];
@@ -180,11 +181,18 @@ export default function OpeningHoursSection() {
   };
 
   const formatTime = (time: string) => {
-    const [hours, minutes] = time.split(':');
-    const hour = parseInt(hours);
-    const ampm = hour >= 12 ? 'PM' : 'AM';
-    const displayHour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
-    return `${displayHour}:${minutes} ${ampm}`;
+    const [h, m] = time.split(':').map(Number);
+    const date = new Date();
+    date.setHours(h, m, 0, 0);
+    // Use 12h for English, 24h for others by default
+    const isHour12 = locale === 'en';
+    const resolvedLocale =
+      locale === 'en' ? 'en-US' : locale === 'fr' ? 'fr-FR' : undefined;
+    return date.toLocaleTimeString(resolvedLocale, {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: isHour12,
+    });
   };
 
   // Helper function to format dates consistently (avoiding hydration mismatch)
@@ -341,7 +349,7 @@ export default function OpeningHoursSection() {
                       <span
                         className={`font-medium ${isToday ? 'text-primary' : 'text-foreground'}`}
                       >
-                        {dayHours.day}
+                        {t(`days.${dayHours.day.toLowerCase()}`)}
                       </span>
                       <span
                         className={`text-sm ${isToday ? 'text-primary font-semibold' : 'text-foreground-secondary'}`}

@@ -98,7 +98,7 @@
     },
     "cta": {
       "viewMenu": "Voir notre menu",
-      "orderNow": "Commander maintenant"
+      "orderNow": "Commander par téléphone"
     },
     "stats": {
       "yearsExperience": "Années d'expérience",
@@ -113,6 +113,15 @@
   "hours": {
     "visitTitle": "Venez nous voir",
     "visitSubtitle": "Découvrez une pizza italienne authentique dans une ambiance chaleureuse et accueillante. Nous vous servons avec passion et tradition.",
+    "days": {
+      "monday": "Lundi",
+      "tuesday": "Mardi",
+      "wednesday": "Mercredi",
+      "thursday": "Jeudi",
+      "friday": "Vendredi",
+      "saturday": "Samedi",
+      "sunday": "Dimanche"
+    },
     "currentClosing": {
       "closedFromUntil": "Fermé de {from} à {until}"
     },
@@ -134,5 +143,71 @@
     },
     "upcomingClosings": "Fermetures à venir",
     "importantUpdates": "Mises à jour importantes"
+  },
+  "menuTeaser": {
+    "featuredThisMonth": "À l'honneur ce mois-ci",
+    "featuredBadge": "À l'honneur",
+    "description": "Découvrez la sélection du chef de pizzas emblématiques, préparées avec des ingrédients d'exception et la véritable tradition italienne.",
+    "hungryTitle": "Envie de plus ?",
+    "hungryDescription": "Parcourez notre menu complet avec plus de 40 pizzas, calzones et desserts délicieux.",
+    "viewFullMenu": "Voir le menu complet"
+  },
+  "aboutUs": {
+    "hero": {
+      "title": "À propos de Darius Pizza",
+      "subtitle": "Découvrez l'histoire de notre pizzeria italienne authentique, où la tradition rencontre la passion et chaque pizza raconte une histoire d'héritage familial et d'excellence culinaire."
+    },
+    "story": {
+      "title": "Notre Héritage",
+      "description1": "Fondée en 1985 par Giuseppe Darius, notre pizzeria a commencé comme un petit rêve familial pour apporter les saveurs italiennes authentiques à notre communauté. Ce qui a commencé comme une cuisine modeste est devenu une institution locale bien-aimée, mais notre engagement envers les recettes traditionnelles et les valeurs familiales reste inchangé.",
+      "description2": "Aujourd'hui, trois générations de la famille Darius continuent de créer chaque pizza avec la même passion et le même souci du détail que Giuseppe a apporté de sa ville natale de Naples, en Italie.",
+      "traditionalRecipes": "Recettes Traditionnelles",
+      "traditionalRecipesDesc": "Techniques napolitaines authentiques transmises de génération en génération",
+      "freshIngredients": "Ingrédients Frais",
+      "freshIngredientsDesc": "Produits locaux et spécialités italiennes importées",
+      "familyOwnedBadge": "Famille Propriétaire Depuis 1985"
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "subtitle": "Les principes qui guident tout ce que nous faisons, de la sélection des ingrédients au service client.",
+      "passion": {
+        "title": "Passion",
+        "description": "Chaque pizza est préparée avec un amour authentique pour l'artisanat et le respect de la tradition italienne."
+      },
+      "community": {
+        "title": "Communauté",
+        "description": "Nous sommes fiers de faire partie de notre communauté locale, servant nos voisins et amis depuis des décennies."
+      },
+      "quality": {
+        "title": "Qualité",
+        "description": "Nous ne compromettons jamais sur la qualité, utilisant uniquement les meilleurs ingrédients et méthodes traditionnelles."
+      }
+    },
+    "contact": {
+      "title": "Venez nous voir",
+      "subtitle": "Nous aimerions vous accueillir dans notre restaurant familial et partager notre passion pour la pizza italienne authentique.",
+      "location": "Localisation",
+      "hours": "Horaires",
+      "contact": "Contact",
+      "address": "123 Rue Principale<br />Quartier Centre<br />Ville, État 12345",
+      "schedule": "Lun-Jeu : 11h-22h<br />Ven-Sam : 11h-23h<br />Dimanche : 12h-21h",
+      "phone": "(555) 123-4567<br />info@dariuspizza.com<br />Réservations bienvenues"
+    },
+    "cta": {
+      "learnMore": "En savoir plus sur nous",
+      "viewMenu": "Voir notre menu"
+    },
+    "homeAbout": {
+      "title": "Notre Histoire",
+      "description": "Née d'une passion pour la cuisine italienne authentique, notre pizzeria apporte le vrai goût de l'Italie à votre table. Chaque pizza est préparée avec amour, en utilisant des recettes traditionnelles transmises de génération en génération.",
+      "familyOwned": "Famille Propriétaire",
+      "familyOwnedDesc": "Trois générations de tradition de fabrication de pizzas",
+      "authentic": "Authentique",
+      "authenticDesc": "Recettes et techniques italiennes traditionnelles",
+      "madeWithLove": "Préparé avec Amour",
+      "madeWithLoveDesc": "Chaque plat préparé avec passion et soin",
+      "contactUs": "Nous Contacter",
+      "since1985": "Depuis 1985"
+    }
   }
 }

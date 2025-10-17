@@ -1,11 +1,15 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { Star, Utensils, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import starredPizzasConfig from '@/config/restaurant/starred-pizzas.json';
+import menuEn from '@/content/menu/menu.en.json';
+import menuFr from '@/content/menu/menu.fr.json';
+import { useLocale } from 'next-intl';
 import Link from 'next/link';
 
 interface StarredPizza {
@@ -20,11 +24,20 @@ interface StarredPizza {
 }
 
 export default function MenuTeaserSection() {
+  const t = useTranslations('menuTeaser');
+  const locale = useLocale();
   const starredPizzas = starredPizzasConfig.starredPizzas as StarredPizza[];
 
   const formatPrice = (price: number) => {
     return `$${price.toFixed(2)}`;
   };
+
+  type MenuItem = { id: string; title: string; description: string };
+  const menuData: MenuItem[] =
+    locale === 'fr'
+      ? (menuFr as { items: MenuItem[] }).items
+      : (menuEn as { items: MenuItem[] }).items;
+  const idToLocalized = new Map<string, MenuItem>(menuData.map(i => [i.id, i]));
 
   return (
     <section className='py-16 bg-gradient-to-b from-background via-background-secondary to-background-secondary'>
@@ -34,13 +47,12 @@ export default function MenuTeaserSection() {
           <div className='flex items-center justify-center gap-2 mb-4'>
             <Star className='h-6 w-6 text-primary fill-primary' />
             <h2 className='text-3xl font-bold text-foreground'>
-              Featured This Month
+              {t('featuredThisMonth')}
             </h2>
             <Star className='h-6 w-6 text-primary fill-primary' />
           </div>
           <p className='text-lg text-foreground-secondary max-w-2xl mx-auto'>
-            Discover our chef{"'"}s selection of signature pizzas, crafted with
-            premium ingredients and authentic Italian tradition.
+            {t('description')}
           </p>
         </div>
 
@@ -61,7 +73,7 @@ export default function MenuTeaserSection() {
                 <div className='absolute top-3 right-3'>
                   <Badge className='bg-primary text-primary-foreground shadow-lg'>
                     <Star className='h-3 w-3 mr-1 fill-current' />
-                    Featured
+                    {t('featuredBadge')}
                   </Badge>
                 </div>
                 <div className='absolute bottom-3 left-3'>
@@ -77,7 +89,7 @@ export default function MenuTeaserSection() {
               <CardHeader className='pb-3'>
                 <div className='flex items-start justify-between'>
                   <CardTitle className='text-xl font-bold text-foreground group-hover:text-primary transition-colors'>
-                    {pizza.title}
+                    {idToLocalized.get(pizza.id)?.title ?? pizza.title}
                   </CardTitle>
                   <div className='text-right'>
                     <div className='text-2xl font-bold text-primary'>
@@ -92,7 +104,8 @@ export default function MenuTeaserSection() {
 
               <CardContent className='pt-0'>
                 <p className='text-foreground-secondary text-sm leading-relaxed mb-4'>
-                  {pizza.description}
+                  {idToLocalized.get(pizza.id)?.description ??
+                    pizza.description}
                 </p>
               </CardContent>
             </Card>
@@ -105,19 +118,18 @@ export default function MenuTeaserSection() {
             <div className='flex items-center justify-center gap-3 mb-4'>
               <Utensils className='h-8 w-8 text-primary' />
               <h3 className='text-2xl font-bold text-foreground'>
-                Hungry for More?
+                {t('hungryTitle')}
               </h3>
             </div>
             <p className='text-foreground-secondary mb-6 max-w-md mx-auto'>
-              Explore our full menu with over 40 delicious pizzas, calzones, and
-              desserts.
+              {t('hungryDescription')}
             </p>
             <Link href='/menu'>
               <Button
                 size='lg'
                 className='bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105'
               >
-                View Full Menu
+                {t('viewFullMenu')}
                 <ArrowRight className='ml-2 h-5 w-5' />
               </Button>
             </Link>

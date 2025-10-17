@@ -113,6 +113,15 @@
   "hours": {
     "visitTitle": "Visit Us Today",
     "visitSubtitle": "Experience authentic Italian pizza in a warm, welcoming atmosphere. We're here to serve you with passion and tradition.",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
     "currentClosing": {
       "closedFromUntil": "Closed from {from} until {until}"
     },
@@ -134,5 +143,71 @@
     },
     "upcomingClosings": "Upcoming Closings",
     "importantUpdates": "Important Updates"
+  },
+  "menuTeaser": {
+    "featuredThisMonth": "Featured This Month",
+    "featuredBadge": "Featured",
+    "description": "Discover our chef's selection of signature pizzas, crafted with premium ingredients and authentic Italian tradition.",
+    "hungryTitle": "Hungry for More?",
+    "hungryDescription": "Explore our full menu with over 40 delicious pizzas, calzones, and desserts.",
+    "viewFullMenu": "View Full Menu"
+  },
+  "aboutUs": {
+    "hero": {
+      "title": "About Darius Pizza",
+      "subtitle": "Discover the story behind our authentic Italian pizzeria, where tradition meets passion and every pizza tells a tale of family heritage and culinary excellence."
+    },
+    "story": {
+      "title": "Our Heritage",
+      "description1": "Founded in 1985 by Giuseppe Darius, our pizzeria began as a small family dream to bring authentic Italian flavors to our community. What started as a modest kitchen has grown into a beloved local institution, but our commitment to traditional recipes and family values remains unchanged.",
+      "description2": "Today, three generations of the Darius family continue to craft each pizza with the same passion and attention to detail that Giuseppe brought from his hometown in Naples, Italy.",
+      "traditionalRecipes": "Traditional Recipes",
+      "traditionalRecipesDesc": "Authentic Neapolitan techniques passed down through generations",
+      "freshIngredients": "Fresh Ingredients",
+      "freshIngredientsDesc": "Locally sourced produce and imported Italian specialties",
+      "familyOwnedBadge": "Family Owned Since 1985"
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide everything we do, from ingredient selection to customer service.",
+      "passion": {
+        "title": "Passion",
+        "description": "Every pizza is made with genuine love for the craft and respect for Italian tradition."
+      },
+      "community": {
+        "title": "Community",
+        "description": "We're proud to be part of our local community, serving neighbors and friends for decades."
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "We never compromise on quality, using only the finest ingredients and traditional methods."
+      }
+    },
+    "contact": {
+      "title": "Visit Us Today",
+      "subtitle": "We'd love to welcome you to our family restaurant and share our passion for authentic Italian pizza.",
+      "location": "Location",
+      "hours": "Hours",
+      "contact": "Contact",
+      "address": "123 Main Street<br />Downtown District<br />City, State 12345",
+      "schedule": "Mon-Thu: 11am-10pm<br />Fri-Sat: 11am-11pm<br />Sunday: 12pm-9pm",
+      "phone": "(555) 123-4567<br />info@dariuspizza.com<br />Reservations welcome"
+    },
+    "cta": {
+      "learnMore": "Learn More About Us",
+      "viewMenu": "View Our Menu"
+    },
+    "homeAbout": {
+      "title": "Our Story",
+      "description": "Born from a passion for authentic Italian cuisine, our pizzeria brings the true taste of Italy to your table. Every pizza is crafted with love, using traditional recipes passed down through generations.",
+      "familyOwned": "Family Owned",
+      "familyOwnedDesc": "Three generations of pizza-making tradition",
+      "authentic": "Authentic",
+      "authenticDesc": "Traditional Italian recipes and techniques",
+      "madeWithLove": "Made with Love",
+      "madeWithLoveDesc": "Every dish prepared with passion and care",
+      "contactUs": "Contact Us",
+      "since1985": "Since 1985"
+    }
   }
 }

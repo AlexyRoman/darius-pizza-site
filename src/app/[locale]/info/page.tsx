@@ -15,8 +15,10 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import ContactFormSection from '@/components/sections/ContactFormSection';
+import { useTranslations } from 'next-intl';
 
 export default function InfoPage() {
+  const t = useTranslations('aboutUs');
   return (
     <div className='min-h-screen bg-gradient-to-b from-background to-background-secondary'>
       {/* Hero Section */}
@@ -26,14 +28,12 @@ export default function InfoPage() {
             <div className='flex items-center justify-center gap-2 mb-6'>
               <Heart className='h-8 w-8 text-primary fill-primary' />
               <h1 className='text-4xl sm:text-5xl lg:text-6xl font-primary font-bold text-foreground'>
-                About Darius Pizza
+                {t('hero.title')}
               </h1>
               <Heart className='h-8 w-8 text-primary fill-primary' />
             </div>
             <p className='text-xl text-foreground-secondary font-secondary leading-relaxed max-w-3xl mx-auto'>
-              Discover the story behind our authentic Italian pizzeria, where
-              tradition meets passion and every pizza tells a tale of family
-              heritage and culinary excellence.
+              {t('hero.subtitle')}
             </p>
           </div>
         </div>
@@ -47,20 +47,13 @@ export default function InfoPage() {
               <div className='space-y-8'>
                 <div className='space-y-4'>
                   <h2 className='text-3xl sm:text-4xl font-primary font-bold text-foreground'>
-                    Our Heritage
+                    {t('story.title')}
                   </h2>
                   <p className='text-lg text-foreground-secondary font-secondary leading-relaxed'>
-                    Founded in 1985 by Giuseppe Darius, our pizzeria began as a
-                    small family dream to bring authentic Italian flavors to our
-                    community. What started as a modest kitchen has grown into a
-                    beloved local institution, but our commitment to traditional
-                    recipes and family values remains unchanged.
+                    {t('story.description1')}
                   </p>
                   <p className='text-lg text-foreground-secondary font-secondary leading-relaxed'>
-                    Today, three generations of the Darius family continue to
-                    craft each pizza with the same passion and attention to
-                    detail that Giuseppe brought from his hometown in Naples,
-                    Italy.
+                    {t('story.description2')}
                   </p>
                 </div>
 
@@ -70,12 +63,11 @@ export default function InfoPage() {
                       <div className='flex items-center gap-3 mb-3'>
                         <ChefHat className='h-6 w-6 text-primary' />
                         <h3 className='font-semibold text-foreground'>
-                          Traditional Recipes
+                          {t('story.traditionalRecipes')}
                         </h3>
                       </div>
                       <p className='text-sm text-foreground-secondary'>
-                        Authentic Neapolitan techniques passed down through
-                        generations
+                        {t('story.traditionalRecipesDesc')}
                       </p>
                     </CardContent>
                   </Card>
@@ -85,11 +77,11 @@ export default function InfoPage() {
                       <div className='flex items-center gap-3 mb-3'>
                         <Wheat className='h-6 w-6 text-primary' />
                         <h3 className='font-semibold text-foreground'>
-                          Fresh Ingredients
+                          {t('story.freshIngredients')}
                         </h3>
                       </div>
                       <p className='text-sm text-foreground-secondary'>
-                        Locally sourced produce and imported Italian specialties
+                        {t('story.freshIngredientsDesc')}
                       </p>
                     </CardContent>
                   </Card>
@@ -110,7 +102,7 @@ export default function InfoPage() {
                       <div className='absolute bottom-6 left-6'>
                         <Badge className='bg-background/90 backdrop-blur-sm border border-border/50 text-foreground'>
                           <Award className='h-4 w-4 mr-2 text-primary' />
-                          Family Owned Since 1985
+                          {t('story.familyOwnedBadge')}
                         </Badge>
                       </div>
                     </div>
@@ -128,11 +120,10 @@ export default function InfoPage() {
           <div className='max-w-6xl mx-auto'>
             <div className='text-center mb-16'>
               <h2 className='text-3xl sm:text-4xl font-primary font-bold text-foreground mb-4'>
-                Our Values
+                {t('values.title')}
               </h2>
               <p className='text-lg text-foreground-secondary font-secondary max-w-2xl mx-auto'>
-                The principles that guide everything we do, from ingredient
-                selection to customer service.
+                {t('values.subtitle')}
               </p>
             </div>
 
@@ -145,13 +136,12 @@ export default function InfoPage() {
                     </div>
                   </div>
                   <CardTitle className='text-xl font-bold text-foreground'>
-                    Passion
+                    {t('values.passion.title')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className='text-foreground-secondary'>
-                    Every pizza is made with genuine love for the craft and
-                    respect for Italian tradition.
+                    {t('values.passion.description')}
                   </p>
                 </CardContent>
               </Card>
@@ -164,13 +154,12 @@ export default function InfoPage() {
                     </div>
                   </div>
                   <CardTitle className='text-xl font-bold text-foreground'>
-                    Community
+                    {t('values.community.title')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className='text-foreground-secondary'>
-                    We{"'"}re proud to be part of our local community, serving
-                    neighbors and friends for decades.
+                    {t('values.community.description')}
                   </p>
                 </CardContent>
               </Card>
@@ -183,13 +172,12 @@ export default function InfoPage() {
                     </div>
                   </div>
                   <CardTitle className='text-xl font-bold text-foreground'>
-                    Quality
+                    {t('values.quality.title')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className='text-foreground-secondary'>
-                    We never compromise on quality, using only the finest
-                    ingredients and traditional methods.
+                    {t('values.quality.description')}
                   </p>
                 </CardContent>
               </Card>
@@ -204,11 +192,10 @@ export default function InfoPage() {
           <div className='max-w-4xl mx-auto'>
             <div className='text-center mb-12'>
               <h2 className='text-3xl sm:text-4xl font-primary font-bold text-foreground mb-4'>
-                Visit Us Today
+                {t('contact.title')}
               </h2>
               <p className='text-lg text-foreground-secondary font-secondary'>
-                We{"'"}d love to welcome you to our family restaurant and share
-                our passion for authentic Italian pizza.
+                {t('contact.subtitle')}
               </p>
             </div>
 
@@ -221,15 +208,12 @@ export default function InfoPage() {
                     </div>
                   </div>
                   <h3 className='font-semibold text-foreground mb-2'>
-                    Location
+                    {t('contact.location')}
                   </h3>
-                  <p className='text-sm text-foreground-secondary'>
-                    123 Main Street
-                    <br />
-                    Downtown District
-                    <br />
-                    City, State 12345
-                  </p>
+                  <p
+                    className='text-sm text-foreground-secondary'
+                    dangerouslySetInnerHTML={{ __html: t('contact.address') }}
+                  />
                 </CardContent>
               </Card>
 
@@ -240,14 +224,13 @@ export default function InfoPage() {
                       <Clock className='h-6 w-6 text-primary' />
                     </div>
                   </div>
-                  <h3 className='font-semibold text-foreground mb-2'>Hours</h3>
-                  <p className='text-sm text-foreground-secondary'>
-                    Mon-Thu: 11am-10pm
-                    <br />
-                    Fri-Sat: 11am-11pm
-                    <br />
-                    Sunday: 12pm-9pm
-                  </p>
+                  <h3 className='font-semibold text-foreground mb-2'>
+                    {t('contact.hours')}
+                  </h3>
+                  <p
+                    className='text-sm text-foreground-secondary'
+                    dangerouslySetInnerHTML={{ __html: t('contact.schedule') }}
+                  />
                 </CardContent>
               </Card>
 
@@ -259,15 +242,12 @@ export default function InfoPage() {
                     </div>
                   </div>
                   <h3 className='font-semibold text-foreground mb-2'>
-                    Contact
+                    {t('contact.contact')}
                   </h3>
-                  <p className='text-sm text-foreground-secondary'>
-                    (555) 123-4567
-                    <br />
-                    info@dariuspizza.com
-                    <br />
-                    Reservations welcome
-                  </p>
+                  <p
+                    className='text-sm text-foreground-secondary'
+                    dangerouslySetInnerHTML={{ __html: t('contact.phone') }}
+                  />
                 </CardContent>
               </Card>
             </div>

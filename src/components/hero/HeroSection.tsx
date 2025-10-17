@@ -244,7 +244,7 @@ export default function HeroSection() {
                   15+
                 </div>
                 <div className='text-sm text-foreground-secondary'>
-                  Years Experience
+                  {t('stats.yearsExperience')}
                 </div>
               </div>
               <div className='text-center lg:text-left'>
@@ -252,7 +252,7 @@ export default function HeroSection() {
                   50+
                 </div>
                 <div className='text-sm text-foreground-secondary'>
-                  Pizza Varieties
+                  {t('stats.pizzaVarieties')}
                 </div>
               </div>
               <div className='text-center lg:text-left'>
@@ -260,7 +260,7 @@ export default function HeroSection() {
                   1000+
                 </div>
                 <div className='text-sm text-foreground-secondary'>
-                  Happy Customers
+                  {t('stats.happyCustomers')}
                 </div>
               </div>
             </div>

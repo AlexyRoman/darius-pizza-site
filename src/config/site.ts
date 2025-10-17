@@ -1,7 +1,9 @@
+import { env } from '@/lib/env';
+
 export function getSiteTimeZone(): string {
-  return 'Europe/Paris';
+  return env.SITE_TIME_ZONE;
 }
 
 export function getSitePhone(): string {
-  return '+33123456789';
+  return env.SITE_PHONE;
 }

@@ -1,4 +1,7 @@
-import { getEnabledLocaleCodes, getDefaultLocale } from '@/config/locales-config';
+import {
+  getEnabledLocaleCodes,
+  getDefaultLocale,
+} from '@/config/locales-config';
 
 import type { Metadata } from 'next';
 
@@ -10,12 +13,15 @@ export type SeoMessages = {
     keywords?: string[];
     images?: string[];
   };
-  pages?: Record<string, {
-    title?: string;
-    description?: string;
-    keywords?: string[];
-    images?: string[];
-  }>;
+  pages?: Record<
+    string,
+    {
+      title?: string;
+      description?: string;
+      keywords?: string[];
+      images?: string[];
+    }
+  >;
 };
 
 export function buildLocalizedMetadata(args: {
@@ -29,7 +35,8 @@ export function buildLocalizedMetadata(args: {
   const siteName = messages.seo?.siteName || '';
   const page = messages.pages?.[pageKey] || {};
   const title = page.title || messages.seo?.defaultTitle || siteName;
-  const description = page.description || messages.seo?.defaultDescription || '';
+  const description =
+    page.description || messages.seo?.defaultDescription || '';
   const keywords = page.keywords || messages.seo?.keywords;
   const images = page.images || messages.seo?.images || [];
 
@@ -43,7 +50,8 @@ export function buildLocalizedMetadata(args: {
   } satisfies Metadata['alternates'];
 
   const rawAppUrl = process.env['NEXT_PUBLIC_APP_URL'];
-  const isValidAppUrl = typeof rawAppUrl === 'string' && /^https?:\/\/.+/.test(rawAppUrl);
+  const isValidAppUrl =
+    typeof rawAppUrl === 'string' && /^https?:\/\/.+/.test(rawAppUrl);
   const appUrl = isValidAppUrl
     ? rawAppUrl
     : process.env['NODE_ENV'] !== 'production'
@@ -88,5 +96,3 @@ export function buildLocalizedMetadata(args: {
     },
   } satisfies Metadata;
 }
-
-

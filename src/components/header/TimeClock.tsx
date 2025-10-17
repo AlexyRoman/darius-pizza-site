@@ -1,20 +1,37 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-function formatTime(date: Date, timeZone: string, locale: string) {
+function formatHourMinute(
+  date: Date,
+  timeZone: string,
+  locale: string
+): { hour: string; minute: string } {
   try {
-    return new Intl.DateTimeFormat(locale, {
+    const parts = new Intl.DateTimeFormat(locale, {
       hour: '2-digit',
       minute: '2-digit',
       hour12: false,
       timeZone,
-    }).format(date);
+    }).formatToParts(date);
+
+    const hourPart = parts.find(p => p.type === 'hour')?.value ?? '';
+    const minutePart = parts.find(p => p.type === 'minute')?.value ?? '';
+
+    const hour = hourPart.padStart(2, '0');
+    const minute = minutePart.padStart(2, '0');
+    return { hour, minute };
   } catch {
-    return new Intl.DateTimeFormat(locale, {
+    // Fallback without timezone if the above fails for some reason
+    const parts = new Intl.DateTimeFormat(locale, {
       hour: '2-digit',
       minute: '2-digit',
       hour12: false,
-    }).format(date);
+    }).formatToParts(date);
+    const hourPart = parts.find(p => p.type === 'hour')?.value ?? '';
+    const minutePart = parts.find(p => p.type === 'minute')?.value ?? '';
+    const hour = hourPart.padStart(2, '0');
+    const minute = minutePart.padStart(2, '0');
+    return { hour, minute };
   }
 }
 
@@ -26,21 +43,30 @@ export function TimeClock({
   locale: string;
 }) {
   const [now, setNow] = useState<Date | null>(null);
+  const [showColon, setShowColon] = useState<boolean>(true);
 
   useEffect(() => {
     setNow(new Date());
-    const id = setInterval(() => setNow(new Date()), 30_000);
-    return () => clearInterval(id);
+    const minuteTick = setInterval(() => setNow(new Date()), 30_000);
+    const colonTick = setInterval(() => setShowColon(v => !v), 1_000);
+    return () => {
+      clearInterval(minuteTick);
+      clearInterval(colonTick);
+    };
   }, []);
 
-  const display = now ? formatTime(now, timeZone, locale) : '--:--';
+  const { hour, minute } = now
+    ? formatHourMinute(now, timeZone, locale)
+    : { hour: '--', minute: '--' };
 
   return (
     <span
       data-testid='time-clock'
       className='text-sm text-muted-foreground tabular-nums'
     >
-      {display}
+      {hour}
+      <span className={showColon ? 'opacity-100' : 'opacity-0'}>:</span>
+      {minute}
     </span>
   );
 }

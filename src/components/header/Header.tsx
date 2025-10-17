@@ -44,9 +44,11 @@ export function Header({
       <header className='fixed inset-x-0 top-0 z-50 hidden md:block'>
         <div className='mx-auto max-w-5xl px-4'>
           <div className='flex h-16 items-center justify-between'>
-            <TimeClock timeZone={timeZone} locale={locale} />
+            <div className='rounded-full border border-white/10 ring-1 ring-border bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 px-3 py-1 shadow-sm'>
+              <TimeClock timeZone={timeZone} locale={locale} />
+            </div>
             <div className='flex items-center justify-center'>
-              <div className='flex items-center gap-1 rounded-full border border-white/10 bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 px-1.5 py-1 shadow-sm'>
+              <div className='flex items-center gap-1 rounded-full border border-white/10 ring-1 ring-border bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 px-1.5 py-1 shadow-sm'>
                 <nav className='flex items-center gap-1'>
                   {nav.map(item => (
                     <Link
@@ -79,7 +81,7 @@ export function Header({
             <Button
               asChild
               size='lg'
-              className='rounded-full border border-white/10 bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 px-6 hover:bg-background/30 active:bg-background/30 focus:bg-background/30 focus-visible:outline-none focus:outline-none focus:ring-0 select-none'
+              className='rounded-full border border-white/10 ring-1 ring-border bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 px-6 hover:bg-background/30 active:bg-background/30 focus:bg-background/30 focus-visible:outline-none focus:outline-none focus:ring-0 select-none'
             >
               <a href={`tel:${getSitePhone()}`} aria-label='Call'>
                 <span className='inline-flex items-center gap-2 text-foreground'>

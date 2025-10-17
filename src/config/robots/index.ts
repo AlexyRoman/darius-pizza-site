@@ -30,5 +30,3 @@ export const robotsConfig: RobotsConfig = {
 };
 
 export default robotsConfig;
-
-

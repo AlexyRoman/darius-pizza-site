@@ -9,5 +9,3 @@ export type RobotsConfig = {
   sitemap?: boolean;
   host?: boolean;
 };
-
-

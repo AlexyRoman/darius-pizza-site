@@ -18,6 +18,33 @@
       "direction": "ltr",
       "enabled": true,
       "fallback": "en"
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "nativeName": "Deutsch",
+      "flag": "🇩🇪",
+      "direction": "ltr",
+      "enabled": false,
+      "fallback": "en"
+    },
+    {
+      "code": "it",
+      "name": "Italian",
+      "nativeName": "Italiano",
+      "flag": "🇮🇹",
+      "direction": "ltr",
+      "enabled": false,
+      "fallback": "en"
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "nativeName": "Español",
+      "flag": "🇪🇸",
+      "direction": "ltr",
+      "enabled": false,
+      "fallback": "en"
     }
   ],
   "settings": {

@@ -6,8 +6,9 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 
 import {
-  getAvailableLocales,
+  getAllLocales,
   getEnabledLocaleCodes,
+  isLocaleEnabled,
 } from '@/config/locales-config';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import ReactCountryFlag from 'react-country-flag';
@@ -52,7 +53,7 @@ function FlagIcon({ code, size = 20 }: { code: string; size?: number }) {
 }
 
 export function LocaleToggle({ currentLocale }: { currentLocale: string }) {
-  const locales = getAvailableLocales();
+  const locales = getAllLocales();
   const router = useRouter();
   const pathname = usePathname();
   const enabled = React.useMemo<Set<string>>(
@@ -73,7 +74,8 @@ export function LocaleToggle({ currentLocale }: { currentLocale: string }) {
       if (segments.length > 0 && enabled.has(segments[0])) {
         segments.shift();
       }
-      const next = '/' + [code, ...segments].join('/');
+      const targetCode = isLocaleEnabled(code) ? code : 'en';
+      const next = '/' + [targetCode, ...segments].join('/');
       router.push(next || '/');
     }, 400)
   );

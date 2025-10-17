@@ -4,7 +4,8 @@ import { PAGES, PATHNAMES } from '@/config/pages';
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env['NEXT_PUBLIC_SITE_URL'] || 'http://localhost:3000';
+  const baseUrl =
+    process.env['NEXT_PUBLIC_SITE_URL'] || 'http://localhost:3000';
   const now = new Date().toISOString();
 
   const entries: MetadataRoute.Sitemap = [];
@@ -17,7 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({
       url: `${baseUrl}${path}`,
       lastModified: now,
-      changeFrequency: (page.sitemapChangeFrequency ?? 'daily') as MetadataRoute.Sitemap[number]['changeFrequency'],
+      changeFrequency: (page.sitemapChangeFrequency ??
+        'daily') as MetadataRoute.Sitemap[number]['changeFrequency'],
       priority: page.sitemapPriority ?? 0.8,
     });
   });
@@ -33,7 +35,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         entries.push({
           url: `${baseUrl}/${locale.code}${path === '/' ? '' : path}`,
           lastModified: now,
-          changeFrequency: (page.sitemapChangeFrequency ?? 'daily') as MetadataRoute.Sitemap[number]['changeFrequency'],
+          changeFrequency: (page.sitemapChangeFrequency ??
+            'daily') as MetadataRoute.Sitemap[number]['changeFrequency'],
           priority: (page.sitemapPriority ?? 0.9) as number,
         });
       });
@@ -41,5 +44,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return entries;
 }
-
-

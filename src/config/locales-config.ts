@@ -14,6 +14,10 @@ export const getAvailableLocales = (): Locale[] => {
   return config.locales.filter(locale => locale.enabled);
 };
 
+export const getAllLocales = (): Locale[] => {
+  return config.locales;
+};
+
 export const getEnabledLocaleCodes = (): LocaleCode[] => {
   return config.locales
     .filter(locale => locale.enabled)

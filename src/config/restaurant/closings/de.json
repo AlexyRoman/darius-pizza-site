@@ -1,0 +1,36 @@
+{
+  "scheduledClosings": [
+    {
+      "id": "current-closing",
+      "title": "Personalbesprechung",
+      "description": "Wir sind derzeit für eine wichtige Personalbesprechung geschlossen. Wir öffnen in 2 Stunden wieder.",
+      "date": null,
+      "startDate": "2025-10-17T14:00:00Z",
+      "endDate": "2025-10-17T22:00:00Z",
+      "isRecurring": false,
+      "isActive": true
+    },
+    {
+      "id": "future-closing",
+      "title": "Urlaubspause",
+      "description": "Wir nehmen eine wohlverdiente Urlaubspause, um Zeit mit unseren Familien zu verbringen.",
+      "date": null,
+      "startDate": "2025-12-24T00:00:00Z",
+      "endDate": "2025-12-26T23:59:59Z",
+      "isRecurring": false,
+      "isActive": true
+    }
+  ],
+  "emergencyClosings": [
+    {
+      "id": "weather",
+      "title": "Wetterwarnung",
+      "description": "Aufgrund von schweren Wetterbedingungen können wir eingeschränkte Öffnungszeiten oder Lieferdienst haben.",
+      "isActive": false,
+      "startDate": null,
+      "endDate": null,
+      "priority": 1
+    }
+  ],
+  "lastUpdated": "2024-01-15T10:00:00Z"
+}

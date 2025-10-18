@@ -1,0 +1,36 @@
+{
+  "scheduledClosings": [
+    {
+      "id": "christmas",
+      "title": "Noël",
+      "description": "Le restaurant sera fermé du 24 décembre au 25 décembre.",
+      "date": null,
+      "startDate": "2025-12-24T00:00:00Z",
+      "endDate": "2025-12-25T00:00:00Z",
+      "isRecurring": false,
+      "isActive": true
+    },
+    {
+      "id": "future-closing",
+      "title": "Vacances",
+      "description": "L'équipe du Darius Pizza prend des vacances en ce mois d'octobre pour passer du temps avec nos familles.",
+      "date": null,
+      "startDate": "2025-10-10T00:00:00Z",
+      "endDate": "2025-10-29T00:00:00Z",
+      "isRecurring": false,
+      "isActive": true
+    }
+  ],
+  "emergencyClosings": [
+    {
+      "id": "weather",
+      "title": "Alerte météo",
+      "description": "En raison de conditions météorologiques sévères, nous pourrions avoir des horaires limités ou des services de livraison réduits.",
+      "isActive": false,
+      "startDate": null,
+      "endDate": null,
+      "priority": 1
+    }
+  ],
+  "lastUpdated": "2024-01-15T10:00:00Z"
+}

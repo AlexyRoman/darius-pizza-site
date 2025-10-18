@@ -16,9 +16,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { useThemeContext } from '@/contexts/ThemeContext';
+import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/config/restaurant/hours.json';
-import messagesConfig from '@/config/restaurant/messages.json';
-import closingsConfig from '@/config/restaurant/closings.json';
+import { formatDate, formatDateTime } from '@/lib/date-utils';
 
 interface OpeningHours {
   [key: string]: {
@@ -29,36 +29,27 @@ interface OpeningHours {
   };
 }
 
-interface SpecialMessage {
-  id: string;
-  type: 'info' | 'success' | 'warning' | 'error';
-  title: string;
-  message: string;
-  isActive: boolean;
-  startDate: string;
-  endDate: string | null;
-  priority: number;
-}
-
-interface Closing {
-  id: string;
-  title: string;
-  description: string;
-  date: string | null;
-  startDate: string | null;
-  endDate: string | null;
-  isRecurring: boolean;
-  isActive: boolean;
-}
-
 export default function OpeningHoursSection() {
   const t = useTranslations('hours');
   const tHero = useTranslations('hero');
   const locale = useLocale();
-  const { theme, effectiveTheme } = useThemeContext();
+  const { effectiveTheme } = useThemeContext();
+
+  // Load restaurant configurations with locale support (except hours which uses original system)
+  const { data: messagesConfig, loading: messagesLoading } =
+    useRestaurantConfig('messages', locale);
+  const { data: closingsConfig, loading: closingsLoading } =
+    useRestaurantConfig('closings', locale);
+  const { data: contactConfig, loading: contactLoading } = useRestaurantConfig(
+    'contact',
+    locale
+  );
+
+  // Hours use the original system (not localized)
   const hours = hoursConfig.openingHours as OpeningHours;
-  const messages = messagesConfig.specialMessages as SpecialMessage[];
-  const closings = closingsConfig.scheduledClosings as Closing[];
+  const messages = messagesConfig?.specialMessages || [];
+  const closings = closingsConfig?.scheduledClosings || [];
+  const contact = contactConfig?.contact;
 
   // State to track if component is mounted (client-side)
   const [isMounted, setIsMounted] = useState(false);
@@ -82,6 +73,30 @@ export default function OpeningHoursSection() {
 
     return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
+
+  // Show loading state if any config is still loading
+  if (messagesLoading || closingsLoading || contactLoading) {
+    return (
+      <div className='flex items-center justify-center p-8'>
+        <div className='animate-spin rounded-full h-8 w-8 border-b-2 border-primary'></div>
+      </div>
+    );
+  }
+
+  // Show error state if any config failed to load
+  if (!messages || !closings || !contact) {
+    return (
+      <div className='flex items-center justify-center p-8'>
+        <Alert>
+          <AlertCircle className='h-4 w-4' />
+          <AlertTitle>Error</AlertTitle>
+          <AlertDescription>
+            Failed to load restaurant information. Please try again later.
+          </AlertDescription>
+        </Alert>
+      </div>
+    );
+  }
 
   // Get current day and time (only on client-side to avoid hydration mismatch)
   const now = isMounted ? new Date() : new Date('2024-01-01'); // Fallback date for SSR
@@ -215,7 +230,7 @@ export default function OpeningHoursSection() {
   };
 
   // Helper function to format dates consistently (avoiding hydration mismatch)
-  const formatDate = (
+  const formatDateLocal = (
     dateString: string,
     options: Intl.DateTimeFormatOptions = {}
   ) => {
@@ -223,34 +238,17 @@ export default function OpeningHoursSection() {
       // Return a placeholder during SSR to avoid hydration mismatch
       return 'Loading...';
     }
-
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      ...options,
-    });
+    return formatDate(dateString, locale, options);
   };
 
-  const formatDateTime = (
+  const formatDateTimeLocal = (
     dateString: string,
     options: Intl.DateTimeFormatOptions = {}
   ) => {
     if (!isMounted) {
       return 'Loading...';
     }
-
-    const date = new Date(dateString);
-    return date.toLocaleString('en-US', {
-      weekday: 'long',
-      month: 'short',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: '2-digit',
-      ...options,
-    });
+    return formatDateTime(dateString, locale, options);
   };
 
   return (
@@ -286,8 +284,8 @@ export default function OpeningHoursSection() {
                       <Clock className='h-4 w-4' />
                       <span>
                         {t('currentClosing.closedFromUntil', {
-                          from: formatDateTime(currentClosing.startDate),
-                          until: formatDateTime(currentClosing.endDate),
+                          from: formatDateTimeLocal(currentClosing.startDate),
+                          until: formatDateTimeLocal(currentClosing.endDate),
                         })}
                       </span>
                     </div>
@@ -375,7 +373,7 @@ export default function OpeningHoursSection() {
                       >
                         {dayHours.isOpen
                           ? `${formatTime(dayHours.open)} - ${formatTime(dayHours.close)}`
-                          : 'Closed'}
+                          : t('badge.closed')}
                       </span>
                     </div>
                   );
@@ -400,9 +398,10 @@ export default function OpeningHoursSection() {
                         {t('card.address')}
                       </p>
                       <p className='text-foreground-secondary'>
-                        123 Pizza Street
+                        {contact.address.street}
                         <br />
-                        Little Italy, NY 10013
+                        {contact.address.city}, {contact.address.state}{' '}
+                        {contact.address.zipCode}
                       </p>
                     </div>
                   </div>
@@ -415,10 +414,10 @@ export default function OpeningHoursSection() {
                       </p>
                       <p className='text-foreground-secondary'>
                         <a
-                          href='tel:+1234567890'
+                          href={`tel:${contact.phone.tel}`}
                           className='hover:text-primary transition-colors'
                         >
-                          (123) 456-7890
+                          {contact.phone.display}
                         </a>
                       </p>
                     </div>
@@ -447,14 +446,14 @@ export default function OpeningHoursSection() {
                     />
                   </div>
                   <p className='text-xs text-foreground-secondary mt-2 text-center'>
-                    Located in the heart of Little Italy
+                    {contact.address.description}
                   </p>
                 </div>
 
                 {/* Quick Actions */}
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
                   <a
-                    href='tel:+1234567890'
+                    href={`tel:${contact.phone.tel}`}
                     className='flex items-center justify-center gap-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors'
                   >
                     <Phone className='h-4 w-4' />
@@ -464,7 +463,7 @@ export default function OpeningHoursSection() {
                   {/* Directions Button - Native modal on mobile, direct link on desktop */}
                   {isMobile ? (
                     <a
-                      href='maps://maps.apple.com/?q=123+Pizza+Street,+Little+Italy,+NY+10013'
+                      href={contact.maps.appleMaps}
                       className='flex items-center justify-center gap-2 px-4 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/90 transition-colors'
                     >
                       <MapPin className='h-4 w-4' />
@@ -509,13 +508,13 @@ export default function OpeningHoursSection() {
                             {closing.startDate && closing.endDate ? (
                               // Date range display
                               <>
-                                {formatDate(closing.startDate)}
+                                {formatDateLocal(closing.startDate)}
                                 {' - '}
-                                {formatDate(closing.endDate)}
+                                {formatDateLocal(closing.endDate)}
                               </>
                             ) : (
                               // Single date display
-                              formatDate(closing.date!)
+                              formatDateLocal(closing.date!)
                             )}
                           </p>
                           <p className='text-sm text-foreground-secondary'>

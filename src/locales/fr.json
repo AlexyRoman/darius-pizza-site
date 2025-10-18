@@ -17,8 +17,8 @@
     },
     "brandSubtitle": "Pizza italienne authentique préparée avec amour, tradition et les meilleurs ingrédients. Découvrez le goût de l'Italie dans chaque bouchée.",
     "rightsReserved": "Darius Pizza. Tous droits réservés.",
-    "designedByPrefix": "Créé avec passion par",
-    "designedByName": "L'équipe Darius Pizza",
+    "designedByPrefix": "Créé par",
+    "designedByName": "WebOustaou - Alexy Roman",
     "legal": {
       "privacy": "Confidentialité",
       "terms": "Conditions",
@@ -72,10 +72,10 @@
     "subtitle": "Contactez-nous",
     "contactBanner": {
       "title": "Nous Contacter",
-      "description": "Vous avez une question, des commentaires ou souhaitez faire une réservation ? Nous aimerions avoir de vos nouvelles. Choisissez comment nous contacter.",
+      "description": "Vous avez une question ou des commentaires ? Nous aimerions avoir de vos nouvelles. Choisissez comment nous contacter.",
       "emailButton": "Envoyer un Email",
       "formButton": "Utiliser le Formulaire de Contact",
-      "quickInfo": "Email : info@dariuspizza.com • Téléphone : (123) 456-7890"
+      "quickInfo": "Email : contact@dariuspizza.fr • Téléphone : (+33) 04.94.64.05.11"
     }
   },
   "hero": {
@@ -86,15 +86,14 @@
       "closed": "Fermé"
     },
     "heading": {
-      "tasteThe": "Goûtez à",
-      "authentic": "l'Authentique",
-      "italianPizza": "Pizza Italienne"
+      "mainTitle": "Le Darius Pizza",
+      "subtitle": "Pizzeria à emporter à Cavalaire-sur-mer"
     },
-    "description": "Préparée avec amour selon des recettes italiennes traditionnelles, avec des ingrédients frais et un savoir-faire transmis de génération en génération.",
+    "description": "Le Darius Pizza est fier de vous présenter les traditions de l'Italie avec les saveurs de notre pays.",
     "features": {
       "freshDaily": "Préparée sous vos yeux",
       "localIngredients": "Ingrédients locaux",
-      "fiveStarRated": "Noté 5 étoiles"
+      "fiveStarRated": "Pizzeria la mieux notée à Cavalaire"
     },
     "cta": {
       "viewMenu": "Voir notre menu",
@@ -103,16 +102,16 @@
     "stats": {
       "yearsExperience": "Années d'expérience",
       "pizzaVarieties": "Variétés de pizzas",
-      "happyCustomers": "Clients satisfaits"
+      "happyCustomers": "Sur Tripadvisor et Google"
     },
     "stickers": {
-      "freshDaily": "Préparé du jour",
-      "handmade": "Fait main"
+      "freshDaily": "Préparée avec des ingrédients frais",
+      "handmade": "Pâte maturée faite maison"
     }
   },
   "hours": {
-    "visitTitle": "Venez nous voir",
-    "visitSubtitle": "Découvrez une pizza italienne authentique dans une ambiance chaleureuse et accueillante. Nous vous servons avec passion et tradition.",
+    "visitTitle": "Retrouvez-nous dans notre pizzeria",
+    "visitSubtitle": "Découvrez une pizzeria familiale et authentique dans une ambiance chaleureuse et accueillante. Nous vous servons avec passion et tradition.",
     "days": {
       "monday": "Lundi",
       "tuesday": "Mardi",
@@ -138,18 +137,19 @@
       "currentlyClosed": "Actuellement fermé",
       "openUntil": "Ouvert jusqu'à {time}",
       "openingAt": "Ouvre à {time}",
+      "closed": "Fermé",
       "temporarilyClosedNote": "Fermeture temporaire - voir la bannière ci-dessus",
       "checkHoursBelow": "Voir les horaires ci-dessous"
     },
     "upcomingClosings": "Fermetures à venir",
-    "importantUpdates": "Mises à jour importantes"
+    "importantUpdates": "Informations importantes"
   },
   "menuTeaser": {
     "featuredThisMonth": "À l'honneur ce mois-ci",
     "featuredBadge": "À l'honneur",
-    "description": "Découvrez la sélection du chef de pizzas emblématiques, préparées avec des ingrédients d'exception et la véritable tradition italienne.",
-    "hungryTitle": "Envie de plus ?",
-    "hungryDescription": "Parcourez notre menu complet avec plus de 40 pizzas, calzones et desserts délicieux.",
+    "description": "Découvrez la sélection du chef de pizzas emblématiques, préparées avec des ingrédients d'exception et notre pâte maturée faite maison.",
+    "hungryTitle": "Envie de plus de pizzas?",
+    "hungryDescription": "Parcourez notre menu complet avec plus de 45 pizzas, calzones et desserts délicieux.",
     "viewFullMenu": "Voir le menu complet"
   },
   "aboutUs": {
@@ -199,15 +199,15 @@
     },
     "homeAbout": {
       "title": "Notre Histoire",
-      "description": "Née d'une passion pour la cuisine italienne authentique, notre pizzeria apporte le vrai goût de l'Italie à votre table. Chaque pizza est préparée avec amour, en utilisant des recettes traditionnelles transmises de génération en génération.",
-      "familyOwned": "Famille Propriétaire",
-      "familyOwnedDesc": "Trois générations de tradition de fabrication de pizzas",
+      "description": "Née de l'héritage de la Boucherie Darius, notre établissment familial et traditionnel de 1936 à 2019, le Darius Pizza poursuit une tradition de produits de qualité et de savoir-faire culinaire. Chaque pizza est préparée avec amour, en utilisant des ingrédients de qualtié et des protocoles précis pour garantir une pâte de la plus haute qualité.",
+      "familyOwned": "Établissement Familial",
+      "familyOwnedDesc": "Trois générations de savoir-faire culinaire",
       "authentic": "Authentique",
-      "authenticDesc": "Recettes et techniques italiennes traditionnelles",
+      "authenticDesc": "Recettes et ingrédients locaux et spécialités italiennes importées",
       "madeWithLove": "Préparé avec Amour",
-      "madeWithLoveDesc": "Chaque plat préparé avec passion et soin",
+      "madeWithLoveDesc": "Chaque pizza préparé avec passion et soin",
       "contactUs": "Nous Contacter",
-      "since1985": "Depuis 1985"
+      "since1985": "Maison Darius depuis 1936"
     }
   },
   "cookieConsent": {

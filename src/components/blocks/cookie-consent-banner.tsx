@@ -43,17 +43,12 @@ const CookieConsentBanner = React.forwardRef<
     const [isOpen, setIsOpen] = React.useState(false);
     const [hide, setHide] = React.useState(false);
     const [showDetailedModal, setShowDetailedModal] = React.useState(false);
-    const [preferences, setPreferences] = React.useState<CookiePreferences>({
-      necessary: true, // Always true, can't be disabled
-      analytics: false,
-    });
 
     const handleAcceptAll = React.useCallback(() => {
       const allAccepted = {
         necessary: true,
         analytics: true,
       };
-      setPreferences(allAccepted);
       setIsOpen(false);
       saveCookieConsent('accepted', allAccepted);
       setTimeout(() => {
@@ -67,7 +62,6 @@ const CookieConsentBanner = React.forwardRef<
         necessary: true, // Still true as it's required
         analytics: false,
       };
-      setPreferences(declined);
       setIsOpen(false);
       saveCookieConsent('declined', declined);
       setTimeout(() => {
@@ -95,7 +89,6 @@ const CookieConsentBanner = React.forwardRef<
 
         // If preferences were saved, also close the banner
         if (prefs) {
-          setPreferences(prefs);
           setIsOpen(false);
           setTimeout(() => {
             setHide(true);
@@ -113,7 +106,7 @@ const CookieConsentBanner = React.forwardRef<
           // Try to load saved preferences
           const savedPrefs = getCookiePreferences();
           if (savedPrefs) {
-            setPreferences(savedPrefs);
+            // Preferences are loaded but not stored in state since they're not used
           }
           // Don't show banner if user has already given consent
           // User can access cookie preferences through footer/settings if needed

@@ -1,48 +1,48 @@
 {
   "openingHours": {
     "monday": {
-      "day": "Monday",
+      "day": "monday",
       "open": "11:00",
       "close": "22:00",
-      "isOpen": true
+      "isOpen": false
     },
     "tuesday": {
-      "day": "Tuesday",
-      "open": "11:00",
+      "day": "tuesday",
+      "open": "18:00",
       "close": "22:00",
       "isOpen": true
     },
     "wednesday": {
-      "day": "Wednesday",
-      "open": "11:00",
+      "day": "wednesday",
+      "open": "18:00",
       "close": "22:00",
       "isOpen": true
     },
     "thursday": {
-      "day": "Thursday",
-      "open": "11:00",
+      "day": "thursday",
+      "open": "18:00",
       "close": "22:00",
       "isOpen": true
     },
     "friday": {
-      "day": "Friday",
-      "open": "11:00",
-      "close": "23:00",
+      "day": "friday",
+      "open": "18:00",
+      "close": "22:00",
       "isOpen": true
     },
     "saturday": {
-      "day": "Saturday",
-      "open": "12:00",
-      "close": "23:00",
+      "day": "saturday",
+      "open": "18:00",
+      "close": "22:00",
       "isOpen": true
     },
     "sunday": {
-      "day": "Sunday",
-      "open": "12:00",
-      "close": "21:00",
+      "day": "sunday",
+      "open": "18:00",
+      "close": "22:00",
       "isOpen": true
     }
   },
-  "timezone": "America/New_York",
-  "lastUpdated": "2024-01-15T10:00:00Z"
+  "timezone": "Europe/Paris",
+  "lastUpdated": "2025-18-10T00:00:00Z"
 }

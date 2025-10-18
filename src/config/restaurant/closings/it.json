@@ -1,0 +1,36 @@
+{
+  "scheduledClosings": [
+    {
+      "id": "current-closing",
+      "title": "Riunione del personale",
+      "description": "Siamo attualmente chiusi per un'importante riunione del personale. Riapriremo tra 2 ore.",
+      "date": null,
+      "startDate": "2025-10-17T14:00:00Z",
+      "endDate": "2025-10-17T22:00:00Z",
+      "isRecurring": false,
+      "isActive": true
+    },
+    {
+      "id": "future-closing",
+      "title": "Pausa vacanze",
+      "description": "Prenderemo una meritata pausa vacanze per trascorrere del tempo con le nostre famiglie.",
+      "date": null,
+      "startDate": "2025-12-24T00:00:00Z",
+      "endDate": "2025-12-26T23:59:59Z",
+      "isRecurring": false,
+      "isActive": true
+    }
+  ],
+  "emergencyClosings": [
+    {
+      "id": "weather",
+      "title": "Avviso meteo",
+      "description": "A causa di condizioni meteorologiche severe, potremmo avere orari limitati o servizio di consegna ridotto.",
+      "isActive": false,
+      "startDate": null,
+      "endDate": null,
+      "priority": 1
+    }
+  ],
+  "lastUpdated": "2024-01-15T10:00:00Z"
+}

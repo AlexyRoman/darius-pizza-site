@@ -6,28 +6,42 @@ import { Star, Utensils, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import starredPizzasConfig from '@/config/restaurant/starred-pizzas.json';
+import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import menuEn from '@/content/menu/menu.en.json';
 import menuFr from '@/content/menu/menu.fr.json';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { formatCurrency } from '@/config/site';
 
-interface StarredPizza {
-  id: string;
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-  category: string;
-  isStarred: boolean;
-  starReason: string;
-}
-
 export default function MenuTeaserSection() {
   const t = useTranslations('menuTeaser');
   const locale = useLocale();
-  const starredPizzas = starredPizzasConfig.starredPizzas as StarredPizza[];
+
+  // Load starred pizzas configuration with locale support
+  const { data: starredPizzasConfig, loading: starredPizzasLoading } =
+    useRestaurantConfig('starred-pizzas', locale);
+  const starredPizzas = starredPizzasConfig?.starredPizzas || [];
+
+  // Show loading state if config is still loading
+  if (starredPizzasLoading) {
+    return (
+      <div className='flex items-center justify-center p-8'>
+        <div className='animate-spin rounded-full h-8 w-8 border-b-2 border-primary'></div>
+      </div>
+    );
+  }
+
+  // Show error state if config failed to load
+  if (!starredPizzas) {
+    return (
+      <div className='flex items-center justify-center p-8'>
+        <div className='text-center'>
+          <h2 className='text-xl font-bold mb-4'>Error</h2>
+          <p>Failed to load menu information. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
 
   type MenuItem = { id: string; title: string; description: string };
   const menuData: MenuItem[] =

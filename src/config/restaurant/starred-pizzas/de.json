@@ -1,0 +1,36 @@
+{
+  "starredPizzas": [
+    {
+      "id": "product-524183493",
+      "title": "Königin",
+      "description": "Tomatensauce, Mozzarella Fior di Latte, Schinken, Frische Champignons, Oliven",
+      "price": 10.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/2035113296/db6171e3b9625425cd0530881276db20_lg.jpeg",
+      "category": "Klassiker",
+      "isStarred": true,
+      "starReason": "Klassische französische Pizza - ein zeitloser Favorit"
+    },
+    {
+      "id": "product-134505823",
+      "title": "The Darius",
+      "description": "Tomatensauce, Mozzarella, Italienische Coppa, Kirschtomaten, Stracciatella di Burrata, Rucola, Parmesan, Balsamico-Essig",
+      "price": 17.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/1354298693/2280bc6f41f2d0f51ab7484630a82dcd_lg.jpg",
+      "category": "Signature Pizzas",
+      "isStarred": true,
+      "starReason": "Unsere Signature-Kreation - eine perfekte Mischung italienischer Aromen"
+    },
+    {
+      "id": "product-359764159",
+      "title": "5 Käse",
+      "description": "Tomatensauce, Mozzarella Fior di Latte, Emmentaler, Ziegenkäse, Blauschimmelkäse, Oliven",
+      "price": 12.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/2107908261/0e27e596bd3bb2fe1cef6f62ded2e02e_lg.jpg",
+      "category": "Käse-Pizzas",
+      "isStarred": true,
+      "starReason": "Der Traum eines Käseliebhabers - fünf Premium-Käsesorten"
+    }
+  ],
+  "lastUpdated": "2024-01-15T10:00:00Z",
+  "month": "Januar 2024"
+}

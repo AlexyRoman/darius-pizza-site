@@ -25,66 +25,82 @@ export default function AboutUsSection() {
                     {tHome('title')}
                   </h2>
                 </div>
-                <p className='text-lg text-foreground-secondary font-secondary leading-relaxed'>
-                  {tHome('description')}
-                </p>
+                <div className='space-y-4'>
+                  <p className='text-lg text-foreground-secondary font-secondary leading-relaxed'>
+                    {tHome('description')}
+                  </p>
+                  <div className='flex items-center justify-center lg:justify-start gap-3 p-4 bg-primary/5 rounded-lg border border-primary/20'>
+                    <Heart className='h-5 w-5 text-primary fill-primary' />
+                    <p className='text-sm font-medium text-primary'>
+                      {tHome('madeWithLoveDesc')}
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Features Grid */}
-              <div className='grid grid-cols-1 sm:grid-cols-3 gap-6'>
-                <div className='text-center lg:text-left'>
-                  <div className='flex items-center justify-center lg:justify-start gap-2 mb-2'>
-                    <Users className='h-5 w-5 text-primary' />
-                    <h3 className='font-semibold text-foreground'>
-                      {tHome('familyOwned')}
-                    </h3>
-                  </div>
-                  <p className='text-sm text-foreground-secondary'>
-                    {tHome('familyOwnedDesc')}
-                  </p>
-                </div>
+              <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+                {/* Family Owned Card */}
+                <Card className='bg-background-elevated border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1'>
+                  <CardContent className='p-6'>
+                    <div className='flex flex-col items-center text-center space-y-4'>
+                      <div className='p-3 bg-primary/10 rounded-full'>
+                        <Users className='h-6 w-6 text-primary' />
+                      </div>
+                      <h3 className='text-lg font-semibold text-foreground'>
+                        {tHome('familyOwned')}
+                      </h3>
+                      <p className='text-sm text-foreground-secondary leading-relaxed'>
+                        {tHome('familyOwnedDesc')}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
 
-                <div className='text-center lg:text-left'>
-                  <div className='flex items-center justify-center lg:justify-start gap-2 mb-2'>
-                    <Award className='h-5 w-5 text-primary' />
-                    <h3 className='font-semibold text-foreground'>
-                      {tHome('authentic')}
-                    </h3>
-                  </div>
-                  <p className='text-sm text-foreground-secondary'>
-                    {tHome('authenticDesc')}
-                  </p>
-                </div>
-
-                <div className='text-center lg:text-left'>
-                  <div className='flex items-center justify-center lg:justify-start gap-2 mb-2'>
-                    <Heart className='h-5 w-5 text-primary fill-primary' />
-                    <h3 className='font-semibold text-foreground'>
-                      {tHome('madeWithLove')}
-                    </h3>
-                  </div>
-                  <p className='text-sm text-foreground-secondary'>
-                    {tHome('madeWithLoveDesc')}
-                  </p>
-                </div>
+                {/* Authentic Card */}
+                <Card className='bg-background-elevated border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1'>
+                  <CardContent className='p-6'>
+                    <div className='flex flex-col items-center text-center space-y-4'>
+                      <div className='p-3 bg-primary/10 rounded-full'>
+                        <Award className='h-6 w-6 text-primary' />
+                      </div>
+                      <h3 className='text-lg font-semibold text-foreground'>
+                        {tHome('authentic')}
+                      </h3>
+                      <p className='text-sm text-foreground-secondary leading-relaxed'>
+                        {tHome('authenticDesc')}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
 
               {/* Call to Action */}
-              <div className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start'>
+              <div className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6'>
                 <Button
                   asChild
                   size='lg'
-                  className='bg-primary hover:bg-primary/90 text-primary-foreground'
+                  className='bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300'
                 >
                   <Link href='/info#contact'>
                     {tHome('contactUs')}
                     <ArrowRight className='ml-2 h-4 w-4' />
                   </Link>
                 </Button>
-                <Button asChild variant='outline' size='lg'>
+                <Button
+                  asChild
+                  variant='outline'
+                  size='lg'
+                  className='border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300'
+                >
                   <Link href='/info'>{t('cta.learnMore')}</Link>
                 </Button>
-                <Button asChild variant='outline' size='lg'>
+                <Button
+                  asChild
+                  variant='outline'
+                  size='lg'
+                  className='border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300'
+                >
                   <Link href='/menu'>{t('cta.viewMenu')}</Link>
                 </Button>
               </div>
@@ -96,7 +112,7 @@ export default function AboutUsSection() {
                 <CardContent className='p-0'>
                   <div className='relative h-96 lg:h-[500px] overflow-hidden'>
                     <img
-                      src='https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
+                      src='/IMG_9209.jpeg'
                       alt='Traditional Italian pizza kitchen with chef preparing authentic pizza'
                       className='w-full h-full object-cover'
                     />

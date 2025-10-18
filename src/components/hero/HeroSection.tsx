@@ -2,13 +2,13 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Star, Clock, MapPin } from 'lucide-react';
+import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/config/restaurant/hours.json';
-import closingsConfig from '@/config/restaurant/closings.json';
 import { useThemeContext } from '@/contexts/ThemeContext';
 
 interface OpeningHours {
@@ -20,21 +20,18 @@ interface OpeningHours {
   };
 }
 
-interface Closing {
-  id: string;
-  title: string;
-  description: string;
-  startDate: string;
-  endDate: string;
-  isRecurring: boolean;
-  isActive: boolean;
-}
-
 export default function HeroSection() {
   const t = useTranslations('hero');
-  const { theme, effectiveTheme, isThemeLoaded } = useThemeContext();
+  const locale = useLocale();
+  const {} = useThemeContext();
+
+  // Load closings configuration with locale support (hours use original system)
+  const { data: closingsConfig, loading: closingsLoading } =
+    useRestaurantConfig('closings');
+
+  // Hours use the original system (not localized)
   const hours = hoursConfig.openingHours as OpeningHours;
-  const closings = closingsConfig.scheduledClosings as Closing[];
+  const closings = closingsConfig?.scheduledClosings || [];
 
   // State to track if component is mounted (client-side)
   const [isMounted, setIsMounted] = useState(false);
@@ -43,10 +40,31 @@ export default function HeroSection() {
     setIsMounted(true);
   }, []);
 
+  // Show loading state if config is still loading
+  if (closingsLoading) {
+    return (
+      <div className='flex items-center justify-center p-8'>
+        <div className='animate-spin rounded-full h-8 w-8 border-b-2 border-primary'></div>
+      </div>
+    );
+  }
+
+  // Show error state if config failed to load
+  if (!closings) {
+    return (
+      <div className='flex items-center justify-center p-8'>
+        <div className='text-center'>
+          <h1 className='text-2xl font-bold mb-4'>Error</h1>
+          <p>Failed to load restaurant information. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
+
   // Get current day and time (only on client-side to avoid hydration mismatch)
   const now = isMounted ? new Date() : new Date('2024-01-01'); // Fallback date for SSR
   const currentDayName = isMounted
-    ? now.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase()
+    ? now.toLocaleDateString(locale, { weekday: 'long' }).toLowerCase()
     : 'monday';
   const currentTime = isMounted ? now.toTimeString().slice(0, 5) : '00:00'; // HH:MM format
 
@@ -199,16 +217,11 @@ export default function HeroSection() {
             {/* Main Heading */}
             <div className='space-y-4'>
               <h1 className='text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-primary font-bold tracking-tight text-foreground leading-tight'>
-                {t('heading.tasteThe')}{' '}
-                <span className='relative'>
-                  <span className='relative z-10'>
-                    {t('heading.authentic')}
-                  </span>
-                  <div className='absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full -z-10' />
-                </span>
-                <br />
-                {t('heading.italianPizza')}
+                {t('heading.mainTitle')}
               </h1>
+              <h2 className='text-xl sm:text-2xl lg:text-3xl font-primary font-semibold text-foreground-secondary leading-relaxed'>
+                {t('heading.subtitle')}
+              </h2>
               <p className='text-lg sm:text-xl text-foreground-secondary font-secondary leading-relaxed max-w-2xl mx-auto lg:mx-0'>
                 {t('description')}
               </p>
@@ -216,16 +229,16 @@ export default function HeroSection() {
 
             {/* Features */}
             <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm'>
-              <div className='flex items-center gap-2 text-foreground-secondary'>
-                <Clock className='w-4 h-4 text-primary' />
+              <div className='flex items-start gap-2 text-foreground-secondary'>
+                <Clock className='w-4 h-4 text-primary mt-0.5 flex-shrink-0' />
                 <span>{t('features.freshDaily')}</span>
               </div>
-              <div className='flex items-center gap-2 text-foreground-secondary'>
-                <MapPin className='w-4 h-4 text-primary' />
+              <div className='flex items-start gap-2 text-foreground-secondary'>
+                <MapPin className='w-4 h-4 text-primary mt-0.5 flex-shrink-0' />
                 <span>{t('features.localIngredients')}</span>
               </div>
-              <div className='flex items-center gap-2 text-foreground-secondary'>
-                <Star className='w-4 h-4 text-primary' />
+              <div className='flex items-start gap-2 text-foreground-secondary'>
+                <Star className='w-4 h-4 text-primary mt-0.5 flex-shrink-0' />
                 <span>{t('features.fiveStarRated')}</span>
               </div>
             </div>
@@ -261,7 +274,7 @@ export default function HeroSection() {
             <div className='grid grid-cols-3 gap-8 pt-8 border-t border-border/50'>
               <div className='text-center lg:text-left'>
                 <div className='text-2xl font-bold text-primary font-primary'>
-                  15+
+                  80+
                 </div>
                 <div className='text-sm text-foreground-secondary'>
                   {t('stats.yearsExperience')}
@@ -277,7 +290,7 @@ export default function HeroSection() {
               </div>
               <div className='text-center lg:text-left'>
                 <div className='text-2xl font-bold text-primary font-primary'>
-                  1000+
+                  4.9 & 4.7
                 </div>
                 <div className='text-sm text-foreground-secondary'>
                   {t('stats.happyCustomers')}
@@ -298,7 +311,7 @@ export default function HeroSection() {
               <div className='relative bg-background-elevated rounded-2xl p-8 shadow-2xl border border-border/50 group'>
                 <div className='relative aspect-square rounded-xl overflow-hidden'>
                   <Image
-                    src='/pizza-hero.webp'
+                    src='/IMG_3435.JPG'
                     alt='Authentic Italian Pizza'
                     fill
                     className='object-cover group-hover:scale-105 transition-transform duration-500 rounded-xl'
@@ -320,7 +333,7 @@ export default function HeroSection() {
                 <div className='flex items-center gap-2'>
                   <Star className='w-4 h-4 text-primary fill-primary' />
                   <span className='text-sm font-semibold text-foreground'>
-                    4.8/5
+                    4.9/5
                   </span>
                 </div>
               </div>

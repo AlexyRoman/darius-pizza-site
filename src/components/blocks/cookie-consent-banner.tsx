@@ -145,13 +145,14 @@ const CookieConsentBanner = React.forwardRef<
           ref={ref}
           className={cn(
             'fixed z-50 transition-all duration-700',
-            // Bottom positioning with extra margin on mobile for navbar/settings/radial
-            'bottom-32 left-4 right-4 sm:bottom-4',
+            // Bottom positioning with consistent margins on both sides
+            'bottom-32 left-4 right-4 sm:bottom-4 sm:right-auto',
             // Animation: slide from bottom on all devices
             !isOpen
               ? 'translate-y-full opacity-0'
               : 'translate-y-0 opacity-100',
-            'w-auto max-w-full'
+            // Responsive width: constrained on mobile, fit content on desktop
+            'w-auto max-w-[calc(100vw-2rem)] sm:w-fit sm:min-w-80 sm:max-w-md'
           )}
         >
           <Card className='shadow-lg'>
@@ -169,7 +170,7 @@ const CookieConsentBanner = React.forwardRef<
                 onClick={handleDeclineAll}
                 variant='outline'
                 size='sm'
-                className='w-full sm:flex-1'
+                className='w-full sm:w-auto sm:flex-shrink-0'
               >
                 {t('buttons.declineAll')}
               </Button>
@@ -177,7 +178,7 @@ const CookieConsentBanner = React.forwardRef<
                 onClick={handleCustomize}
                 variant='secondary'
                 size='sm'
-                className='w-full sm:flex-1'
+                className='w-full sm:w-auto sm:flex-shrink-0'
               >
                 <Settings className='h-3 w-3 mr-1' />
                 {t('buttons.customize')}
@@ -185,7 +186,7 @@ const CookieConsentBanner = React.forwardRef<
               <Button
                 onClick={handleAcceptAll}
                 size='sm'
-                className='w-full sm:flex-1'
+                className='w-full sm:w-auto sm:flex-shrink-0'
               >
                 {t('buttons.acceptAll')}
               </Button>

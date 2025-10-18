@@ -2,12 +2,51 @@
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Cog, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import ThemeToggle from '@/components/header/ThemeToggle';
 import LocaleToggle from '@/components/header/LocaleToggle';
 import { withDebounce } from '@/lib/pacer';
+import Image from 'next/image';
+import ReactCountryFlag from 'react-country-flag';
 
 const RADIUS = 48;
+
+function codeToCountry(code: string): string {
+  switch (code) {
+    case 'en':
+      return 'EN-CUSTOM';
+    case 'fr':
+      return 'FR';
+    default:
+      return code.toUpperCase();
+  }
+}
+
+function FlagIcon({ code, size = 20 }: { code: string; size?: number }) {
+  if (code === 'EN-CUSTOM') {
+    return (
+      <Image
+        src={'/flags/en.svg'}
+        width={size}
+        height={Math.round((size * 3) / 4)}
+        alt='English'
+        className='block rounded-full overflow-hidden'
+        priority={false}
+      />
+    );
+  }
+  return (
+    <ReactCountryFlag
+      svg
+      countryCode={code}
+      style={{
+        width: size,
+        height: Math.round((size * 3) / 4),
+        borderRadius: 999,
+      }}
+    />
+  );
+}
 
 export function RadialSettings({ currentLocale }: { currentLocale: string }) {
   const [isOpen, _setIsOpen] = React.useState(false);
@@ -64,7 +103,7 @@ export function RadialSettings({ currentLocale }: { currentLocale: string }) {
         className='relative z-50 rounded-full border border-white/10 ring-1 ring-border bg-background/40 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background/40 hover:bg-background/40 active:bg-background/40 focus:bg-background/40 focus-visible:outline-none focus:outline-none focus:ring-0'
         aria-label='Settings'
       >
-        {isOpen ? <X className='h-5 w-5' /> : <Cog className='h-5 w-5' />}
+        {isOpen ? <X className='h-5 w-5' /> : <FlagIcon code={codeToCountry(currentLocale)} size={20} />}
       </Button>
     </div>
   );

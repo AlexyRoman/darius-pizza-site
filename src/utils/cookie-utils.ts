@@ -88,3 +88,4 @@ export const clearCookieConsent = (): void => {
   document.cookie =
     'cookiePreferences=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
 };
+

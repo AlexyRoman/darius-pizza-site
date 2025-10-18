@@ -56,17 +56,54 @@ export function AllergenLegend() {
           <Info className='size-5' />
         </Button>
       </PopoverTrigger>
-      <PopoverContent align='end' sideOffset={10} className='w-72 p-3'>
-        <ul className='max-h-56 overflow-auto pr-1 space-y-2'>
-          {items.map(({ key, Icon }) => (
-            <li key={key} className='flex items-center gap-2 text-sm'>
-              <span className='flex size-6 items-center justify-center rounded-full border border-orange-200 bg-orange-100 text-orange-600'>
-                <Icon className='size-3.5' />
-              </span>
-              <span className='text-foreground truncate'>{t(key)}</span>
-            </li>
-          ))}
-        </ul>
+      <PopoverContent
+        align='end'
+        sideOffset={10}
+        className='w-72 p-3 sm:w-72 md:w-72'
+        side='bottom'
+        avoidCollisions={false}
+        collisionPadding={0}
+        sticky='always'
+        onEscapeKeyDown={e => e.preventDefault()}
+        onPointerDown={e => e.preventDefault()}
+        onPointerUp={e => e.preventDefault()}
+        onClick={e => e.preventDefault()}
+        onTouchStart={e => e.preventDefault()}
+        onTouchEnd={e => e.preventDefault()}
+        onTouchMove={e => e.preventDefault()}
+        style={{
+          transform: 'none !important',
+          transition: 'none !important',
+          animation: 'none !important',
+          pointerEvents: 'none',
+          userSelect: 'none',
+          touchAction: 'none',
+          WebkitTouchCallout: 'none',
+          WebkitUserSelect: 'none',
+          WebkitTapHighlightColor: 'transparent',
+        }}
+      >
+        <div
+          style={{
+            pointerEvents: 'none',
+            userSelect: 'none',
+            touchAction: 'none',
+            WebkitTouchCallout: 'none',
+            WebkitUserSelect: 'none',
+            WebkitTapHighlightColor: 'transparent',
+          }}
+        >
+          <ul className='space-y-2 pr-1 sm:max-h-56 sm:overflow-auto md:max-h-56 md:overflow-auto'>
+            {items.map(({ key, Icon }) => (
+              <li key={key} className='flex items-center gap-2 text-sm'>
+                <span className='flex size-6 items-center justify-center rounded-full border border-orange-200 bg-orange-100 text-orange-600'>
+                  <Icon className='size-3.5' />
+                </span>
+                <span className='text-foreground truncate'>{t(key)}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </PopoverContent>
     </Popover>
   );

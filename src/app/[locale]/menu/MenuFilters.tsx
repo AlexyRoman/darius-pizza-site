@@ -64,63 +64,92 @@ export default function MenuFilters(props: MenuFiltersProps) {
   return (
     <div className='flex w-full items-center gap-2'>
       <div className='flex items-center gap-2 min-w-0 w-full sm:w-auto'>
-        <Popover open={open} onOpenChange={setOpen}>
-          <PopoverTrigger asChild>
-            <Button
-              variant='outline'
-              role='combobox'
-              aria-expanded={open}
-              size='sm'
-              className='justify-between min-w-0 shrink-0 w-48 md:w-64 overflow-hidden text-ellipsis whitespace-nowrap'
-            >
-              <span className='truncate'>
-                {value.category ?? t('allCategories')}
-              </span>
-              <ChevronsUpDownIcon className='ml-2 size-4 opacity-50' />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className='p-0 min-w-56' align='start'>
-            <Command>
-              <CommandInput
-                placeholder={t('searchCategories')}
-                className='h-10'
-                onValueChange={setQuery as unknown as (v: string) => void}
-              />
-              <CommandList className='max-h-48 overflow-auto'>
-                <CommandEmpty>{t('noCategoryFound')}</CommandEmpty>
-                <CommandGroup>
-                  <CommandItem
-                    value='__all__'
-                    onSelect={() => setCategory(null)}
-                  >
-                    {t('allCategories')}
-                    <CheckIcon
-                      className={cn(
-                        'ml-auto',
-                        !value.category ? 'opacity-100' : 'opacity-0'
-                      )}
-                    />
-                  </CommandItem>
-                  {categories.map(cat => (
+        {/* Mobile: Pure HTML Select */}
+        <div className='sm:hidden w-full'>
+          <select
+            value={value.category || '__all__'}
+            onChange={e =>
+              setCategory(e.target.value === '__all__' ? null : e.target.value)
+            }
+            className='w-full h-10 px-3 py-2 text-sm border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent appearance-none cursor-pointer'
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e")`,
+              backgroundPosition: 'right 0.5rem center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '1.5em 1.5em',
+              paddingRight: '2.5rem',
+            }}
+          >
+            <option value='__all__'>{t('allCategories')}</option>
+            {categories.map(cat => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Desktop: Popover with Search */}
+        <div className='hidden sm:flex items-center gap-2'>
+          <Popover open={open} onOpenChange={setOpen}>
+            <PopoverTrigger asChild>
+              <Button
+                variant='outline'
+                role='combobox'
+                aria-expanded={open}
+                size='sm'
+                className='justify-between min-w-0 shrink-0 w-48 md:w-64 overflow-hidden text-ellipsis whitespace-nowrap'
+              >
+                <span className='truncate'>
+                  {value.category ?? t('allCategories')}
+                </span>
+                <ChevronsUpDownIcon className='ml-2 size-4 opacity-50' />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className='p-0 min-w-56' align='start'>
+              <Command>
+                <CommandInput
+                  placeholder={t('searchCategories')}
+                  className='h-10'
+                  onValueChange={setQuery as unknown as (v: string) => void}
+                />
+                <CommandList className='max-h-48 overflow-auto'>
+                  <CommandEmpty>{t('noCategoryFound')}</CommandEmpty>
+                  <CommandGroup>
                     <CommandItem
-                      key={cat}
-                      value={cat}
-                      onSelect={(current: string) => setCategory(current)}
+                      value='__all__'
+                      onSelect={() => setCategory(null)}
                     >
-                      {cat}
+                      {t('allCategories')}
                       <CheckIcon
                         className={cn(
                           'ml-auto',
-                          value.category === cat ? 'opacity-100' : 'opacity-0'
+                          !value.category ? 'opacity-100' : 'opacity-0'
                         )}
                       />
                     </CommandItem>
-                  ))}
-                </CommandGroup>
-              </CommandList>
-            </Command>
-          </PopoverContent>
-        </Popover>
+                    {categories.map(cat => (
+                      <CommandItem
+                        key={cat}
+                        value={cat}
+                        onSelect={(current: string) => setCategory(current)}
+                      >
+                        {cat}
+                        <CheckIcon
+                          className={cn(
+                            'ml-auto',
+                            value.category === cat ? 'opacity-100' : 'opacity-0'
+                          )}
+                        />
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </PopoverContent>
+          </Popover>
+        </div>
+
         <Button
           variant='ghost'
           size='sm'

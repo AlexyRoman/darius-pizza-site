@@ -11,16 +11,6 @@
       "isActive": true
     },
     {
-      "id": "very-soon-closing",
-      "title": "Very Soon - Equipment Maintenance",
-      "description": "We'll be closed tomorrow for essential equipment maintenance and deep cleaning.",
-      "date": null,
-      "startDate": "2025-10-18T00:00:00Z",
-      "endDate": "2025-10-18T23:59:59Z",
-      "isRecurring": false,
-      "isActive": true
-    },
-    {
       "id": "upcoming-closing",
       "title": "Upcoming - Kitchen Renovation",
       "description": "We're renovating our kitchen to bring you an even better dining experience! We'll be closed during this period but will reopen with exciting new features.",

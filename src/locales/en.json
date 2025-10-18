@@ -209,5 +209,32 @@
       "contactUs": "Contact Us",
       "since1985": "Since 1985"
     }
+  },
+  "cookieConsent": {
+    "title": "Cookie Preferences",
+    "description": "We use cookies to enhance your experience and analyze site usage. You can customize your preferences below.",
+    "intro": "We use different types of cookies to provide and improve our services. Choose your preferences:",
+    "customizeIntro": "Customize your cookie preferences. You can enable or disable different types of cookies.",
+    "cookies": {
+      "necessary": {
+        "title": "Necessary Cookies",
+        "description": "Essential for website functionality",
+        "detailedDescription": "Essential for website functionality, security, and basic features. These cannot be disabled.",
+        "status": "Always active"
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "description": "Help us understand how visitors interact with our website",
+        "detailedDescription": "Google Analytics and similar tools to understand website usage patterns."
+      }
+    },
+    "buttons": {
+      "declineAll": "Decline All",
+      "customize": "Customize",
+      "acceptAll": "Accept All",
+      "back": "Back",
+      "savePreferences": "Save Preferences"
+    },
+    "required": "Required"
   }
 }

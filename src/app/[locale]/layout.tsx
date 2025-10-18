@@ -6,6 +6,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
+import CookieConsentBanner from '@/components/blocks/cookie-consent-banner';
 
 import type { Metadata } from 'next';
 import { buildLocalizedMetadata, type SeoMessages } from '@/utils/seo';
@@ -48,7 +49,10 @@ export default async function LocaleLayout(props: {
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
       <Header currentLocale={locale} />
-      <main className='pt-0 md:pt-8 pb-2 md:pb-0'>{children}</main>
+      <main className='pt-0 md:pt-8 pb-2 md:pb-0'>
+        {children}
+        <CookieConsentBanner />
+      </main>
       <Footer
         currentLocale={locale}
         titles={{

@@ -11,6 +11,7 @@ import menuEn from '@/content/menu/menu.en.json';
 import menuFr from '@/content/menu/menu.fr.json';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
+import { formatCurrency } from '@/config/site';
 
 interface StarredPizza {
   id: string;
@@ -27,10 +28,6 @@ export default function MenuTeaserSection() {
   const t = useTranslations('menuTeaser');
   const locale = useLocale();
   const starredPizzas = starredPizzasConfig.starredPizzas as StarredPizza[];
-
-  const formatPrice = (price: number) => {
-    return `$${price.toFixed(2)}`;
-  };
 
   type MenuItem = { id: string; title: string; description: string };
   const menuData: MenuItem[] =
@@ -93,7 +90,7 @@ export default function MenuTeaserSection() {
                   </CardTitle>
                   <div className='text-right'>
                     <div className='text-2xl font-bold text-primary'>
-                      {formatPrice(pizza.price)}
+                      {formatCurrency(pizza.price)}
                     </div>
                   </div>
                 </div>

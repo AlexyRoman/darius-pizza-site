@@ -1,6 +1,16 @@
 {
   "starredPizzas": [
     {
+      "id": "product-524183493",
+      "title": "Reine",
+      "description": "Sauce Tomate, Mozza Fior di Latte, Jambon, Champignons Frais, Olives",
+      "price": 10.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/2035113296/db6171e3b9625425cd0530881276db20_lg.jpeg",
+      "category": "Les Classiques",
+      "isStarred": true,
+      "starReason": "Classic French pizza - a timeless favorite"
+    },
+    {
       "id": "product-134505823",
       "title": "The Darius",
       "description": "Tomato Sauce, Mozzarella, Italian Coppa, Cherry Tomatoes, Stracciatella di Burrata, Arugula, Parmesan, Balsamic Vinegar",
@@ -11,24 +21,14 @@
       "starReason": "Our signature creation - a perfect blend of Italian flavors"
     },
     {
-      "id": "product-224184492",
-      "title": "Al Tartufo",
-      "description": "Truffle Cream, Mozzarella, Thinly Sliced White Ham, Burrata, Arugula, Parmesan, Truffle Olive Oil",
-      "price": 17.9,
-      "image": "https://cdn.reflowhq.com/media/702608174/1435719850/7b6ccd51339ef2cf1af5f32e3c859c95_lg.jpg",
-      "category": "Signature Pizzas",
+      "id": "product-359764159",
+      "title": "5 Fromages",
+      "description": "Sauce Tomate, Mozza Fior di Latte, Emmental, Chèvre, Bleu, Olives",
+      "price": 12.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/2107908261/0e27e596bd3bb2fe1cef6f62ded2e02e_lg.jpg",
+      "category": "Les Fromagères",
       "isStarred": true,
-      "starReason": "Premium truffle experience - luxury meets tradition"
-    },
-    {
-      "id": "product-1999478730",
-      "title": "The Parma",
-      "description": "Tomato Sauce, Fior di Latte Mozzarella, Parma Ham, Stracciatella di Burrata, Arugula, Parmesan Shavings",
-      "price": 16.9,
-      "image": "https://cdn.reflowhq.com/media/702608174/1549807600/07453f1200ccb8b5d35401a3ede1a282_lg.jpg",
-      "category": "Signature Pizzas",
-      "isStarred": true,
-      "starReason": "Authentic Italian elegance with premium Parma ham"
+      "starReason": "Cheese lover's dream - five premium cheeses"
     }
   ],
   "lastUpdated": "2024-01-15T10:00:00Z",

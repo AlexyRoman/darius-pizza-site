@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Star, Clock, MapPin } from 'lucide-react';
 import hoursConfig from '@/config/restaurant/hours.json';
 import closingsConfig from '@/config/restaurant/closings.json';
+import { useThemeContext } from '@/contexts/ThemeContext';
 
 interface OpeningHours {
   [key: string]: {
@@ -31,6 +32,7 @@ interface Closing {
 
 export default function HeroSection() {
   const t = useTranslations('hero');
+  const { theme, isThemeLoaded } = useThemeContext();
   const hours = hoursConfig.openingHours as OpeningHours;
   const closings = closingsConfig.scheduledClosings as Closing[];
 
@@ -133,12 +135,33 @@ export default function HeroSection() {
 
   const badgeContent = getBadgeContent();
   return (
-    <section className='relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-background via-background-secondary to-background-secondary'>
+    <section className='relative min-h-screen flex items-center overflow-hidden'>
+      {/* Background Image */}
+      <div className='absolute inset-0 -z-30'>
+        <Image
+          src='/pizzahome.webp'
+          alt='Pizza restaurant background'
+          fill
+          className='object-cover'
+          priority
+        />
+      </div>
+
+      {/* Theme-aware Opacity Filter */}
+      <div
+        className='absolute inset-0 -z-20 transition-colors duration-300'
+        style={{
+          backgroundColor:
+            theme === 'dark'
+              ? 'rgba(31, 25, 20, 0.7)'
+              : 'rgba(250, 248, 245, 0.7)',
+        }}
+      />
+
       {/* Background Effects */}
       <div className='absolute inset-0 -z-10'>
-        {/* Smooth transition from header */}
-        <div className='absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background/80 via-background/40 to-transparent' />
-
+        {/* Top gradient for clean header merge */}
+        <div className='absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background via-background/80 to-transparent' />
         {/* Gradient overlays */}
         <div className='absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5' />
         <div className='absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background/80' />
@@ -155,7 +178,7 @@ export default function HeroSection() {
         <div className='absolute inset-0 bg-gradient-to-b from-background/95 via-background to-background/95' />
       </div>
 
-      <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16 relative z-10'>
         <div className='grid lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
           {/* Content Section */}
           <div className='space-y-8 text-center lg:text-left'>
@@ -226,7 +249,7 @@ export default function HeroSection() {
                 asChild
                 variant='outline'
                 size='lg'
-                className='h-14 px-8 text-base font-semibold border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300'
+                className='h-14 px-8 text-base font-semibold border-4 hover:bg-primary hover:text-primary-foreground transition-all duration-300 relative overflow-hidden backdrop-blur-sm bg-white/10 dark:bg-black/10'
               >
                 <Link
                   href='tel:+1234567890'
@@ -249,7 +272,7 @@ export default function HeroSection() {
               </div>
               <div className='text-center lg:text-left'>
                 <div className='text-2xl font-bold text-primary font-primary'>
-                  50+
+                  45+
                 </div>
                 <div className='text-sm text-foreground-secondary'>
                   {t('stats.pizzaVarieties')}
@@ -275,25 +298,21 @@ export default function HeroSection() {
               <div className='absolute -inset-2 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl blur-xl' />
 
               {/* Main image */}
-              <div className='relative bg-background-elevated rounded-2xl p-8 shadow-2xl border border-border/50'>
+              <div className='relative bg-background-elevated rounded-2xl p-8 shadow-2xl border border-border/50 group'>
                 <div className='relative aspect-square rounded-xl overflow-hidden'>
                   <Image
                     src='/pizza-hero.webp'
                     alt='Authentic Italian Pizza'
                     fill
-                    className='object-contain hover:scale-105 transition-transform duration-500 rounded-xl'
+                    className='object-cover group-hover:scale-105 transition-transform duration-500 rounded-xl'
                     priority
                   />
-                  {/* Stronger vignette for soft edges */}
-                  <div className='absolute inset-0 rounded-xl pointer-events-none opacity-80 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_62%,rgba(0,0,0,0.12)_100%)]' />
-                  {/* Subtle border glow to blend with card */}
-                  <div className='absolute inset-0 rounded-xl pointer-events-none bg-gradient-to-b from-transparent via-transparent to-background/40' />
 
                   {/* Floating elements */}
                   <div className='absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-lg'>
                     {t('stickers.freshDaily')}
                   </div>
-                  <div className='absolute bottom-4 left-4 bg-accent text-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-lg'>
+                  <div className='absolute bottom-4 left-4 bg-accent text-black px-3 py-1 rounded-full text-xs font-semibold shadow-lg'>
                     {t('stickers.handmade')}
                   </div>
                 </div>
@@ -314,7 +333,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom gradient fade */}
-      <div className='absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background-secondary to-transparent pointer-events-none' />
+      <div className='absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background-secondary to-transparent pointer-events-none -z-10' />
     </section>
   );
 }

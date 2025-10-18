@@ -117,6 +117,7 @@ const CookieConsentBanner = React.forwardRef<
           }
           // Don't show banner if user has already given consent
           // User can access cookie preferences through footer/settings if needed
+          setHide(true);
           return;
         }
 
@@ -131,7 +132,8 @@ const CookieConsentBanner = React.forwardRef<
       }
     }, []);
 
-    if (hide) return null;
+    // Don't render anything if hidden or if user already has consent
+    if (hide || !isOpen) return null;
 
     console.log(
       '🔧 BANNER: Rendering banner, showDetailedModal:',
@@ -148,9 +150,7 @@ const CookieConsentBanner = React.forwardRef<
             // Bottom positioning with consistent margins on both sides
             'bottom-32 left-4 right-4 sm:bottom-4 sm:right-auto',
             // Animation: slide from bottom on all devices
-            !isOpen
-              ? 'translate-y-full opacity-0'
-              : 'translate-y-0 opacity-100',
+            'translate-y-0 opacity-100',
             // Responsive width: constrained on mobile, fit content on desktop
             'w-auto max-w-[calc(100vw-2rem)] sm:w-fit sm:min-w-80 sm:max-w-md'
           )}

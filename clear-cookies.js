@@ -1,0 +1,1 @@
+console.log('Clearing cookie consent...'); document.cookie = 'cookieConsent=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'; document.cookie = 'cookiePreferences=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'; console.log('Cookies cleared! Reload the page.');

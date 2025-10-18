@@ -55,7 +55,7 @@ export function Footer(props: FooterProps) {
   ];
 
   return (
-    <footer className='w-full border-t border-border bg-gradient-to-b from-background-secondary to-background overflow-x-hidden pb-8 md:pb-0'>
+    <footer className='w-full border-t border-border bg-gradient-to-b from-background-secondary to-background overflow-x-hidden pb-24 md:pb-0'>
       <div className='mx-auto max-w-7xl px-4 md:px-6'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 py-10'>
           <FooterLeft

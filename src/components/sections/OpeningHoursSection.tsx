@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import {
   Clock,
@@ -14,6 +15,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
+import { useThemeContext } from '@/contexts/ThemeContext';
 import hoursConfig from '@/config/restaurant/hours.json';
 import messagesConfig from '@/config/restaurant/messages.json';
 import closingsConfig from '@/config/restaurant/closings.json';
@@ -53,6 +55,7 @@ export default function OpeningHoursSection() {
   const t = useTranslations('hours');
   const tHero = useTranslations('hero');
   const locale = useLocale();
+  const { theme } = useThemeContext();
   const hours = hoursConfig.openingHours as OpeningHours;
   const messages = messagesConfig.specialMessages as SpecialMessage[];
   const closings = closingsConfig.scheduledClosings as Closing[];
@@ -406,7 +409,7 @@ export default function OpeningHoursSection() {
                   </div>
                 </div>
 
-                {/* Lightweight Map Placeholder */}
+                {/* Theme-aware Location Map */}
                 <div className='relative bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg p-4 border border-border/30'>
                   <div className='flex items-center gap-2 mb-3'>
                     <MapPin className='h-4 w-4 text-primary' />
@@ -414,33 +417,22 @@ export default function OpeningHoursSection() {
                       {t('card.ourLocation')}
                     </span>
                   </div>
-                  <div className='relative h-32 bg-gradient-to-br from-background-secondary to-background-tertiary rounded border border-border/20 overflow-hidden'>
-                    {/* Simple city map representation */}
-                    <div className='absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10' />
-                    <div className='absolute inset-0 opacity-20'>
-                      {/* Grid pattern for map-like appearance */}
-                      <div
-                        className='w-full h-full'
-                        style={{
-                          backgroundImage: `
-                          linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px),
-                          linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px)
-                        `,
-                          backgroundSize: '20px 20px',
-                        }}
-                      />
-                    </div>
-                    {/* Location pin */}
+                  <div className='relative h-32 rounded border border-border/20 overflow-hidden'>
+                    <Image
+                      src={
+                        theme === 'dark' ? '/loc-dark.png' : '/loc-light.png'
+                      }
+                      alt='Restaurant location map'
+                      fill
+                      className='object-cover'
+                      priority={false}
+                    />
+                    {/* Location pin overlay */}
                     <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                       <div className='w-6 h-6 bg-primary rounded-full border-2 border-background shadow-lg flex items-center justify-center'>
                         <div className='w-2 h-2 bg-background rounded-full' />
                       </div>
                     </div>
-                    {/* Streets representation */}
-                    <div className='absolute top-1/3 left-0 right-0 h-0.5 bg-foreground/20' />
-                    <div className='absolute top-2/3 left-0 right-0 h-0.5 bg-foreground/20' />
-                    <div className='absolute top-0 bottom-0 left-1/3 w-0.5 bg-foreground/20' />
-                    <div className='absolute top-0 bottom-0 right-1/3 w-0.5 bg-foreground/20' />
                   </div>
                   <p className='text-xs text-foreground-secondary mt-2 text-center'>
                     Located in the heart of Little Italy

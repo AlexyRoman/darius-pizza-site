@@ -15,6 +15,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import ReactCountryFlag from 'react-country-flag';
 import { Button } from '@/components/ui/button';
 import { withRateLimit, withThrottle } from '@/lib/pacer';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function codeToCountry(code: string): string {
   switch (code) {
@@ -53,10 +54,17 @@ function FlagIcon({ code, size = 20 }: { code: string; size?: number }) {
   );
 }
 
-export function LocaleToggle({ currentLocale }: { currentLocale: string }) {
+export function LocaleToggle({
+  currentLocale,
+  isMobile = false,
+}: {
+  currentLocale: string;
+  isMobile?: boolean;
+}) {
   const locales = getAllLocales();
   const router = useRouter();
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = React.useState(false);
   const enabled = React.useMemo<Set<string>>(
     () => new Set<string>(getEnabledLocaleCodes()),
     []
@@ -78,9 +86,65 @@ export function LocaleToggle({ currentLocale }: { currentLocale: string }) {
       const targetCode = isLocaleEnabled(code) ? code : getDefaultLocale();
       const next = '/' + [targetCode, ...segments].join('/');
       router.push(next || '/');
+      if (isMobile) {
+        setIsOpen(false);
+      }
     }, 400)
   );
 
+  // Mobile version with vertical column of flag buttons
+  if (isMobile) {
+    return (
+      <div className='relative'>
+        <Button
+          variant='ghost'
+          size='icon'
+          aria-label='Change language'
+          className='rounded-full overflow-hidden border-0 bg-transparent shadow-none'
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <FlagIcon code={codeToCountry(displayLocale)} size={16} />
+        </Button>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: -10 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className='absolute bottom-full left-0 mb-2 z-50'
+            >
+              <div className='flex flex-col gap-2'>
+                {locales.map((loc, index) => (
+                  <motion.div
+                    key={loc.code}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <Button
+                      variant='outline'
+                      size='icon'
+                      aria-label={`Switch to ${loc.nativeName}`}
+                      className={`rounded-full border border-border/50 bg-background backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background hover:bg-background active:bg-background focus:bg-background focus-visible:outline-none focus:outline-none focus:ring-0 ${
+                        loc.code === displayLocale ? 'ring-2 ring-primary' : ''
+                      }`}
+                      onClick={() => onSelect(loc.code)}
+                    >
+                      <FlagIcon code={codeToCountry(loc.code)} size={16} />
+                    </Button>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    );
+  }
+
+  // Desktop version with dropdown menu
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
@@ -88,7 +152,7 @@ export function LocaleToggle({ currentLocale }: { currentLocale: string }) {
           variant='ghost'
           size='icon'
           aria-label='Change language'
-          className='rounded-full overflow-hidden border-0 bg-transparent hover:bg-transparent shadow-none'
+          className='rounded-full overflow-hidden border-0 bg-transparent shadow-none'
         >
           <FlagIcon code={codeToCountry(displayLocale)} size={16} />
         </Button>
@@ -98,7 +162,7 @@ export function LocaleToggle({ currentLocale }: { currentLocale: string }) {
           sideOffset={8}
           align='start'
           alignOffset={12}
-          className='z-50 min-w-40 rounded-md border border-white/10 bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 p-1 text-popover-foreground shadow-md focus:outline-none'
+          className='z-50 min-w-40 rounded-md border border-border/50 bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 p-1 text-popover-foreground shadow-md focus:outline-none'
         >
           {locales.map(loc => (
             <DropdownMenu.Item

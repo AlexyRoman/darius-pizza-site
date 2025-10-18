@@ -55,16 +55,32 @@ export default function OpeningHoursSection() {
   const t = useTranslations('hours');
   const tHero = useTranslations('hero');
   const locale = useLocale();
-  const { theme } = useThemeContext();
+  const { theme, effectiveTheme } = useThemeContext();
   const hours = hoursConfig.openingHours as OpeningHours;
   const messages = messagesConfig.specialMessages as SpecialMessage[];
   const closings = closingsConfig.scheduledClosings as Closing[];
 
   // State to track if component is mounted (client-side)
   const [isMounted, setIsMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+
+    // Check if device is mobile
+    const checkIsMobile = () => {
+      setIsMobile(
+        window.innerWidth < 768 ||
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          )
+      );
+    };
+
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
 
   // Get current day and time (only on client-side to avoid hydration mismatch)
@@ -376,7 +392,7 @@ export default function OpeningHoursSection() {
                 </CardTitle>
               </CardHeader>
               <CardContent className='space-y-4'>
-                <div className='space-y-4'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                   <div className='flex items-start gap-3'>
                     <MapPin className='h-5 w-5 text-primary mt-0.5' />
                     <div>
@@ -417,22 +433,18 @@ export default function OpeningHoursSection() {
                       {t('card.ourLocation')}
                     </span>
                   </div>
-                  <div className='relative h-32 rounded border border-border/20 overflow-hidden'>
+                  <div className='relative aspect-[16/9] rounded border border-border/20 overflow-hidden'>
                     <Image
                       src={
-                        theme === 'dark' ? '/loc-dark.png' : '/loc-light.png'
+                        effectiveTheme === 'dark'
+                          ? '/loc-dark.png'
+                          : '/loc-light.png'
                       }
                       alt='Restaurant location map'
                       fill
                       className='object-cover'
                       priority={false}
                     />
-                    {/* Location pin overlay */}
-                    <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                      <div className='w-6 h-6 bg-primary rounded-full border-2 border-background shadow-lg flex items-center justify-center'>
-                        <div className='w-2 h-2 bg-background rounded-full' />
-                      </div>
-                    </div>
                   </div>
                   <p className='text-xs text-foreground-secondary mt-2 text-center'>
                     Located in the heart of Little Italy
@@ -448,15 +460,27 @@ export default function OpeningHoursSection() {
                     <Phone className='h-4 w-4' />
                     {t('card.callNow')}
                   </a>
-                  <a
-                    href='https://maps.google.com'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='flex items-center justify-center gap-2 px-4 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/90 transition-colors'
-                  >
-                    <MapPin className='h-4 w-4' />
-                    {t('card.directions')}
-                  </a>
+
+                  {/* Directions Button - Native modal on mobile, direct link on desktop */}
+                  {isMobile ? (
+                    <a
+                      href='maps://maps.apple.com/?q=123+Pizza+Street,+Little+Italy,+NY+10013'
+                      className='flex items-center justify-center gap-2 px-4 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/90 transition-colors'
+                    >
+                      <MapPin className='h-4 w-4' />
+                      {t('card.directions')}
+                    </a>
+                  ) : (
+                    <a
+                      href='https://maps.google.com'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='flex items-center justify-center gap-2 px-4 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/90 transition-colors'
+                    >
+                      <MapPin className='h-4 w-4' />
+                      {t('card.directions')}
+                    </a>
+                  )}
                 </div>
               </CardContent>
             </Card>

@@ -7,6 +7,12 @@
 @tailwind utilities;
 
 @layer base {
+  /* Mobile status bar styling - only apply padding, not background colors */
+  body {
+    /* Ensure proper spacing for mobile status bar */
+    padding-top: env(safe-area-inset-top);
+  }
+
   :root {
     /* Brand Colors - Light Theme */
     --color-primary: oklch(0.65 0.2 60); /* Deep orange */
@@ -46,6 +52,9 @@
     --color-text-secondary: oklch(0.45 0.02 45);
     --color-text-tertiary: oklch(0.65 0.02 45);
     --color-text-disabled: oklch(0.75 0.01 45);
+
+    /* Hero Filter Colors - Light Theme */
+    --hero-filter-bg: rgba(250, 248, 245, 0.7);
 
     /* Typography */
     --font-primary: 'Playfair Display', 'Times New Roman', serif;
@@ -177,6 +186,9 @@
     --color-text-tertiary: oklch(0.55 0.02 85);
     --color-text-disabled: oklch(0.45 0.01 85);
 
+    /* Hero Filter Colors - Dark Theme */
+    --hero-filter-bg: rgba(31, 25, 20, 0.7);
+
     /* Legacy CSS Variables for Compatibility */
     --background: var(--color-background);
     --foreground: var(--color-foreground);
@@ -277,7 +289,10 @@
   }
 
   /* iOS Safari fixes for interactive elements */
-  button, a, [role="button"], [tabindex] {
+  button,
+  a,
+  [role='button'],
+  [tabindex] {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -285,7 +300,9 @@
   }
 
   /* Allow text selection in input fields */
-  input, textarea, [contenteditable] {
+  input,
+  textarea,
+  [contenteditable] {
     -webkit-user-select: text;
     user-select: text;
   }
@@ -360,6 +377,21 @@
 
   .border-primary {
     border-color: var(--color-primary);
+  }
+
+  /* Disable hover effects only on touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    /* Only disable hover effects on actual touch devices */
+    button:hover,
+    a:hover,
+    [role='button']:hover,
+    [tabindex]:hover {
+      background-color: inherit !important;
+      color: inherit !important;
+      border-color: inherit !important;
+      box-shadow: inherit !important;
+      transform: inherit !important;
+    }
   }
 
   .border-secondary {

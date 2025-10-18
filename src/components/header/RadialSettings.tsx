@@ -54,11 +54,11 @@ export function RadialSettings({ currentLocale }: { currentLocale: string }) {
 
   const items = React.useMemo(
     () => [
-      { key: 'theme', angle: -90, node: <ThemeToggle /> },
+      { key: 'theme', angle: -30, node: <ThemeToggle /> },
       {
         key: 'locale',
-        angle: -30,
-        node: <LocaleToggle currentLocale={currentLocale} />,
+        angle: -90,
+        node: <LocaleToggle currentLocale={currentLocale} isMobile={true} />,
       },
     ],
     [currentLocale]
@@ -103,7 +103,11 @@ export function RadialSettings({ currentLocale }: { currentLocale: string }) {
         className='relative z-50 rounded-full border border-white/10 ring-1 ring-border bg-background/40 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background/40 hover:bg-background/40 active:bg-background/40 focus:bg-background/40 focus-visible:outline-none focus:outline-none focus:ring-0'
         aria-label='Settings'
       >
-        {isOpen ? <X className='h-5 w-5' /> : <FlagIcon code={codeToCountry(currentLocale)} size={20} />}
+        {isOpen ? (
+          <X className='h-5 w-5' />
+        ) : (
+          <FlagIcon code={codeToCountry(currentLocale)} size={20} />
+        )}
       </Button>
     </div>
   );

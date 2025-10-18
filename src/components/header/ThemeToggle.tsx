@@ -9,7 +9,8 @@ import {
 import { withThrottle, withRateLimit } from '@/lib/pacer';
 
 export function ThemeToggle() {
-  const { theme, toggleTheme, isThemeLoaded } = useThemeContext();
+  const { theme, effectiveTheme, cycleTheme, isThemeLoaded } =
+    useThemeContext();
 
   const { startTransition } = useThemeTransition();
   const onClick = React.useMemo(
@@ -17,21 +18,22 @@ export function ThemeToggle() {
       withRateLimit(
         withThrottle(() => {
           startTransition(() => {
-            toggleTheme();
+            cycleTheme();
           });
         }, 350)
       ),
-    [startTransition, toggleTheme]
+    [startTransition, cycleTheme]
   );
 
   return (
     <ThemeToggleButton
-      theme={theme === 'dark' ? 'dark' : 'light'}
+      theme={effectiveTheme === 'dark' ? 'dark' : 'light'}
+      themeMode={theme}
       variant='circle-blur'
       start='top-right'
       onClick={onClick}
       disabled={!isThemeLoaded}
-      className='border-0 bg-transparent hover:bg-transparent shadow-none'
+      className='border-0 bg-transparent shadow-none'
     />
   );
 }

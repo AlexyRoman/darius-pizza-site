@@ -143,11 +143,32 @@ export const applyTheme = (theme: 'light' | 'dark'): void => {
   }
 
   // Update meta theme-color for mobile browsers
-  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-  if (metaThemeColor) {
-    metaThemeColor.setAttribute(
+  const metaThemeColors = document.querySelectorAll('meta[name="theme-color"]');
+  metaThemeColors.forEach(meta => {
+    const media = meta.getAttribute('media');
+    if (!media) {
+      // Default theme color (fallback)
+      meta.setAttribute(
+        'content',
+        theme === 'dark' ? 'oklch(0.12 0.02 45)' : 'oklch(0.98 0.01 85)'
+      );
+    } else if (media === '(prefers-color-scheme: light)' && theme === 'light') {
+      meta.setAttribute('content', 'oklch(0.98 0.01 85)');
+    } else if (media === '(prefers-color-scheme: dark)' && theme === 'dark') {
+      meta.setAttribute('content', 'oklch(0.12 0.02 45)');
+    }
+  });
+
+  // Update Apple status bar style based on theme
+  const appleStatusBarStyle = document.querySelector(
+    'meta[name="apple-mobile-web-app-status-bar-style"]'
+  );
+  if (appleStatusBarStyle) {
+    // For dark themes, use 'black-translucent' to make status bar content white
+    // For light themes, use 'default' to make status bar content black
+    appleStatusBarStyle.setAttribute(
       'content',
-      theme === 'dark' ? 'oklch(0.12 0.02 45)' : 'oklch(0.98 0.01 85)'
+      theme === 'dark' ? 'black-translucent' : 'default'
     );
   }
 };

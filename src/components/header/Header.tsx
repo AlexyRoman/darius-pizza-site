@@ -1,7 +1,7 @@
 'use client';
 
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 import { Home, Phone, Info, Pizza } from 'lucide-react';
@@ -23,7 +23,6 @@ export function Header({
   const t = useTranslations('common');
   const locale = currentLocale;
   const timeZone = getSiteTimeZone();
-
   const withLocale = (path: string): string => {
     if (path === '/') return `/${locale}`;
     return `/${locale}${path}`;
@@ -81,7 +80,7 @@ export function Header({
             <Button
               asChild
               size='lg'
-              className='rounded-full border border-white/10 ring-1 ring-border bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 px-6 hover:bg-background/30 active:bg-background/30 focus:bg-background/30 focus-visible:outline-none focus:outline-none focus:ring-0 select-none'
+              className='rounded-full border border-white/10 ring-1 ring-border bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 px-6 hover:bg-primary hover:text-primary-foreground hover:border-primary/50 hover:ring-primary/50 active:bg-primary active:text-primary-foreground focus:bg-primary focus:text-primary-foreground focus-visible:outline-none focus:outline-none focus:ring-0 select-none transition-all duration-200'
             >
               <a href={`tel:${getSitePhone()}`} aria-label='Call'>
                 <span className='inline-flex items-center gap-2 text-foreground'>
@@ -123,16 +122,42 @@ export function Header({
               {/* Theme/Locale removed from mobile navbar */}
             </div>
           </nav>
-          <Button
-            asChild
-            size='icon'
-            variant='ghost'
-            className='md:hidden rounded-full shadow-lg absolute right-4 top-1/2 -translate-y-1/2 z-50 border border-white/10 ring-1 ring-border bg-background/40 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background/40 h-12 w-12 hover:bg-background/40 active:bg-background/40 focus:bg-background/40 focus-visible:outline-none focus:outline-none focus:ring-0 select-none'
+          <div
+            className='md:hidden absolute right-4 top-1/2 z-50'
+            style={{
+              transform: 'translateY(-50%) !important',
+              position: 'absolute',
+              top: '50% !important',
+              right: '1rem !important',
+              transition: 'none !important',
+              animation: 'none !important',
+            }}
           >
-            <a href={`tel:${getSitePhone()}`} aria-label='Call'>
-              <Phone className='size-6 text-foreground' />
-            </a>
-          </Button>
+            <Button
+              asChild
+              size='icon'
+              variant='ghost'
+              className='rounded-full shadow-lg border border-white/10 ring-1 ring-border bg-background/40 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background/40 h-12 w-12 hover:bg-primary hover:text-primary-foreground hover:border-primary/50 hover:ring-primary/50 focus:bg-primary focus:text-primary-foreground focus-visible:outline-none focus:outline-none focus:ring-0 select-none'
+              style={{
+                transform: 'none !important',
+                transition: 'none !important',
+                animation: 'none !important',
+                position: 'static',
+              }}
+            >
+              <a
+                href={`tel:${getSitePhone()}`}
+                aria-label='Call'
+                style={{
+                  transform: 'none !important',
+                  transition: 'none !important',
+                  animation: 'none !important',
+                }}
+              >
+                <Phone className='size-6 text-foreground' />
+              </a>
+            </Button>
+          </div>
           {/* Mobile settings radial menu bottom-left */}
           <div className='md:hidden absolute left-4 top-1/2 -translate-y-1/2 z-50'>
             <RadialSettings currentLocale={locale} />

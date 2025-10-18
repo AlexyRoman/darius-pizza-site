@@ -1,6 +1,6 @@
 'use client';
 
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, Monitor } from 'lucide-react';
 import { useCallback, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -15,6 +15,7 @@ type StartPosition =
 
 export interface ThemeToggleButtonProps {
   theme?: 'light' | 'dark';
+  themeMode?: 'light' | 'dark' | 'system';
   showLabel?: boolean;
   variant?: AnimationVariant;
   start?: StartPosition;
@@ -26,6 +27,7 @@ export interface ThemeToggleButtonProps {
 
 export const ThemeToggleButton = ({
   theme = 'light',
+  themeMode,
   showLabel = false,
   variant = 'circle',
   start = 'center',
@@ -106,16 +108,24 @@ export const ThemeToggleButton = ({
         showLabel && 'gap-2',
         className
       )}
-      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+      aria-label={`Switch theme (current: ${themeMode || theme})`}
       disabled={disabled || isTransitioning}
     >
-      {theme === 'light' ? (
+      {themeMode === 'system' ? (
+        <Monitor className='h-[1.2rem] w-[1.2rem]' />
+      ) : theme === 'light' ? (
         <Sun className='h-[1.2rem] w-[1.2rem]' />
       ) : (
         <Moon className='h-[1.2rem] w-[1.2rem]' />
       )}
       {showLabel && (
-        <span className='text-sm'>{theme === 'light' ? 'Light' : 'Dark'}</span>
+        <span className='text-sm'>
+          {themeMode === 'system'
+            ? 'System'
+            : theme === 'light'
+              ? 'Light'
+              : 'Dark'}
+        </span>
       )}
     </Button>
   );

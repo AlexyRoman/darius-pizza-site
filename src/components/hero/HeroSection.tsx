@@ -32,7 +32,7 @@ interface Closing {
 
 export default function HeroSection() {
   const t = useTranslations('hero');
-  const { theme, isThemeLoaded } = useThemeContext();
+  const { theme, effectiveTheme, isThemeLoaded } = useThemeContext();
   const hours = hoursConfig.openingHours as OpeningHours;
   const closings = closingsConfig.scheduledClosings as Closing[];
 
@@ -151,10 +151,7 @@ export default function HeroSection() {
       <div
         className='absolute inset-0 -z-20 transition-colors duration-300'
         style={{
-          backgroundColor:
-            theme === 'dark'
-              ? 'rgba(31, 25, 20, 0.7)'
-              : 'rgba(250, 248, 245, 0.7)',
+          backgroundColor: 'var(--hero-filter-bg, rgba(250, 248, 245, 0.7))',
         }}
       />
 

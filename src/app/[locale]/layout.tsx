@@ -49,7 +49,7 @@ export default async function LocaleLayout(props: {
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
       <Header currentLocale={locale} />
-      <main className='pt-0 md:pt-8 pb-2 md:pb-0'>
+      <main className='pt-0 md:pt-16 pb-2 md:pb-0'>
         {children}
         <CookieConsentBanner />
       </main>

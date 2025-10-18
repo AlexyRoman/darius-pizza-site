@@ -33,7 +33,7 @@ export default function ContactBanner() {
                 {/* Email Button */}
                 <a
                   href='mailto:info@dariuspizza.com'
-                  className='inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl'
+                  className='inline-flex items-center gap-2 px-6 py-3 !bg-primary !text-primary-foreground rounded-lg font-medium hover:!bg-primary active:!bg-primary focus:!bg-primary transition-colors shadow-lg md:hover:shadow-xl'
                 >
                   <Mail className='h-5 w-5' />
                   {t('emailButton')}

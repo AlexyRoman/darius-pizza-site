@@ -136,8 +136,7 @@ export function Header({
             <Button
               asChild
               size='icon'
-              variant='ghost'
-              className='rounded-full shadow-lg border border-white/10 ring-1 ring-border bg-background/40 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background/40 h-12 w-12 hover:bg-primary hover:text-primary-foreground hover:border-primary/50 hover:ring-primary/50 focus:bg-primary focus:text-primary-foreground focus-visible:outline-none focus:outline-none focus:ring-0 select-none'
+              className='!bg-primary !text-primary-foreground hover:!bg-primary active:!bg-primary focus:!bg-primary rounded-full shadow-lg h-12 w-12'
               style={{
                 transform: 'none !important',
                 transition: 'none !important',

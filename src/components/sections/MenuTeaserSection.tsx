@@ -138,7 +138,7 @@ export default function MenuTeaserSection() {
             <Link href='/menu'>
               <Button
                 size='lg'
-                className='bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105'
+                className='!bg-primary !text-primary-foreground px-8 py-3 text-lg font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:scale-105 hover:!bg-primary active:!bg-primary focus:!bg-primary'
               >
                 {t('viewFullMenu')}
                 <ArrowRight className='ml-2 h-5 w-5' />

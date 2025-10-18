@@ -324,7 +324,7 @@ export default function ContactFormSection() {
                       <Button
                         type='submit'
                         size='lg'
-                        className='min-w-[140px]'
+                        className='min-w-[140px] !bg-primary !text-primary-foreground hover:!bg-primary active:!bg-primary focus:!bg-primary'
                         disabled={form.formState.isSubmitting}
                       >
                         {form.formState.isSubmitting ? (

@@ -454,7 +454,7 @@ export default function OpeningHoursSection() {
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
                   <a
                     href={`tel:${contact.phone.tel}`}
-                    className='flex items-center justify-center gap-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors'
+                    className='flex items-center justify-center gap-2 px-4 py-3 !bg-primary !text-primary-foreground rounded-lg font-medium hover:!bg-primary active:!bg-primary focus:!bg-primary transition-colors'
                   >
                     <Phone className='h-4 w-4' />
                     {t('card.callNow')}
@@ -464,7 +464,7 @@ export default function OpeningHoursSection() {
                   {isMobile ? (
                     <a
                       href={contact.maps.appleMaps}
-                      className='flex items-center justify-center gap-2 px-4 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/90 transition-colors'
+                      className='flex items-center justify-center gap-2 px-4 py-3 !bg-secondary !text-secondary-foreground rounded-lg font-medium hover:!bg-secondary active:!bg-secondary focus:!bg-secondary transition-colors'
                     >
                       <MapPin className='h-4 w-4' />
                       {t('card.directions')}
@@ -474,7 +474,7 @@ export default function OpeningHoursSection() {
                       href='https://maps.google.com'
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='flex items-center justify-center gap-2 px-4 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/90 transition-colors'
+                      className='flex items-center justify-center gap-2 px-4 py-3 !bg-secondary !text-secondary-foreground rounded-lg font-medium hover:!bg-secondary active:!bg-secondary focus:!bg-secondary transition-colors'
                     >
                       <MapPin className='h-4 w-4' />
                       {t('card.directions')}

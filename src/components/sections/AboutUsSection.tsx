@@ -80,7 +80,7 @@ export default function AboutUsSection() {
                 <Button
                   asChild
                   size='lg'
-                  className='bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300'
+                  className='!bg-primary !text-primary-foreground shadow-lg md:hover:shadow-xl transition-all duration-300 hover:!bg-primary active:!bg-primary focus:!bg-primary'
                 >
                   <Link href='/info#contact'>
                     {tHome('contactUs')}

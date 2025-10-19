@@ -19,11 +19,12 @@ export function FooterLeft(props: FooterLeftProps) {
       <div className='flex flex-col items-center md:items-start gap-2'>
         <div className='flex items-center gap-3'>
           <Image
-            src='/icon.png'
+            src='/static/site-logo.webp'
             alt={`${siteName} logo`}
             width={36}
             height={36}
             className='rounded-md select-none'
+            style={{ width: 'auto', height: 'auto' }}
             priority
           />
           <div className='text-3xl md:text-4xl font-primary font-bold tracking-tight text-foreground'>

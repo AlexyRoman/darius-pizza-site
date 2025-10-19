@@ -112,7 +112,7 @@ export default function AboutUsSection() {
                 <CardContent className='p-0'>
                   <div className='relative h-96 lg:h-[500px] overflow-hidden'>
                     <img
-                      src='/IMG_9209.jpeg'
+                      src='/static/about-kitchen.webp'
                       alt='Traditional Italian pizza kitchen with chef preparing authentic pizza'
                       className='w-full h-full object-cover'
                     />

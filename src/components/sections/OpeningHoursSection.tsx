@@ -436,8 +436,8 @@ export default function OpeningHoursSection() {
                     <Image
                       src={
                         effectiveTheme === 'dark'
-                          ? '/loc-dark.png'
-                          : '/loc-light.png'
+                          ? '/static/location-map-dark.webp'
+                          : '/static/location-map-light.webp'
                       }
                       alt='Restaurant location map'
                       fill

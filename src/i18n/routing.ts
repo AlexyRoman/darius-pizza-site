@@ -13,4 +13,10 @@ export const routing = defineRouting({
   defaultLocale: getDefaultLocale(),
   localePrefix: settings.localePrefix,
   localeDetection: settings.localeDetection,
+  // Exclude static assets from i18n routing
+  pathnames: {
+    '/': '/',
+    '/menu': '/menu',
+    '/info': '/info',
+  },
 });

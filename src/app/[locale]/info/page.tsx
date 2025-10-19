@@ -93,7 +93,7 @@ export default function InfoPage() {
                   <CardContent className='p-0'>
                     <div className='relative h-96 lg:h-[500px] overflow-hidden'>
                       <img
-                        src='/IMG_9209.jpg'
+                        src='/static/about-kitchen.webp'
                         alt='Traditional Italian kitchen with family preparing pizza'
                         className='w-full h-full object-cover'
                       />

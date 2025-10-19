@@ -123,12 +123,8 @@ export function Header({
             </div>
           </nav>
           <div
-            className='md:hidden absolute right-4 top-1/2 z-50'
+            className='md:hidden fixed right-4 bottom-3 z-50'
             style={{
-              transform: 'translateY(-50%) !important',
-              position: 'absolute',
-              top: '50% !important',
-              right: '1rem !important',
               transition: 'none !important',
               animation: 'none !important',
             }}
@@ -137,22 +133,8 @@ export function Header({
               asChild
               size='icon'
               className='!bg-primary !text-primary-foreground hover:!bg-primary active:!bg-primary focus:!bg-primary rounded-full shadow-lg h-12 w-12'
-              style={{
-                transform: 'none !important',
-                transition: 'none !important',
-                animation: 'none !important',
-                position: 'static',
-              }}
             >
-              <a
-                href={`tel:${getSitePhone()}`}
-                aria-label='Call'
-                style={{
-                  transform: 'none !important',
-                  transition: 'none !important',
-                  animation: 'none !important',
-                }}
-              >
+              <a href={`tel:${getSitePhone()}`} aria-label='Call'>
                 <Phone className='size-6 text-foreground' />
               </a>
             </Button>

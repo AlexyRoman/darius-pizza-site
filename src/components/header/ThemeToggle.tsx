@@ -33,7 +33,7 @@ export function ThemeToggle() {
       start='top-right'
       onClick={onClick}
       disabled={!isThemeLoaded}
-      className='border-0 bg-transparent shadow-none'
+      className='rounded-full overflow-hidden border-0 bg-transparent shadow-none'
     />
   );
 }

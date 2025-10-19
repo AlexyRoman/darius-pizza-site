@@ -57,9 +57,11 @@ function FlagIcon({ code, size = 20 }: { code: string; size?: number }) {
 export function LocaleToggle({
   currentLocale,
   isMobile = false,
+  expanded = false,
 }: {
   currentLocale: string;
   isMobile?: boolean;
+  expanded?: boolean;
 }) {
   const locales = getAllLocales();
   const router = useRouter();
@@ -100,14 +102,14 @@ export function LocaleToggle({
           variant='ghost'
           size='icon'
           aria-label='Change language'
-          className='rounded-full overflow-hidden border-0 bg-transparent shadow-none'
-          onClick={() => setIsOpen(!isOpen)}
+          className='rounded-full overflow-hidden border-2 border-orange-500 bg-transparent shadow-none ring-2 ring-orange-500/50'
+          onClick={() => !expanded && setIsOpen(!isOpen)}
         >
           <FlagIcon code={codeToCountry(displayLocale)} size={16} />
         </Button>
 
         <AnimatePresence>
-          {isOpen && (
+          {(isOpen || expanded) && (
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: -10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -116,26 +118,26 @@ export function LocaleToggle({
               className='absolute bottom-full left-0 mb-2 z-50'
             >
               <div className='flex flex-col gap-2'>
-                {locales.map((loc, index) => (
-                  <motion.div
-                    key={loc.code}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                  >
-                    <Button
-                      variant='outline'
-                      size='icon'
-                      aria-label={`Switch to ${loc.nativeName}`}
-                      className={`rounded-full border border-border/50 bg-background backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background hover:bg-background active:bg-background focus:bg-background focus-visible:outline-none focus:outline-none focus:ring-0 ${
-                        loc.code === displayLocale ? 'ring-2 ring-primary' : ''
-                      }`}
-                      onClick={() => onSelect(loc.code)}
+                {locales
+                  .filter(loc => loc.code !== displayLocale)
+                  .map((loc, index) => (
+                    <motion.div
+                      key={loc.code}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.05 }}
                     >
-                      <FlagIcon code={codeToCountry(loc.code)} size={16} />
-                    </Button>
-                  </motion.div>
-                ))}
+                      <Button
+                        variant='outline'
+                        size='icon'
+                        aria-label={`Switch to ${loc.nativeName}`}
+                        className='rounded-full border border-border/50 bg-background backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background hover:bg-background active:bg-background focus:bg-background focus-visible:outline-none focus:outline-none focus:ring-0'
+                        onClick={() => onSelect(loc.code)}
+                      >
+                        <FlagIcon code={codeToCountry(loc.code)} size={16} />
+                      </Button>
+                    </motion.div>
+                  ))}
               </div>
             </motion.div>
           )}

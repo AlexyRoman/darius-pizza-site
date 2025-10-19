@@ -50,6 +50,7 @@ function FlagIcon({ code, size = 20 }: { code: string; size?: number }) {
 
 export function RadialSettings({ currentLocale }: { currentLocale: string }) {
   const [isOpen, _setIsOpen] = React.useState(false);
+  const [showExpandedFlags, setShowExpandedFlags] = React.useState(false);
   const setIsOpen = React.useMemo(() => withDebounce(_setIsOpen, 100), []);
 
   const items = React.useMemo(
@@ -58,10 +59,16 @@ export function RadialSettings({ currentLocale }: { currentLocale: string }) {
       {
         key: 'locale',
         angle: -90,
-        node: <LocaleToggle currentLocale={currentLocale} isMobile={true} />,
+        node: (
+          <LocaleToggle
+            currentLocale={currentLocale}
+            isMobile={true}
+            expanded={showExpandedFlags}
+          />
+        ),
       },
     ],
-    [currentLocale]
+    [currentLocale, showExpandedFlags]
   );
 
   return (
@@ -97,7 +104,15 @@ export function RadialSettings({ currentLocale }: { currentLocale: string }) {
       </AnimatePresence>
 
       <Button
-        onClick={() => setIsOpen(v => !v)}
+        onClick={() => {
+          if (!isOpen) {
+            setIsOpen(true);
+            setShowExpandedFlags(true);
+          } else {
+            setIsOpen(false);
+            setShowExpandedFlags(false);
+          }
+        }}
         size='icon'
         variant='ghost'
         className='relative z-50 rounded-full border border-white/10 ring-1 ring-border bg-background/40 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background/40 hover:bg-background/40 active:bg-background/40 focus:bg-background/40 focus-visible:outline-none focus:outline-none focus:ring-0'

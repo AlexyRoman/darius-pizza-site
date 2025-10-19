@@ -100,11 +100,11 @@ export const ThemeToggleButton = ({
 
   return (
     <Button
-      variant='outline'
+      variant='ghost'
       size={showLabel ? 'default' : 'icon'}
       onClick={handleClick}
       className={cn(
-        'relative overflow-hidden transition-all',
+        'relative overflow-hidden transition-all rounded-full border-0 bg-transparent shadow-none',
         showLabel && 'gap-2',
         className
       )}

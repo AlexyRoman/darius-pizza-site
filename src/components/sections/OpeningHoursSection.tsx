@@ -15,6 +15,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { useThemeContext } from '@/contexts/ThemeContext';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/config/restaurant/hours.json';
@@ -452,33 +453,51 @@ export default function OpeningHoursSection() {
 
                 {/* Quick Actions */}
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
-                  <a
-                    href={`tel:${contact.phone.tel}`}
-                    className='flex items-center justify-center gap-2 px-4 py-3 !bg-primary !text-primary-foreground rounded-lg font-medium hover:!bg-primary active:!bg-primary focus:!bg-primary transition-colors'
+                  <Button
+                    asChild
+                    size='lg'
+                    className='!bg-primary !text-primary-foreground px-4 py-3 text-base font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:scale-105 hover:!bg-primary active:!bg-primary focus:!bg-primary'
                   >
-                    <Phone className='h-4 w-4' />
-                    {t('card.callNow')}
-                  </a>
+                    <a
+                      href={`tel:${contact.phone.tel}`}
+                      className='flex items-center gap-2'
+                    >
+                      <Phone className='h-4 w-4' />
+                      {t('card.callNow')}
+                    </a>
+                  </Button>
 
                   {/* Directions Button - Native modal on mobile, direct link on desktop */}
                   {isMobile ? (
-                    <a
-                      href={contact.maps.appleMaps}
-                      className='flex items-center justify-center gap-2 px-4 py-3 !bg-secondary !text-secondary-foreground rounded-lg font-medium hover:!bg-secondary active:!bg-secondary focus:!bg-secondary transition-colors'
+                    <Button
+                      asChild
+                      size='lg'
+                      className='!bg-secondary !text-secondary-foreground px-4 py-3 text-base font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:scale-105 hover:!bg-secondary active:!bg-secondary focus:!bg-secondary'
                     >
-                      <MapPin className='h-4 w-4' />
-                      {t('card.directions')}
-                    </a>
+                      <a
+                        href={contact.maps.appleMaps}
+                        className='flex items-center gap-2'
+                      >
+                        <MapPin className='h-4 w-4' />
+                        {t('card.directions')}
+                      </a>
+                    </Button>
                   ) : (
-                    <a
-                      href='https://maps.google.com'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='flex items-center justify-center gap-2 px-4 py-3 !bg-secondary !text-secondary-foreground rounded-lg font-medium hover:!bg-secondary active:!bg-secondary focus:!bg-secondary transition-colors'
+                    <Button
+                      asChild
+                      size='lg'
+                      className='!bg-secondary !text-secondary-foreground px-4 py-3 text-base font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:scale-105 hover:!bg-secondary active:!bg-secondary focus:!bg-secondary'
                     >
-                      <MapPin className='h-4 w-4' />
-                      {t('card.directions')}
-                    </a>
+                      <a
+                        href='https://maps.google.com'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='flex items-center gap-2'
+                      >
+                        <MapPin className='h-4 w-4' />
+                        {t('card.directions')}
+                      </a>
+                    </Button>
                   )}
                 </div>
               </CardContent>

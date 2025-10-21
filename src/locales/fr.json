@@ -22,7 +22,7 @@
     "legal": {
       "privacy": "Confidentialité",
       "terms": "Conditions",
-      "imprint": "Mentions"
+      "imprint": "Mentions Légales"
     },
     "social": {
       "googleMaps": "Google Maps",
@@ -199,7 +199,7 @@
     },
     "homeAbout": {
       "title": "Notre Histoire",
-      "description": "Née de l'héritage de la Boucherie Darius, notre établissment familial et traditionnel de 1936 à 2019, le Darius Pizza poursuit une tradition de produits de qualité et de savoir-faire culinaire. Chaque pizza est préparée avec amour, en utilisant des ingrédients de qualtié et des protocoles précis pour garantir une pâte de la plus haute qualité.",
+      "description": "Née de l'héritage de la Boucherie Darius, notre établissment familial et traditionnel de 1936 à 2019, le Darius Pizza poursuit une tradition de produits de qualité et de savoir-faire culinaire. Chaque pizza est préparée avec amour, en utilisant des ingrédients de qualité et des protocoles précis pour garantir une pâte toujours parfaite.",
       "familyOwned": "Établissement Familial",
       "familyOwnedDesc": "Trois générations de savoir-faire culinaire",
       "authentic": "Authentique",
@@ -236,5 +236,311 @@
       "savePreferences": "Sauvegarder les Préférences"
     },
     "required": "Requis"
+  },
+  "legal": {
+    "privacy": {
+      "backToHome": "Retour à l'Accueil",
+      "title": "Politique de Confidentialité",
+      "lastUpdated": "Dernière mise à jour : 1er janvier 2024",
+      "preamble": {
+        "title": "Article 1 : PRÉAMBULE",
+        "content": "La présente politique de confidentialité a pour but d'informer les utilisateurs du site sur la manière dont sont collectées leurs données personnelles. Sont considérées comme des données personnelles, toute information permettant d'identifier un utilisateur. A ce titre, il peut s'agir : de ses noms et prénoms, de son âge, de son adresse postale ou email, de sa localisation ou encore de son adresse IP (liste non-exhaustive).",
+        "rights": "Cette politique informe également les utilisateurs sur les droits dont ils disposent concernant ces données, sur la personne responsable du traitement des données à caractère personnel collectées et traitées, sur les destinataires de ces données personnelles, et sur la politique du site en matière de cookies.",
+        "relatedDocuments": "Cette politique complète les Mentions Légales et la Politique des Cookies consultables par les utilisateurs aux adresses suivantes :",
+        "legalMentionsLink": "https://www.dariuspizza.fr/legal-mentions",
+        "cookiesPolicyLink": "https://www.dariuspizza.fr/cookies"
+      },
+      "principles": {
+        "title": "Article 2 : PRINCIPES RELATIFS À LA COLLECTE ET AU TRAITEMENT DES DONNÉES PERSONNELLES",
+        "content": "Conformément à l'article 5 du Règlement européen 2016/679, les données à caractère personnel sont :",
+        "principles": [
+          "Traitées de manière licite, loyale et transparente au regard de la personne concernée",
+          "Collectées pour des finalités déterminées, explicites et légitimes, et ne pas être traitées ultérieurement d'une manière incompatible avec ces finalités",
+          "Adéquates, pertinentes et limitées à ce qui est nécessaire au regard des finalités pour lesquelles elles sont traitées",
+          "Exactes et, si nécessaire, tenues à jour",
+          "Conservées sous une forme permettant l'identification des personnes concernées pendant une durée n'excédant pas celle nécessaire au regard des finalités pour lesquelles elles sont traitées",
+          "Traitées de façon à garantir une sécurité appropriée des données collectées"
+        ],
+        "legalBasis": "Le traitement n'est licite que si, et dans la mesure où, au moins une des conditions suivantes est remplie :",
+        "legalBasisList": [
+          "La personne concernée a consenti au traitement de ses données à caractère personnel pour une ou plusieurs finalités spécifiques",
+          "Le traitement est nécessaire à l'exécution d'un contrat auquel la personne concernée est partie",
+          "Le traitement est nécessaire au respect d'une obligation légale à laquelle le responsable du traitement est soumis",
+          "Le traitement est nécessaire à la sauvegarde des intérêts vitaux de la personne concernée",
+          "Le traitement est nécessaire à l'exécution d'une mission d'intérêt public",
+          "Le traitement est nécessaire aux fins des intérêts légitimes poursuivis par le responsable du traitement"
+        ]
+      },
+      "dataCollection": {
+        "title": "Article 3 : DONNÉES À CARACTÈRE PERSONNEL COLLECTÉES ET TRAITÉES DANS LE CADRE DE LA NAVIGATION SUR LE SITE",
+        "collectedData": {
+          "title": "Article 3.1 : Données collectées",
+          "content": "Les données personnelles collectées dans le cadre de notre activité suite à l'acceptation des cookies sont les suivantes :",
+          "dataTypes": [
+            "Nombre d'utilisateurs",
+            "Statistiques de la session",
+            "Géolocalisation approximative",
+            "Informations sur le navigateur et l'appareil"
+          ],
+          "purpose": "Ces données sont collectées dans le but d'effectuer nos analyses de marché et ne sont pas communiquées à des tiers."
+        },
+        "collectionMethod": {
+          "title": "Article 3.2 : Mode de collecte des données",
+          "automaticCollection": "Lorsque vous utilisez notre site, sont automatiquement collectées les données suivantes : AUCUNE",
+          "cookieAcceptance": "D'autres données personnelles sont collectées lorsque vous effectuez les opérations suivantes sur la plateforme :",
+          "googleAnalytics": "Acceptation des cookies Google Analytics : Nombre d'utilisateurs - Statistiques de la session - Géolocalisation approximative - Informations sur le navigateur et l'appareil",
+          "retention": "Elles sont conservées par le responsable du traitement dans des conditions raisonnables de sécurité, pour une durée de : 1 mois.",
+          "legalRetention": "La société est susceptible de conserver certaines données à caractère personnel au-delà des délais annoncés ci-dessus afin de remplir ses obligations légales ou réglementaires."
+        },
+        "hosting": {
+          "title": "Article 3.3 : Hébergement des données",
+          "content": "Le site dariuspizza.fr est hébergé par :",
+          "hostingProvider": "WebOustaou - weboustaou.fr - contact@weboustaou.fr"
+        },
+        "dataSharing": {
+          "title": "Article 3.4 : Transmission des données à des tiers",
+          "content": "Les données peuvent être transmises à nos partenaires pour effectuer nos analyses de marché, ci-après énumérés : DariusDev"
+        },
+        "cookies": {
+          "title": "Article 3.5 : Politique en matière de \"Cookies\"",
+          "content": "Les données Nombre d'utilisateurs - Statistiques de la session - Géolocalisation approximative - Informations sur le navigateur et l'appareil peuvent être traitées par Google Analytics suite à l'acceptation des cookies.",
+          "detailedInfo": "Pour plus d'informations sur notre utilisation des cookies, consultez notre Politique des Cookies."
+        }
+      },
+      "dataController": {
+        "title": "Article 4 : RESPONSABLE DU TRAITEMENT DES DONNÉES ET DÉLÉGUÉ À LA PROTECTION DES DONNÉES",
+        "controller": {
+          "title": "Article 4.1 : Le responsable du traitement des données",
+          "content": "Les données à caractère personnelles sont collectées par DariusDev, EI au capital de 100€, dont le numéro d'immatriculation SIRET est le 979 408 507 00015",
+          "contact": "Le responsable du traitement des données à caractère personnel peut être contacté de la manière suivante :",
+          "email": "Par mail : admin@dariusdev.fr"
+        },
+        "dpo": {
+          "title": "Article 4.2 : Le délégué à la protection des données",
+          "content": "Le délégué à la protection des données de l'entreprise ou du responsable est :",
+          "dpoName": "Alexy Roman, contact@alexyroman.com",
+          "cnil": "Si vous estimez, après nous avoir contactés, que vos droits \"Informatique et Libertés\", ne sont pas respectés, vous pouvez adresser une information à la CNIL."
+        }
+      },
+      "userRights": {
+        "title": "Article 5 : LES DROITS DE L'UTILISATEUR EN MATIÈRE DE COLLECTE ET DE TRAITEMENT DES DONNÉES",
+        "content": "Tout utilisateur concerné par le traitement de ses données personnelles peut se prévaloir des droits suivants, en application du règlement européen 2016/679 et de la Loi Informatique et Liberté (Loi 78-17 du 6 janvier 1978) :",
+        "rights": [
+          "Droit d'accès, de rectification et droit à l'effacement des données (posés respectivement aux articles 15, 16 et 17 du RGPD)",
+          "Droit à la portabilité des données (article 20 du RGPD)",
+          "Droit à la limitation (article 18 du RGPD) et à l'opposition du traitement des données (article 21 du RGPD)",
+          "Droit de ne pas faire l'objet d'une décision fondée exclusivement sur un procédé automatisé",
+          "Droit de déterminer le sort des données après la mort",
+          "Droit de saisir l'autorité de contrôle compétente (article 77 du RGPD)"
+        ],
+        "exerciseRights": {
+          "title": "Exercice des droits",
+          "content": "Pour exercer vos droits, veuillez adresser votre courrier à WebOustaou, 275 Avenue des Alliés, 83240 Cavalaire, ou par mail à contact@weboustaou.fr.",
+          "requiredInfo": "Afin que le responsable du traitement des données puisse faire droit à sa demande, l'utilisateur peut être tenu de lui communiquer certaines informations telles que : ses noms et prénoms, son adresse e-mail ainsi que son numéro de compte, d'espace personnel ou d'abonné.",
+          "cnilInfo": "Consultez le site cnil.fr pour plus d'informations sur vos droits."
+        }
+      },
+      "businessContext": {
+        "title": "Contexte de notre activité",
+        "content": "Darius Pizza est une pizzeria familiale située à Cavalaire-sur-Mer, spécialisée dans la préparation de pizzas authentiques avec des ingrédients de qualité. Notre site web permet aux clients de découvrir notre menu, nos horaires, notre histoire et de nous contacter.",
+        "services": [
+          "Présentation de notre menu et de nos spécialités",
+          "Informations sur nos horaires et notre localisation",
+          "Formulaire de contact pour les réservations et demandes",
+          "Partage de contenu sur nos réseaux sociaux (Instagram, Facebook)",
+          "Intégration avec TripAdvisor et Google pour les avis clients",
+          "Présentation de notre histoire et de nos protocoles de fabrication"
+        ],
+        "dataPurpose": "Les données collectées nous permettent d'améliorer notre service client, d'analyser l'utilisation de notre site web, et de mieux comprendre les préférences de nos clients pour améliorer notre offre culinaire."
+      }
+    },
+    "terms": {
+      "backToHome": "Retour à l'Accueil",
+      "title": "Conditions d'Utilisation",
+      "lastUpdated": "Dernière mise à jour : 1er janvier 2024",
+      "introduction": {
+        "title": "Introduction",
+        "content": "Bienvenue chez Darius Pizza. Ces Conditions d'Utilisation régissent votre utilisation de notre site web et de nos services. En accédant ou en utilisant nos services, vous acceptez d'être lié par ces conditions."
+      },
+      "acceptance": {
+        "title": "Acceptation des conditions",
+        "content": "En utilisant notre site web ou en passant une commande, vous reconnaissez avoir lu, compris et accepté d'être lié par ces Conditions d'Utilisation et notre Politique de Confidentialité."
+      },
+      "orders": {
+        "title": "Commandes et services",
+        "content": "Lors de la passation d'une commande, vous acceptez de :",
+        "accuracy": "Fournir des informations exactes et complètes",
+        "pricing": "Payer les prix indiqués sur notre menu",
+        "availability": "Accepter que les articles du menu ne soient pas toujours disponibles",
+        "modifications": "Comprendre que les modifications de commande peuvent affecter le prix et le délai de livraison"
+      },
+      "payment": {
+        "title": "Conditions de paiement",
+        "content": "Les conditions de paiement incluent :",
+        "methods": "Nous acceptons les espèces, les cartes de crédit et autres méthodes de paiement approuvées",
+        "timing": "Le paiement est dû au moment de la passation de la commande",
+        "refunds": "Les remboursements sont soumis à notre politique de remboursement et aux lois applicables"
+      },
+      "delivery": {
+        "title": "Livraison et retrait",
+        "content": "Conditions de livraison et de retrait :",
+        "times": "Les délais de livraison sont des estimations et peuvent varier",
+        "areas": "Nous livrons dans notre zone de service désignée",
+        "responsibility": "Vous êtes responsable de fournir des informations de livraison exactes"
+      },
+      "liability": {
+        "title": "Limitation de responsabilité",
+        "content": "Dans la mesure maximale permise par la loi, Darius Pizza ne sera pas responsable de tout dommage indirect, accessoire, spécial, consécutif ou punitif.",
+        "limitation": "Notre responsabilité totale ne dépassera pas le montant que vous avez payé pour les services."
+      },
+      "intellectualProperty": {
+        "title": "Propriété intellectuelle",
+        "content": "Tout le contenu de notre site web, y compris le texte, les graphiques, les logos et les images, est la propriété de Darius Pizza et est protégé par le droit d'auteur et d'autres lois sur la propriété intellectuelle."
+      },
+      "prohibited": {
+        "title": "Utilisations interdites",
+        "content": "Vous ne pouvez pas utiliser nos services pour :",
+        "illegal": "Toute fin illégale ou pour inciter d'autres à accomplir des actes illégaux",
+        "harassment": "Harceler, maltraiter ou nuire à autrui",
+        "fraud": "Transmettre ou faire envoyer tout matériel publicitaire ou promotionnel",
+        "violation": "Violer toute loi ou réglementation applicable"
+      },
+      "termination": {
+        "title": "Résiliation",
+        "content": "Nous pouvons résilier ou suspendre votre accès à nos services immédiatement, sans préavis, pour quelque raison que ce soit, y compris la violation de ces Conditions d'Utilisation."
+      },
+      "governingLaw": {
+        "title": "Loi applicable",
+        "content": "Ces Conditions d'Utilisation seront régies par et interprétées conformément aux lois de la juridiction dans laquelle Darius Pizza opère."
+      },
+      "contact": {
+        "title": "Informations de contact",
+        "content": "Si vous avez des questions sur ces Conditions d'Utilisation, veuillez nous contacter :",
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "address": "Adresse"
+      },
+      "changes": {
+        "title": "Modifications des conditions",
+        "content": "Nous nous réservons le droit de modifier ces Conditions d'Utilisation à tout moment. Nous informerons les utilisateurs de tout changement important en publiant les nouvelles Conditions d'Utilisation sur cette page."
+      }
+    },
+    "cookies": {
+      "backToHome": "Retour à l'Accueil",
+      "title": "Politique des Cookies",
+      "lastUpdated": "Dernière mise à jour : 1er janvier 2024",
+      "introduction": {
+        "title": "Introduction",
+        "content": "Cette Politique des Cookies explique comment Darius Pizza utilise les cookies et technologies similaires lorsque vous visitez notre site web. Elle explique ce que sont ces technologies et pourquoi nous les utilisons, ainsi que vos droits pour contrôler notre utilisation."
+      },
+      "whatAreCookies": {
+        "title": "Que sont les cookies ?",
+        "content": "Les cookies sont de petits fichiers texte qui sont placés sur votre ordinateur ou appareil mobile lorsque vous visitez un site web. Ils sont largement utilisés pour faire fonctionner les sites web plus efficacement et pour fournir des informations aux propriétaires de sites web.",
+        "types": "Les cookies peuvent être 'persistants' (restant sur votre appareil jusqu'à suppression) ou des cookies de 'session' (supprimés lorsque vous fermez votre navigateur)."
+      },
+      "howWeUseCookies": {
+        "title": "Comment nous utilisons les cookies",
+        "content": "Nous utilisons les cookies à plusieurs fins :"
+      },
+      "cookieTypes": {
+        "necessary": {
+          "title": "Cookies Nécessaires",
+          "description": "Ces cookies sont essentiels au bon fonctionnement du site web. Ils permettent des fonctions de base comme la navigation de page, l'accès aux zones sécurisées et la mémorisation de vos préférences.",
+          "duration": "Durée : Session ou jusqu'à 1 an"
+        },
+        "analytics": {
+          "title": "Cookies d'Analyse",
+          "description": "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web en collectant et rapportant des informations de manière anonyme. Cela nous aide à améliorer les performances de notre site web.",
+          "duration": "Durée : Jusqu'à 2 ans"
+        },
+        "functional": {
+          "title": "Cookies Fonctionnels",
+          "description": "Ces cookies permettent une fonctionnalité améliorée et une personnalisation, comme la mémorisation de vos préférences linguistiques et de votre statut de connexion.",
+          "duration": "Durée : Jusqu'à 1 an"
+        },
+        "marketing": {
+          "title": "Cookies Marketing",
+          "description": "Ces cookies sont utilisés pour suivre les visiteurs sur les sites web afin d'afficher des publicités pertinentes et engageantes.",
+          "duration": "Durée : Jusqu'à 1 an"
+        }
+      },
+      "thirdPartyCookies": {
+        "title": "Cookies Tiers",
+        "content": "Nous utilisons également des cookies tiers de partenaires de confiance :",
+        "googleAnalytics": "Utilisé pour analyser le trafic du site web et le comportement des utilisateurs",
+        "googleMaps": "Utilisé pour afficher des cartes interactives et des services de localisation",
+        "socialMedia": "Utilisé pour l'intégration des réseaux sociaux et les fonctionnalités de partage"
+      },
+      "managingCookies": {
+        "title": "Gestion des cookies",
+        "content": "Vous pouvez contrôler et gérer les cookies de plusieurs façons :",
+        "browser": {
+          "title": "Paramètres du navigateur",
+          "content": "La plupart des navigateurs web vous permettent de contrôler les cookies via leurs paramètres. Voici comment gérer les cookies dans les navigateurs populaires :",
+          "chrome": "Chrome : Paramètres > Confidentialité et sécurité > Cookies et autres données de site",
+          "firefox": "Firefox : Options > Confidentialité et sécurité > Cookies et données de site",
+          "safari": "Safari : Préférences > Confidentialité > Gérer les données de site web",
+          "edge": "Edge : Paramètres > Cookies et autorisations de site > Cookies et données de site"
+        },
+        "website": {
+          "title": "Paramètres de cookies du site web",
+          "content": "Vous pouvez également gérer vos préférences de cookies en utilisant notre bannière de consentement aux cookies qui apparaît lors de votre première visite sur notre site web."
+        }
+      },
+      "consequences": {
+        "title": "Conséquences de la désactivation des cookies",
+        "content": "Si vous choisissez de désactiver les cookies, certaines fonctionnalités de notre site web peuvent ne pas fonctionner correctement. Cela peut affecter votre capacité à passer des commandes, accéder à certaines zones du site ou recevoir du contenu personnalisé."
+      },
+      "updates": {
+        "title": "Mises à jour de cette politique",
+        "content": "Nous pouvons mettre à jour cette Politique des Cookies de temps à autre pour refléter les changements dans nos pratiques ou pour d'autres raisons opérationnelles, légales ou réglementaires."
+      },
+      "contact": {
+        "title": "Nous contacter",
+        "content": "Si vous avez des questions sur notre utilisation des cookies, veuillez nous contacter :",
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "address": "Adresse"
+      }
+    },
+    "legalMentions": {
+      "backToHome": "Retour à l'Accueil",
+      "title": "Mentions Légales",
+      "lastUpdated": "Dernière mise à jour : 1er janvier 2024",
+      "identification": {
+        "title": "Identification de l'entreprise",
+        "companyName": "Raison sociale",
+        "companyNameValue": "Chez Darius",
+        "rcs": "RCS",
+        "rcsValue": "Fréjus A 453 150 992",
+        "vatNumber": "N° TVA",
+        "vatNumberValue": "FR09453150922",
+        "email": "Email",
+        "emailValue": "contact@dariuspizza.fr",
+        "phone": "Téléphone",
+        "phoneValue": "04.94.64.05.11",
+        "hosting": "Hébergeur",
+        "hostingValue": "WebOustaou - contact@weboustaou.fr"
+      },
+      "termsOfSale": {
+        "title": "Conditions générales de vente",
+        "pricing": {
+          "title": "Prix",
+          "content": "Prix TTC en euros"
+        },
+        "loyaltyProgram": {
+          "title": "Programme de fidélité",
+          "content": "Une pizza offerte toutes les 10 pizzas achetées via l'application de fidélité Fidelatoo"
+        },
+        "payment": {
+          "title": "Paiements",
+          "content": "Espèces et CB à partir de 5€, pas de tickets restaurants"
+        }
+      },
+      "additionalInfo": {
+        "title": "Informations complémentaires",
+        "content": "Ces mentions légales sont conformes à la réglementation française en vigueur. Pour toute question concernant ces informations, vous pouvez nous contacter aux coordonnées mentionnées ci-dessus."
+      }
+    }
   }
 }

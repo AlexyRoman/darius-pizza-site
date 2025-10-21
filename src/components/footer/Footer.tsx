@@ -44,9 +44,12 @@ export function Footer(props: FooterProps) {
   };
 
   const legalLinks: LinkItem[] = [
-    { href: '#', label: legalLabels?.privacy ?? 'Privacy' },
-    { href: '#', label: legalLabels?.terms ?? 'Terms' },
-    { href: '#', label: legalLabels?.imprint ?? 'Imprint' },
+    { href: withLocale('/privacy'), label: legalLabels?.privacy ?? 'Privacy' },
+    { href: withLocale('/terms'), label: legalLabels?.terms ?? 'Terms' },
+    {
+      href: withLocale('/legal-mentions'),
+      label: legalLabels?.imprint ?? 'Legal Mentions',
+    },
   ];
   const menuLinks: LinkItem[] = [
     { href: withLocale('/'), label: menuLabels?.home ?? 'Home' },

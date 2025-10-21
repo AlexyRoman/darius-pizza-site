@@ -39,6 +39,30 @@ export const PAGES = {
     sitemapChangeFrequency: 'monthly',
     sitemapEnabled: true,
   },
+  privacy: {
+    path: '/privacy',
+    sitemapPriority: 0.3,
+    sitemapChangeFrequency: 'yearly',
+    sitemapEnabled: true,
+  },
+  terms: {
+    path: '/terms',
+    sitemapPriority: 0.3,
+    sitemapChangeFrequency: 'yearly',
+    sitemapEnabled: true,
+  },
+  cookies: {
+    path: '/cookies',
+    sitemapPriority: 0.3,
+    sitemapChangeFrequency: 'yearly',
+    sitemapEnabled: true,
+  },
+  legalMentions: {
+    path: '/legal-mentions',
+    sitemapPriority: 0.3,
+    sitemapChangeFrequency: 'yearly',
+    sitemapEnabled: true,
+  },
 } satisfies Record<string, PageConfig>;
 
 export type PageKey = keyof typeof PAGES;

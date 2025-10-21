@@ -18,5 +18,9 @@ export const routing = defineRouting({
     '/': '/',
     '/menu': '/menu',
     '/info': '/info',
+    '/privacy': '/privacy',
+    '/terms': '/terms',
+    '/cookies': '/cookies',
+    '/legal-mentions': '/legal-mentions',
   },
 });

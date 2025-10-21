@@ -18,7 +18,7 @@
       "startDate": "2025-10-10T00:00:00Z",
       "endDate": "2025-10-29T00:00:00Z",
       "isRecurring": false,
-      "isActive": true
+      "isActive": false
     }
   ],
   "emergencyClosings": [

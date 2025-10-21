@@ -47,6 +47,7 @@
     }
   },
   "allergens": {
+    "vegetarian": "Vegetariano",
     "gluten": "Gluten",
     "eggs": "Huevos",
     "milk": "Leche",

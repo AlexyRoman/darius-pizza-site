@@ -80,7 +80,7 @@ export function useMultipleRestaurantConfigs(
     };
 
     loadConfigs();
-  }, [configTypes, locale]);
+  }, [configTypes.join(','), locale]); // Use join to create stable dependency
 
   return { data, loading, error };
 }

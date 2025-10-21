@@ -110,6 +110,7 @@ export default function MenuPage() {
 
   const normalizeAllergenKey = React.useCallback((raw: string): string => {
     const k = raw.toLowerCase().trim();
+    if (k === 'vegetarian') return 'vegetarian';
     if (k === 'sulphites') return 'sulfites';
     if (k === 'mollusks') return 'molluscs';
     if (k === 'soya') return 'soy';
@@ -236,7 +237,113 @@ export default function MenuPage() {
                           {data.allergens.map(key => {
                             const k = normalizeAllergenKey(key);
                             const Icon =
-                              k === 'gluten'
+                              k === 'vegetarian'
+                                ? Carrot
+                                : k === 'gluten'
+                                  ? Wheat
+                                  : k === 'eggs' || k === 'egg'
+                                    ? Egg
+                                    : k === 'milk'
+                                      ? Milk
+                                      : k === 'fish'
+                                        ? Fish
+                                        : k === 'crustaceans' ||
+                                            k === 'crustacean'
+                                          ? Fish
+                                          : k === 'peanuts'
+                                            ? Bean
+                                            : k === 'nuts'
+                                              ? Nut
+                                              : k === 'sesame'
+                                                ? Leaf
+                                                : k === 'mustard'
+                                                  ? Sprout
+                                                  : k === 'soy'
+                                                    ? Bean
+                                                    : k === 'celery'
+                                                      ? Carrot
+                                                      : k === 'lupin'
+                                                        ? Flower
+                                                        : k === 'sulfites'
+                                                          ? Bubbles
+                                                          : k === 'molluscs'
+                                                            ? Shell
+                                                            : Shell;
+                            const tooltipId = `${data.id}-${key}`;
+                            return (
+                              <div key={key} className='relative inline-block'>
+                                <span
+                                  className={`allergen-trigger flex size-6 items-center justify-center rounded-full border cursor-pointer transition-colors ${
+                                    k === 'vegetarian'
+                                      ? 'border-green-200 bg-green-100 text-green-600 hover:bg-green-200'
+                                      : 'border-orange-200 bg-orange-100 text-orange-600 hover:bg-orange-200'
+                                  }`}
+                                  onClick={() =>
+                                    setVisibleTooltip(
+                                      visibleTooltip === tooltipId
+                                        ? null
+                                        : tooltipId
+                                    )
+                                  }
+                                  onMouseEnter={() =>
+                                    setHoveredTooltip(tooltipId)
+                                  }
+                                  onMouseLeave={() => setHoveredTooltip(null)}
+                                >
+                                  <Icon className='size-3' />
+                                </span>
+                                {/* Mobile: Click tooltip */}
+                                {visibleTooltip === tooltipId && (
+                                  <div
+                                    className={`absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-white text-xs rounded shadow-lg whitespace-nowrap z-50 md:hidden ${
+                                      k === 'vegetarian'
+                                        ? 'bg-green-600'
+                                        : 'bg-orange-600'
+                                    }`}
+                                  >
+                                    {tAllergens(k)}
+                                    <div
+                                      className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent ${
+                                        k === 'vegetarian'
+                                          ? 'border-t-green-600'
+                                          : 'border-t-orange-600'
+                                      }`}
+                                    ></div>
+                                  </div>
+                                )}
+                                {/* Desktop: Hover tooltip */}
+                                {hoveredTooltip === tooltipId && (
+                                  <div
+                                    className={`hidden md:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-white text-xs rounded shadow-lg whitespace-nowrap z-50 ${
+                                      k === 'vegetarian'
+                                        ? 'bg-green-600'
+                                        : 'bg-orange-600'
+                                    }`}
+                                  >
+                                    {tAllergens(k)}
+                                    <div
+                                      className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent ${
+                                        k === 'vegetarian'
+                                          ? 'border-t-green-600'
+                                          : 'border-t-orange-600'
+                                      }`}
+                                    ></div>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                    {data.allergens && data.allergens.length > 0 && (
+                      <div className='flex md:hidden items-center gap-1'>
+                        {data.allergens.map(key => {
+                          const k = normalizeAllergenKey(key);
+                          const Icon =
+                            k === 'vegetarian'
+                              ? Carrot
+                              : k === 'gluten'
                                 ? Wheat
                                 : k === 'eggs' || k === 'egg'
                                   ? Egg
@@ -266,84 +373,15 @@ export default function MenuPage() {
                                                         : k === 'molluscs'
                                                           ? Shell
                                                           : Shell;
-                            const tooltipId = `${data.id}-${key}`;
-                            return (
-                              <div key={key} className='relative inline-block'>
-                                <span
-                                  className='allergen-trigger flex size-6 items-center justify-center rounded-full border border-orange-200 bg-orange-100 text-orange-600 cursor-pointer hover:bg-orange-200 transition-colors'
-                                  onClick={() =>
-                                    setVisibleTooltip(
-                                      visibleTooltip === tooltipId
-                                        ? null
-                                        : tooltipId
-                                    )
-                                  }
-                                  onMouseEnter={() =>
-                                    setHoveredTooltip(tooltipId)
-                                  }
-                                  onMouseLeave={() => setHoveredTooltip(null)}
-                                >
-                                  <Icon className='size-3' />
-                                </span>
-                                {/* Mobile: Click tooltip */}
-                                {visibleTooltip === tooltipId && (
-                                  <div className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-orange-600 text-white text-xs rounded shadow-lg whitespace-nowrap z-50 md:hidden'>
-                                    {tAllergens(k)}
-                                    <div className='absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-orange-600'></div>
-                                  </div>
-                                )}
-                                {/* Desktop: Hover tooltip */}
-                                {hoveredTooltip === tooltipId && (
-                                  <div className='hidden md:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-orange-600 text-white text-xs rounded shadow-lg whitespace-nowrap z-50'>
-                                    {tAllergens(k)}
-                                    <div className='absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-orange-600'></div>
-                                  </div>
-                                )}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
-                    </div>
-                    {data.allergens && data.allergens.length > 0 && (
-                      <div className='flex md:hidden items-center gap-1'>
-                        {data.allergens.map(key => {
-                          const k = normalizeAllergenKey(key);
-                          const Icon =
-                            k === 'gluten'
-                              ? Wheat
-                              : k === 'eggs' || k === 'egg'
-                                ? Egg
-                                : k === 'milk'
-                                  ? Milk
-                                  : k === 'fish'
-                                    ? Fish
-                                    : k === 'crustaceans' || k === 'crustacean'
-                                      ? Fish
-                                      : k === 'peanuts'
-                                        ? Bean
-                                        : k === 'nuts'
-                                          ? Nut
-                                          : k === 'sesame'
-                                            ? Leaf
-                                            : k === 'mustard'
-                                              ? Sprout
-                                              : k === 'soy'
-                                                ? Bean
-                                                : k === 'celery'
-                                                  ? Carrot
-                                                  : k === 'lupin'
-                                                    ? Flower
-                                                    : k === 'sulfites'
-                                                      ? Bubbles
-                                                      : k === 'molluscs'
-                                                        ? Shell
-                                                        : Shell;
                           const tooltipId = `${data.id}-${key}`;
                           return (
                             <div key={key} className='relative inline-block'>
                               <span
-                                className='allergen-trigger flex size-6 items-center justify-center rounded-full border border-orange-200 bg-orange-100 text-orange-600 cursor-pointer hover:bg-orange-200 transition-colors'
+                                className={`allergen-trigger flex size-6 items-center justify-center rounded-full border cursor-pointer transition-colors ${
+                                  k === 'vegetarian'
+                                    ? 'border-green-200 bg-green-100 text-green-600 hover:bg-green-200'
+                                    : 'border-orange-200 bg-orange-100 text-orange-600 hover:bg-orange-200'
+                                }`}
                                 onClick={() =>
                                   setVisibleTooltip(
                                     visibleTooltip === tooltipId
@@ -360,16 +398,40 @@ export default function MenuPage() {
                               </span>
                               {/* Mobile: Click tooltip */}
                               {visibleTooltip === tooltipId && (
-                                <div className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-orange-600 text-white text-xs rounded shadow-lg whitespace-nowrap z-50 md:hidden'>
+                                <div
+                                  className={`absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-white text-xs rounded shadow-lg whitespace-nowrap z-50 md:hidden ${
+                                    k === 'vegetarian'
+                                      ? 'bg-green-600'
+                                      : 'bg-orange-600'
+                                  }`}
+                                >
                                   {tAllergens(k)}
-                                  <div className='absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-orange-600'></div>
+                                  <div
+                                    className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent ${
+                                      k === 'vegetarian'
+                                        ? 'border-t-green-600'
+                                        : 'border-t-orange-600'
+                                    }`}
+                                  ></div>
                                 </div>
                               )}
                               {/* Desktop: Hover tooltip */}
                               {hoveredTooltip === tooltipId && (
-                                <div className='hidden md:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-orange-600 text-white text-xs rounded shadow-lg whitespace-nowrap z-50'>
+                                <div
+                                  className={`hidden md:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-white text-xs rounded shadow-lg whitespace-nowrap z-50 ${
+                                    k === 'vegetarian'
+                                      ? 'bg-green-600'
+                                      : 'bg-orange-600'
+                                  }`}
+                                >
                                   {tAllergens(k)}
-                                  <div className='absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-orange-600'></div>
+                                  <div
+                                    className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent ${
+                                      k === 'vegetarian'
+                                        ? 'border-t-green-600'
+                                        : 'border-t-orange-600'
+                                    }`}
+                                  ></div>
                                 </div>
                               )}
                             </div>

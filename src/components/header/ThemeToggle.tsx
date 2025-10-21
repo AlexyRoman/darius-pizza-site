@@ -2,27 +2,21 @@
 
 import React from 'react';
 import { useThemeContext } from '@/contexts/ThemeContext';
-import {
-  ThemeToggleButton,
-  useThemeTransition,
-} from '@/components/ui/shadcn-io/theme-toggle-button';
+import { ThemeToggleButton } from '@/components/ui/shadcn-io/theme-toggle-button';
 import { withThrottle, withRateLimit } from '@/lib/pacer';
 
 export function ThemeToggle() {
   const { theme, effectiveTheme, cycleTheme, isThemeLoaded } =
     useThemeContext();
 
-  const { startTransition } = useThemeTransition();
   const onClick = React.useMemo(
     () =>
       withRateLimit(
         withThrottle(() => {
-          startTransition(() => {
-            cycleTheme();
-          });
+          cycleTheme();
         }, 350)
       ),
-    [startTransition, cycleTheme]
+    [cycleTheme]
   );
 
   return (

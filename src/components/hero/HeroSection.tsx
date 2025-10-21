@@ -6,7 +6,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Star, Clock, MapPin } from 'lucide-react';
+import { ArrowRight, Star, Clock, MapPin, Loader2 } from 'lucide-react';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/config/restaurant/hours.json';
 import { useThemeContext } from '@/contexts/ThemeContext';
@@ -40,31 +40,10 @@ export default function HeroSection() {
     setIsMounted(true);
   }, []);
 
-  // Show loading state if config is still loading
-  if (closingsLoading) {
-    return (
-      <div className='flex items-center justify-center p-8'>
-        <div className='animate-spin rounded-full h-8 w-8 border-b-2 border-primary'></div>
-      </div>
-    );
-  }
-
-  // Show error state if config failed to load
-  if (!closings) {
-    return (
-      <div className='flex items-center justify-center p-8'>
-        <div className='text-center'>
-          <h1 className='text-2xl font-bold mb-4'>Error</h1>
-          <p>Failed to load restaurant information. Please try again later.</p>
-        </div>
-      </div>
-    );
-  }
-
   // Get current day and time (only on client-side to avoid hydration mismatch)
   const now = isMounted ? new Date() : new Date('2024-01-01'); // Fallback date for SSR
   const currentDayName = isMounted
-    ? now.toLocaleDateString(locale, { weekday: 'long' }).toLowerCase()
+    ? now.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase()
     : 'monday';
   const currentTime = isMounted ? now.toTimeString().slice(0, 5) : '00:00'; // HH:MM format
 
@@ -198,21 +177,30 @@ export default function HeroSection() {
           {/* Content Section */}
           <div className='space-y-8 text-center lg:text-left'>
             {/* Badge */}
-            <Badge
-              variant={
-                currentClosing
-                  ? 'destructive'
-                  : isCurrentlyOpen
-                    ? 'default'
-                    : isOpeningSoon && minutesUntilOpening <= 60
-                      ? 'outline'
-                      : 'secondary'
-              }
-              className={`${badgeContent.className}`}
-            >
-              {badgeContent.icon}
-              {badgeContent.text}
-            </Badge>
+            {closingsLoading ? (
+              <div className='flex items-center gap-2'>
+                <Loader2 className='h-4 w-4 animate-spin text-primary' />
+                <span className='text-sm text-foreground-secondary'>
+                  Loading status...
+                </span>
+              </div>
+            ) : (
+              <Badge
+                variant={
+                  currentClosing
+                    ? 'destructive'
+                    : isCurrentlyOpen
+                      ? 'default'
+                      : isOpeningSoon && minutesUntilOpening <= 60
+                        ? 'outline'
+                        : 'secondary'
+                }
+                className={`${badgeContent.className}`}
+              >
+                {badgeContent.icon}
+                {badgeContent.text}
+              </Badge>
+            )}
 
             {/* Main Heading */}
             <div className='space-y-4'>

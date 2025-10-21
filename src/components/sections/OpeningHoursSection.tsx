@@ -16,7 +16,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { useThemeContext } from '@/contexts/ThemeContext';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/config/restaurant/hours.json';
 import { formatDate, formatDateTime } from '@/lib/date-utils';
@@ -34,17 +33,11 @@ export default function OpeningHoursSection() {
   const t = useTranslations('hours');
   const tHero = useTranslations('hero');
   const locale = useLocale();
-  const { effectiveTheme } = useThemeContext();
 
   // Load restaurant configurations with locale support (except hours which uses original system)
-  const { data: messagesConfig, loading: messagesLoading } =
-    useRestaurantConfig('messages', locale);
-  const { data: closingsConfig, loading: closingsLoading } =
-    useRestaurantConfig('closings', locale);
-  const { data: contactConfig, loading: contactLoading } = useRestaurantConfig(
-    'contact',
-    locale
-  );
+  const { data: messagesConfig } = useRestaurantConfig('messages', locale);
+  const { data: closingsConfig } = useRestaurantConfig('closings', locale);
+  const { data: contactConfig } = useRestaurantConfig('contact', locale);
 
   // Hours use the original system (not localized)
   const hours = hoursConfig.openingHours as OpeningHours;
@@ -74,30 +67,6 @@ export default function OpeningHoursSection() {
 
     return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
-
-  // Show loading state if any config is still loading
-  if (messagesLoading || closingsLoading || contactLoading) {
-    return (
-      <div className='flex items-center justify-center p-8'>
-        <div className='animate-spin rounded-full h-8 w-8 border-b-2 border-primary'></div>
-      </div>
-    );
-  }
-
-  // Show error state if any config failed to load
-  if (!messages || !closings || !contact) {
-    return (
-      <div className='flex items-center justify-center p-8'>
-        <Alert>
-          <AlertCircle className='h-4 w-4' />
-          <AlertTitle>Error</AlertTitle>
-          <AlertDescription>
-            Failed to load restaurant information. Please try again later.
-          </AlertDescription>
-        </Alert>
-      </div>
-    );
-  }
 
   // Get current day and time (only on client-side to avoid hydration mismatch)
   const now = isMounted ? new Date() : new Date('2024-01-01'); // Fallback date for SSR
@@ -399,10 +368,11 @@ export default function OpeningHoursSection() {
                         {t('card.address')}
                       </p>
                       <p className='text-foreground-secondary'>
-                        {contact.address.street}
+                        {contact?.address?.street || 'Loading...'}
                         <br />
-                        {contact.address.city}, {contact.address.state}{' '}
-                        {contact.address.zipCode}
+                        {contact?.address?.city || 'Loading...'},{' '}
+                        {contact?.address?.state || 'Loading...'}{' '}
+                        {contact?.address?.zipCode || 'Loading...'}
                       </p>
                     </div>
                   </div>
@@ -415,10 +385,10 @@ export default function OpeningHoursSection() {
                       </p>
                       <p className='text-foreground-secondary'>
                         <a
-                          href={`tel:${contact.phone.tel}`}
+                          href={`tel:${contact?.phone?.tel || '#'}`}
                           className='hover:text-primary transition-colors'
                         >
-                          {contact.phone.display}
+                          {contact?.phone?.display || 'Loading...'}
                         </a>
                       </p>
                     </div>
@@ -435,11 +405,7 @@ export default function OpeningHoursSection() {
                   </div>
                   <div className='relative aspect-[16/9] rounded border border-border/20 overflow-hidden'>
                     <Image
-                      src={
-                        effectiveTheme === 'dark'
-                          ? '/static/location-map-dark.webp'
-                          : '/static/location-map-light.webp'
-                      }
+                      src='/static/location-map-light.webp'
                       alt='Restaurant location map'
                       fill
                       className='object-cover'
@@ -447,7 +413,7 @@ export default function OpeningHoursSection() {
                     />
                   </div>
                   <p className='text-xs text-foreground-secondary mt-2 text-center'>
-                    {contact.address.description}
+                    {contact?.address?.description || 'Loading...'}
                   </p>
                 </div>
 
@@ -459,7 +425,7 @@ export default function OpeningHoursSection() {
                     className='!bg-primary !text-primary-foreground px-4 py-3 text-base font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:scale-105 hover:!bg-primary active:!bg-primary focus:!bg-primary'
                   >
                     <a
-                      href={`tel:${contact.phone.tel}`}
+                      href={`tel:${contact?.phone?.tel || '#'}`}
                       className='flex items-center gap-2'
                     >
                       <Phone className='h-4 w-4' />
@@ -475,7 +441,7 @@ export default function OpeningHoursSection() {
                       className='!bg-secondary !text-secondary-foreground px-4 py-3 text-base font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:scale-105 hover:!bg-secondary active:!bg-secondary focus:!bg-secondary'
                     >
                       <a
-                        href={contact.maps.appleMaps}
+                        href={contact?.maps?.appleMaps || '#'}
                         className='flex items-center gap-2'
                       >
                         <MapPin className='h-4 w-4' />

@@ -18,7 +18,7 @@
       "price": 8.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1858292457/25eb1b94f2bd9a2be1b9386ec2b05f5f_lg.jpeg",
-      "allergens": ["Gluten", "Milk"]
+      "allergens": ["Vegetarian", "Gluten", "Milk"]
     },
     {
       "id": "product-428817123",
@@ -28,7 +28,7 @@
       "price": 9.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1662652542/1d5aff3ae5f9921258e65ee49f17c0a8_lg.jpg",
-      "allergens": ["Gluten", "Milk"]
+      "allergens": ["Vegetarian", "Gluten", "Milk"]
     },
     {
       "id": "product-451379312",
@@ -58,7 +58,7 @@
       "price": 12.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/2107908261/0e27e596bd3bb2fe1cef6f62ded2e02e_lg.jpg",
-      "allergens": ["Gluten", "Milk"]
+      "allergens": ["Vegetarian", "Gluten", "Milk"]
     },
     {
       "id": "product-373847564",
@@ -68,7 +68,7 @@
       "price": 11.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/2130478602/b8a3add77fa25ef263b23eb5035e5f21_lg.jpeg",
-      "allergens": ["Gluten", "Milk", "Nuts"]
+      "allergens": ["Vegetarian", "Gluten", "Milk", "Nuts"]
     },
     {
       "id": "product-805020646",
@@ -448,7 +448,7 @@
       "price": 11.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1322866220/690be3f2fc30cb868b5da5735222b2d2_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs"]
+      "allergens": ["Vegetarian", "Gluten", "Milk", "Eggs"]
     },
     {
       "id": "product-1510173889",

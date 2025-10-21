@@ -15,6 +15,7 @@ import {
   Flower,
   Atom,
   Carrot,
+  Carrot as Vegetable,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -29,6 +30,7 @@ export function AllergenLegend() {
   const t = useTranslations('allergens');
   // Localized single-word (or compact) labels are provided via next-intl in page; here we keep neutral defaults
   const items = [
+    { key: 'vegetarian', Icon: Vegetable, isVegetarian: true },
     { key: 'gluten', Icon: Wheat },
     { key: 'eggs', Icon: Egg },
     { key: 'milk', Icon: Milk },
@@ -75,7 +77,7 @@ export function AllergenLegend() {
           transform: 'none !important',
           transition: 'none !important',
           animation: 'none !important',
-          pointerEvents: 'none',
+          pointerEvents: 'auto',
           userSelect: 'none',
           touchAction: 'none',
           WebkitTouchCallout: 'none',
@@ -85,7 +87,7 @@ export function AllergenLegend() {
       >
         <div
           style={{
-            pointerEvents: 'none',
+            pointerEvents: 'auto',
             userSelect: 'none',
             touchAction: 'none',
             WebkitTouchCallout: 'none',
@@ -94,9 +96,15 @@ export function AllergenLegend() {
           }}
         >
           <ul className='space-y-2 pr-1 sm:max-h-56 sm:overflow-auto md:max-h-56 md:overflow-auto'>
-            {items.map(({ key, Icon }) => (
+            {items.map(({ key, Icon, isVegetarian }) => (
               <li key={key} className='flex items-center gap-2 text-sm'>
-                <span className='flex size-6 items-center justify-center rounded-full border border-orange-200 bg-orange-100 text-orange-600'>
+                <span
+                  className={`flex size-6 items-center justify-center rounded-full border ${
+                    isVegetarian
+                      ? 'border-green-200 bg-green-100 text-green-600'
+                      : 'border-orange-200 bg-orange-100 text-orange-600'
+                  }`}
+                >
                   <Icon className='size-3.5' />
                 </span>
                 <span className='text-foreground truncate'>{t(key)}</span>

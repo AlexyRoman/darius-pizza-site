@@ -7,8 +7,28 @@ import Link from 'next/link';
 import { Home, Phone, Info, Pizza } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-import { LocaleToggle } from '@/components/header/LocaleToggle';
-import { ThemeToggle } from '@/components/header/ThemeToggle';
+import dynamic from 'next/dynamic';
+
+const LocaleToggle = dynamic(
+  () =>
+    import('@/components/header/LocaleToggle').then(mod => ({
+      default: mod.LocaleToggle,
+    })),
+  {
+    ssr: false,
+    loading: () => <div className='w-8 h-8' />,
+  }
+);
+const ThemeToggle = dynamic(
+  () =>
+    import('@/components/header/ThemeToggle').then(mod => ({
+      default: mod.ThemeToggle,
+    })),
+  {
+    ssr: false,
+    loading: () => <div className='w-8 h-8' />,
+  }
+);
 import RadialSettings from '@/components/header/RadialSettings';
 //
 import { TimeClock } from '@/components/header/TimeClock';

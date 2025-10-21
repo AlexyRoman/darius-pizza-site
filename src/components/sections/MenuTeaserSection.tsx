@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import { Star, Utensils, ArrowRight } from 'lucide-react';
+import { Star, Utensils, ArrowRight, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -21,27 +21,6 @@ export default function MenuTeaserSection() {
   const { data: starredPizzasConfig, loading: starredPizzasLoading } =
     useRestaurantConfig('starred-pizzas', locale);
   const starredPizzas = starredPizzasConfig?.starredPizzas || [];
-
-  // Show loading state if config is still loading
-  if (starredPizzasLoading) {
-    return (
-      <div className='flex items-center justify-center p-8'>
-        <div className='animate-spin rounded-full h-8 w-8 border-b-2 border-primary'></div>
-      </div>
-    );
-  }
-
-  // Show error state if config failed to load
-  if (!starredPizzas) {
-    return (
-      <div className='flex items-center justify-center p-8'>
-        <div className='text-center'>
-          <h2 className='text-xl font-bold mb-4'>Error</h2>
-          <p>Failed to load menu information. Please try again later.</p>
-        </div>
-      </div>
-    );
-  }
 
   type MenuItem = { id: string; title: string; description: string };
   const menuData: MenuItem[] =
@@ -68,60 +47,71 @@ export default function MenuTeaserSection() {
         </div>
 
         {/* Pizza Cards Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12'>
-          {starredPizzas.map(pizza => (
-            <Card
-              key={pizza.id}
-              className='group bg-background-elevated border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden'
-            >
-              {/* Pizza Image */}
-              <div className='relative h-48 overflow-hidden'>
-                <img
-                  src={pizza.image}
-                  alt={pizza.title}
-                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300'
-                />
-                <div className='absolute top-3 right-3'>
-                  <Badge className='bg-primary text-primary-foreground shadow-lg'>
-                    <Star className='h-3 w-3 mr-1 fill-current' />
-                    {t('featuredBadge')}
-                  </Badge>
-                </div>
-                <div className='absolute bottom-3 left-3'>
-                  <Badge
-                    variant='secondary'
-                    className='bg-black/70 text-white backdrop-blur-sm border-white/20'
-                  >
-                    {pizza.category}
-                  </Badge>
-                </div>
-              </div>
-
-              <CardHeader className='pb-3'>
-                <div className='flex items-start justify-between'>
-                  <CardTitle className='text-xl font-bold text-foreground group-hover:text-primary transition-colors'>
-                    {idToLocalized.get(pizza.id)?.title ?? pizza.title}
-                  </CardTitle>
-                  <div className='text-right'>
-                    <div className='text-2xl font-bold text-primary'>
-                      {formatCurrency(pizza.price)}
-                    </div>
+        {starredPizzasLoading ? (
+          <div className='flex items-center justify-center py-12'>
+            <div className='text-center space-y-4'>
+              <Loader2 className='h-8 w-8 animate-spin text-primary' />
+              <p className='text-foreground-secondary'>
+                Loading featured pizzas...
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12'>
+            {starredPizzas.map(pizza => (
+              <Card
+                key={pizza.id}
+                className='group bg-background-elevated border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden'
+              >
+                {/* Pizza Image */}
+                <div className='relative h-48 overflow-hidden'>
+                  <img
+                    src={pizza.image}
+                    alt={pizza.title}
+                    className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300'
+                  />
+                  <div className='absolute top-3 right-3'>
+                    <Badge className='bg-primary text-primary-foreground shadow-lg'>
+                      <Star className='h-3 w-3 mr-1 fill-current' />
+                      {t('featuredBadge')}
+                    </Badge>
+                  </div>
+                  <div className='absolute bottom-3 left-3'>
+                    <Badge
+                      variant='secondary'
+                      className='bg-black/70 text-white backdrop-blur-sm border-white/20'
+                    >
+                      {pizza.category}
+                    </Badge>
                   </div>
                 </div>
-                <p className='text-sm text-primary font-medium'>
-                  {pizza.starReason}
-                </p>
-              </CardHeader>
 
-              <CardContent className='pt-0'>
-                <p className='text-foreground-secondary text-sm leading-relaxed mb-4'>
-                  {idToLocalized.get(pizza.id)?.description ??
-                    pizza.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                <CardHeader className='pb-3'>
+                  <div className='flex items-start justify-between'>
+                    <CardTitle className='text-xl font-bold text-foreground group-hover:text-primary transition-colors'>
+                      {idToLocalized.get(pizza.id)?.title ?? pizza.title}
+                    </CardTitle>
+                    <div className='text-right'>
+                      <div className='text-2xl font-bold text-primary'>
+                        {formatCurrency(pizza.price)}
+                      </div>
+                    </div>
+                  </div>
+                  <p className='text-sm text-primary font-medium'>
+                    {pizza.starReason}
+                  </p>
+                </CardHeader>
+
+                <CardContent className='pt-0'>
+                  <p className='text-foreground-secondary text-sm leading-relaxed mb-4'>
+                    {idToLocalized.get(pizza.id)?.description ??
+                      pizza.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
 
         {/* CTA Section */}
         <div className='text-center'>

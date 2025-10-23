@@ -19,12 +19,13 @@ import { Button } from '@/components/ui/button';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/config/restaurant/hours.json';
 import { formatDate, formatDateTime } from '@/lib/date-utils';
+import { formatNextOpeningTime, isTimeInPeriods } from '@/lib/opening-hours-utils';
+import { SmartCallButton } from '@/components/ui/smart-call-button';
 
 interface OpeningHours {
   [key: string]: {
     day: string;
-    open: string;
-    close: string;
+    periods: { open: string; close: string }[];
     isOpen: boolean;
   };
 }
@@ -84,31 +85,85 @@ export default function OpeningHoursSection() {
 
   const isCurrentlyOpen =
     todayHours &&
-    currentTime >= todayHours.open &&
-    currentTime <= todayHours.close &&
-    todayHours.isOpen;
+    todayHours.isOpen &&
+    isTimeInPeriods(currentTime, todayHours.periods);
 
   // Check if restaurant is opening soon (within 1 hour)
-  const isOpeningSoon =
-    todayHours &&
-    !isCurrentlyOpen &&
-    todayHours.isOpen &&
-    currentTime < todayHours.open;
+  const isOpeningSoon = (() => {
+    if (!todayHours || !todayHours.isOpen || isCurrentlyOpen) return false;
+    
+    // Check if any period opens within the next hour
+    const currentMinutes = parseInt(currentTime.split(':')[0]) * 60 + parseInt(currentTime.split(':')[1]);
+    const oneHourFromNow = currentMinutes + 60;
+    
+    return todayHours.periods.some(period => {
+      const [openHour, openMinute] = period.open.split(':').map(Number);
+      const openMinutes = openHour * 60 + openMinute;
+      return openMinutes > currentMinutes && openMinutes <= oneHourFromNow;
+    });
+  })();
 
   // Calculate minutes until opening
   const getMinutesUntilOpening = () => {
     if (!todayHours || !isOpeningSoon) return 0;
 
-    const [currentHour, currentMinute] = currentTime.split(':').map(Number);
-    const [openHour, openMinute] = todayHours.open.split(':').map(Number);
+    const currentMinutes = parseInt(currentTime.split(':')[0]) * 60 + parseInt(currentTime.split(':')[1]);
+    
+    // Find the next opening period
+    const nextOpeningPeriod = todayHours.periods
+      .filter(period => {
+        const [openHour, openMinute] = period.open.split(':').map(Number);
+        const openMinutes = openHour * 60 + openMinute;
+        return openMinutes > currentMinutes;
+      })
+      .sort((a, b) => {
+        const [aHour, aMinute] = a.open.split(':').map(Number);
+        const [bHour, bMinute] = b.open.split(':').map(Number);
+        return (aHour * 60 + aMinute) - (bHour * 60 + bMinute);
+      })[0];
 
-    const currentMinutes = currentHour * 60 + currentMinute;
+    if (!nextOpeningPeriod) return 0;
+
+    const [openHour, openMinute] = nextOpeningPeriod.open.split(':').map(Number);
     const openMinutes = openHour * 60 + openMinute;
 
     return openMinutes - currentMinutes;
   };
 
   const minutesUntilOpening = getMinutesUntilOpening();
+
+  // Helper function to get current period info
+  const getCurrentPeriodInfo = () => {
+    if (!todayHours || !todayHours.isOpen) return null;
+    
+    const currentMinutes = parseInt(currentTime.split(':')[0]) * 60 + parseInt(currentTime.split(':')[1]);
+    
+    // Find current period
+    const currentPeriod = todayHours.periods.find(period => {
+      const [openHour, openMinute] = period.open.split(':').map(Number);
+      const [closeHour, closeMinute] = period.close.split(':').map(Number);
+      const openMinutes = openHour * 60 + openMinute;
+      const closeMinutes = closeHour * 60 + closeMinute;
+      return currentMinutes >= openMinutes && currentMinutes <= closeMinutes;
+    });
+    
+    // Find next opening period
+    const nextOpeningPeriod = todayHours.periods
+      .filter(period => {
+        const [openHour, openMinute] = period.open.split(':').map(Number);
+        const openMinutes = openHour * 60 + openMinute;
+        return openMinutes > currentMinutes;
+      })
+      .sort((a, b) => {
+        const [aHour, aMinute] = a.open.split(':').map(Number);
+        const [bHour, bMinute] = b.open.split(':').map(Number);
+        return (aHour * 60 + aMinute) - (bHour * 60 + bMinute);
+      })[0];
+    
+    return { currentPeriod, nextOpeningPeriod };
+  };
+
+  const periodInfo = getCurrentPeriodInfo();
 
   // Check for current closing (happening right now)
   const currentClosing = closings
@@ -292,29 +347,43 @@ export default function OpeningHoursSection() {
                           : isOpeningSoon && minutesUntilOpening <= 60
                             ? 'bg-orange-500 text-white border-orange-500'
                             : 'bg-secondary text-secondary-foreground'
+                    } ${
+                      !currentClosing && !isCurrentlyOpen && !(isOpeningSoon && minutesUntilOpening <= 60)
+                        ? 'py-2 px-3 h-auto'
+                        : ''
                     }`}
                   >
-                    {currentClosing
-                      ? t('badge.currentlyClosed')
-                      : isCurrentlyOpen
-                        ? tHero('badge.openNow')
-                        : isOpeningSoon && minutesUntilOpening <= 60
-                          ? tHero('badge.openingIn', {
-                              minutes: minutesUntilOpening,
-                              plural: minutesUntilOpening === 1 ? '' : 's',
-                            })
-                          : tHero('badge.closed')}
+                    {currentClosing ? (
+                      t('badge.currentlyClosed')
+                    ) : isCurrentlyOpen ? (
+                      tHero('badge.openNow')
+                    ) : isOpeningSoon && minutesUntilOpening <= 60 ? (
+                      tHero('badge.openingIn', {
+                        minutes: minutesUntilOpening,
+                        plural: minutesUntilOpening === 1 ? '' : 's',
+                      })
+                    ) : (
+                      <div className="flex items-center gap-2 text-left">
+                        <div className="flex-shrink-0">
+                          <div className='w-2 h-2 rounded-full bg-current' />
+                        </div>
+                        <div className="flex flex-col">
+                          <div className="text-xs font-medium">{t('badge.closed')}</div>
+                          <div className="text-xs opacity-90">{formatNextOpeningTime(now, t)}</div>
+                        </div>
+                      </div>
+                    )}
                   </Badge>
                   <span className='text-sm text-foreground-secondary'>
                     {currentClosing
                       ? t('badge.temporarilyClosedNote')
-                      : isCurrentlyOpen
+                      : isCurrentlyOpen && periodInfo?.currentPeriod
                         ? t('badge.openUntil', {
-                            time: formatTime(todayHours.close),
+                            time: formatTime(periodInfo.currentPeriod.close),
                           })
-                        : isOpeningSoon && minutesUntilOpening <= 60
+                        : isOpeningSoon && periodInfo?.nextOpeningPeriod
                           ? t('badge.openingAt', {
-                              time: formatTime(todayHours.open),
+                              time: formatTime(periodInfo.nextOpeningPeriod.open),
                             })
                           : t('badge.checkHoursBelow')}
                   </span>
@@ -338,13 +407,19 @@ export default function OpeningHoursSection() {
                       >
                         {t(`days.${dayHours.day.toLowerCase()}`)}
                       </span>
-                      <span
-                        className={`text-sm ${isToday ? 'text-primary font-semibold' : 'text-foreground-secondary'}`}
-                      >
-                        {dayHours.isOpen
-                          ? `${formatTime(dayHours.open)} - ${formatTime(dayHours.close)}`
-                          : t('badge.closed')}
-                      </span>
+                      <div className={`text-sm ${isToday ? 'text-primary font-semibold' : 'text-foreground-secondary'}`}>
+                        {dayHours.isOpen ? (
+                          <div className="space-y-1">
+                            {dayHours.periods.map((period, index) => (
+                              <div key={index}>
+                                {formatTime(period.open)} - {formatTime(period.close)}
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          t('badge.closed')
+                        )}
+                      </div>
                     </div>
                   );
                 })}
@@ -419,19 +494,15 @@ export default function OpeningHoursSection() {
 
                 {/* Quick Actions */}
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
-                  <Button
-                    asChild
+                  <SmartCallButton
                     size='lg'
                     className='!bg-primary !text-primary-foreground px-4 py-3 text-base font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:scale-105 hover:!bg-primary active:!bg-primary focus:!bg-primary'
                   >
-                    <a
-                      href={`tel:${contact?.phone?.tel || '#'}`}
-                      className='flex items-center gap-2'
-                    >
+                    <span className='flex items-center gap-2'>
                       <Phone className='h-4 w-4' />
                       {t('card.callNow')}
-                    </a>
-                  </Button>
+                    </span>
+                  </SmartCallButton>
 
                   {/* Directions Button - Native modal on mobile, direct link on desktop */}
                   {isMobile ? (

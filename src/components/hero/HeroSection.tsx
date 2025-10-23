@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -10,19 +10,19 @@ import { ArrowRight, Star, Clock, MapPin, Loader2 } from 'lucide-react';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/config/restaurant/hours.json';
 import { useThemeContext } from '@/contexts/ThemeContext';
+import { formatNextOpeningTime, isTimeInPeriods } from '@/lib/opening-hours-utils';
+import { SmartCallButton } from '@/components/ui/smart-call-button';
 
 interface OpeningHours {
   [key: string]: {
     day: string;
-    open: string;
-    close: string;
+    periods: { open: string; close: string }[];
     isOpen: boolean;
   };
 }
 
 export default function HeroSection() {
   const t = useTranslations('hero');
-  const locale = useLocale();
   const {} = useThemeContext();
 
   // Load closings configuration with locale support (hours use original system)
@@ -56,25 +56,46 @@ export default function HeroSection() {
 
   const isCurrentlyOpen =
     todayHours &&
-    currentTime >= todayHours.open &&
-    currentTime <= todayHours.close &&
-    todayHours.isOpen;
+    todayHours.isOpen &&
+    isTimeInPeriods(currentTime, todayHours.periods);
 
   // Check if restaurant is opening soon (within 1 hour)
-  const isOpeningSoon =
-    todayHours &&
-    !isCurrentlyOpen &&
-    todayHours.isOpen &&
-    currentTime < todayHours.open;
+  const isOpeningSoon = (() => {
+    if (!todayHours || !todayHours.isOpen || isCurrentlyOpen) return false;
+    
+    // Check if any period opens within the next hour
+    const currentMinutes = parseInt(currentTime.split(':')[0]) * 60 + parseInt(currentTime.split(':')[1]);
+    const oneHourFromNow = currentMinutes + 60;
+    
+    return todayHours.periods.some(period => {
+      const [openHour, openMinute] = period.open.split(':').map(Number);
+      const openMinutes = openHour * 60 + openMinute;
+      return openMinutes > currentMinutes && openMinutes <= oneHourFromNow;
+    });
+  })();
 
   // Calculate minutes until opening
   const getMinutesUntilOpening = () => {
     if (!todayHours || !isOpeningSoon) return 0;
 
-    const [currentHour, currentMinute] = currentTime.split(':').map(Number);
-    const [openHour, openMinute] = todayHours.open.split(':').map(Number);
+    const currentMinutes = parseInt(currentTime.split(':')[0]) * 60 + parseInt(currentTime.split(':')[1]);
+    
+    // Find the next opening period
+    const nextOpeningPeriod = todayHours.periods
+      .filter(period => {
+        const [openHour, openMinute] = period.open.split(':').map(Number);
+        const openMinutes = openHour * 60 + openMinute;
+        return openMinutes > currentMinutes;
+      })
+      .sort((a, b) => {
+        const [aHour, aMinute] = a.open.split(':').map(Number);
+        const [bHour, bMinute] = b.open.split(':').map(Number);
+        return (aHour * 60 + aMinute) - (bHour * 60 + bMinute);
+      })[0];
 
-    const currentMinutes = currentHour * 60 + currentMinute;
+    if (!nextOpeningPeriod) return 0;
+
+    const [openHour, openMinute] = nextOpeningPeriod.open.split(':').map(Number);
     const openMinutes = openHour * 60 + openMinute;
 
     return openMinutes - currentMinutes;
@@ -101,6 +122,7 @@ export default function HeroSection() {
         text: t('badge.currentlyClosed'),
         className: 'bg-destructive text-destructive-foreground',
         icon: <div className='w-2 h-2 rounded-full bg-current' />,
+        isTwoLine: false,
       };
     }
 
@@ -109,6 +131,7 @@ export default function HeroSection() {
         text: t('badge.openNow'),
         className: 'bg-success text-success-foreground',
         icon: <div className='w-2 h-2 rounded-full bg-current' />,
+        isTwoLine: false,
       };
     }
 
@@ -120,13 +143,17 @@ export default function HeroSection() {
         }),
         className: 'bg-orange-500 text-white border-orange-500',
         icon: <div className='w-2 h-2 rounded-full bg-current' />,
+        isTwoLine: false,
       };
     }
 
+    // When closed, show 2-line format
+    const nextOpeningText = formatNextOpeningTime(now, t);
     return {
-      text: t('badge.closed'),
+      text: nextOpeningText,
       className: 'bg-secondary text-secondary-foreground',
       icon: <div className='w-2 h-2 rounded-full bg-current' />,
+      isTwoLine: true,
     };
   };
 
@@ -195,10 +222,24 @@ export default function HeroSection() {
                         ? 'outline'
                         : 'secondary'
                 }
-                className={`${badgeContent.className}`}
+                className={`${badgeContent.className} ${badgeContent.isTwoLine ? 'py-2 px-3 h-auto' : ''}`}
               >
-                {badgeContent.icon}
-                {badgeContent.text}
+                {badgeContent.isTwoLine ? (
+                  <div className="flex items-center gap-2 text-left">
+                    <div className="flex-shrink-0">
+                      {badgeContent.icon}
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="text-xs font-medium">{t('badge.closed')}</div>
+                      <div className="text-xs opacity-90">{badgeContent.text}</div>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    {badgeContent.icon}
+                    {badgeContent.text}
+                  </>
+                )}
               </Badge>
             )}
 
@@ -243,19 +284,16 @@ export default function HeroSection() {
                   <ArrowRight className='w-5 h-5 md:group-hover:translate-x-1 transition-transform' />
                 </Link>
               </Button>
-              <Button
-                asChild
+              <SmartCallButton
                 variant='outline'
                 size='lg'
                 className='h-14 px-8 text-base font-semibold border-4 hover:bg-primary hover:text-primary-foreground transition-all duration-300 relative overflow-hidden backdrop-blur-sm bg-white/10 dark:bg-black/10'
+                aria-label={t('cta.orderNow')}
               >
-                <Link
-                  href='tel:+1234567890'
-                  className='flex items-center gap-2'
-                >
+                <span className='flex items-center gap-2'>
                   {t('cta.orderNow')}
-                </Link>
-              </Button>
+                </span>
+              </SmartCallButton>
             </div>
 
             {/* Stats */}

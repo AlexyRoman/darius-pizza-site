@@ -32,9 +32,10 @@ const ThemeToggle = dynamic(
 import RadialSettings from '@/components/header/RadialSettings';
 //
 import { TimeClock } from '@/components/header/TimeClock';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { PAGES } from '@/config/pages';
-import { getSiteTimeZone, getSitePhone } from '@/config/site';
+import { getSiteTimeZone } from '@/config/site';
+import { SmartCallButton } from '@/components/ui/smart-call-button';
 import { cn } from '@/lib/utils';
 
 export function Header({
@@ -97,18 +98,16 @@ export function Header({
                 </div>
               </div>
             </div>
-            <Button
-              asChild
+            <SmartCallButton
               size='lg'
               className='rounded-full border border-white/10 ring-1 ring-border bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 px-6 hover:bg-primary hover:text-primary-foreground hover:border-primary/50 hover:ring-primary/50 active:bg-primary active:text-primary-foreground focus:bg-primary focus:text-primary-foreground focus-visible:outline-none focus:outline-none focus:ring-0 select-none transition-all duration-200'
+              aria-label='Call'
             >
-              <a href={`tel:${getSitePhone()}`} aria-label='Call'>
-                <span className='inline-flex items-center gap-2 text-foreground'>
-                  <Phone className='h-5 w-5 text-foreground' />
-                  {t('call')}
-                </span>
-              </a>
-            </Button>
+              <span className='inline-flex items-center gap-2 text-foreground'>
+                <Phone className='h-5 w-5 text-foreground' />
+                {t('call')}
+              </span>
+            </SmartCallButton>
           </div>
         </div>
       </header>
@@ -149,15 +148,13 @@ export function Header({
               animation: 'none !important',
             }}
           >
-            <Button
-              asChild
+            <SmartCallButton
               size='icon'
               className='!bg-primary !text-primary-foreground hover:!bg-primary active:!bg-primary focus:!bg-primary rounded-full shadow-lg h-12 w-12'
+              aria-label='Call'
             >
-              <a href={`tel:${getSitePhone()}`} aria-label='Call'>
-                <Phone className='size-6 text-foreground' />
-              </a>
-            </Button>
+              <Phone className='size-6 text-foreground' />
+            </SmartCallButton>
           </div>
           {/* Mobile settings radial menu bottom-left */}
           <div className='md:hidden absolute left-4 top-1/2 -translate-y-1/2 z-50'>

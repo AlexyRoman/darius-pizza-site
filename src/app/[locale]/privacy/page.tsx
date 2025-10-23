@@ -7,9 +7,6 @@ import {
   FileText,
   Database,
   Users,
-  Mail,
-  Phone,
-  MapPin,
   ExternalLink,
 } from 'lucide-react';
 import Link from 'next/link';

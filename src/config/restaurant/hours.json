@@ -2,44 +2,52 @@
   "openingHours": {
     "monday": {
       "day": "monday",
-      "open": "11:00",
-      "close": "22:00",
-      "isOpen": false
+      "periods": [
+        { "open": "10:00", "close": "14:00" },
+        { "open": "18:00", "close": "22:00" }
+      ],
+      "isOpen": true
     },
     "tuesday": {
       "day": "tuesday",
-      "open": "15:00",
-      "close": "22:00",
+      "periods": [
+        { "open": "15:00", "close": "22:00" }
+      ],
       "isOpen": true
     },
     "wednesday": {
       "day": "wednesday",
-      "open": "18:00",
-      "close": "22:00",
-      "isOpen": true
+      "periods": [
+        { "open": "18:00", "close": "22:00" }
+      ],
+      "isOpen": false
     },
     "thursday": {
       "day": "thursday",
-      "open": "18:00",
-      "close": "22:00",
+      "periods": [
+        { "open": "15:30", "close": "22:00" }
+      ],
       "isOpen": true
     },
     "friday": {
       "day": "friday",
-      "open": "18:00",
-      "close": "22:00",
+      "periods": [
+        { "open": "18:00", "close": "22:00" }
+      ],
       "isOpen": true
     },
     "saturday": {
       "day": "saturday",
-      "open": "18:00",
-      "close": "22:00",
+      "periods": [
+        { "open": "18:00", "close": "22:00" }
+      ],
       "isOpen": true
     },
     "sunday": {
       "day": "sunday",
-      "open": "18:00",
-      "close": "22:00",
+      "periods": [
+        { "open": "18:00", "close": "22:00" }
+      ],
       "isOpen": true
     }
   },

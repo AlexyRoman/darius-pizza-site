@@ -6,6 +6,12 @@
     "info": "Info",
     "call": "Anrufen"
   },
+  "callDialog": {
+    "title": "Restaurant Geschlossen",
+    "description": "Die Pizzeria ist derzeit nicht geöffnet und Ihr Anruf wird möglicherweise nicht entgegengenommen. Möchten Sie trotzdem anrufen oder später nochmal versuchen?",
+    "callLater": "Später Anrufen",
+    "callNow": "Jetzt Anrufen"
+  },
   "seo": {
     "siteName": "Darius Pizza"
   },
@@ -84,7 +90,9 @@
       "currentlyClosed": "Derzeit geschlossen",
       "openNow": "Jetzt geöffnet",
       "openingIn": "Öffnet in {minutes} min{plural}",
-      "closed": "Geschlossen"
+      "closed": "Geschlossen",
+      "closedOpenToday": "Öffnet um {time} heute",
+      "closedOpenTomorrow": "Öffnet um {time} morgen"
     },
     "heading": {
       "mainTitle": "Le Darius Pizza",
@@ -139,9 +147,11 @@
       "openUntil": "Geöffnet bis {time}",
       "openingAt": "Öffnet um {time}",
       "closed": "Geschlossen",
-      "temporarilyClosedNote": "Vorübergehend geschlossen - siehe Banner oben",
-      "checkHoursBelow": "Siehe Öffnungszeiten unten"
+      "closedOpenToday": "Öffnet um {time} heute",
+      "closedOpenTomorrow": "Öffnet um {time} morgen"
     },
+    "temporarilyClosedNote": "Vorübergehend geschlossen - siehe Banner oben",
+    "checkHoursBelow": "Siehe Öffnungszeiten unten",
     "upcomingClosings": "Kommende Schließungen",
     "importantUpdates": "Wichtige Informationen"
   },

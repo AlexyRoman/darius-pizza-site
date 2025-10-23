@@ -95,8 +95,7 @@ export interface ContactConfig {
 
 export interface DayHours {
   day: string;
-  open: string;
-  close: string;
+  periods: { open: string; close: string }[];
   isOpen: boolean;
 }
 

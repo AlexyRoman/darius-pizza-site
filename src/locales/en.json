@@ -165,8 +165,106 @@
   },
   "aboutUs": {
     "hero": {
-      "title": "About Darius Pizza",
+      "title": "Our Expertise",
       "subtitle": "Discover the story of our authentic Italian pizzeria, where tradition meets passion and every pizza tells a story of family heritage and culinary excellence."
+    },
+    "section1": {
+      "title": "From Butcher's Counter to Wood Fire",
+      "intro": "Our story doesn't begin with flour, but with the knife. Before becoming Darius Pizza, our house was an essential address in Cavalaire, founded in 1936. From 1966, it became \"Maison Darius\", a family butcher shop renowned for its rigor, expertise and uncompromising quality of its products.",
+      "conclusion": "In 2020, a new chapter opened. The passion for Italian gastronomy and exceptional products transformed the counter into a wood-fired oven. Maison Darius became Darius Pizza.\n\nThe decor has changed, but the soul remains intact. We have preserved the butcher shop's heritage: love for fresh products, respect for artisanal know-how and an obsession with taste. This rigor that we applied to our meats, we now apply to every ingredient that makes up our pizzas.",
+      "image1": {
+        "alt": "Darius Pizza frontage since 2020"
+      },
+      "image2": {
+        "alt": "Darius Butcher frontage before 2020"
+      }
+    },
+    "section2": {
+      "title": "The Secret of an Unrivaled Dough",
+      "intro": "An exceptional pizza rests on exceptional dough. At Darius Pizza, we leave nothing to chance. Our protocol is a precise balance between science and patience, designed for one goal: to offer you a light, aromatic and perfectly digestible dough.",
+      "card1": {
+        "title": "Kneading and Proofing",
+        "step": "Step 1: Precision Kneading",
+        "content": "It all starts with controlled hydration and slow kneading. We monitor the temperature of our dough at every moment so as not to \"stress\" it. This step, the proofing, allows the initial gluten network to develop which will give structure to the dough, while preserving the aromas of our flour.",
+        "image": {
+          "alt": "Dough ball after kneading",
+          "src": "/static/dough-kneading.webp"
+        }
+      },
+      "card2": {
+        "title": "Cold Maturation",
+        "step": "Step 2: Slow Maturation (+72h)",
+        "content": "This is where the magic happens. Our dough balls rest in the cold at controlled temperature (between 2°C and 4°C) for more than 72 hours. During this long maturation, natural enzymes (proteases) break down the gluten network. Complex protein chains are \"pre-digested\".\n\nThe result for you? Incredibly light, airy and easy-to-digest dough. No more heavy feeling after the meal.",
+        "image": {
+          "alt": "Dough balls in cold maturation",
+          "src": "/static/dough-maturation.webp"
+        }
+      },
+      "card3": {
+        "title": "The Maillard Reaction",
+        "step": "Step 3: The Revelation in the Oven",
+        "content": "During maturation, other enzymes (amylases) transform the complex starch of the flour into simple sugars. During high-temperature cooking, these sugars meet amino acids. This is the famous Maillard Reaction. It doesn't just cook: it caramelizes the dough, creates that golden and spotted crust (\"leopard\"), and releases an inimitable palette of grilled aromas.",
+        "image": {
+          "alt": "Golden and airy pizza crust",
+          "src": "/static/pizza-crust.webp"
+        }
+      }
+    },
+    "section3": {
+      "title": "Exceptional Products",
+      "intro": "Exceptional dough demands ingredients worthy of it. Our philosophy is simple: the best, or nothing. This requires rigorous sourcing, whether local, Italian, or from our own heritage.",
+      "card1": {
+        "title": "The Flour: Moulin Céard",
+        "step": "The Character of the Alps: Moulin Céard",
+        "content": "The foundation of our dough is our flour. We have chosen Moulin Céard, a family mill in the Hautes-Alpes with expertise passed down since 1820.\n\nThey select regional wheats, often Label Rouge, to produce character flour, without additives. This choice gives our dough its rustic flavor and unique ability to flourish during the 72h maturation. This is our commitment to terroir and traceability.",
+        "image": {
+          "alt": "Moulin Céard flour from Hautes-Alpes",
+          "src": "/static/moulin-ceard.webp"
+        }
+      },
+      "card2": {
+        "title": "The Heritage: Our Charcuterie Expertise",
+        "step": "The Butcher's Rigor",
+        "content": "We haven't forgotten where we come from. The heritage of Maison Darius is our intransigence on the quality of meats and charcuterie.\n\nWe select our products with the eye and rigor of the butcher: superior white ham, artisanal coppa, fresh meats... This expertise is the guarantee of finding on our pizzas tasty, rich-flavored products that you won't find anywhere else.",
+        "image": {
+          "alt": "Quality charcuterie and meats",
+          "src": "/static/charcuterie-quality.webp"
+        }
+      },
+      "card3": {
+        "title": "The Origin: Italian AOP Sourcing",
+        "step": "The Heart of Italy",
+        "content": "A pizza is a marriage between local and authenticity. For the pillar ingredients of Italian gastronomy, we source directly from the best.\n\nOur tomatoes? San Marzano AOP, sun-drenched at the foot of Vesuvius. Our Mozzarella? Melting fior di latte or genuine Bufala Campana AOP from buffalo milk. Extra virgin olive oil, 24-month Parmigiano Reggiano... We import the sun of Italy.",
+        "image": {
+          "alt": "Authentic Italian AOP products",
+          "src": "/static/italian-products.webp"
+        }
+      }
+    },
+    "section4": {
+      "title": "Contact & Reviews",
+      "column1": {
+        "title": "A question? A message?",
+        "subtitle": "We love to exchange with our customers. Feel free to share your questions, suggestions or comments with us."
+      },
+      "column2": {
+        "title": "Find Us & Leave a Review",
+        "subtitle": "Find us in Cavalaire-sur-mer and share your experience with other authentic pizza lovers."
+      }
+    },
+    "section5": {
+      "title": "Stay Connected",
+      "subtitle": "Follow our daily life and discover our creations in real time",
+      "instagram": {
+        "title": "Our Daily Life in Images",
+        "description": "Discover our pizzas, our team and the atmosphere of our pizzeria through our Instagram photos.",
+        "followUs": "Follow us on Instagram",
+        "handle": "@dariuspizza"
+      },
+      "social": {
+        "facebook": "Find us also on Facebook",
+        "facebookUrl": "https://facebook.com/dariuspizza"
+      }
     },
     "story": {
       "title": "Our Heritage",

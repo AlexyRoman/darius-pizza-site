@@ -3,18 +3,22 @@
 import React from 'react';
 import {
   Heart,
-  Users,
-  Award,
-  Clock,
   MapPin,
   Phone,
   ChefHat,
   Wheat,
   Flame,
+  Gauge,
+  Clock3,
+  Instagram,
+  Facebook,
+  MessageCircle,
+  Star,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import ContactFormSection from '@/components/sections/ContactFormSection';
+import InstagramFeed from '@/components/sections/InstagramFeed';
+import { Comparison, ComparisonItem, ComparisonHandle } from '@/components/ui/shadcn-io/comparison';
 import { useTranslations } from 'next-intl';
 
 export default function InfoPage() {
@@ -39,72 +43,460 @@ export default function InfoPage() {
         </div>
       </section>
 
-      {/* Our Story Section */}
+      {/* Section 1: De l'Étal du Boucher au Feu de Bois */}
       <section className='py-16 lg:py-24 bg-gradient-to-b from-background-secondary via-background to-background-secondary'>
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='max-w-6xl mx-auto'>
-            <div className='grid lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
-              <div className='space-y-8'>
-                <div className='space-y-4'>
-                  <h2 className='text-3xl sm:text-4xl font-primary font-bold text-foreground'>
-                    {t('story.title')}
-                  </h2>
-                  <p className='text-lg text-foreground-secondary font-secondary leading-relaxed'>
-                    {t('story.description1')}
-                  </p>
-                  <p className='text-lg text-foreground-secondary font-secondary leading-relaxed'>
-                    {t('story.description2')}
-                  </p>
-                </div>
+            <div className='text-center mb-12'>
+              <h2 className='text-3xl sm:text-4xl font-primary font-bold text-foreground mb-6'>
+                {t('section1.title')}
+              </h2>
+              <p className='text-lg text-foreground-secondary font-secondary leading-relaxed max-w-4xl mx-auto mb-8'>
+                {t('section1.intro')}
+              </p>
+            </div>
 
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
-                  <Card className='bg-background-elevated border-border/50'>
-                    <CardContent className='p-6'>
-                      <div className='flex items-center gap-3 mb-3'>
-                        <ChefHat className='h-6 w-6 text-primary' />
-                        <h3 className='font-semibold text-foreground'>
-                          {t('story.traditionalRecipes')}
-                        </h3>
-                      </div>
-                      <p className='text-sm text-foreground-secondary'>
-                        {t('story.traditionalRecipesDesc')}
-                      </p>
-                    </CardContent>
-                  </Card>
+            {/* Comparison Slider */}
+            <div className='mb-12'>
+              <Comparison className="aspect-video rounded-lg overflow-hidden shadow-2xl border border-border/50">
+                <ComparisonItem position="left">
+                  <img
+                    src="/static/IMG_2139.JPG"
+                    alt={t('section1.image1.alt')}
+                    className="w-full h-full object-cover"
+                  />
+                </ComparisonItem>
+                <ComparisonItem position="right">
+                  <img
+                    src="/static/butcher-frontage.webp"
+                    alt={t('section1.image2.alt')}
+                    className="w-full h-full object-cover"
+                  />
+                </ComparisonItem>
+                <ComparisonHandle />
+              </Comparison>
+            </div>
 
-                  <Card className='bg-background-elevated border-border/50'>
-                    <CardContent className='p-6'>
-                      <div className='flex items-center gap-3 mb-3'>
-                        <Wheat className='h-6 w-6 text-primary' />
-                        <h3 className='font-semibold text-foreground'>
-                          {t('story.freshIngredients')}
-                        </h3>
-                      </div>
-                      <p className='text-sm text-foreground-secondary'>
-                        {t('story.freshIngredientsDesc')}
-                      </p>
-                    </CardContent>
-                  </Card>
+            <div className='text-center'>
+              <p className='text-lg text-foreground-secondary font-secondary leading-relaxed max-w-4xl mx-auto whitespace-pre-line'>
+                {t('section1.conclusion')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Le Secret d'une Pâte Inimitable */}
+      <section className='py-16 lg:py-24 bg-gradient-to-b from-background-secondary via-background-secondary to-background'>
+        <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+          <div className='max-w-6xl mx-auto'>
+            <div className='text-center mb-16'>
+              <h2 className='text-3xl sm:text-4xl font-primary font-bold text-foreground mb-6'>
+                {t('section2.title')}
+              </h2>
+              <p className='text-lg text-foreground-secondary font-secondary leading-relaxed max-w-4xl mx-auto'>
+                {t('section2.intro')}
+              </p>
+            </div>
+
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+              {/* Card 1: Le Pétrissage et le Pointage */}
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+                <CardHeader>
+                  <div className='flex justify-center mb-4'>
+                    <div className='p-3 bg-primary/10 rounded-full'>
+                      <Gauge className='h-12 w-12 text-primary' />
+                    </div>
+                  </div>
+                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                    {t('section2.card1.title')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className='space-y-4'>
+                  <h3 className='font-semibold text-foreground text-center'>
+                    {t('section2.card1.step')}
+                  </h3>
+                  <p className='text-foreground-secondary leading-relaxed'>
+                    {t('section2.card1.content')}
+                  </p>
+                  <div className='mt-4'>
+                    <img
+                      src="/static/dough-kneading.webp"
+                      alt={t('section2.card1.image.alt')}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Card 2: La Maturation à Froid */}
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+                <CardHeader>
+                  <div className='flex justify-center mb-4'>
+                    <div className='p-3 bg-primary/10 rounded-full'>
+                      <Clock3 className='h-12 w-12 text-primary' />
+                    </div>
+                  </div>
+                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                    {t('section2.card2.title')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className='space-y-4'>
+                  <h3 className='font-semibold text-foreground text-center'>
+                    {t('section2.card2.step')}
+                  </h3>
+                  <p className='text-foreground-secondary leading-relaxed whitespace-pre-line'>
+                    {t('section2.card2.content')}
+                  </p>
+                  <div className='mt-4'>
+                    <img
+                      src="/static/dough-maturation.webp"
+                      alt={t('section2.card2.image.alt')}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Card 3: La Réaction de Maillard */}
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+                <CardHeader>
+                  <div className='flex justify-center mb-4'>
+                    <div className='p-3 bg-primary/10 rounded-full'>
+                      <Flame className='h-12 w-12 text-primary' />
+                    </div>
+                  </div>
+                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                    {t('section2.card3.title')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className='space-y-4'>
+                  <h3 className='font-semibold text-foreground text-center'>
+                    {t('section2.card3.step')}
+                  </h3>
+                  <p className='text-foreground-secondary leading-relaxed'>
+                    {t('section2.card3.content')}
+                  </p>
+                  <div className='mt-4'>
+                    <img
+                      src="/static/pizza-crust.webp"
+                      alt={t('section2.card3.image.alt')}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Des Produits d'Exception */}
+      <section className='py-16 lg:py-24 bg-gradient-to-b from-background via-background-secondary to-background-secondary'>
+        <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+          <div className='max-w-6xl mx-auto'>
+            <div className='text-center mb-16'>
+              <h2 className='text-3xl sm:text-4xl font-primary font-bold text-foreground mb-6'>
+                {t('section3.title')}
+              </h2>
+              <p className='text-lg text-foreground-secondary font-secondary leading-relaxed max-w-4xl mx-auto'>
+                {t('section3.intro')}
+              </p>
+            </div>
+
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+              {/* Card 1: La Farine : Moulin Céard */}
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+                <CardHeader>
+                  <div className='flex justify-center mb-4'>
+                    <div className='p-3 bg-primary/10 rounded-full'>
+                      <Wheat className='h-12 w-12 text-primary' />
+                    </div>
+                  </div>
+                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                    {t('section3.card1.title')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className='space-y-4'>
+                  <h3 className='font-semibold text-foreground text-center'>
+                    {t('section3.card1.step')}
+                  </h3>
+                  <p className='text-foreground-secondary leading-relaxed whitespace-pre-line'>
+                    {t('section3.card1.content')}
+                  </p>
+                  <div className='mt-4'>
+                    <img
+                      src="/static/moulin-ceard.webp"
+                      alt={t('section3.card1.image.alt')}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Card 2: L'Héritage : Notre Savoir-Faire Charcutier */}
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+                <CardHeader>
+                  <div className='flex justify-center mb-4'>
+                    <div className='p-3 bg-primary/10 rounded-full'>
+                      <ChefHat className='h-12 w-12 text-primary' />
+                    </div>
+                  </div>
+                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                    {t('section3.card2.title')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className='space-y-4'>
+                  <h3 className='font-semibold text-foreground text-center'>
+                    {t('section3.card2.step')}
+                  </h3>
+                  <p className='text-foreground-secondary leading-relaxed whitespace-pre-line'>
+                    {t('section3.card2.content')}
+                  </p>
+                  <div className='mt-4'>
+                    <img
+                      src="/static/charcuterie-quality.webp"
+                      alt={t('section3.card2.image.alt')}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Card 3: L'Origine : Sourcing Italien AOP */}
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+                <CardHeader>
+                  <div className='flex justify-center mb-4'>
+                    <div className='p-3 bg-primary/10 rounded-full'>
+                      <MapPin className='h-12 w-12 text-primary' />
+                    </div>
+                  </div>
+                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                    {t('section3.card3.title')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className='space-y-4'>
+                  <h3 className='font-semibold text-foreground text-center'>
+                    {t('section3.card3.step')}
+                  </h3>
+                  <p className='text-foreground-secondary leading-relaxed whitespace-pre-line'>
+                    {t('section3.card3.content')}
+                  </p>
+                  <div className='mt-4'>
+                    <img
+                      src="/static/italian-products.webp"
+                      alt={t('section3.card3.image.alt')}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Contact & Avis */}
+      <section className='py-16 lg:py-24 bg-gradient-to-b from-background-secondary via-background-secondary to-background'>
+        <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+          <div className='max-w-6xl mx-auto'>
+            <div className='text-center mb-16'>
+              <h2 className='text-3xl sm:text-4xl font-primary font-bold text-foreground mb-6'>
+                {t('section4.title')}
+              </h2>
+            </div>
+
+            {/* Contact Section - Full Width */}
+            <div className='mb-16'>
+              <div className='text-center mb-8'>
+                <div className='flex items-center justify-center gap-3 mb-4'>
+                  <div className='p-2 bg-primary/10 rounded-full'>
+                    <MessageCircle className='h-6 w-6 text-primary' />
+                  </div>
+                  <h3 className='text-2xl font-bold text-foreground'>
+                    {t('section4.column1.title')}
+                  </h3>
                 </div>
+                <p className='text-foreground-secondary max-w-2xl mx-auto'>
+                  {t('section4.column1.subtitle')}
+                </p>
               </div>
 
-              <div className='relative'>
-                <Card className='overflow-hidden shadow-2xl border-border/50'>
-                  <CardContent className='p-0'>
-                    <div className='relative h-96 lg:h-[500px] overflow-hidden'>
-                      <img
-                        src='/static/about-kitchen.webp'
-                        alt='Traditional Italian kitchen with family preparing pizza'
-                        className='w-full h-full object-cover'
-                      />
-                      <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent' />
+              {/* Contact Form */}
+              <div className='max-w-2xl mx-auto'>
+                <ContactFormSection />
+              </div>
+            </div>
 
-                      <div className='absolute bottom-6 left-6'>
-                        <Badge className='bg-background/90 backdrop-blur-sm border border-border/50 text-foreground'>
-                          <Award className='h-4 w-4 mr-2 text-primary' />
-                          {t('story.familyOwnedBadge')}
-                        </Badge>
+            {/* Maps and Reviews - Side by Side */}
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+              {/* Google Maps */}
+              <Card className='bg-background-elevated border-border/50'>
+                <CardHeader>
+                  <div className='flex items-center gap-3 mb-4'>
+                    <div className='p-2 bg-primary/10 rounded-full'>
+                      <MapPin className='h-6 w-6 text-primary' />
+                    </div>
+                    <CardTitle className='text-xl font-bold text-foreground'>
+                      {t('section4.column2.title')}
+                    </CardTitle>
+                  </div>
+                  <p className='text-foreground-secondary'>
+                    {t('section4.column2.subtitle')}
+                  </p>
+                </CardHeader>
+                <CardContent>
+                  <div className='aspect-video rounded-lg overflow-hidden'>
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.123456789!2d6.527456789!3d43.172456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEwJzIwLjkiTiA2wrAzMSczOC44IkU!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Darius Pizza Location"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* TripAdvisor Widget */}
+              <Card className='bg-background-elevated border-border/50'>
+                <CardHeader>
+                  <div className='flex items-center gap-3 mb-4'>
+                    <div className='p-2 bg-primary/10 rounded-full'>
+                      <Star className='h-6 w-6 text-primary fill-primary' />
+                    </div>
+                    <CardTitle className='text-xl font-bold text-foreground'>
+                      TripAdvisor
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className='text-center space-y-4'>
+                    <div className='flex items-center justify-center gap-2'>
+                      <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
+                      <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
+                      <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
+                      <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
+                      <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
+                      <span className='ml-2 text-lg font-semibold text-foreground'>5.0</span>
+                    </div>
+                    <p className='text-foreground-secondary'>
+                      Basé sur 127 avis clients
+                    </p>
+                    <a
+                      href="https://www.tripadvisor.fr/Restaurant_Review-g187123-d123456789-Reviews-Darius_Pizza-Cavalaire_sur_Mer_Var_Provence_Alpes_Cote_d_Azur.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className='inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors'
+                    >
+                      <Star className='h-4 w-4' />
+                      Voir tous les avis
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Restez Connectés */}
+      <section className='py-16 lg:py-24 bg-gradient-to-b from-background via-background-secondary to-background-secondary'>
+        <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+          <div className='max-w-6xl mx-auto'>
+            <div className='text-center mb-16'>
+              <h2 className='text-3xl sm:text-4xl font-primary font-bold text-foreground mb-6'>
+                {t('section5.title')}
+              </h2>
+              <p className='text-lg text-foreground-secondary font-secondary leading-relaxed max-w-3xl mx-auto'>
+                {t('section5.subtitle')}
+              </p>
+            </div>
+
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+              {/* Instagram Feed */}
+              <Card className='bg-background-elevated border-border/50'>
+                <CardHeader>
+                  <div className='flex items-center gap-3 mb-4'>
+                    <div className='p-2 bg-primary/10 rounded-full'>
+                      <Instagram className='h-6 w-6 text-primary' />
+                    </div>
+                    <CardTitle className='text-2xl font-bold text-foreground'>
+                      {t('section5.instagram.title')}
+                    </CardTitle>
+                  </div>
+                  <p className='text-foreground-secondary'>
+                    {t('section5.instagram.description')}
+                  </p>
+                </CardHeader>
+                <CardContent>
+                  <InstagramFeed className="mb-6" />
+                  <div className='text-center'>
+                    <a
+                      href="https://instagram.com/dariuspizza"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all'
+                    >
+                      <Instagram className='h-5 w-5' />
+                      {t('section5.instagram.followUs')}
+                    </a>
+                    <p className='mt-2 text-sm text-foreground-secondary'>
+                      {t('section5.instagram.handle')}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Social Links */}
+              <div className='space-y-6'>
+                <Card className='bg-background-elevated border-border/50'>
+                  <CardContent className='p-6'>
+                    <div className='text-center space-y-4'>
+                      <div className='p-4 bg-primary/10 rounded-full w-fit mx-auto'>
+                        <Facebook className='h-12 w-12 text-primary' />
                       </div>
+                      <h3 className='text-xl font-bold text-foreground'>
+                        Facebook
+                      </h3>
+                      <p className='text-foreground-secondary'>
+                        {t('section5.social.facebook')}
+                      </p>
+                      <a
+                        href={t('section5.social.facebookUrl')}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors'
+                      >
+                        <Facebook className='h-4 w-4' />
+                        Suivre sur Facebook
+                      </a>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className='bg-background-elevated border-border/50'>
+                  <CardContent className='p-6'>
+                    <div className='text-center space-y-4'>
+                      <div className='p-4 bg-primary/10 rounded-full w-fit mx-auto'>
+                        <Phone className='h-12 w-12 text-primary' />
+                      </div>
+                      <h3 className='text-xl font-bold text-foreground'>
+                        Contact Direct
+                      </h3>
+                      <p className='text-foreground-secondary'>
+                        Appelez-nous directement pour vos commandes
+                      </p>
+                      <a
+                        href="tel:+33946440511"
+                        className='inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors'
+                      >
+                        <Phone className='h-4 w-4' />
+                        04.94.64.05.11
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
@@ -114,151 +506,6 @@ export default function InfoPage() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className='py-16 lg:py-24 bg-gradient-to-b from-background-secondary via-background-secondary to-background'>
-        <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='max-w-6xl mx-auto'>
-            <div className='text-center mb-16'>
-              <h2 className='text-3xl sm:text-4xl font-primary font-bold text-foreground mb-4'>
-                {t('values.title')}
-              </h2>
-              <p className='text-lg text-foreground-secondary font-secondary max-w-2xl mx-auto'>
-                {t('values.subtitle')}
-              </p>
-            </div>
-
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-              <Card className='text-center bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
-                <CardHeader>
-                  <div className='flex justify-center mb-4'>
-                    <div className='p-3 bg-primary/10 rounded-full'>
-                      <Heart className='h-8 w-8 text-primary fill-primary' />
-                    </div>
-                  </div>
-                  <CardTitle className='text-xl font-bold text-foreground'>
-                    {t('values.passion.title')}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className='text-foreground-secondary'>
-                    {t('values.passion.description')}
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className='text-center bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
-                <CardHeader>
-                  <div className='flex justify-center mb-4'>
-                    <div className='p-3 bg-primary/10 rounded-full'>
-                      <Users className='h-8 w-8 text-primary' />
-                    </div>
-                  </div>
-                  <CardTitle className='text-xl font-bold text-foreground'>
-                    {t('values.community.title')}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className='text-foreground-secondary'>
-                    {t('values.community.description')}
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className='text-center bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
-                <CardHeader>
-                  <div className='flex justify-center mb-4'>
-                    <div className='p-3 bg-primary/10 rounded-full'>
-                      <Flame className='h-8 w-8 text-primary' />
-                    </div>
-                  </div>
-                  <CardTitle className='text-xl font-bold text-foreground'>
-                    {t('values.quality.title')}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className='text-foreground-secondary'>
-                    {t('values.quality.description')}
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Information */}
-      <section className='py-16 lg:py-24 bg-gradient-to-b from-background via-background-secondary to-background-secondary'>
-        <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='max-w-4xl mx-auto'>
-            <div className='text-center mb-12'>
-              <h2 className='text-3xl sm:text-4xl font-primary font-bold text-foreground mb-4'>
-                {t('contact.title')}
-              </h2>
-              <p className='text-lg text-foreground-secondary font-secondary'>
-                {t('contact.subtitle')}
-              </p>
-            </div>
-
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-12'>
-              <Card className='text-center bg-background-elevated border-border/50'>
-                <CardContent className='p-6'>
-                  <div className='flex justify-center mb-4'>
-                    <div className='p-3 bg-primary/10 rounded-full'>
-                      <MapPin className='h-6 w-6 text-primary' />
-                    </div>
-                  </div>
-                  <h3 className='font-semibold text-foreground mb-2'>
-                    {t('contact.location')}
-                  </h3>
-                  <p
-                    className='text-sm text-foreground-secondary'
-                    dangerouslySetInnerHTML={{ __html: t('contact.address') }}
-                  />
-                </CardContent>
-              </Card>
-
-              <Card className='text-center bg-background-elevated border-border/50'>
-                <CardContent className='p-6'>
-                  <div className='flex justify-center mb-4'>
-                    <div className='p-3 bg-primary/10 rounded-full'>
-                      <Clock className='h-6 w-6 text-primary' />
-                    </div>
-                  </div>
-                  <h3 className='font-semibold text-foreground mb-2'>
-                    {t('contact.hours')}
-                  </h3>
-                  <p
-                    className='text-sm text-foreground-secondary'
-                    dangerouslySetInnerHTML={{ __html: t('contact.schedule') }}
-                  />
-                </CardContent>
-              </Card>
-
-              <Card className='text-center bg-background-elevated border-border/50'>
-                <CardContent className='p-6'>
-                  <div className='flex justify-center mb-4'>
-                    <div className='p-3 bg-primary/10 rounded-full'>
-                      <Phone className='h-6 w-6 text-primary' />
-                    </div>
-                  </div>
-                  <h3 className='font-semibold text-foreground mb-2'>
-                    {t('contact.contact')}
-                  </h3>
-                  <p
-                    className='text-sm text-foreground-secondary'
-                    dangerouslySetInnerHTML={{ __html: t('contact.phone') }}
-                  />
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <div id='contact'>
-        <ContactFormSection />
-      </div>
     </div>
   );
 }

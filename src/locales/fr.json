@@ -165,8 +165,106 @@
   },
   "aboutUs": {
     "hero": {
-      "title": "À propos de Darius Pizza",
+      "title": "Notre Savoir-Faire",
       "subtitle": "Découvrez l'histoire de notre pizzeria italienne authentique, où la tradition rencontre la passion et chaque pizza raconte une histoire d'héritage familial et d'excellence culinaire."
+    },
+    "section1": {
+      "title": "De l'Étal du Boucher au Feu de Bois",
+      "intro": "Notre histoire ne commence pas avec la farine, mais avec le couteau. Avant d'être Darius Pizza, notre maison était une adresse incontournable de Cavalaire, fondée en 1936. Dès 1966, elle est devenue la \"Maison Darius\", une boucherie familiale réputée pour son exigence, son savoir-faire et la qualité intransigeante de ses produits.",
+      "conclusion": "En 2020, un nouveau chapitre s'est ouvert. La passion pour la gastronomie italienne et les produits d'exception a transformé l'étal en four à bois. La Maison Darius est devenue Darius Pizza.\n\nLe décor a changé, mais l'âme est intacte. Nous avons conservé l'héritage de la boucherie : l'amour du produit frais, le respect du savoir-faire artisanal et une obsession pour le goût. Cette exigence que nous appliquions à nos viandes, nous l'appliquons aujourd'hui à chaque ingrédient qui compose nos pizzas.",
+      "image1": {
+        "alt": "Devanture Darius Pizza depuis 2020"
+      },
+      "image2": {
+        "alt": "Devanture Boucherie Darius avant 2020"
+      }
+    },
+    "section2": {
+      "title": "Le Secret d'une Pâte Inimitable",
+      "intro": "Une pizza d'exception repose sur une pâte d'exception. Chez Darius Pizza, nous ne laissons rien au hasard. Notre protocole est un équilibre précis entre science et patience, conçu pour un seul objectif : vous offrir une pâte légère, aromatique et parfaitement digeste.",
+      "card1": {
+        "title": "Le Pétrissage et le Pointage",
+        "step": "Étape 1 : Le Pétrissage de Précision",
+        "content": "Tout commence par une hydratation maîtrisée et un pétrissage lent. Nous contrôlons la température de notre pâte à chaque instant pour ne pas la \"stresser\". Cette étape, le pointage, permet de développer le réseau de gluten initial qui donnera sa structure à la pâte, tout en préservant les arômes de notre farine.",
+        "image": {
+          "alt": "Boule de pâte après pétrissage",
+          "src": "/static/dough-kneading.webp"
+        }
+      },
+      "card2": {
+        "title": "La Maturation à Froid",
+        "step": "Étape 2 : La Lente Maturation (+72h)",
+        "content": "C'est ici que la magie opère. Nos pâtons reposent au froid à température contrôlée (entre 2°C et 4°C) pendant plus de 72 heures. Durant cette longue maturation, les enzymes naturelles (protéases) dégradent le réseau de gluten. Les chaînes de protéines complexes sont \"pré-digérées\".\n\nLe résultat pour vous ? Une pâte incroyablement légère, alvéolée et facile à digérer. Fini l'effet de lourdeur après le repas.",
+        "image": {
+          "alt": "Pâtons en maturation au froid",
+          "src": "/static/dough-maturation.webp"
+        }
+      },
+      "card3": {
+        "title": "La Réaction de Maillard",
+        "step": "Étape 3 : La Révélation au Four",
+        "content": "Pendant la maturation, d'autres enzymes (amylases) transforment l'amidon complexe de la farine en sucres simples. Lors de la cuisson à haute température, ces sucres rencontrent les acides aminés. C'est la fameuse Réaction de Maillard. Elle ne se contente pas de cuire : elle caramélise la pâte, crée cette croûte dorée et tachetée (\"léopardée\"), et libère une palette d'arômes grillés inimitables.",
+        "image": {
+          "alt": "Croûte de pizza dorée et alvéolée",
+          "src": "/static/pizza-crust.webp"
+        }
+      }
+    },
+    "section3": {
+      "title": "Des Produits d'Exception",
+      "intro": "Une pâte d'exception exige des ingrédients à sa hauteur. Notre philosophie est simple : le meilleur, sinon rien. Cela passe par un sourcing rigoureux, qu'il soit local, italien ou issu de notre propre héritage.",
+      "card1": {
+        "title": "La Farine : Moulin Céard",
+        "step": "Le Caractère des Alpes : Moulin Céard",
+        "content": "La base de notre pâte, c'est notre farine. Nous avons choisi le Moulin Céard, un moulin familial des Hautes-Alpes au savoir-faire transmis depuis 1820.\n\nIls sélectionnent des blés régionaux, souvent Label Rouge, pour produire une farine de caractère, sans additifs. C'est ce choix qui donne à notre pâte sa saveur rustique et sa capacité unique à s'épanouir durant les 72h de maturation. C'est notre engagement pour le terroir et la traçabilité.",
+        "image": {
+          "alt": "Farine Moulin Céard des Hautes-Alpes",
+          "src": "/static/moulin-ceard.webp"
+        }
+      },
+      "card2": {
+        "title": "L'Héritage : Notre Savoir-Faire Charcutier",
+        "step": "L'Exigence de la Boucherie",
+        "content": "Nous n'avons pas oublié d'où nous venons. L'héritage de la Maison Darius, c'est notre intransigeance sur la qualité des viandes et des charcuteries.\n\nNous sélectionnons nos produits avec l'œil et l'exigence du boucher : jambon blanc supérieur, coppa artisanale, viandes fraîches... Cette expertise, c'est la garantie de trouver sur nos pizzas des produits savoureux, riches en goût, que vous ne trouverez nulle part ailleurs.",
+        "image": {
+          "alt": "Charcuterie et viandes de qualité",
+          "src": "/static/charcuterie-quality.webp"
+        }
+      },
+      "card3": {
+        "title": "L'Origine : Sourcing Italien AOP",
+        "step": "Le Cœur de l'Italie",
+        "content": "Une pizza est un mariage entre le local et l'authenticité. Pour les ingrédients piliers de la gastronomie italienne, nous nous fournissons directement chez les meilleurs.\n\nNos tomates ? Des San Marzano AOP, gorgées de soleil au pied du Vésuve. Notre Mozzarella ? De la fior di latte fondante ou une véritable Bufala Campana AOP au lait de bufflonne. Huile d'olive extra-vierge, Parmigiano Reggiano 24 mois... Nous importons le soleil de l'Italie.",
+        "image": {
+          "alt": "Produits italiens AOP authentiques",
+          "src": "/static/italian-products.webp"
+        }
+      }
+    },
+    "section4": {
+      "title": "Contact & Avis",
+      "column1": {
+        "title": "Une question ? Un message ?",
+        "subtitle": "Nous aimons échanger avec nos clients. N'hésitez pas à nous faire part de vos questions, suggestions ou commentaires."
+      },
+      "column2": {
+        "title": "Nous Trouver & Laisser un Avis",
+        "subtitle": "Retrouvez-nous à Cavalaire-sur-mer et partagez votre expérience avec d'autres amateurs de pizza authentique."
+      }
+    },
+    "section5": {
+      "title": "Restez Connectés",
+      "subtitle": "Suivez notre quotidien et découvrez nos créations en temps réel",
+      "instagram": {
+        "title": "Notre Quotidien en Images",
+        "description": "Découvrez nos pizzas, notre équipe et l'ambiance de notre pizzeria à travers nos photos Instagram.",
+        "followUs": "Suivez-nous sur Instagram",
+        "handle": "@dariuspizza"
+      },
+      "social": {
+        "facebook": "Retrouvez-nous aussi sur Facebook",
+        "facebookUrl": "https://facebook.com/dariuspizza"
+      }
     },
     "story": {
       "title": "Notre Héritage",

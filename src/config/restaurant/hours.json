@@ -25,7 +25,7 @@
     "thursday": {
       "day": "thursday",
       "periods": [
-        { "open": "15:30", "close": "22:00" }
+        { "open": "18:00", "close": "22:00" }
       ],
       "isOpen": true
     },

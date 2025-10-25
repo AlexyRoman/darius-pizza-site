@@ -92,23 +92,26 @@ export const isAnalyticsEnabled = (): boolean => {
 // Enable analytics (called when user accepts analytics cookies)
 export const enableAnalytics = (measurementId: string) => {
   if (typeof window === 'undefined') return;
-
+  
   // Log for debugging
   if (process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true') {
     console.log('🔍 Enabling analytics with ID:', measurementId);
+    console.log('🔍 Current URL:', window.location.href);
+    console.log('🔍 User Agent:', navigator.userAgent);
   }
-
+  
   initGA(measurementId);
-
+  
   // Track the consent event
   if (window.gtag) {
     window.gtag('consent', 'update', {
       analytics_storage: 'granted',
     });
-
+    
     // Log for debugging
     if (process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true') {
       console.log('🔍 Analytics consent granted');
+      console.log('🔍 dataLayer:', window.dataLayer);
     }
   }
 };

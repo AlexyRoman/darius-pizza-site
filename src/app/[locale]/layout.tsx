@@ -9,6 +9,7 @@ import Footer from '@/components/footer/Footer';
 import CookieConsentBanner from '@/components/blocks/cookie-consent-banner';
 import GoogleTagManager from '@/components/analytics/GoogleTagManager';
 import PageTracker from '@/components/analytics/PageTracker';
+import AnalyticsDebug from '@/components/analytics/AnalyticsDebug';
 
 import type { Metadata } from 'next';
 import { buildLocalizedMetadata, type SeoMessages } from '@/utils/seo';
@@ -50,11 +51,12 @@ export default async function LocaleLayout(props: {
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      <GoogleTagManager
-        gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''}
-        gaId={process.env.NEXT_PUBLIC_GA_ID || ''}
+      <GoogleTagManager 
+        gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} 
+        gaId={process.env.NEXT_PUBLIC_GA_ID || ''} 
       />
       <PageTracker />
+      <AnalyticsDebug />
       <Header currentLocale={locale} />
       <main className='pt-0 md:pt-16 pb-2 md:pb-0'>
         {children}

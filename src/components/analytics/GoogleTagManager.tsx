@@ -14,21 +14,38 @@ export default function GoogleTagManager({
   gtmId,
   gaId,
 }: GoogleTagManagerProps) {
+  // Listen for cookie changes
   useEffect(() => {
-    const preferences = getCookiePreferences();
+    const checkPreferences = () => {
+      const newPreferences = getCookiePreferences();
+      
+      if (process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true') {
+        console.log('🔍 GTM Component - Cookie preferences updated:', newPreferences);
+        console.log('🔍 GTM Component - GTM ID:', gtmId);
+        console.log('🔍 GTM Component - GA ID:', gaId);
+      }
+      
+      if (newPreferences?.analytics && gaId && gaId !== 'G-XXXXXXXXXX') {
+        enableAnalytics(gaId);
+      } else {
+        disableAnalytics();
+      }
+    };
 
-    if (process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true') {
-      console.log('🔍 GTM Component - Cookie preferences:', preferences);
-      console.log('🔍 GTM Component - GTM ID:', gtmId);
-      console.log('🔍 GTM Component - GA ID:', gaId);
-    }
+    // Check immediately
+    checkPreferences();
 
-    if (preferences?.analytics && gaId && gaId !== 'G-XXXXXXXXXX') {
-      enableAnalytics(gaId);
-    } else {
-      disableAnalytics();
-    }
-  }, [gaId]);
+    // Listen for custom cookie change events
+    window.addEventListener('cookieConsentChanged', checkPreferences);
+    
+    // Also check periodically in case events don't fire
+    const interval = setInterval(checkPreferences, 1000);
+
+    return () => {
+      window.removeEventListener('cookieConsentChanged', checkPreferences);
+      clearInterval(interval);
+    };
+  }, [gaId, gtmId]);
 
   // Don't load GTM if no ID provided or if it's the placeholder
   if (!gtmId || gtmId === 'GTM-XXXXXXX') {

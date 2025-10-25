@@ -25,26 +25,25 @@ export default function GoogleTagManager({
         console.log('🔍 GTM Component - GA ID:', gaId);
       }
       
-      // Use Consent Mode to update analytics permissions
-      if (newPreferences?.analytics && gaId && gaId !== 'G-XXXXXXXXXX') {
-        enableAnalytics(gaId);
-      } else {
-        disableAnalytics();
+      // Only update consent if user has explicitly made a choice
+      // Don't auto-enable analytics on page load
+      if (newPreferences && gaId && gaId !== 'G-XXXXXXXXXX') {
+        if (newPreferences.analytics) {
+          enableAnalytics(gaId);
+        } else {
+          disableAnalytics();
+        }
       }
+      // If no preferences set yet, don't call disableAnalytics()
+      // Let Consent Mode default handle it (already set to 'denied')
     };
 
-    // Check immediately
-    checkPreferences();
-
-    // Listen for custom cookie change events
+    // Don't check immediately on page load - let Consent Mode default handle it
+    // Only listen for explicit user actions
     window.addEventListener('cookieConsentChanged', checkPreferences);
-    
-    // Also check periodically in case events don't fire
-    const interval = setInterval(checkPreferences, 1000);
 
     return () => {
       window.removeEventListener('cookieConsentChanged', checkPreferences);
-      clearInterval(interval);
     };
   }, [gaId, gtmId]);
 

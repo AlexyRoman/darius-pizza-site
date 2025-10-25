@@ -75,7 +75,7 @@ export const Comparison = ({
     setSliderPosition(percentage);
   };
 
-  const handleMouseDrag: MouseEventHandler<HTMLDivElement> = (event) => {
+  const handleMouseDrag: MouseEventHandler<HTMLDivElement> = event => {
     if (!event) {
       return;
     }
@@ -85,7 +85,7 @@ export const Comparison = ({
     handleDrag(containerRect, event.clientX);
   };
 
-  const handleTouchDrag: TouchEventHandler<HTMLDivElement> = (event) => {
+  const handleTouchDrag: TouchEventHandler<HTMLDivElement> = event => {
     if (!event) {
       return;
     }
@@ -115,7 +115,7 @@ export const Comparison = ({
       value={{ sliderPosition, setSliderPosition, motionSliderPosition, mode }}
     >
       <div
-        aria-label="Comparison slider"
+        aria-label='Comparison slider'
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={sliderPosition}
@@ -130,7 +130,7 @@ export const Comparison = ({
         onTouchEnd={handleDragEnd}
         onTouchMove={handleTouchDrag}
         onTouchStart={handleDragStart}
-        role="slider"
+        role='slider'
         tabIndex={0}
         {...props}
       />
@@ -150,18 +150,18 @@ export const ComparisonItem = ({
   const { motionSliderPosition } = useImageComparisonContext();
   const leftClipPath = useTransform(
     motionSliderPosition,
-    (value) => `inset(0 0 0 ${value}%)`
+    value => `inset(0 0 0 ${value}%)`
   );
   const rightClipPath = useTransform(
     motionSliderPosition,
-    (value) => `inset(0 ${100 - value}% 0 0)`
+    value => `inset(0 ${100 - value}% 0 0)`
   );
 
   return (
     <motion.div
-      aria-hidden="true"
+      aria-hidden='true'
       className={cn('absolute inset-0 h-full w-full object-cover', className)}
-      role="img"
+      role='img'
       style={{
         clipPath: position === 'left' ? leftClipPath : rightClipPath,
       }}
@@ -180,26 +180,26 @@ export const ComparisonHandle = ({
   ...props
 }: ComparisonHandleProps) => {
   const { motionSliderPosition, mode } = useImageComparisonContext();
-  const left = useTransform(motionSliderPosition, (value) => `${value}%`);
+  const left = useTransform(motionSliderPosition, value => `${value}%`);
 
   return (
     <motion.div
-      aria-hidden="true"
+      aria-hidden='true'
       className={cn(
         '-translate-x-1/2 absolute top-0 z-50 flex h-full w-10 items-center justify-center',
         mode === 'drag' && 'cursor-grab active:cursor-grabbing',
         className
       )}
-      role="presentation"
+      role='presentation'
       style={{ left }}
       {...props}
     >
       {children ?? (
         <>
-          <div className="-translate-x-1/2 absolute left-1/2 h-full w-1 bg-background" />
+          <div className='-translate-x-1/2 absolute left-1/2 h-full w-1 bg-background' />
           {mode === 'drag' && (
-            <div className="z-50 flex items-center justify-center rounded-sm bg-background px-0.5 py-1">
-              <GripVerticalIcon className="h-4 w-4 select-none text-muted-foreground" />
+            <div className='z-50 flex items-center justify-center rounded-sm bg-background px-0.5 py-1'>
+              <GripVerticalIcon className='h-4 w-4 select-none text-muted-foreground' />
             </div>
           )}
         </>

@@ -18,7 +18,11 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import ContactFormSection from '@/components/sections/ContactFormSection';
 import InstagramFeed from '@/components/sections/InstagramFeed';
-import { Comparison, ComparisonItem, ComparisonHandle } from '@/components/ui/shadcn-io/comparison';
+import {
+  Comparison,
+  ComparisonItem,
+  ComparisonHandle,
+} from '@/components/ui/shadcn-io/comparison';
 import { useTranslations } from 'next-intl';
 
 export default function InfoPage() {
@@ -58,19 +62,19 @@ export default function InfoPage() {
 
             {/* Comparison Slider */}
             <div className='mb-12'>
-              <Comparison className="aspect-video rounded-lg overflow-hidden shadow-2xl border border-border/50">
-                <ComparisonItem position="left">
+              <Comparison className='aspect-video rounded-lg overflow-hidden shadow-2xl border border-border/50'>
+                <ComparisonItem position='left'>
                   <img
-                    src="/static/IMG_2139.JPG"
+                    src='/static/IMG_2139.JPG'
                     alt={t('section1.image1.alt')}
-                    className="w-full h-full object-cover"
+                    className='w-full h-full object-cover'
                   />
                 </ComparisonItem>
-                <ComparisonItem position="right">
+                <ComparisonItem position='right'>
                   <img
-                    src="/static/butcher-frontage.webp"
+                    src='/static/butcher-frontage.webp'
                     alt={t('section1.image2.alt')}
-                    className="w-full h-full object-cover"
+                    className='w-full h-full object-cover'
                   />
                 </ComparisonItem>
                 <ComparisonHandle />
@@ -121,9 +125,9 @@ export default function InfoPage() {
                   </p>
                   <div className='mt-4'>
                     <img
-                      src="/static/dough-kneading.webp"
+                      src='/static/dough-kneading.webp'
                       alt={t('section2.card1.image.alt')}
-                      className="w-full h-48 object-cover rounded-lg"
+                      className='w-full h-48 object-cover rounded-lg'
                     />
                   </div>
                 </CardContent>
@@ -150,9 +154,9 @@ export default function InfoPage() {
                   </p>
                   <div className='mt-4'>
                     <img
-                      src="/static/dough-maturation.webp"
+                      src='/static/dough-maturation.webp'
                       alt={t('section2.card2.image.alt')}
-                      className="w-full h-48 object-cover rounded-lg"
+                      className='w-full h-48 object-cover rounded-lg'
                     />
                   </div>
                 </CardContent>
@@ -179,9 +183,9 @@ export default function InfoPage() {
                   </p>
                   <div className='mt-4'>
                     <img
-                      src="/static/pizza-crust.webp"
+                      src='/static/pizza-crust.webp'
                       alt={t('section2.card3.image.alt')}
-                      className="w-full h-48 object-cover rounded-lg"
+                      className='w-full h-48 object-cover rounded-lg'
                     />
                   </div>
                 </CardContent>
@@ -226,9 +230,9 @@ export default function InfoPage() {
                   </p>
                   <div className='mt-4'>
                     <img
-                      src="/static/moulin-ceard.webp"
+                      src='/static/moulin-ceard.webp'
                       alt={t('section3.card1.image.alt')}
-                      className="w-full h-48 object-cover rounded-lg"
+                      className='w-full h-48 object-cover rounded-lg'
                     />
                   </div>
                 </CardContent>
@@ -255,9 +259,9 @@ export default function InfoPage() {
                   </p>
                   <div className='mt-4'>
                     <img
-                      src="/static/charcuterie-quality.webp"
+                      src='/static/charcuterie-quality.webp'
                       alt={t('section3.card2.image.alt')}
-                      className="w-full h-48 object-cover rounded-lg"
+                      className='w-full h-48 object-cover rounded-lg'
                     />
                   </div>
                 </CardContent>
@@ -284,9 +288,9 @@ export default function InfoPage() {
                   </p>
                   <div className='mt-4'>
                     <img
-                      src="/static/italian-products.webp"
+                      src='/static/italian-products.webp'
                       alt={t('section3.card3.image.alt')}
-                      className="w-full h-48 object-cover rounded-lg"
+                      className='w-full h-48 object-cover rounded-lg'
                     />
                   </div>
                 </CardContent>
@@ -348,14 +352,14 @@ export default function InfoPage() {
                 <CardContent>
                   <div className='aspect-video rounded-lg overflow-hidden'>
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.123456789!2d6.527456789!3d43.172456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEwJzIwLjkiTiA2wrAzMSczOC44IkU!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr"
-                      width="100%"
-                      height="100%"
+                      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.123456789!2d6.527456789!3d43.172456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEwJzIwLjkiTiA2wrAzMSczOC44IkU!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr'
+                      width='100%'
+                      height='100%'
                       style={{ border: 0 }}
                       allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Darius Pizza Location"
+                      loading='lazy'
+                      referrerPolicy='no-referrer-when-downgrade'
+                      title='Darius Pizza Location'
                     />
                   </div>
                 </CardContent>
@@ -381,15 +385,17 @@ export default function InfoPage() {
                       <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
                       <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
                       <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
-                      <span className='ml-2 text-lg font-semibold text-foreground'>5.0</span>
+                      <span className='ml-2 text-lg font-semibold text-foreground'>
+                        5.0
+                      </span>
                     </div>
                     <p className='text-foreground-secondary'>
                       Basé sur 127 avis clients
                     </p>
                     <a
-                      href="https://www.tripadvisor.fr/Restaurant_Review-g187123-d123456789-Reviews-Darius_Pizza-Cavalaire_sur_Mer_Var_Provence_Alpes_Cote_d_Azur.html"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href='https://www.tripadvisor.fr/Restaurant_Review-g187123-d123456789-Reviews-Darius_Pizza-Cavalaire_sur_Mer_Var_Provence_Alpes_Cote_d_Azur.html'
+                      target='_blank'
+                      rel='noopener noreferrer'
                       className='inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors'
                     >
                       <Star className='h-4 w-4' />
@@ -433,12 +439,12 @@ export default function InfoPage() {
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <InstagramFeed className="mb-6" />
+                  <InstagramFeed className='mb-6' />
                   <div className='text-center'>
                     <a
-                      href="https://instagram.com/dariuspizza"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href='https://instagram.com/dariuspizza'
+                      target='_blank'
+                      rel='noopener noreferrer'
                       className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all'
                     >
                       <Instagram className='h-5 w-5' />
@@ -467,8 +473,8 @@ export default function InfoPage() {
                       </p>
                       <a
                         href={t('section5.social.facebookUrl')}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target='_blank'
+                        rel='noopener noreferrer'
                         className='inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors'
                       >
                         <Facebook className='h-4 w-4' />
@@ -491,7 +497,7 @@ export default function InfoPage() {
                         Appelez-nous directement pour vos commandes
                       </p>
                       <a
-                        href="tel:+33946440511"
+                        href='tel:+33946440511'
                         className='inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors'
                       >
                         <Phone className='h-4 w-4' />
@@ -505,7 +511,6 @@ export default function InfoPage() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

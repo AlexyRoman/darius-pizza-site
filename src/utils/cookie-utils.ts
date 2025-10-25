@@ -88,3 +88,18 @@ export const clearCookieConsent = (): void => {
   document.cookie =
     'cookiePreferences=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
 };
+
+/**
+ * Update analytics consent status
+ */
+export const updateAnalyticsConsent = (enabled: boolean): void => {
+  const preferences = getCookiePreferences();
+  if (!preferences) return;
+
+  const updatedPreferences = {
+    ...preferences,
+    analytics: enabled,
+  };
+
+  saveCookieConsent('customized', updatedPreferences);
+};

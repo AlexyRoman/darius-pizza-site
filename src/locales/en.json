@@ -83,6 +83,70 @@
       "emailButton": "Email Us Directly",
       "formButton": "Use Contact Form",
       "quickInfo": "Email: contact@dariuspizza.fr • Phone: (+33) 04.94.64.05.11"
+    },
+    "contactForm": {
+      "emailBanner": {
+        "title": "Email Us Directly",
+        "description": "Prefer to send an email directly? We're here to help!",
+        "emailAddress": "info@dariuspizza.com"
+      },
+      "form": {
+        "title": "Send Us a Message",
+        "description": "Fill out the form below and we'll get back to you as soon as possible.",
+        "fields": {
+          "name": {
+            "label": "Full Name",
+            "placeholder": "Your full name"
+          },
+          "email": {
+            "label": "Email Address",
+            "placeholder": "your@email.com"
+          },
+          "phone": {
+            "label": "Phone Number",
+            "placeholder": "(123) 456-7890",
+            "description": "Optional - for urgent inquiries"
+          },
+          "subject": {
+            "label": "Subject",
+            "placeholder": "What's this about?"
+          },
+          "inquiryType": {
+            "label": "Type of Inquiry",
+            "placeholder": "Select inquiry type",
+            "options": {
+              "general": "General Question",
+              "reservation": "Table Reservation",
+              "catering": "Catering Inquiry",
+              "feedback": "Feedback",
+              "complaint": "Complaint",
+              "compliment": "Compliment",
+              "employment": "Employment",
+              "other": "Other"
+            }
+          },
+          "message": {
+            "label": "Message",
+            "placeholder": "Tell us more about your inquiry...",
+            "description": "Please provide as much detail as possible to help us assist you better."
+          },
+          "preferredContact": {
+            "label": "Preferred Contact Method",
+            "placeholder": "How should we contact you?",
+            "description": "We'll use this method to respond to your inquiry.",
+            "options": {
+              "email": "Email",
+              "phone": "Phone Call",
+              "text": "Text Message"
+            }
+          }
+        },
+        "submit": {
+          "sending": "Sending...",
+          "sendMessage": "Send Message"
+        },
+        "successMessage": "Thank you for your message! We'll get back to you soon."
+      }
     }
   },
   "hero": {

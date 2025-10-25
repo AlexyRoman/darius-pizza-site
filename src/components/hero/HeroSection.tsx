@@ -10,7 +10,10 @@ import { ArrowRight, Star, Clock, MapPin, Loader2 } from 'lucide-react';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/config/restaurant/hours.json';
 import { useThemeContext } from '@/contexts/ThemeContext';
-import { formatNextOpeningTime, isTimeInPeriods } from '@/lib/opening-hours-utils';
+import {
+  formatNextOpeningTime,
+  isTimeInPeriods,
+} from '@/lib/opening-hours-utils';
 import { SmartCallButton } from '@/components/ui/smart-call-button';
 
 interface OpeningHours {
@@ -62,11 +65,13 @@ export default function HeroSection() {
   // Check if restaurant is opening soon (within 1 hour)
   const isOpeningSoon = (() => {
     if (!todayHours || !todayHours.isOpen || isCurrentlyOpen) return false;
-    
+
     // Check if any period opens within the next hour
-    const currentMinutes = parseInt(currentTime.split(':')[0]) * 60 + parseInt(currentTime.split(':')[1]);
+    const currentMinutes =
+      parseInt(currentTime.split(':')[0]) * 60 +
+      parseInt(currentTime.split(':')[1]);
     const oneHourFromNow = currentMinutes + 60;
-    
+
     return todayHours.periods.some(period => {
       const [openHour, openMinute] = period.open.split(':').map(Number);
       const openMinutes = openHour * 60 + openMinute;
@@ -78,8 +83,10 @@ export default function HeroSection() {
   const getMinutesUntilOpening = () => {
     if (!todayHours || !isOpeningSoon) return 0;
 
-    const currentMinutes = parseInt(currentTime.split(':')[0]) * 60 + parseInt(currentTime.split(':')[1]);
-    
+    const currentMinutes =
+      parseInt(currentTime.split(':')[0]) * 60 +
+      parseInt(currentTime.split(':')[1]);
+
     // Find the next opening period
     const nextOpeningPeriod = todayHours.periods
       .filter(period => {
@@ -90,12 +97,14 @@ export default function HeroSection() {
       .sort((a, b) => {
         const [aHour, aMinute] = a.open.split(':').map(Number);
         const [bHour, bMinute] = b.open.split(':').map(Number);
-        return (aHour * 60 + aMinute) - (bHour * 60 + bMinute);
+        return aHour * 60 + aMinute - (bHour * 60 + bMinute);
       })[0];
 
     if (!nextOpeningPeriod) return 0;
 
-    const [openHour, openMinute] = nextOpeningPeriod.open.split(':').map(Number);
+    const [openHour, openMinute] = nextOpeningPeriod.open
+      .split(':')
+      .map(Number);
     const openMinutes = openHour * 60 + openMinute;
 
     return openMinutes - currentMinutes;
@@ -225,13 +234,15 @@ export default function HeroSection() {
                 className={`${badgeContent.className} ${badgeContent.isTwoLine ? 'py-2 px-3 h-auto' : ''}`}
               >
                 {badgeContent.isTwoLine ? (
-                  <div className="flex items-center gap-2 text-left">
-                    <div className="flex-shrink-0">
-                      {badgeContent.icon}
-                    </div>
-                    <div className="flex flex-col">
-                      <div className="text-xs font-medium">{t('badge.closed')}</div>
-                      <div className="text-xs opacity-90">{badgeContent.text}</div>
+                  <div className='flex items-center gap-2 text-left'>
+                    <div className='flex-shrink-0'>{badgeContent.icon}</div>
+                    <div className='flex flex-col'>
+                      <div className='text-xs font-medium'>
+                        {t('badge.closed')}
+                      </div>
+                      <div className='text-xs opacity-90'>
+                        {badgeContent.text}
+                      </div>
                     </div>
                   </div>
                 ) : (

@@ -13,7 +13,7 @@ interface InstagramPost {
 export async function GET() {
   try {
     const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
-    
+
     if (!accessToken) {
       return NextResponse.json(
         { error: 'Instagram access token not configured' },
@@ -31,17 +31,19 @@ export async function GET() {
     }
 
     const data = await response.json();
-    
+
     // Transform the data to match our interface
-    const posts: InstagramPost[] = data.data.map((post: Record<string, unknown>) => ({
-      id: post.id as string,
-      caption: post.caption as string | undefined,
-      media_type: post.media_type as 'IMAGE' | 'VIDEO' | 'CAROUSEL_ALBUM',
-      media_url: post.media_url as string,
-      thumbnail_url: post.thumbnail_url as string | undefined,
-      permalink: post.permalink as string,
-      timestamp: post.timestamp as string,
-    }));
+    const posts: InstagramPost[] = data.data.map(
+      (post: Record<string, unknown>) => ({
+        id: post.id as string,
+        caption: post.caption as string | undefined,
+        media_type: post.media_type as 'IMAGE' | 'VIDEO' | 'CAROUSEL_ALBUM',
+        media_url: post.media_url as string,
+        thumbnail_url: post.thumbnail_url as string | undefined,
+        permalink: post.permalink as string,
+        timestamp: post.timestamp as string,
+      })
+    );
 
     return NextResponse.json({ posts });
   } catch (error) {

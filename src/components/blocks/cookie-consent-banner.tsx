@@ -20,6 +20,7 @@ import {
   getCookiePreferences,
   saveCookieConsent,
 } from '@/utils/cookie-utils';
+import { enableAnalytics, disableAnalytics } from '@/utils/analytics';
 
 interface CookieConsentBannerProps {
   onAcceptCallback?: (preferences: CookiePreferences) => void;
@@ -51,6 +52,12 @@ const CookieConsentBanner = React.forwardRef<
       };
       setIsOpen(false);
       saveCookieConsent('accepted', allAccepted);
+
+      // Enable analytics
+      if (process.env.NEXT_PUBLIC_GA_ID) {
+        enableAnalytics(process.env.NEXT_PUBLIC_GA_ID);
+      }
+
       setTimeout(() => {
         setHide(true);
       }, 300);
@@ -64,6 +71,10 @@ const CookieConsentBanner = React.forwardRef<
       };
       setIsOpen(false);
       saveCookieConsent('declined', declined);
+
+      // Disable analytics
+      disableAnalytics();
+
       setTimeout(() => {
         setHide(true);
       }, 300);

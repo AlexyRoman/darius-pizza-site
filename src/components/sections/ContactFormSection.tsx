@@ -25,6 +25,7 @@ import {
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { useTranslations } from 'next-intl';
 
 // Form validation schema
 const contactFormSchema = z.object({
@@ -50,6 +51,7 @@ const contactFormSchema = z.object({
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function ContactFormSection() {
+  const t = useTranslations('info.contactForm');
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -68,7 +70,7 @@ export default function ContactFormSection() {
     console.log('Form submitted:', values);
 
     // Show success message (you can implement a toast notification here)
-    alert('Thank you for your message! We' + "'" + 'll get back to you soon.');
+    alert(t('form.successMessage'));
 
     // Reset form
     form.reset();
@@ -77,22 +79,10 @@ export default function ContactFormSection() {
   return (
     <section
       id='contact-form'
-      className='py-16 lg:py-24 bg-gradient-to-b from-background-secondary via-background-secondary to-background'
+      className='py-16 lg:py-24 bg-background-secondary'
     >
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='max-w-6xl mx-auto'>
-          {/* Section Header */}
-          <div className='text-center mb-12'>
-            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-primary font-bold text-foreground mb-4'>
-              Get In Touch
-            </h2>
-            <p className='text-lg text-foreground-secondary font-secondary max-w-2xl mx-auto'>
-              Have a question, feedback, or want to make a reservation? We{"'"}d
-              love to hear from you. Send us a message and we{"'"}ll respond as
-              soon as possible.
-            </p>
-          </div>
-
+        <div>
           {/* Email Banner */}
           <div className='mb-8'>
             <Card className='bg-primary/5 border-primary/20 shadow-lg'>
@@ -100,34 +90,33 @@ export default function ContactFormSection() {
                 <div className='flex items-center justify-center gap-3 mb-2'>
                   <Mail className='h-6 w-6 text-primary' />
                   <h3 className='text-xl font-primary font-semibold text-foreground'>
-                    Email Us Directly
+                    {t('emailBanner.title')}
                   </h3>
                 </div>
                 <p className='text-foreground-secondary mb-4'>
-                  Prefer to send an email directly? We{"'"}re here to help!
+                  {t('emailBanner.description')}
                 </p>
                 <a
-                  href='mailto:info@dariuspizza.com'
+                  href={`mailto:${t('emailBanner.emailAddress')}`}
                   className='inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors'
                 >
                   <Mail className='h-4 w-4' />
-                  info@dariuspizza.com
+                  {t('emailBanner.emailAddress')}
                 </a>
               </CardContent>
             </Card>
           </div>
 
           {/* Contact Form - Full Width */}
-          <div className='max-w-4xl mx-auto'>
+          <div>
             <Card className='bg-background-elevated border-border/50 shadow-lg'>
               <CardHeader className='pb-4'>
                 <CardTitle className='flex items-center gap-3 text-xl font-primary font-semibold text-foreground'>
                   <Send className='h-5 w-5 text-primary' />
-                  Send Us a Message
+                  {t('form.title')}
                 </CardTitle>
                 <p className='text-foreground-secondary'>
-                  Fill out the form below and we{"'"}ll get back to you as soon
-                  as possible.
+                  {t('form.description')}
                 </p>
               </CardHeader>
               <CardContent>
@@ -145,10 +134,13 @@ export default function ContactFormSection() {
                           <FormItem>
                             <FormLabel className='flex items-center gap-2'>
                               <User className='h-4 w-4' />
-                              Full Name *
+                              {t('form.fields.name.label')} *
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder='Your full name' {...field} />
+                              <Input
+                                placeholder={t('form.fields.name.placeholder')}
+                                {...field}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -162,11 +154,11 @@ export default function ContactFormSection() {
                           <FormItem>
                             <FormLabel className='flex items-center gap-2'>
                               <Mail className='h-4 w-4' />
-                              Email Address *
+                              {t('form.fields.email.label')} *
                             </FormLabel>
                             <FormControl>
                               <Input
-                                placeholder='your@email.com'
+                                placeholder={t('form.fields.email.placeholder')}
                                 type='email'
                                 {...field}
                               />
@@ -186,17 +178,17 @@ export default function ContactFormSection() {
                           <FormItem>
                             <FormLabel className='flex items-center gap-2'>
                               <Phone className='h-4 w-4' />
-                              Phone Number
+                              {t('form.fields.phone.label')}
                             </FormLabel>
                             <FormControl>
                               <Input
-                                placeholder='(123) 456-7890'
+                                placeholder={t('form.fields.phone.placeholder')}
                                 type='tel'
                                 {...field}
                               />
                             </FormControl>
                             <FormDescription>
-                              Optional - for urgent inquiries
+                              {t('form.fields.phone.description')}
                             </FormDescription>
                             <FormMessage />
                           </FormItem>
@@ -208,10 +200,14 @@ export default function ContactFormSection() {
                         name='subject'
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Subject *</FormLabel>
+                            <FormLabel>
+                              {t('form.fields.subject.label')} *
+                            </FormLabel>
                             <FormControl>
                               <Input
-                                placeholder="What's this about?"
+                                placeholder={t(
+                                  'form.fields.subject.placeholder'
+                                )}
                                 {...field}
                               />
                             </FormControl>
@@ -227,37 +223,53 @@ export default function ContactFormSection() {
                       name='inquiryType'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Type of Inquiry *</FormLabel>
+                          <FormLabel>
+                            {t('form.fields.inquiryType.label')} *
+                          </FormLabel>
                           <Select
                             onValueChange={field.onChange}
                             defaultValue={field.value}
                           >
                             <FormControl>
                               <SelectTrigger>
-                                <SelectValue placeholder='Select inquiry type' />
+                                <SelectValue
+                                  placeholder={t(
+                                    'form.fields.inquiryType.placeholder'
+                                  )}
+                                />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
                               <SelectItem value='general'>
-                                General Question
+                                {t('form.fields.inquiryType.options.general')}
                               </SelectItem>
                               <SelectItem value='reservation'>
-                                Table Reservation
+                                {t(
+                                  'form.fields.inquiryType.options.reservation'
+                                )}
                               </SelectItem>
                               <SelectItem value='catering'>
-                                Catering Inquiry
+                                {t('form.fields.inquiryType.options.catering')}
                               </SelectItem>
-                              <SelectItem value='feedback'>Feedback</SelectItem>
+                              <SelectItem value='feedback'>
+                                {t('form.fields.inquiryType.options.feedback')}
+                              </SelectItem>
                               <SelectItem value='complaint'>
-                                Complaint
+                                {t('form.fields.inquiryType.options.complaint')}
                               </SelectItem>
                               <SelectItem value='compliment'>
-                                Compliment
+                                {t(
+                                  'form.fields.inquiryType.options.compliment'
+                                )}
                               </SelectItem>
                               <SelectItem value='employment'>
-                                Employment
+                                {t(
+                                  'form.fields.inquiryType.options.employment'
+                                )}
                               </SelectItem>
-                              <SelectItem value='other'>Other</SelectItem>
+                              <SelectItem value='other'>
+                                {t('form.fields.inquiryType.options.other')}
+                              </SelectItem>
                             </SelectContent>
                           </Select>
                           <FormMessage />
@@ -271,17 +283,18 @@ export default function ContactFormSection() {
                       name='message'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Message *</FormLabel>
+                          <FormLabel>
+                            {t('form.fields.message.label')} *
+                          </FormLabel>
                           <FormControl>
                             <Textarea
-                              placeholder='Tell us more about your inquiry...'
+                              placeholder={t('form.fields.message.placeholder')}
                               className='min-h-[120px]'
                               {...field}
                             />
                           </FormControl>
                           <FormDescription>
-                            Please provide as much detail as possible to help us
-                            assist you better.
+                            {t('form.fields.message.description')}
                           </FormDescription>
                           <FormMessage />
                         </FormItem>
@@ -294,25 +307,40 @@ export default function ContactFormSection() {
                       name='preferredContact'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Preferred Contact Method</FormLabel>
+                          <FormLabel>
+                            {t('form.fields.preferredContact.label')}
+                          </FormLabel>
                           <Select
                             onValueChange={field.onChange}
                             defaultValue={field.value}
                           >
                             <FormControl>
                               <SelectTrigger>
-                                <SelectValue placeholder='How should we contact you?' />
+                                <SelectValue
+                                  placeholder={t(
+                                    'form.fields.preferredContact.placeholder'
+                                  )}
+                                />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value='email'>Email</SelectItem>
-                              <SelectItem value='phone'>Phone Call</SelectItem>
-                              <SelectItem value='text'>Text Message</SelectItem>
+                              <SelectItem value='email'>
+                                {t(
+                                  'form.fields.preferredContact.options.email'
+                                )}
+                              </SelectItem>
+                              <SelectItem value='phone'>
+                                {t(
+                                  'form.fields.preferredContact.options.phone'
+                                )}
+                              </SelectItem>
+                              <SelectItem value='text'>
+                                {t('form.fields.preferredContact.options.text')}
+                              </SelectItem>
                             </SelectContent>
                           </Select>
                           <FormDescription>
-                            We{"'"}ll use this method to respond to your
-                            inquiry.
+                            {t('form.fields.preferredContact.description')}
                           </FormDescription>
                           <FormMessage />
                         </FormItem>
@@ -330,12 +358,12 @@ export default function ContactFormSection() {
                         {form.formState.isSubmitting ? (
                           <>
                             <div className='animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2' />
-                            Sending...
+                            {t('form.submit.sending')}
                           </>
                         ) : (
                           <>
                             <Send className='h-4 w-4 mr-2' />
-                            Send Message
+                            {t('form.submit.sendMessage')}
                           </>
                         )}
                       </Button>

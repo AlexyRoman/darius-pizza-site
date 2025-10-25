@@ -21,6 +21,7 @@ import {
   getCookiePreferences,
   saveCookieConsent,
 } from '@/utils/cookie-utils';
+import { enableAnalytics, disableAnalytics } from '@/utils/analytics';
 
 interface GdprCookieConsentProps {
   onAcceptCallback?: (preferences: CookiePreferences) => void;
@@ -64,6 +65,12 @@ const GdprCookieConsent = React.forwardRef<
       setPreferences(allAccepted);
       setModalOpen(false);
       saveCookieConsent('accepted', allAccepted);
+
+      // Enable analytics
+      if (process.env.NEXT_PUBLIC_GA_ID) {
+        enableAnalytics(process.env.NEXT_PUBLIC_GA_ID);
+      }
+
       setTimeout(() => {
         setHide(true);
       }, 300);
@@ -78,6 +85,10 @@ const GdprCookieConsent = React.forwardRef<
       setPreferences(declined);
       setModalOpen(false);
       saveCookieConsent('declined', declined);
+
+      // Disable analytics
+      disableAnalytics();
+
       setTimeout(() => {
         setHide(true);
       }, 300);
@@ -93,6 +104,14 @@ const GdprCookieConsent = React.forwardRef<
       setModalOpen(false);
       // Only set cookies when user actually saves preferences
       saveCookieConsent('customized', preferences);
+
+      // Enable/disable analytics based on preferences
+      if (preferences.analytics && process.env.NEXT_PUBLIC_GA_ID) {
+        enableAnalytics(process.env.NEXT_PUBLIC_GA_ID);
+      } else {
+        disableAnalytics();
+      }
+
       setTimeout(() => {
         setHide(true);
       }, 300);

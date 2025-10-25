@@ -25,6 +25,7 @@ export default function GoogleTagManager({
         console.log('🔍 GTM Component - GA ID:', gaId);
       }
       
+      // Use Consent Mode to update analytics permissions
       if (newPreferences?.analytics && gaId && gaId !== 'G-XXXXXXXXXX') {
         enableAnalytics(gaId);
       } else {

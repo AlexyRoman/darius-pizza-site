@@ -46,7 +46,9 @@ export const trackPageView = (url: string, title?: string) => {
   const preferences = getCookiePreferences();
   if (!preferences?.analytics) return;
 
-  window.gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
+  // GTM will handle page tracking automatically
+  // This is just for custom page views if needed
+  window.gtag('event', 'page_view', {
     page_path: url,
     page_title: title,
   });
@@ -100,17 +102,18 @@ export const enableAnalytics = (measurementId: string) => {
     console.log('🔍 User Agent:', navigator.userAgent);
   }
   
-  initGA(measurementId);
-  
-  // Track the consent event
+  // Use Google Consent Mode to grant analytics storage
   if (window.gtag) {
     window.gtag('consent', 'update', {
-      analytics_storage: 'granted',
+      'analytics_storage': 'granted',
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted'
     });
     
     // Log for debugging
     if (process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true') {
-      console.log('🔍 Analytics consent granted');
+      console.log('🔍 Analytics consent granted via Consent Mode');
       console.log('🔍 dataLayer:', window.dataLayer);
     }
   }
@@ -119,10 +122,19 @@ export const enableAnalytics = (measurementId: string) => {
 // Disable analytics (called when user declines analytics cookies)
 export const disableAnalytics = () => {
   if (typeof window === 'undefined') return;
-
+  
+  // Use Google Consent Mode to deny analytics storage
   if (window.gtag) {
     window.gtag('consent', 'update', {
-      analytics_storage: 'denied',
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
     });
+    
+    // Log for debugging
+    if (process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true') {
+      console.log('🔍 Analytics consent denied via Consent Mode');
+    }
   }
 };

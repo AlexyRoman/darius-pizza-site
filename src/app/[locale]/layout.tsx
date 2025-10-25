@@ -51,6 +51,23 @@ export default async function LocaleLayout(props: {
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
+      {/* Google Consent Mode - MUST be before GTM */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            // Set default consent state to 'denied' BEFORE GTM loads
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied',
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied'
+            });
+          `,
+        }}
+      />
       <GoogleTagManager 
         gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} 
         gaId={process.env.NEXT_PUBLIC_GA_ID || ''} 

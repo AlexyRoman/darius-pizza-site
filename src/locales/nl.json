@@ -1,1 +1,989 @@
-{}
+{
+  "common": {
+    "welcome": "Welkom",
+    "home": "Home",
+    "menu": "Menu",
+    "info": "Info",
+    "call": "Bestellen"
+  },
+  "callDialog": {
+    "title": "Pizzeria Gesloten",
+    "description": "De pizzeria is momenteel gesloten en uw oproep wordt mogelijk niet beantwoord. Wilt u toch bellen of het later opnieuw proberen?",
+    "callLater": "Later Bellen",
+    "callNow": "Nu Bellen"
+  },
+  "seo": {
+    "siteName": "Darius Pizza",
+    "title": "Darius Pizza - Authentieke Italiaanse Pizza",
+    "description": "Ontdek de authentieke smaak van Italië met onze ambachtelijke pizza's, bereid met verse ingrediënten en traditionele recepten. Bezoek onze pizzeria voor de beste Italiaanse keuken.",
+    "imageAlt": "Heerlijke authentieke Italiaanse pizza van Darius Pizza",
+    "keywords": "Italiaanse pizza, authentieke pizza, afhalen, pizzeria, traditionele recepten, verse ingrediënten, Italië, keuken",
+    "menu": {
+      "title": "Menu - Darius Pizza",
+      "description": "Ontdek ons menu van authentieke Italiaanse pizza's met traditionele recepten en verse ingrediënten. Van de klassieke Margherita tot speciale pizza's."
+    },
+    "info": {
+      "title": "Restaurantinformatie - Darius Pizza",
+      "description": "Bezoek Darius Pizza voor authentieke Italiaanse gerechten. Vind onze locatie, openingstijden en contactgegevens."
+    }
+  },
+  "footer": {
+    "titles": {
+      "legal": "Juridisch",
+      "social": "Sociaal",
+      "explore": "Ontdek"
+    },
+    "brandSubtitle": "Authentieke pizza bereid met liefde, traditie en de beste ingrediënten. Proef de smaak van Italië in elke hap.",
+    "rightsReserved": "Darius Pizza. Alle rechten voorbehouden.",
+    "designedByPrefix": "Ontworpen door",
+    "designedByName": "WebOustaou - Alexy Roman",
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Voorwaarden",
+      "imprint": "Wettelijke Vermelding"
+    },
+    "social": {
+      "googleMaps": "Google Maps",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "tripadvisor": "Tripadvisor"
+    }
+  },
+  "menu": {
+    "title": "Menu",
+    "subtitle": "Ontdek onze selectie",
+    "allergens": "Allergenen",
+    "itemsCount": "{count} pizza{count, plural, =1 {} other {'s}}",
+    "filters": {
+      "allCategories": "Alle categorieën",
+      "searchCategories": "Categorieën zoeken...",
+      "noCategoryFound": "Geen categorie gevonden.",
+      "reset": "Resetten"
+    },
+    "cta": {
+      "action": "Actie"
+    }
+  },
+  "allergens": {
+    "vegetarian": "Vegetarisch",
+    "gluten": "Gluten",
+    "eggs": "Eieren",
+    "milk": "Melk",
+    "fish": "Vis",
+    "peanuts": "Pinda's",
+    "crustaceans": "Schaaldieren",
+    "nuts": "Noten",
+    "sesame": "Sesam",
+    "mustard": "Mosterd",
+    "soy": "Soja",
+    "celery": "Selderij",
+    "lupin": "Lupine",
+    "sulfites": "Sulfieten",
+    "molluscs": "Weekdieren"
+  },
+  "notFound": {
+    "title": "Oeps! Verdwaalde pizza!",
+    "message": "Soms kan een pizza verdwalen! Geen zorgen, we brengen je terug naar ons heerlijke menu.",
+    "backHome": "Terug naar Home"
+  },
+  "info": {
+    "title": "Contact en Informatie",
+    "subtitle": "Neem contact op",
+    "contactBanner": {
+      "title": "Contacteer Ons",
+      "description": "Heeft u een vraag of opmerking? We horen graag van u. Kies hoe u contact met ons wilt opnemen.",
+      "emailButton": "Stuur een e-mail",
+      "formButton": "Gebruik het Contactformulier",
+      "quickInfo": "E-mail: contact@dariuspizza.fr • Telefoon: (+33) 04.94.64.05.11"
+    },
+    "contactForm": {
+      "emailBanner": {
+        "title": "Stuur ons een e-mail",
+        "description": "Stuurt u liever rechtstreeks een e-mail? We staan klaar om u te helpen!",
+        "emailAddress": "contact@dariuspizza.com"
+      },
+      "form": {
+        "title": "Stuur ons een bericht",
+        "description": "Vul het onderstaande formulier in en we nemen zo snel mogelijk contact met u op.",
+        "fields": {
+          "name": {
+            "label": "Volledige Naam",
+            "placeholder": "Uw volledige naam"
+          },
+          "email": {
+            "label": "E-mailadres",
+            "placeholder": "uw@email.com"
+          },
+          "phone": {
+            "label": "Telefoonnummer",
+            "placeholder": "(+33)0601020304",
+            "description": "Optioneel - voor dringende verzoeken"
+          },
+          "subject": {
+            "label": "Onderwerp",
+            "placeholder": "Waar gaat het over?"
+          },
+          "inquiryType": {
+            "label": "Type Verzoek",
+            "placeholder": "Selecteer het type verzoek",
+            "options": {
+              "general": "Algemene Vraag",
+              "catering": "Cateringaanvraag",
+              "feedback": "Feedback",
+              "complaint": "Klacht",
+              "compliment": "Compliment",
+              "employment": "Sollicitatie",
+              "other": "Overig"
+            }
+          },
+          "message": {
+            "label": "Bericht",
+            "placeholder": "Vertel ons over uw verzoek...",
+            "description": "Geef alstublieft zoveel mogelijk details om ons te helpen u beter van dienst te zijn."
+          },
+          "preferredContact": {
+            "label": "Voorkeursmethode voor Contact",
+            "placeholder": "Hoe moeten we contact met u opnemen?",
+            "description": "We gebruiken deze methode om op uw verzoek te reageren.",
+            "options": {
+              "email": "E-mail",
+              "phone": "Telefoongesprek",
+              "text": "Tekstbericht"
+            }
+          }
+        },
+        "submit": {
+          "sending": "Verzenden...",
+          "sendMessage": "Bericht Verzenden"
+        },
+        "successMessage": "Bedankt voor uw bericht! We nemen spoedig contact met u op."
+      }
+    }
+  },
+  "hero": {
+    "badge": {
+      "currentlyClosed": "Momenteel gesloten",
+      "openNow": "Nu geopend",
+      "openingIn": "Opent over {minutes} min",
+      "closed": "Gesloten",
+      "closedOpenToday": "Opent om {time} vandaag",
+      "closedOpenTomorrow": "Opent om {time} morgen"
+    },
+    "heading": {
+      "mainTitle": "Le Darius Pizza",
+      "subtitle": "Afhaalpizzeria in Cavalaire-sur-mer"
+    },
+    "description": "Le Darius Pizza presenteert met trots de tradities van Italië met de smaken van ons land.",
+    "features": {
+      "freshDaily": "Voor uw ogen bereid",
+      "localIngredients": "Lokale ingrediënten",
+      "fiveStarRated": "Best beoordeelde pizzeria in Cavalaire"
+    },
+    "cta": {
+      "viewMenu": "Bekijk ons menu",
+      "orderNow": "Telefonisch bestellen"
+    },
+    "stats": {
+      "yearsExperience": "Jaar ervaring",
+      "pizzaVarieties": "Soorten pizza's",
+      "happyCustomers": "Op Tripadvisor en Google"
+    },
+    "stickers": {
+      "freshDaily": "Bereid met verse ingrediënten",
+      "handmade": "Huisgemaakt gerijpt deeg"
+    }
+  },
+  "hours": {
+    "visitTitle": "Vind ons in onze pizzeria",
+    "visitSubtitle": "Ontdek een familiale en authentieke pizzeria in een warme en gastvrije sfeer. Wij bedienen u met passie en traditie.",
+    "days": {
+      "monday": "Maandag",
+      "tuesday": "Dinsdag",
+      "wednesday": "Woensdag",
+      "thursday": "Donderdag",
+      "friday": "Vrijdag",
+      "saturday": "Zaterdag",
+      "sunday": "Zondag"
+    },
+    "currentClosing": {
+      "closedFromUntil": "Gesloten van {from} tot {until}"
+    },
+    "card": {
+      "openingHours": "Openingstijden",
+      "locationContact": "Locatie & Contact",
+      "address": "Adres",
+      "phone": "Telefoon",
+      "callNow": "Nu bellen",
+      "directions": "Routebeschrijving",
+      "ourLocation": "Onze locatie"
+    },
+    "badge": {
+      "currentlyClosed": "Momenteel gesloten",
+      "openUntil": "Geopend tot {time}",
+      "openingAt": "Opent om {time}",
+      "closed": "Gesloten",
+      "closedOpenToday": "Opent om {time} vandaag",
+      "closedOpenTomorrow": "Opent om {time} morgen",
+      "temporarilyClosedNote": "Tijdelijk gesloten - zie banner hierboven",
+      "checkHoursBelow": "Zie openingstijden hieronder"
+    },
+    "upcomingClosings": "Aankomende sluitingen",
+    "importantUpdates": "Belangrijke updates"
+  },
+  "menuTeaser": {
+    "featuredThisMonth": "Deze maand in de kijker",
+    "featuredBadge": "In de kijker",
+    "description": "Ontdek de selectie van de chef van iconische pizza's, bereid met uitzonderlijke ingrediënten en ons huisgemaakt gerijpt deeg.",
+    "hungryTitle": "Zin in meer pizza?",
+    "hungryDescription": "Blader door ons volledige menu met meer dan 45 pizza's, calzones en heerlijke desserts.",
+    "viewFullMenu": "Bekijk het volledige menu"
+  },
+  "aboutUs": {
+    "hero": {
+      "title": "Ons Vakmanschap",
+      "subtitle": "Ontdek het verhaal van onze authentieke pizzeria, waar traditie en passie samenkomen en elke pizza een verhaal vertelt van familiaal erfgoed en culinaire uitmuntendheid."
+    },
+    "section1": {
+      "title": "Van Slagersblok tot Pizzaoven",
+      "intro": "Ons verhaal begint niet met meel, maar met het mes. Voordat het een pizzeria was, was ons huis een bekend adres in Cavalaire, opgericht in 1936. Vanaf 1966 werd het \"Maison Darius\", een familieslagerij geworteld in het landschap van Cavalaire, waar vakmanschap en compromisloze productkwaliteit samensmolten.",
+      "conclusion": "In 2020 begon een nieuw hoofdstuk. De passie voor gastronomie en uitzonderlijke producten transformeerde het slagersblok in een houtoven. Maison Darius werd Darius Pizza.\n\nHet decor is veranderd, maar de ziel is intact. We hebben het erfgoed van de slagerij behouden: de liefde voor verse producten, het respect voor ambachtelijk vakmanschap en een obsessie voor smaak. Dezelfde eisen die we aan ons vlees stelden, passen we nu toe op elk ingrediënt dat onze pizza's siert.",
+      "image1": {
+        "alt": "Voorgevel Darius Pizza sinds 2020",
+        "src": "/static/IMG_3109.JPG"
+      },
+      "image2": {
+        "alt": "Voorgevel Slagerij Darius voor 2020",
+        "src": "/static/about-kitchen.webp"
+      }
+    },
+    "section2": {
+      "title": "Het Geheim van een Onnavolgbaar Deeg",
+      "intro": "Een uitzonderlijke pizza is gebaseerd op een uitzonderlijk deeg. Bij Darius Pizza laten we niets aan het toeval over. Ons protocol is een precieze balans tussen wetenschap en geduld, ontworpen met één doel: u een licht, aromatisch en perfect verteerbaar deeg bieden.",
+      "card1": {
+        "title": "Het Kneden en de Eerste Rijzing",
+        "step": "Stap 1: Het Precieze Kneden",
+        "content": "Alles begint met een gecontroleerde hydratatie en langzaam kneden. We controleren de temperatuur van ons deeg op elk moment om het niet te \"stressen\". Deze fase, de 'pointage' (eerste rijs), ontwikkelt het initiële glutennetwerk dat het deeg zijn structuur geeft, terwijl de aroma's van ons meel behouden blijven.",
+        "image": {
+          "alt": "Deegbol na het kneden",
+          "src": "/static/IMG_9357.JPG"
+        }
+      },
+      "card2": {
+        "title": "De Koude Rijping",
+        "step": "Stap 2: De Langzame Rijping (+48u)",
+        "content": "Hier gebeurt de magie. Onze deegbollen rusten minimaal 48 uur in een gekoelde omgeving met gecontroleerde temperatuur. Tijdens deze lange rijping breken de natuurlijke enzymen van de gist het glutennetwerk af. De complexe eiwitketens worden \"voorverteerd\".\n\nHet resultaat voor u? Een ongelooflijk licht, luchtig en licht verteerbaar deeg. Geen zwaar gevoel meer na de maaltijd.",
+        "image": {
+          "alt": "Deegbollen rijpen in de koeling",
+          "src": "/static/IMG_8641.jpg"
+        }
+      },
+      "card3": {
+        "title": "De Maillardreactie",
+        "step": "Stap 3: De Openbaring in de Oven",
+        "content": "Tijdens de rijping zetten andere enzymen het complexe zetmeel uit het meel om in eenvoudige suikers. Tijdens het bakken op hoge temperatuur ontmoeten deze suikers de aminozuren. Dit is de beroemde Maillardreactie. Het doet meer dan alleen bakken: het karamelliseert het deeg, creëert die goudbruine en gevlekte (\"luipaard\") korst, en laat een palet van onnavolgbare geroosterde aroma's vrij.",
+        "image": {
+          "alt": "Goudbruine en luchtige pizzakorst",
+          "src": "/static/hero-pizza.webp"
+        }
+      }
+    },
+    "section3": {
+      "title": "Uitzonderlijke Producten",
+      "intro": "Een uitzonderlijk deeg vereist ingrediënten van hetzelfde niveau. Onze filosofie is simpel: het beste, of niets. Dit betekent een rigoureuze selectie van leveranciers, lokaal waar mogelijk, of van de beste Italiaanse producenten.",
+      "card1": {
+        "title": "Het Meel: Moulin Céard",
+        "step": "Het Karakter van de Alpen: Moulin Céard",
+        "content": "De basis van ons deeg is ons meel. We hebben gekozen voor Moulin Céard, een familiemolen in de Hautes-Alpes met knowhow die sinds 1820 wordt doorgegeven.\n\nZij selecteren regionale tarwe, vaak Label Rouge, om een karaktervol meel zonder additieven te produceren. Deze keuze geeft ons deeg zijn rustieke smaak en zijn unieke vermogen om te bloeien tijdens de 48 uur durende rijping. Het is onze toewijding aan terroir en traceerbaarheid.",
+        "image": {
+          "alt": "Meel Moulin Céard uit de Hautes-Alpes",
+          "src": "/static/ceard.jpeg"
+        }
+      },
+      "card2": {
+        "title": "Het Erfgoed: Ons Charcuterie Vakmanschap",
+        "step": "De Veeleisendheid van de Slagerij",
+        "content": "We zijn niet vergeten waar we vandaan komen. Het erfgoed van Maison Darius is onze compromisloze eis voor de kwaliteit van vlees en charcuterie.\n\nWe selecteren onze producten met het oog en de veeleisendheid van de slager: superieure ham, ambachtelijke coppa, parmaham... Deze expertise is de garantie dat u op onze pizza's smaakvolle, rijke producten vindt die u nergens anders zult vinden.",
+        "image": {
+          "alt": "Kwaliteitschacuterie en vleeswaren",
+          "src": "/static/charcuterie.webp"
+        }
+      },
+      "card3": {
+        "title": "De Oorsprong: Italiaanse AOP-producten",
+        "step": "Het Hart van Italië",
+        "content": "Een pizza is een huwelijk tussen lokaal en authentiek. Voor de pijlers van de Italiaanse gastronomie kopen we rechtstreeks in bij de besten.\n\nOnze tomaten? San Marzano AOP, zongerijpt aan de voet van de Vesuvius. Onze Mozzarella? Smeltende fior di latte of een echte Bufala Campana AOP van buffelmelk. Extra vierge olijfolie, 24 maanden gerijpte Parmigiano Reggiano... Wij importeren de zon van Italië.",
+        "image": {
+          "alt": "Authentieke Italiaanse AOP-producten",
+          "src": "/static/ital.webp"
+        }
+      }
+    },
+    "section4": {
+      "title": "Contact & Beoordelingen",
+      "column1": {
+        "title": "Een vraag? Een bericht?",
+        "subtitle": "We wisselen graag van gedachten met onze klanten. Aarzel niet om ons uw vragen, suggesties of opmerkingen te sturen."
+      },
+      "column2": {
+        "title": "Ons Vinden & een Beoordeling Achterlaten",
+        "subtitle": "Vind ons in Cavalaire-sur-mer en deel uw ervaring met andere liefhebbers van authentieke pizza."
+      },
+      "tripadvisor": {
+        "comingSoon": "TripAdvisor-integratie binnenkort beschikbaar",
+        "description": "TripAdvisor-beoordelingen en -ratings worden binnenkort rechtstreeks op onze site geïntegreerd."
+      }
+    },
+    "section5": {
+      "title": "Blijf Verbonden",
+      "subtitle": "Volg ons dagelijks leven en ontdek onze creaties in realtime",
+      "instagram": {
+        "title": "Ons Dagelijks Leven in Beelden",
+        "description": "Ontdek onze pizza's, ons team en de sfeer van onze pizzeria via onze Instagram-foto's.",
+        "followUs": "Volg ons op Instagram",
+        "handle": "@dariuspizza",
+        "comingSoon": "Instagram-feed binnenkort beschikbaar",
+        "comingSoonDescription": "Onze Instagram-feed wordt binnenkort rechtstreeks op onze site geïntegreerd."
+      },
+      "social": {
+        "facebook": "Vind ons ook op Facebook",
+        "facebookUrl": "https://facebook.com/dariuspizza",
+        "comingSoon": "Facebook-integratie binnenkort beschikbaar",
+        "comingSoonDescription": "Onze Facebook-content wordt binnenkort rechtstreeks op onze site geïntegreerd."
+      }
+    },
+    "story": {
+      "title": "Ons Erfgoed",
+      "description1": "Opgericht in 1985 door Giuseppe Darius, begon onze pizzeria als een kleine familiedroom om de authentieke Italiaanse smaken naar onze gemeenschap te brengen. Wat begon als een bescheiden keuken, is uitgegroeid tot een geliefde lokale instelling, maar onze toewijding aan traditionele recepten en familiewaarden blijft ongewijzigd.",
+      "description2": "Vandaag de dag blijven drie generaties van de Darius-familie elke pizza creëren met dezelfde passie en aandacht voor detail die Giuseppe meebracht uit zijn geboortestad Napels, Italië.",
+      "traditionalRecipes": "Traditionele Recepten",
+      "traditionalRecipesDesc": "Authentieke Napolitaanse technieken die van generatie op generatie zijn doorgegeven",
+      "freshIngredients": "Verse Ingrediënten",
+      "freshIngredientsDesc": "Lokale producten en geïmporteerde Italiaanse specialiteiten",
+      "familyOwnedBadge": "Familiebedrijf Sinds 1985"
+    },
+    "values": {
+      "title": "Onze Waarden",
+      "subtitle": "De principes die alles wat we doen sturen, van de selectie van ingrediënten tot de klantenservice.",
+      "passion": {
+        "title": "Passie",
+        "description": "Elke pizza wordt bereid met een authentieke liefde voor het ambacht en respect voor de Italiaanse traditie."
+      },
+      "community": {
+        "title": "Gemeenschap",
+        "description": "We zijn er trots op deel uit te maken van onze lokale gemeenschap en bedienen al tientallen jaren onze buren en vrienden."
+      },
+      "quality": {
+        "title": "Kwaliteit",
+        "description": "We doen nooit concessies aan kwaliteit, we gebruiken alleen de beste ingrediënten en traditionele methoden."
+      }
+    },
+    "contact": {
+      "title": "Kom ons bezoeken",
+      "subtitle": "We verwelkomen u graag in ons familierestaurant en delen onze passie voor authentieke Italiaanse pizza.",
+      "location": "Locatie",
+      "hours": "Openingstijden",
+      "contact": "Contact",
+      "address": "123 Hoofdstraat<br />Wijk Centrum<br />Stad, Staat 12345",
+      "schedule": "Ma-Do: 11u-22u<br />Vr-Za: 11u-23u<br />Zondag: 12u-21u",
+      "phone": "(555) 123-4567<br />info@dariuspizza.com<br />Reserveringen welkom"
+    },
+    "cta": {
+      "learnMore": "Meer over ons",
+      "viewMenu": "Bekijk ons menu"
+    },
+    "homeAbout": {
+      "title": "Ons Verhaal",
+      "description": "Geboren uit het erfgoed van de Slagerij Darius, ons familie- en traditionele etablissement van 1936 tot 2019, zet Darius Pizza een traditie voort van kwaliteitsproducten en culinair vakmanschap. Elke pizza wordt met liefde bereid, met gebruik van kwaliteitsingrediënten en precieze protocollen om een altijd perfect deeg te garanderen.",
+      "familyOwned": "Familiebedrijf",
+      "familyOwnedDesc": "Drie generaties culinair vakmanschap, van slagerij tot pizzeria en catering",
+      "authentic": "Authentieke Producten",
+      "authenticDesc": "Lokale recepten en ingrediënten en geïmporteerde Italiaanse specialiteiten",
+      "madeWithLove": "Met Liefde Bereid",
+      "madeWithLoveDesc": "Elke pizza bereid met passie en zorg",
+      "contactUs": "Contacteer Ons",
+      "since1985": "Maison Darius sinds 1936"
+    }
+  },
+  "cookieConsent": {
+    "title": "Cookievoorkeuren",
+    "description": "We gebruiken cookies om uw ervaring te verbeteren en sitegebruik te analyseren. U kunt hieronder uw voorkeuren aanpassen.",
+    "intro": "We gebruiken verschillende soorten cookies om onze diensten te leveren en te verbeteren. Kies uw voorkeuren:",
+    "customizeIntro": "Pas uw cookievoorkeuren aan. U kunt verschillende soorten cookies in- of uitschakelen.",
+    "cookies": {
+      "necessary": {
+        "title": "Noodzakelijke Cookies",
+        "description": "Essentieel voor de werking van de website",
+        "detailedDescription": "Essentieel voor de werking van de website, beveiliging en basisfuncties. Deze cookies kunnen niet worden uitgeschakeld.",
+        "status": "Altijd actief"
+      },
+      "analytics": {
+        "title": "Analytische Cookies",
+        "description": "Helpen ons te begrijpen hoe bezoekers omgaan met onze website",
+        "detailedDescription": "Google Analytics en vergelijkbare tools om gebruikspatronen van de website te begrijpen."
+      }
+    },
+    "buttons": {
+      "declineAll": "Alles Weigeren",
+      "customize": "Aanpassen",
+      "acceptAll": "Alles Accepteren",
+      "back": "Terug",
+      "savePreferences": "Voorkeuren Opslaan"
+    },
+    "required": "Vereist"
+  },
+  "legal": {
+    "privacy": {
+      "backToHome": "Terug naar Home",
+      "title": "Privacybeleid",
+      "lastUpdated": "Laatst bijgewerkt: 25 oktober 2025",
+      "preamble": {
+        "title": "Artikel 1: PREAMBULE",
+        "content": "Dit privacybeleid is bedoeld om gebruikers van de site te informeren over hoe hun persoonlijke gegevens worden verzameld. Persoonlijke gegevens worden beschouwd als alle informatie waarmee een gebruiker kan worden geïdentificeerd. Dit kan zijn: hun voor- en achternaam, leeftijd, post- of e-mailadres, locatie of IP-adres (geen uitputtende lijst).",
+        "rights": "Dit beleid informeert gebruikers ook over hun rechten met betrekking tot deze gegevens, over de persoon die verantwoordelijk is voor de verwerking van de verzamelde en verwerkte persoonlijke gegevens, over de ontvangers van deze persoonlijke gegevens, en over het cookiebeleid van de site.",
+        "relatedDocuments": "Dit beleid vormt een aanvulling op de Wettelijke Vermeldingen en het Cookiebeleid die toegankelijk zijn voor gebruikers op de volgende adressen:",
+        "legalMentionsLink": "https://www.dariuspizza.fr/legal-mentions",
+        "cookiesPolicyLink": "https://www.dariuspizza.fr/cookies"
+      },
+      "principles": {
+        "title": "Artikel 2: BEGINSELEN MET BETREKKING TOT DE VERZAMELING EN VERWERKING VAN PERSOONSGEGEVENS",
+        "content": "Overeenkomstig artikel 5 van de Europese Verordening 2016/679, worden persoonsgegevens:",
+        "principles": [
+          "Verwerkt op een wijze die ten aanzien van de betrokkene rechtmatig, behoorlijk en transparant is",
+          "Verzameld voor welbepaalde, uitdrukkelijk omschreven en gerechtvaardigde doeleinden, en niet verder verwerkt op een met die doeleinden onverenigbare wijze",
+          "Toereikend, ter zake dienend en beperkt tot wat noodzakelijk is voor de doeleinden waarvoor zij worden verwerkt",
+          "Correct en, indien nodig, geactualiseerd",
+          "Bewaard in een vorm die het mogelijk maakt de betrokkenen niet langer te identificeren dan noodzakelijk is voor de doeleinden waarvoor de persoonsgegevens worden verwerkt",
+          "Verwerkt op een manier die een passende beveiliging van de verzamelde gegevens waarborgt"
+        ],
+        "legalBasis": "De verwerking is alleen rechtmatig indien en voor zover aan ten minste een van de volgende voorwaarden is voldaan:",
+        "legalBasisList": [
+          "De betrokkene heeft toestemming gegeven voor de verwerking van zijn persoonsgegevens voor een of meer specifieke doeleinden",
+          "De verwerking is noodzakelijk voor de uitvoering van een overeenkomst waarbij de betrokkene partij is",
+          "De verwerking is noodzakelijk om te voldoen aan een wettelijke verplichting die op de verwerkingsverantwoordelijke rust",
+          "De verwerking is noodzakelijk om de vitale belangen van de betrokkene of van een andere natuurlijke persoon te beschermen",
+          "De verwerking is noodzakelijk voor de vervulling van een taak van algemeen belang",
+          "De verwerking is noodzakelijk voor de behartiging van de gerechtvaardigde belangen van de verwerkingsverantwoordelijke"
+        ]
+      },
+      "dataController": {
+        "title": "1. Verwerkingsverantwoordelijke",
+        "content": "De verwerkingsverantwoordelijke voor de persoonsgegevens die op de site https://www.dariuspizza.fr (hierna \"de Site\") worden verzameld, is:",
+        "companyInfo": {
+          "name": "Darius Pizza",
+          "legalStatus": "Eenmanszaak",
+          "address": "Gevestigd te: 275 Avenue des Alliés",
+          "email": "E-mail: contact@dariuspizza.fr",
+          "phone": "Telefoon: 04.94.64.05.11"
+        },
+        "controller": {
+          "title": "Artikel 1.1: De verwerkingsverantwoordelijke",
+          "content": "De persoonsgegevens worden verzameld door Darius Pizza, wiens SIRET-nummer 979 408 507 00015 is",
+          "contact": "De verwerkingsverantwoordelijke kan als volgt worden gecontacteerd:",
+          "email": "Per e-mail: contact@dariuspizza.fr"
+        },
+        "dpo": {
+          "title": "Artikel 1.2: De functionaris voor gegevensbescherming",
+          "content": "De functionaris voor gegevensbescherming (DPO) van het bedrijf of de verantwoordelijke is:",
+          "dpoName": "Chrystel Roman, contact@dariuspizza.fr",
+          "cnil": "Indien u, na contact met ons te hebben opgenomen, van mening bent dat uw rechten op het gebied van \"Informatica en Vrijheden\" niet worden gerespecteerd, kunt u informatie sturen naar de CNIL."
+        }
+      },
+      "dataCollection": {
+        "title": "2. Verzamelde persoonsgegevens",
+        "collectedData": {
+          "title": "Artikel 2.1: Verzamelde gegevens",
+          "content": "De persoonsgegevens die in het kader van onze activiteit worden verzameld na acceptatie van cookies zijn de volgende:",
+          "dataTypes": [
+            "Aantal gebruikers",
+            "Sessiestatistieken",
+            "Geschatte geolocatie",
+            "Browser- en apparaatinformatie"
+          ],
+          "purpose": "Deze gegevens worden verzameld ten behoeve van onze marktanalyses en worden niet aan derden meegedeeld."
+        },
+        "collectionMethod": {
+          "title": "Artikel 2.2: Methode voor gegevensverzameling",
+          "automaticCollection": "Wanneer u onze site gebruikt, worden de volgende gegevens automatisch verzameld: GEEN",
+          "cookieAcceptance": "Andere persoonsgegevens worden verzameld wanneer u de volgende handelingen op het platform uitvoert:",
+          "googleAnalytics": "Acceptatie van Google Analytics-cookies: Aantal gebruikers - Sessiestatistieken - Geschatte geolocatie - Browser- en apparaatinformatie",
+          "retention": "Ze worden door de verwerkingsverantwoordelijke onder redelijke veiligheidsvoorwaarden bewaard, voor een duur van: 1 maand.",
+          "legalRetention": "Het bedrijf kan bepaalde persoonsgegevens langer bewaren dan de hierboven aangekondigde termijnen om aan zijn wettelijke of reglementaire verplichtingen te voldoen."
+        },
+        "hosting": {
+          "title": "Artikel 2.3: Gegevenshosting",
+          "content": "De site dariuspizza.fr wordt gehost door:",
+          "hostingProvider": "Vercel - vercel.com"
+        },
+        "dataSharing": {
+          "title": "Artikel 2.4: Doorgifte van gegevens aan derden",
+          "content": "De gegevens kunnen worden doorgegeven aan onze partners voor het uitvoeren van onze marktanalyses, hieronder vermeld: Google Analytics"
+        },
+        "cookies": {
+          "title": "Artikel 2.5: \"Cookie\"-beleid",
+          "content": "De gegevens Aantal gebruikers - Sessiestatistieken - Geschatte geolocatie - Browser- en apparaatinformatie kunnen door Google Analytics worden verwerkt na acceptatie van de cookies.",
+          "detailedInfo": "Voor meer informatie over ons gebruik van cookies, zie ons Cookiebeleid."
+        },
+        "intro": "We verzamelen verschillende soorten persoonsgegevens over u:",
+        "automaticData": {
+          "title": "a) Automatisch verzamelde gegevens (Cookies)",
+          "content": "Wanneer u op onze Site surft, verzamelen we automatisch bepaalde informatie via cookies en andere trackers. Een cookie is een klein tekstbestand dat op uw apparaat (computer, tablet, smartphone) wordt geplaatst tijdens uw bezoek.",
+          "cookieTypes": {
+            "necessary": {
+              "title": "Noodzakelijke Cookies",
+              "description": "Deze cookies zijn essentieel voor de goede werking van de Site. Ze stellen u in staat om de belangrijkste functionaliteiten te gebruiken (bijvoorbeeld taalkeuze). Ze vereisen uw toestemming niet."
+            },
+            "analytics": {
+              "title": "Analytische Cookies (of publieksmeting)",
+              "description": "Deze cookies stellen ons in staat te begrijpen hoe bezoekers met onze Site omgaan (aantal bezoeken, meest bekeken pagina's, bezoektijd, enz.). De verzamelde gegevens zijn geanonimiseerd en helpen ons de ergonomie en prestaties van onze Site te verbeteren. We gebruiken Google Analytics. Het gebruik van deze cookies is onderworpen aan uw voorafgaande toestemming."
+            }
+          }
+        },
+        "directData": {
+          "title": "b) Gegevens die u ons rechtstreeks verstrekt",
+          "content": "We kunnen persoonsgegevens verzamelen wanneer u rechtstreeks contact met ons opneemt, bijvoorbeeld via een contactformulier (indien van toepassing) of per e-mail:",
+          "dataTypes": [
+            "Naam en voornaam",
+            "E-mailadres",
+            "Telefoonnummer",
+            "Alle andere informatie die u ons verkiest te verstrekken in uw bericht."
+          ],
+          "note": "Momenteel biedt onze site geen online bestellingen aan, dus we verzamelen geen betalings- of transactiegegevens."
+        }
+      },
+      "purposes": {
+        "title": "3. Verwerkingsdoeleinden",
+        "content": "Uw persoonsgegevens worden verzameld en verwerkt voor de volgende doeleinden:",
+        "purposes": [
+          {
+            "title": "Onze Site leveren en beheren",
+            "description": "De goede werking en beveiliging van de Site waarborgen (wettelijke basis: ons gerechtvaardigd belang)."
+          },
+          {
+            "title": "Onze Site verbeteren",
+            "description": "Het gebruik van de Site analyseren om de inhoud en de gebruikerservaring te verbeteren (wettelijke basis: uw toestemming voor analytische cookies)."
+          },
+          {
+            "title": "Op uw verzoeken reageren",
+            "description": "Uw vragen of verzoeken om informatie te verwerken die per e-mail of contactformulier zijn verzonden (wettelijke basis: ons gerechtvaardigd belang om onze klanten en prospects te beantwoorden)."
+          }
+        ]
+      },
+      "dataSharing": {
+        "title": "4. Delen van uw gegevens",
+        "noSale": "Wij verkopen of verhuren uw persoonsgegevens niet aan derden.",
+        "sharing": "Uw gegevens kunnen worden gedeeld met:",
+        "recipients": [
+          "Onze technische onderaannemers: Bijvoorbeeld onze webhosters Vercel en Supabase, die toegang tot gegevens nodig hebben om hun diensten te verlenen.",
+          "Leveranciers van analysetools: Bijvoorbeeld Google voor de Google Analytics-service.",
+          "Bevoegde autoriteiten: Alleen als we hiertoe wettelijk verplicht zijn of in het kader van een gerechtelijke procedure."
+        ]
+      },
+      "dataTransfer": {
+        "title": "5. Doorgifte van gegevens buiten de EU",
+        "content": "Sommige van uw gegevens (met name via analytische cookies zoals Google Analytics) kunnen buiten de Europese Unie worden doorgegeven. We zorgen ervoor dat deze doorgiften worden omkaderd door passende waarborgen, zoals de Standaardcontractbepalingen van de Europese Commissie, om een niveau van gegevensbescherming te garanderen dat gelijkwaardig is aan dat vereist door de AVG."
+      },
+      "retention": {
+        "title": "6. Bewaartermijn",
+        "content": "We bewaren uw persoonsgegevens niet langer dan nodig is voor de doeleinden waarvoor ze worden verwerkt:",
+        "periods": [
+          "Contactgegevens (e-mail, formulier): De tijd die nodig is om uw verzoek te verwerken, en gearchiveerd voor een maximale duur van 2 jaar na het laatste contact.",
+          "Cookies: Cookies hebben een maximale levensduur van 12 maanden op uw apparaat. De bijbehorende bezoekersgegevens worden maximaal 24 maanden bewaard."
+        ]
+      },
+      "userRights": {
+        "title": "7. Uw rechten met betrekking tot uw gegevens",
+        "content": "Elke gebruiker die betrokken is bij de verwerking van zijn persoonsgegevens kan zich beroepen op de volgende rechten, in toepassing van de Europese verordening 2016/679 en de Franse wet op de gegevensbescherming (Wet 78-17 van 6 januari 1978):",
+        "intro": "Overeenkomstig de AVG heeft u de volgende rechten met betrekking tot uw persoonsgegevens:",
+        "rights": [
+          {
+            "title": "Recht op inzage",
+            "description": "Bevestiging krijgen dat uw gegevens worden verwerkt en er toegang toe hebben."
+          },
+          {
+            "title": "Recht op rectificatie",
+            "description": "Verzoeken om correctie van uw gegevens als deze onjuist of onvolledig zijn."
+          },
+          {
+            "title": "Recht op wissing (\"recht op vergetelheid\")",
+            "description": "Verzoeken om verwijdering van uw gegevens, binnen de wettelijke grenzen."
+          },
+          {
+            "title": "Recht op beperking van de verwerking",
+            "description": "Verzoeken om de verwerking van uw gegevens in bepaalde situaties op te schorten."
+          },
+          {
+            "title": "Recht van bezwaar",
+            "description": "Bezwaar maken tegen de verwerking van uw gegevens om redenen die verband houden met uw specifieke situatie (met name voor verwerkingen op basis van gerechtvaardigd belang)."
+          },
+          {
+            "title": "Recht op overdraagbaarheid van gegevens",
+            "description": "Uw gegevens ontvangen in een gestructureerd, machineleesbaar formaat (alleen voor gegevens verstrekt op basis van toestemming of een contract)."
+          }
+        ],
+        "consentWithdrawal": "U heeft ook het recht om uw toestemming op elk moment in te trekken voor verwerkingen die hierop zijn gebaseerd (zoals analytische cookies).",
+        "exerciseRights": {
+          "title": "Uitoefening van rechten",
+          "content": "Om uw rechten uit te oefenen, kunt u uw brief richten aan Darius Pizza, 275 Avenue des Alliés, 83240 Cavalaire, of per e-mail aan contact@dariuspizza.fr.",
+          "requiredInfo": "Om de verwerkingsverantwoordelijke in staat te stellen aan hun verzoek te voldoen, kan de gebruiker worden gevraagd bepaalde informatie te verstrekken, zoals: hun voor- en achternaam, hun e-mailadres en hun accountnummer, persoonlijke ruimte of abonneenummer.",
+          "cnilInfo": "Bezoek de website cnil.fr voor meer informatie over uw rechten."
+        }
+      },
+      "businessContext": {
+        "title": "Context van onze activiteit",
+        "content": "Darius Pizza is een familiepizzeria gevestigd in Cavalaire-sur-Mer, gespecialiseerd in de bereiding van authentieke pizza's met kwaliteitsingrediënten. Onze website stelt klanten in staat ons menu, onze openingstijden, ons verhaal te ontdekken en contact met ons op te nemen.",
+        "services": [
+          "Presentatie van ons menu en specialiteiten",
+          "Informatie over onze openingstijden en locatie",
+          "Contactformulier voor reserveringen en aanvragen",
+          "Delen van inhoud op onze sociale netwerken (Instagram, Facebook)",
+          "Integratie met TripAdvisor en Google voor klantbeoordelingen",
+          "Presentatie van ons verhaal en productieprotocollen"
+        ],
+        "dataPurpose": "De verzamelde gegevens stellen ons in staat om onze klantenservice te verbeteren, het gebruik van onze website te analyseren en de voorkeuren van onze klanten beter te begrijpen om ons culinaire aanbod te verbeteren."
+      },
+      "exerciseRights": {
+        "title": "8. Uw rechten uitoefenen en cookies beheren",
+        "gdprRights": {
+          "title": "a) Uw AVG-rechten uitoefenen",
+          "content": "Voor vragen of om uw rechten uit te oefenen, kunt u contact met ons opnemen via:",
+          "contact": {
+            "email": "E-mail: conatct@dariuspizza.fr",
+            "mail": "Postadres: 275 Avenue des Alliés, 83240 Cavalaire"
+          },
+          "identityVerification": "Voeg een kopie van een identiteitsbewijs bij zodat we uw identiteit kunnen verifiëren."
+        },
+        "cookieManagement": {
+          "title": "b) Uw cookievoorkeuren beheren",
+          "firstVisit": "Bij uw eerste bezoek aan onze Site stelt een informatiebanner u in staat om het plaatsen van analytische cookies te accepteren of te weigeren.",
+          "modifyChoice": "U kunt uw keuze op elk moment wijzigen:",
+          "methods": [
+            "Door te klikken op de link of het icoon voor cookiebeheer op onze site (indien u een beheertool heeft geïmplementeerd).",
+            "Door uw internetbrowser zo in te stellen dat cookies worden geblokkeerd of dat u wordt gewaarschuwd voor de installatie ervan. De configuratie verschilt per browser (Chrome, Firefox, Safari, enz.)."
+          ]
+        }
+      },
+      "security": {
+        "title": "9. Beveiliging",
+        "content": "We implementeren passende technische en organisatorische beveiligingsmaatregelen (bijvoorbeeld het gebruik van het HTTPS-protocol) om uw persoonsgegevens te beschermen tegen vernietiging, verlies, wijziging, ongeoorloofde openbaarmaking of ongeoorloofde toegang."
+      },
+      "policyChanges": {
+        "title": "10. Wijziging van het beleid",
+        "content": "We behouden ons het recht voor om dit privacybeleid op elk moment te wijzigen. In geval van een substantiële wijziging, zullen we u op de meest geschikte manier informeren (bijvoorbeeld via een banner op de Site)."
+      },
+      "cnilComplaint": {
+        "title": "11. Klacht indienen bij de CNIL",
+        "content": "Indien u, na contact met ons te hebben opgenomen, van mening bent dat uw rechten op uw gegevens niet worden gerespecteerd, kunt u een klacht indienen bij de bevoegde toezichthoudende autoriteit in Frankrijk, de Commission Nationale de l'Informatique et des Libertés (CNIL): www.cnil.fr."
+      }
+    },
+    "terms": {
+      "backToHome": "Terug naar Home",
+      "title": "Gebruiksvoorwaarden",
+      "lastUpdated": "Laatst bijgewerkt: 1 januari 2024",
+      "introduction": {
+        "title": "Introductie",
+        "content": "Welkom bij Darius Pizza. Deze Gebruiksvoorwaarden zijn van toepassing op uw gebruik van onze website en onze diensten. Door toegang te krijgen tot of gebruik te maken van onze diensten, gaat u ermee akkoord gebonden te zijn aan deze voorwaarden."
+      },
+      "acceptance": {
+        "title": "Aanvaarding van de voorwaarden",
+        "content": "Door onze website te gebruiken of een bestelling te plaatsen, erkent u dat u deze Gebruiksvoorwaarden en ons Privacybeleid hebt gelezen, begrepen en ermee akkoord gaat."
+      },
+      "orders": {
+        "title": "Bestellingen en diensten",
+        "content": "Bij het plaatsen van een bestelling gaat u akkoord met:",
+        "accuracy": "Het verstrekken van nauwkeurige en volledige informatie",
+        "pricing": "Het betalen van de prijzen zoals aangegeven op ons menu",
+        "availability": "Het accepteren dat menu-items mogelijk niet altijd beschikbaar zijn",
+        "modifications": "Het begrijpen dat wijzigingen in de bestelling de prijs en levertijd kunnen beïnvloeden"
+      },
+      "payment": {
+        "title": "Betalingsvoorwaarden",
+        "content": "Betalingsvoorwaarden omvatten:",
+        "methods": "We accepteren contant geld, creditcards en andere goedgekeurde betaalmethoden",
+        "timing": "Betaling is verschuldigd op het moment van het plaatsen van de bestelling",
+        "refunds": "Terugbetalingen zijn onderworpen aan ons terugbetalingsbeleid en de toepasselijke wetgeving"
+      },
+      "delivery": {
+        "title": "Levering en afhaling",
+        "content": "Voorwaarden voor levering en afhaling:",
+        "times": "Levertijden zijn schattingen en kunnen variëren",
+        "areas": "We leveren binnen ons aangewezen servicegebied",
+        "responsibility": "U bent verantwoordelijk voor het verstrekken van nauwkeurige leveringsinformatie"
+      },
+      "liability": {
+        "title": "Beperking van aansprakelijkheid",
+        "content": "Voor zover maximaal toegestaan door de wet, is Darius Pizza niet aansprakelijk voor enige indirecte, incidentele, speciale, gevolg- of punitieve schade.",
+        "limitation": "Onze totale aansprakelijkheid zal het bedrag dat u voor de diensten heeft betaald niet overschrijden."
+      },
+      "intellectualProperty": {
+        "title": "Intellectueel eigendom",
+        "content": "Alle inhoud op onze website, inclusief tekst, afbeeldingen, logo's en foto's, is eigendom van Darius Pizza en wordt beschermd door het auteursrecht en andere wetten op intellectueel eigendom."
+      },
+      "prohibited": {
+        "title": "Verboden gebruik",
+        "content": "U mag onze diensten niet gebruiken voor:",
+        "illegal": "Enig onwettig doel of om anderen aan te zetten tot het verrichten van onwettige handelingen",
+        "harassment": "Het lastigvallen, misbruiken of schaden van anderen",
+        "fraud": "Het verzenden of laten verzenden van enig reclame- of promotiemateriaal",
+        "violation": "Het schenden van enige toepasselijke wet- of regelgeving"
+      },
+      "termination": {
+        "title": "Beëindiging",
+        "content": "We kunnen uw toegang tot onze diensten onmiddellijk beëindigen of opschorten, zonder voorafgaande kennisgeving, om welke reden dan ook, inclusief schending van deze Gebruiksvoorwaarden."
+      },
+      "governingLaw": {
+        "title": "Toepasselijk recht",
+        "content": "Deze Gebruiksvoorwaarden worden beheerst door en geïnterpreteerd in overeenstemming met de wetten van het rechtsgebied waarin Darius Pizza actief is."
+      },
+      "contact": {
+        "title": "Contactgegevens",
+        "content": "Als u vragen heeft over deze Gebruiksvoorwaarden, neem dan contact met ons op:",
+        "email": "E-mail",
+        "phone": "Telefoon",
+        "address": "Adres"
+      },
+      "changes": {
+        "title": "Wijzigingen in de voorwaarden",
+        "content": "We behouden ons het recht voor om deze Gebruiksvoorwaarden op elk moment te wijzigen. We zullen gebruikers op de hoogte stellen van belangrijke wijzigingen door de nieuwe Gebruiksvoorwaarden op deze pagina te publiceren."
+      }
+    },
+    "cookies": {
+      "backToHome": "Terug naar Home",
+      "title": "Cookiebeleid",
+      "lastUpdated": "Laatst bijgewerkt: 25 oktober 2025",
+      "introduction": {
+        "title": "Introductie",
+        "content": "Dit cookiebeleid vormt een aanvulling op ons Privacybeleid en is van toepassing op de website https://www.dariuspizza.fr (hierna \"de Site\"), beheerd door Darius Pizza.",
+        "purpose": "Het is bedoeld om u te informeren over het gebruik van cookies en andere trackers op onze Site."
+      },
+      "whatAreCookies": {
+        "title": "1. Wat is een cookie?",
+        "content": "Een cookie is een klein tekstbestand dat op uw apparaat (computer, tablet, smartphone) wordt opgeslagen wanneer u een website bezoekt. Het stelt de site in staat om u en uw voorkeuren te onthouden, hetzij voor de duur van uw bezoek (sessiecookie), hetzij voor herhaalde bezoeken (permanente cookie).",
+        "types": "Cookies kunnen \"permanent\" zijn (op uw apparaat blijven totdat ze worden verwijderd) of \"sessiecookies\" (verwijderd wanneer u uw browser sluit)."
+      },
+      "howWeUseCookies": {
+        "title": "Hoe we cookies gebruiken",
+        "content": "We gebruiken cookies voor verschillende doeleinden:"
+      },
+      "dataController": {
+        "title": "2. De verwerkingsverantwoordelijke",
+        "content": "De verantwoordelijke voor het plaatsen van cookies op de Site is:",
+        "companyInfo": {
+          "name": "Darius Pizza",
+          "address": "275 Avenue des Alliés, 83240 Cavalaire",
+          "email": "E-mail: contact@dariuspizza.fr"
+        }
+      },
+      "cookiesUsed": {
+        "title": "3. De cookies die op onze Site worden gebruikt",
+        "intro": "We gebruiken verschillende soorten cookies voor verschillende doeleinden.",
+        "necessaryCookies": {
+          "title": "a) Noodzakelijke (Functionele) Cookies",
+          "description": "Deze cookies zijn essentieel voor de goede werking van de Site. Ze vereisen uw toestemming niet omdat ze onmisbaar zijn om de door u gevraagde diensten te leveren (zoals het onthouden van uw voorkeuren).",
+          "cookies": [
+            {
+              "name": "Cookie naam, bijv: cookie_consent",
+              "purpose": "Onthoudt uw keuze (acceptatie of weigering) met betrekking tot het plaatsen van analytische cookies.",
+              "duration": "Duur: 6 maanden"
+            },
+            {
+              "name": "Cookie naam, bijv: i18n_redirected of NEXT_LANGUAGE",
+              "purpose": "Onthoudt de taalvoorkeur die u heeft geselecteerd om de site weer te geven.",
+              "duration": "Duur: 12 maanden"
+            },
+            {
+              "name": "Cookie naam, bijv: theme",
+              "purpose": "Onthoudt het weergavethema (bijv. \"licht\" of \"donker\") dat u heeft gekozen.",
+              "duration": "Duur: 12 maanden"
+            }
+          ]
+        },
+        "analyticsCookies": {
+          "title": "b) Analytische Cookies (voor Publieksmeting)",
+          "description": "Deze cookies helpen ons te begrijpen hoe bezoekers met onze Site omgaan. Ze verzamelen anoniem informatie (aantal bezoekers, bekeken pagina's, tijd doorgebracht op de site, enz.) om ons in staat te stellen statistieken op te stellen en de prestaties en ergonomie van onze Site te verbeteren.",
+          "consentNote": "Deze cookies worden alleen geplaatst nadat u uw toestemming heeft gegeven.",
+          "googleAnalytics": {
+            "name": "Google Analytics ([_ga, ga*, _gid])",
+            "purpose": "Maakt het mogelijk anonieme statistieken te genereren over het bezoek en gebruik van de Site.",
+            "duration": "Duur: Tot 13 maanden.",
+            "moreInfo": "Voor meer info: Hoe Google bepaalde verzamelde gegevens gebruikt"
+          }
+        }
+      },
+      "cookieTypes": {
+        "necessary": {
+          "title": "Noodzakelijke Cookies",
+          "description": "Deze cookies zijn essentieel voor de goede werking van de Site. Ze vereisen uw toestemming niet omdat ze onmisbaar zijn om de door u gevraagde diensten te leveren (zoals het onthouden van uw voorkeuren).",
+          "duration": "Duur: Sessie of tot 1 jaar"
+        },
+        "analytics": {
+          "title": "Analytische Cookies",
+          "description": "Deze cookies helpen ons te begrijpen hoe bezoekers met onze Site omgaan door anoniem informatie te verzamelen en te rapporteren. Dit helpt ons de prestaties van onze Site te verbeteren.",
+          "duration": "Duur: Tot 2 jaar"
+        },
+        "functional": {
+          "title": "Functionele Cookies",
+          "description": "Deze cookies maken verbeterde functionaliteit en personalisatie mogelijk, zoals het onthouden van uw taalvoorkeuren en inlogstatus.",
+          "duration": "Duur: Tot 1 jaar"
+        },
+        "marketing": {
+          "title": "Marketing Cookies",
+          "description": "Deze cookies worden gebruikt om bezoekers op websites te volgen om relevante en boeiende advertenties weer te geven.",
+          "duration": "Duur: Tot 1 jaar"
+        }
+      },
+      "thirdPartyCookies": {
+        "title": "Cookies van Derden",
+        "content": "We gebruiken ook cookies van derden van vertrouwde partners:",
+        "googleAnalytics": "Gebruikt om websiteverkeer en gebruikersgedrag te analyseren",
+        "googleMaps": "Gebruikt om interactieve kaarten en locatiediensten weer te geven",
+        "socialMedia": "Gebruikt voor integratie van sociale media en deelfunctionaliteit"
+      },
+      "managingCookies": {
+        "title": "Cookiebeheer",
+        "content": "U kunt cookies op verschillende manieren beheren en controleren:",
+        "browser": {
+          "title": "Browserinstellingen",
+          "content": "Met de meeste webbrowsers kunt u cookies beheren via hun instellingen. Hier leest u hoe u cookies beheert in populaire browsers:",
+          "chrome": "Chrome: Instellingen > Privacy en beveiliging > Cookies en andere sitegegevens",
+          "firefox": "Firefox: Opties > Privacy & Beveiliging > Cookies en websitegegevens",
+          "safari": "Safari: Voorkeuren > Privacy > Websitegegevens beheren",
+          "edge": "Edge: Instellingen > Cookies en sitemachtigingen > Cookies en sitegegevens"
+        },
+        "website": {
+          "title": "Cookie-instellingen van de Website",
+          "content": "U kunt uw cookievoorkeuren ook beheren met behulp van onze toestemmingsbanner die verschijnt bij uw eerste bezoek aan onze website."
+        }
+      },
+      "consequences": {
+        "title": "Gevolgen van het Uitschakelen van Cookies",
+        "content": "Als u ervoor kiest om cookies uit te schakelen, werken sommige functies van onze website mogelijk niet correct. Dit kan van invloed zijn op uw vermogen om bestellingen te plaatsen, toegang te krijgen tot bepaalde delen van de site of gepersonaliseerde inhoud te ontvangen."
+      },
+      "updates": {
+        "title": "Updates van dit Beleid",
+        "content": "We kunnen dit Cookiebeleid van tijd tot tijd bijwerken om wijzigingen in onze praktijken weer te geven of om andere operationele, wettelijke of regelgevende redenen."
+      },
+      "contact": {
+        "title": "Contacteer Ons",
+        "content": "Als u vragen heeft over ons gebruik van cookies, neem dan contact met ons op:",
+        "email": "E-mail",
+        "phone": "Telefoon",
+        "address": "Adres"
+      },
+      "cookieManagement": {
+        "title": "4. Hoe beheert u uw cookies?",
+        "consentBanner": {
+          "title": "a) Via de toestemmingsbanner",
+          "content": "Bij uw eerste bezoek aan onze Site wordt een informatiebanner weergegeven om uw toestemming te vragen voor het plaatsen van analytische cookies. U kunt accepteren, weigeren of uw keuzes aanpassen.",
+          "modifyConsent": "U kunt uw toestemming op elk moment wijzigen of intrekken [Voeg een link/knop \"Beheer mijn cookies\" toe als u die heeft, anders verwijder deze zin]."
+        },
+        "browserSettings": {
+          "title": "b) Via uw browserinstellingen",
+          "content": "U kunt uw browser ook zo configureren dat cookies worden geblokkeerd of dat u wordt gewaarschuwd voor de installatie ervan. Het weigeren van functionele cookies kan echter uw browse-ervaring beïnvloeden.",
+          "note": "De configuratie is specifiek voor elke browser:",
+          "instructions": {
+            "chrome": "Voor Google Chrome: Chrome Instructies",
+            "firefox": "Voor Mozilla Firefox: Firefox Instructies",
+            "edge": "Voor Microsoft Edge: Edge Instructies",
+            "safari": "Voor Safari: Safari Instructies"
+          }
+        }
+      },
+      "moreInformation": {
+        "title": "5. Meer informatie",
+        "privacyPolicy": "Voor meer informatie over hoe we uw persoonsgegevens in het algemeen beschermen, kunt u ons Privacybeleid raadplegen.",
+        "contact": "Voor vragen kunt u contact met ons opnemen via [Contact e-mail]."
+      }
+    },
+    "legalMentions": {
+      "backToHome": "Terug naar Home",
+      "title": "Wettelijke Vermeldingen",
+      "lastUpdated": "Laatst bijgewerkt: 25 oktober 2025",
+      "introduction": {
+        "title": "Introductie",
+        "content": "Overeenkomstig de bepalingen van wet nr. 2004-575 van 21 juni 2004 voor het vertrouwen in de digitale economie (LCEN), worden gebruikers en bezoekers van de site https://www.dariuspizza.fr (hierna \"de Site\") op de hoogte gebracht van deze wettelijke vermeldingen.",
+        "acceptance": "De verbinding en navigatie op de Site door de Gebruiker impliceren de volledige en onvoorwaardelijke acceptatie van deze wettelijke vermeldingen."
+      },
+      "identification": {
+        "title": "Identificatie van het Bedrijf",
+        "companyName": "Handelsnaam",
+        "companyNameValue": "Darius Pizza",
+        "rcs": "RCS-nummer",
+        "rcsValue": "Fréjus A 453 150 992",
+        "vatNumber": "Btw-nummer",
+        "vatNumberValue": "FR09453150922",
+        "email": "E-mail",
+        "emailValue": "contact@dariuspizza.fr",
+        "phone": "Telefoon",
+        "phoneValue": "04.94.64.05.11",
+        "hosting": "Hosting",
+        "hostingValue": "Vercel Inc - https://vercel.com"
+      },
+      "termsOfSale": {
+        "title": "Algemene Verkoopvoorwaarden",
+        "pricing": {
+          "title": "Tarieven",
+          "content": "Prijzen in euro's, alle belastingen inbegrepen"
+        },
+        "loyaltyProgram": {
+          "title": "Loyaliteitsprogramma",
+          "content": "Eén gratis pizza voor 10 gekochte pizza's via de loyaliteitsapplicatie Fidelatoo"
+        },
+        "payment": {
+          "title": "Betaalmiddelen",
+          "content": "Contant en bankkaarten vanaf €5, maaltijdcheques niet geaccepteerd"
+        }
+      },
+      "additionalInfo": {
+        "title": "Aanvullende Informatie",
+        "content": "Deze wettelijke vermeldingen zijn in overeenstemming met de geldende Franse regelgeving. Voor vragen over deze informatie kunt u contact met ons opnemen via de hierboven vermelde contactgegevens."
+      },
+      "siteEditor": {
+        "title": "1. Site-editor",
+        "content": "De Site wordt uitgegeven door:",
+        "companyInfo": {
+          "name": "Darius Pizza",
+          "legalForm": "Rechtsvorm: Eenmanszaak",
+          "headquarters": "Maatschappelijke zetel: 275 Avenue des Alliés, 83240 Cavalaire",
+          "phone": "Telefoon: 04.94.64.05.11",
+          "email": "E-mail: contact@dariuspizza.fr",
+          "rcs": "RCS-inschrijvingsnummer: Fréjus A 453 150 992",
+          "siret": "SIRET-nummer: 979 408 507 00015",
+          "vat": "Intracommunautair btw-nummer: FR09453150922"
+        }
+      },
+      "publicationDirector": {
+        "title": "2. Publicatiedirecteur",
+        "content": "De Publicatiedirecteur is Chrystel Roman, in haar hoedanigheid van Manager van Darius Pizza."
+      },
+      "hosting": {
+        "title": "3. Hoster van de site",
+        "content": "De Site wordt gehost door:",
+        "hostingInfo": {
+          "company": "Vercel Inc",
+          "address": "Adres: 650 California St, San Francisco, CA 94108, US",
+          "website": "Website: https://vercel.com"
+        }
+      },
+      "intellectualProperty": {
+        "title": "4. Intellectueel eigendom",
+        "content": "Het geheel van deze Site (inhoud, teksten, afbeeldingen, video's, logo's, merken) vormt een werk dat wordt beschermd door de geldende wetgeving inzake intellectueel eigendom.",
+        "rights": "Alle intellectuele eigendomsrechten met betrekking tot de Site behoren toe aan Darius Pizza, met uitzondering van elementen afkomstig van partners of derden.",
+        "prohibition": "Elke reproductie, representatie, gebruik of aanpassing, in welke vorm dan ook, van alle of een deel van deze elementen, zonder de voorafgaande schriftelijke toestemming van Darius Pizza, is ten strengste verboden."
+      },
+      "personalData": {
+        "title": "5. Persoonsgegevens",
+        "content": "Voor alle informatie met betrekking tot de verzameling en verwerking van uw persoonsgegevens, nodigen wij u uit om onze speciale documenten te raadplegen:",
+        "documents": ["Privacybeleid", "Cookiebeleid"]
+      },
+      "liabilityLimitation": {
+        "title": "6. Beperking van aansprakelijkheid",
+        "content": "Darius Pizza streeft ernaar om de juistheid en actualisering van de op de Site verspreide informatie zo goed mogelijk te waarborgen. Darius Pizza kan echter niet de juistheid, precisie of volledigheid van de op deze Site beschikbaar gestelde informatie garanderen.",
+        "externalLinks": "De Site kan hyperlinks bevatten naar andere sites. Darius Pizza kan niet verantwoordelijk worden gehouden voor de inhoud van deze externe sites, noch voor eventuele schade als gevolg van het gebruik ervan."
+      },
+      "applicableLaw": {
+        "title": "7. Toepasselijk recht",
+        "content": "Deze Site en zijn wettelijke vermeldingen worden beheerst door het Franse recht. In geval van een geschil en bij gebrek aan een minnelijke schikking, zijn uitsluitend de Franse rechtbanken bevoegd."
+      }
+    }
+  }
+}

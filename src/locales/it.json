@@ -13,7 +13,19 @@
     "callNow": "Chiama Ora"
   },
   "seo": {
-    "siteName": "Darius Pizza"
+    "siteName": "Darius Pizza",
+    "title": "Darius Pizza - Pizza Italiana Autentica",
+    "description": "Scopri il sapore autentico dell'Italia con le nostre pizze artigianali preparate con ingredienti freschi e ricette tradizionali. Visita la nostra pizzeria per la migliore cucina italiana.",
+    "imageAlt": "Deliziosa pizza italiana autentica del ristorante Darius Pizza",
+    "keywords": "pizza italiana, pizza autentica, ristorante, pizzeria, ricette tradizionali, ingredienti freschi, Italia, cucina",
+    "menu": {
+      "title": "Menu - Darius Pizza",
+      "description": "Scopri il nostro menu di pizze italiane autentiche con ricette tradizionali e ingredienti freschi. Dalla classica Margherita alle pizze speciali."
+    },
+    "info": {
+      "title": "Informazioni Ristorante - Darius Pizza",
+      "description": "Visita Darius Pizza per la cucina italiana autentica. Trova la nostra posizione, orari di apertura e informazioni di contatto."
+    }
   },
   "footer": {
     "titles": {

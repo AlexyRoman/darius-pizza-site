@@ -88,10 +88,10 @@ export function AllergenLegend() {
         <div
           style={{
             pointerEvents: 'auto',
-            userSelect: 'none',
-            touchAction: 'none',
-            WebkitTouchCallout: 'none',
-            WebkitUserSelect: 'none',
+            userSelect: 'text',
+            touchAction: 'auto',
+            WebkitTouchCallout: 'default',
+            WebkitUserSelect: 'text',
             WebkitTapHighlightColor: 'transparent',
           }}
         >

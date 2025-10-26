@@ -32,7 +32,7 @@ export default function ContactBanner() {
               <div className='flex flex-col sm:flex-row gap-4 justify-center items-center'>
                 {/* Email Button */}
                 <a
-                  href='mailto:info@dariuspizza.com'
+                  href='mailto:contact@dariuspizza.com'
                   className='inline-flex items-center gap-2 px-6 py-3 !bg-primary !text-primary-foreground rounded-lg font-medium hover:!bg-primary active:!bg-primary focus:!bg-primary transition-colors shadow-lg md:hover:shadow-xl'
                 >
                   <Mail className='h-5 w-5' />

@@ -65,14 +65,14 @@ export default function InfoPage() {
               <Comparison className='aspect-video rounded-lg overflow-hidden shadow-2xl border border-border/50'>
                 <ComparisonItem position='left'>
                   <img
-                    src='/static/IMG_2139.JPG'
+                    src={t('section1.image1.src')}
                     alt={t('section1.image1.alt')}
                     className='w-full h-full object-cover'
                   />
                 </ComparisonItem>
                 <ComparisonItem position='right'>
                   <img
-                    src='/static/butcher-frontage.webp'
+                    src={t('section1.image2.src')}
                     alt={t('section1.image2.alt')}
                     className='w-full h-full object-cover'
                   />
@@ -105,27 +105,27 @@ export default function InfoPage() {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
               {/* Card 1: Le Pétrissage et le Pointage */}
-              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow flex flex-col h-full'>
                 <CardHeader>
                   <div className='flex justify-center mb-4'>
                     <div className='p-3 bg-primary/10 rounded-full'>
                       <Gauge className='h-12 w-12 text-primary' />
                     </div>
                   </div>
-                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                  <CardTitle className='text-xl font-bold text-foreground text-center mb-6'>
                     {t('section2.card1.title')}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className='space-y-4'>
-                  <h3 className='font-semibold text-foreground text-center'>
+                <CardContent className='flex flex-col flex-grow'>
+                  <h3 className='font-semibold text-foreground text-center mb-4'>
                     {t('section2.card1.step')}
                   </h3>
                   <p className='text-foreground-secondary leading-relaxed'>
                     {t('section2.card1.content')}
                   </p>
-                  <div className='mt-4'>
+                  <div className='mt-auto pt-4'>
                     <img
-                      src='/static/dough-kneading.webp'
+                      src={t('section2.card1.image.src')}
                       alt={t('section2.card1.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />
@@ -134,27 +134,27 @@ export default function InfoPage() {
               </Card>
 
               {/* Card 2: La Maturation à Froid */}
-              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow flex flex-col h-full'>
                 <CardHeader>
                   <div className='flex justify-center mb-4'>
                     <div className='p-3 bg-primary/10 rounded-full'>
                       <Clock3 className='h-12 w-12 text-primary' />
                     </div>
                   </div>
-                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                  <CardTitle className='text-xl font-bold text-foreground text-center mb-6'>
                     {t('section2.card2.title')}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className='space-y-4'>
-                  <h3 className='font-semibold text-foreground text-center'>
+                <CardContent className='flex flex-col flex-grow'>
+                  <h3 className='font-semibold text-foreground text-center mb-4'>
                     {t('section2.card2.step')}
                   </h3>
                   <p className='text-foreground-secondary leading-relaxed whitespace-pre-line'>
                     {t('section2.card2.content')}
                   </p>
-                  <div className='mt-4'>
+                  <div className='mt-auto pt-4'>
                     <img
-                      src='/static/dough-maturation.webp'
+                      src={t('section2.card2.image.src')}
                       alt={t('section2.card2.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />
@@ -163,27 +163,27 @@ export default function InfoPage() {
               </Card>
 
               {/* Card 3: La Réaction de Maillard */}
-              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow flex flex-col h-full'>
                 <CardHeader>
                   <div className='flex justify-center mb-4'>
                     <div className='p-3 bg-primary/10 rounded-full'>
                       <Flame className='h-12 w-12 text-primary' />
                     </div>
                   </div>
-                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                  <CardTitle className='text-xl font-bold text-foreground text-center mb-6'>
                     {t('section2.card3.title')}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className='space-y-4'>
-                  <h3 className='font-semibold text-foreground text-center'>
+                <CardContent className='flex flex-col flex-grow'>
+                  <h3 className='font-semibold text-foreground text-center mb-4'>
                     {t('section2.card3.step')}
                   </h3>
                   <p className='text-foreground-secondary leading-relaxed'>
                     {t('section2.card3.content')}
                   </p>
-                  <div className='mt-4'>
+                  <div className='mt-auto pt-4'>
                     <img
-                      src='/static/pizza-crust.webp'
+                      src={t('section2.card3.image.src')}
                       alt={t('section2.card3.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />
@@ -210,27 +210,27 @@ export default function InfoPage() {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
               {/* Card 1: La Farine : Moulin Céard */}
-              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow flex flex-col h-full'>
                 <CardHeader>
                   <div className='flex justify-center mb-4'>
                     <div className='p-3 bg-primary/10 rounded-full'>
                       <Wheat className='h-12 w-12 text-primary' />
                     </div>
                   </div>
-                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                  <CardTitle className='text-xl font-bold text-foreground text-center mb-6'>
                     {t('section3.card1.title')}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className='space-y-4'>
-                  <h3 className='font-semibold text-foreground text-center'>
+                <CardContent className='flex flex-col flex-grow'>
+                  <h3 className='font-semibold text-foreground text-center mb-4'>
                     {t('section3.card1.step')}
                   </h3>
                   <p className='text-foreground-secondary leading-relaxed whitespace-pre-line'>
                     {t('section3.card1.content')}
                   </p>
-                  <div className='mt-4'>
+                  <div className='mt-auto pt-4'>
                     <img
-                      src='/static/moulin-ceard.webp'
+                      src={t('section3.card1.image.src')}
                       alt={t('section3.card1.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />
@@ -239,27 +239,27 @@ export default function InfoPage() {
               </Card>
 
               {/* Card 2: L'Héritage : Notre Savoir-Faire Charcutier */}
-              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow flex flex-col h-full'>
                 <CardHeader>
                   <div className='flex justify-center mb-4'>
                     <div className='p-3 bg-primary/10 rounded-full'>
                       <ChefHat className='h-12 w-12 text-primary' />
                     </div>
                   </div>
-                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                  <CardTitle className='text-xl font-bold text-foreground text-center mb-6'>
                     {t('section3.card2.title')}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className='space-y-4'>
-                  <h3 className='font-semibold text-foreground text-center'>
+                <CardContent className='flex flex-col flex-grow'>
+                  <h3 className='font-semibold text-foreground text-center mb-4'>
                     {t('section3.card2.step')}
                   </h3>
                   <p className='text-foreground-secondary leading-relaxed whitespace-pre-line'>
                     {t('section3.card2.content')}
                   </p>
-                  <div className='mt-4'>
+                  <div className='mt-auto pt-4'>
                     <img
-                      src='/static/charcuterie-quality.webp'
+                      src={t('section3.card2.image.src')}
                       alt={t('section3.card2.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />
@@ -268,27 +268,27 @@ export default function InfoPage() {
               </Card>
 
               {/* Card 3: L'Origine : Sourcing Italien AOP */}
-              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow'>
+              <Card className='bg-background-elevated border-border/50 hover:shadow-lg transition-shadow flex flex-col h-full'>
                 <CardHeader>
                   <div className='flex justify-center mb-4'>
                     <div className='p-3 bg-primary/10 rounded-full'>
                       <MapPin className='h-12 w-12 text-primary' />
                     </div>
                   </div>
-                  <CardTitle className='text-xl font-bold text-foreground text-center'>
+                  <CardTitle className='text-xl font-bold text-foreground text-center mb-6'>
                     {t('section3.card3.title')}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className='space-y-4'>
-                  <h3 className='font-semibold text-foreground text-center'>
+                <CardContent className='flex flex-col flex-grow'>
+                  <h3 className='font-semibold text-foreground text-center mb-4'>
                     {t('section3.card3.step')}
                   </h3>
                   <p className='text-foreground-secondary leading-relaxed whitespace-pre-line'>
                     {t('section3.card3.content')}
                   </p>
-                  <div className='mt-4'>
+                  <div className='mt-auto pt-4'>
                     <img
-                      src='/static/italian-products.webp'
+                      src={t('section3.card3.image.src')}
                       alt={t('section3.card3.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />
@@ -352,14 +352,14 @@ export default function InfoPage() {
                 <CardContent>
                   <div className='aspect-video rounded-lg overflow-hidden'>
                     <iframe
-                      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.123456789!2d6.527456789!3d43.172456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEwJzIwLjkiTiA2wrAzMSczOC44IkU!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr'
+                      src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=275%20Avenue%20des%20Alli%C3%A9s,%2083240%20Cavalaire+(Darius%20Pizza)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
                       width='100%'
                       height='100%'
                       style={{ border: 0 }}
                       allowFullScreen
                       loading='lazy'
                       referrerPolicy='no-referrer-when-downgrade'
-                      title='Darius Pizza Location'
+                      title='Darius Pizza'
                     />
                   </div>
                 </CardContent>
@@ -378,29 +378,30 @@ export default function InfoPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className='text-center space-y-4'>
-                    <div className='flex items-center justify-center gap-2'>
-                      <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
-                      <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
-                      <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
-                      <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
-                      <Star className='h-6 w-6 text-yellow-500 fill-yellow-500' />
-                      <span className='ml-2 text-lg font-semibold text-foreground'>
-                        5.0
-                      </span>
+                  <div className='text-center space-y-6'>
+                    {/* Coming Soon Message */}
+                    <div className='py-8'>
+                      <div className='flex justify-center mb-4'>
+                        <div className='p-4 bg-primary/10 rounded-full'>
+                          <Star className='h-12 w-12 text-primary' />
+                        </div>
+                      </div>
+                      <h3 className='text-lg font-semibold text-foreground mb-2'>
+                        {t('section4.tripadvisor.comingSoon')}
+                      </h3>
+                      <p className='text-foreground-secondary mb-6'>
+                        {t('section4.tripadvisor.description')}
+                      </p>
+                      <a
+                        href='https://www.tripadvisor.fr/Restaurant_Review-g666994-d23745036-Reviews-Darius_Pizza-Cavalaire_Sur_Mer_Var_Provence_Alpes_Cote_d_Azur.html'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='inline-flex items-center gap-2 px-6 py-3 bg-[#00af87] text-white rounded-lg hover:bg-[#009973] transition-colors font-medium'
+                      >
+                        <Star className='h-4 w-4' />
+                        Voir tous les avis sur TripAdvisor
+                      </a>
                     </div>
-                    <p className='text-foreground-secondary'>
-                      Basé sur 127 avis clients
-                    </p>
-                    <a
-                      href='https://www.tripadvisor.fr/Restaurant_Review-g187123-d123456789-Reviews-Darius_Pizza-Cavalaire_sur_Mer_Var_Provence_Alpes_Cote_d_Azur.html'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors'
-                    >
-                      <Star className='h-4 w-4' />
-                      Voir tous les avis
-                    </a>
                   </div>
                 </CardContent>
               </Card>
@@ -439,15 +440,26 @@ export default function InfoPage() {
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <InstagramFeed className='mb-6' />
-                  <div className='text-center'>
+                  {/* Coming Soon Message */}
+                  <div className='py-8 text-center'>
+                    <div className='flex justify-center mb-4'>
+                      <div className='p-4 bg-primary/10 rounded-full'>
+                        <Instagram className='h-12 w-12 text-primary' />
+                      </div>
+                    </div>
+                    <h3 className='text-lg font-semibold text-foreground mb-2'>
+                      {t('section5.instagram.comingSoon')}
+                    </h3>
+                    <p className='text-foreground-secondary mb-6'>
+                      {t('section5.instagram.comingSoonDescription')}
+                    </p>
                     <a
                       href='https://instagram.com/dariuspizza'
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all'
+                      className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all font-medium'
                     >
-                      <Instagram className='h-5 w-5' />
+                      <Instagram className='h-4 w-4' />
                       {t('section5.instagram.followUs')}
                     </a>
                     <p className='mt-2 text-sm text-foreground-secondary'>
@@ -465,17 +477,17 @@ export default function InfoPage() {
                       <div className='p-4 bg-primary/10 rounded-full w-fit mx-auto'>
                         <Facebook className='h-12 w-12 text-primary' />
                       </div>
-                      <h3 className='text-xl font-bold text-foreground'>
-                        Facebook
+                      <h3 className='text-lg font-semibold text-foreground'>
+                        {t('section5.social.comingSoon')}
                       </h3>
-                      <p className='text-foreground-secondary'>
-                        {t('section5.social.facebook')}
+                      <p className='text-foreground-secondary mb-4'>
+                        {t('section5.social.comingSoonDescription')}
                       </p>
                       <a
                         href={t('section5.social.facebookUrl')}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors'
+                        className='inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium'
                       >
                         <Facebook className='h-4 w-4' />
                         Suivre sur Facebook

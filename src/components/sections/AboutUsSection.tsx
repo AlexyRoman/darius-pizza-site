@@ -108,29 +108,27 @@ export default function AboutUsSection() {
 
             {/* Image Section */}
             <div className='relative'>
-              <Card className='overflow-hidden shadow-2xl border-border/50'>
-                <CardContent className='p-0'>
-                  <div className='relative h-96 lg:h-[500px] overflow-hidden'>
-                    <img
-                      src='/static/about-kitchen.webp'
-                      alt='Traditional Italian pizza kitchen with chef preparing authentic pizza'
-                      className='w-full h-full object-cover'
-                    />
-                    <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent' />
+              <Card className='overflow-hidden shadow-2xl border-border/50 p-0'>
+                <div className='relative h-96 lg:h-[500px] overflow-hidden'>
+                  <img
+                    src='/static/about-kitchen.webp'
+                    alt='Traditional Italian pizza kitchen with chef preparing authentic pizza'
+                    className='w-full h-full object-cover'
+                  />
+                  <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent' />
 
-                    {/* Floating Badge */}
-                    <div className='absolute top-6 right-6'>
-                      <div className='bg-background/90 backdrop-blur-sm border border-border/50 rounded-full px-4 py-2 shadow-lg'>
-                        <div className='flex items-center gap-2'>
-                          <Award className='h-4 w-4 text-primary' />
-                          <span className='text-sm font-medium text-foreground'>
-                            {tHome('since1985')}
-                          </span>
-                        </div>
+                  {/* Floating Badge */}
+                  <div className='absolute top-6 right-6'>
+                    <div className='bg-background/90 backdrop-blur-sm border border-border/50 rounded-full px-4 py-2 shadow-lg'>
+                      <div className='flex items-center gap-2'>
+                        <Award className='h-4 w-4 text-primary' />
+                        <span className='text-sm font-medium text-foreground'>
+                          {tHome('since1985')}
+                        </span>
                       </div>
                     </div>
                   </div>
-                </CardContent>
+                </div>
               </Card>
 
               {/* Decorative Elements */}

@@ -243,11 +243,6 @@ export default function ContactFormSection() {
                               <SelectItem value='general'>
                                 {t('form.fields.inquiryType.options.general')}
                               </SelectItem>
-                              <SelectItem value='reservation'>
-                                {t(
-                                  'form.fields.inquiryType.options.reservation'
-                                )}
-                              </SelectItem>
                               <SelectItem value='catering'>
                                 {t('form.fields.inquiryType.options.catering')}
                               </SelectItem>

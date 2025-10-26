@@ -65,15 +65,15 @@ const GdprCookieConsent = React.forwardRef<
       setPreferences(allAccepted);
       setModalOpen(false);
       saveCookieConsent('accepted', allAccepted);
-      
+
       // Enable analytics
       if (process.env.NEXT_PUBLIC_GA_ID) {
         enableAnalytics(process.env.NEXT_PUBLIC_GA_ID);
       }
-      
+
       // Dispatch custom event to notify other components
       window.dispatchEvent(new CustomEvent('cookieConsentChanged'));
-      
+
       setTimeout(() => {
         setHide(true);
       }, 300);
@@ -88,13 +88,13 @@ const GdprCookieConsent = React.forwardRef<
       setPreferences(declined);
       setModalOpen(false);
       saveCookieConsent('declined', declined);
-      
+
       // Disable analytics
       disableAnalytics();
-      
+
       // Dispatch custom event to notify other components
       window.dispatchEvent(new CustomEvent('cookieConsentChanged'));
-      
+
       setTimeout(() => {
         setHide(true);
       }, 300);
@@ -110,17 +110,17 @@ const GdprCookieConsent = React.forwardRef<
       setModalOpen(false);
       // Only set cookies when user actually saves preferences
       saveCookieConsent('customized', preferences);
-      
+
       // Enable/disable analytics based on preferences
       if (preferences.analytics && process.env.NEXT_PUBLIC_GA_ID) {
         enableAnalytics(process.env.NEXT_PUBLIC_GA_ID);
       } else {
         disableAnalytics();
       }
-      
+
       // Dispatch custom event to notify other components
       window.dispatchEvent(new CustomEvent('cookieConsentChanged'));
-      
+
       setTimeout(() => {
         setHide(true);
       }, 300);

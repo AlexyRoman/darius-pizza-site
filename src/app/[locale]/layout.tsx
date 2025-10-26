@@ -12,7 +12,7 @@ import PageTracker from '@/components/analytics/PageTracker';
 import AnalyticsDebug from '@/components/analytics/AnalyticsDebug';
 
 import type { Metadata } from 'next';
-import { buildLocalizedMetadata, type SeoMessages } from '@/utils/seo';
+import { generateLocalizedMetadata, generateViewport } from '@/lib/metadata';
 
 async function getMessages(locale: string) {
   try {
@@ -30,14 +30,15 @@ export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await props.params;
-  const messages = await getMessages(locale);
-  return buildLocalizedMetadata({
+
+  return generateLocalizedMetadata({
     locale,
-    messages: messages as SeoMessages,
-    basePath: '',
-    pageKey: 'home',
+    path: '/',
+    type: 'default',
   });
 }
+
+export { generateViewport } from '@/lib/metadata';
 
 export default async function LocaleLayout(props: {
   children: React.ReactNode;
@@ -68,9 +69,9 @@ export default async function LocaleLayout(props: {
           `,
         }}
       />
-      <GoogleTagManager 
-        gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} 
-        gaId={process.env.NEXT_PUBLIC_GA_ID || ''} 
+      <GoogleTagManager
+        gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''}
+        gaId={process.env.NEXT_PUBLIC_GA_ID || ''}
       />
       <PageTracker />
       <AnalyticsDebug />

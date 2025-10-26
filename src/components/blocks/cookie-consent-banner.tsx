@@ -52,15 +52,15 @@ const CookieConsentBanner = React.forwardRef<
       };
       setIsOpen(false);
       saveCookieConsent('accepted', allAccepted);
-      
+
       // Enable analytics
       if (process.env.NEXT_PUBLIC_GA_ID) {
         enableAnalytics(process.env.NEXT_PUBLIC_GA_ID);
       }
-      
+
       // Dispatch custom event to notify other components
       window.dispatchEvent(new CustomEvent('cookieConsentChanged'));
-      
+
       setTimeout(() => {
         setHide(true);
       }, 300);
@@ -74,13 +74,13 @@ const CookieConsentBanner = React.forwardRef<
       };
       setIsOpen(false);
       saveCookieConsent('declined', declined);
-      
+
       // Disable analytics
       disableAnalytics();
-      
+
       // Dispatch custom event to notify other components
       window.dispatchEvent(new CustomEvent('cookieConsentChanged'));
-      
+
       setTimeout(() => {
         setHide(true);
       }, 300);

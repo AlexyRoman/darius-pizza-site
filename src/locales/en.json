@@ -13,7 +13,19 @@
     "callNow": "Call Now"
   },
   "seo": {
-    "siteName": "Darius Pizza"
+    "siteName": "Darius Pizza",
+    "title": "Darius Pizza - Authentic Italian Pizza",
+    "description": "Experience the authentic taste of Italy with our handcrafted pizzas made with fresh ingredients and traditional recipes. Visit our pizzeria for the finest Italian cuisine.",
+    "imageAlt": "Delicious authentic Italian pizza from Darius Pizza restaurant",
+    "keywords": "Italian pizza, authentic pizza, restaurant, pizzeria, traditional recipes, fresh ingredients, Italy, cuisine",
+    "menu": {
+      "title": "Menu - Darius Pizza",
+      "description": "Discover our authentic Italian pizza menu featuring traditional recipes and fresh ingredients. From classic Margherita to specialty pizzas."
+    },
+    "info": {
+      "title": "Restaurant Info - Darius Pizza",
+      "description": "Visit Darius Pizza for authentic Italian cuisine. Find our location, opening hours, and contact information."
+    }
   },
   "footer": {
     "titles": {
@@ -116,7 +128,6 @@
             "placeholder": "Select inquiry type",
             "options": {
               "general": "General Question",
-              "reservation": "Table Reservation",
               "catering": "Catering Inquiry",
               "feedback": "Feedback",
               "complaint": "Complaint",
@@ -314,6 +325,10 @@
       "column2": {
         "title": "Find Us & Leave a Review",
         "subtitle": "Find us in Cavalaire-sur-mer and share your experience with other authentic pizza lovers."
+      },
+      "tripadvisor": {
+        "comingSoon": "TripAdvisor integration coming soon",
+        "description": "TripAdvisor reviews and ratings will be integrated directly on our site soon."
       }
     },
     "section5": {
@@ -323,11 +338,15 @@
         "title": "Our Daily Life in Images",
         "description": "Discover our pizzas, our team and the atmosphere of our pizzeria through our Instagram photos.",
         "followUs": "Follow us on Instagram",
-        "handle": "@dariuspizza"
+        "handle": "@dariuspizza",
+        "comingSoon": "Instagram feed coming soon",
+        "comingSoonDescription": "Our Instagram feed will be integrated directly on our site soon."
       },
       "social": {
         "facebook": "Find us also on Facebook",
-        "facebookUrl": "https://facebook.com/dariuspizza"
+        "facebookUrl": "https://facebook.com/dariuspizza",
+        "comingSoon": "Facebook integration coming soon",
+        "comingSoonDescription": "Our Facebook content will be integrated directly on our site soon."
       }
     },
     "story": {

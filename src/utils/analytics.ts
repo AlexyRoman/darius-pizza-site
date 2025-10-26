@@ -94,23 +94,23 @@ export const isAnalyticsEnabled = (): boolean => {
 // Enable analytics (called when user accepts analytics cookies)
 export const enableAnalytics = (measurementId: string) => {
   if (typeof window === 'undefined') return;
-  
+
   // Log for debugging
   if (process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true') {
     console.log('🔍 Enabling analytics with ID:', measurementId);
     console.log('🔍 Current URL:', window.location.href);
     console.log('🔍 User Agent:', navigator.userAgent);
   }
-  
+
   // Use Google Consent Mode to grant analytics storage
   if (window.gtag) {
     window.gtag('consent', 'update', {
-      'analytics_storage': 'granted',
-      'ad_storage': 'granted',
-      'ad_user_data': 'granted',
-      'ad_personalization': 'granted'
+      analytics_storage: 'granted',
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
     });
-    
+
     // Log for debugging
     if (process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true') {
       console.log('🔍 Analytics consent granted via Consent Mode');
@@ -122,16 +122,16 @@ export const enableAnalytics = (measurementId: string) => {
 // Disable analytics (called when user declines analytics cookies)
 export const disableAnalytics = () => {
   if (typeof window === 'undefined') return;
-  
+
   // Use Google Consent Mode to deny analytics storage
   if (window.gtag) {
     window.gtag('consent', 'update', {
-      'analytics_storage': 'denied',
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied'
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
     });
-    
+
     // Log for debugging
     if (process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true') {
       console.log('🔍 Analytics consent denied via Consent Mode');

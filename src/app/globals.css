@@ -224,9 +224,8 @@
       'calt' 1;
     line-height: var(--line-height-normal);
     letter-spacing: var(--letter-spacing-normal);
-    /* iOS Safari fixes */
+    /* iOS Safari fixes - allow text selection */
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
   }
@@ -281,14 +280,14 @@
     font-family: var(--font-secondary);
     font-weight: var(--font-weight-medium);
     letter-spacing: var(--letter-spacing-wide);
-    /* iOS Safari button fixes */
+    /* iOS Safari button fixes - buttons should not be selectable */
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     touch-action: manipulation;
   }
 
-  /* iOS Safari fixes for interactive elements */
+  /* iOS Safari fixes for interactive elements - these should not be selectable */
   button,
   a,
   [role='button'],
@@ -299,10 +298,19 @@
     touch-action: manipulation;
   }
 
-  /* Allow text selection in input fields */
+  /* Allow text selection in input fields and text content */
   input,
   textarea,
-  [contenteditable] {
+  [contenteditable],
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  div:not(button):not([role='button']):not([tabindex]) {
     -webkit-user-select: text;
     user-select: text;
   }

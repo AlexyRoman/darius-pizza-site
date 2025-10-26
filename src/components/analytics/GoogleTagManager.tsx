@@ -18,13 +18,16 @@ export default function GoogleTagManager({
   useEffect(() => {
     const checkPreferences = () => {
       const newPreferences = getCookiePreferences();
-      
+
       if (process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true') {
-        console.log('🔍 GTM Component - Cookie preferences updated:', newPreferences);
+        console.log(
+          '🔍 GTM Component - Cookie preferences updated:',
+          newPreferences
+        );
         console.log('🔍 GTM Component - GTM ID:', gtmId);
         console.log('🔍 GTM Component - GA ID:', gaId);
       }
-      
+
       // Only update consent if user has explicitly made a choice
       // Don't auto-enable analytics on page load
       if (newPreferences && gaId && gaId !== 'G-XXXXXXXXXX') {

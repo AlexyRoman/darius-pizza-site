@@ -157,7 +157,8 @@
           "sending": "Verzenden...",
           "sendMessage": "Bericht Verzenden"
         },
-        "successMessage": "Bedankt voor uw bericht! We nemen spoedig contact met u op."
+        "successMessage": "Bedankt voor uw bericht! We nemen spoedig contact met u op.",
+        "errorMessage": "Kon uw bericht niet verzenden. Probeer het opnieuw of neem rechtstreeks contact met ons op."
       }
     }
   },

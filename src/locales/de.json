@@ -157,7 +157,8 @@
           "sending": "Wird gesendet...",
           "sendMessage": "Nachricht senden"
         },
-        "successMessage": "Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden."
+        "successMessage": "Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden.",
+        "errorMessage": "Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt."
       }
     }
   },

@@ -157,7 +157,8 @@
           "sending": "Invio in corso...",
           "sendMessage": "Invia Messaggio"
         },
-        "successMessage": "Grazie per il tuo messaggio! Ti risponderemo presto."
+        "successMessage": "Grazie per il tuo messaggio! Ti risponderemo presto.",
+        "errorMessage": "Impossibile inviare il messaggio. Riprova o contattaci direttamente."
       }
     }
   },

@@ -29,6 +29,8 @@ export async function generateLocalizedMetadata(
   const ogImageUrl = '/static/hero-main-pizza.webp';
 
   return {
+    metadataBase: new URL(baseUrl),
+
     title,
     description,
     keywords: t('keywords'),

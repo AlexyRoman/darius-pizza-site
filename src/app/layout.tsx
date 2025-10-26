@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
 
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com'
+  ),
+
   // Comprehensive Open Graph metadata
   openGraph: {
     type: 'website',
@@ -111,6 +115,14 @@ export const metadata: Metadata = {
 
   // Referrer policy
   referrer: 'origin-when-cross-origin',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover',
 
   // Color scheme
   colorScheme: 'light dark',
@@ -120,14 +132,6 @@ export const metadata: Metadata = {
     { media: '(prefers-color-scheme: light)', color: 'oklch(0.98 0.01 85)' },
     { media: '(prefers-color-scheme: dark)', color: 'oklch(0.12 0.02 45)' },
   ],
-};
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  viewportFit: 'cover',
 };
 
 export default function RootLayout({

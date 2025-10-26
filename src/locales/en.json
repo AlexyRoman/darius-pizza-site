@@ -157,7 +157,8 @@
           "sending": "Sending...",
           "sendMessage": "Send Message"
         },
-        "successMessage": "Thank you for your message! We will get back to you soon."
+        "successMessage": "Thank you for your message! We will get back to you soon.",
+        "errorMessage": "Failed to send your message. Please try again or contact us directly."
       }
     }
   },

@@ -26,6 +26,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
+import { TurnstileWidget } from '@/components/ui/turnstile';
 
 // Form validation schema
 const contactFormSchema = z.object({
@@ -46,12 +48,18 @@ const contactFormSchema = z.object({
     message: 'Message must be at least 10 characters.',
   }),
   preferredContact: z.string().optional(),
+  turnstileToken: z.string().min(1, {
+    message: 'Please complete the verification.',
+  }),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function ContactFormSection() {
   const t = useTranslations('info.contactForm');
+  const [turnstileToken, setTurnstileToken] = React.useState<string>('');
+  const [turnstileKey, setTurnstileKey] = React.useState(0); // For reset
+
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -62,18 +70,58 @@ export default function ContactFormSection() {
       inquiryType: '',
       message: '',
       preferredContact: 'email',
+      turnstileToken: '',
     },
   });
 
-  function onSubmit(values: ContactFormValues) {
-    // TODO: Implement actual form submission
-    console.log('Form submitted:', values);
+  // Update form with Turnstile token
+  React.useEffect(() => {
+    if (turnstileToken) {
+      form.setValue('turnstileToken', turnstileToken);
+    }
+  }, [turnstileToken, form]);
 
-    // Show success message (you can implement a toast notification here)
-    alert(t('form.successMessage'));
+  async function onSubmit(values: ContactFormValues) {
+    const loadingToast = toast.loading(t('form.submit.sending'));
 
-    // Reset form
-    form.reset();
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      // Success
+      toast.success(t('form.successMessage'), {
+        id: loadingToast,
+        duration: 5000,
+      });
+
+      // Reset form and Turnstile
+      form.reset();
+      setTurnstileToken('');
+      setTurnstileKey(prev => prev + 1); // Reset Turnstile widget
+    } catch (error) {
+      console.error('Error submitting form:', error);
+
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : t('form.errorMessage') || 'An error occurred. Please try again.';
+
+      toast.error(errorMessage, {
+        id: loadingToast,
+        duration: 5000,
+      });
+    }
   }
 
   return (
@@ -341,6 +389,15 @@ export default function ContactFormSection() {
                         </FormItem>
                       )}
                     />
+
+                    {/* Turnstile Verification */}
+                    <div className='flex items-center justify-center py-4'>
+                      <TurnstileWidget
+                        key={turnstileKey}
+                        onSuccess={token => setTurnstileToken(token)}
+                        onError={() => setTurnstileToken('')}
+                      />
+                    </div>
 
                     {/* Submit Button */}
                     <div className='flex justify-end'>

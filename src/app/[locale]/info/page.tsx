@@ -300,7 +300,10 @@ export default function InfoPage() {
       </section>
 
       {/* Section 4: Contact & Avis */}
-      <section className='py-16 lg:py-24 bg-gradient-to-b from-background-secondary via-background-secondary to-background'>
+      <section
+        id='contact'
+        className='py-16 lg:py-24 bg-gradient-to-b from-background-secondary via-background-secondary to-background'
+      >
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='max-w-6xl mx-auto'>
             <div className='text-center mb-16'>

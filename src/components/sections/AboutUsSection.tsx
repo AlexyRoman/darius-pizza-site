@@ -5,11 +5,12 @@ import { Heart, Users, Award, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function AboutUsSection() {
   const t = useTranslations('aboutUs');
   const tHome = useTranslations('aboutUs.homeAbout');
+  const locale = useLocale();
   return (
     <section className='py-16 lg:py-24 bg-gradient-to-b from-background-secondary via-background to-background-secondary'>
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
@@ -82,7 +83,7 @@ export default function AboutUsSection() {
                   size='lg'
                   className='!bg-primary !text-primary-foreground shadow-lg md:hover:shadow-xl transition-all duration-300 hover:!bg-primary active:!bg-primary focus:!bg-primary'
                 >
-                  <Link href='/info#contact'>
+                  <Link href={`/${locale}/info#contact`}>
                     {tHome('contactUs')}
                     <ArrowRight className='ml-2 h-4 w-4' />
                   </Link>

@@ -10,6 +10,7 @@ import CookieConsentBanner from '@/components/blocks/cookie-consent-banner';
 import GoogleTagManager from '@/components/analytics/GoogleTagManager';
 import PageTracker from '@/components/analytics/PageTracker';
 import AnalyticsDebug from '@/components/analytics/AnalyticsDebug';
+import { Toaster } from '@/components/ui/sonner';
 
 import type { Metadata } from 'next';
 import { generateLocalizedMetadata } from '@/lib/metadata';
@@ -80,6 +81,7 @@ export default async function LocaleLayout(props: {
         {children}
         <CookieConsentBanner />
       </main>
+      <Toaster />
       <Footer
         currentLocale={locale}
         titles={{

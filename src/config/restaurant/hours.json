@@ -3,39 +3,38 @@
     "monday": {
       "day": "monday",
       "periods": [
-        { "open": "10:00", "close": "14:00" },
-        { "open": "18:00", "close": "22:00" }
+        { "open": "18:00", "close": "21:30" }
       ],
-      "isOpen": true
+      "isOpen": false
     },
     "tuesday": {
       "day": "tuesday",
-      "periods": [{ "open": "15:00", "close": "22:00" }],
+      "periods": [{ "open": "18:00", "close": "21:30" }],
       "isOpen": true
     },
     "wednesday": {
       "day": "wednesday",
-      "periods": [{ "open": "18:00", "close": "22:00" }],
+      "periods": [{ "open": "18:00", "close": "21:30" }],
       "isOpen": false
     },
     "thursday": {
       "day": "thursday",
-      "periods": [{ "open": "18:00", "close": "22:00" }],
-      "isOpen": true
+      "periods": [{ "open": "18:00", "close": "21:30" }],
+      "isOpen": false
     },
     "friday": {
       "day": "friday",
-      "periods": [{ "open": "18:00", "close": "22:00" }],
+      "periods": [{ "open": "18:00", "close": "21:30" }],
       "isOpen": true
     },
     "saturday": {
       "day": "saturday",
-      "periods": [{ "open": "18:00", "close": "22:00" }],
+      "periods": [{ "open": "18:00", "close": "21:30" }],
       "isOpen": true
     },
     "sunday": {
       "day": "sunday",
-      "periods": [{ "open": "18:00", "close": "22:00" }],
+      "periods": [{ "open": "18:00", "close": "21:30" }],
       "isOpen": true
     }
   },

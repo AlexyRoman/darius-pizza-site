@@ -3,12 +3,12 @@
     {
       "id": "product-524183493",
       "title": "Queen",
-      "description": "Tomato Sauce, Mozzarella Fior di Latte, Ham, Fresh Mushrooms, Olives",
+      "description": "Tomato Sauce, Fior di Latte Mozza, Ham, Fresh Mushrooms, Olives",
       "price": 10.9,
       "image": "https://cdn.reflowhq.com/media/702608174/2035113296/db6171e3b9625425cd0530881276db20_lg.jpeg",
-      "category": "Classics",
+      "category": "The Classics",
       "isStarred": true,
-      "starReason": "Classic French pizza - a timeless favorite"
+      "starReason": "Our iconic pizza - a classic and must-have."
     },
     {
       "id": "product-134505823",
@@ -18,17 +18,17 @@
       "image": "https://cdn.reflowhq.com/media/702608174/1354298693/2280bc6f41f2d0f51ab7484630a82dcd_lg.jpg",
       "category": "Signature Pizzas",
       "isStarred": true,
-      "starReason": "Our signature creation - a perfect blend of Italian flavors"
+      "starReason": "Our signature creation - a concentrate of our best flavors."
     },
     {
       "id": "product-359764159",
       "title": "5 Cheeses",
-      "description": "Tomato Sauce, Mozzarella Fior di Latte, Emmental, Goat Cheese, Blue Cheese, Olives",
+      "description": "Tomato Sauce, Fior di Latte Mozza, Emmental, Goat Cheese, Blue Cheese, Olives",
       "price": 12.9,
       "image": "https://cdn.reflowhq.com/media/702608174/2107908261/0e27e596bd3bb2fe1cef6f62ded2e02e_lg.jpg",
-      "category": "Cheese Pizzas",
+      "category": "The Cheesy Ones",
       "isStarred": true,
-      "starReason": "Cheese lover's dream - five premium cheeses"
+      "starReason": "The cheese lovers' dream - add extra chorizo for even more flavor."
     }
   ],
   "lastUpdated": "2024-01-15T10:00:00Z",

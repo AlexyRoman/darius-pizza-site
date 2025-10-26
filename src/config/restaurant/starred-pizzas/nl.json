@@ -1,0 +1,36 @@
+{
+  "starredPizzas": [
+    {
+      "id": "product-524183493",
+      "title": "Reine",
+      "description": "Tomatensaus, Mozza Fior di Latte, Ham, Verse Champignons, Olijven",
+      "price": 10.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/2035113296/db6171e3b9625425cd0530881276db20_lg.jpeg",
+      "category": "De Klassiekers",
+      "isStarred": true,
+      "starReason": "Onze iconische pizza - een klassieke en onmisbare pizza."
+    },
+    {
+      "id": "product-134505823",
+      "title": "The Darius",
+      "description": "Tomatensaus, Mozzarella, Italiaanse Coppa, Kerstomaten, Stracciatella di Burrata, Rucola, Parmezaan, Balsamicoazijn",
+      "price": 17.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/1354298693/2280bc6f41f2d0f51ab7484630a82dcd_lg.jpg",
+      "category": "Signature Pizza's",
+      "isStarred": true,
+      "starReason": "Onze signature creatie - een concentraat van onze beste smaken."
+    },
+    {
+      "id": "product-359764159",
+      "title": "5 Kazen",
+      "description": "Tomatensaus, Mozza Fior di Latte, Emmentaler, Geitenkaas, Blauwe Kaas, Olijven",
+      "price": 12.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/2107908261/0e27e596bd3bb2fe1cef6f62ded2e02e_lg.jpg",
+      "category": "De Kazige",
+      "isStarred": true,
+      "starReason": "De droom van kaasliefhebbers - voeg extra chorizo toe voor nog meer smaak."
+    }
+  ],
+  "lastUpdated": "2024-01-15T10:00:00Z",
+  "month": "Januari 2024"
+}

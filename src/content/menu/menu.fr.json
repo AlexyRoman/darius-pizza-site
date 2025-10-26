@@ -38,7 +38,7 @@
       "price": 10.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1685256131/2c5471e5d71e962a0a17ee5840b9bbc0_lg.jpeg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-524183493",
@@ -48,7 +48,7 @@
       "price": 10.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/2035113296/db6171e3b9625425cd0530881276db20_lg.jpeg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-359764159",
@@ -78,7 +78,7 @@
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1949185004/c146701c32692ce3f73d638ec0909231_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-550635851",
@@ -88,7 +88,7 @@
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/151427441/9ad0ea84ec2ad5778c59599700157400_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-623570136",
@@ -98,7 +98,7 @@
       "price": 11.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/174161094/a7474f81c05778c8377f066a993c23fa_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-637907501",
@@ -108,7 +108,7 @@
       "price": 11.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/247054891/30738be90811be1336972c8821021e35_lg.jpeg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-995891634",
@@ -118,7 +118,7 @@
       "price": 11.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/59812280/3dfbdcd9a1072b7c0949da6d00d4d8ca_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-1068826375",
@@ -128,7 +128,7 @@
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/82513677/f92afd79e751fbb8aca70091555ea6f2_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-814695060",
@@ -138,7 +138,7 @@
       "price": 12.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/432263826/d9900ba6fa938f7a0e11dd7292c59bdb_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs", "Sulphites"]
+      "allergens": ["Gluten", "Milk", "Eggs"]
     },
     {
       "id": "product-904276217",
@@ -148,7 +148,7 @@
       "price": 13.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/437958887/4e40b7ce62dba77c40a32bffb47549af_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-910069326",
@@ -158,7 +158,7 @@
       "price": 13.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/527769204/09062f8775587dc1ff22a8ab95bdb6ab_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Nuts", "Sulphites"]
+      "allergens": ["Gluten", "Milk", "Nuts"]
     },
     {
       "id": "product-1259951571",
@@ -168,7 +168,7 @@
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/273540569/66fd9f3b05d83f3866e3e10eaec1efa4_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-1282423584",
@@ -178,7 +178,7 @@
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/346311470/5e183816338d2cd5885de88a8356811c_lg.jpeg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-374908687",
@@ -188,7 +188,7 @@
       "price": 12.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1218850122/fe0ec9465826af86e1517913687c3127_lg.jpeg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-1095278261",
@@ -238,7 +238,7 @@
       "price": 12.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/968387292/13267aa060df5322cb0a5b6a4eccd2f5_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-1381802043",
@@ -288,7 +288,7 @@
       "price": 14.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/913680125/038ff41c360f0fa5876995719e54cb26_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites", "Eggs", "Mustard"]
+      "allergens": ["Gluten", "Milk", "Eggs", "Mustard"]
     },
     {
       "id": "product-1645870148",
@@ -378,7 +378,7 @@
       "price": 15.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1527335011/8f12f34014814995837a4ae40924ba47_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs", "Sulphites"]
+      "allergens": ["Gluten", "Milk", "Eggs"]
     },
     {
       "id": "product-1999478730",
@@ -388,7 +388,7 @@
       "price": 16.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1549807600/07453f1200ccb8b5d35401a3ede1a282_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-134505823",
@@ -398,7 +398,7 @@
       "price": 17.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1354298693/2280bc6f41f2d0f51ab7484630a82dcd_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-224184492",
@@ -408,7 +408,7 @@
       "price": 17.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1435719850/7b6ccd51339ef2cf1af5f32e3c859c95_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-28814897",
@@ -418,7 +418,7 @@
       "price": 11.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1458191935/20032a3fe2039eee0d550dca49c277e5_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs", "Sulphites"]
+      "allergens": ["Gluten", "Milk", "Eggs"]
     },
     {
       "id": "product-42890630",
@@ -428,7 +428,7 @@
       "price": 12.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1807910284/a966702eae7ab882665eea850c3ee7a2_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs", "Sulphites"]
+      "allergens": ["Gluten", "Milk", "Eggs"]
     },
     {
       "id": "product-132570091",
@@ -438,7 +438,7 @@
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1813867281/989e7b611ea6c8639ef768fde5a74d7e_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs", "Sulphites"]
+      "allergens": ["Gluten", "Milk", "Eggs"]
     },
     {
       "id": "product-415342968",

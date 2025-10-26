@@ -95,6 +95,7 @@ export default async function LocaleLayout(props: {
           privacy: messages.footer.legal.privacy,
           terms: messages.footer.legal.terms,
           imprint: messages.footer.legal.imprint,
+          cookies: messages.footer.legal.cookies,
         }}
         menuLabels={{
           home: messages.common.home,

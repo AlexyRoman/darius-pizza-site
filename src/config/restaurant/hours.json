@@ -13,7 +13,7 @@
     "wednesday": {
       "day": "wednesday",
       "periods": [{ "open": "18:00", "close": "21:30" }],
-      "isOpen": false
+      "isOpen": true
     },
     "thursday": {
       "day": "thursday",

@@ -158,14 +158,14 @@ export default function CookiesPage() {
             <p className='mb-4'>{t('contact.content')}</p>
             <div className='bg-muted p-4 rounded-lg'>
               <p>
-                <strong>{t('contact.email')}</strong>: privacy@dariuspizza.com
+                <strong>{t('contact.email')}</strong>: contact@dariuspizza.com
               </p>
               <p>
-                <strong>{t('contact.phone')}</strong>: (123) 456-7890
+                <strong>{t('contact.phone')}</strong>: 04.94.64.05.11
               </p>
               <p>
-                <strong>{t('contact.address')}</strong>: 123 Main Street,
-                Downtown District, City, State 12345
+                <strong>{t('contact.address')}</strong>: 275 Avenue des Alliés,
+                83240 Cavalaire
               </p>
             </div>
           </section>

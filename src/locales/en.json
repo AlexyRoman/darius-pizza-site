@@ -40,7 +40,8 @@
     "legal": {
       "privacy": "Privacy",
       "terms": "Terms",
-      "imprint": "Legal Notice"
+      "imprint": "Legal Notice",
+      "cookies": "Cookies"
     },
     "social": {
       "googleMaps": "Google Maps",
@@ -116,7 +117,7 @@
           },
           "phone": {
             "label": "Phone Number",
-            "placeholder": "(123) 456-7890",
+            "placeholder": "04.94.64.05.11",
             "description": "Optional - for urgent inquiries"
           },
           "subject": {
@@ -249,7 +250,7 @@
       "conclusion": "In 2020, a new chapter began. The passion for gastronomy and exceptional products transformed the butcher's block into a wood-fired oven. Maison Darius became Darius Pizza.\n\nThe setting has changed, but the soul remains intact. We have preserved the heritage of the butchery: a love for fresh produce, respect for artisanal craftsmanship, and an obsession with taste. The same high standards we applied to our meats, we now apply to every ingredient that makes up our pizzas.",
       "image1": {
         "alt": "Darius Pizza storefront since 2020",
-          "src": "/static/pizza-storefront.webp"
+        "src": "/static/pizza-storefront.webp"
       },
       "image2": {
         "alt": "Darius Butchery storefront before 2020",

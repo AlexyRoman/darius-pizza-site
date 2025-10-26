@@ -17,7 +17,12 @@ type FooterProps = {
   rightsReservedText?: string;
   designedByPrefix?: string;
   designedByName?: string;
-  legalLabels?: { privacy: string; terms: string; imprint: string };
+  legalLabels?: {
+    privacy: string;
+    terms: string;
+    imprint: string;
+    cookies: string;
+  };
   menuLabels?: { home: string; menu: string; info: string };
 };
 
@@ -45,7 +50,7 @@ export function Footer(props: FooterProps) {
 
   const legalLinks: LinkItem[] = [
     { href: withLocale('/privacy'), label: legalLabels?.privacy ?? 'Privacy' },
-    { href: withLocale('/terms'), label: legalLabels?.terms ?? 'Terms' },
+    { href: withLocale('/cookies'), label: legalLabels?.cookies ?? 'Cookies' },
     {
       href: withLocale('/legal-mentions'),
       label: legalLabels?.imprint ?? 'Legal Mentions',

@@ -3,17 +3,17 @@
     {
       "id": "product-6156553",
       "title": "Margherita",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Aceitunas. (Máx. 1 ingrediente extra. El precio del ingrediente se duplica, excepto el huevo)",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Aceitunas. (1 suplemento máx. Precio del suplemento duplicado excepto huevo)",
       "categories": ["Las Clásicas"],
       "price": 7.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1843979396/e6873a40676873a8d04dcd6f71027834_lg.jpeg",
-      "allergens": ["Gluten", "Milk"]
+      "allergens": ["Vegetarian", "Gluten", "Milk"]
     },
     {
       "id": "product-78927006",
-      "title": "Albahaca",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Aceite de oliva, Hojas de albahaca. (Máx. 1 ingrediente extra. El precio del ingrediente se duplica, excepto el huevo)",
+      "title": "Basilico",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Aceite de Oliva, Hojas de Albahaca. (1 suplemento máx. Precio del suplemento duplicado excepto huevo)",
       "categories": ["Las Clásicas"],
       "price": 8.9,
       "discount": 0,
@@ -22,8 +22,8 @@
     },
     {
       "id": "product-428817123",
-      "title": "Champiñón",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Champiñones frescos, Aceitunas. (Máx. 1 ingrediente extra. El precio del ingrediente se duplica, excepto el huevo)",
+      "title": "Toad",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Champiñones Frescos, Aceitunas. (1 suplemento máx. Precio del suplemento duplicado excepto huevo)",
       "categories": ["Las Clásicas"],
       "price": 9.5,
       "discount": 0,
@@ -33,28 +33,28 @@
     {
       "id": "product-451379312",
       "title": "Romana",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Jamón cocido, Aceitunas",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón, Aceitunas",
       "categories": ["Las Clásicas"],
       "price": 10.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1685256131/2c5471e5d71e962a0a17ee5840b9bbc0_lg.jpeg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-524183493",
-      "title": "Regina",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Jamón cocido, Champiñones frescos, Aceitunas",
+      "title": "Reina",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón, Champiñones Frescos, Aceitunas",
       "categories": ["Las Clásicas"],
       "price": 10.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/2035113296/db6171e3b9625425cd0530881276db20_lg.jpeg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-359764159",
       "title": "5 Quesos",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Emmental, Queso de cabra, Queso azul, Aceitunas",
-      "categories": ["Pizzas de Queso"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Emmental, Queso de Cabra, Queso Azul, Aceitunas",
+      "categories": ["Las de Queso"],
       "price": 12.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/2107908261/0e27e596bd3bb2fe1cef6f62ded2e02e_lg.jpg",
@@ -62,9 +62,9 @@
     },
     {
       "id": "product-373847564",
-      "title": "Queso de Cabra y Miel o Pastora",
-      "description": "Salsa de tomate O Nata, Mozzarella Fior di Latte, Queso de cabra, Miel, Nueces, Aceitunas",
-      "categories": ["Pizzas de Queso"],
+      "title": "Cabra Miel o Pastora",
+      "description": "Salsa de Tomate O Nata, Mozza Fior di Latte, Queso de Cabra, Miel, Nueces, Aceitunas",
+      "categories": ["Las de Queso"],
       "price": 11.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/2130478602/b8a3add77fa25ef263b23eb5035e5f21_lg.jpeg",
@@ -73,118 +73,128 @@
     {
       "id": "product-805020646",
       "title": "Raclette",
-      "description": "Nata fresca, Mozzarella Fior di Latte, Bacon O Taquitos de panceta, Queso Raclette, Patatas, Aceitunas",
-      "categories": ["Pizzas de Queso"],
+      "description": "Nata Fresca (Crème Fraîche), Mozza Fior di Latte, Bacon O Panceta, Queso Raclette, Patatas, Aceitunas",
+      "categories": ["Las de Queso"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1949185004/c146701c32692ce3f73d638ec0909231_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-550635851",
       "title": "Tartiflette",
-      "description": "Nata fresca, Mozzarella Fior di Latte, Taquitos de panceta, Cebolla, Patatas, Queso Reblochon, Aceitunas",
-      "categories": ["Pizzas de Queso"],
+      "description": "Nata Fresca (Crème Fraîche), Mozza Fior di Latte, Panceta, Cebollas, Patatas, Queso Tartiflette, Aceitunas",
+      "categories": ["Las de Queso"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/151427441/9ad0ea84ec2ad5778c59599700157400_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-623570136",
       "title": "Chorizo",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Chorizo ibérico, Cebolla, Pimientos, Aceitunas",
-      "categories": ["Pizzas con Embutidos"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Chorizo ibérico, Cebollas, Pimientos, Aceitunas",
+      "categories": ["Las de Embutido"],
       "price": 11.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/174161094/a7474f81c05778c8377f066a993c23fa_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-637907501",
       "title": "Campesina",
-      "description": "Salsa de tomate O Nata fresca, Mozzarella Fior di Latte, Taquitos de panceta, Cebolla, Aceitunas",
-      "categories": ["Pizzas con Embutidos"],
+      "description": "Salsa de Tomate O Nata Fresca (Crème Fraîche), Mozza Fior di Latte, Panceta, Cebollas, Aceitunas",
+      "categories": ["Las de Embutido"],
       "price": 11.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/247054891/30738be90811be1336972c8821021e35_lg.jpeg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-995891634",
       "title": "Hawaiana",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Jamón cocido, Piña, Aceitunas",
-      "categories": ["Pizzas con Embutidos"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón, Piña, Aceitunas",
+      "categories": ["Las de Embutido"],
       "price": 11.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/59812280/3dfbdcd9a1072b7c0949da6d00d4d8ca_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-1068826375",
       "title": "Pepperoni",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Pepperoni, Friarielli napolitanos (grelos), Cebolla, Aceitunas",
-      "categories": ["Pizzas con Embutidos"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Pepperoni, Friarielli Napolitanos, Cebollas, Aceitunas",
+      "categories": ["Las de Embutido"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/82513677/f92afd79e751fbb8aca70091555ea6f2_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-814695060",
       "title": "Inglesa",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Bacon, Cheddar, Cebolla, Huevo, Aceitunas",
-      "categories": ["Pizzas con Embutidos"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Bacon, Cheddar, Cebollas, Huevo, Aceitunas",
+      "categories": ["Las de Embutido"],
       "price": 12.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/432263826/d9900ba6fa938f7a0e11dd7292c59bdb_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs", "Sulphites"]
+      "allergens": ["Gluten", "Milk", "Eggs"]
     },
     {
       "id": "product-904276217",
       "title": "Italiana",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Jamón serrano, Tomates cherry, Lascas de Grana Padano, Aceitunas",
-      "categories": ["Pizzas con Embutidos"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón Serrano, Tomates cherry, Virutas de Grana Padano, Aceitunas",
+      "categories": ["Las de Embutido"],
       "price": 13.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/437958887/4e40b7ce62dba77c40a32bffb47549af_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-910069326",
       "title": "Auvernesa",
-      "description": "Nata fresca, Mozzarella Fior di Latte, Jamón serrano, Queso azul, Nueces, Aceitunas",
-      "categories": ["Pizzas con Embutidos"],
+      "description": "Nata Fresca (Crème Fraîche), Mozza Fior di Latte, Jamón Serrano, Queso Azul, Nueces, Aceitunas",
+      "categories": ["Las de Embutido"],
       "price": 13.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/527769204/09062f8775587dc1ff22a8ab95bdb6ab_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Nuts", "Sulphites"]
+      "allergens": ["Gluten", "Milk", "Nuts"]
     },
     {
       "id": "product-1259951571",
       "title": "San Marco",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Coppa italiana, Champiñones frescos con perejil y ajo, Lascas de Grana Padano, Aceitunas",
-      "categories": ["Pizzas con Embutidos"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Coppa Italiana, Champiñones Frescos en Persillade, Virutas de Grana Padano, Aceitunas",
+      "categories": ["Las de Embutido"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/273540569/66fd9f3b05d83f3866e3e10eaec1efa4_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-1282423584",
-      "title": "Corsa",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Figatelli (salchicha corsa), Queso de cabra, Cebolla, Aceitunas",
-      "categories": ["Pizzas con Embutidos"],
+      "title": "Corsica",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Figatelli, Queso de Cabra, Cebollas, Aceitunas",
+      "categories": ["Las de Embutido"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/346311470/5e183816338d2cd5885de88a8356811c_lg.jpeg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
+    },
+    {
+      "id": "product-374908687",
+      "title": "Gariguette",
+      "description": "Nata, Mozza, Panceta, Queso de Cabra, Champiñones frescos en persillade, Virutas de Grana, Aceitunas",
+      "categories": ["Las de Embutido"],
+      "price": 12.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1218850122/fe0ec9465826af86e1517913687c3127_lg.jpeg",
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-1095278261",
       "title": "Siciliana",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Anchoas, Alcaparras pequeñas, Aceitunas",
-      "categories": ["Pizzas del Mar"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Anchoas, Mini Alcaparras, Aceitunas",
+      "categories": ["Las del Mar"],
       "price": 11.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/704589491/20128a5b4bad6a2aa8594f8fbadaface_lg.jpg",
@@ -193,9 +203,9 @@
     {
       "id": "product-1168335898",
       "title": "Marsellesa",
-      "description": "Salsa de tomate, Anchoas, Cebolla morada, Alcaparras grandes, Aceitunas",
-      "categories": ["Pizzas del Mar"],
-      "price": 10,
+      "description": "Salsa de Tomate, Anchoas, Cebollas Rojas, Alcaparras Grandes, Aceitunas",
+      "categories": ["Las del Mar"],
+      "price": 10.0,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/718795776/4fd77eb0e588219191cb853e2a926da6_lg.jpg",
       "allergens": ["Gluten", "Fish"]
@@ -203,9 +213,9 @@
     {
       "id": "product-1190906479",
       "title": "Atún",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Atún, Tomates cherry, Nata, Aceitunas",
-      "categories": ["Pizzas del Mar"],
-      "price": 12,
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Atún, Tomates Cherry, Nata, Aceitunas",
+      "categories": ["Las del Mar"],
+      "price": 12.0,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/791567253/b24ba8a8ea6e7df2c11c2307b173b3b5_lg.jpg",
       "allergens": ["Gluten", "Milk", "Fish"]
@@ -213,8 +223,8 @@
     {
       "id": "product-1546483521",
       "title": "Noruega",
-      "description": "Nata, Mozzarella Fior di Latte, Salmón ahumado, Eneldo, Tomates cherry, Aceitunas",
-      "categories": ["Pizzas del Mar"],
+      "description": "Nata, Mozza Fior di Latte, Salmón Ahumado, Eneldo, Tomates Cherry, Aceitunas",
+      "categories": ["Las del Mar"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/627148623/262201cb57b0e9254c0ba5d86678209e_lg.jpg",
@@ -223,18 +233,18 @@
     {
       "id": "product-1359338198",
       "title": "Oriental",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Salchicha Merguez, Cebolla, Pimientos, Aceitunas",
-      "categories": ["Amantes de la Carne"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Merguez, Cebollas, Pimientos, Aceitunas",
+      "categories": ["Las de Carne"],
       "price": 12.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/968387292/13267aa060df5322cb0a5b6a4eccd2f5_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
+      "allergens": ["Gluten", "Milk"]
     },
     {
       "id": "product-1381802043",
       "title": "Cheeseburger",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Carne picada, Cheddar, Salsa burger, Aceitunas",
-      "categories": ["Amantes de la Carne"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Carne Picada, Cheddar, Salsa Burger, Aceitunas",
+      "categories": ["Las de Carne"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/982724641/f431fe20022ff15a07f28824a6a7484c_lg.jpg",
@@ -243,8 +253,8 @@
     {
       "id": "product-1454835592",
       "title": "Texas Ranger",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Carne picada, Pimientos, Cebolla, Salsa barbacoa, Aceitunas",
-      "categories": ["Amantes de la Carne"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Carne Picada, Pimientos, Cebollas, Salsa Barbacoa, Aceitunas",
+      "categories": ["Las de Carne"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1072404406/8d36b28e6dab9aa89dd6e421ee9ed13d_lg.jpg",
@@ -253,8 +263,8 @@
     {
       "id": "product-1804594461",
       "title": "India",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Pollo al coco y curry, Pimientos, Tomates cherry, Salsa de curry, Aceitunas",
-      "categories": ["Amantes de la Carne"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Pollo Coco-Curry, Pimientos, Tomates Cherry, Salsa Curry, Aceitunas",
+      "categories": ["Las de Carne"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/818052379/fd2bb71b9c280c2cd1ba6d84aa3148ad_lg.jpg",
@@ -263,8 +273,8 @@
     {
       "id": "product-1827058530",
       "title": "Kebab",
-      "description": "Nata, Mozzarella Fior di Latte, Carne de kebab, Cebolla, Tomates cherry, Salsa kebab, Aceitunas",
-      "categories": ["Amantes de la Carne"],
+      "description": "Nata, Mozza Fior di Latte, Kebab, Cebollas, Tomates Cherry, Salsa Kebab, Aceitunas",
+      "categories": ["Las de Carne"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/890946408/d9fdcd6804ad1efcea061e0bf0fcfeac_lg.jpg",
@@ -273,18 +283,18 @@
     {
       "id": "product-1640044279",
       "title": "Power Ranger",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Carne picada, Merguez O Pollo, Cebolla, Salsa samurái, Aceitunas",
-      "categories": ["Amantes de la Carne"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Carne Picada, Merguez O Pollo, Cebollas, Salsa Samurái, Aceitunas",
+      "categories": ["Las de Carne"],
       "price": 14.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/913680125/038ff41c360f0fa5876995719e54cb26_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs", "Mustard", "Sulphites"]
+      "allergens": ["Gluten", "Milk", "Eggs", "Mustard"]
     },
     {
       "id": "product-1645870148",
       "title": "Dijonesa",
-      "description": "Nata, Mozzarella Fior di Latte, Pollo, Cebolla, Champiñones frescos, Crema de mostaza a la antigua, Aceitunas",
-      "categories": ["Amantes de la Carne"],
+      "description": "Nata, Mozza Fior di Latte, Pollo, Cebollas, Champiñones Frescos, Nata a la Mostaza Antigua, Aceitunas",
+      "categories": ["Las de Carne"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1263275074/f8cb02cc3c9b9ce88b820a32590810f4_lg.jpg",
@@ -293,168 +303,18 @@
     {
       "id": "product-1735410601",
       "title": "Cretense",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Carne picada, Cebolla, Berenjenas marinadas, Lascas de Grana Padano, Aceitunas",
-      "categories": ["Amantes de la Carne"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Carne Picada, Cebollas, Berenjenas marinadas, Virutas Grana Padano, Aceitunas",
+      "categories": ["Las de Carne"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1336202199/eb556f46da128df86110dfdeb2587b62_lg.jpg",
       "allergens": ["Gluten", "Milk"]
     },
     {
-      "id": "product-2018191678",
-      "title": "4 Estaciones",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Champiñones frescos, Corazones de alcachofa, Tomates cherry, Aceitunas",
-      "categories": ["Vegetarianas"],
-      "price": 11.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1090500900/f3ade2ea48caa1dce85201cc18e6f550_lg.jpg",
-      "allergens": ["Gluten", "Milk"]
-    },
-    {
-      "id": "product-2091093123",
-      "title": "Provenzal",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Calabacín y berenjenas marinados, Cebolla, Pesto, Aceitunas",
-      "categories": ["Vegetarianas"],
-      "price": 12.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1171659913/3472e30976a729b4e014831575f6703b_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Nuts"]
-    },
-    {
-      "id": "product-1912230416",
-      "title": "Mediterránea",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Queso de cabra, Tomates cherry, Calabacín marinado, Aceitunas",
-      "categories": ["Vegetarianas"],
-      "price": 12.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1177477662/5a7ade3c046ae6893630b30d1124bd55_lg.jpg",
-      "allergens": ["Gluten", "Milk"]
-    },
-    {
-      "id": "product-1926576229",
-      "title": "La Delfinesa",
-      "description": "Base de crema de ajo y finas hierbas, Mozzarella Fior di Latte, Ravioles del Delfinado, Taquitos de panceta, Lascas de Parmesano, Aceitunas",
-      "categories": ["Pizzas de Autor"],
-      "price": 15.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1527335011/8f12f34014814995837a4ae40924ba47_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs", "Sulphites"]
-    },
-    {
-      "id": "product-1999478730",
-      "title": "La Parma",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Jamón de Parma, Stracciatella de Burrata, Rúcula, Lascas de Parmesano",
-      "categories": ["Pizzas de Autor"],
-      "price": 16.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1549807600/07453f1200ccb8b5d35401a3ede1a282_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
-    },
-    {
-      "id": "product-134505823",
-      "title": "La Darío",
-      "description": "Salsa de tomate, Mozzarella, Coppa italiana, Tomates cherry, Stracciatella de Burrata, Rúcula, Parmesano, Vinagre balsámico",
-      "categories": ["Pizzas de Autor"],
-      "price": 17.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1354298693/2280bc6f41f2d0f51ab7484630a82dcd_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
-    },
-    {
-      "id": "product-224184492",
-      "title": "Al Tartufo",
-      "description": "Crema de trufa, Mozzarella, Jamón cocido en lonchas finas, Burrata, Rúcula, Parmesano, Aceite de oliva a la trufa",
-      "categories": ["Pizzas de Autor"],
-      "price": 17.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1435719850/7b6ccd51339ef2cf1af5f32e3c859c95_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
-    },
-    {
-      "id": "product-28814897",
-      "title": "Clásico",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Jamón cocido, Champiñones frescos, Huevo",
-      "categories": ["Calzones"],
-      "price": 11.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1458191935/20032a3fe2039eee0d550dca49c277e5_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs", "Sulphites"]
-    },
-    {
-      "id": "product-42890630",
-      "title": "Ibérico",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Jamón cocido, Chorizo, Champiñones frescos, Huevo",
-      "categories": ["Calzones"],
-      "price": 12.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1807910284/a966702eae7ab882665eea850c3ee7a2_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs", "Sulphites"]
-    },
-    {
-      "id": "product-132570091",
-      "title": "Perfecta",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Emmental, Queso de cabra, Queso azul, Jamón cocido, Huevo",
-      "categories": ["Calzones"],
-      "price": 13.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1813867281/989e7b611ea6c8639ef768fde5a74d7e_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Eggs", "Sulphites"]
-    },
-    {
-      "id": "product-415342968",
-      "title": "Nutella - Plátano",
-      "description": "Nata dulce, Plátano en rodajas, Nutella, Sirope de chocolate",
-      "categories": ["Postres"],
-      "price": 8.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1635004774/15ec3d4e6ec95e19d18dfaa0886c4580_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Nuts", "Soy"]
-    },
-    {
-      "id": "product-510716498",
-      "title": "Caribeña",
-      "description": "Nata y crema de coco, Piña, Nutella, Sirope de chocolate",
-      "categories": ["Postres"],
-      "price": 8.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1722251864/707a2897ac25e91ffe851d8434ab9f9e_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Nuts", "Soy"]
-    },
-    {
-      "id": "product-323727783",
-      "title": "Bounty",
-      "description": "Nata y crema de coco, Coco rallado, Nutella, Sirope de chocolate",
-      "categories": ["Postres"],
-      "price": 8.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/2080358829/e7c1b10467d2f5b8537c7a38bb6f44eb_lg.jpg",
-      "allergens": ["Gluten", "Milk", "Nuts", "Soy"]
-    },
-    {
-      "id": "product-374908687",
-      "title": "Gariguette",
-      "description": "Nata, Mozzarella, Taquitos de panceta, Queso de cabra, Champiñones frescos con perejil y ajo, Lascas de Grana, Aceitunas",
-      "categories": ["Pizzas con Embutidos"],
-      "price": 12.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1218850122/fe0ec9465826af86e1517913687c3127_lg.jpeg",
-      "allergens": ["Gluten", "Milk", "Sulphites"]
-    },
-    {
-      "id": "product-1495828860",
-      "title": "Piperrada",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Pimientos, Cebolla, Huevo, Pimiento de Espelette, Aceitunas",
-      "categories": ["Vegetarianas"],
-      "price": 11.9,
-      "discount": 0,
-      "image": "https://cdn.reflowhq.com/media/702608174/1322866220/690be3f2fc30cb868b5da5735222b2d2_lg.jpg",
-      "allergens": ["Vegetarian", "Gluten", "Milk", "Eggs"]
-    },
-    {
       "id": "product-1510173889",
       "title": "Brooklyn",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Pollo, Cheddar, Huevo, Aceitunas",
-      "categories": ["Amantes de la Carne"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Pollo, Cheddar, Huevo, Aceitunas",
+      "categories": ["Las de Carne"],
       "price": 13.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1127234993/c1b9d47f045f98fc732b5599cb6936e2_lg.jpg",
@@ -463,12 +323,152 @@
     {
       "id": "product-1599746646",
       "title": "Espelette",
-      "description": "Salsa de tomate, Mozzarella Fior di Latte, Pollo, Pimientos, Cebolla, Pimiento de Espelette, Aceitunas",
-      "categories": ["Amantes de la Carne"],
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Pollo, Pimientos, Cebollas, Pimiento de Espelette, Aceitunas",
+      "categories": ["Las de Carne"],
       "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1141408518/ecda36dc52ae974351af651f2cdea67c_lg.jpg",
       "allergens": ["Gluten", "Milk"]
+    },
+    {
+      "id": "product-2018191678",
+      "title": "4 Estaciones",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Champiñones Frescos, Corazón de Alcachofa, Tomates Cherry, Aceitunas",
+      "categories": ["Las Vegetarianas"],
+      "price": 11.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1090500900/f3ade2ea48caa1dce85201cc18e6f550_lg.jpg",
+      "allergens": ["Vegetarian", "Gluten", "Milk"]
+    },
+    {
+      "id": "product-2091093123",
+      "title": "Provenzal",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Calabacines y Berenjenas marinadas, Cebollas, Pesto, Aceitunas",
+      "categories": ["Las Vegetarianas"],
+      "price": 12.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1171659913/3472e30976a729b4e014831575f6703b_lg.jpg",
+      "allergens": ["Vegetarian", "Gluten", "Milk", "Nuts"]
+    },
+    {
+      "id": "product-1912230416",
+      "title": "Mediterránea",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Queso de Cabra, Tom. Cherry, Calabacines marinados, Aceitunas",
+      "categories": ["Las Vegetarianas"],
+      "price": 12.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1177477662/5a7ade3c046ae6893630b30d1124bd55_lg.jpg",
+      "allergens": ["Vegetarian", "Gluten", "Milk"]
+    },
+    {
+      "id": "product-1495828860",
+      "title": "Piperrada",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Pimientos, Cebollas, Huevo, Pimiento de Espelette, Aceitunas",
+      "categories": ["Las Vegetarianas"],
+      "price": 11.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1322866220/690be3f2fc30cb868b5da5735222b2d2_lg.jpg",
+      "allergens": ["Vegetarian", "Gluten", "Milk", "Eggs"]
+    },
+    {
+      "id": "product-1926576229",
+      "title": "La Dauphinoise",
+      "description": "Base de Nata con Ajo y Finas Hierbas, Mozza Fior di Latte, Ravioles del Dauphiné, Panceta, Virutas de Parmesano, Aceitunas",
+      "categories": ["Las de Autor"],
+      "price": 15.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1527335011/8f12f34014814995837a4ae40924ba47_lg.jpg",
+      "allergens": ["Gluten", "Milk", "Eggs"]
+    },
+    {
+      "id": "product-1999478730",
+      "title": "La Parma",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón de Parma, Stracciatella di Burrata, Rúcula, Virutas de Parmesano",
+      "categories": ["Las de Autor"],
+      "price": 16.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1549807600/07453f1200ccb8b5d35401a3ede1a282_lg.jpg",
+      "allergens": ["Gluten", "Milk"]
+    },
+    {
+      "id": "product-134505823",
+      "title": "La Darius",
+      "description": "Salsa de Tomate, Mozza, Coppa Italiana, Tomates Cherry, Stracciatella di Burrata, Rúcula, Parmesano, Vinagre Balsámico",
+      "categories": ["Las de Autor"],
+      "price": 17.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1354298693/2280bc6f41f2d0f51ab7484630a82dcd_lg.jpg",
+      "allergens": ["Gluten", "Milk"]
+    },
+    {
+      "id": "product-224184492",
+      "title": "Al Tartufo",
+      "description": "Nata de Trufa, Mozza, Finas lonchas de Jamón cocido, Burrata, Rúcula, Parmesano, Aceite de Oliva de Trufa",
+      "categories": ["Las de Autor"],
+      "price": 17.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1435719850/7b6ccd51339ef2cf1af5f32e3c859c95_lg.jpg",
+      "allergens": ["Gluten", "Milk"]
+    },
+    {
+      "id": "product-28814897",
+      "title": "Classico",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón Cocido, Champiñones Frescos, Huevo",
+      "categories": ["Los Calzones"],
+      "price": 11.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1458191935/20032a3fe2039eee0d550dca49c277e5_lg.jpg",
+      "allergens": ["Gluten", "Milk", "Eggs"]
+    },
+    {
+      "id": "product-42890630",
+      "title": "Iberico",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón Cocido, Chorizo, Champiñones Frescos, Huevo",
+      "categories": ["Los Calzones"],
+      "price": 12.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1807910284/a966702eae7ab882665eea850c3ee7a2_lg.jpg",
+      "allergens": ["Gluten", "Milk", "Eggs"]
+    },
+    {
+      "id": "product-132570091",
+      "title": "Perfetta",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Emmental, Queso de Cabra, Queso Azul, Jamón Cocido, Huevo",
+      "categories": ["Los Calzones"],
+      "price": 13.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1813867281/989e7b611ea6c8639ef768fde5a74d7e_lg.jpg",
+      "allergens": ["Gluten", "Milk", "Eggs"]
+    },
+    {
+      "id": "product-415342968",
+      "title": "Nutella - Plátano",
+      "description": "Nata dulce, Plátano en Rodajas, Nutella, Salsa de Chocolate",
+      "categories": ["Los Postres"],
+      "price": 8.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1635004774/15ec3d4e6ec95e19d18dfaa0886c4580_lg.jpg",
+      "allergens": ["Gluten", "Milk", "Nuts", "Soy"]
+    },
+    {
+      "id": "product-510716498",
+      "title": "Caribe",
+      "description": "Nata y Crema de Coco, Piña, Nutella, Salsa de Chocolate",
+      "categories": ["Los Postres"],
+      "price": 8.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/1722251864/707a2897ac25e91ffe851d8434ab9f9e_lg.jpg",
+      "allergens": ["Gluten", "Milk", "Nuts", "Soy"]
+    },
+    {
+      "id": "product-323727783",
+      "title": "Bounty",
+      "description": "Nata y Crema de Coco, Coco Rallado, Nutella, Salsa de Chocolate",
+      "categories": ["Los Postres"],
+      "price": 8.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/2080358829/e7c1b10467d2f5b8537c7a38bb6f44eb_lg.jpg",
+      "allergens": ["Gluten", "Milk", "Nuts", "Soy"]
     }
   ]
 }

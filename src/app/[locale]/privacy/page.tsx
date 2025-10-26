@@ -263,10 +263,13 @@ export default function PrivacyPage() {
               <ul className='space-y-2'>
                 {t
                   .raw('userRights.rights')
-                  .map((right: string, index: number) => (
+                  .map((right: {title: string, description: string}, index: number) => (
                     <li key={index} className='flex items-start gap-3'>
                       <div className='w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0'></div>
-                      <span className='text-muted-foreground'>{right}</span>
+                      <div className='text-muted-foreground'>
+                        <div className='font-medium'>{right.title}</div>
+                        <div className='text-sm'>{right.description}</div>
+                      </div>
                     </li>
                   ))}
               </ul>

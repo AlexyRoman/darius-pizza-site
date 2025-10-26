@@ -2,9 +2,7 @@
   "openingHours": {
     "monday": {
       "day": "monday",
-      "periods": [
-        { "open": "18:00", "close": "21:30" }
-      ],
+      "periods": [{ "open": "18:00", "close": "21:30" }],
       "isOpen": false
     },
     "tuesday": {

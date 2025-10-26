@@ -249,7 +249,7 @@
       "conclusion": "Im Jahr 2020 begann ein neues Kapitel. Die Leidenschaft für Gastronomie und außergewöhnliche Produkte verwandelte den Hackklotz in einen Holzofen. Maison Darius wurde zu Darius Pizza.\n\nDie Kulisse hat sich geändert, aber die Seele ist intakt. Wir haben das Erbe der Metzgerei bewahrt: die Liebe zum frischen Produkt, den Respekt vor handwerklichem Können und eine Besessenheit für den Geschmack. Diesen Anspruch, den wir an unser Fleisch stellten, wenden wir heute auf jede einzelne Zutat an, aus der unsere Pizzen bestehen.",
       "image1": {
         "alt": "Ladenfront Darius Pizza seit 2020",
-          "src": "/static/pizza-storefront.JPG"
+        "src": "/static/pizza-storefront.webp"
       },
       "image2": {
         "alt": "Ladenfront Metzgerei Darius vor 2020",
@@ -265,7 +265,7 @@
         "content": "Alles beginnt mit einer kontrollierten Hydratation und einem langsamen Kneten. Wir kontrollieren die Temperatur unseres Teigs in jedem Moment, um ihn nicht zu \"stressen\". Diese Phase, die Stockgare (erste Gärung), ermöglicht die Entwicklung des anfänglichen Glutennetzwerks, das dem Teig seine Struktur gibt, während die Aromen unseres Mehls erhalten bleiben.",
         "image": {
           "alt": "Teigkugel nach dem Kneten",
-          "src": "/static/dough-ball-after-kneading.JPG"
+          "src": "/static/dough-ball-after-kneading.webp"
         }
       },
       "card2": {
@@ -274,7 +274,7 @@
         "content": "Hier geschieht die Magie. Unsere Teiglinge ruhen mindestens 48 Stunden kontrolliert gekühlt. Während dieser langen Reifung bauen die natürlichen Enzyme der Hefe das Glutennetzwerk ab. Die komplexen Proteinketten werden \"vorverdaut\".\n\nDas Ergebnis für Sie? Ein unglaublich leichter, luftiger und leicht verdaulicher Teig. Kein Völlegefühl mehr nach dem Essen.",
         "image": {
           "alt": "Teiglinge bei der kalten Reifung",
-          "src": "/static/dough-balls-cold-maturing.jpg"
+          "src": "/static/dough-balls-cold-maturing.webp"
         }
       },
       "card3": {
@@ -296,7 +296,7 @@
         "content": "Die Grundlage unseres Teigs ist unser Mehl. Wir haben uns für Moulin Céard entschieden, eine Familienmühle in den Hautes-Alpes, deren Know-how seit 1820 weitergegeben wird.\n\nSie wählen regionale Weizensorten aus, oft Label Rouge, um ein charaktervolles Mehl ohne Zusatzstoffe herzustellen. Diese Wahl verleiht unserem Teig seinen rustikalen Geschmack und seine einzigartige Fähigkeit, sich während der 48-stündigen Reifung zu entfalten. Das ist unser Bekenntnis zu Terroir und Rückverfolgbarkeit.",
         "image": {
           "alt": "Mehl von Moulin Céard aus den Hautes-Alpes",
-          "src": "/static/moulin-ceard-flour.jpg"
+          "src": "/static/moulin-ceard-flour.webp"
         }
       },
       "card2": {

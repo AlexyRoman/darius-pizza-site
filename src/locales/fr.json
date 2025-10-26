@@ -249,7 +249,7 @@
       "conclusion": "En 2020, un nouveau chapitre s'est ouvert. La passion pour la gastronomie et les produits d'exception a transformé le billot en four à bois. La Maison Darius est devenue le Darius Pizza.\n\nLe décor a changé, mais l'âme est intacte. Nous avons conservé l'héritage de la boucherie : l'amour du produit frais, le respect du savoir-faire artisanal et une obsession pour le goût. Cette exigence que nous appliquions à nos viandes, nous l'appliquons aujourd'hui à chaque ingrédient qui compose nos pizzas.",
       "image1": {
         "alt": "Devanture Darius Pizza depuis 2020",
-          "src": "/static/pizza-storefront.JPG"
+        "src": "/static/pizza-storefront.webp"
       },
       "image2": {
         "alt": "Devanture Boucherie Darius avant 2020",
@@ -265,7 +265,7 @@
         "content": "Tout commence par une hydratation maîtrisée et un pétrissage lent. Nous contrôlons la température de notre pâte à chaque instant pour ne pas la \"stresser\". Cette étape, le pointage, permet de développer le réseau de gluten initial qui donnera sa structure à la pâte, tout en préservant les arômes de notre farine.",
         "image": {
           "alt": "Boule de pâte après pétrissage",
-          "src": "/static/dough-ball-after-kneading.JPG"
+          "src": "/static/dough-ball-after-kneading.webp"
         }
       },
       "card2": {
@@ -274,7 +274,7 @@
         "content": "C'est ici que la magie opère. Nos pâtons reposent au froid à température contrôlée pendant minimum 48 heures. Durant cette longue maturation, les enzymes naturelles de la levure dégradent le réseau de gluten. Les chaînes de protéines complexes sont \"pré-digérées\".\n\nLe résultat pour vous ? Une pâte incroyablement légère, alvéolée et facile à digérer. Fini l'effet de lourdeur après le repas.",
         "image": {
           "alt": "Pâtons en maturation au froid",
-          "src": "/static/dough-balls-cold-maturing.jpg"
+          "src": "/static/dough-balls-cold-maturing.webp"
         }
       },
       "card3": {
@@ -296,7 +296,7 @@
         "content": "La base de notre pâte, c'est notre farine. Nous avons choisi le Moulin Céard, un moulin familial des Hautes-Alpes au savoir-faire transmis depuis 1820.\n\nIls sélectionnent des blés régionaux, souvent Label Rouge, pour produire une farine de caractère, sans additifs. C'est ce choix qui donne à notre pâte sa saveur rustique et sa capacité unique à s'épanouir durant les 48h de maturation. C'est notre engagement pour le terroir et la traçabilité.",
         "image": {
           "alt": "Farine Moulin Céard des Hautes-Alpes",
-          "src": "/static/moulin-ceard-flour.jpg"
+          "src": "/static/moulin-ceard-flour.webp"
         }
       },
       "card2": {

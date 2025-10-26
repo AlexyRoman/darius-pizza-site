@@ -249,7 +249,7 @@
       "conclusion": "In 2020, a new chapter began. The passion for gastronomy and exceptional products transformed the butcher's block into a wood-fired oven. Maison Darius became Darius Pizza.\n\nThe setting has changed, but the soul remains intact. We have preserved the heritage of the butchery: a love for fresh produce, respect for artisanal craftsmanship, and an obsession with taste. The same high standards we applied to our meats, we now apply to every ingredient that makes up our pizzas.",
       "image1": {
         "alt": "Darius Pizza storefront since 2020",
-          "src": "/static/pizza-storefront.JPG"
+          "src": "/static/pizza-storefront.webp"
       },
       "image2": {
         "alt": "Darius Butchery storefront before 2020",
@@ -265,7 +265,7 @@
         "content": "It all starts with controlled hydration and slow kneading. We control our dough's temperature at every moment to avoid \"stressing\" it. This stage, bulk fermentation, allows the initial gluten network to develop, giving the dough its structure while preserving the aromas of our flour.",
         "image": {
           "alt": "Dough ball after kneading",
-          "src": "/static/dough-ball-after-kneading.JPG"
+          "src": "/static/dough-ball-after-kneading.webp"
         }
       },
       "card2": {
@@ -274,7 +274,7 @@
         "content": "This is where the magic happens. Our dough balls rest in a temperature-controlled cold environment for a minimum of 48 hours. During this long maturation, the natural enzymes from the yeast break down the gluten network. The complex protein chains are \"pre-digested.\"\n\nThe result for you? An incredibly light, airy, and easy-to-digest dough. No more heavy feeling after your meal.",
         "image": {
           "alt": "Dough balls cold-maturing",
-          "src": "/static/dough-balls-cold-maturing.jpg"
+          "src": "/static/dough-balls-cold-maturing.webp"
         }
       },
       "card3": {
@@ -296,7 +296,7 @@
         "content": "The foundation of our dough is our flour. We chose Moulin Céard, a family mill in the Hautes-Alpes with expertise passed down since 1820.\n\nThey select regional wheats, often Label Rouge, to produce a flour with character, free of additives. It's this choice that gives our dough its rustic flavor and unique ability to flourish during its 48-hour maturation. This is our commitment to terroir and traceability.",
         "image": {
           "alt": "Moulin Céard flour from the Hautes-Alpes",
-          "src": "/static/moulin-ceard-flour.jpg"
+          "src": "/static/moulin-ceard-flour.webp"
         }
       },
       "card2": {

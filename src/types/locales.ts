@@ -20,7 +20,7 @@ export interface LocalesConfig {
   settings: LocaleSettings;
 }
 
-export type LocaleCode = 'en' | 'fr' | 'de' | 'it' | 'es';
+export type LocaleCode = 'en' | 'fr' | 'de' | 'it' | 'es' | 'nl';
 
 export interface LocaleValidationResult {
   isValid: boolean;

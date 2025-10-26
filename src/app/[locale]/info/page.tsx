@@ -17,7 +17,6 @@ import {
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import ContactFormSection from '@/components/sections/ContactFormSection';
-import InstagramFeed from '@/components/sections/InstagramFeed';
 import {
   Comparison,
   ComparisonItem,

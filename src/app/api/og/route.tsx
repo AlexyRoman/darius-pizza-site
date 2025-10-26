@@ -90,9 +90,9 @@ export async function GET(request: NextRequest) {
       ),
       { width: 1200, height: 630 }
     );
-  } catch (e: unknown) {
-    const error = e as Error;
-    console.log(`${error.message}`);
+  } catch (e) {
+    const errorMessage = e instanceof Error ? e.message : 'Unknown error';
+    console.log(errorMessage);
     return new Response(`Failed to generate the image`, { status: 500 });
   }
 }

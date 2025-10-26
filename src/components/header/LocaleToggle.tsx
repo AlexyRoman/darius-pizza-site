@@ -23,6 +23,8 @@ function codeToCountry(code: string): string {
       return 'EN-CUSTOM';
     case 'fr':
       return 'FR';
+    case 'nl':
+      return 'NL';
     default:
       return code.toUpperCase();
   }

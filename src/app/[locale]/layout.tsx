@@ -12,7 +12,7 @@ import PageTracker from '@/components/analytics/PageTracker';
 import AnalyticsDebug from '@/components/analytics/AnalyticsDebug';
 
 import type { Metadata } from 'next';
-import { generateLocalizedMetadata, generateViewport } from '@/lib/metadata';
+import { generateLocalizedMetadata } from '@/lib/metadata';
 
 async function getMessages(locale: string) {
   try {

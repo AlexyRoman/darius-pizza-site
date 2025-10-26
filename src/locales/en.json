@@ -4,26 +4,26 @@
     "home": "Home",
     "menu": "Menu",
     "info": "Info",
-    "call": "Call"
+    "call": "Order"
   },
   "callDialog": {
-    "title": "Restaurant Closed",
-    "description": "The pizzeria is currently not open and your call may not be handled. Would you like to call anyway or try again later?",
+    "title": "Pizzeria Closed",
+    "description": "The pizzeria is currently closed and your call may not be answered. Would you like to call anyway or try again later?",
     "callLater": "Call Later",
     "callNow": "Call Now"
   },
   "seo": {
     "siteName": "Darius Pizza",
     "title": "Darius Pizza - Authentic Italian Pizza",
-    "description": "Experience the authentic taste of Italy with our handcrafted pizzas made with fresh ingredients and traditional recipes. Visit our pizzeria for the finest Italian cuisine.",
-    "imageAlt": "Delicious authentic Italian pizza from Darius Pizza restaurant",
-    "keywords": "Italian pizza, authentic pizza, restaurant, pizzeria, traditional recipes, fresh ingredients, Italy, cuisine",
+    "description": "Discover the authentic taste of Italy with our artisanal pizzas made with fresh ingredients and traditional recipes. Visit our pizzeria for the best Italian cuisine.",
+    "imageAlt": "Delicious authentic Italian pizza from Darius Pizza",
+    "keywords": "italian pizza, authentic pizza, takeaway, pizzeria, traditional recipes, fresh ingredients, Italy, cuisine",
     "menu": {
       "title": "Menu - Darius Pizza",
-      "description": "Discover our authentic Italian pizza menu featuring traditional recipes and fresh ingredients. From classic Margherita to specialty pizzas."
+      "description": "Explore our menu of authentic Italian pizzas with traditional recipes and fresh ingredients. From classic Margherita to specialty pizzas."
     },
     "info": {
-      "title": "Restaurant Info - Darius Pizza",
+      "title": "Restaurant Information - Darius Pizza",
       "description": "Visit Darius Pizza for authentic Italian cuisine. Find our location, opening hours, and contact information."
     }
   },
@@ -33,14 +33,14 @@
       "social": "Social",
       "explore": "Explore"
     },
-    "brandSubtitle": "Authentic Italian pizza made with love, tradition, and the finest ingredients. Experience the taste of Italy in every bite.",
+    "brandSubtitle": "Authentic pizza made with love, tradition, and the best ingredients. Discover the taste of Italy in every bite.",
     "rightsReserved": "Darius Pizza. All rights reserved.",
-    "designedByPrefix": "Crafted by",
+    "designedByPrefix": "Designed by",
     "designedByName": "WebOustaou - Alexy Roman",
     "legal": {
       "privacy": "Privacy",
       "terms": "Terms",
-      "imprint": "Legal Mentions"
+      "imprint": "Legal Notice"
     },
     "social": {
       "googleMaps": "Google Maps",
@@ -57,7 +57,7 @@
     "filters": {
       "allCategories": "All categories",
       "searchCategories": "Search categories...",
-      "noCategoryFound": "No category found.",
+      "noCategoryFound": "No categories found.",
       "reset": "Reset"
     },
     "cta": {
@@ -82,25 +82,25 @@
     "molluscs": "Molluscs"
   },
   "notFound": {
-    "title": "Oops! Pizza Lost!",
-    "message": "Sometimes a pizza can lose itself! Don't worry, let's get you back to our delicious menu.",
+    "title": "Oops! Lost Pizza!",
+    "message": "Sometimes a pizza can get lost! Don't worry, we'll get you back to our delicious menu.",
     "backHome": "Back to Home"
   },
   "info": {
     "title": "Contact & Information",
-    "subtitle": "Get in touch with us",
+    "subtitle": "Get in Touch",
     "contactBanner": {
-      "title": "Get In Touch",
-      "description": "Have a question, feedback, or want to make a reservation? We'd love to hear from you. Choose how you'd like to contact us.",
-      "emailButton": "Email Us Directly",
-      "formButton": "Use Contact Form",
+      "title": "Contact Us",
+      "description": "Have a question or feedback? We'd love to hear from you. Choose how to get in touch.",
+      "emailButton": "Send an Email",
+      "formButton": "Use the Contact Form",
       "quickInfo": "Email: contact@dariuspizza.fr • Phone: (+33) 04.94.64.05.11"
     },
     "contactForm": {
       "emailBanner": {
-        "title": "Email Us Directly",
+        "title": "Send Us an Email",
         "description": "Prefer to send an email directly? We're here to help!",
-        "emailAddress": "info@dariuspizza.com"
+        "emailAddress": "contact@dariuspizza.com"
       },
       "form": {
         "title": "Send Us a Message",
@@ -112,7 +112,7 @@
           },
           "email": {
             "label": "Email Address",
-            "placeholder": "your@email.com"
+            "placeholder": "you@example.com"
           },
           "phone": {
             "label": "Phone Number",
@@ -121,14 +121,14 @@
           },
           "subject": {
             "label": "Subject",
-            "placeholder": "What's this about?"
+            "placeholder": "What is this about?"
           },
           "inquiryType": {
-            "label": "Type of Inquiry",
+            "label": "Inquiry Type",
             "placeholder": "Select inquiry type",
             "options": {
               "general": "General Question",
-              "catering": "Catering Inquiry",
+              "catering": "Catering Request",
               "feedback": "Feedback",
               "complaint": "Complaint",
               "compliment": "Compliment",
@@ -138,13 +138,13 @@
           },
           "message": {
             "label": "Message",
-            "placeholder": "Tell us more about your inquiry...",
+            "placeholder": "Tell us about your inquiry...",
             "description": "Please provide as much detail as possible to help us assist you better."
           },
           "preferredContact": {
             "label": "Preferred Contact Method",
             "placeholder": "How should we contact you?",
-            "description": "We'll use this method to respond to your inquiry.",
+            "description": "We will use this method to respond to your inquiry.",
             "options": {
               "email": "Email",
               "phone": "Phone Call",
@@ -156,46 +156,46 @@
           "sending": "Sending...",
           "sendMessage": "Send Message"
         },
-        "successMessage": "Thank you for your message! We'll get back to you soon."
+        "successMessage": "Thank you for your message! We will get back to you soon."
       }
     }
   },
   "hero": {
     "badge": {
-      "currentlyClosed": "Currently Closed",
-      "openNow": "Open Now",
-      "openingIn": "Opening in {minutes} min{plural}",
+      "currentlyClosed": "Currently closed",
+      "openNow": "Open now",
+      "openingIn": "Opens in {minutes} min{plural}",
       "closed": "Closed",
-      "closedOpenToday": "Open at {time} today",
-      "closedOpenTomorrow": "Open at {time} tomorrow"
+      "closedOpenToday": "Opens at {time} today",
+      "closedOpenTomorrow": "Opens at {time} tomorrow"
     },
     "heading": {
-      "mainTitle": "Le Darius Pizza",
-      "subtitle": "Takeaway pizzeria in Cavalaire-sur-mer"
+      "mainTitle": "Darius Pizza",
+      "subtitle": "Takeaway Pizzeria in Cavalaire-sur-mer"
     },
-    "description": "Le Darius Pizza is proud to present the traditions of Italy with the flavors of our country.",
+    "description": "Darius Pizza is proud to present the traditions of Italy combined with the flavors of our country.",
     "features": {
-      "freshDaily": "Prepared before your eyes",
-      "localIngredients": "Local Ingredients",
-      "fiveStarRated": "Highest-rated pizzeria in Cavalaire"
+      "freshDaily": "Made fresh before your eyes",
+      "localIngredients": "Local ingredients",
+      "fiveStarRated": "Top-rated pizzeria in Cavalaire"
     },
     "cta": {
-      "viewMenu": "View Our Menu",
-      "orderNow": "Order by Phone"
+      "viewMenu": "View our menu",
+      "orderNow": "Order by phone"
     },
     "stats": {
-      "yearsExperience": "Years of Experience",
-      "pizzaVarieties": "Pizza Varieties",
+      "yearsExperience": "Years of experience",
+      "pizzaVarieties": "Pizza varieties",
       "happyCustomers": "On Tripadvisor and Google"
     },
     "stickers": {
-      "freshDaily": "Prepared with fresh ingredients",
+      "freshDaily": "Made with fresh ingredients",
       "handmade": "Homemade matured dough"
     }
   },
   "hours": {
     "visitTitle": "Find us at our pizzeria",
-    "visitSubtitle": "Discover a family-owned and authentic pizzeria in a warm and welcoming atmosphere. We serve you with passion and tradition.",
+    "visitSubtitle": "Discover an authentic, family-run pizzeria with a warm and welcoming atmosphere. We serve you with passion and tradition.",
     "days": {
       "monday": "Monday",
       "tuesday": "Tuesday",
@@ -214,105 +214,107 @@
       "address": "Address",
       "phone": "Phone",
       "callNow": "Call Now",
-      "directions": "Directions",
+      "directions": "Get Directions",
       "ourLocation": "Our Location"
     },
     "badge": {
       "currentlyClosed": "Currently Closed",
       "openUntil": "Open until {time}",
-      "openingAt": "Opening at {time}",
+      "openingAt": "Opens at {time}",
       "closed": "Closed",
-      "closedOpenToday": "Open at {time} today",
-      "closedOpenTomorrow": "Open at {time} tomorrow",
+      "closedOpenToday": "Opens at {time} today",
+      "closedOpenTomorrow": "Opens at {time} tomorrow",
       "temporarilyClosedNote": "Temporarily closed - see banner above",
       "checkHoursBelow": "See hours below"
     },
-    "upcomingClosings": "Upcoming Closings",
+    "upcomingClosings": "Upcoming Closures",
     "importantUpdates": "Important Updates"
   },
   "menuTeaser": {
-    "featuredThisMonth": "Featured This Month",
+    "featuredThisMonth": "Featured this month",
     "featuredBadge": "Featured",
-    "description": "Discover the chef's selection of iconic pizzas, prepared with exceptional ingredients and our homemade matured dough.",
-    "hungryTitle": "Hungry for more pizza?",
-    "hungryDescription": "Browse our full menu with over 45 delicious pizzas, calzones, and desserts.",
-    "viewFullMenu": "View Full Menu"
+    "description": "Discover the chef's selection of iconic pizzas, made with exceptional ingredients and our homemade matured dough.",
+    "hungryTitle": "Craving more pizza?",
+    "hungryDescription": "Browse our full menu with over 45 pizzas, calzones, and delicious desserts.",
+    "viewFullMenu": "View full menu"
   },
   "aboutUs": {
     "hero": {
-      "title": "Our Expertise",
-      "subtitle": "Discover the story of our authentic Italian pizzeria, where tradition meets passion and every pizza tells a story of family heritage and culinary excellence."
+      "title": "Our Craft",
+      "subtitle": "Discover the story of our authentic pizzeria, where tradition meets passion and every pizza tells a story of family heritage and culinary excellence."
     },
     "section1": {
-      "title": "From Butcher's Counter to Wood Fire",
-      "intro": "Our story doesn't begin with flour, but with the knife. Before becoming Darius Pizza, our house was an essential address in Cavalaire, founded in 1936. From 1966, it became \"Maison Darius\", a family butcher shop renowned for its rigor, expertise and uncompromising quality of its products.",
-      "conclusion": "In 2020, a new chapter opened. The passion for Italian gastronomy and exceptional products transformed the counter into a wood-fired oven. Maison Darius became Darius Pizza.\n\nThe decor has changed, but the soul remains intact. We have preserved the butcher shop's heritage: love for fresh products, respect for artisanal know-how and an obsession with taste. This rigor that we applied to our meats, we now apply to every ingredient that makes up our pizzas.",
+      "title": "From the Butcher's Block to the Pizza Oven",
+      "intro": "Our story doesn't begin with flour, but with the knife. Before becoming a pizzeria, our establishment was a landmark in Cavalaire, founded in 1936. In 1966, it became \"Maison Darius,\" a family butchery rooted in the Cavalaire landscape, blending craftsmanship with an uncompromising quality of products.",
+      "conclusion": "In 2020, a new chapter began. The passion for gastronomy and exceptional products transformed the butcher's block into a wood-fired oven. Maison Darius became Darius Pizza.\n\nThe setting has changed, but the soul remains intact. We have preserved the heritage of the butchery: a love for fresh produce, respect for artisanal craftsmanship, and an obsession with taste. The same high standards we applied to our meats, we now apply to every ingredient that makes up our pizzas.",
       "image1": {
-        "alt": "Darius Pizza frontage since 2020"
+        "alt": "Darius Pizza storefront since 2020",
+        "src": "/static/IMG_3109.JPG"
       },
       "image2": {
-        "alt": "Darius Butcher frontage before 2020"
+        "alt": "Darius Butchery storefront before 2020",
+        "src": "/static/about-kitchen.webp"
       }
     },
     "section2": {
-      "title": "The Secret of an Unrivaled Dough",
-      "intro": "An exceptional pizza rests on exceptional dough. At Darius Pizza, we leave nothing to chance. Our protocol is a precise balance between science and patience, designed for one goal: to offer you a light, aromatic and perfectly digestible dough.",
+      "title": "The Secret to an Inimitable Dough",
+      "intro": "An exceptional pizza relies on an exceptional dough. At Darius Pizza, we leave nothing to chance. Our process is a precise balance of science and patience, designed for one goal: to offer you a light, aromatic, and perfectly digestible dough.",
       "card1": {
-        "title": "Kneading and Proofing",
+        "title": "Kneading and Bulk Fermentation",
         "step": "Step 1: Precision Kneading",
-        "content": "It all starts with controlled hydration and slow kneading. We monitor the temperature of our dough at every moment so as not to \"stress\" it. This step, the proofing, allows the initial gluten network to develop which will give structure to the dough, while preserving the aromas of our flour.",
+        "content": "It all starts with controlled hydration and slow kneading. We control our dough's temperature at every moment to avoid \"stressing\" it. This stage, bulk fermentation, allows the initial gluten network to develop, giving the dough its structure while preserving the aromas of our flour.",
         "image": {
           "alt": "Dough ball after kneading",
-          "src": "/static/dough-kneading.webp"
+          "src": "/static/IMG_9357.JPG"
         }
       },
       "card2": {
         "title": "Cold Maturation",
-        "step": "Step 2: Slow Maturation (+72h)",
-        "content": "This is where the magic happens. Our dough balls rest in the cold at controlled temperature (between 2°C and 4°C) for more than 72 hours. During this long maturation, natural enzymes (proteases) break down the gluten network. Complex protein chains are \"pre-digested\".\n\nThe result for you? Incredibly light, airy and easy-to-digest dough. No more heavy feeling after the meal.",
+        "step": "Step 2: Slow Maturation (48h+)",
+        "content": "This is where the magic happens. Our dough balls rest in a temperature-controlled cold environment for a minimum of 48 hours. During this long maturation, the natural enzymes from the yeast break down the gluten network. The complex protein chains are \"pre-digested.\"\n\nThe result for you? An incredibly light, airy, and easy-to-digest dough. No more heavy feeling after your meal.",
         "image": {
-          "alt": "Dough balls in cold maturation",
-          "src": "/static/dough-maturation.webp"
+          "alt": "Dough balls cold-maturing",
+          "src": "/static/IMG_8641.jpg"
         }
       },
       "card3": {
         "title": "The Maillard Reaction",
-        "step": "Step 3: The Revelation in the Oven",
-        "content": "During maturation, other enzymes (amylases) transform the complex starch of the flour into simple sugars. During high-temperature cooking, these sugars meet amino acids. This is the famous Maillard Reaction. It doesn't just cook: it caramelizes the dough, creates that golden and spotted crust (\"leopard\"), and releases an inimitable palette of grilled aromas.",
+        "step": "Step 3: The Oven's Reveal",
+        "content": "During maturation, other enzymes transform the complex starch from the flour into simple sugars. During high-temperature baking, these sugars meet amino acids. This is the famous Maillard Reaction. It doesn't just cook: it caramelizes the dough, creates that golden, leopard-spotted crust, and releases an inimitable palette of roasted aromas.",
         "image": {
           "alt": "Golden and airy pizza crust",
-          "src": "/static/pizza-crust.webp"
+          "src": "/static/hero-pizza.webp"
         }
       }
     },
     "section3": {
       "title": "Exceptional Products",
-      "intro": "Exceptional dough demands ingredients worthy of it. Our philosophy is simple: the best, or nothing. This requires rigorous sourcing, whether local, Italian, or from our own heritage.",
+      "intro": "An exceptional dough demands ingredients of the same caliber. Our philosophy is simple: the best, or nothing. This involves rigorous sourcing, whether local when possible, or from the best Italian suppliers.",
       "card1": {
         "title": "The Flour: Moulin Céard",
         "step": "The Character of the Alps: Moulin Céard",
-        "content": "The foundation of our dough is our flour. We have chosen Moulin Céard, a family mill in the Hautes-Alpes with expertise passed down since 1820.\n\nThey select regional wheats, often Label Rouge, to produce character flour, without additives. This choice gives our dough its rustic flavor and unique ability to flourish during the 72h maturation. This is our commitment to terroir and traceability.",
+        "content": "The foundation of our dough is our flour. We chose Moulin Céard, a family mill in the Hautes-Alpes with expertise passed down since 1820.\n\nThey select regional wheats, often Label Rouge, to produce a flour with character, free of additives. It's this choice that gives our dough its rustic flavor and unique ability to flourish during its 48-hour maturation. This is our commitment to terroir and traceability.",
         "image": {
-          "alt": "Moulin Céard flour from Hautes-Alpes",
-          "src": "/static/moulin-ceard.webp"
+          "alt": "Moulin Céard flour from the Hautes-Alpes",
+          "src": "/static/ceard.jpeg"
         }
       },
       "card2": {
         "title": "The Heritage: Our Charcuterie Expertise",
-        "step": "The Butcher's Rigor",
-        "content": "We haven't forgotten where we come from. The heritage of Maison Darius is our intransigence on the quality of meats and charcuterie.\n\nWe select our products with the eye and rigor of the butcher: superior white ham, artisanal coppa, fresh meats... This expertise is the guarantee of finding on our pizzas tasty, rich-flavored products that you won't find anywhere else.",
+        "step": "The Butcher's Standard",
+        "content": "We haven't forgotten where we come from. The legacy of Maison Darius is our unwavering standard for the quality of meats and charcuterie.\n\nWe select our products with the eye and standards of a butcher: superior cooked ham, artisanal coppa, Parma ham... This expertise is your guarantee of finding flavorful, rich-tasting products on our pizzas that you won't find anywhere else.",
         "image": {
           "alt": "Quality charcuterie and meats",
-          "src": "/static/charcuterie-quality.webp"
+          "src": "/static/charcuterie.webp"
         }
       },
       "card3": {
-        "title": "The Origin: Italian AOP Sourcing",
+        "title": "The Origin: Italian PDO Products",
         "step": "The Heart of Italy",
-        "content": "A pizza is a marriage between local and authenticity. For the pillar ingredients of Italian gastronomy, we source directly from the best.\n\nOur tomatoes? San Marzano AOP, sun-drenched at the foot of Vesuvius. Our Mozzarella? Melting fior di latte or genuine Bufala Campana AOP from buffalo milk. Extra virgin olive oil, 24-month Parmigiano Reggiano... We import the sun of Italy.",
+        "content": "A pizza is a marriage of local and authentic. For the pillar ingredients of Italian gastronomy, we source directly from the best.\n\nOur tomatoes? San Marzano PDO, sun-ripened at the foot of Vesuvius. Our Mozzarella? Creamy fior di latte or true Bufala Campana PDO made from buffalo milk. Extra-virgin olive oil, 24-month Parmigiano Reggiano... We import the Italian sun.",
         "image": {
-          "alt": "Authentic Italian AOP products",
-          "src": "/static/italian-products.webp"
+          "alt": "Authentic Italian PDO products",
+          "src": "/static/ital.webp"
         }
       }
     },
@@ -320,39 +322,39 @@
       "title": "Contact & Reviews",
       "column1": {
         "title": "A question? A message?",
-        "subtitle": "We love to exchange with our customers. Feel free to share your questions, suggestions or comments with us."
+        "subtitle": "We love to connect with our customers. Don't hesitate to share your questions, suggestions, or feedback."
       },
       "column2": {
         "title": "Find Us & Leave a Review",
         "subtitle": "Find us in Cavalaire-sur-mer and share your experience with other authentic pizza lovers."
       },
       "tripadvisor": {
-        "comingSoon": "TripAdvisor integration coming soon",
-        "description": "TripAdvisor reviews and ratings will be integrated directly on our site soon."
+        "comingSoon": "TripAdvisor Integration Coming Soon",
+        "description": "TripAdvisor reviews and ratings will soon be integrated directly on our site."
       }
     },
     "section5": {
       "title": "Stay Connected",
-      "subtitle": "Follow our daily life and discover our creations in real time",
+      "subtitle": "Follow our daily life and discover our creations in real-time",
       "instagram": {
-        "title": "Our Daily Life in Images",
-        "description": "Discover our pizzas, our team and the atmosphere of our pizzeria through our Instagram photos.",
+        "title": "Our Daily Life in Pictures",
+        "description": "Discover our pizzas, our team, and the atmosphere of our pizzeria through our Instagram photos.",
         "followUs": "Follow us on Instagram",
         "handle": "@dariuspizza",
-        "comingSoon": "Instagram feed coming soon",
-        "comingSoonDescription": "Our Instagram feed will be integrated directly on our site soon."
+        "comingSoon": "Instagram Feed Coming Soon",
+        "comingSoonDescription": "Our Instagram feed will soon be integrated directly on our site."
       },
       "social": {
         "facebook": "Find us also on Facebook",
         "facebookUrl": "https://facebook.com/dariuspizza",
-        "comingSoon": "Facebook integration coming soon",
-        "comingSoonDescription": "Our Facebook content will be integrated directly on our site soon."
+        "comingSoon": "Facebook Integration Coming Soon",
+        "comingSoonDescription": "Our Facebook content will soon be integrated directly on our site."
       }
     },
     "story": {
       "title": "Our Heritage",
       "description1": "Founded in 1985 by Giuseppe Darius, our pizzeria began as a small family dream to bring authentic Italian flavors to our community. What started as a modest kitchen has grown into a beloved local institution, but our commitment to traditional recipes and family values remains unchanged.",
-      "description2": "Today, three generations of the Darius family continue to craft each pizza with the same passion and attention to detail that Giuseppe brought from his hometown in Naples, Italy.",
+      "description2": "Today, three generations of the Darius family continue to craft each pizza with the same passion and attention to detail that Giuseppe brought from his hometown of Naples, Italy.",
       "traditionalRecipes": "Traditional Recipes",
       "traditionalRecipesDesc": "Authentic Neapolitan techniques passed down through generations",
       "freshIngredients": "Fresh Ingredients",
@@ -364,11 +366,11 @@
       "subtitle": "The principles that guide everything we do, from ingredient selection to customer service.",
       "passion": {
         "title": "Passion",
-        "description": "Every pizza is made with genuine love for the craft and respect for Italian tradition."
+        "description": "Every pizza is made with a genuine love for the craft and respect for Italian tradition."
       },
       "community": {
         "title": "Community",
-        "description": "We're proud to be part of our local community, serving neighbors and friends for decades."
+        "description": "We are proud to be a part of our local community, serving our neighbors and friends for decades."
       },
       "quality": {
         "title": "Quality",
@@ -376,30 +378,30 @@
       }
     },
     "contact": {
-      "title": "Visit Us",
+      "title": "Come Visit Us",
       "subtitle": "We'd love to welcome you to our family restaurant and share our passion for authentic Italian pizza.",
       "location": "Location",
       "hours": "Hours",
       "contact": "Contact",
-      "address": "123 Main Street<br />Downtown District<br />City, State 12345",
+      "address": "123 Main Street<br />Downtown<br />City, State 12345",
       "schedule": "Mon-Thu: 11am-10pm<br />Fri-Sat: 11am-11pm<br />Sunday: 12pm-9pm",
       "phone": "(555) 123-4567<br />info@dariuspizza.com<br />Reservations welcome"
     },
     "cta": {
-      "learnMore": "Learn More About Us",
-      "viewMenu": "View Our Menu"
+      "learnMore": "Learn more about us",
+      "viewMenu": "View our menu"
     },
     "homeAbout": {
       "title": "Our Story",
-      "description": "Born from the heritage of the Boucherie Darius, our family and traditional establishment from 1936 to 2019, Darius Pizza continues a tradition of quality products and culinary craftsmanship. Each pizza is prepared with love, using quality ingredients and precise protocols to ensure a always perfect dough.",
-      "familyOwned": "Family Establishment",
-      "familyOwnedDesc": "Three generations of culinary craftsmanship",
-      "authentic": "Authentic",
+      "description": "Born from the legacy of the Darius Butchery, our family and traditional establishment from 1936 to 2019, Darius Pizza continues a tradition of quality products and culinary craftsmanship. Each pizza is prepared with love, using quality ingredients and precise protocols to ensure a perfect dough every time.",
+      "familyOwned": "Family-Owned",
+      "familyOwnedDesc": "Three generations of culinary expertise, from butchery to pizzeria and catering",
+      "authentic": "Authentic Products",
       "authenticDesc": "Local recipes and ingredients and imported Italian specialties",
-      "madeWithLove": "Prepared with Love",
-      "madeWithLoveDesc": "Each pizza prepared with passion and care",
+      "madeWithLove": "Made with Love",
+      "madeWithLoveDesc": "Every pizza prepared with passion and care",
       "contactUs": "Contact Us",
-      "since1985": "Darius House since 1936"
+      "since1985": "Maison Darius since 1936"
     }
   },
   "cookieConsent": {
@@ -411,8 +413,8 @@
       "necessary": {
         "title": "Necessary Cookies",
         "description": "Essential for website functionality",
-        "detailedDescription": "Essential for website functionality, security, and basic features. These cookies cannot be disabled.",
-        "status": "Always active"
+        "detailedDescription": "Essential for website operation, security, and core features. These cookies cannot be disabled.",
+        "status": "Always Active"
       },
       "analytics": {
         "title": "Analytics Cookies",
@@ -433,12 +435,12 @@
     "privacy": {
       "backToHome": "Back to Home",
       "title": "Privacy Policy",
-      "lastUpdated": "Last updated: January 1, 2024",
+      "lastUpdated": "Last updated: October 25, 2025",
       "preamble": {
         "title": "Article 1: PREAMBLE",
-        "content": "This privacy policy aims to inform users of the site about how their personal data is collected. Personal data is considered to be any information that allows a user to be identified. This may include: their first and last names, age, postal or email address, location, or IP address (non-exhaustive list).",
-        "rights": "This policy also informs users about the rights they have regarding this data, about the person responsible for processing the collected and processed personal data, about the recipients of this personal data, and about the site's cookie policy.",
-        "relatedDocuments": "This policy complements the Legal Mentions and the Cookie Policy accessible to users at the following addresses:",
+        "content": "This privacy policy aims to inform site users about how their personal data is collected. Personal data is considered any information that can identify a user. This may include: first and last names, age, postal or email address, location, or IP address (non-exhaustive list).",
+        "rights": "This policy also informs users of their rights regarding this data, the person responsible for processing the collected personal data, the recipients of this personal data, and the site's cookie policy.",
+        "relatedDocuments": "This policy supplements the Legal Notice and the Cookie Policy accessible to users at the following addresses:",
         "legalMentionsLink": "https://www.dariuspizza.fr/legal-mentions",
         "cookiesPolicyLink": "https://www.dariuspizza.fr/cookies"
       },
@@ -446,117 +448,244 @@
         "title": "Article 2: PRINCIPLES RELATING TO THE COLLECTION AND PROCESSING OF PERSONAL DATA",
         "content": "In accordance with Article 5 of European Regulation 2016/679, personal data are:",
         "principles": [
-          "Processed lawfully, fairly and transparently with regard to the data subject",
-          "Collected for specified, explicit and legitimate purposes and not further processed in a manner incompatible with those purposes",
+          "Processed lawfully, fairly and transparently in relation to the data subject",
+          "Collected for specified, explicit and legitimate purposes and not further processed in a manner that is incompatible with those purposes",
           "Adequate, relevant and limited to what is necessary in relation to the purposes for which they are processed",
           "Accurate and, where necessary, kept up to date",
-          "Kept in a form which permits identification of data subjects for no longer than is necessary for the purposes for which they are processed",
+          "Kept in a form which permits identification of data subjects for no longer than is necessary for the purposes for which the personal data are processed",
           "Processed in a manner that ensures appropriate security of the collected data"
         ],
-        "legalBasis": "Processing is lawful only if and to the extent that at least one of the following conditions is met:",
+        "legalBasis": "Processing is lawful if it meets at least one of the following conditions:",
         "legalBasisList": [
-          "The data subject has consented to the processing of their personal data for one or more specific purposes",
-          "Processing is necessary for the performance of a contract to which the data subject is party",
+          "The data subject has given consent to the processing of his or her personal data for one or more specific purposes",
+          "Processing is necessary for the performance of a contract to which the data subject is a party",
           "Processing is necessary for compliance with a legal obligation to which the controller is subject",
-          "Processing is necessary to protect the vital interests of the data subject or of another natural person",
+          "Processing is necessary in order to protect the vital interests of the data subject or of another natural person",
           "Processing is necessary for the performance of a task carried out in the public interest",
           "Processing is necessary for the purposes of the legitimate interests pursued by the controller"
         ]
       },
+      "dataController": {
+        "title": "1. Data Controller",
+        "content": "The data controller for personal data collected on the site https://www.dariuspizza.fr (hereinafter \"the Site\") is:",
+        "companyInfo": {
+          "name": "Darius Pizza",
+          "legalStatus": "Sole Proprietorship",
+          "address": "Located at: 275 Avenue des Alliés",
+          "email": "Email: contact@dariuspizza.fr",
+          "phone": "Phone: 04.94.64.05.11"
+        },
+        "controller": {
+          "title": "Article 1.1: The Data Controller",
+          "content": "Personal data is collected by Darius Pizza, whose SIRET registration number is 979 408 507 00015",
+          "contact": "The data controller can be contacted as follows:",
+          "email": "By email: contact@dariuspizza.fr"
+        },
+        "dpo": {
+          "title": "Article 1.2: The Data Protection Officer",
+          "content": "The company's or controller's data protection officer is:",
+          "dpoName": "Chrystel Roman, contact@dariuspizza.fr",
+          "cnil": "If you believe, after contacting us, that your \"Informatique et Libertés\" (Data Protection) rights are not being respected, you can send information to the CNIL."
+        }
+      },
       "dataCollection": {
-        "title": "Article 3: PERSONAL DATA COLLECTED AND PROCESSED IN THE CONTEXT OF BROWSING THE SITE",
+        "title": "2. Personal Data Collected",
         "collectedData": {
-          "title": "Article 3.1: Data collected",
-          "content": "The personal data collected in the context of our activity following cookie acceptance are as follows:",
+          "title": "Article 2.1: Data Collected",
+          "content": "The personal data collected as part of our activity following the acceptance of cookies are as follows:",
           "dataTypes": [
             "Number of users",
             "Session statistics",
             "Approximate geolocation",
             "Browser and device information"
           ],
-          "purpose": "This data is collected for the purpose of conducting our market analysis and is not communicated to third parties."
+          "purpose": "This data is collected for the purpose of carrying out our market analyses and is not communicated to third parties."
         },
         "collectionMethod": {
-          "title": "Article 3.2: Data collection method",
-          "automaticCollection": "When you use our site, the following data is automatically collected: NONE",
+          "title": "Article 2.2: Data Collection Method",
+          "automaticCollection": "When you use our site, the following data is collected automatically: NONE",
           "cookieAcceptance": "Other personal data is collected when you perform the following operations on the platform:",
           "googleAnalytics": "Acceptance of Google Analytics cookies: Number of users - Session statistics - Approximate geolocation - Browser and device information",
-          "retention": "They are kept by the data controller under reasonable security conditions, for a period of: 1 month.",
-          "legalRetention": "The company may keep certain personal data beyond the deadlines announced above in order to fulfill its legal or regulatory obligations."
+          "retention": "They are kept by the data controller under reasonable security conditions, for a duration of: 1 month.",
+          "legalRetention": "The company may retain certain personal data beyond the periods announced above in order to fulfill its legal or regulatory obligations."
         },
         "hosting": {
-          "title": "Article 3.3: Data hosting",
+          "title": "Article 2.3: Data Hosting",
           "content": "The dariuspizza.fr site is hosted by:",
-          "hostingProvider": "WebOustaou - weboustaou.fr - contact@weboustaou.fr"
+          "hostingProvider": "Vercel - vercel.com"
         },
         "dataSharing": {
-          "title": "Article 3.4: Data transmission to third parties",
-          "content": "Data may be transmitted to our partners to conduct our market analysis, listed below: DariusDev"
+          "title": "Article 2.4: Data Transmission to Third Parties",
+          "content": "The data may be transmitted to our partners to carry out our market analyses, listed below: Google Analytics"
         },
         "cookies": {
-          "title": "Article 3.5: \"Cookies\" policy",
-          "content": "Data Number of users - Session statistics - Approximate geolocation - Browser and device information may be processed by Google Analytics following cookie acceptance.",
-          "detailedInfo": "For more information about our use of cookies, please see our Cookie Policy."
+          "title": "Article 2.5: \"Cookie\" Policy",
+          "content": "The data Number of users - Session statistics - Approximate geolocation - Browser and device information may be processed by Google Analytics following the acceptance of cookies.",
+          "detailedInfo": "For more information on our use of cookies, please consult our Cookie Policy."
+        },
+        "intro": "We collect different types of personal data about you:",
+        "automaticData": {
+          "title": "a) Data collected automatically (Cookies)",
+          "content": "When you browse our Site, we automatically collect certain information via cookies and other trackers. A cookie is a small text file placed on your device (computer, tablet, smartphone) during your visit.",
+          "cookieTypes": {
+            "necessary": {
+              "title": "Necessary Cookies",
+              "description": "These cookies are essential for the proper functioning of the Site. They allow you to use the main features (e.g., language selection). They do not require your consent."
+            },
+            "analytics": {
+              "title": "Analytics Cookies (or audience measurement)",
+              "description": "These cookies allow us to understand how visitors interact with our Site (number of visits, most viewed pages, visit time, etc.). The data collected is anonymized and helps us improve the usability and performance of our Site. We use Google Analytics. The use of these cookies is subject to your prior consent."
+            }
+          }
+        },
+        "directData": {
+          "title": "b) Data you provide to us directly",
+          "content": "We may collect personal data when you contact us directly, for example via a contact form (if applicable) or by email:",
+          "dataTypes": [
+            "First and last name",
+            "Email address",
+            "Phone number",
+            "Any other information you choose to provide in your message."
+          ],
+          "note": "To date, our site does not offer online ordering, so we do not collect any payment or transaction data."
         }
       },
-      "dataController": {
-        "title": "Article 4: DATA CONTROLLER AND DATA PROTECTION OFFICER",
-        "controller": {
-          "title": "Article 4.1: The data controller",
-          "content": "Personal data is collected by DariusDev, EI with capital of €100, whose SIRET registration number is 979 408 507 00015",
-          "contact": "The data controller can be contacted as follows:",
-          "email": "By email: admin@dariusdev.fr"
-        },
-        "dpo": {
-          "title": "Article 4.2: The data protection officer",
-          "content": "The data protection officer of the company or controller is:",
-          "dpoName": "Alexy Roman, contact@alexyroman.com",
-          "cnil": "If you believe, after contacting us, that your \"Computer and Freedom\" rights are not respected, you can send information to the CNIL."
-        }
+      "purposes": {
+        "title": "3. Purposes of Processing",
+        "content": "Your personal data is collected and processed for the following purposes:",
+        "purposes": [
+          {
+            "title": "To provide and manage our Site",
+            "description": "Ensure the proper functioning and security of the Site (legal basis: our legitimate interest)."
+          },
+          {
+            "title": "To improve our Site",
+            "description": "Analyze Site usage to improve content and user experience (legal basis: your consent for analytics cookies)."
+          },
+          {
+            "title": "To respond to your requests",
+            "description": "Process your questions or information requests sent by email or contact form (legal basis: our legitimate interest in responding to our customers and prospects)."
+          }
+        ]
+      },
+      "dataSharing": {
+        "title": "4. Sharing Your Data",
+        "noSale": "We do not sell or rent your personal data to third parties.",
+        "sharing": "Your data may be shared with:",
+        "recipients": [
+          "Our technical subcontractors: For example, our website hosts Vercel and Supabase, who need access to the data to provide their services.",
+          "Analytics tool providers: For example, Google for the Google Analytics service.",
+          "Competent authorities: Only if we are required to do so by law or in the context of legal proceedings."
+        ]
+      },
+      "dataTransfer": {
+        "title": "5. Data Transfer Outside the EU",
+        "content": "Some of your data (notably via analytics cookies like Google Analytics) may be transferred outside the European Union. We ensure that these transfers are governed by appropriate safeguards, such as the European Commission's Standard Contractual Clauses, to ensure a level of data protection equivalent to that required by the GDPR."
+      },
+      "retention": {
+        "title": "6. Retention Period",
+        "content": "We keep your personal data for no longer than is necessary for the purposes for which it is processed:",
+        "periods": [
+          "Contact data (email, form): The time necessary to process your request, and archived for a maximum of 2 years after the last contact.",
+          "Cookies: Cookies have a maximum lifespan of 12 months on your device. The associated traffic data is kept for a maximum of 24 months."
+        ]
       },
       "userRights": {
-        "title": "Article 5: USER RIGHTS REGARDING DATA COLLECTION AND PROCESSING",
-        "content": "Any user concerned by the processing of their personal data may avail themselves of the following rights, in application of European regulation 2016/679 and the Computer and Freedom Law (Law 78-17 of January 6, 1978):",
+        "title": "7. Your Rights Over Your Data",
+        "content": "Any user concerned by the processing of their personal data may avail themselves of the following rights, pursuant to European Regulation 2016/679 and the Data Protection Act (Law 78-17 of January 6, 1978):",
+        "intro": "In accordance with the GDPR, you have the following rights regarding your personal data:",
         "rights": [
-          "Right of access, rectification and right to erasure of data (set out respectively in articles 15, 16 and 17 of the GDPR)",
-          "Right to data portability (article 20 of the GDPR)",
-          "Right to limitation (article 18 of the GDPR) and to object to data processing (article 21 of the GDPR)",
-          "Right not to be subject to a decision based exclusively on an automated process",
-          "Right to determine the fate of data after death",
-          "Right to seize the competent supervisory authority (article 77 of the GDPR)"
+          {
+            "title": "Right of access",
+            "description": "Obtain confirmation that your data is being processed and have access to it."
+          },
+          {
+            "title": "Right to rectification",
+            "description": "Request the correction of your data if it is inaccurate or incomplete."
+          },
+          {
+            "title": "Right to erasure (\"right to be forgotten\")",
+            "description": "Request the deletion of your data, within the limits provided by law."
+          },
+          {
+            "title": "Right to restriction of processing",
+            "description": "Request to suspend the processing of your data in certain situations."
+          },
+          {
+            "title": "Right to object",
+            "description": "Object to the processing of your data for reasons relating to your particular situation (especially for processing based on legitimate interest)."
+          },
+          {
+            "title": "Right to data portability",
+            "description": "Receive your data in a structured, machine-readable format (only for data provided on the basis of consent or a contract)."
+          }
         ],
+        "consentWithdrawal": "You also have the right to withdraw your consent at any time for processing that is subject to it (like analytics cookies).",
         "exerciseRights": {
-          "title": "Exercise of rights",
-          "content": "To exercise your rights, please send your mail to WebOustaou, 275 Avenue des Alliés, 83240 Cavalaire, or by email to contact@weboustaou.fr.",
-          "requiredInfo": "In order for the data controller to comply with their request, the user may be required to communicate certain information such as: their first and last names, their email address as well as their account number, personal space or subscriber number.",
-          "cnilInfo": "Visit the cnil.fr website for more information about your rights."
+          "title": "Exercising Rights",
+          "content": "To exercise your rights, please send your request by mail to Darius Pizza, 275 Avenue des Alliés, 83240 Cavalaire, or by email to contact@dariuspizza.fr.",
+          "requiredInfo": "In order for the data controller to respond to their request, the user may be required to provide certain information such as: their first and last names, their email address, as well as their account number, personal space, or subscriber number.",
+          "cnilInfo": "Visit cnil.fr for more information on your rights."
         }
       },
       "businessContext": {
-        "title": "Context of our activity",
-        "content": "Darius Pizza is a family pizzeria located in Cavalaire-sur-Mer, specializing in the preparation of authentic pizzas with quality ingredients. Our website allows customers to discover our menu, our hours, our history and to contact us.",
+        "title": "Context of Our Business",
+        "content": "Darius Pizza is a family pizzeria located in Cavalaire-sur-Mer, specializing in preparing authentic pizzas with quality ingredients. Our website allows customers to discover our menu, hours, story, and contact us.",
         "services": [
           "Presentation of our menu and specialties",
-          "Information about our hours and location",
-          "Contact form for reservations and requests",
+          "Information on our hours and location",
+          "Contact form for reservations and inquiries",
           "Sharing content on our social networks (Instagram, Facebook)",
           "Integration with TripAdvisor and Google for customer reviews",
-          "Presentation of our history and manufacturing protocols"
+          "Presentation of our story and production processes"
         ],
         "dataPurpose": "The data collected allows us to improve our customer service, analyze the use of our website, and better understand our customers' preferences to improve our culinary offer."
+      },
+      "exerciseRights": {
+        "title": "8. Exercising Your Rights and Managing Cookies",
+        "gdprRights": {
+          "title": "a) Exercising Your GDPR Rights",
+          "content": "For any questions or to exercise your rights, you can contact us at:",
+          "contact": {
+            "email": "Email: contact@dariuspizza.fr",
+            "mail": "Postal mail: 275 Avenue des Alliés, 83240 Cavalaire"
+          },
+          "identityVerification": "Please attach a copy of an identity document so we can verify your identity."
+        },
+        "cookieManagement": {
+          "title": "b) Managing Your Cookie Preferences",
+          "firstVisit": "During your first visit to our Site, an information banner allows you to accept or refuse the placement of analytics cookies.",
+          "modifyChoice": "You can change your choice at any time:",
+          "methods": [
+            "By clicking on the cookie management link or icon on our site (if you have implemented a management tool).",
+            "By configuring your internet browser to block or be alerted to the installation of cookies. The configuration varies by browser (Chrome, Firefox, Safari, etc.)."
+          ]
+        }
+      },
+      "security": {
+        "title": "9. Security",
+        "content": "We implement appropriate technical and organizational security measures (e.g., using the HTTPS protocol) to protect your personal data against destruction, loss, alteration, unauthorized disclosure, or unauthorized access."
+      },
+      "policyChanges": {
+        "title": "10. Policy Changes",
+        "content": "We reserve the right to modify this privacy policy at any time. In the event of a substantial change, we will inform you by the most appropriate means (e.g., via a banner on the Site)."
+      },
+      "cnilComplaint": {
+        "title": "11. Complaint to the CNIL",
+        "content": "If you believe, after contacting us, that your rights over your data are not being respected, you can file a complaint with the competent supervisory authority in France, the Commission Nationale de l'Informatique et des Libertés (CNIL): www.cnil.fr."
       }
     },
     "terms": {
       "backToHome": "Back to Home",
-      "title": "Terms of Service",
+      "title": "Terms of Use",
       "lastUpdated": "Last updated: January 1, 2024",
       "introduction": {
         "title": "Introduction",
-        "content": "Welcome to Darius Pizza. These Terms of Service govern your use of our website and services. By accessing or using our services, you agree to be bound by these terms."
+        "content": "Welcome to Darius Pizza. These Terms of Use govern your use of our website and services. By accessing or using our services, you agree to be bound by these terms."
       },
       "acceptance": {
         "title": "Acceptance of Terms",
-        "content": "By using our website or placing an order, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy."
+        "content": "By using our website or placing an order, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use and our Privacy Policy."
       },
       "orders": {
         "title": "Orders and Services",
@@ -564,18 +693,18 @@
         "accuracy": "Provide accurate and complete information",
         "pricing": "Pay the prices listed on our menu",
         "availability": "Accept that menu items may not always be available",
-        "modifications": "Understand that order modifications may affect pricing and delivery time"
+        "modifications": "Understand that order modifications may affect the price and delivery time"
       },
       "payment": {
         "title": "Payment Terms",
         "content": "Payment terms include:",
         "methods": "We accept cash, credit cards, and other approved payment methods",
-        "timing": "Payment is due at the time of order placement",
+        "timing": "Payment is due at the time of placing the order",
         "refunds": "Refunds are subject to our refund policy and applicable laws"
       },
       "delivery": {
         "title": "Delivery and Pickup",
-        "content": "Delivery and pickup terms:",
+        "content": "Delivery and pickup conditions:",
         "times": "Delivery times are estimates and may vary",
         "areas": "We deliver within our designated service area",
         "responsibility": "You are responsible for providing accurate delivery information"
@@ -591,63 +720,109 @@
       },
       "prohibited": {
         "title": "Prohibited Uses",
-        "content": "You may not use our services for:",
+        "content": "You may not use our services to:",
         "illegal": "Any unlawful purpose or to solicit others to perform unlawful acts",
-        "harassment": "Harassing, abusing, or harming others",
-        "fraud": "Transmitting or procuring the sending of any advertising or promotional material",
-        "violation": "Violating any applicable laws or regulations"
+        "harassment": "Harass, abuse, or harm others",
+        "fraud": "Transmit, or procure the sending of, any advertising or promotional material",
+        "violation": "Violate any applicable laws or regulations"
       },
       "termination": {
         "title": "Termination",
-        "content": "We may terminate or suspend your access to our services immediately, without prior notice, for any reason whatsoever, including breach of these Terms of Service."
+        "content": "We may terminate or suspend your access to our services immediately, without prior notice, for any reason, including violation of these Terms of Use."
       },
       "governingLaw": {
         "title": "Governing Law",
-        "content": "These Terms of Service shall be governed by and construed in accordance with the laws of the jurisdiction in which Darius Pizza operates."
+        "content": "These Terms of Use shall be governed by and construed in accordance with the laws of the jurisdiction in which Darius Pizza operates."
       },
       "contact": {
         "title": "Contact Information",
-        "content": "If you have any questions about these Terms of Service, please contact us:",
+        "content": "If you have any questions about these Terms of Use, please contact us:",
         "email": "Email",
         "phone": "Phone",
         "address": "Address"
       },
       "changes": {
         "title": "Changes to Terms",
-        "content": "We reserve the right to modify these Terms of Service at any time. We will notify users of any material changes by posting the new Terms of Service on this page."
+        "content": "We reserve the right to modify these Terms of Use at any time. We will notify users of any significant changes by posting the new Terms of Use on this page."
       }
     },
     "cookies": {
       "backToHome": "Back to Home",
-      "title": "Cookie Policy",
-      "lastUpdated": "Last updated: January 1, 2024",
+      "title": "Cookie Management Policy",
+      "lastUpdated": "Last updated: October 25, 2025",
       "introduction": {
         "title": "Introduction",
-        "content": "This Cookie Policy explains how Darius Pizza uses cookies and similar technologies when you visit our website. It explains what these technologies are and why we use them, as well as your rights to control our use of them."
+        "content": "This cookie management policy supplements our Privacy Policy and applies to the website https://www.dariuspizza.fr (hereinafter \"the Site\"), operated by Darius Pizza.",
+        "purpose": "It aims to inform you about the use of cookies and other trackers on our Site."
       },
       "whatAreCookies": {
-        "title": "What Are Cookies?",
-        "content": "Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and to provide information to website owners.",
-        "types": "Cookies can be 'persistent' (remaining on your device until deleted) or 'session' cookies (deleted when you close your browser)."
+        "title": "1. What is a cookie?",
+        "content": "A cookie is a small text file stored on your device (computer, tablet, smartphone) when you visit a website. It allows the site to remember you and your preferences, either for the duration of your visit (session cookie) or for repeat visits (persistent cookie).",
+        "types": "Cookies can be \"persistent\" (remaining on your device until they are deleted) or \"session\" cookies (deleted when you close your browser)."
       },
       "howWeUseCookies": {
         "title": "How We Use Cookies",
         "content": "We use cookies for several purposes:"
       },
+      "dataController": {
+        "title": "2. The Data Controller",
+        "content": "The person responsible for placing cookies on the Site is:",
+        "companyInfo": {
+          "name": "Darius Pizza",
+          "address": "275 Avenue des Alliés, 83240 Cavalaire",
+          "email": "Email: contact@dariuspizza.fr"
+        }
+      },
+      "cookiesUsed": {
+        "title": "3. Cookies Used on Our Site",
+        "intro": "We use different types of cookies for distinct purposes.",
+        "necessaryCookies": {
+          "title": "a) Necessary Cookies (Functional)",
+          "description": "These cookies are essential for the proper functioning of the Site. They do not require your consent as they are indispensable for providing the services you request (like remembering your preferences).",
+          "cookies": [
+            {
+              "name": "Cookie name, e.g.: cookie_consent",
+              "purpose": "Remembers your choice (acceptance or refusal) regarding the placement of analytics cookies.",
+              "duration": "Duration: 6 months"
+            },
+            {
+              "name": "Cookie name, e.g.: i18n_redirected or NEXT_LANGUAGE",
+              "purpose": "Remembers the language preference you selected to display the site.",
+              "duration": "Duration: 12 months"
+            },
+            {
+              "name": "Cookie name, e.g.: theme",
+              "purpose": "Remembers the display theme (e.g., \"light\" or \"dark\") you have chosen.",
+              "duration": "Duration: 12 months"
+            }
+          ]
+        },
+        "analyticsCookies": {
+          "title": "b) Analytics Cookies (Audience Measurement)",
+          "description": "These cookies help us understand how visitors interact with our Site. They collect information anonymously (number of visitors, pages viewed, time spent on site, etc.) to allow us to establish statistics and improve the performance and usability of our Site.",
+          "consentNote": "These cookies are only placed after obtaining your consent.",
+          "googleAnalytics": {
+            "name": "Google Analytics ([_ga, ga*, _gid])",
+            "purpose": "Allows for the generation of anonymous statistics on Site traffic and usage.",
+            "duration": "Duration: Up to 13 months.",
+            "moreInfo": "For more info: How Google uses certain collected data"
+          }
+        }
+      },
       "cookieTypes": {
         "necessary": {
           "title": "Necessary Cookies",
-          "description": "These cookies are essential for the website to function properly. They enable basic functions like page navigation, access to secure areas, and remembering your preferences.",
+          "description": "These cookies are essential for the proper functioning of the Site. They do not require your consent as they are indispensable for providing the services you request (like remembering your preferences).",
           "duration": "Duration: Session or up to 1 year"
         },
         "analytics": {
           "title": "Analytics Cookies",
-          "description": "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve our website performance.",
+          "description": "These cookies help us understand how visitors interact with our Site by collecting and reporting information anonymously. This helps us improve our Site's performance.",
           "duration": "Duration: Up to 2 years"
         },
         "functional": {
           "title": "Functional Cookies",
-          "description": "These cookies enable enhanced functionality and personalization, such as remembering your language preferences and login status.",
+          "description": "These cookies allow for enhanced functionality and personalization, such as remembering your language preferences and login status.",
           "duration": "Duration: Up to 1 year"
         },
         "marketing": {
@@ -676,34 +851,63 @@
         },
         "website": {
           "title": "Website Cookie Settings",
-          "content": "You can also manage your cookie preferences using our cookie consent banner that appears when you first visit our website."
+          "content": "You can also manage your cookie preferences using our consent banner that appears on your first visit to our website."
         }
       },
       "consequences": {
         "title": "Consequences of Disabling Cookies",
-        "content": "If you choose to disable cookies, some features of our website may not function properly. This may affect your ability to place orders, access certain areas of the site, or receive personalized content."
+        "content": "If you choose to disable cookies, some features of our website may not function correctly. This may affect your ability to place orders, access certain areas of the site, or receive personalized content."
       },
       "updates": {
         "title": "Updates to This Policy",
-        "content": "We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons."
+        "content": "We may update this Cookie Management Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons."
       },
       "contact": {
         "title": "Contact Us",
-        "content": "If you have any questions about our use of cookies, please contact us:",
+        "content": "If you have questions about our use of cookies, please contact us:",
         "email": "Email",
         "phone": "Phone",
         "address": "Address"
+      },
+      "cookieManagement": {
+        "title": "4. How to manage your cookies?",
+        "consentBanner": {
+          "title": "a) Via the consent banner",
+          "content": "During your first visit to our Site, an information banner is displayed to collect your consent for the placement of analytics cookies. You can accept, refuse, or customize your choices.",
+          "modifyConsent": "You can modify or withdraw your consent at any time [Add a \"Manage my cookies\" link/button if you have one, otherwise delete this sentence]."
+        },
+        "browserSettings": {
+          "title": "b) Via your browser settings",
+          "content": "You can also configure your browser to block or be alerted to the installation of cookies. Refusing functional cookies may, however, alter your browsing experience.",
+          "note": "The configuration is specific to each browser:",
+          "instructions": {
+            "chrome": "For Google Chrome: Chrome Instructions",
+            "firefox": "For Mozilla Firefox: Firefox Instructions",
+            "edge": "For Microsoft Edge: Edge Instructions",
+            "safari": "For Safari: Safari Instructions"
+          }
+        }
+      },
+      "moreInformation": {
+        "title": "5. More Information",
+        "privacyPolicy": "To learn more about how we protect your personal data in general, please consult our Privacy Policy.",
+        "contact": "For any questions, you can contact us at [Contact Email]."
       }
     },
     "legalMentions": {
       "backToHome": "Back to Home",
-      "title": "Legal Mentions",
-      "lastUpdated": "Last updated: January 1, 2024",
+      "title": "Legal Notice",
+      "lastUpdated": "Last updated: October 25, 2025",
+      "introduction": {
+        "title": "Introduction",
+        "content": "In accordance with the provisions of Law No. 2004-575 of June 21, 2004, for confidence in the digital economy (LCEN), users and visitors of the site https://www.dariuspizza.fr (hereinafter \"the Site\") are informed of this legal notice.",
+        "acceptance": "Connection and navigation on the Site by the User imply full and unreserved acceptance of this legal notice."
+      },
       "identification": {
         "title": "Company Identification",
         "companyName": "Company Name",
-        "companyNameValue": "Chez Darius",
-        "rcs": "RCS",
+        "companyNameValue": "Darius Pizza",
+        "rcs": "RCS Number",
         "rcsValue": "Fréjus A 453 150 992",
         "vatNumber": "VAT Number",
         "vatNumberValue": "FR09453150922",
@@ -712,13 +916,13 @@
         "phone": "Phone",
         "phoneValue": "04.94.64.05.11",
         "hosting": "Hosting",
-        "hostingValue": "WebOustaou - contact@weboustaou.fr"
+        "hostingValue": "Vercel Inc - https://vercel.com"
       },
       "termsOfSale": {
-        "title": "Terms of Sale",
+        "title": "General Terms of Sale",
         "pricing": {
           "title": "Pricing",
-          "content": "Prices in euros including tax"
+          "content": "Prices in euros, all taxes included"
         },
         "loyaltyProgram": {
           "title": "Loyalty Program",
@@ -726,12 +930,59 @@
         },
         "payment": {
           "title": "Payment Methods",
-          "content": "Cash and credit cards from €5, no meal vouchers accepted"
+          "content": "Cash and bank cards from 5€, meal vouchers (tickets restaurant) not accepted"
         }
       },
       "additionalInfo": {
         "title": "Additional Information",
-        "content": "These legal mentions comply with current French regulations. For any questions regarding this information, you can contact us using the coordinates mentioned above."
+        "content": "This legal notice complies with current French regulations. For any questions regarding this information, you can contact us at the coordinates mentioned above."
+      },
+      "siteEditor": {
+        "title": "1. Site Editor",
+        "content": "The Site is published by:",
+        "companyInfo": {
+          "name": "Darius Pizza",
+          "legalForm": "Legal form: Sole Proprietorship",
+          "headquarters": "Headquarters: 275 Avenue des Alliés, 83240 Cavalaire",
+          "phone": "Phone: 04.94.64.05.11",
+          "email": "Email: contact@dariuspizza.fr",
+          "rcs": "RCS registration number: Fréjus A 453 150 992",
+          "siret": "SIRET number: 979 408 507 00015",
+          "vat": "Intra-community VAT number: FR09453150922"
+        }
+      },
+      "publicationDirector": {
+        "title": "2. Publication Director",
+        "content": "The Publication Director is Chrystel Roman, in her capacity as Manager of Darius Pizza."
+      },
+      "hosting": {
+        "title": "3. Site Host",
+        "content": "The Site is hosted by:",
+        "hostingInfo": {
+          "company": "Vercel Inc",
+          "address": "Address: 650 California St, San Francisco, CA 94108, US",
+          "website": "https://vercel.com"
+        }
+      },
+      "intellectualProperty": {
+        "title": "4. Intellectual Property",
+        "content": "This entire Site (content, text, images, videos, logos, brands) constitutes a work protected by current intellectual property legislation.",
+        "rights": "All intellectual property rights relating to the Site belong to Darius Pizza, excluding elements from partners or third parties.",
+        "prohibition": "Any reproduction, representation, use, or adaptation, in any form whatsoever, of all or part of these elements, without the prior written consent of Darius Pizza, is strictly prohibited."
+      },
+      "personalData": {
+        "title": "5. Personal Data",
+        "content": "For any information concerning the collection and processing of your personal data, we invite you to consult our dedicated documents:",
+        "documents": ["Privacy Policy", "Cookie Management Policy"]
+      },
+      "liabilityLimitation": {
+        "title": "6. Limitation of Liability",
+        "content": "Darius Pizza strives to ensure, to the best of its ability, the accuracy and updating of the information disseminated on the Site. However, Darius Pizza cannot guarantee the accuracy, precision, or completeness of the information made available on this Site.",
+        "externalLinks": "The Site may contain hypertext links to other sites. Darius Pizza cannot be held responsible for the content of these external sites or for any damage resulting from their use."
+      },
+      "applicableLaw": {
+        "title": "7. Applicable Law",
+        "content": "This Site and its legal notices are governed by French law. In the event of a dispute and in the absence of an amicable agreement, the French courts will have sole jurisdiction."
       }
     }
   }

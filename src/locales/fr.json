@@ -249,11 +249,11 @@
       "conclusion": "En 2020, un nouveau chapitre s'est ouvert. La passion pour la gastronomie et les produits d'exception a transformé le billot en four à bois. La Maison Darius est devenue le Darius Pizza.\n\nLe décor a changé, mais l'âme est intacte. Nous avons conservé l'héritage de la boucherie : l'amour du produit frais, le respect du savoir-faire artisanal et une obsession pour le goût. Cette exigence que nous appliquions à nos viandes, nous l'appliquons aujourd'hui à chaque ingrédient qui compose nos pizzas.",
       "image1": {
         "alt": "Devanture Darius Pizza depuis 2020",
-        "src": "/static/IMG_2139.JPG"
+        "src": "/static/IMG_3109.JPG"
       },
       "image2": {
         "alt": "Devanture Boucherie Darius avant 2020",
-        "src": "/static/butcher-frontage.webp"
+        "src": "/static/about-kitchen.webp"
       }
     },
     "section2": {
@@ -474,10 +474,55 @@
           "address": "Situé au : 275 Avenue des Alliés",
           "email": "Email : contact@dariuspizza.fr",
           "phone": "Téléphone : 04.94.64.05.11"
+        },
+        "controller": {
+          "title": "Article 1.1 : Le responsable du traitement",
+          "content": "Les données personnelles sont collectées par Darius Pizza dont le numéro d'immatriculation SIRET est le 979 408 507 00015",
+          "contact": "Le responsable du traitement peut être contacté comme suit :",
+          "email": "Par email : contact@dariuspizza.fr"
+        },
+        "dpo": {
+          "title": "Article 1.2 : Le délégué à la protection des données",
+          "content": "Le délégué à la protection des données de l'entreprise ou du responsable est :",
+          "dpoName": "Chrystel Roman, contact@dariuspizza.fr",
+          "cnil": "Si vous estimez, après nous avoir contactés, que vos droits \"Informatique et Libertés\" ne sont pas respectés, vous pouvez adresser une information à la CNIL."
         }
       },
       "dataCollection": {
         "title": "2. Données personnelles collectées",
+        "collectedData": {
+          "title": "Article 2.1 : Données collectées",
+          "content": "Les données personnelles collectées dans le cadre de notre activité suite à l'acceptation des cookies sont les suivantes :",
+          "dataTypes": [
+            "Nombre d'utilisateurs",
+            "Statistiques de session",
+            "Géolocalisation approximative",
+            "Informations sur le navigateur et l'appareil"
+          ],
+          "purpose": "Ces données sont collectées aux fins de réaliser nos analyses de marché et ne sont pas communiquées à des tiers."
+        },
+        "collectionMethod": {
+          "title": "Article 2.2 : Méthode de collecte des données",
+          "automaticCollection": "Lorsque vous utilisez notre site, les données suivantes sont collectées automatiquement : AUCUNE",
+          "cookieAcceptance": "D'autres données personnelles sont collectées lorsque vous effectuez les opérations suivantes sur la plateforme :",
+          "googleAnalytics": "Acceptation des cookies Google Analytics : Nombre d'utilisateurs - Statistiques de session - Géolocalisation approximative - Informations sur le navigateur et l'appareil",
+          "retention": "Elles sont conservées par le responsable du traitement dans des conditions raisonnables de sécurité, pour une durée de : 1 mois.",
+          "legalRetention": "L'entreprise peut conserver certaines données personnelles au-delà des délais annoncés ci-dessus afin de remplir ses obligations légales ou réglementaires."
+        },
+        "hosting": {
+          "title": "Article 2.3 : Hébergement des données",
+          "content": "Le site dariuspizza.fr est hébergé par :",
+          "hostingProvider": "Vercel - vercel.com"
+        },
+        "dataSharing": {
+          "title": "Article 2.4 : Transmission des données à des tiers",
+          "content": "Les données peuvent être transmises à nos partenaires pour réaliser nos analyses de marché, listés ci-dessous : Google Analytics"
+        },
+        "cookies": {
+          "title": "Article 2.5 : Politique en matière de \"Cookies\"",
+          "content": "Les données Nombre d'utilisateurs - Statistiques de session - Géolocalisation approximative - Informations sur le navigateur et l'appareil peuvent être traitées par Google Analytics suite à l'acceptation des cookies.",
+          "detailedInfo": "Pour plus d'informations sur notre utilisation des cookies, veuillez consulter notre Politique des Cookies."
+        },
         "intro": "Nous collectons différents types de données personnelles vous concernant :",
         "automaticData": {
           "title": "a) Données collectées automatiquement (Cookies)",
@@ -547,6 +592,7 @@
       },
       "userRights": {
         "title": "7. Vos droits sur vos données",
+        "content": "Tout utilisateur concerné par le traitement de ses données personnelles peut se prévaloir des droits suivants, en application du règlement européen 2016/679 et de la loi Informatique et Libertés (Loi 78-17 du 6 janvier 1978) :",
         "intro": "Conformément au RGPD, vous disposez des droits suivants concernant vos données personnelles :",
         "rights": [
           {
@@ -574,7 +620,26 @@
             "description": "Recevoir vos données dans un format structuré et lisible par machine (uniquement pour les données fournies sur la base du consentement ou d'un contrat)."
           }
         ],
-        "consentWithdrawal": "Vous avez également le droit de retirer votre consentement à tout moment pour les traitements qui y sont soumis (comme les cookies analytiques)."
+        "consentWithdrawal": "Vous avez également le droit de retirer votre consentement à tout moment pour les traitements qui y sont soumis (comme les cookies analytiques).",
+        "exerciseRights": {
+          "title": "Exercice des droits",
+          "content": "Pour exercer vos droits, veuillez adresser votre courrier à Darius Pizza, 275 Avenue des Alliés, 83240 Cavalaire, ou par email à contact@dariuspizza.fr.",
+          "requiredInfo": "Pour que le responsable du traitement puisse faire droit à leur demande, l'utilisateur peut être tenu de communiquer certaines informations telles que : ses prénoms et nom, son adresse email ainsi que son numéro de compte, espace personnel ou numéro d'abonné.",
+          "cnilInfo": "Visitez le site cnil.fr pour plus d'informations sur vos droits."
+        }
+      },
+      "businessContext": {
+        "title": "Context de notre activité",
+        "content": "Darius Pizza est une pizzeria familiale située à Cavalaire-sur-Mer, spécialisée dans la préparation de pizzas authentiques avec des ingrédients de qualité. Notre site web permet aux clients de découvrir notre menu, nos horaires, notre histoire et de nous contacter.",
+        "services": [
+          "Présentation de notre menu et spécialités",
+          "Informations sur nos horaires et localisation",
+          "Formulaire de contact pour réservations et demandes",
+          "Partage de contenu sur nos réseaux sociaux (Instagram, Facebook)",
+          "Intégration avec TripAdvisor et Google pour avis clients",
+          "Présentation de notre histoire et protocoles de fabrication"
+        ],
+        "dataPurpose": "Les données recueillies nous permettent d'améliorer notre service client, d'analyser l'utilisation de notre site web, et de mieux comprendre les préférences de nos clients pour améliorer notre offre culinaire."
       },
       "exerciseRights": {
         "title": "8. Exercer vos droits et gérer les cookies",

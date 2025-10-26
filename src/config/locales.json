@@ -45,6 +45,15 @@
       "direction": "ltr",
       "enabled": true,
       "fallback": "en"
+    },
+    {
+      "code": "nl",
+      "name": "Dutch",
+      "nativeName": "Nederlands",
+      "flag": "🇳🇱",
+      "direction": "ltr",
+      "enabled": true,
+      "fallback": "en"
     }
   ],
   "settings": {

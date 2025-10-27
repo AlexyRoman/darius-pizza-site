@@ -11,6 +11,15 @@ const nextConfig: NextConfig = {
   // Power optimization
   poweredByHeader: false,
   
+  // Experimental features for better performance
+  experimental: {
+    optimizePackageImports: [
+      'lucide-react',
+      'next-intl',
+      '@radix-ui/react-icons',
+    ],
+  },
+  
   images: {
     remotePatterns: [
       {
@@ -19,15 +28,19 @@ const nextConfig: NextConfig = {
       },
     ],
     formats: ['image/webp', 'image/avif'],
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 31536000, // 1 year for production
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    dangerouslyAllowSVG: false,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   
   // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
   },
+  
   webpack: (config, { isServer }) => {
     // Bundle analyzer configuration
     if (process.env.ANALYZE === 'true') {

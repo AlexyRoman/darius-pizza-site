@@ -147,6 +147,11 @@ export default function RootLayout({
       className={`${fontPrimary.variable} ${fontSecondary.variable}`}
     >
       <head>
+        {/* DNS prefetch for external resources */}
+        <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
+        <link rel='dns-prefetch' href='https://fonts.gstatic.com' />
+        <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
+
         {/* Theme color for mobile browsers - matches light theme background */}
         <meta name='theme-color' content='oklch(0.98 0.01 85)' />
         <meta
@@ -188,6 +193,22 @@ export default function RootLayout({
           as='image'
           type='image/webp'
           fetchPriority='high'
+        />
+
+        {/* Preload critical fonts - only bold weight for LCP */}
+        <link
+          rel='preload'
+          href='/fonts/playfair-display-700.woff2'
+          as='font'
+          type='font/woff2'
+          crossOrigin='anonymous'
+        />
+        <link
+          rel='preload'
+          href='/fonts/inter-400.woff2'
+          as='font'
+          type='font/woff2'
+          crossOrigin='anonymous'
         />
       </head>
       <body className='font-secondary antialiased'>

@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, startTransition } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Star, Clock, MapPin, Loader2 } from 'lucide-react';
+import { ArrowRight, Star, Clock, MapPin } from 'lucide-react';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/config/restaurant/hours.json';
 import { useThemeContext } from '@/contexts/ThemeContext';
@@ -15,6 +15,7 @@ import {
   isTimeInPeriods,
 } from '@/lib/opening-hours-utils';
 import { SmartCallButton } from '@/components/ui/smart-call-button';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface OpeningHours {
   [key: string]: {
@@ -38,9 +39,17 @@ export default function HeroSection() {
 
   // State to track if component is mounted (client-side)
   const [isMounted, setIsMounted] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
+    // CRITICAL: Render badge AFTER LCP has fired
+    // Use startTransition to lower priority, non-blocking render
     setIsMounted(true);
+
+    // Defer ALL heavy computations until after paint
+    startTransition(() => {
+      setTimeout(() => setIsHydrated(true), 0); // Immediate after paint
+    });
   }, []);
 
   // Get current day and time (only on client-side to avoid hydration mismatch)
@@ -169,7 +178,7 @@ export default function HeroSection() {
   const badgeContent = getBadgeContent();
   return (
     <section className='relative min-h-screen flex items-center overflow-hidden'>
-      {/* Background Image */}
+      {/* Background Image - Load first for LCP */}
       <div className='absolute inset-0 -z-30'>
         <Image
           src='/static/hero-background.webp'
@@ -178,6 +187,7 @@ export default function HeroSection() {
           sizes='100vw'
           className='object-cover'
           priority
+          fetchPriority='high'
           quality={75}
         />
       </div>
@@ -214,47 +224,44 @@ export default function HeroSection() {
         <div className='grid lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
           {/* Content Section */}
           <div className='space-y-8 text-center lg:text-left'>
-            {/* Badge */}
-            {closingsLoading ? (
-              <div className='flex items-center gap-2'>
-                <Loader2 className='h-4 w-4 animate-spin text-primary' />
-                <span className='text-sm text-foreground-secondary'>
-                  Loading status...
-                </span>
-              </div>
-            ) : (
-              <Badge
-                variant={
-                  currentClosing
-                    ? 'destructive'
-                    : isCurrentlyOpen
-                      ? 'default'
-                      : isOpeningSoon && minutesUntilOpening <= 60
-                        ? 'outline'
-                        : 'secondary'
-                }
-                className={`${badgeContent.className} ${badgeContent.isTwoLine ? 'py-2 px-3 h-auto' : ''}`}
-              >
-                {badgeContent.isTwoLine ? (
-                  <div className='flex items-center gap-2 text-left'>
-                    <div className='flex-shrink-0'>{badgeContent.icon}</div>
-                    <div className='flex flex-col'>
-                      <div className='text-xs font-medium'>
-                        {t('badge.closed')}
-                      </div>
-                      <div className='text-xs opacity-90'>
-                        {badgeContent.text}
+            {/* Badge - Use static height to prevent layout shift */}
+            <div className='min-h-[32px] flex items-center'>
+              {isHydrated && !closingsLoading ? (
+                <Badge
+                  variant={
+                    currentClosing
+                      ? 'destructive'
+                      : isCurrentlyOpen
+                        ? 'default'
+                        : isOpeningSoon && minutesUntilOpening <= 60
+                          ? 'outline'
+                          : 'secondary'
+                  }
+                  className={`${badgeContent.className} ${badgeContent.isTwoLine ? 'py-2 px-3 h-auto' : ''}`}
+                >
+                  {badgeContent.isTwoLine ? (
+                    <div className='flex items-center gap-2 text-left'>
+                      <div className='flex-shrink-0'>{badgeContent.icon}</div>
+                      <div className='flex flex-col'>
+                        <div className='text-xs font-medium'>
+                          {t('badge.closed')}
+                        </div>
+                        <div className='text-xs opacity-90'>
+                          {badgeContent.text}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ) : (
-                  <>
-                    {badgeContent.icon}
-                    {badgeContent.text}
-                  </>
-                )}
-              </Badge>
-            )}
+                  ) : (
+                    <>
+                      {badgeContent.icon}
+                      {badgeContent.text}
+                    </>
+                  )}
+                </Badge>
+              ) : (
+                <div className='h-8 w-24 bg-muted animate-pulse rounded-full' />
+              )}
+            </div>
 
             {/* Main Heading */}
             <div className='space-y-4'>
@@ -346,9 +353,12 @@ export default function HeroSection() {
               <div className='absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-2xl' />
               <div className='absolute -inset-2 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl blur-xl' />
 
-              {/* Main image */}
+              {/* Main image - Using AspectRatio for proper sizing */}
               <div className='relative bg-background-elevated rounded-2xl p-8 shadow-2xl border border-border/50 group'>
-                <div className='relative aspect-square rounded-xl overflow-hidden bg-muted'>
+                <AspectRatio
+                  ratio={1}
+                  className='rounded-xl overflow-hidden bg-muted relative'
+                >
                   <Image
                     src='/static/hero-pizza.webp'
                     alt='Authentic Italian Pizza'
@@ -360,13 +370,13 @@ export default function HeroSection() {
                   />
 
                   {/* Floating elements */}
-                  <div className='absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-lg'>
+                  <div className='absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-lg z-10'>
                     {t('stickers.freshDaily')}
                   </div>
-                  <div className='absolute bottom-4 left-4 bg-accent text-black px-3 py-1 rounded-full text-xs font-semibold shadow-lg'>
+                  <div className='absolute bottom-4 left-4 bg-accent text-black px-3 py-1 rounded-full text-xs font-semibold shadow-lg z-10'>
                     {t('stickers.handmade')}
                   </div>
-                </div>
+                </AspectRatio>
               </div>
 
               {/* Floating cards */}

@@ -100,7 +100,7 @@ export function Footer(props: FooterProps) {
             <span className='mr-1'>{designedByPrefix}</span>
             <a
               className='underline underline-offset-4 hover:text-primary transition-colors duration-200'
-              href='#'
+              href='https://alexyroman.com'
             >
               {designedByName}
             </a>

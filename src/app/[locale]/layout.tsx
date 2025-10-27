@@ -78,7 +78,7 @@ export default async function LocaleLayout(props: {
       <AnalyticsDebug />
       <Header currentLocale={locale} />
       <main className='pt-0 md:pt-16 pb-2 md:pb-0'>
-        {children}
+        <div suppressHydrationWarning>{children}</div>
         <CookieConsentBanner />
       </main>
       <Toaster />

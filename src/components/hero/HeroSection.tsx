@@ -175,8 +175,10 @@ export default function HeroSection() {
           src='/static/hero-background.webp'
           alt='Pizza restaurant background'
           fill
+          sizes='100vw'
           className='object-cover'
           priority
+          quality={75}
         />
       </div>
 
@@ -346,13 +348,15 @@ export default function HeroSection() {
 
               {/* Main image */}
               <div className='relative bg-background-elevated rounded-2xl p-8 shadow-2xl border border-border/50 group'>
-                <div className='relative aspect-square rounded-xl overflow-hidden'>
+                <div className='relative aspect-square rounded-xl overflow-hidden bg-muted'>
                   <Image
                     src='/static/hero-pizza.webp'
                     alt='Authentic Italian Pizza'
                     fill
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                     className='object-cover group-hover:scale-105 transition-transform duration-500 rounded-xl'
                     priority
+                    quality={85}
                   />
 
                   {/* Floating elements */}

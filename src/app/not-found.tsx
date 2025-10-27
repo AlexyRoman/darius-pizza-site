@@ -1,17 +1,37 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Home, Pizza } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
-import { routing } from '@/i18n/routing';
+import { NextIntlClientProvider } from 'next-intl';
+import Header from '@/components/header/Header';
+import Footer from '@/components/footer/Footer';
 
-export async function generateStaticParams() {
-  return routing.locales.map(locale => ({ locale }));
-}
+// Import locale files
+import enMessages from '@/locales/en.json';
+import deMessages from '@/locales/de.json';
+import frMessages from '@/locales/fr.json';
+import itMessages from '@/locales/it.json';
+import esMessages from '@/locales/es.json';
+import nlMessages from '@/locales/nl.json';
 
-export default async function NotFound() {
-  const locale = 'en'; // Default - will be resolved by the layout
-  const t = await getTranslations({ locale, namespace: 'notFound' });
+const allMessages = {
+  en: enMessages,
+  de: deMessages,
+  fr: frMessages,
+  it: itMessages,
+  es: esMessages,
+  nl: nlMessages,
+};
+
+// Component that uses translations (must be inside NextIntlClientProvider)
+function NotFoundContent({ locale }: { locale: string }) {
   const homeUrl = `/${locale}`;
+  const t = (key: keyof typeof allMessages.en.notFound) =>
+    allMessages[locale as keyof typeof allMessages]?.notFound?.[key] ||
+    allMessages.en.notFound[key];
 
   return (
     <div className='min-h-screen flex items-center justify-center bg-gradient-to-b from-background via-background-secondary to-background py-16'>
@@ -81,5 +101,74 @@ export default async function NotFound() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function NotFound() {
+  const pathname = usePathname();
+  const [locale, setLocale] = useState('en');
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    // Extract locale from pathname
+    const segments = pathname?.split('/').filter(Boolean) || [];
+    const possibleLocale = segments[0];
+    const validLocales = ['en', 'fr', 'de', 'it', 'es', 'nl'];
+
+    if (possibleLocale && validLocales.includes(possibleLocale)) {
+      setLocale(possibleLocale);
+    }
+    setIsClient(true);
+  }, [pathname]);
+
+  // Get messages based on locale
+  const messages =
+    allMessages[locale as keyof typeof allMessages] || allMessages.en;
+
+  // Show nothing on server to avoid hydration mismatch
+  if (!isClient) {
+    return null;
+  }
+
+  return (
+    <NextIntlClientProvider messages={messages} locale={locale}>
+      <div className='min-h-screen flex flex-col'>
+        <Header currentLocale={locale} />
+        <main className='pt-0 md:pt-16 pb-2 md:pb-0 flex-1'>
+          <NotFoundContent locale={locale} />
+        </main>
+        <Footer
+          currentLocale={locale}
+          titles={{
+            legal: messages.footer?.titles?.legal || 'Legal',
+            social: messages.footer?.titles?.social || 'Social',
+            explore: messages.footer?.titles?.explore || 'Explore',
+          }}
+          brandSubtitle={
+            messages.footer?.brandSubtitle ||
+            'Authentic pizza made with love, tradition, and the best ingredients.'
+          }
+          rightsReservedText={
+            messages.footer?.rightsReserved ||
+            'Darius Pizza. All rights reserved.'
+          }
+          designedByPrefix={messages.footer?.designedByPrefix || 'Designed by'}
+          designedByName={
+            messages.footer?.designedByName || 'WebOustaou - Alexy Roman'
+          }
+          legalLabels={{
+            privacy: messages.footer?.legal?.privacy || 'Privacy',
+            terms: messages.footer?.legal?.terms || 'Terms',
+            imprint: messages.footer?.legal?.imprint || 'Legal Notice',
+            cookies: messages.footer?.legal?.cookies || 'Cookies',
+          }}
+          menuLabels={{
+            home: messages.common?.home || 'Home',
+            menu: messages.common?.menu || 'Menu',
+            info: messages.common?.info || 'Info',
+          }}
+        />
+      </div>
+    </NextIntlClientProvider>
   );
 }

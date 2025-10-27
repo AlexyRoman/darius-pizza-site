@@ -30,7 +30,6 @@ const ThemeToggle = dynamic(
   }
 );
 import RadialSettings from '@/components/header/RadialSettings';
-//
 import { TimeClock } from '@/components/header/TimeClock';
 import { buttonVariants } from '@/components/ui/button';
 import { PAGES } from '@/config/pages';

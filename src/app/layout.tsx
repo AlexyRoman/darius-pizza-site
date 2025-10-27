@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { ThemeProvider as AppThemeProvider } from '@/contexts/ThemeContext';
+import { fontPrimary, fontSecondary } from '@/lib/fonts';
 
 export const metadata: Metadata = {
   title: 'Darius Pizza - Authentic Italian Pizza',
@@ -140,7 +141,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html
+      lang='en'
+      suppressHydrationWarning
+      className={`${fontPrimary.variable} ${fontSecondary.variable}`}
+    >
       <head>
         {/* Theme color for mobile browsers - matches light theme background */}
         <meta name='theme-color' content='oklch(0.98 0.01 85)' />
@@ -168,12 +173,29 @@ export default function RootLayout({
           content='oklch(0.98 0.01 85)'
         />
         <meta name='msapplication-TileColor' content='oklch(0.98 0.01 85)' />
+
+        {/* Preload critical resources for LCP */}
+        <link
+          rel='preload'
+          href='/static/hero-background.webp'
+          as='image'
+          type='image/webp'
+          fetchPriority='high'
+        />
+        <link
+          rel='preload'
+          href='/static/hero-pizza.webp'
+          as='image'
+          type='image/webp'
+          fetchPriority='high'
+        />
       </head>
       <body className='font-secondary antialiased'>
         <script
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html:
-              "(() => { try { const saved = localStorage.getItem('darius-pizza-theme'); const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; let useDark = false; if (saved === 'dark') { useDark = true; } else if (saved === 'light') { useDark = false; } else { useDark = prefersDark; } const root = document.documentElement; if (useDark) { root.classList.add('dark'); root.style.setProperty('--effective-theme', 'dark'); } else { root.classList.remove('dark'); root.style.setProperty('--effective-theme', 'light'); } const theme = useDark ? 'dark' : 'light'; const metaThemeColors = document.querySelectorAll('meta[name=\"theme-color\"]'); metaThemeColors.forEach((meta) => { const media = meta.getAttribute('media'); if (!media) { meta.setAttribute('content', theme === 'dark' ? 'oklch(0.12 0.02 45)' : 'oklch(0.98 0.01 85)'); } else if (media === '(prefers-color-scheme: light)' && theme === 'light') { meta.setAttribute('content', 'oklch(0.98 0.01 85)'); } else if (media === '(prefers-color-scheme: dark)' && theme === 'dark') { meta.setAttribute('content', 'oklch(0.12 0.02 45)'); } }); const appleStatusBarStyle = document.querySelector('meta[name=\"apple-mobile-web-app-status-bar-style\"]'); if (appleStatusBarStyle) { appleStatusBarStyle.setAttribute('content', theme === 'dark' ? 'black-translucent' : 'default'); } } catch (_) {} })();",
+              "!function(){try{const t=localStorage.getItem('darius-pizza-theme'),e=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches,n='dark'===t||(!t&&e),r=document.documentElement;n?(r.classList.add('dark'),r.style.setProperty('--effective-theme','dark')):(r.classList.remove('dark'),r.style.setProperty('--effective-theme','light'))}catch(e){}}();",
           }}
         />
         <AppThemeProvider>{children}</AppThemeProvider>

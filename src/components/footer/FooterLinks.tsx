@@ -27,6 +27,9 @@ export function FooterLinks(props: FooterLinksProps) {
             <Link
               href={link.href}
               className='block text-sm font-secondary font-medium text-foreground-secondary hover:text-primary underline-offset-4 hover:underline break-words text-center sm:text-left transition-colors duration-200'
+              {...(link.href.includes('/menu') && {
+                'data-gtm-click': 'menu_link',
+              })}
             >
               {link.label}
             </Link>

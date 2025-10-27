@@ -78,6 +78,9 @@ export function Header({
                         buttonVariants({ variant: 'ghost', size: 'sm' }),
                         'data-[active=true]:bg-accent/60'
                       )}
+                      {...(item.href.includes('/menu') && {
+                        'data-gtm-click': 'menu_link',
+                      })}
                     >
                       <span className='mr-2 [&_svg]:size-4'>{item.icon}</span>
                       <span className='hidden sm:inline-block'>
@@ -125,6 +128,9 @@ export function Header({
                         '[&_svg]:size-5'
                       )}
                       aria-label={item.label}
+                      {...(item.href.includes('/menu') && {
+                        'data-gtm-click': 'menu_link',
+                      })}
                     >
                       {item.icon}
                     </Link>

@@ -125,7 +125,7 @@ export default function MenuTeaserSection() {
             <p className='text-foreground-secondary mb-6 max-w-md mx-auto'>
               {t('hungryDescription')}
             </p>
-            <Link href='/menu'>
+            <Link href='/menu' data-gtm-click='menu_link'>
               <Button
                 size='lg'
                 className='!bg-primary !text-primary-foreground px-8 py-3 text-lg font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:scale-105 hover:!bg-primary active:!bg-primary focus:!bg-primary'

@@ -299,7 +299,11 @@ export default function HeroSection() {
                 size='lg'
                 className='h-14 px-8 text-base font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 group !bg-primary !text-primary-foreground hover:!bg-primary active:!bg-primary focus:!bg-primary'
               >
-                <Link href='/menu' className='flex items-center gap-2'>
+                <Link
+                  href='/menu'
+                  className='flex items-center gap-2'
+                  data-gtm-click='menu_link'
+                >
                   {t('cta.viewMenu')}
                   <ArrowRight className='w-5 h-5 md:group-hover:translate-x-1 transition-transform' />
                 </Link>

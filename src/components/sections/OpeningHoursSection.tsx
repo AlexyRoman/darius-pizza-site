@@ -51,25 +51,9 @@ export default function OpeningHoursSection() {
 
   // State to track if component is mounted (client-side)
   const [isMounted, setIsMounted] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
-
-    // Check if device is mobile
-    const checkIsMobile = () => {
-      setIsMobile(
-        window.innerWidth < 768 ||
-          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent
-          )
-      );
-    };
-
-    checkIsMobile();
-    window.addEventListener('resize', checkIsMobile);
-
-    return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
 
   // Get current day and time (only on client-side to avoid hydration mismatch)
@@ -526,38 +510,23 @@ export default function OpeningHoursSection() {
                     </span>
                   </SmartCallButton>
 
-                  {/* Directions Button - Native modal on mobile, direct link on desktop */}
-                  {isMobile ? (
-                    <Button
-                      asChild
-                      size='lg'
-                      className='!bg-secondary !text-secondary-foreground px-4 py-3 text-base font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:scale-105 hover:!bg-secondary active:!bg-secondary focus:!bg-secondary'
+                  {/* Directions Button - Universal navigation link (works on all platforms, triggers native map picker on mobile) */}
+                  <Button
+                    asChild
+                    size='lg'
+                    className='!bg-secondary !text-secondary-foreground px-4 py-3 text-base font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:scale-105 hover:!bg-secondary active:!bg-secondary focus:!bg-secondary'
+                  >
+                    <a
+                      href={contact?.maps?.googleMaps || '#'}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='flex items-center gap-2'
+                      data-gtm-click='directions_button'
                     >
-                      <a
-                        href={contact?.maps?.appleMaps || '#'}
-                        className='flex items-center gap-2'
-                      >
-                        <MapPin className='h-4 w-4' />
-                        {t('card.directions')}
-                      </a>
-                    </Button>
-                  ) : (
-                    <Button
-                      asChild
-                      size='lg'
-                      className='!bg-secondary !text-secondary-foreground px-4 py-3 text-base font-semibold shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:scale-105 hover:!bg-secondary active:!bg-secondary focus:!bg-secondary'
-                    >
-                      <a
-                        href='https://maps.google.com'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='flex items-center gap-2'
-                      >
-                        <MapPin className='h-4 w-4' />
-                        {t('card.directions')}
-                      </a>
-                    </Button>
-                  )}
+                      <MapPin className='h-4 w-4' />
+                      {t('card.directions')}
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>

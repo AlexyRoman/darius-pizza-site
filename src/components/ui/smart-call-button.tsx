@@ -123,7 +123,9 @@ export function SmartCallButton({
         aria-label={ariaLabel}
         {...props}
       >
-        <a href={`tel:${getSitePhone()}`}>{children}</a>
+        <a href={`tel:${getSitePhone()}`} data-gtm-click='call_button'>
+          {children}
+        </a>
       </Button>
     );
   }
@@ -158,6 +160,7 @@ export function SmartCallButton({
             <AlertDialogAction
               onClick={handleCall}
               className='bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto order-1 sm:order-2'
+              data-gtm-click='call_button'
             >
               {t('callNow')}
             </AlertDialogAction>
@@ -177,7 +180,9 @@ export function SmartCallButton({
       aria-label={ariaLabel}
       {...props}
     >
-      <a href={`tel:${getSitePhone()}`}>{children}</a>
+      <a href={`tel:${getSitePhone()}`} data-gtm-click='call_button'>
+        {children}
+      </a>
     </Button>
   );
 }

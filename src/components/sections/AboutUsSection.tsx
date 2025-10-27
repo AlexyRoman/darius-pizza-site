@@ -102,7 +102,9 @@ export default function AboutUsSection() {
                   size='lg'
                   className='border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300'
                 >
-                  <Link href='/menu'>{t('cta.viewMenu')}</Link>
+                  <Link href='/menu' data-gtm-click='menu_link'>
+                    {t('cta.viewMenu')}
+                  </Link>
                 </Button>
               </div>
             </div>

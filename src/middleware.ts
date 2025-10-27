@@ -28,13 +28,13 @@ export default function middleware(request: NextRequest) {
 
   // Redirect old /carte to /menu
   if (pathname === '/carte') {
-    return NextResponse.redirect(new URL('/fr/menu', request.url), 301);
+    return NextResponse.redirect(new URL('/menu', request.url), 301);
   }
 
   // Redirect specific old pages to home
   const oldPagesToRedirect = ['/gallery', '/contact', '/rs', '/horaires'];
   if (oldPagesToRedirect.includes(pathname)) {
-    return NextResponse.redirect(new URL('/fr', request.url), 301);
+    return NextResponse.redirect(new URL('/', request.url), 301);
   }
 
   // Apply next-intl middleware

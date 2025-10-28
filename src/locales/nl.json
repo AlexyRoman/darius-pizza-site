@@ -14,17 +14,33 @@
   },
   "seo": {
     "siteName": "Darius Pizza",
-    "title": "Darius Pizza - Authentieke Italiaanse Pizza",
-    "description": "Ontdek de authentieke smaak van Italië met onze ambachtelijke pizza's, bereid met verse ingrediënten en traditionele recepten. Bezoek onze pizzeria voor de beste Italiaanse keuken.",
+    "title": "Darius Pizza - Pizza Afhalen in Cavalaire-sur-mer",
+    "description": "Ontdek de authentieke smaak van Italië met onze ambachtelijke pizza's, bereid met verse ingrediënten en traditionele recepten. Bezoek onze pizzeria voor de beste afhaal keuken van de stad.",
     "imageAlt": "Heerlijke authentieke Italiaanse pizza van Darius Pizza",
     "keywords": "Italiaanse pizza, authentieke pizza, afhalen, pizzeria, traditionele recepten, verse ingrediënten, Italië, keuken",
+    "home": {
+      "title": "Darius Pizza - Pizza Afhalen in Cavalaire-sur-mer",
+      "description": "Ervaar authentieke Italiaanse smaken bij Darius Pizza. Verse ingrediënten, traditionele recepten en een gezellige pizzeria sfeer in het hart van Cavalaire. Bestel nu!"
+    },
     "menu": {
       "title": "Menu - Darius Pizza",
       "description": "Ontdek ons menu van authentieke Italiaanse pizza's met traditionele recepten en verse ingrediënten. Van de klassieke Margherita tot speciale pizza's."
     },
     "info": {
-      "title": "Restaurantinformatie - Darius Pizza",
-      "description": "Bezoek Darius Pizza voor authentieke Italiaanse gerechten. Vind onze locatie, openingstijden en contactgegevens."
+      "title": "Informatie - Darius Pizza",
+      "description": "Bezoek Darius Pizza voor authentieke pizza's. Vind onze locatie, openingstijden en contactgegevens."
+    },
+    "privacy": {
+      "title": "Privacybeleid - Darius Pizza",
+      "description": "Leer hoe Darius Pizza uw persoonlijke gegevens beschermt. Ons uitgebreide privacybeleid beschrijft gegevensverzameling, gebruik en uw rechten als gebruiker."
+    },
+    "cookies": {
+      "title": "Cookiebeleid - Darius Pizza",
+      "description": "Begrijp hoe Darius Pizza cookies gebruikt om uw ervaring te verbeteren. Leer meer over cookie-typen, doeleinden en hoe u uw voorkeuren beheert."
+    },
+    "legalMentions": {
+      "title": "Wettelijke Vermeldingen - Darius Pizza",
+      "description": "Juridische informatie over het restaurant Darius Pizza. Bedrijfsgegevens, verkoopsvoorwaarden en contactinformatie van onze authentieke Italiaanse pizzeria in Cavalaire."
     }
   },
   "footer": {

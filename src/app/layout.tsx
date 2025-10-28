@@ -4,9 +4,9 @@ import { ThemeProvider as AppThemeProvider } from '@/contexts/ThemeContext';
 import { fontPrimary, fontSecondary } from '@/lib/fonts';
 
 export const metadata: Metadata = {
-  title: 'Darius Pizza - Authentic Italian Pizza',
-  description:
-    'Experience the authentic taste of Italy with our handcrafted pizzas made with fresh ingredients and traditional recipes.',
+  // Title and description are set by locale-specific layouts
+  title: 'Darius Pizza',
+  description: 'Darius Pizza',
   icons: {
     icon: [
       { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },

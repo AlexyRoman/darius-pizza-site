@@ -16,24 +16,28 @@ export async function generateLocalizedMetadata(
 ): Promise<Metadata> {
   const { locale, path = '/', customTitle, customDescription } = options;
 
-  const t = await getTranslations({ locale, namespace: 'seo' });
+  // Import locale file directly to get proper translations
+  const messages = (await import(`@/locales/${locale}.json`)).default;
+  const seoData = messages.seo || {};
+
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com';
 
   // Get localized content
-  const title = customTitle || t('title');
-  const description = customDescription || t('description');
-  const siteName = t('siteName');
+  const title = customTitle || seoData.title || 'Darius Pizza';
+  const description = customDescription || seoData.description || '';
+  const siteName = seoData.siteName || 'Darius Pizza';
 
   // Generate OG image URL
   const ogImageUrl = '/static/hero-main-pizza.webp';
+  const imageAlt = seoData.imageAlt || 'Darius Pizza';
 
   return {
     metadataBase: new URL(baseUrl),
 
     title,
     description,
-    keywords: t('keywords'),
+    keywords: seoData.keywords || 'pizza',
     authors: [{ name: 'Darius Pizza' }],
     creator: 'Darius Pizza',
     publisher: 'Darius Pizza',
@@ -56,14 +60,14 @@ export async function generateLocalizedMetadata(
           url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: t('imageAlt'),
+          alt: imageAlt,
           type: 'image/png',
         },
         {
           url: '/static/hero-main-pizza.webp',
           width: 1200,
           height: 630,
-          alt: t('imageAlt'),
+          alt: imageAlt,
           type: 'image/webp',
         },
       ],
@@ -157,22 +161,31 @@ export async function generateLocalizedMetadata(
 
 export async function generatePageMetadata(
   locale: string,
-  page: 'home' | 'menu' | 'info',
+  page: 'home' | 'menu' | 'info' | 'privacy' | 'cookies' | 'legalMentions',
   customTitle?: string,
   customDescription?: string
 ): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: 'seo' });
+  // Import locale file directly to get proper translations
+  const messages = (await import(`@/locales/${locale}.json`)).default;
+  const seoData = messages.seo || {};
 
   const pageConfig = {
     home: { path: '/', type: 'default' as const },
     menu: { path: '/menu', type: 'menu' as const },
     info: { path: '/info', type: 'info' as const },
+    privacy: { path: '/privacy', type: 'default' as const },
+    cookies: { path: '/cookies', type: 'default' as const },
+    legalMentions: { path: '/legal-mentions', type: 'default' as const },
   };
 
   const config = pageConfig[page];
 
-  const title = customTitle || t(`${page}.title`);
-  const description = customDescription || t(`${page}.description`);
+  // Get page-specific or fallback to default
+  const pageData = seoData[page] || {};
+  const title =
+    customTitle || pageData.title || seoData.title || 'Darius Pizza';
+  const description =
+    customDescription || pageData.description || seoData.description || '';
 
   return generateLocalizedMetadata({
     locale,

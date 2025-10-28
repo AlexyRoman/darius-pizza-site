@@ -13,7 +13,7 @@ import AnalyticsDebug from '@/components/analytics/AnalyticsDebug';
 import { Toaster } from '@/components/ui/sonner';
 
 import type { Metadata } from 'next';
-import { generateLocalizedMetadata } from '@/lib/metadata';
+import { generatePageMetadata } from '@/lib/metadata';
 
 async function getMessages(locale: string) {
   try {
@@ -25,18 +25,6 @@ async function getMessages(locale: string) {
 
 export async function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
-}
-
-export async function generateMetadata(props: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await props.params;
-
-  return generateLocalizedMetadata({
-    locale,
-    path: '/',
-    type: 'default',
-  });
 }
 
 export { generateViewport } from '@/lib/metadata';

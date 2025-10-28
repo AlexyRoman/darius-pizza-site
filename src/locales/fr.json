@@ -14,17 +14,33 @@
   },
   "seo": {
     "siteName": "Darius Pizza",
-    "title": "Darius Pizza - Pizza Italienne Authentique",
-    "description": "Découvrez le goût authentique de l'Italie avec nos pizzas artisanales préparées avec des ingrédients frais et des recettes traditionnelles. Visitez notre pizzeria pour la meilleure cuisine italienne.",
+    "title": "Darius Pizza - Pizzas à emporter à Cavalaire-sur-mer",
+    "description": "Découvrez le goût authentique de l'Italie avec nos pizzas artisanales préparées avec des ingrédients frais et des recettes traditionnelles. Visitez notre pizzeria pour la meilleure cuisine à emporter de la ville.",
     "imageAlt": "Délicieuse pizza italienne authentique du Darius Pizza",
     "keywords": "pizza italienne, pizza authentique, à emporter, pizzeria, recettes traditionnelles, ingrédients frais, Italie, cuisine",
+    "home": {
+      "title": "Darius Pizza - Pizza à emporter à Cavalaire-sur-mer",
+      "description": "Découvrez les saveurs authentiques de l'Italie chez Darius Pizza. Ingrédients frais, recettes traditionnelles et ambiance cosy dans notre pizzeria au cœur de Cavalaire. Commandez dès maintenant !"
+    },
     "menu": {
       "title": "Menu - Darius Pizza",
       "description": "Découvrez notre menu de pizzas italiennes authentiques avec des recettes traditionnelles et des ingrédients frais. De la Margherita classique aux pizzas spéciales."
     },
     "info": {
-      "title": "Informations Restaurant - Darius Pizza",
-      "description": "Visitez Darius Pizza pour une cuisine italienne authentique. Trouvez notre localisation, horaires d'ouverture et informations de contact."
+      "title": "Informations - Darius Pizza",
+      "description": "Visitez le Darius Pizza pour des pizzas authentique. Trouvez notre localisation, horaires d'ouverture et informations de contact."
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité - Darius Pizza",
+      "description": "Découvrez comment Darius Pizza protège vos données personnelles. Notre politique de confidentialité complète détaille la collecte de données, l'utilisation et vos droits en tant qu'utilisateur."
+    },
+    "cookies": {
+      "title": "Politique des Cookies - Darius Pizza",
+      "description": "Comprenez comment Darius Pizza utilise les cookies pour améliorer votre expérience. Apprenez-en plus sur les types de cookies, leurs objectifs et comment gérer vos préférences."
+    },
+    "legalMentions": {
+      "title": "Mentions Légales - Darius Pizza",
+      "description": "Informations légales sur le restaurant Darius Pizza. Détails de l'entreprise, conditions de vente et coordonnées de notre pizzeria italienne authentique à Cavalaire."
     }
   },
   "footer": {

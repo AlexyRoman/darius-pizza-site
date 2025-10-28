@@ -14,17 +14,33 @@
   },
   "seo": {
     "siteName": "Darius Pizza",
-    "title": "Darius Pizza - Authentic Italian Pizza",
-    "description": "Discover the authentic taste of Italy with our artisanal pizzas made with fresh ingredients and traditional recipes. Visit our pizzeria for the best Italian cuisine.",
+    "title": "Darius Pizza - Takeaway Pizzas in Cavalaire-sur-mer",
+    "description": "Discover the authentic taste of Italy with our artisanal pizzas made with fresh ingredients and traditional recipes. Visit our pizzeria for the best takeaway cuisine in town.",
     "imageAlt": "Delicious authentic Italian pizza from Darius Pizza",
     "keywords": "italian pizza, authentic pizza, takeaway, pizzeria, traditional recipes, fresh ingredients, Italy, cuisine",
+    "home": {
+      "title": "Darius Pizza - Takeaway Pizza in Cavalaire-sur-mer",
+      "description": "Experience authentic Italian flavors at Darius Pizza. Fresh ingredients, traditional recipes, and a cozy pizzeria atmosphere in the heart of Cavalaire. Order now!"
+    },
     "menu": {
       "title": "Menu - Darius Pizza",
       "description": "Explore our menu of authentic Italian pizzas with traditional recipes and fresh ingredients. From classic Margherita to specialty pizzas."
     },
     "info": {
-      "title": "Restaurant Information - Darius Pizza",
-      "description": "Visit Darius Pizza for authentic Italian cuisine. Find our location, opening hours, and contact information."
+      "title": "Information - Darius Pizza",
+      "description": "Visit Darius Pizza for authentic pizzas. Find our location, opening hours, and contact information."
+    },
+    "privacy": {
+      "title": "Privacy Policy - Darius Pizza",
+      "description": "Learn how Darius Pizza protects your personal data. Our comprehensive privacy policy outlines data collection, usage, and your rights as a user."
+    },
+    "cookies": {
+      "title": "Cookie Policy - Darius Pizza",
+      "description": "Understand how Darius Pizza uses cookies to enhance your experience. Learn about cookie types, purposes, and how to manage your preferences."
+    },
+    "legalMentions": {
+      "title": "Legal Mentions - Darius Pizza",
+      "description": "Legal information about Darius Pizza restaurant. Company details, terms of sale, and contact information for our authentic Italian pizzeria in Cavalaire."
     }
   },
   "footer": {

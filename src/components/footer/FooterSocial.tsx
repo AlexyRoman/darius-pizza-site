@@ -40,7 +40,7 @@ export function FooterSocial(props: FooterSocialProps) {
       icon: <SiFacebook className='size-5' />,
     },
     {
-      href: 'https://www.tripadvisor.fr/Restaurant_Review-g666994-d23745036-Reviews-Darius_Pizza-Cavalaire_Sur_Mer_Var_Provence_Alpes_Cote_d_Azur.html?m=69573',
+      href: 'https://www.tripadvisor.fr/Restaurant_Review-g666994-d23745036-Reviews-Darius_Pizza-Cavalaire_Sur_Mer_Var_Provence_Alpes_Cote_d_Azur.html',
       label: tSocial('tripadvisor'),
       icon: <SiTripadvisor className='size-5' />,
     },

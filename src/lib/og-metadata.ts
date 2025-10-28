@@ -54,7 +54,7 @@ export async function generateLocalizedOGMetadata(
 ): Promise<PlatformSpecificMetadata> {
   const t = await getTranslations({ locale, namespace: 'seo' });
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com';
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr';
 
   // Generate localized content
   const title = customTitle || t('title');
@@ -109,7 +109,7 @@ export function generateOGImageUrl(
   type: 'default' | 'menu' | 'info' = 'default'
 ): string {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com';
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr';
   const params = new URLSearchParams({
     title: title,
     locale: locale,

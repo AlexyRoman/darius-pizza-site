@@ -5,7 +5,7 @@ import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl =
-    process.env['NEXT_PUBLIC_SITE_URL'] || 'http://localhost:3000';
+    process.env['NEXT_PUBLIC_SITE_URL'] || 'https://www.dariuspizza.fr';
   const now = new Date().toISOString();
 
   const entries: MetadataRoute.Sitemap = [];

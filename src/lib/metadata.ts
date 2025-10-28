@@ -21,7 +21,7 @@ export async function generateLocalizedMetadata(
   const seoData = messages.seo || {};
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com';
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr';
 
   // Get localized content
   const title = customTitle || seoData.title || 'Darius Pizza';
@@ -83,6 +83,20 @@ export async function generateLocalizedMetadata(
       images: [ogImageUrl],
     },
 
+    // Alternates (canonical and language alternatives)
+    alternates: {
+      canonical: `${baseUrl}/${locale}${path}`,
+      languages: {
+        en: `${baseUrl}/en${path}`,
+        fr: `${baseUrl}/fr${path}`,
+        de: `${baseUrl}/de${path}`,
+        it: `${baseUrl}/it${path}`,
+        es: `${baseUrl}/es${path}`,
+        nl: `${baseUrl}/nl${path}`,
+        'x-default': `${baseUrl}/fr${path}`,
+      },
+    },
+
     // Additional meta tags for various platforms
     other: {
       // WhatsApp
@@ -114,16 +128,6 @@ export async function generateLocalizedMetadata(
       robots: 'index, follow',
       googlebot: 'index, follow',
       bingbot: 'index, follow',
-
-      // Language alternatives
-      'alternate:en': `${baseUrl}/en${path}`,
-      'alternate:fr': `${baseUrl}/fr${path}`,
-      'alternate:de': `${baseUrl}/de${path}`,
-      'alternate:it': `${baseUrl}/it${path}`,
-      'alternate:es': `${baseUrl}/es${path}`,
-
-      // Canonical URL
-      canonical: `${baseUrl}/${locale}${path}`,
     },
 
     // Verification tags

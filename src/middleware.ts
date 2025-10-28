@@ -38,7 +38,22 @@ export default function middleware(request: NextRequest) {
   }
 
   // Apply next-intl middleware
-  return intl(request);
+  const response = intl(request);
+
+  // Convert temporary redirects (307) to permanent redirects (301) for SEO
+  // This is important for locale prefix redirects (e.g., / -> /fr, /menu -> /fr/menu)
+  if (
+    response instanceof NextResponse &&
+    response.status === 307 &&
+    response.headers.get('location')
+  ) {
+    const location = response.headers.get('location');
+    if (location) {
+      return NextResponse.redirect(location, 301);
+    }
+  }
+
+  return response;
 }
 
 export const config = {

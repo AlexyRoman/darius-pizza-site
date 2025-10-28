@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com'
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'
   ),
 
   // Comprehensive Open Graph metadata
   openGraph: {
     type: 'website',
     locale: 'en',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr',
     siteName: 'Darius Pizza',
     title: 'Darius Pizza - Authentic Italian Pizza',
     description:
@@ -52,6 +52,20 @@ export const metadata: Metadata = {
     description:
       'Experience the authentic taste of Italy with our handcrafted pizzas made with fresh ingredients and traditional recipes.',
     images: ['/static/hero-main-pizza.webp'],
+  },
+
+  // Alternates (canonical and language alternatives)
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr',
+    languages: {
+      en: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/en`,
+      fr: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/fr`,
+      de: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/de`,
+      it: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/it`,
+      es: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/es`,
+      nl: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/nl`,
+      'x-default': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/fr`,
+    },
   },
 
   // Additional platform-specific metadata
@@ -86,16 +100,6 @@ export const metadata: Metadata = {
       'Experience the authentic taste of Italy with our handcrafted pizzas made with fresh ingredients and traditional recipes.',
     'discord:image': '/static/hero-main-pizza.webp',
 
-    // Language alternatives
-    'alternate:en': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com'}/en`,
-    'alternate:fr': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com'}/fr`,
-    'alternate:de': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com'}/de`,
-    'alternate:it': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com'}/it`,
-    'alternate:es': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com'}/es`,
-
-    // Canonical URL
-    canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com',
-
     // Additional SEO
     robots: 'index, follow',
     googlebot: 'index, follow',
@@ -105,7 +109,7 @@ export const metadata: Metadata = {
   // App links
   appLinks: {
     web: {
-      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://darius-pizza.com',
+      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr',
       should_fallback: true,
     },
   },

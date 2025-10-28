@@ -147,7 +147,7 @@ export function Header({
             </div>
           </nav>
           <div
-            className='md:hidden fixed right-4 bottom-3 z-50'
+            className='md:hidden fixed right-4 bottom-3 z-40'
             style={{
               transition: 'none !important',
               animation: 'none !important',

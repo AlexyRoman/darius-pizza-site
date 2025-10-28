@@ -145,6 +145,13 @@ export async function generateLocalizedMetadata(
 
     // Referrer
     referrer: 'origin-when-cross-origin',
+
+    // iOS Safari / PWA status bar
+    appleWebApp: {
+      capable: true,
+      // Solid dark status bar on iOS
+      statusBarStyle: 'black',
+    },
   };
 }
 
@@ -179,9 +186,7 @@ export async function generatePageMetadata(
 export function generateViewport(): Viewport {
   return {
     colorScheme: 'light dark',
-    themeColor: [
-      { media: '(prefers-color-scheme: light)', color: 'oklch(0.98 0.01 85)' },
-      { media: '(prefers-color-scheme: dark)', color: 'oklch(0.12 0.02 45)' },
-    ],
+    // Always use dark status bar/background color
+    themeColor: '#191512',
   };
 }

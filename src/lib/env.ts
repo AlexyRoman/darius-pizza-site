@@ -34,7 +34,7 @@ const ServerEnvSchema = z.object({
   TURNSTILE_SECRET_KEY: z.string().optional(),
   // Local site config defaults
   SITE_TIME_ZONE: z.string().default('Europe/Paris'),
-  SITE_PHONE: z.string().default('+33123456789'),
+  SITE_PHONE: z.string().default('+33494640511'),
 });
 
 // Capture raw

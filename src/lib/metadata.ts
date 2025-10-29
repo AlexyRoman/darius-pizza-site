@@ -1,4 +1,8 @@
 import { Metadata, Viewport } from 'next';
+import {
+  getEnabledLocaleCodes,
+  getDefaultLocale,
+} from '@/config/locales-config';
 
 export interface LocalizedMetadataOptions {
   locale: string;
@@ -33,6 +37,20 @@ export async function generateLocalizedMetadata(
   // Generate OG image URL
   const ogImageUrl = '/static/hero-main-pizza.webp';
   const imageAlt = seoData.imageAlt || 'Darius Pizza';
+
+  // Dynamically get enabled locales for hreflang
+  const enabledLocales = getEnabledLocaleCodes();
+  const defaultLocale = getDefaultLocale();
+
+  // Build languages object for hreflang - ensure x-default is first
+  const languages: Record<string, string> = {
+    'x-default': `${baseUrl}/${defaultLocale}${normalizedPath}`,
+  };
+
+  // Add all enabled locales
+  enabledLocales.forEach(localeCode => {
+    languages[localeCode] = `${baseUrl}/${localeCode}${normalizedPath}`;
+  });
 
   return {
     metadataBase: new URL(baseUrl),
@@ -86,17 +104,12 @@ export async function generateLocalizedMetadata(
     },
 
     // Alternates (canonical and language alternatives)
+    // Important: All URLs must have locale prefix to avoid 301 redirects in hreflang
+    // x-default points to default locale (fr) and is listed first
+    // All enabled locales are included to ensure proper hreflang coverage
     alternates: {
       canonical: `${baseUrl}/${locale}${normalizedPath}`,
-      languages: {
-        en: `${baseUrl}/en${normalizedPath}`,
-        fr: `${baseUrl}/fr${normalizedPath}`,
-        de: `${baseUrl}/de${normalizedPath}`,
-        it: `${baseUrl}/it${normalizedPath}`,
-        es: `${baseUrl}/es${normalizedPath}`,
-        nl: `${baseUrl}/nl${normalizedPath}`,
-        'x-default': `${baseUrl}/fr${normalizedPath}`,
-      },
+      languages,
     },
 
     // Additional meta tags for various platforms

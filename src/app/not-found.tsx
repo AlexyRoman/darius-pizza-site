@@ -8,6 +8,7 @@ import { Home, Pizza } from 'lucide-react';
 import { NextIntlClientProvider } from 'next-intl';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
+import { ThemeProvider as AppThemeProvider } from '@/contexts/ThemeContext';
 
 // Import locale files
 import enMessages from '@/locales/en.json';
@@ -117,6 +118,9 @@ export default function NotFound() {
 
     if (possibleLocale && validLocales.includes(possibleLocale)) {
       setLocale(possibleLocale);
+    } else {
+      // Default to 'fr' if no locale found
+      setLocale('fr');
     }
     setIsClient(true);
   }, [pathname]);
@@ -131,43 +135,47 @@ export default function NotFound() {
   }
 
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
-      <div className='min-h-screen flex flex-col'>
-        <Header currentLocale={locale} />
-        <main className='pt-0 md:pt-16 pb-2 md:pb-0 flex-1'>
-          <NotFoundContent locale={locale} />
-        </main>
-        <Footer
-          currentLocale={locale}
-          titles={{
-            legal: messages.footer?.titles?.legal || 'Legal',
-            social: messages.footer?.titles?.social || 'Social',
-            explore: messages.footer?.titles?.explore || 'Explore',
-          }}
-          brandSubtitle={
-            messages.footer?.brandSubtitle ||
-            'Authentic pizza made with love, tradition, and the best ingredients.'
-          }
-          rightsReservedText={
-            messages.footer?.rightsReserved ||
-            'Darius Pizza. All rights reserved.'
-          }
-          designedByPrefix={messages.footer?.designedByPrefix || 'Designed by'}
-          designedByName={
-            messages.footer?.designedByName || 'WebOustaou - Alexy Roman'
-          }
-          legalLabels={{
-            privacy: messages.footer?.legal?.privacy || 'Privacy',
-            imprint: messages.footer?.legal?.imprint || 'Legal Notice',
-            cookies: messages.footer?.legal?.cookies || 'Cookies',
-          }}
-          menuLabels={{
-            home: messages.common?.home || 'Home',
-            menu: messages.common?.menu || 'Menu',
-            info: messages.common?.info || 'Info',
-          }}
-        />
-      </div>
-    </NextIntlClientProvider>
+    <AppThemeProvider>
+      <NextIntlClientProvider messages={messages} locale={locale}>
+        <div className='min-h-screen flex flex-col'>
+          <Header currentLocale={locale} />
+          <main className='pt-0 md:pt-16 pb-2 md:pb-0 flex-1'>
+            <NotFoundContent locale={locale} />
+          </main>
+          <Footer
+            currentLocale={locale}
+            titles={{
+              legal: messages.footer?.titles?.legal || 'Legal',
+              social: messages.footer?.titles?.social || 'Social',
+              explore: messages.footer?.titles?.explore || 'Explore',
+            }}
+            brandSubtitle={
+              messages.footer?.brandSubtitle ||
+              'Authentic pizza made with love, tradition, and the best ingredients.'
+            }
+            rightsReservedText={
+              messages.footer?.rightsReserved ||
+              'Darius Pizza. All rights reserved.'
+            }
+            designedByPrefix={
+              messages.footer?.designedByPrefix || 'Designed by'
+            }
+            designedByName={
+              messages.footer?.designedByName || 'WebOustaou - Alexy Roman'
+            }
+            legalLabels={{
+              privacy: messages.footer?.legal?.privacy || 'Privacy',
+              imprint: messages.footer?.legal?.imprint || 'Legal Notice',
+              cookies: messages.footer?.legal?.cookies || 'Cookies',
+            }}
+            menuLabels={{
+              home: messages.common?.home || 'Home',
+              menu: messages.common?.menu || 'Menu',
+              info: messages.common?.info || 'Info',
+            }}
+          />
+        </div>
+      </NextIntlClientProvider>
+    </AppThemeProvider>
   );
 }

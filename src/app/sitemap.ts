@@ -10,21 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const entries: MetadataRoute.Sitemap = [];
 
-  // Root and base pages
-  Object.values(PATHNAMES).forEach(path => {
-    const page = Object.values(PAGES).find(p => p.path === path);
-    const isEnabled = page ? (page.sitemapEnabled ?? true) : false;
-    if (!page || !isEnabled) return;
-    entries.push({
-      url: `${baseUrl}${path}`,
-      lastModified: now,
-      changeFrequency: (page.sitemapChangeFrequency ??
-        'daily') as MetadataRoute.Sitemap[number]['changeFrequency'],
-      priority: page.sitemapPriority ?? 0.8,
-    });
-  });
-
-  // Locale-prefixed pages
+  // Only include locale-prefixed pages to avoid 301 redirects
+  // Since middleware uses localePrefix: 'always', non-prefixed URLs redirect
   localesConfig.locales
     .filter(l => l.enabled)
     .forEach(locale => {

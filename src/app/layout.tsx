@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import { fontPrimary, fontSecondary } from '@/lib/fonts';
 
 export const metadata: Metadata = {
   // Title and description are set by locale-specific layouts
@@ -130,7 +131,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Root layout without <html>/<body> tags
-  // These are provided by locale-specific layout for proper lang attribute
-  return children;
+  // Root layout with <html>/<body> tags for 404 pages and other root-level pages
+  // The locale layout also has html/body, but Next.js will merge them correctly
+  // For locale routes, the [locale]/layout.tsx provides html/body
+  // For root-level routes like 404, this layout provides html/body
+  return (
+    <html
+      lang='en'
+      suppressHydrationWarning
+      className={`${fontPrimary.variable} ${fontSecondary.variable}`}
+    >
+      <body className='font-secondary antialiased'>
+        <script
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html:
+              "!function(){try{const t=localStorage.getItem('darius-pizza-theme'),e=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches,n='dark'===t||(!t&&e),r=document.documentElement;n?(r.classList.add('dark'),r.style.setProperty('--effective-theme','dark')):(r.classList.remove('dark'),r.style.setProperty('--effective-theme','light'))}catch(e){}}();",
+          }}
+        />
+        {children}
+      </body>
+    </html>
+  );
 }

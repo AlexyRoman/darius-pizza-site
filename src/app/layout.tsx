@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import { ThemeProvider as AppThemeProvider } from '@/contexts/ThemeContext';
-import { fontPrimary, fontSecondary } from '@/lib/fonts';
 
 export const metadata: Metadata = {
   // Title and description are set by locale-specific layouts
@@ -54,19 +52,7 @@ export const metadata: Metadata = {
     images: ['/static/hero-main-pizza.webp'],
   },
 
-  // Alternates (canonical and language alternatives)
-  alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr',
-    languages: {
-      en: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/en`,
-      fr: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/fr`,
-      de: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/de`,
-      it: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/it`,
-      es: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/es`,
-      nl: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/nl`,
-      'x-default': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr'}/fr`,
-    },
-  },
+  // Alternates are handled by locale-specific layouts to avoid conflicts
 
   // Additional platform-specific metadata
   other: {
@@ -144,87 +130,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html
-      lang='en'
-      suppressHydrationWarning
-      className={`${fontPrimary.variable} ${fontSecondary.variable}`}
-    >
-      <head>
-        {/* DNS prefetch for external resources */}
-        <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
-        <link rel='dns-prefetch' href='https://fonts.gstatic.com' />
-        <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
-
-        {/* Theme color for mobile browsers - matches light theme background */}
-        <meta name='theme-color' content='oklch(0.98 0.01 85)' />
-        <meta
-          name='theme-color'
-          media='(prefers-color-scheme: light)'
-          content='oklch(0.98 0.01 85)'
-        />
-        <meta
-          name='theme-color'
-          media='(prefers-color-scheme: dark)'
-          content='oklch(0.12 0.02 45)'
-        />
-
-        {/* Apple-specific status bar configuration */}
-        <meta name='apple-mobile-web-app-capable' content='yes' />
-        <meta name='apple-mobile-web-app-status-bar-style' content='default' />
-        <meta name='apple-mobile-web-app-title' content='Darius Pizza' />
-
-        {/* Additional mobile optimizations */}
-        <meta name='format-detection' content='telephone=no' />
-        <meta name='mobile-web-app-capable' content='yes' />
-        <meta
-          name='msapplication-navbutton-color'
-          content='oklch(0.98 0.01 85)'
-        />
-        <meta name='msapplication-TileColor' content='oklch(0.98 0.01 85)' />
-
-        {/* Preload critical resources for LCP */}
-        <link
-          rel='preload'
-          href='/static/hero-background.webp'
-          as='image'
-          type='image/webp'
-          fetchPriority='high'
-        />
-        <link
-          rel='preload'
-          href='/static/hero-pizza.webp'
-          as='image'
-          type='image/webp'
-          fetchPriority='high'
-        />
-
-        {/* Preload critical fonts - only bold weight for LCP */}
-        <link
-          rel='preload'
-          href='/fonts/playfair-display-700.woff2'
-          as='font'
-          type='font/woff2'
-          crossOrigin='anonymous'
-        />
-        <link
-          rel='preload'
-          href='/fonts/inter-400.woff2'
-          as='font'
-          type='font/woff2'
-          crossOrigin='anonymous'
-        />
-      </head>
-      <body className='font-secondary antialiased'>
-        <script
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html:
-              "!function(){try{const t=localStorage.getItem('darius-pizza-theme'),e=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches,n='dark'===t||(!t&&e),r=document.documentElement;n?(r.classList.add('dark'),r.style.setProperty('--effective-theme','dark')):(r.classList.remove('dark'),r.style.setProperty('--effective-theme','light'))}catch(e){}}();",
-          }}
-        />
-        <AppThemeProvider>{children}</AppThemeProvider>
-      </body>
-    </html>
-  );
+  // Root layout without <html>/<body> tags
+  // These are provided by locale-specific layout for proper lang attribute
+  return children;
 }

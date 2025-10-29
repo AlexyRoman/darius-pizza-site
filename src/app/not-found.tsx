@@ -158,7 +158,6 @@ export default function NotFound() {
           }
           legalLabels={{
             privacy: messages.footer?.legal?.privacy || 'Privacy',
-            terms: messages.footer?.legal?.terms || 'Terms',
             imprint: messages.footer?.legal?.imprint || 'Legal Notice',
             cookies: messages.footer?.legal?.cookies || 'Cookies',
           }}

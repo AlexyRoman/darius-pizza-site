@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import {
   ArrowLeft,
   Mail,
@@ -15,6 +16,8 @@ import Link from 'next/link';
 
 export default function LegalMentionsContent() {
   const t = useTranslations('legal.legalMentions');
+  const params = useParams();
+  const locale = params.locale as string;
 
   return (
     <div className='min-h-screen bg-background'>
@@ -22,7 +25,7 @@ export default function LegalMentionsContent() {
         {/* Header */}
         <div className='mb-8'>
           <Link
-            href='/'
+            href={`/${locale}`}
             className='inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-4'
           >
             <ArrowLeft className='w-4 h-4' />

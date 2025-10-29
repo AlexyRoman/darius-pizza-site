@@ -32,7 +32,7 @@
     },
     "privacy": {
       "title": "Política de Privacidad - Darius Pizza",
-      "description": "Aprenda cómo Darius Pizza protege sus datos personales. Nuestra política de privacidad completa describe la recopilación de datos, el uso y sus derechos como usuario."
+      "description": "Cómo protegemos sus datos personales: recopilación, uso y sus derechos. Política de privacidad completa."
     },
     "cookies": {
       "title": "Política de Cookies - Darius Pizza",
@@ -40,7 +40,7 @@
     },
     "legalMentions": {
       "title": "Aviso Legal - Darius Pizza",
-      "description": "Información legal sobre el restaurante Darius Pizza. Detalles de la empresa, términos de venta e información de contacto de nuestra pizzería italiana auténtica en Cavalaire."
+      "description": "Información legal, detalles de la empresa y términos de venta de nuestra pizzería italiana auténtica en Cavalaire."
     }
   },
   "footer": {
@@ -55,7 +55,6 @@
     "designedByName": "WebOustaou - Alexy Roman",
     "legal": {
       "privacy": "Privacidad",
-      "terms": "Condiciones",
       "imprint": "Aviso Legal",
       "cookies": "Cookies"
     },
@@ -267,7 +266,7 @@
       "conclusion": "En 2020, se abrió un nuevo capítulo. La pasión por la gastronomía y los productos excepcionales transformó el tajo en un horno de leña. La Maison Darius se convirtió en Darius Pizza.\n\nEl decorado ha cambiado, pero el alma está intacta. Hemos conservado la herencia de la carnicería: el amor por el producto fresco, el respeto por el saber hacer artesanal y una obsesión por el sabor. Esta exigencia que aplicábamos a nuestras carnes, la aplicamos hoy a cada ingrediente que compone nuestras pizzas.",
       "image1": {
         "alt": "Fachada de Darius Pizza desde 2020",
-        "src": "/static/IMG_3109.JPG"
+        "src": "/static/pizza-storefront.webp"
       },
       "image2": {
         "alt": "Fachada de la Carnicería Darius antes de 2020",
@@ -283,7 +282,7 @@
         "content": "Todo comienza con una hidratación controlada y un amasado lento. Controlamos la temperatura de nuestra masa en todo momento para no \"estresarla\". Esta etapa, la fermentación en bloque, permite desarrollar la red de gluten inicial que dará estructura a la masa, preservando al mismo tiempo los aromas de nuestra harina.",
         "image": {
           "alt": "Bola de masa después del amasado",
-          "src": "/static/IMG_9357.JPG"
+          "src": "/static/dough-ball-after-kneading.webp"
         }
       },
       "card2": {
@@ -292,7 +291,7 @@
         "content": "Aquí es donde ocurre la magia. Nuestras bolas de masa reposan en frío a temperatura controlada durante un mínimo de 48 horas. Durante esta larga maduración, las enzimas naturales de la levadura descomponen la red de gluten. Las cadenas complejas de proteínas son \"predigeridas\".\n\n¿El resultado para usted? Una masa increíblemente ligera, alveolada y fácil de digerir. Se acabó la sensación de pesadez después de la comida.",
         "image": {
           "alt": "Bolas de masa madurando en frío",
-          "src": "/static/IMG_8641.jpg"
+          "src": "/static/dough-balls-cold-maturing.webp"
         }
       },
       "card3": {
@@ -314,7 +313,7 @@
         "content": "La base de nuestra masa es nuestra harina. Elegimos el Moulin Céard, un molino familiar de los Altos Alpes con un saber hacer transmitido desde 1820.\n\nSeleccionan trigos regionales, a menudo Label Rouge, para producir una harina con carácter, sin aditivos. Es esta elección la que da a nuestra masa su sabor rústico y su capacidad única para desarrollarse durante las 48 horas de maduración. Es nuestro compromiso con el terruño y la trazabilidad.",
         "image": {
           "alt": "Harina Moulin Céard de los Altos Alpes",
-          "src": "/static/ceard.jpeg"
+          "src": "/static/moulin-ceard-flour.webp"
         }
       },
       "card2": {
@@ -332,7 +331,7 @@
         "content": "Una pizza es un matrimonio entre lo local y lo auténtico. Para los ingredientes pilares de la gastronomía italiana, nos abastecemos directamente de los mejores.\n\n¿Nuestros tomates? San Marzano DOP, bañados por el sol al pie del Vesubio. ¿Nuestra Mozzarella? Fior di latte fundente o una verdadera Bufala Campana DOP con leche de búfala. Aceite de oliva virgen extra, Parmigiano Reggiano 24 meses... Importamos el sol de Italia.",
         "image": {
           "alt": "Auténticos productos italianos DOP",
-          "src": "/static/ital.webp"
+          "src": "/static/italian-products.webp"
         }
       }
     },
@@ -459,8 +458,8 @@
         "content": "Esta política de privacidad tiene como objetivo informar a los usuarios del sitio sobre cómo se recopilan sus datos personales. Se considera dato personal cualquier información que permita identificar a un usuario. Esto puede incluir: sus nombres y apellidos, edad, dirección postal o de email, ubicación o dirección IP (lista no exhaustiva).",
         "rights": "Esta política también informa a los usuarios sobre los derechos que tienen con respecto a estos datos, sobre la persona responsable del tratamiento de los datos personales recopilados y procesados, sobre los destinatarios de estos datos personales y sobre la política de cookies del sitio.",
         "relatedDocuments": "Esta política complementa el Aviso Legal y la Política de Cookies accesibles para los usuarios en las siguientes direcciones:",
-        "legalMentionsLink": "https://www.dariuspizza.fr/legal-mentions",
-        "cookiesPolicyLink": "https://www.dariuspizza.fr/cookies"
+        "legalMentionsLink": "Aviso Legal",
+        "cookiesPolicyLink": "Política de Cookies"
       },
       "principles": {
         "title": "Artículo 2: PRINCIPIOS RELATIVOS A LA RECOPILACIÓN Y TRATAMIENTO DE DATOS PERSONALES",
@@ -691,77 +690,6 @@
       "cnilComplaint": {
         "title": "11. Reclamación ante la CNIL",
         "content": "Si considera, después de habernos contactado, que sus derechos sobre sus datos no se respetan, puede presentar una reclamación ante la autoridad de control competente en Francia, la Commission Nationale de l'Informatique et des Libertés (CNIL): www.cnil.fr."
-      }
-    },
-    "terms": {
-      "backToHome": "Volver al Inicio",
-      "title": "Condiciones de Uso",
-      "lastUpdated": "Última actualización: 1 de enero de 2024",
-      "introduction": {
-        "title": "Introducción",
-        "content": "Bienvenido a Darius Pizza. Estas Condiciones de Uso rigen su uso de nuestro sitio web y nuestros servicios. Al acceder o utilizar nuestros servicios, usted acepta estar sujeto a estas condiciones."
-      },
-      "acceptance": {
-        "title": "Aceptación de las condiciones",
-        "content": "Al utilizar nuestro sitio web o realizar un pedido, usted reconoce haber leído, entendido y aceptado estar sujeto a estas Condiciones de Uso y nuestra Política de Privacidad."
-      },
-      "orders": {
-        "title": "Pedidos y servicios",
-        "content": "Al realizar un pedido, usted acepta:",
-        "accuracy": "Proporcionar información precisa y completa",
-        "pricing": "Pagar los precios indicados en nuestro menú",
-        "availability": "Aceptar que los artículos del menú no siempre estén disponibles",
-        "modifications": "Entender que las modificaciones del pedido pueden afectar el precio y el tiempo de entrega"
-      },
-      "payment": {
-        "title": "Condiciones de pago",
-        "content": "Las condiciones de pago incluyen:",
-        "methods": "Aceptamos efectivo, tarjetas de crédito y otros métodos de pago aprobados",
-        "timing": "El pago se debe realizar en el momento de realizar el pedido",
-        "refunds": "Los reembolsos están sujetos a nuestra política de reembolso y a las leyes aplicables"
-      },
-      "delivery": {
-        "title": "Entrega y recogida",
-        "content": "Condiciones de entrega y recogida:",
-        "times": "Los tiempos de entrega son estimaciones y pueden variar",
-        "areas": "Entregamos dentro de nuestra zona de servicio designada",
-        "responsibility": "Usted es responsable de proporcionar información de entrega precisa"
-      },
-      "liability": {
-        "title": "Limitación de responsabilidad",
-        "content": "En la medida máxima permitida por la ley, Darius Pizza no será responsable de ningún daño indirecto, incidental, especial, consecuente o punitivo.",
-        "limitation": "Nuestra responsabilidad total no excederá el monto que usted pagó por los servicios."
-      },
-      "intellectualProperty": {
-        "title": "Propiedad intelectual",
-        "content": "Todo el contenido de nuestro sitio web, incluyendo texto, gráficos, logotipos e imágenes, es propiedad de Darius Pizza y está protegido por derechos de autor y otras leyes de propiedad intelectual."
-      },
-      "prohibited": {
-        "title": "Usos prohibidos",
-        "content": "No puede utilizar nuestros servicios para:",
-        "illegal": "Cualquier propósito ilegal o para solicitar a otros que realicen actos ilegales",
-        "harassment": "Acosar, abusar o dañar a otros",
-        "fraud": "Transmitir o procurar el envío de cualquier material publicitario o promocional",
-        "violation": "Violar cualquier ley o regulación aplicable"
-      },
-      "termination": {
-        "title": "Rescisión",
-        "content": "Podemos rescindir o suspender su acceso a nuestros servicios inmediatamente, sin previo aviso, por cualquier motivo, incluida la violación de estas Condiciones de Uso."
-      },
-      "governingLaw": {
-        "title": "Ley aplicable",
-        "content": "Estas Condiciones de Uso se regirán e interpretarán de acuerdo con las leyes de la jurisdicción en la que opera Darius Pizza."
-      },
-      "contact": {
-        "title": "Información de contacto",
-        "content": "Si tiene alguna pregunta sobre estas Condiciones de Uso, contáctenos:",
-        "email": "Email",
-        "phone": "Teléfono",
-        "address": "Dirección"
-      },
-      "changes": {
-        "title": "Modificaciones de las condiciones",
-        "content": "Nos reservamos el derecho de modificar estas Condiciones de Uso en cualquier momento. Notificaremos a los usuarios sobre cualquier cambio importante publicando las nuevas Condiciones de Uso en esta página."
       }
     },
     "cookies": {

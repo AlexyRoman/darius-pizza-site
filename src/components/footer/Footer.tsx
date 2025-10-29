@@ -19,7 +19,6 @@ type FooterProps = {
   designedByName?: string;
   legalLabels?: {
     privacy: string;
-    terms: string;
     imprint: string;
     cookies: string;
   };

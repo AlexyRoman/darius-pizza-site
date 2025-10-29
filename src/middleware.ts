@@ -32,7 +32,13 @@ export default function middleware(request: NextRequest) {
   }
 
   // Redirect specific old pages to home
-  const oldPagesToRedirect = ['/gallery', '/contact', '/rs', '/horaires'];
+  const oldPagesToRedirect = [
+    '/gallery',
+    '/contact',
+    '/rs',
+    '/horaires',
+    '/terms',
+  ];
   if (oldPagesToRedirect.includes(pathname)) {
     return NextResponse.redirect(new URL('/', request.url), 301);
   }

@@ -24,7 +24,7 @@
     },
     "menu": {
       "title": "Speisekarte - Darius Pizza",
-      "description": "Entdecken Sie unsere Speisekarte mit authentischen italienischen Pizzen nach traditionellen Rezepten und mit frischen Zutaten. Von der klassischen Margherita bis zu Spezialpizzen."
+      "description": "Authentische italienische Pizzen nach traditionellen Rezepten mit frischen Zutaten. Von der Margherita bis zu Spezialpizzen."
     },
     "info": {
       "title": "Informationen - Darius Pizza",
@@ -32,15 +32,15 @@
     },
     "privacy": {
       "title": "Datenschutzerklärung - Darius Pizza",
-      "description": "Erfahren Sie, wie Darius Pizza Ihre persönlichen Daten schützt. Unsere umfassende Datenschutzerklärung beschreibt Datensammlung, Nutzung und Ihre Rechte als Nutzer."
+      "description": "Wie wir Ihre persönlichen Daten schützen: Datensammlung, Nutzung und Ihre Rechte. Unsere Datenschutzerklärung."
     },
     "cookies": {
       "title": "Cookie-Richtlinie - Darius Pizza",
-      "description": "Verstehen Sie, wie Darius Pizza Cookies verwendet, um Ihr Erlebnis zu verbessern. Erfahren Sie mehr über Cookie-Typen, deren Zweck und wie Sie Ihre Präferenzen verwalten."
+      "description": "Wie wir Cookies verwenden, um Ihr Erlebnis zu verbessern und wie Sie Ihre Präferenzen auf unserer Website verwalten."
     },
     "legalMentions": {
       "title": "Impressum - Darius Pizza",
-      "description": "Rechtliche Informationen über das Restaurant Darius Pizza. Firmenangaben, Verkaufsbedingungen und Kontaktinformationen für unsere authentische italienische Pizzeria in Cavalaire."
+      "description": "Rechtliche Informationen, Firmenangaben und Verkaufsbedingungen unserer authentischen italienischen Pizzeria in Cavalaire."
     }
   },
   "footer": {
@@ -55,7 +55,6 @@
     "designedByName": "WebOustaou - Alexy Roman",
     "legal": {
       "privacy": "Datenschutz",
-      "terms": "Nutzungsbedingungen",
       "imprint": "Impressum",
       "cookies": "Cookies"
     },
@@ -459,8 +458,8 @@
         "content": "Diese Datenschutzerklärung soll die Nutzer der Website darüber informieren, wie ihre personenbezogenen Daten erfasst werden. Als personenbezogene Daten gelten alle Informationen, die eine Identifizierung eines Nutzers ermöglichen. Dies kann umfassen: Vor- und Nachnamen, Alter, Post- oder E-Mail-Adresse, Standort oder IP-Adresse (nicht erschöpfende Liste).",
         "rights": "Diese Richtlinie informiert die Nutzer auch über ihre Rechte bezüglich dieser Daten, über die Person, die für die Verarbeitung der erfassten und verarbeiteten personenbezogenen Daten verantwortlich ist, über die Empfänger dieser personenbezogenen Daten und über die Cookie-Richtlinie der Website.",
         "relatedDocuments": "Diese Richtlinie ergänzt das Impressum und die Cookie-Richtlinie, die den Nutzern unter folgenden Adressen zugänglich sind:",
-        "legalMentionsLink": "https://www.dariuspizza.fr/legal-mentions",
-        "cookiesPolicyLink": "https://www.dariuspizza.fr/cookies"
+        "legalMentionsLink": "Impressum",
+        "cookiesPolicyLink": "Cookie-Richtlinie"
       },
       "principles": {
         "title": "Artikel 2: GRUNDSÄTZE FÜR DIE ERHEBUNG UND VERARBEITUNG PERSONENBEZOGENER DATEN",
@@ -691,77 +690,6 @@
       "cnilComplaint": {
         "title": "11. Beschwerde bei der CNIL",
         "content": "Wenn Sie der Meinung sind, dass Ihre Rechte bezüglich Ihrer Daten nach Kontaktaufnahme mit uns nicht respektiert werden, können Sie eine Beschwerde bei der zuständigen Aufsichtsbehörde in Frankreich, der Commission Nationale de l'Informatique et des Libertés (CNIL), einreichen: www.cnil.fr."
-      }
-    },
-    "terms": {
-      "backToHome": "Zurück zur Startseite",
-      "title": "Nutzungsbedingungen",
-      "lastUpdated": "Zuletzt aktualisiert: 1. Januar 2024",
-      "introduction": {
-        "title": "Einführung",
-        "content": "Willkommen bei Darius Pizza. Diese Nutzungsbedingungen regeln Ihre Nutzung unserer Website und unserer Dienste. Durch den Zugriff auf oder die Nutzung unserer Dienste erklären Sie sich damit einverstanden, an diese Bedingungen gebunden zu sein."
-      },
-      "acceptance": {
-        "title": "Annahme der Bedingungen",
-        "content": "Durch die Nutzung unserer Website oder die Aufgabe einer Bestellung bestätigen Sie, dass Sie diese Nutzungsbedingungen und unsere Datenschutzerklärung gelesen, verstanden und akzeptiert haben."
-      },
-      "orders": {
-        "title": "Bestellungen und Dienstleistungen",
-        "content": "Wenn Sie eine Bestellung aufgeben, stimmen Sie zu:",
-        "accuracy": "Genaue und vollständige Informationen bereitzustellen",
-        "pricing": "Die auf unserer Speisekarte angegebenen Preise zu zahlen",
-        "availability": "Zu akzeptieren, dass Menüpunkte möglicherweise nicht immer verfügbar sind",
-        "modifications": "Zu verstehen, dass Bestelländerungen den Preis und die Lieferzeit beeinflussen können"
-      },
-      "payment": {
-        "title": "Zahlungsbedingungen",
-        "content": "Die Zahlungsbedingungen umfassen:",
-        "methods": "Wir akzeptieren Bargeld, Kreditkarten und andere genehmigte Zahlungsmethoden",
-        "timing": "Die Zahlung ist zum Zeitpunkt der Bestellung fällig",
-        "refunds": "Rückerstattungen unterliegen unserer Rückerstattungsrichtlinie und den geltenden Gesetzen"
-      },
-      "delivery": {
-        "title": "Lieferung und Abholung",
-        "content": "Liefer- und Abholbedingungen:",
-        "times": "Lieferzeiten sind Schätzungen und können variieren",
-        "areas": "Wir liefern in unserem festgelegten Liefergebiet",
-        "responsibility": "Sie sind für die Angabe korrekter Lieferinformationen verantwortlich"
-      },
-      "liability": {
-        "title": "Haftungsbeschränkung",
-        "content": "Soweit gesetzlich zulässig, haftet Darius Pizza nicht für indirekte, zufällige, spezielle, Folge- oder Strafschäden.",
-        "limitation": "Unsere Gesamthaftung übersteigt nicht den Betrag, den Sie für die Dienstleistungen bezahlt haben."
-      },
-      "intellectualProperty": {
-        "title": "Geistiges Eigentum",
-        "content": "Alle Inhalte auf unserer Website, einschließlich Texte, Grafiken, Logos und Bilder, sind Eigentum von Darius Pizza und durch Urheber- und andere Gesetze zum Schutz des geistigen Eigentums geschützt."
-      },
-      "prohibited": {
-        "title": "Verbotene Nutzungen",
-        "content": "Sie dürfen unsere Dienste nicht nutzen, um:",
-        "illegal": "Rechtswidrige Zwecke zu verfolgen oder andere zu rechtswidrigen Handlungen aufzufordern",
-        "harassment": "Andere zu belästigen, zu missbrauchen oder zu schädigen",
-        "fraud": "Werbe- oder Verkaufsförderungsmaterial zu übermitteln oder dessen Versand zu veranlassen",
-        "violation": "Geltende Gesetze oder Vorschriften zu verletzen"
-      },
-      "termination": {
-        "title": "Kündigung",
-        "content": "Wir können Ihren Zugang zu unseren Diensten jederzeit ohne Vorankündigung aus beliebigen Gründen kündigen oder aussetzen, einschließlich der Verletzung dieser Nutzungsbedingungen."
-      },
-      "governingLaw": {
-        "title": "Anwendbares Recht",
-        "content": "Diese Nutzungsbedingungen unterliegen den Gesetzen der Gerichtsbarkeit, in der Darius Pizza tätig ist, und werden entsprechend ausgelegt."
-      },
-      "contact": {
-        "title": "Kontaktinformationen",
-        "content": "Wenn Sie Fragen zu diesen Nutzungsbedingungen haben, kontaktieren Sie uns bitte:",
-        "email": "E-Mail",
-        "phone": "Telefon",
-        "address": "Adresse"
-      },
-      "changes": {
-        "title": "Änderungen der Bedingungen",
-        "content": "Wir behalten uns das Recht vor, diese Nutzungsbedingungen jederzeit zu ändern. Wir werden die Nutzer über wesentliche Änderungen informieren, indem wir die neuen Nutzungsbedingungen auf dieser Seite veröffentlichen."
       }
     },
     "cookies": {

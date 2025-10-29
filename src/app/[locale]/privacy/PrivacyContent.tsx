@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import {
   ArrowLeft,
   Shield,
@@ -13,6 +14,8 @@ import Link from 'next/link';
 
 export default function PrivacyContent() {
   const t = useTranslations('legal.privacy');
+  const params = useParams();
+  const locale = params.locale as string;
 
   return (
     <div className='min-h-screen bg-background'>
@@ -53,14 +56,14 @@ export default function PrivacyContent() {
                 </p>
                 <div className='space-y-2'>
                   <Link
-                    href='/legal-mentions'
+                    href={`/${locale}/legal-mentions`}
                     className='flex items-center gap-2 text-primary hover:underline'
                   >
                     <ExternalLink className='w-4 h-4' />
                     {t('preamble.legalMentionsLink')}
                   </Link>
                   <Link
-                    href='/cookies'
+                    href={`/${locale}/cookies`}
                     className='flex items-center gap-2 text-primary hover:underline'
                   >
                     <ExternalLink className='w-4 h-4' />

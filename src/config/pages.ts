@@ -33,20 +33,8 @@ export const PAGES = {
     sitemapChangeFrequency: 'yearly',
     sitemapEnabled: true,
   },
-  contact: {
-    path: '/contact',
-    sitemapPriority: 0.6,
-    sitemapChangeFrequency: 'monthly',
-    sitemapEnabled: true,
-  },
   privacy: {
     path: '/privacy',
-    sitemapPriority: 0.3,
-    sitemapChangeFrequency: 'yearly',
-    sitemapEnabled: true,
-  },
-  terms: {
-    path: '/terms',
     sitemapPriority: 0.3,
     sitemapChangeFrequency: 'yearly',
     sitemapEnabled: true,

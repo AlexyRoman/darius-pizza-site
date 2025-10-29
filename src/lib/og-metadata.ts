@@ -56,6 +56,9 @@ export async function generateLocalizedOGMetadata(
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr';
 
+  // Normalize path to avoid trailing slashes (e.g., /en/ -> /en)
+  const normalizedPath = path === '/' ? '' : path;
+
   // Generate localized content
   const title = customTitle || t('title');
   const description = customDescription || t('description');
@@ -69,7 +72,7 @@ export async function generateLocalizedOGMetadata(
     title,
     description,
     siteName,
-    url: `${baseUrl}/${locale}${path}`,
+    url: `${baseUrl}/${locale}${normalizedPath}`,
     image: ogImage,
     imageAlt: t('imageAlt'),
     locale: locale,

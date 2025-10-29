@@ -1,5 +1,4 @@
 import { Metadata, Viewport } from 'next';
-import { getTranslations } from 'next-intl/server';
 
 export interface LocalizedMetadataOptions {
   locale: string;
@@ -22,6 +21,9 @@ export async function generateLocalizedMetadata(
 
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dariuspizza.fr';
+
+  // Normalize path to avoid trailing slashes (e.g., /en/ -> /en)
+  const normalizedPath = path === '/' ? '' : path;
 
   // Get localized content
   const title = customTitle || seoData.title || 'Darius Pizza';
@@ -51,7 +53,7 @@ export async function generateLocalizedMetadata(
     openGraph: {
       type: 'website',
       locale: locale,
-      url: `${baseUrl}/${locale}${path}`,
+      url: `${baseUrl}/${locale}${normalizedPath}`,
       siteName,
       title,
       description,
@@ -85,15 +87,15 @@ export async function generateLocalizedMetadata(
 
     // Alternates (canonical and language alternatives)
     alternates: {
-      canonical: `${baseUrl}/${locale}${path}`,
+      canonical: `${baseUrl}/${locale}${normalizedPath}`,
       languages: {
-        en: `${baseUrl}/en${path}`,
-        fr: `${baseUrl}/fr${path}`,
-        de: `${baseUrl}/de${path}`,
-        it: `${baseUrl}/it${path}`,
-        es: `${baseUrl}/es${path}`,
-        nl: `${baseUrl}/nl${path}`,
-        'x-default': `${baseUrl}/fr${path}`,
+        en: `${baseUrl}/en${normalizedPath}`,
+        fr: `${baseUrl}/fr${normalizedPath}`,
+        de: `${baseUrl}/de${normalizedPath}`,
+        it: `${baseUrl}/it${normalizedPath}`,
+        es: `${baseUrl}/es${normalizedPath}`,
+        nl: `${baseUrl}/nl${normalizedPath}`,
+        'x-default': `${baseUrl}/fr${normalizedPath}`,
       },
     },
 
@@ -140,7 +142,7 @@ export async function generateLocalizedMetadata(
     // App links
     appLinks: {
       web: {
-        url: `${baseUrl}/${locale}${path}`,
+        url: `${baseUrl}/${locale}${normalizedPath}`,
         should_fallback: true,
       },
     },

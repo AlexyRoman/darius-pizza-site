@@ -28,7 +28,7 @@
     },
     "info": {
       "title": "Information - Darius Pizza",
-      "description": "Visit Darius Pizza for authentic pizzas. Find our location, opening hours, and contact information."
+      "description": "Visit Darius Pizza for authentic Italian pizzas in Cavalaire. Find our location, opening hours, and contact information here."
     },
     "privacy": {
       "title": "Privacy Policy - Darius Pizza",
@@ -55,7 +55,6 @@
     "designedByName": "WebOustaou - Alexy Roman",
     "legal": {
       "privacy": "Privacy",
-      "terms": "Terms",
       "imprint": "Legal Notice",
       "cookies": "Cookies"
     },
@@ -458,9 +457,9 @@
         "title": "Article 1: PREAMBLE",
         "content": "This privacy policy aims to inform site users about how their personal data is collected. Personal data is considered any information that can identify a user. This may include: first and last names, age, postal or email address, location, or IP address (non-exhaustive list).",
         "rights": "This policy also informs users of their rights regarding this data, the person responsible for processing the collected personal data, the recipients of this personal data, and the site's cookie policy.",
-        "relatedDocuments": "This policy supplements the Legal Notice and the Cookie Policy accessible to users at the following addresses:",
-        "legalMentionsLink": "https://www.dariuspizza.fr/legal-mentions",
-        "cookiesPolicyLink": "https://www.dariuspizza.fr/cookies"
+        "relatedDocuments": "This policy supplements the Legal Notice and the Cookie Policy:",
+        "legalMentionsLink": "Legal Mentions",
+        "cookiesPolicyLink": "Cookie Policy"
       },
       "principles": {
         "title": "Article 2: PRINCIPLES RELATING TO THE COLLECTION AND PROCESSING OF PERSONAL DATA",
@@ -691,77 +690,6 @@
       "cnilComplaint": {
         "title": "11. Complaint to the CNIL",
         "content": "If you believe, after contacting us, that your rights over your data are not being respected, you can file a complaint with the competent supervisory authority in France, the Commission Nationale de l'Informatique et des Libertés (CNIL): www.cnil.fr."
-      }
-    },
-    "terms": {
-      "backToHome": "Back to Home",
-      "title": "Terms of Use",
-      "lastUpdated": "Last updated: January 1, 2024",
-      "introduction": {
-        "title": "Introduction",
-        "content": "Welcome to Darius Pizza. These Terms of Use govern your use of our website and services. By accessing or using our services, you agree to be bound by these terms."
-      },
-      "acceptance": {
-        "title": "Acceptance of Terms",
-        "content": "By using our website or placing an order, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use and our Privacy Policy."
-      },
-      "orders": {
-        "title": "Orders and Services",
-        "content": "When placing an order, you agree to:",
-        "accuracy": "Provide accurate and complete information",
-        "pricing": "Pay the prices listed on our menu",
-        "availability": "Accept that menu items may not always be available",
-        "modifications": "Understand that order modifications may affect the price and delivery time"
-      },
-      "payment": {
-        "title": "Payment Terms",
-        "content": "Payment terms include:",
-        "methods": "We accept cash, credit cards, and other approved payment methods",
-        "timing": "Payment is due at the time of placing the order",
-        "refunds": "Refunds are subject to our refund policy and applicable laws"
-      },
-      "delivery": {
-        "title": "Delivery and Pickup",
-        "content": "Delivery and pickup conditions:",
-        "times": "Delivery times are estimates and may vary",
-        "areas": "We deliver within our designated service area",
-        "responsibility": "You are responsible for providing accurate delivery information"
-      },
-      "liability": {
-        "title": "Limitation of Liability",
-        "content": "To the maximum extent permitted by law, Darius Pizza shall not be liable for any indirect, incidental, special, consequential, or punitive damages.",
-        "limitation": "Our total liability shall not exceed the amount you paid for the services."
-      },
-      "intellectualProperty": {
-        "title": "Intellectual Property",
-        "content": "All content on our website, including text, graphics, logos, and images, is the property of Darius Pizza and is protected by copyright and other intellectual property laws."
-      },
-      "prohibited": {
-        "title": "Prohibited Uses",
-        "content": "You may not use our services to:",
-        "illegal": "Any unlawful purpose or to solicit others to perform unlawful acts",
-        "harassment": "Harass, abuse, or harm others",
-        "fraud": "Transmit, or procure the sending of, any advertising or promotional material",
-        "violation": "Violate any applicable laws or regulations"
-      },
-      "termination": {
-        "title": "Termination",
-        "content": "We may terminate or suspend your access to our services immediately, without prior notice, for any reason, including violation of these Terms of Use."
-      },
-      "governingLaw": {
-        "title": "Governing Law",
-        "content": "These Terms of Use shall be governed by and construed in accordance with the laws of the jurisdiction in which Darius Pizza operates."
-      },
-      "contact": {
-        "title": "Contact Information",
-        "content": "If you have any questions about these Terms of Use, please contact us:",
-        "email": "Email",
-        "phone": "Phone",
-        "address": "Address"
-      },
-      "changes": {
-        "title": "Changes to Terms",
-        "content": "We reserve the right to modify these Terms of Use at any time. We will notify users of any significant changes by posting the new Terms of Use on this page."
       }
     },
     "cookies": {

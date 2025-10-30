@@ -10,20 +10,17 @@ import { ArrowRight, Star, Clock, MapPin } from 'lucide-react';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/content/restaurant/hours.json';
 import { useThemeContext } from '@/contexts/ThemeContext';
-import {
-  formatNextOpeningTime,
-  isTimeInPeriods,
-} from '@/lib/opening-hours-utils';
+import { formatNextOpeningTime } from '@/lib/opening-hours-utils';
 import { SmartCallButton } from '@/components/ui/smart-call-button';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-
-interface OpeningHours {
-  [key: string]: {
-    day: string;
-    periods: { open: string; close: string }[];
-    isOpen: boolean;
-  };
-}
+import type { OpeningHours } from '@/types/opening-hours';
+import {
+  getTodayHours,
+  computeIsCurrentlyOpen,
+  computeIsOpeningSoon,
+  getMinutesUntilOpening,
+  findActiveClosing,
+} from '@/lib/opening-hours-view';
 
 export default function HeroSection() {
   const t = useTranslations('hero');
@@ -59,79 +56,21 @@ export default function HeroSection() {
     : 'monday';
   const currentTime = isMounted ? now.toTimeString().slice(0, 5) : '00:00'; // HH:MM format
 
-  // Check if restaurant is currently open
-  const todayHours =
-    hours[
-      Object.keys(hours).find(key => key.toLowerCase() === currentDayName) ||
-        'monday'
-    ];
-
-  const isCurrentlyOpen =
-    todayHours &&
-    todayHours.isOpen &&
-    isTimeInPeriods(currentTime, todayHours.periods);
+  // Today hours and open status
+  const todayHours = getTodayHours(hours, currentDayName);
+  const isCurrentlyOpen = computeIsCurrentlyOpen(todayHours, currentTime);
 
   // Check if restaurant is opening soon (within 1 hour)
-  const isOpeningSoon = (() => {
-    if (!todayHours || !todayHours.isOpen || isCurrentlyOpen) return false;
-
-    // Check if any period opens within the next hour
-    const currentMinutes =
-      parseInt(currentTime.split(':')[0]) * 60 +
-      parseInt(currentTime.split(':')[1]);
-    const oneHourFromNow = currentMinutes + 60;
-
-    return todayHours.periods.some(period => {
-      const [openHour, openMinute] = period.open.split(':').map(Number);
-      const openMinutes = openHour * 60 + openMinute;
-      return openMinutes > currentMinutes && openMinutes <= oneHourFromNow;
-    });
-  })();
+  const isOpeningSoon =
+    !isCurrentlyOpen && computeIsOpeningSoon(todayHours, currentTime, 60);
 
   // Calculate minutes until opening
-  const getMinutesUntilOpening = () => {
-    if (!todayHours || !isOpeningSoon) return 0;
-
-    const currentMinutes =
-      parseInt(currentTime.split(':')[0]) * 60 +
-      parseInt(currentTime.split(':')[1]);
-
-    // Find the next opening period
-    const nextOpeningPeriod = todayHours.periods
-      .filter(period => {
-        const [openHour, openMinute] = period.open.split(':').map(Number);
-        const openMinutes = openHour * 60 + openMinute;
-        return openMinutes > currentMinutes;
-      })
-      .sort((a, b) => {
-        const [aHour, aMinute] = a.open.split(':').map(Number);
-        const [bHour, bMinute] = b.open.split(':').map(Number);
-        return aHour * 60 + aMinute - (bHour * 60 + bMinute);
-      })[0];
-
-    if (!nextOpeningPeriod) return 0;
-
-    const [openHour, openMinute] = nextOpeningPeriod.open
-      .split(':')
-      .map(Number);
-    const openMinutes = openHour * 60 + openMinute;
-
-    return openMinutes - currentMinutes;
-  };
-
-  const minutesUntilOpening = getMinutesUntilOpening();
+  const minutesUntilOpening = isOpeningSoon
+    ? getMinutesUntilOpening(todayHours, currentTime)
+    : 0;
 
   // Check for current closing (happening right now)
-  const currentClosing = closings
-    .filter(closing => closing.isActive)
-    .find(closing => {
-      if (closing.startDate && closing.endDate) {
-        const startDate = new Date(closing.startDate);
-        const endDate = new Date(closing.endDate);
-        return now >= startDate && now <= endDate;
-      }
-      return false;
-    });
+  const currentClosing = findActiveClosing(closings, now);
 
   // Get badge content and styling
   const getBadgeContent = () => {
@@ -265,6 +204,7 @@ export default function HeroSection() {
 
             {/* Main Heading */}
             <div className='space-y-4'>
+              <span className='sr-only'>Welcome</span>
               <h1 className='text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-primary font-bold tracking-tight text-foreground leading-tight'>
                 {t('heading.mainTitle')}
               </h1>

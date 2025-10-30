@@ -12,16 +12,13 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { getSitePhone } from '@/lib/site-utils';
-import { isTimeInPeriods } from '@/lib/opening-hours-utils';
 import hoursConfig from '@/content/restaurant/hours.json';
-
-interface OpeningHours {
-  [key: string]: {
-    day: string;
-    periods: { open: string; close: string }[];
-    isOpen: boolean;
-  };
-}
+import type { OpeningHours } from '@/types/opening-hours';
+import {
+  getTodayHours,
+  computeIsCurrentlyOpen,
+  computeIsOpeningSoon,
+} from '@/lib/opening-hours-view';
 
 interface SmartCallButtonProps {
   children: React.ReactNode;
@@ -61,47 +58,18 @@ export function SmartCallButton({
 
   useEffect(() => {
     if (!isMounted) return;
-
     const now = new Date();
     const currentDayName = now
       .toLocaleDateString('en-US', { weekday: 'long' })
       .toLowerCase();
-    const currentTime = now.toTimeString().slice(0, 5); // HH:MM format
+    const currentTime = now.toTimeString().slice(0, 5);
 
-    const todayHours =
-      hours[
-        Object.keys(hours).find(key => key.toLowerCase() === currentDayName) ||
-          'monday'
-      ];
-
-    if (todayHours && todayHours.isOpen) {
-      // Check if currently open
-      const currentlyOpen = isTimeInPeriods(currentTime, todayHours.periods);
-      setIsCurrentlyOpen(currentlyOpen);
-
-      // Check if opening soon (within 30 minutes)
-      if (!currentlyOpen) {
-        const currentMinutes =
-          parseInt(currentTime.split(':')[0]) * 60 +
-          parseInt(currentTime.split(':')[1]);
-        const thirtyMinutesFromNow = currentMinutes + 30;
-
-        const openingSoon = todayHours.periods.some(period => {
-          const [openHour, openMinute] = period.open.split(':').map(Number);
-          const openMinutes = openHour * 60 + openMinute;
-          return (
-            openMinutes > currentMinutes && openMinutes <= thirtyMinutesFromNow
-          );
-        });
-
-        setIsOpeningSoon(openingSoon);
-      } else {
-        setIsOpeningSoon(false);
-      }
-    } else {
-      setIsCurrentlyOpen(false);
-      setIsOpeningSoon(false);
-    }
+    const todayHours = getTodayHours(hours, currentDayName);
+    const currentlyOpen = computeIsCurrentlyOpen(todayHours, currentTime);
+    setIsCurrentlyOpen(currentlyOpen);
+    setIsOpeningSoon(
+      !currentlyOpen && computeIsOpeningSoon(todayHours, currentTime, 30)
+    );
   }, [isMounted, hours]);
 
   const shouldShowAlert = !isCurrentlyOpen && !isOpeningSoon;

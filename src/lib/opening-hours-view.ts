@@ -1,12 +1,9 @@
 import { isTimeInPeriods } from '@/lib/opening-hours-utils';
-
-export type OpeningPeriod = { open: string; close: string };
-export type DayHours = {
-  day: string;
-  periods: OpeningPeriod[];
-  isOpen: boolean;
-};
-export type OpeningHoursMap = Record<string, DayHours>;
+import type {
+  OpeningHours as OpeningHoursMap,
+  DayHours,
+  OpeningHoursPeriod as OpeningPeriod,
+} from '@/types/opening-hours';
 
 export function findTodayKey(
   hours: OpeningHoursMap,
@@ -112,6 +109,26 @@ export function getCurrentPeriodInfo(
     })[0];
 
   return { currentPeriod, nextOpeningPeriod };
+}
+
+// Find a currently active closing window (startDate <= now <= endDate)
+export function findActiveClosing<
+  T extends {
+    isActive: boolean;
+    startDate?: string;
+    endDate?: string;
+  },
+>(closings: T[], now: Date): T | undefined {
+  return closings
+    .filter(closing => closing.isActive)
+    .find(closing => {
+      if (closing.startDate && closing.endDate) {
+        const startDate = new Date(closing.startDate);
+        const endDate = new Date(closing.endDate);
+        return now >= startDate && now <= endDate;
+      }
+      return false;
+    });
 }
 
 export function getActiveMessages<

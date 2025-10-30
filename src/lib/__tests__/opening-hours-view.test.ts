@@ -8,7 +8,10 @@ import {
   formatTimeForLocale,
   getTodayHours,
 } from '@/lib/opening-hours-view';
-import type { OpeningHoursMap, DayHours } from '@/lib/opening-hours-view';
+import type {
+  OpeningHours as OpeningHoursMap,
+  DayHours,
+} from '@/types/opening-hours';
 
 const hours: OpeningHoursMap = {
   monday: {

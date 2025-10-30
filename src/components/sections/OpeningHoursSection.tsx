@@ -31,14 +31,7 @@ import {
   getTodayHours,
   getUpcomingClosings,
 } from '@/lib/opening-hours-view';
-
-interface OpeningHours {
-  [key: string]: {
-    day: string;
-    periods: { open: string; close: string }[];
-    isOpen: boolean;
-  };
-}
+import type { OpeningHours } from '@/types/opening-hours';
 
 type SpecialMessage = {
   id?: string;

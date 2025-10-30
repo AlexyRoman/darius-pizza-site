@@ -3,6 +3,7 @@ import './globals.css';
 import { fontPrimary, fontSecondary } from '@/config/site/brand/fonts';
 import { ThemeProvider as AppThemeProvider } from '@/contexts/ThemeContext';
 import { routing } from '@/i18n/routing';
+import { headers } from 'next/headers';
 
 export const metadata: Metadata = {
   // Title and description are set by locale-specific layouts
@@ -128,7 +129,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -136,10 +137,17 @@ export default function RootLayout({
   // Root layout with <html>/<body> tags
   // For locale routes, the [locale]/layout.tsx provides content without html/body
   // For root-level routes like 404, this layout provides html/body
-  // html lang is set via client-side script to read from URL path
+  // Read locale from middleware-set header for html lang attribute (server-side for SEO)
+  const headersList = await headers();
+  const headerLocale = headersList.get('x-locale');
+  const htmlLang =
+    headerLocale && routing.locales.includes(headerLocale)
+      ? headerLocale
+      : routing.defaultLocale;
+
   return (
     <html
-      lang={routing.defaultLocale}
+      lang={htmlLang}
       suppressHydrationWarning
       className={`${fontPrimary.variable} ${fontSecondary.variable}`}
     >

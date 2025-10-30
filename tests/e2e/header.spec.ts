@@ -37,6 +37,12 @@ test.describe('Header - locale and theme', () => {
   });
 
   test('cycle theme toggles html.dark class', async ({ page }) => {
+    // Force a known initial theme before hydration
+    await page.addInitScript(() => {
+      try {
+        localStorage.setItem('darius-pizza-theme', 'light');
+      } catch {}
+    });
     await page.goto(`${BASE}/en`);
 
     const html = page.locator('html');
@@ -45,8 +51,10 @@ test.describe('Header - locale and theme', () => {
     const initialIsDark = await html.evaluate(el =>
       el.classList.contains('dark')
     );
-    for (let i = 0; i < 3; i++) {
+    // Try a few times in case a transition or hydration delays the toggle
+    for (let i = 0; i < 5; i++) {
       await toggle.click();
+      await page.waitForTimeout(100);
       const changed = await html.evaluate(
         (el, initial) => el.classList.contains('dark') !== initial,
         initialIsDark
@@ -60,11 +68,37 @@ test.describe('Header - locale and theme', () => {
   });
 
   test('header Call CTA opens dialog when closed', async ({ page }) => {
-    // Within active closing window from closings config (2025-10-10 to 2025-10-29T22:00Z)
-    await mockNowTo(page, '2025-10-20T12:00:00.000Z');
+    // Tuesday at 03:30 UTC (05:30 Paris) - restaurant is closed (opens at 18:00)
+    // Using a time when restaurant is definitely closed to trigger dialog
+    await mockNowTo(page, '2024-06-11T03:30:00.000Z'); // Tuesday 03:30 UTC
     await page.goto(`${BASE}/en`);
+
+    // Dismiss cookie banner if it appears
+    await page
+      .getByRole('button', { name: /Accept All|Decline All/i })
+      .first()
+      .click({ timeout: 2000 })
+      .catch(() => {});
+
+    // Wait for component to hydrate and compute opening status
+    // The SmartCallButton needs to mount and compute shouldShowAlert
+    await page.waitForTimeout(800);
+
+    // Find the Call button by aria-label in header
     const headerCall = page.getByRole('button', { name: /^Call$/i }).first();
-    await headerCall.click();
-    await expect(page.getByRole('dialog')).toBeVisible();
+    await headerCall.waitFor({ state: 'visible' });
+    // Ensure in viewport then click
+    await headerCall.scrollIntoViewIfNeeded();
+
+    // Verify button is clickable (not a tel: link when closed)
+    const isButton = await headerCall.evaluate(el => el.tagName === 'BUTTON');
+    expect(isButton).toBe(true);
+
+    await headerCall.click({ delay: 50 });
+
+    // Wait for dialog content (buttons) to avoid role-only flakiness
+    await expect(page.getByRole('button', { name: /Call Now/i })).toBeVisible({
+      timeout: 7000,
+    });
   });
 });

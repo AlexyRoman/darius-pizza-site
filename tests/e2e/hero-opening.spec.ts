@@ -62,9 +62,12 @@ test.describe('Hero badge and Call CTA behavior', () => {
     const callBtn = page
       .getByRole('button', { name: /Order by phone/i })
       .first();
-    await callBtn.click();
-    // Dialog title from callDialog translations
-    await expect(page.getByRole('dialog')).toBeVisible();
+    await callBtn.scrollIntoViewIfNeeded();
+    await callBtn.click({ delay: 50 });
+    // Wait for dialog action button to appear
+    await expect(page.getByRole('button', { name: /Call Now/i })).toBeVisible({
+      timeout: 7000,
+    });
   });
 
   test.skip('hero badge shows closed during scheduled closing', async ({

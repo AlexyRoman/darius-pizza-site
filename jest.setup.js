@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+import 'whatwg-fetch';
 
 // Polyfill window.matchMedia for tests that rely on media queries
 if (typeof window !== 'undefined' && !window.matchMedia) {

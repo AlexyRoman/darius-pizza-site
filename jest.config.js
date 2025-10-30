@@ -31,8 +31,14 @@ const customJestConfig = {
     '/src/components/ui/',
     '/src/types/',
     '/src/config/site/',
-    'src/components/',
-    'src/lib/i18n/flags.tsx',
+    '/src/components/',
+    '/src/lib/i18n/flags.tsx',
+    '/src/emails/',
+    '/src/app/\\[locale\\]/.*',
+    'src/app/sitemap.ts',
+    'src/app/robots.ts',
+    'src/app/layout.tsx',
+    'src/app/not-found.tsx',
   ],
   coverageThreshold: {
     // ============================================================================
@@ -143,6 +149,26 @@ const customJestConfig = {
       functions: 85,
       lines: 85,
       statements: 85,
+    },
+
+    // API routes coverage targets
+    'src/app/api/contact/route.ts': {
+      branches: 75,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+    'src/app/api/instagram/route.ts': {
+      branches: 75,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+    'src/app/api/og/route.tsx': {
+      branches: 70,
+      functions: 80,
+      lines: 80,
+      statements: 80,
     },
   },
 };

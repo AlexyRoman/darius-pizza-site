@@ -287,12 +287,10 @@
       "intro": "Ons verhaal begint niet met meel, maar met het mes. Voordat het een pizzeria was, was ons huis een bekend adres in Cavalaire, opgericht in 1936. Vanaf 1966 werd het \"Maison Darius\", een familieslagerij geworteld in het landschap van Cavalaire, waar vakmanschap en compromisloze productkwaliteit samensmolten.",
       "conclusion": "In 2020 begon een nieuw hoofdstuk. De passie voor gastronomie en uitzonderlijke producten transformeerde het slagersblok in een houtoven. Maison Darius werd Darius Pizza.\n\nHet decor is veranderd, maar de ziel is intact. We hebben het erfgoed van de slagerij behouden: de liefde voor verse producten, het respect voor ambachtelijk vakmanschap en een obsessie voor smaak. Dezelfde eisen die we aan ons vlees stelden, passen we nu toe op elk ingrediënt dat onze pizza's siert.",
       "image1": {
-        "alt": "Voorgevel Darius Pizza sinds 2020",
-        "src": "/static/pizza-storefront.webp"
+        "alt": "Voorgevel Darius Pizza sinds 2020"
       },
       "image2": {
-        "alt": "Voorgevel Slagerij Darius voor 2020",
-        "src": "/static/about-kitchen.webp"
+        "alt": "Voorgevel Slagerij Darius voor 2020"
       }
     },
     "section2": {
@@ -303,8 +301,7 @@
         "step": "Stap 1: Het Precieze Kneden",
         "content": "Alles begint met een gecontroleerde hydratatie en langzaam kneden. We controleren de temperatuur van ons deeg op elk moment om het niet te \"stressen\". Deze fase, de 'pointage' (eerste rijs), ontwikkelt het initiële glutennetwerk dat het deeg zijn structuur geeft, terwijl de aroma's van ons meel behouden blijven.",
         "image": {
-          "alt": "Deegbol na het kneden",
-          "src": "/static/dough-ball-after-kneading.webp"
+          "alt": "Deegbol na het kneden"
         }
       },
       "card2": {
@@ -312,8 +309,7 @@
         "step": "Stap 2: De Langzame Rijping (+48u)",
         "content": "Hier gebeurt de magie. Onze deegbollen rusten minimaal 48 uur in een gekoelde omgeving met gecontroleerde temperatuur. Tijdens deze lange rijping breken de natuurlijke enzymen van de gist het glutennetwerk af. De complexe eiwitketens worden \"voorverteerd\".\n\nHet resultaat voor u? Een ongelooflijk licht, luchtig en licht verteerbaar deeg. Geen zwaar gevoel meer na de maaltijd.",
         "image": {
-          "alt": "Deegbollen rijpen in de koeling",
-          "src": "/static/dough-balls-cold-maturing.webp"
+          "alt": "Deegbollen rijpen in de koeling"
         }
       },
       "card3": {
@@ -321,8 +317,7 @@
         "step": "Stap 3: De Openbaring in de Oven",
         "content": "Tijdens de rijping zetten andere enzymen het complexe zetmeel uit het meel om in eenvoudige suikers. Tijdens het bakken op hoge temperatuur ontmoeten deze suikers de aminozuren. Dit is de beroemde Maillardreactie. Het doet meer dan alleen bakken: het karamelliseert het deeg, creëert die goudbruine en gevlekte (\"luipaard\") korst, en laat een palet van onnavolgbare geroosterde aroma's vrij.",
         "image": {
-          "alt": "Goudbruine en luchtige pizzakorst",
-          "src": "/static/hero-pizza.webp"
+          "alt": "Goudbruine en luchtige pizzakorst"
         }
       }
     },
@@ -334,8 +329,7 @@
         "step": "Het Karakter van de Alpen: Moulin Céard",
         "content": "De basis van ons deeg is ons meel. We hebben gekozen voor Moulin Céard, een familiemolen in de Hautes-Alpes met knowhow die sinds 1820 wordt doorgegeven.\n\nZij selecteren regionale tarwe, vaak Label Rouge, om een karaktervol meel zonder additieven te produceren. Deze keuze geeft ons deeg zijn rustieke smaak en zijn unieke vermogen om te bloeien tijdens de 48 uur durende rijping. Het is onze toewijding aan terroir en traceerbaarheid.",
         "image": {
-          "alt": "Meel Moulin Céard uit de Hautes-Alpes",
-          "src": "/static/moulin-ceard-flour.webp"
+          "alt": "Meel Moulin Céard uit de Hautes-Alpes"
         }
       },
       "card2": {
@@ -343,8 +337,7 @@
         "step": "De Veeleisendheid van de Slagerij",
         "content": "We zijn niet vergeten waar we vandaan komen. Het erfgoed van Maison Darius is onze compromisloze eis voor de kwaliteit van vlees en charcuterie.\n\nWe selecteren onze producten met het oog en de veeleisendheid van de slager: superieure ham, ambachtelijke coppa, parmaham... Deze expertise is de garantie dat u op onze pizza's smaakvolle, rijke producten vindt die u nergens anders zult vinden.",
         "image": {
-          "alt": "Kwaliteitschacuterie en vleeswaren",
-          "src": "/static/charcuterie.webp"
+          "alt": "Kwaliteitschacuterie en vleeswaren"
         }
       },
       "card3": {
@@ -352,8 +345,7 @@
         "step": "Het Hart van Italië",
         "content": "Een pizza is een huwelijk tussen lokaal en authentiek. Voor de pijlers van de Italiaanse gastronomie kopen we rechtstreeks in bij de besten.\n\nOnze tomaten? San Marzano AOP, zongerijpt aan de voet van de Vesuvius. Onze Mozzarella? Smeltende fior di latte of een echte Bufala Campana AOP van buffelmelk. Extra vierge olijfolie, 24 maanden gerijpte Parmigiano Reggiano... Wij importeren de zon van Italië.",
         "image": {
-          "alt": "Authentieke Italiaanse AOP-producten",
-          "src": "/static/italian-products.webp"
+          "alt": "Authentieke Italiaanse AOP-producten"
         }
       }
     },

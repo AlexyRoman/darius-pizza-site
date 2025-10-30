@@ -287,12 +287,10 @@
       "intro": "Nuestra historia no comienza con harina, sino con el cuchillo. Antes de ser una pizzería, nuestra casa era una dirección imprescindible en Cavalaire, fundada en 1936. Desde 1966, se convirtió en la \"Maison Darius\", una carnicería familiar arraigada en el paisaje de Cavalaire, entrelazando saber hacer y una calidad intransigente de los productos.",
       "conclusion": "En 2020, se abrió un nuevo capítulo. La pasión por la gastronomía y los productos excepcionales transformó el tajo en un horno de leña. La Maison Darius se convirtió en Darius Pizza.\n\nEl decorado ha cambiado, pero el alma está intacta. Hemos conservado la herencia de la carnicería: el amor por el producto fresco, el respeto por el saber hacer artesanal y una obsesión por el sabor. Esta exigencia que aplicábamos a nuestras carnes, la aplicamos hoy a cada ingrediente que compone nuestras pizzas.",
       "image1": {
-        "alt": "Fachada de Darius Pizza desde 2020",
-        "src": "/static/pizza-storefront.webp"
+        "alt": "Fachada de Darius Pizza desde 2020"
       },
       "image2": {
-        "alt": "Fachada de la Carnicería Darius antes de 2020",
-        "src": "/static/about-kitchen.webp"
+        "alt": "Fachada de la Carnicería Darius antes de 2020"
       }
     },
     "section2": {
@@ -303,8 +301,7 @@
         "step": "Paso 1: El Amasado de Precisión",
         "content": "Todo comienza con una hidratación controlada y un amasado lento. Controlamos la temperatura de nuestra masa en todo momento para no \"estresarla\". Esta etapa, la fermentación en bloque, permite desarrollar la red de gluten inicial que dará estructura a la masa, preservando al mismo tiempo los aromas de nuestra harina.",
         "image": {
-          "alt": "Bola de masa después del amasado",
-          "src": "/static/dough-ball-after-kneading.webp"
+          "alt": "Bola de masa después del amasado"
         }
       },
       "card2": {
@@ -312,8 +309,7 @@
         "step": "Paso 2: La Lenta Maduración (+48h)",
         "content": "Aquí es donde ocurre la magia. Nuestras bolas de masa reposan en frío a temperatura controlada durante un mínimo de 48 horas. Durante esta larga maduración, las enzimas naturales de la levadura descomponen la red de gluten. Las cadenas complejas de proteínas son \"predigeridas\".\n\n¿El resultado para usted? Una masa increíblemente ligera, alveolada y fácil de digerir. Se acabó la sensación de pesadez después de la comida.",
         "image": {
-          "alt": "Bolas de masa madurando en frío",
-          "src": "/static/dough-balls-cold-maturing.webp"
+          "alt": "Bolas de masa madurando en frío"
         }
       },
       "card3": {
@@ -321,8 +317,7 @@
         "step": "Paso 3: La Revelación en el Horno",
         "content": "Durante la maduración, otras enzimas transforman el almidón complejo de la harina en azúcares simples. Durante la cocción a alta temperatura, estos azúcares se encuentran con los aminoácidos. Es la famosa Reacción de Maillard. No solo cuece: carameliza la masa, crea esa corteza dorada y moteada (\"leopardada\"), y libera una paleta de aromas tostados inimitables.",
         "image": {
-          "alt": "Corteza de pizza dorada y alveolada",
-          "src": "/static/hero-pizza.webp"
+          "alt": "Corteza de pizza dorada y alveolada"
         }
       }
     },
@@ -334,8 +329,7 @@
         "step": "El Carácter de los Alpes: Moulin Céard",
         "content": "La base de nuestra masa es nuestra harina. Elegimos el Moulin Céard, un molino familiar de los Altos Alpes con un saber hacer transmitido desde 1820.\n\nSeleccionan trigos regionales, a menudo Label Rouge, para producir una harina con carácter, sin aditivos. Es esta elección la que da a nuestra masa su sabor rústico y su capacidad única para desarrollarse durante las 48 horas de maduración. Es nuestro compromiso con el terruño y la trazabilidad.",
         "image": {
-          "alt": "Harina Moulin Céard de los Altos Alpes",
-          "src": "/static/moulin-ceard-flour.webp"
+          "alt": "Harina Moulin Céard de los Altos Alpes"
         }
       },
       "card2": {
@@ -343,8 +337,7 @@
         "step": "La Exigencia de la Carnicería",
         "content": "No hemos olvidado de dónde venimos. La herencia de la Maison Darius es nuestra intransigencia en la calidad de las carnes y embutidos.\n\nSeleccionamos nuestros productos con el ojo y la exigencia del carnicero: jamón cocido superior, coppa artesanal, jamón de parma... Esta experiencia es la garantía de encontrar en nuestras pizzas productos sabrosos, ricos en sabor, que no encontrará en ningún otro lugar.",
         "image": {
-          "alt": "Embutidos y carnes de calidad",
-          "src": "/static/charcuterie.webp"
+          "alt": "Embutidos y carnes de calidad"
         }
       },
       "card3": {
@@ -352,8 +345,7 @@
         "step": "El Corazón de Italia",
         "content": "Una pizza es un matrimonio entre lo local y lo auténtico. Para los ingredientes pilares de la gastronomía italiana, nos abastecemos directamente de los mejores.\n\n¿Nuestros tomates? San Marzano DOP, bañados por el sol al pie del Vesubio. ¿Nuestra Mozzarella? Fior di latte fundente o una verdadera Bufala Campana DOP con leche de búfala. Aceite de oliva virgen extra, Parmigiano Reggiano 24 meses... Importamos el sol de Italia.",
         "image": {
-          "alt": "Auténticos productos italianos DOP",
-          "src": "/static/italian-products.webp"
+          "alt": "Auténticos productos italianos DOP"
         }
       }
     },

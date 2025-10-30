@@ -287,12 +287,10 @@
       "intro": "Our story doesn't begin with flour, but with the knife. Before becoming a pizzeria, our establishment was a landmark in Cavalaire, founded in 1936. In 1966, it became \"Maison Darius,\" a family butchery rooted in the Cavalaire landscape, blending craftsmanship with an uncompromising quality of products.",
       "conclusion": "In 2020, a new chapter began. The passion for gastronomy and exceptional products transformed the butcher's block into a wood-fired oven. Maison Darius became Darius Pizza.\n\nThe setting has changed, but the soul remains intact. We have preserved the heritage of the butchery: a love for fresh produce, respect for artisanal craftsmanship, and an obsession with taste. The same high standards we applied to our meats, we now apply to every ingredient that makes up our pizzas.",
       "image1": {
-        "alt": "Darius Pizza storefront since 2020",
-        "src": "/static/pizza-storefront.webp"
+        "alt": "Darius Pizza storefront since 2020"
       },
       "image2": {
-        "alt": "Darius Butchery storefront before 2020",
-        "src": "/static/about-kitchen.webp"
+        "alt": "Darius Butchery storefront before 2020"
       }
     },
     "section2": {
@@ -303,8 +301,7 @@
         "step": "Step 1: Precision Kneading",
         "content": "It all starts with controlled hydration and slow kneading. We control our dough's temperature at every moment to avoid \"stressing\" it. This stage, bulk fermentation, allows the initial gluten network to develop, giving the dough its structure while preserving the aromas of our flour.",
         "image": {
-          "alt": "Dough ball after kneading",
-          "src": "/static/dough-ball-after-kneading.webp"
+          "alt": "Dough ball after kneading"
         }
       },
       "card2": {
@@ -312,8 +309,7 @@
         "step": "Step 2: Slow Maturation (48h+)",
         "content": "This is where the magic happens. Our dough balls rest in a temperature-controlled cold environment for a minimum of 48 hours. During this long maturation, the natural enzymes from the yeast break down the gluten network. The complex protein chains are \"pre-digested.\"\n\nThe result for you? An incredibly light, airy, and easy-to-digest dough. No more heavy feeling after your meal.",
         "image": {
-          "alt": "Dough balls cold-maturing",
-          "src": "/static/dough-balls-cold-maturing.webp"
+          "alt": "Dough balls cold-maturing"
         }
       },
       "card3": {
@@ -321,8 +317,7 @@
         "step": "Step 3: The Oven's Reveal",
         "content": "During maturation, other enzymes transform the complex starch from the flour into simple sugars. During high-temperature baking, these sugars meet amino acids. This is the famous Maillard Reaction. It doesn't just cook: it caramelizes the dough, creates that golden, leopard-spotted crust, and releases an inimitable palette of roasted aromas.",
         "image": {
-          "alt": "Golden and airy pizza crust",
-          "src": "/static/hero-pizza.webp"
+          "alt": "Golden and airy pizza crust"
         }
       }
     },
@@ -334,8 +329,7 @@
         "step": "The Character of the Alps: Moulin Céard",
         "content": "The foundation of our dough is our flour. We chose Moulin Céard, a family mill in the Hautes-Alpes with expertise passed down since 1820.\n\nThey select regional wheats, often Label Rouge, to produce a flour with character, free of additives. It's this choice that gives our dough its rustic flavor and unique ability to flourish during its 48-hour maturation. This is our commitment to terroir and traceability.",
         "image": {
-          "alt": "Moulin Céard flour from the Hautes-Alpes",
-          "src": "/static/moulin-ceard-flour.webp"
+          "alt": "Moulin Céard flour from the Hautes-Alpes"
         }
       },
       "card2": {
@@ -343,8 +337,7 @@
         "step": "The Butcher's Standard",
         "content": "We haven't forgotten where we come from. The legacy of Maison Darius is our unwavering standard for the quality of meats and charcuterie.\n\nWe select our products with the eye and standards of a butcher: superior cooked ham, artisanal coppa, Parma ham... This expertise is your guarantee of finding flavorful, rich-tasting products on our pizzas that you won't find anywhere else.",
         "image": {
-          "alt": "Quality charcuterie and meats",
-          "src": "/static/charcuterie.webp"
+          "alt": "Quality charcuterie and meats"
         }
       },
       "card3": {
@@ -352,8 +345,7 @@
         "step": "The Heart of Italy",
         "content": "A pizza is a marriage of local and authentic. For the pillar ingredients of Italian gastronomy, we source directly from the best.\n\nOur tomatoes? San Marzano PDO, sun-ripened at the foot of Vesuvius. Our Mozzarella? Creamy fior di latte or true Bufala Campana PDO made from buffalo milk. Extra-virgin olive oil, 24-month Parmigiano Reggiano... We import the Italian sun.",
         "image": {
-          "alt": "Authentic Italian PDO products",
-          "src": "/static/italian-products.webp"
+          "alt": "Authentic Italian PDO products"
         }
       }
     },

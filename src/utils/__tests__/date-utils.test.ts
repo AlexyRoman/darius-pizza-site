@@ -2,11 +2,7 @@
  * Tests for date utility functions
  */
 
-import {
-  formatDate,
-  formatDateTime,
-  formatHourMinute,
-} from '../../utils/date-utils';
+import { formatDate, formatDateTime, formatHourMinute } from '../date-utils';
 
 describe('date-utils', () => {
   describe('formatDate', () => {

@@ -64,14 +64,14 @@ export default function InfoContent() {
               <Comparison className='aspect-video rounded-lg overflow-hidden shadow-2xl border border-border/50'>
                 <ComparisonItem position='left'>
                   <img
-                    src={t('section1.image1.src')}
+                    src='/static/pizza-storefront.webp'
                     alt={t('section1.image1.alt')}
                     className='w-full h-full object-cover'
                   />
                 </ComparisonItem>
                 <ComparisonItem position='right'>
                   <img
-                    src={t('section1.image2.src')}
+                    src='/static/about-kitchen.webp'
                     alt={t('section1.image2.alt')}
                     className='w-full h-full object-cover'
                   />
@@ -124,7 +124,7 @@ export default function InfoContent() {
                   </p>
                   <div className='mt-auto pt-4'>
                     <img
-                      src={t('section2.card1.image.src')}
+                      src='/static/dough-ball-after-kneading.webp'
                       alt={t('section2.card1.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />
@@ -153,7 +153,7 @@ export default function InfoContent() {
                   </p>
                   <div className='mt-auto pt-4'>
                     <img
-                      src={t('section2.card2.image.src')}
+                      src='/static/dough-balls-cold-maturing.webp'
                       alt={t('section2.card2.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />
@@ -182,7 +182,7 @@ export default function InfoContent() {
                   </p>
                   <div className='mt-auto pt-4'>
                     <img
-                      src={t('section2.card3.image.src')}
+                      src='/static/hero-pizza.webp'
                       alt={t('section2.card3.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />
@@ -229,7 +229,7 @@ export default function InfoContent() {
                   </p>
                   <div className='mt-auto pt-4'>
                     <img
-                      src={t('section3.card1.image.src')}
+                      src='/static/moulin-ceard-flour.webp'
                       alt={t('section3.card1.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />
@@ -258,7 +258,7 @@ export default function InfoContent() {
                   </p>
                   <div className='mt-auto pt-4'>
                     <img
-                      src={t('section3.card2.image.src')}
+                      src='/static/charcuterie.webp'
                       alt={t('section3.card2.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />
@@ -287,7 +287,7 @@ export default function InfoContent() {
                   </p>
                   <div className='mt-auto pt-4'>
                     <img
-                      src={t('section3.card3.image.src')}
+                      src='/static/italian-products.webp'
                       alt={t('section3.card3.image.alt')}
                       className='w-full h-48 object-cover rounded-lg'
                     />

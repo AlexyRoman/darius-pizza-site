@@ -287,12 +287,10 @@
       "intro": "La nostra storia non inizia con la farina, ma con il coltello. Prima di essere una pizzeria, la nostra casa era un indirizzo imperdibile a Cavalaire, fondata nel 1936. Dal 1966, è diventata la \"Maison Darius\", una macelleria familiare radicata nel paesaggio di Cavalaire, che intrecciava maestria e qualità intransigente dei prodotti.",
       "conclusion": "Nel 2020, si è aperto un nuovo capitolo. La passione per la gastronomia e i prodotti d'eccezione ha trasformato il ceppo in un forno a legna. La Maison Darius è diventata Darius Pizza.\n\nL'arredamento è cambiato, ma l'anima è intatta. Abbiamo conservato l'eredità della macelleria: l'amore per il prodotto fresco, il rispetto per la maestria artigianale e un'ossessione per il gusto. Questa esigenza che applicavamo alle nostre carni, la applichiamo oggi a ogni ingrediente che compone le nostre pizze.",
       "image1": {
-        "alt": "Insegna Darius Pizza dal 2020",
-        "src": "/static/pizza-storefront.webp"
+        "alt": "Insegna Darius Pizza dal 2020"
       },
       "image2": {
-        "alt": "Insegna Macelleria Darius prima del 2020",
-        "src": "/static/about-kitchen.webp"
+        "alt": "Insegna Macelleria Darius prima del 2020"
       }
     },
     "section2": {
@@ -303,8 +301,7 @@
         "step": "Fase 1: L'Impasto di Precisione",
         "content": "Tutto inizia con un'idratazione controllata e un impasto lento. Controlliamo la temperatura del nostro impasto in ogni momento per non \"stressarlo\". Questa fase, la puntata (prima lievitazione), permette di sviluppare la rete glutinica iniziale che darà struttura all'impasto, preservando gli aromi della nostra farina.",
         "image": {
-          "alt": "Palla di impasto dopo l'impastamento",
-          "src": "/static/dough-ball-after-kneading.webp"
+          "alt": "Palla di impasto dopo l'impastamento"
         }
       },
       "card2": {
@@ -312,8 +309,7 @@
         "step": "Fase 2: La Lenta Maturazione (+48h)",
         "content": "È qui che avviene la magia. I nostri panetti riposano al freddo a temperatura controllata per un minimo di 48 ore. Durante questa lunga maturazione, gli enzimi naturali del lievito degradano la rete glutinica. Le catene proteiche complesse vengono \"pre-digerite\".\n\nIl risultato per voi? Un impasto incredibilmente leggero, alveolato e facile da digerire. Niente più sensazione di pesantezza dopo il pasto.",
         "image": {
-          "alt": "Panetti in maturazione a freddo",
-          "src": "/static/dough-balls-cold-maturing.webp"
+          "alt": "Panetti in maturazione a freddo"
         }
       },
       "card3": {
@@ -321,8 +317,7 @@
         "step": "Fase 3: La Rivelazione in Forno",
         "content": "Durante la maturazione, altri enzimi trasformano l'amido complesso della farina in zuccheri semplici. Durante la cottura ad alta temperatura, questi zuccheri incontrano gli aminoacidi. È la famosa Reazione di Maillard. Non si limita a cuocere: caramellizza l'impasto, crea quella crosta dorata e maculata (\"leopardata\"), e sprigiona una gamma di aromi tostati inimitabili.",
         "image": {
-          "alt": "Crosta di pizza dorata e alveolata",
-          "src": "/static/hero-pizza.webp"
+          "alt": "Crosta di pizza dorata e alveolata"
         }
       }
     },
@@ -334,8 +329,7 @@
         "step": "Il Carattere delle Alpi: Moulin Céard",
         "content": "La base del nostro impasto è la nostra farina. Abbiamo scelto il Moulin Céard, un mulino familiare delle Alte Alpi con un savoir-faire tramandato dal 1820.\n\nSelezionano grani regionali, spesso Label Rouge, per produrre una farina di carattere, senza additivi. È questa scelta che conferisce al nostro impasto il suo sapore rustico e la sua capacità unica di svilupparsi durante le 48 ore di maturazione. È il nostro impegno per il territorio e la tracciabilità.",
         "image": {
-          "alt": "Farina Moulin Céard delle Alte Alpi",
-          "src": "/static/moulin-ceard-flour.webp"
+          "alt": "Farina Moulin Céard delle Alte Alpi"
         }
       },
       "card2": {
@@ -343,8 +337,7 @@
         "step": "L'Esigenza della Macelleria",
         "content": "Non abbiamo dimenticato da dove veniamo. L'eredità della Maison Darius è la nostra intransigenza sulla qualità delle carni e dei salumi.\n\nSelezioniamo i nostri prodotti con l'occhio e l'esigenza del macellaio: prosciutto cotto superiore, coppa artigianale, prosciutto di Parma... Questa competenza è la garanzia di trovare sulle nostre pizze prodotti saporiti, ricchi di gusto, che non troverete da nessun'altra parte.",
         "image": {
-          "alt": "Salumi e carni di qualità",
-          "src": "/static/charcuterie.webp"
+          "alt": "Salumi e carni di qualità"
         }
       },
       "card3": {
@@ -352,8 +345,7 @@
         "step": "Il Cuore dell'Italia",
         "content": "Una pizza è un matrimonio tra il locale e l'autenticità. Per gli ingredienti cardine della gastronomia italiana, ci riforniamo direttamente dai migliori.\n\nI nostri pomodori? San Marzano DOP, baciati dal sole ai piedi del Vesuvio. La nostra Mozzarella? Fior di latte fondente o una vera Bufala Campana DOP. Olio d'oliva extra-vergine, Parmigiano Reggiano 24 mesi... Importiamo il sole dell'Italia.",
         "image": {
-          "alt": "Prodotti italiani DOP autentici",
-          "src": "/static/italian-products.webp"
+          "alt": "Prodotti italiani DOP autentici"
         }
       }
     },

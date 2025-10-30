@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { envServer } from '@/lib/env';
 import { z } from 'zod';
+import {
+  renderContactAdminEmail,
+  type ContactEmailData,
+} from '@/emails/contact-admin';
+import { renderContactAutoReplyEmail } from '@/emails/contact-auto-reply';
 
 const resend = new Resend(envServer.RESEND_API_KEY);
 
@@ -100,86 +105,12 @@ export async function POST(request: NextRequest) {
 
     // Create email content
     const emailSubject = `Contact Form: ${validatedData.subject}`;
-    const emailHtml = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="UTF-8">
-          <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: #d97706; color: white; padding: 20px; text-align: center; }
-            .content { background: #f9fafb; padding: 20px; margin: 20px 0; border-radius: 8px; }
-            .field { margin: 15px 0; }
-            .label { font-weight: bold; color: #555; }
-            .value { margin-top: 5px; color: #333; }
-            .message { background: white; padding: 15px; border-left: 4px solid #d97706; margin: 15px 0; }
-            .footer { text-align: center; color: #666; font-size: 14px; margin-top: 30px; padding: 20px; border-top: 1px solid #e5e7eb; }
-          </style>
-        </head>
-        <body>
-          <div class="container">
-            <div class="header">
-              <h1>🍕 New Contact Form Submission</h1>
-            </div>
-            
-            <div class="content">
-              <div class="field">
-                <div class="label">Name:</div>
-                <div class="value">${validatedData.name}</div>
-              </div>
-              
-              <div class="field">
-                <div class="label">Email:</div>
-                <div class="value">${validatedData.email}</div>
-              </div>
-              
-              ${
-                validatedData.phone
-                  ? `
-              <div class="field">
-                <div class="label">Phone:</div>
-                <div class="value">${validatedData.phone}</div>
-              </div>
-              `
-                  : ''
-              }
-              
-              <div class="field">
-                <div class="label">Inquiry Type:</div>
-                <div class="value">${inquiryTypeLabel}</div>
-              </div>
-              
-              <div class="field">
-                <div class="label">Subject:</div>
-                <div class="value">${validatedData.subject}</div>
-              </div>
-              
-              ${
-                validatedData.preferredContact
-                  ? `
-              <div class="field">
-                <div class="label">Preferred Contact Method:</div>
-                <div class="value">${validatedData.preferredContact}</div>
-              </div>
-              `
-                  : ''
-              }
-              
-              <div class="message">
-                <div class="label">Message:</div>
-                <div class="value">${validatedData.message.replace(/\n/g, '<br>')}</div>
-              </div>
-            </div>
-            
-            <div class="footer">
-              <p>This email was sent from the Darius Pizza website contact form.</p>
-              <p>Submitted: ${new Date().toLocaleString()}</p>
-            </div>
-          </div>
-        </body>
-      </html>
-    `;
+    const submittedAt = new Date();
+    const emailHtml = renderContactAdminEmail(
+      validatedData as ContactEmailData,
+      inquiryTypeLabel,
+      submittedAt
+    );
 
     // Send email using Resend
     const result = await resend.emails.send({
@@ -200,47 +131,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Also send auto-reply to the customer
-    const autoReplyHtml = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="UTF-8">
-          <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: #d97706; color: white; padding: 20px; text-align: center; }
-            .content { padding: 20px; }
-            .footer { text-align: center; color: #666; font-size: 14px; margin-top: 30px; padding: 20px; border-top: 1px solid #e5e7eb; }
-          </style>
-        </head>
-        <body>
-          <div class="container">
-            <div class="header">
-              <h1>🍕 Thank You for Contacting Darius Pizza</h1>
-            </div>
-            
-            <div class="content">
-              <p>Bonjour ${validatedData.name},</p>
-              
-              <p>Thank you for reaching out to us! We have received your message and will get back to you as soon as possible.</p>
-              
-              <p><strong>Your inquiry:</strong> ${validatedData.subject}</p>
-              <p><strong>Reference:</strong> ${new Date().toISOString()}</p>
-              
-              <p>In the meantime, feel free to follow us on social media or visit our website for the latest updates.</p>
-              
-              <p>Best regards,<br>The Darius Pizza Team</p>
-            </div>
-            
-            <div class="footer">
-              <p>Darius Pizza</p>
-              <p>275 Avenue des Alliés, 83240 Cavalaire</p>
-              <p>Phone: 04.94.64.05.11</p>
-            </div>
-          </div>
-        </body>
-      </html>
-    `;
+    const referenceId = new Date().toISOString();
+    const autoReplyHtml = renderContactAutoReplyEmail(
+      validatedData as ContactEmailData,
+      referenceId
+    );
 
     // Send auto-reply (optional - don't fail the whole request if this fails)
     try {

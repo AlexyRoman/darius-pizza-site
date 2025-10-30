@@ -287,12 +287,10 @@
       "intro": "Notre histoire ne commence pas avec la farine, mais avec le couteau. Avant d'être une pizzeria, notre maison était une adresse incontournable de Cavalaire, fondée en 1936. Dès 1966, elle est devenue la \"Maison Darius\", une boucherie familiale ancrée dans le paysage de Cavalaire entremêlant savoir-faire et qualité intransigeante des produits.",
       "conclusion": "En 2020, un nouveau chapitre s'est ouvert. La passion pour la gastronomie et les produits d'exception a transformé le billot en four à bois. La Maison Darius est devenue le Darius Pizza.\n\nLe décor a changé, mais l'âme est intacte. Nous avons conservé l'héritage de la boucherie : l'amour du produit frais, le respect du savoir-faire artisanal et une obsession pour le goût. Cette exigence que nous appliquions à nos viandes, nous l'appliquons aujourd'hui à chaque ingrédient qui compose nos pizzas.",
       "image1": {
-        "alt": "Devanture Darius Pizza depuis 2020",
-        "src": "/static/pizza-storefront.webp"
+        "alt": "Devanture Darius Pizza depuis 2020"
       },
       "image2": {
-        "alt": "Devanture Boucherie Darius avant 2020",
-        "src": "/static/about-kitchen.webp"
+        "alt": "Devanture Boucherie Darius avant 2020"
       }
     },
     "section2": {
@@ -303,8 +301,7 @@
         "step": "Étape 1 : Le Pétrissage de Précision",
         "content": "Tout commence par une hydratation maîtrisée et un pétrissage lent. Nous contrôlons la température de notre pâte à chaque instant pour ne pas la \"stresser\". Cette étape, le pointage, permet de développer le réseau de gluten initial qui donnera sa structure à la pâte, tout en préservant les arômes de notre farine.",
         "image": {
-          "alt": "Boule de pâte après pétrissage",
-          "src": "/static/dough-ball-after-kneading.webp"
+          "alt": "Boule de pâte après pétrissage"
         }
       },
       "card2": {
@@ -312,8 +309,7 @@
         "step": "Étape 2 : La Lente Maturation (+48h)",
         "content": "C'est ici que la magie opère. Nos pâtons reposent au froid à température contrôlée pendant minimum 48 heures. Durant cette longue maturation, les enzymes naturelles de la levure dégradent le réseau de gluten. Les chaînes de protéines complexes sont \"pré-digérées\".\n\nLe résultat pour vous ? Une pâte incroyablement légère, alvéolée et facile à digérer. Fini l'effet de lourdeur après le repas.",
         "image": {
-          "alt": "Pâtons en maturation au froid",
-          "src": "/static/dough-balls-cold-maturing.webp"
+          "alt": "Pâtons en maturation au froid"
         }
       },
       "card3": {
@@ -321,8 +317,7 @@
         "step": "Étape 3 : La Révélation au Four",
         "content": "Pendant la maturation, d'autres enzymes transforment l'amidon complexe de la farine en sucres simples. Lors de la cuisson à haute température, ces sucres rencontrent les acides aminés. C'est la fameuse Réaction de Maillard. Elle ne se contente pas de cuire : elle caramélise la pâte, crée cette croûte dorée et tachetée (\"léopardée\"), et libère une palette d'arômes grillés inimitables.",
         "image": {
-          "alt": "Croûte de pizza dorée et alvéolée",
-          "src": "/static/hero-pizza.webp"
+          "alt": "Croûte de pizza dorée et alvéolée"
         }
       }
     },
@@ -334,8 +329,7 @@
         "step": "Le Caractère des Alpes : Moulin Céard",
         "content": "La base de notre pâte, c'est notre farine. Nous avons choisi le Moulin Céard, un moulin familial des Hautes-Alpes au savoir-faire transmis depuis 1820.\n\nIls sélectionnent des blés régionaux, souvent Label Rouge, pour produire une farine de caractère, sans additifs. C'est ce choix qui donne à notre pâte sa saveur rustique et sa capacité unique à s'épanouir durant les 48h de maturation. C'est notre engagement pour le terroir et la traçabilité.",
         "image": {
-          "alt": "Farine Moulin Céard des Hautes-Alpes",
-          "src": "/static/moulin-ceard-flour.webp"
+          "alt": "Farine Moulin Céard des Hautes-Alpes"
         }
       },
       "card2": {
@@ -343,8 +337,7 @@
         "step": "L'Exigence de la Boucherie",
         "content": "Nous n'avons pas oublié d'où nous venons. L'héritage de la Maison Darius, c'est notre intransigeance sur la qualité des viandes et des charcuteries.\n\nNous sélectionnons nos produits avec l'œil et l'exigence du boucher : jambon blanc supérieur, coppa artisanale, jambon de parme... Cette expertise, c'est la garantie de trouver sur nos pizzas des produits savoureux, riches en goût, que vous ne trouverez nulle part ailleurs.",
         "image": {
-          "alt": "Charcuterie et viandes de qualité",
-          "src": "/static/charcuterie.webp"
+          "alt": "Charcuterie et viandes de qualité"
         }
       },
       "card3": {
@@ -352,8 +345,7 @@
         "step": "Le Cœur de l'Italie",
         "content": "Une pizza est un mariage entre le local et l'authenticité. Pour les ingrédients piliers de la gastronomie italienne, nous nous fournissons directement chez les meilleurs.\n\nNos tomates ? Des San Marzano AOP, gorgées de soleil au pied du Vésuve. Notre Mozzarella ? De la fior di latte fondante ou une véritable Bufala Campana AOP au lait de bufflonne. Huile d'olive extra-vierge, Parmigiano Reggiano 24 mois... Nous importons le soleil de l'Italie.",
         "image": {
-          "alt": "Produits italiens AOP authentiques",
-          "src": "/static/italian-products.webp"
+          "alt": "Produits italiens AOP authentiques"
         }
       }
     },

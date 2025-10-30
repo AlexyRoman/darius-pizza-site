@@ -19,11 +19,18 @@ import { Button } from '@/components/ui/button';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/content/restaurant/hours.json';
 import { formatDate, formatDateTime } from '@/lib/date-utils';
-import {
-  formatNextOpeningTime,
-  isTimeInPeriods,
-} from '@/lib/opening-hours-utils';
+import { formatNextOpeningTime } from '@/lib/opening-hours-utils';
 import { SmartCallButton } from '@/components/ui/smart-call-button';
+import {
+  computeIsCurrentlyOpen,
+  computeIsOpeningSoon,
+  formatTimeForLocale,
+  getActiveMessages,
+  getCurrentPeriodInfo,
+  getMinutesUntilOpening,
+  getTodayHours,
+  getUpcomingClosings,
+} from '@/lib/opening-hours-view';
 
 interface OpeningHours {
   [key: string]: {
@@ -32,6 +39,27 @@ interface OpeningHours {
     isOpen: boolean;
   };
 }
+
+type SpecialMessage = {
+  id?: string;
+  title: string;
+  message: string;
+  type: 'success' | 'warning' | 'error' | string;
+  isActive: boolean;
+  startDate: string;
+  endDate?: string | null;
+  priority: number;
+};
+
+type ScheduledClosing = {
+  id: string;
+  title: string;
+  description: string;
+  isActive: boolean;
+  date?: string | null;
+  startDate?: string;
+  endDate?: string;
+};
 
 export default function OpeningHoursSection() {
   const t = useTranslations('hours');
@@ -45,8 +73,9 @@ export default function OpeningHoursSection() {
 
   // Hours use the original system (not localized)
   const hours = hoursConfig.openingHours as OpeningHours;
-  const messages = messagesConfig?.specialMessages || [];
-  const closings = closingsConfig?.scheduledClosings || [];
+  const messages = (messagesConfig?.specialMessages || []) as SpecialMessage[];
+  const closings = (closingsConfig?.scheduledClosings ||
+    []) as ScheduledClosing[];
   const contact = contactConfig?.contact;
 
   // State to track if component is mounted (client-side)
@@ -64,101 +93,20 @@ export default function OpeningHoursSection() {
   const currentTime = isMounted ? now.toTimeString().slice(0, 5) : '00:00'; // HH:MM format
 
   // Check if restaurant is currently open
-  const todayHours =
-    hours[
-      Object.keys(hours).find(key => key.toLowerCase() === currentDayName) ||
-        'monday'
-    ];
-
-  const isCurrentlyOpen =
-    todayHours &&
-    todayHours.isOpen &&
-    isTimeInPeriods(currentTime, todayHours.periods);
+  const todayHours = getTodayHours(hours, currentDayName);
+  const isCurrentlyOpen = computeIsCurrentlyOpen(todayHours, currentTime);
 
   // Check if restaurant is opening soon (within 1 hour)
-  const isOpeningSoon = (() => {
-    if (!todayHours || !todayHours.isOpen || isCurrentlyOpen) return false;
-
-    // Check if any period opens within the next hour
-    const currentMinutes =
-      parseInt(currentTime.split(':')[0]) * 60 +
-      parseInt(currentTime.split(':')[1]);
-    const oneHourFromNow = currentMinutes + 60;
-
-    return todayHours.periods.some(period => {
-      const [openHour, openMinute] = period.open.split(':').map(Number);
-      const openMinutes = openHour * 60 + openMinute;
-      return openMinutes > currentMinutes && openMinutes <= oneHourFromNow;
-    });
-  })();
+  const isOpeningSoon =
+    !isCurrentlyOpen && computeIsOpeningSoon(todayHours, currentTime, 60);
 
   // Calculate minutes until opening
-  const getMinutesUntilOpening = () => {
-    if (!todayHours || !isOpeningSoon) return 0;
-
-    const currentMinutes =
-      parseInt(currentTime.split(':')[0]) * 60 +
-      parseInt(currentTime.split(':')[1]);
-
-    // Find the next opening period
-    const nextOpeningPeriod = todayHours.periods
-      .filter(period => {
-        const [openHour, openMinute] = period.open.split(':').map(Number);
-        const openMinutes = openHour * 60 + openMinute;
-        return openMinutes > currentMinutes;
-      })
-      .sort((a, b) => {
-        const [aHour, aMinute] = a.open.split(':').map(Number);
-        const [bHour, bMinute] = b.open.split(':').map(Number);
-        return aHour * 60 + aMinute - (bHour * 60 + bMinute);
-      })[0];
-
-    if (!nextOpeningPeriod) return 0;
-
-    const [openHour, openMinute] = nextOpeningPeriod.open
-      .split(':')
-      .map(Number);
-    const openMinutes = openHour * 60 + openMinute;
-
-    return openMinutes - currentMinutes;
-  };
-
-  const minutesUntilOpening = getMinutesUntilOpening();
+  const minutesUntilOpening = isOpeningSoon
+    ? getMinutesUntilOpening(todayHours, currentTime)
+    : 0;
 
   // Helper function to get current period info
-  const getCurrentPeriodInfo = () => {
-    if (!todayHours || !todayHours.isOpen) return null;
-
-    const currentMinutes =
-      parseInt(currentTime.split(':')[0]) * 60 +
-      parseInt(currentTime.split(':')[1]);
-
-    // Find current period
-    const currentPeriod = todayHours.periods.find(period => {
-      const [openHour, openMinute] = period.open.split(':').map(Number);
-      const [closeHour, closeMinute] = period.close.split(':').map(Number);
-      const openMinutes = openHour * 60 + openMinute;
-      const closeMinutes = closeHour * 60 + closeMinute;
-      return currentMinutes >= openMinutes && currentMinutes <= closeMinutes;
-    });
-
-    // Find next opening period
-    const nextOpeningPeriod = todayHours.periods
-      .filter(period => {
-        const [openHour, openMinute] = period.open.split(':').map(Number);
-        const openMinutes = openHour * 60 + openMinute;
-        return openMinutes > currentMinutes;
-      })
-      .sort((a, b) => {
-        const [aHour, aMinute] = a.open.split(':').map(Number);
-        const [bHour, bMinute] = b.open.split(':').map(Number);
-        return aHour * 60 + aMinute - (bHour * 60 + bMinute);
-      })[0];
-
-    return { currentPeriod, nextOpeningPeriod };
-  };
-
-  const periodInfo = getCurrentPeriodInfo();
+  const periodInfo = getCurrentPeriodInfo(todayHours, currentTime);
 
   // Check for current closing (happening right now)
   const currentClosing = closings
@@ -173,40 +121,14 @@ export default function OpeningHoursSection() {
     });
 
   // Get active messages sorted by priority
-  const activeMessages = messages
-    .filter(msg => msg.isActive)
-    .filter(msg => {
-      const now = new Date();
-      const startDate = new Date(msg.startDate);
-      const endDate = msg.endDate ? new Date(msg.endDate) : null;
-
-      return now >= startDate && (!endDate || now <= endDate);
-    })
-    .sort((a, b) => a.priority - b.priority);
+  const activeMessages = getActiveMessages<SpecialMessage>(messages, now);
 
   // Get upcoming closings (future only, not current)
-  const upcomingClosings = closings
-    .filter(closing => closing.isActive)
-    .filter(closing => {
-      // Handle both single date and date range closings
-      if (closing.startDate && closing.endDate) {
-        // Date range closing - show if start date is in the future
-        const startDate = new Date(closing.startDate);
-        return startDate > now; // Changed from >= to > to exclude current
-      } else if (closing.date) {
-        // Single date closing
-        const closingDate = new Date(closing.date);
-        return closingDate > now; // Changed from >= to > to exclude current
-      }
-      return false;
-    })
-    .sort((a, b) => {
-      // Sort by start date for date ranges, or by date for single dates
-      const aDate = a.startDate ? new Date(a.startDate) : new Date(a.date!);
-      const bDate = b.startDate ? new Date(b.startDate) : new Date(b.date!);
-      return aDate.getTime() - bDate.getTime();
-    })
-    .slice(0, 3); // Show only next 3 closings
+  const upcomingClosings = getUpcomingClosings<ScheduledClosing>(
+    closings,
+    now,
+    3
+  );
 
   const getAlertIcon = (type: string) => {
     switch (type) {
@@ -234,20 +156,7 @@ export default function OpeningHoursSection() {
     }
   };
 
-  const formatTime = (time: string) => {
-    const [h, m] = time.split(':').map(Number);
-    const date = new Date();
-    date.setHours(h, m, 0, 0);
-    // Use 12h for English, 24h for others by default
-    const isHour12 = locale === 'en';
-    const resolvedLocale =
-      locale === 'en' ? 'en-US' : locale === 'fr' ? 'fr-FR' : undefined;
-    return date.toLocaleTimeString(resolvedLocale, {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: isHour12,
-    });
-  };
+  const formatTime = (time: string) => formatTimeForLocale(time, locale);
 
   // Helper function to format dates consistently (avoiding hydration mismatch)
   const formatDateLocal = (

@@ -24,36 +24,13 @@ import {
 } from '@/components/ui/form';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 import { TurnstileWidget } from '@/components/ui/turnstile';
+import { contactFormSchema, type ContactFormValues } from '@/lib/contactForm';
+import { submitContactForm } from '@/lib/api/contact';
 
-// Form validation schema
-const contactFormSchema = z.object({
-  name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
-  }),
-  email: z.string().email({
-    message: 'Please enter a valid email address.',
-  }),
-  phone: z.string().optional(),
-  subject: z.string().min(5, {
-    message: 'Subject must be at least 5 characters.',
-  }),
-  inquiryType: z.string().min(1, {
-    message: 'Please select an inquiry type.',
-  }),
-  message: z.string().min(10, {
-    message: 'Message must be at least 10 characters.',
-  }),
-  preferredContact: z.string().optional(),
-  turnstileToken: z.string().min(1, {
-    message: 'Please complete the verification.',
-  }),
-});
-
-type ContactFormValues = z.infer<typeof contactFormSchema>;
+// Validation schema and types moved to shared helper
 
 export default function ContactFormSection() {
   const t = useTranslations('info.contactForm');
@@ -85,18 +62,9 @@ export default function ContactFormSection() {
     const loadingToast = toast.loading(t('form.submit.sending'));
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message');
+      const result = await submitContactForm(values);
+      if (!result.ok) {
+        throw new Error(result.error || 'Failed to send message');
       }
 
       // Success

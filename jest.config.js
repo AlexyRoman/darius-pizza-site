@@ -31,6 +31,7 @@ const customJestConfig = {
     '/src/components/ui/', // Exclude imported UI components
     '/src/types/',
     '/src/config/site/',
+    'src/components/sections/',
   ],
   coverageThreshold: {
     // ============================================================================

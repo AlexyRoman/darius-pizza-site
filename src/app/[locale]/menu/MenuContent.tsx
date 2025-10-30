@@ -45,7 +45,11 @@ const AllergenLegend = dynamic(
   { ssr: false }
 );
 
-export default function MenuContent() {
+export default function MenuContent({
+  initialMenuItems = [],
+}: {
+  initialMenuItems?: MenuItem[];
+}) {
   const t = useTranslations('menu');
   const tCategories = useTranslations('menu.categories');
   const tAllergenLabels = useTranslations('menu.allergenLabels');
@@ -65,11 +69,17 @@ export default function MenuContent() {
     null
   );
 
-  const [menuItems, setMenuItems] = React.useState<MenuItem[]>([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [menuItems, setMenuItems] =
+    React.useState<MenuItem[]>(initialMenuItems);
+  const [isLoading, setIsLoading] = React.useState(
+    initialMenuItems.length === 0
+  );
 
-  // Load menu items asynchronously
+  // Load menu items asynchronously on client only if not provided by server
   React.useEffect(() => {
+    if (initialMenuItems.length > 0) {
+      return;
+    }
     setIsLoading(true);
     import('@/lib/menu-loader').then(({ loadMenuItems }) => {
       loadMenuItems(locale)
@@ -82,7 +92,7 @@ export default function MenuContent() {
           setIsLoading(false);
         });
     });
-  }, [locale]);
+  }, [locale, initialMenuItems.length]);
 
   // Hide tooltip when clicking elsewhere (mobile only)
   React.useEffect(() => {

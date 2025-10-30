@@ -1,18 +1,7 @@
-export type SitemapChangeFrequency =
-  | 'always'
-  | 'hourly'
-  | 'daily'
-  | 'weekly'
-  | 'monthly'
-  | 'yearly'
-  | 'never';
+import type { PageConfig, SitemapChangeFrequency } from '@/types/config';
 
-export type PageConfig = {
-  path: string;
-  sitemapPriority?: number;
-  sitemapChangeFrequency?: SitemapChangeFrequency;
-  sitemapEnabled?: boolean;
-};
+// Re-export types for convenience
+export type { PageConfig, SitemapChangeFrequency };
 
 export const PAGES = {
   home: {

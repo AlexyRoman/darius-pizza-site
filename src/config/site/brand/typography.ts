@@ -7,50 +7,16 @@
  * and accessibility considerations.
  */
 
-export interface FontFamily {
-  primary: string;
-  secondary: string;
-  mono: string;
-}
+import type {
+  FontFamily,
+  FontSize,
+  FontWeight,
+  LineHeight,
+  LetterSpacing,
+} from '@/types/brand';
 
-export interface FontSize {
-  xs: string;
-  sm: string;
-  base: string;
-  lg: string;
-  xl: string;
-  '2xl': string;
-  '3xl': string;
-  '4xl': string;
-  '5xl': string;
-  '6xl': string;
-}
-
-export interface FontWeight {
-  light: number;
-  normal: number;
-  medium: number;
-  semibold: number;
-  bold: number;
-  extrabold: number;
-}
-
-export interface LineHeight {
-  tight: string;
-  snug: string;
-  normal: string;
-  relaxed: string;
-  loose: string;
-}
-
-export interface LetterSpacing {
-  tighter: string;
-  tight: string;
-  normal: string;
-  wide: string;
-  wider: string;
-  widest: string;
-}
+// Re-export types for convenience
+export type { FontFamily, FontSize, FontWeight, LineHeight, LetterSpacing };
 
 // Font families - Using Google Fonts for web compatibility
 export const fontFamilies: FontFamily = {

@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Star, Clock, MapPin } from 'lucide-react';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
-import hoursConfig from '@/config/site/restaurant/hours.json';
+import hoursConfig from '@/content/restaurant/hours.json';
 import { useThemeContext } from '@/contexts/ThemeContext';
 import {
   formatNextOpeningTime,

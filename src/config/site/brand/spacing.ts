@@ -6,50 +6,14 @@
  * consistent scale for better visual harmony and design consistency.
  */
 
-export interface SpacingScale {
-  xs: string;
-  sm: string;
-  base: string;
-  md: string;
-  lg: string;
-  xl: string;
-  '2xl': string;
-  '3xl': string;
-  '4xl': string;
-  '5xl': string;
-  '6xl': string;
-}
+import type {
+  SpacingScale,
+  Breakpoints,
+  LayoutDimensions,
+} from '@/types/brand';
 
-export interface Breakpoints {
-  xs: string;
-  sm: string;
-  md: string;
-  lg: string;
-  xl: string;
-  '2xl': string;
-}
-
-export interface LayoutDimensions {
-  maxWidth: {
-    xs: string;
-    sm: string;
-    md: string;
-    lg: string;
-    xl: string;
-    '2xl': string;
-    full: string;
-  };
-  containerPadding: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
-  sectionSpacing: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
-}
+// Re-export types for convenience
+export type { SpacingScale, Breakpoints, LayoutDimensions };
 
 // Spacing scale - Based on 8px grid system (0.5rem increments)
 export const spacing: SpacingScale = {

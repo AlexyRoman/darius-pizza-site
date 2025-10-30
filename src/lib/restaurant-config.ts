@@ -20,7 +20,7 @@ export async function loadRestaurantConfig<T extends RestaurantConfigType>(
   try {
     // Import the configuration file for the specified locale
     const config = await import(
-      `@/config/site/restaurant/${configType}/${locale}.json`
+      `@/content/restaurant/${configType}/${locale}.json`
     );
     return config.default;
   } catch (error) {
@@ -33,7 +33,7 @@ export async function loadRestaurantConfig<T extends RestaurantConfigType>(
     if (locale !== defaultLocale) {
       try {
         const fallbackConfig = await import(
-          `@/config/site/restaurant/${configType}/${defaultLocale}.json`
+          `@/content/restaurant/${configType}/${defaultLocale}.json`
         );
         return fallbackConfig.default;
       } catch (fallbackError) {

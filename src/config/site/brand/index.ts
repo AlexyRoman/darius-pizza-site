@@ -12,17 +12,28 @@ export * from './typography';
 export * from './spacing';
 export * from './theme';
 
-// Re-export commonly used types
-export type { ThemeMode, ThemeContext } from './theme';
-export type { ColorPalette, SemanticColors, ThemeColors } from './colors';
+// Re-export commonly used types from centralized types file
 export type {
+  // Theme types
+  ThemeMode,
+  ThemeConfig,
+  ThemeContext,
+  // Color types
+  ColorPalette,
+  SemanticColors,
+  ThemeColors,
+  // Typography types
   FontFamily,
   FontSize,
   FontWeight,
   LineHeight,
   LetterSpacing,
-} from './typography';
-export type { SpacingScale, Breakpoints, LayoutDimensions } from './spacing';
+  TypographyStyle,
+  // Spacing types
+  SpacingScale,
+  Breakpoints,
+  LayoutDimensions,
+} from '@/types/brand';
 
 // Import configurations for re-export
 import {

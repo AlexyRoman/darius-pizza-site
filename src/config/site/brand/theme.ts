@@ -9,22 +9,10 @@
 import { brandColors, generateCSSVariables } from './colors';
 import { generateTypographyCSSVariables } from './typography';
 import { generateSpacingCSSVariables } from './spacing';
+import type { ThemeMode, ThemeConfig, ThemeContext } from '@/types/brand';
 
-export type ThemeMode = 'light' | 'dark' | 'system';
-
-export interface ThemeConfig {
-  mode: ThemeMode;
-  colors: typeof brandColors.light | typeof brandColors.dark;
-  cssVariables: Record<string, string>;
-}
-
-export interface ThemeContext {
-  currentTheme: ThemeMode;
-  resolvedTheme: 'light' | 'dark';
-  setTheme: (theme: ThemeMode) => void;
-  toggleTheme: () => void;
-  isThemeLoaded: boolean;
-}
+// Re-export types for convenience
+export type { ThemeMode, ThemeConfig, ThemeContext };
 
 // Theme configuration
 export const themeConfig = {

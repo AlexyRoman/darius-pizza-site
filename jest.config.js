@@ -27,7 +27,7 @@ const customJestConfig = {
     '/node_modules/',
     '/.next/',
     '/tests/',
-    '/src/config/site/restaurant/', // Exclude restaurant folder as requested
+    '/src/content/restaurant/', // Exclude restaurant folder as requested
   ],
   coverageThreshold: {
     // High priority - complex utility functions

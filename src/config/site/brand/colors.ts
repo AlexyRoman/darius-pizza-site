@@ -7,25 +7,10 @@
  * better perceptual uniformity and accessibility.
  */
 
-export interface ColorPalette {
-  primary: string;
-  secondary: string;
-  accent: string;
-  background: string;
-  foreground: string;
-}
+import type { ColorPalette, SemanticColors, ThemeColors } from '@/types/brand';
 
-export interface SemanticColors {
-  error: string;
-  warning: string;
-  success: string;
-  info: string;
-}
-
-export interface ThemeColors {
-  light: ColorPalette & SemanticColors;
-  dark: ColorPalette & SemanticColors;
-}
+// Re-export types for convenience
+export type { ColorPalette, SemanticColors, ThemeColors };
 
 // Pizzeria-inspired color palette
 // Primary: Warm orange-red (pizza sauce inspired)

@@ -17,7 +17,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
-import hoursConfig from '@/config/site/restaurant/hours.json';
+import hoursConfig from '@/content/restaurant/hours.json';
 import { formatDate, formatDateTime } from '@/lib/date-utils';
 import {
   formatNextOpeningTime,

@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/dialog';
 import { getSitePhone } from '@/lib/site-utils';
 import { isTimeInPeriods } from '@/lib/opening-hours-utils';
-import hoursConfig from '@/config/site/restaurant/hours.json';
+import hoursConfig from '@/content/restaurant/hours.json';
 
 interface OpeningHours {
   [key: string]: {

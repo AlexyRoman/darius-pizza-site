@@ -5,21 +5,24 @@ import {
   getDefaultLocale,
   getLocaleSettings,
 } from '@/config/generic/locales-config';
+import { PAGES } from '@/config/site/pages';
 
 const settings = getLocaleSettings();
+
+// Generate pathnames from centralized page configuration
+const pathnames = Object.values(PAGES).reduce(
+  (acc, page) => {
+    acc[page.path] = page.path;
+    return acc;
+  },
+  {} as Record<string, string>
+);
 
 export const routing = defineRouting({
   locales: getEnabledLocaleCodes() as string[],
   defaultLocale: getDefaultLocale(),
   localePrefix: settings.localePrefix,
   localeDetection: settings.localeDetection,
-  // Exclude static assets from i18n routing
-  pathnames: {
-    '/': '/',
-    '/menu': '/menu',
-    '/info': '/info',
-    '/privacy': '/privacy',
-    '/cookies': '/cookies',
-    '/legal-mentions': '/legal-mentions',
-  },
+  // Pathnames generated from centralized page configuration
+  pathnames,
 });

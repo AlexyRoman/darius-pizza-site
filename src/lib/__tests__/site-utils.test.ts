@@ -71,6 +71,4 @@ describe('site-utils', () => {
       expect(result.endsWith('€')).toBe(true);
     });
   });
-
 });
-

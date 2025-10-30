@@ -7,21 +7,29 @@
 
 // Mock the JSON imports BEFORE importing the module
 // In TypeScript/Next.js, JSON imports are default exports
-jest.mock('../robots/settings/user-agents.json', () => ({
-  default: '*',
-  aiBots: ['GPTBot', 'ChatGPT-User', 'CCBot'],
-}), { virtual: true });
+jest.mock(
+  '../robots/settings/user-agents.json',
+  () => ({
+    default: '*',
+    aiBots: ['GPTBot', 'ChatGPT-User', 'CCBot'],
+  }),
+  { virtual: true }
+);
 
-jest.mock('../robots/settings/settings.json', () => ({
-  sitemap: true,
-  host: true,
-}), { virtual: true });
+jest.mock(
+  '../robots/settings/settings.json',
+  () => ({
+    sitemap: true,
+    host: true,
+  }),
+  { virtual: true }
+);
 
-jest.mock('@/config/site/robots/settings/disallowed-paths.json', () => [
-  '/api/*',
-  '/admin',
-  '/dashboard',
-], { virtual: true });
+jest.mock(
+  '@/config/site/robots/settings/disallowed-paths.json',
+  () => ['/api/*', '/admin', '/dashboard'],
+  { virtual: true }
+);
 
 import { generateRules, robotsConfig } from '../robots';
 
@@ -41,7 +49,9 @@ describe('robots config', () => {
     it('should generate rules for AI bots', () => {
       const rules = generateRules();
       const aiBotRules = rules.filter(
-        r => r.userAgent !== '*' && ['GPTBot', 'ChatGPT-User', 'CCBot'].includes(r.userAgent)
+        r =>
+          r.userAgent !== '*' &&
+          ['GPTBot', 'ChatGPT-User', 'CCBot'].includes(r.userAgent)
       );
       expect(aiBotRules).toHaveLength(3);
 
@@ -90,4 +100,3 @@ describe('robots config', () => {
     });
   });
 });
-

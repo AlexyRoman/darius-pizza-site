@@ -7,46 +7,50 @@
 
 // Mock the locales.json import BEFORE importing the module
 // In TypeScript/Next.js, JSON imports are default exports
-jest.mock('@/config/site/locales.json', () => ({
-  defaultLocale: 'fr',
-  locales: [
-    {
-      code: 'en',
-      name: 'English',
-      nativeName: 'English',
-      flag: '🇺🇸',
-      direction: 'ltr',
-      enabled: true,
-      fallback: null,
+jest.mock(
+  '@/config/site/locales.json',
+  () => ({
+    defaultLocale: 'fr',
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        nativeName: 'English',
+        flag: '🇺🇸',
+        direction: 'ltr',
+        enabled: true,
+        fallback: null,
+      },
+      {
+        code: 'fr',
+        name: 'French',
+        nativeName: 'Français',
+        flag: '🇫🇷',
+        direction: 'ltr',
+        enabled: true,
+        fallback: 'en',
+      },
+      {
+        code: 'de',
+        name: 'German',
+        nativeName: 'Deutsch',
+        flag: '🇩🇪',
+        direction: 'ltr',
+        enabled: false,
+        fallback: 'en',
+      },
+    ],
+    settings: {
+      localeDetection: false,
+      localePrefix: 'always',
+      pathnames: {
+        '/': '/',
+        '/home': '/home',
+      },
     },
-    {
-      code: 'fr',
-      name: 'French',
-      nativeName: 'Français',
-      flag: '🇫🇷',
-      direction: 'ltr',
-      enabled: true,
-      fallback: 'en',
-    },
-    {
-      code: 'de',
-      name: 'German',
-      nativeName: 'Deutsch',
-      flag: '🇩🇪',
-      direction: 'ltr',
-      enabled: false,
-      fallback: 'en',
-    },
-  ],
-  settings: {
-    localeDetection: false,
-    localePrefix: 'always',
-    pathnames: {
-      '/': '/',
-      '/home': '/home',
-    },
-  },
-}), { virtual: true });
+  }),
+  { virtual: true }
+);
 
 import {
   localesConfig,
@@ -233,4 +237,3 @@ describe('locales-config', () => {
     });
   });
 });
-

@@ -30,10 +30,12 @@ describe('feature-flags', () => {
     it('should call parseBooleanEnv with correct parameters', () => {
       // eslint-disable-next-line @typescript-eslint/no-require-imports
       const { parseBooleanEnv, env } = require('@/lib/env');
-      
+
       isItemCtaEnabled();
-      expect(parseBooleanEnv).toHaveBeenCalledWith(env.NEXT_PUBLIC_ENABLE_ITEM_CTA, true);
+      expect(parseBooleanEnv).toHaveBeenCalledWith(
+        env.NEXT_PUBLIC_ENABLE_ITEM_CTA,
+        true
+      );
     });
   });
 });
-

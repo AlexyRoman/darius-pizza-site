@@ -66,6 +66,22 @@ const customJestConfig = {
       lines: 60,
       statements: 60,
     },
+    // Medium priority - i18n routing configuration
+    // Tests verify pathnames generation and routing structure
+    'src/i18n/routing.ts': {
+      branches: 70,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+    // Lower priority - i18n request configuration
+    // Async dynamic imports make full testing difficult - tested via integration
+    'src/i18n/request.ts': {
+      branches: 50,
+      functions: 60,
+      lines: 60,
+      statements: 60,
+    },
   },
 };
 

@@ -29,4 +29,3 @@ export function formatCurrency(amount: number): string {
   }
   return `${amountStr}${currency}`;
 }
-

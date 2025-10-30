@@ -129,7 +129,7 @@ jobs:
       - name: Run E2E tests (Safari on develop, all on main)
         run: |
           if [ "${GITHUB_REF}" = "refs/heads/main" ]; then
-            npm run test:e2e:all
+            npm run test:e2e
           else
             npm run test:e2e:safari
           fi

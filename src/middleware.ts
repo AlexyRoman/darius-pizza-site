@@ -123,6 +123,14 @@ export default function middleware(request: NextRequest) {
     return NextResponse.rewrite(new URL('/site.webmanifest', request.url));
   }
 
+  // Special-case: serve robots.txt and sitemap.xml from root without locale
+  if (pathWithoutLocale === '/robots.txt') {
+    return NextResponse.rewrite(new URL('/robots.txt', request.url));
+  }
+  if (pathWithoutLocale === '/sitemap.xml') {
+    return NextResponse.rewrite(new URL('/sitemap.xml', request.url));
+  }
+
   // Check if the path (with or without locale) is static
   if (isStaticPath(pathname) || isStaticPath(pathWithoutLocale)) {
     // For static paths, return NextResponse.next() to skip middleware processing
@@ -180,7 +188,7 @@ if (process.env.NODE_ENV === 'development') {
   const configExtensions = [...STATIC_FILE_EXTENSIONS].sort().join(',');
 
   const expectedPaths = 'api,flags,fonts,images,static,_next'; // sorted
-  const expectedExtensions = 'ico,jpeg,jpg,png,svg,webp'; // sorted
+  const expectedExtensions = 'ico,jpeg,jpg,png,svg,webmanifest,webp'; // sorted
 
   if (configPaths !== expectedPaths) {
     console.warn(

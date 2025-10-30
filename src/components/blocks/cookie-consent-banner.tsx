@@ -41,6 +41,7 @@ const CookieConsentBanner = React.forwardRef<
     ref
   ) => {
     const t = useTranslations('cookieConsent');
+    const DEBUG = process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true';
     const [isOpen, setIsOpen] = React.useState(false);
     const [hide, setHide] = React.useState(false);
     const [showDetailedModal, setShowDetailedModal] = React.useState(false);
@@ -86,21 +87,27 @@ const CookieConsentBanner = React.forwardRef<
     }, [onDeclineCallback]);
 
     const handleCustomize = React.useCallback(() => {
-      console.log('🔧 BANNER: handleCustomize called');
-      console.log('🔧 BANNER: showDetailedModal before:', showDetailedModal);
+      if (DEBUG) console.log('🔧 BANNER: handleCustomize called');
+      if (DEBUG)
+        console.log('🔧 BANNER: showDetailedModal before:', showDetailedModal);
       setShowDetailedModal(true);
-      console.log('🔧 BANNER: setShowDetailedModal(true) called');
-    }, [showDetailedModal]);
+      if (DEBUG) console.log('🔧 BANNER: setShowDetailedModal(true) called');
+    }, [showDetailedModal, DEBUG]);
 
     const handleDetailedModalClose = React.useCallback(
       (prefs?: CookiePreferences) => {
-        console.log(
-          '🔧 BANNER: handleDetailedModalClose called with prefs:',
-          prefs
-        );
-        console.log('🔧 BANNER: showDetailedModal before:', showDetailedModal);
+        if (DEBUG)
+          console.log(
+            '🔧 BANNER: handleDetailedModalClose called with prefs:',
+            prefs
+          );
+        if (DEBUG)
+          console.log(
+            '🔧 BANNER: showDetailedModal before:',
+            showDetailedModal
+          );
         setShowDetailedModal(false);
-        console.log('🔧 BANNER: setShowDetailedModal(false) called');
+        if (DEBUG) console.log('🔧 BANNER: setShowDetailedModal(false) called');
 
         // If preferences were saved, also close the banner
         if (prefs) {
@@ -111,7 +118,7 @@ const CookieConsentBanner = React.forwardRef<
           onCustomizeCallback(prefs);
         }
       },
-      [showDetailedModal, onCustomizeCallback]
+      [showDetailedModal, onCustomizeCallback, DEBUG]
     );
 
     React.useEffect(() => {
@@ -143,10 +150,11 @@ const CookieConsentBanner = React.forwardRef<
     // Don't render anything if hidden or if user already has consent
     if (hide || !isOpen) return null;
 
-    console.log(
-      '🔧 BANNER: Rendering banner, showDetailedModal:',
-      showDetailedModal
-    );
+    if (DEBUG)
+      console.log(
+        '🔧 BANNER: Rendering banner, showDetailedModal:',
+        showDetailedModal
+      );
 
     return (
       <>

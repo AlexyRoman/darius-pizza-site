@@ -60,7 +60,9 @@ export default async function LocaleLayout(props: {
         gaId={process.env.NEXT_PUBLIC_GA_ID || ''}
       />
       <PageTracker />
-      <AnalyticsDebug />
+      {process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true' ? (
+        <AnalyticsDebug />
+      ) : null}
       <Header currentLocale={locale} />
       <main className='pt-0 md:pt-16 pb-2 md:pb-0'>
         <div suppressHydrationWarning>{children}</div>

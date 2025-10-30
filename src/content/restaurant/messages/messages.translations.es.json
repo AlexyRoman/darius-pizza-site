@@ -1,0 +1,19 @@
+{
+  "specialMessages": [
+    {
+      "id": "takeaway-only",
+      "title": "Solo pedidos para llevar",
+      "message": "Darius Pizza está abierto solo para pedidos para llevar y no dispone de comedor."
+    },
+    {
+      "id": "welcome",
+      "title": "Pedidos por teléfono o en el local",
+      "message": "Puede hacer su pedido por teléfono o en el local. Le aconsejamos que se ponga en contacto con nosotros lo antes posible para evitar esperas."
+    },
+    {
+      "id": "no-delivery",
+      "title": "No hay servicio de entrega",
+      "message": "Darius Pizza no ofrece servicio de entrega. Puede hacer su pedido por teléfono o en el local. Deberá venir a recoger su pedido en persona."
+    }
+  ]
+}

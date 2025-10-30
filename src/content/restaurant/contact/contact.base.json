@@ -7,10 +7,7 @@
     "address": {
       "street": "275 Avenue des Alliés",
       "city": "Cavalaire-sur-mer",
-      "state": "France",
-      "zipCode": "83240",
-      "fullAddress": "275 Avenue des Alliés, Cavalaire-sur-mer, France 83240",
-      "description": "Au coeur de Cavalaire-sur-mer"
+      "zipCode": "83240"
     },
     "maps": {
       "appleMaps": "maps://maps.apple.com/?q=275+Avenue+des+Alliés,+Cavalaire-sur-mer,+France+83240",

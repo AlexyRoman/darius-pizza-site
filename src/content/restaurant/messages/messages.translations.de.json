@@ -1,0 +1,19 @@
+{
+  "specialMessages": [
+    {
+      "id": "takeaway-only",
+      "title": "Nur Bestellungen zum Mitnehmen",
+      "message": "Darius Pizza ist nur für Bestellungen zum Mitnehmen geöffnet und verfügt über keinen Gastraum."
+    },
+    {
+      "id": "welcome",
+      "title": "Bestellungen per Telefon oder vor Ort",
+      "message": "Sie können Ihre Bestellung telefonisch oder vor Ort aufgeben. Wir empfehlen Ihnen, uns so früh wie möglich zu kontaktieren, um Wartezeiten zu vermeiden."
+    },
+    {
+      "id": "no-delivery",
+      "title": "Keine Lieferung verfügbar",
+      "message": "Darius Pizza bietet keine Lieferung an. Sie können Ihre Bestellung telefonisch oder vor Ort aufgeben. Sie müssen Ihre Bestellung vor Ort abholen."
+    }
+  ]
+}

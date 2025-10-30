@@ -1,0 +1,26 @@
+{
+  "starredPizzas": [
+    {
+      "id": "product-524183493",
+      "price": 10.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/2035113296/db6171e3b9625425cd0530881276db20_lg.jpeg",
+      "category": "The Classics",
+      "isStarred": true
+    },
+    {
+      "id": "product-134505823",
+      "price": 17.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/1354298693/2280bc6f41f2d0f51ab7484630a82dcd_lg.jpg",
+      "category": "Signature Pizzas",
+      "isStarred": true
+    },
+    {
+      "id": "product-359764159",
+      "price": 12.9,
+      "image": "https://cdn.reflowhq.com/media/702608174/2107908261/0e27e596bd3bb2fe1cef6f62ded2e02e_lg.jpg",
+      "category": "Cheese Pizzas",
+      "isStarred": true
+    }
+  ],
+  "lastUpdated": "2024-01-15T10:00:00Z"
+}

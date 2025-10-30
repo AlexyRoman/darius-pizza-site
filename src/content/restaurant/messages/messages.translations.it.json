@@ -1,0 +1,19 @@
+{
+  "specialMessages": [
+    {
+      "id": "takeaway-only",
+      "title": "Solo ordini d'asporto",
+      "message": "Darius Pizza è aperta solo per ordini d'asporto e non dispone di una sala ristorante."
+    },
+    {
+      "id": "welcome",
+      "title": "Ordini per telefono o in loco",
+      "message": "Potete effettuare l'ordine per telefono o in loco. Vi consigliamo di contattarci il prima possibile per evitare attese."
+    },
+    {
+      "id": "no-delivery",
+      "title": "Nessuna consegna disponibile",
+      "message": "Darius Pizza non offre la consegna. Potete effettuare l'ordine per telefono o in loco. Dovrete venire a ritirare il vostro ordine sul posto."
+    }
+  ]
+}

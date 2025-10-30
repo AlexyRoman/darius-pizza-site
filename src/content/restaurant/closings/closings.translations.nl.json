@@ -1,0 +1,21 @@
+{
+  "scheduledClosings": [
+    {
+      "id": "christmas",
+      "title": "Kerstmis",
+      "description": "De pizzeria is gesloten van 24 december tot 25 december."
+    },
+    {
+      "id": "future-closing",
+      "title": "Vakantie",
+      "description": "Het team van Darius Pizza neemt deze oktober vakantie om tijd met familie door te brengen."
+    }
+  ],
+  "emergencyClosings": [
+    {
+      "id": "weather",
+      "title": "Weerwaarschuwing",
+      "description": "Vanwege zware weersomstandigheden kunnen we beperkte openingstijden of verminderde bezorgdiensten hebben."
+    }
+  ]
+}

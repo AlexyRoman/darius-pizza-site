@@ -2,15 +2,78 @@ import { getDefaultLocale } from '@/config/generic/locales-config';
 import {
   RestaurantConfigMap,
   RestaurantConfigType,
+  ClosingsConfig,
+  MessagesConfig,
+  StarredPizzasConfig,
+  ContactConfig,
 } from '@/types/restaurant-config';
 
 // Re-export the type for convenience
 export type { RestaurantConfigType };
 
+// Translation types
+type ClosingTranslation = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+type ClosingsTranslations = {
+  scheduledClosings: ClosingTranslation[];
+  emergencyClosings: ClosingTranslation[];
+};
+
+type MessageTranslation = {
+  id: string;
+  title: string;
+  message: string;
+};
+
+type MessagesTranslations = {
+  specialMessages: MessageTranslation[];
+};
+
+type StarredPizzaTranslation = {
+  id: string;
+  title: string;
+  description: string;
+  starReason: string;
+  category?: string;
+};
+
+type StarredPizzasTranslations = {
+  starredPizzas: StarredPizzaTranslation[];
+  month: string;
+};
+
+type ContactTranslations = {
+  contact: {
+    address: {
+      state?: string;
+      fullAddress?: string;
+      description?: string;
+    };
+  };
+};
+
+type TranslationData =
+  | ClosingsTranslations
+  | MessagesTranslations
+  | StarredPizzasTranslations
+  | ContactTranslations;
+
+// Cache for loaded modules
+const baseCache: Record<
+  string,
+  ClosingsConfig | MessagesConfig | StarredPizzasConfig | ContactConfig
+> = {};
+const translationCache: Record<string, TranslationData> = {};
+
 /**
  * Loads restaurant configuration data for a specific locale
+ * Merges base data with translations like menu-loader
  * @param configType - The type of restaurant configuration to load
- * @param locale - The locale code (e.g., 'en', 'fr', 'de', 'it', 'es')
+ * @param locale - The locale code (e.g., 'en', 'fr', 'de', 'it', 'es', 'nl')
  * @returns Promise<any> - The configuration data for the specified locale
  */
 export async function loadRestaurantConfig<T extends RestaurantConfigType>(
@@ -18,11 +81,55 @@ export async function loadRestaurantConfig<T extends RestaurantConfigType>(
   locale: string = getDefaultLocale()
 ): Promise<RestaurantConfigMap[T]> {
   try {
-    // Import the configuration file for the specified locale
-    const config = await import(
-      `@/content/restaurant/${configType}/${locale}.json`
-    );
-    return config.default;
+    // Load base config if not cached
+    if (!baseCache[configType]) {
+      const baseModule = await import(
+        `@/content/restaurant/${configType}/${configType}.base.json`
+      );
+      baseCache[configType] = baseModule.default;
+    }
+
+    // Load translation if not cached
+    const translationKey = `${configType}:${locale}`;
+    if (!translationCache[translationKey]) {
+      const translationModule = await import(
+        `@/content/restaurant/${configType}/${configType}.translations.${locale}.json`
+      );
+      translationCache[translationKey] = translationModule.default;
+    }
+
+    const baseData = baseCache[configType];
+    const translationData = translationCache[translationKey];
+
+    // Merge base data with translations based on config type
+    switch (configType) {
+      case 'closings':
+        return mergeClosingsConfig(
+          baseData as ClosingsConfig,
+          translationData as ClosingsTranslations
+        ) as RestaurantConfigMap[T];
+
+      case 'messages':
+        return mergeMessagesConfig(
+          baseData as MessagesConfig,
+          translationData as MessagesTranslations
+        ) as RestaurantConfigMap[T];
+
+      case 'starred-pizzas':
+        return mergeStarredPizzasConfig(
+          baseData as StarredPizzasConfig,
+          translationData as StarredPizzasTranslations
+        ) as RestaurantConfigMap[T];
+
+      case 'contact':
+        return mergeContactConfig(
+          baseData as ContactConfig,
+          translationData as ContactTranslations
+        ) as RestaurantConfigMap[T];
+
+      default:
+        throw new Error(`Unknown config type: ${configType}`);
+    }
   } catch (error) {
     console.warn(
       `Failed to load ${configType} config for locale ${locale}, falling back to default locale`
@@ -32,10 +139,7 @@ export async function loadRestaurantConfig<T extends RestaurantConfigType>(
     const defaultLocale = getDefaultLocale();
     if (locale !== defaultLocale) {
       try {
-        const fallbackConfig = await import(
-          `@/content/restaurant/${configType}/${defaultLocale}.json`
-        );
-        return fallbackConfig.default;
+        return await loadRestaurantConfig(configType, defaultLocale);
       } catch (fallbackError) {
         console.error(
           `Failed to load ${configType} config for default locale ${defaultLocale}:`,
@@ -47,6 +151,115 @@ export async function loadRestaurantConfig<T extends RestaurantConfigType>(
 
     throw error;
   }
+}
+
+/**
+ * Merges closings base data with translations
+ */
+function mergeClosingsConfig(
+  base: ClosingsConfig,
+  translations: ClosingsTranslations
+): ClosingsConfig {
+  const translationLookupSc = new Map<string, ClosingTranslation>();
+  const translationLookupEc = new Map<string, ClosingTranslation>();
+
+  translations.scheduledClosings?.forEach((item: ClosingTranslation) => {
+    translationLookupSc.set(item.id, item);
+  });
+  translations.emergencyClosings?.forEach((item: ClosingTranslation) => {
+    translationLookupEc.set(item.id, item);
+  });
+
+  return {
+    scheduledClosings: base.scheduledClosings.map(item => {
+      const translation = translationLookupSc.get(item.id);
+      return {
+        ...item,
+        title: translation?.title || '',
+        description: translation?.description || '',
+      };
+    }),
+    emergencyClosings: base.emergencyClosings.map(item => {
+      const translation = translationLookupEc.get(item.id);
+      return {
+        ...item,
+        title: translation?.title || '',
+        description: translation?.description || '',
+      };
+    }),
+    lastUpdated: base.lastUpdated,
+  };
+}
+
+/**
+ * Merges messages base data with translations
+ */
+function mergeMessagesConfig(
+  base: MessagesConfig,
+  translations: MessagesTranslations
+): MessagesConfig {
+  const translationLookup = new Map<string, MessageTranslation>();
+  translations.specialMessages?.forEach((item: MessageTranslation) => {
+    translationLookup.set(item.id, item);
+  });
+
+  return {
+    specialMessages: base.specialMessages.map(item => {
+      const translation = translationLookup.get(item.id);
+      return {
+        ...item,
+        title: translation?.title || '',
+        message: translation?.message || '',
+      };
+    }),
+    lastUpdated: base.lastUpdated,
+  };
+}
+
+/**
+ * Merges starred pizzas base data with translations
+ */
+function mergeStarredPizzasConfig(
+  base: StarredPizzasConfig,
+  translations: StarredPizzasTranslations
+): StarredPizzasConfig {
+  const translationLookup = new Map<string, StarredPizzaTranslation>();
+  translations.starredPizzas?.forEach((item: StarredPizzaTranslation) => {
+    translationLookup.set(item.id, item);
+  });
+
+  return {
+    starredPizzas: base.starredPizzas.map(item => {
+      const translation = translationLookup.get(item.id);
+      return {
+        ...item,
+        title: translation?.title || '',
+        description: translation?.description || '',
+        starReason: translation?.starReason || '',
+        category: translation?.category || item.category, // Use translated category if available
+      };
+    }),
+    lastUpdated: base.lastUpdated,
+    month: translations.month || 'January 2024', // Use translated month
+  };
+}
+
+/**
+ * Merges contact base data with translations (deep merge)
+ */
+function mergeContactConfig(
+  base: ContactConfig,
+  translations: ContactTranslations
+): ContactConfig {
+  return {
+    contact: {
+      ...base.contact,
+      address: {
+        ...base.contact.address,
+        ...translations.contact?.address,
+      },
+    },
+  };
 }
 
 /**
@@ -82,7 +295,7 @@ export async function loadMultipleRestaurantConfigs(
  * @returns string[] - Array of available locale codes
  */
 export function getAvailableRestaurantLocales(): string[] {
-  return ['en', 'fr', 'de', 'it', 'es'];
+  return ['en', 'fr', 'de', 'it', 'es', 'nl'];
 }
 
 /**

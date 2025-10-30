@@ -1,0 +1,19 @@
+{
+  "specialMessages": [
+    {
+      "id": "takeaway-only",
+      "title": "Commandes à emporter uniquement",
+      "message": "Le Darius Pizza est ouvert uniquement pour les commandes à emporter et ne possède pas de salle de restaurant."
+    },
+    {
+      "id": "welcome",
+      "title": "Prises de commande par téléphone ou sur place",
+      "message": "Vous pouvez prendre votre commande par téléphone ou sur place. Nous vous conseillons de nous contacter au plus tôt pour éviter les attentes."
+    },
+    {
+      "id": "no-delivery",
+      "title": "Pas de livraison disponible",
+      "message": "Le Darius Pizza ne propose pas de livraison. Vous pouvez prendre votre commande par téléphone ou sur place. Vous devrez venir chercher votre commande sur place."
+    }
+  ]
+}

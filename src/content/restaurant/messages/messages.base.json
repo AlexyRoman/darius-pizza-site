@@ -3,8 +3,6 @@
     {
       "id": "takeaway-only",
       "type": "info",
-      "title": "Solo pedidos para llevar",
-      "message": "Darius Pizza está abierto solo para pedidos para llevar y no dispone de comedor.",
       "isActive": true,
       "startDate": "2024-01-01T00:00:00Z",
       "endDate": null,
@@ -13,8 +11,6 @@
     {
       "id": "welcome",
       "type": "info",
-      "title": "Pedidos por teléfono o en el local",
-      "message": "Puede hacer su pedido por teléfono o en el local. Le aconsejamos que se ponga en contacto con nosotros lo antes posible para evitar esperas.",
       "isActive": true,
       "startDate": "2024-01-01T00:00:00Z",
       "endDate": null,
@@ -23,8 +19,6 @@
     {
       "id": "no-delivery",
       "type": "warning",
-      "title": "No hay servicio de entrega",
-      "message": "Darius Pizza no ofrece servicio de entrega. Puede hacer su pedido por teléfono o en el local. Deberá venir a recoger su pedido en persona.",
       "isActive": true,
       "startDate": "2024-01-01T00:00:00Z",
       "endDate": null,

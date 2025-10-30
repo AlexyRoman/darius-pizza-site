@@ -1,0 +1,19 @@
+{
+  "specialMessages": [
+    {
+      "id": "takeaway-only",
+      "title": "Takeaway orders only",
+      "message": "Darius Pizza is open for takeaway orders only and does not have a dining area."
+    },
+    {
+      "id": "welcome",
+      "title": "Orders by phone or on-site",
+      "message": "You can place your order by phone or on-site. We advise you to contact us as early as possible to avoid waiting."
+    },
+    {
+      "id": "no-delivery",
+      "title": "No delivery available",
+      "message": "Darius Pizza does not offer delivery. You can place your order by phone or on-site. You will need to pick up your order in person."
+    }
+  ]
+}

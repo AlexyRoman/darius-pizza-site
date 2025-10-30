@@ -1,0 +1,21 @@
+{
+  "scheduledClosings": [
+    {
+      "id": "christmas",
+      "title": "Noël",
+      "description": "La pizzeria sera fermée du 24 décembre au 25 décembre."
+    },
+    {
+      "id": "future-closing",
+      "title": "Vacances",
+      "description": "L'équipe du Darius Pizza prend des vacances en ce mois d'octobre pour passer du temps en famille."
+    }
+  ],
+  "emergencyClosings": [
+    {
+      "id": "weather",
+      "title": "Alerte météo",
+      "description": "En raison de conditions météorologiques sévères, nous pourrions avoir des horaires limités ou des services de livraison réduits."
+    }
+  ]
+}

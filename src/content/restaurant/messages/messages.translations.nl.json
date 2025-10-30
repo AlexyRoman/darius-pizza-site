@@ -1,0 +1,19 @@
+{
+  "specialMessages": [
+    {
+      "id": "takeaway-only",
+      "title": "Alleen afhaalbestellingen",
+      "message": "Darius Pizza is alleen geopend voor afhaalbestellingen en heeft geen eetgedeelte."
+    },
+    {
+      "id": "welcome",
+      "title": "Bestellingen per telefoon of ter plaatse",
+      "message": "U kunt uw bestelling telefonisch of ter plaatse doorgeven. Wij raden u aan zo vroeg mogelijk contact met ons op te nemen om wachttijden te voorkomen."
+    },
+    {
+      "id": "no-delivery",
+      "title": "Geen bezorging beschikbaar",
+      "message": "Darius Pizza biedt geen bezorging aan. U kunt uw bestelling telefonisch of ter plaatse doorgeven. U dient uw bestelling ter plaatse af te halen."
+    }
+  ]
+}

@@ -69,6 +69,7 @@
     "title": "Menu",
     "subtitle": "Discover our selection",
     "allergens": "Allergens",
+    "loading": "Loading menu...",
     "itemsCount": "{count} pizza{count, plural, =1 {} other {s}}",
     "filters": {
       "allCategories": "All categories",
@@ -78,6 +79,27 @@
     },
     "cta": {
       "action": "Action"
+    },
+    "categories": {
+      "The Classics": "The Classics",
+      "Cheese Pizzas": "Cheese Pizzas",
+      "Cured Meat Pizzas": "Cured Meat Pizzas",
+      "Seafood Pizzas": "Seafood Pizzas",
+      "Meat Pizzas": "Meat Pizzas",
+      "Vegetarian Pizzas": "Vegetarian Pizzas",
+      "Signature Pizzas": "Signature Pizzas",
+      "Calzones": "Calzones",
+      "Desserts": "Desserts"
+    },
+    "allergenLabels": {
+      "Vegetarian": "Vegetarian",
+      "Gluten": "Gluten",
+      "Milk": "Milk",
+      "Eggs": "Eggs",
+      "Fish": "Fish",
+      "Nuts": "Nuts",
+      "Mustard": "Mustard",
+      "Soy": "Soy"
     }
   },
   "allergens": {

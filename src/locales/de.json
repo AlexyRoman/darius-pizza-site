@@ -69,6 +69,7 @@
     "title": "Speisekarte",
     "subtitle": "Entdecken Sie unsere Auswahl",
     "allergens": "Allergene",
+    "loading": "Menü wird geladen...",
     "itemsCount": "{count} Pizza{count, plural, =1 {} other {s}}",
     "filters": {
       "allCategories": "Alle Kategorien",
@@ -78,6 +79,27 @@
     },
     "cta": {
       "action": "Aktion"
+    },
+    "categories": {
+      "The Classics": "Die Klassiker",
+      "Cheese Pizzas": "Käsepizzen",
+      "Cured Meat Pizzas": "Pizzen mit Wurstwaren",
+      "Seafood Pizzas": "Pizzen mit Meeresfrüchten",
+      "Meat Pizzas": "Pizzen mit Fleisch",
+      "Vegetarian Pizzas": "Vegetarische Pizzen",
+      "Signature Pizzas": "Spezialitäten",
+      "Calzones": "Calzonen",
+      "Desserts": "Desserts"
+    },
+    "allergenLabels": {
+      "Vegetarian": "Vegetarian",
+      "Gluten": "Gluten",
+      "Milk": "Milk",
+      "Eggs": "Eggs",
+      "Fish": "Fish",
+      "Nuts": "Nuts",
+      "Mustard": "Mustard",
+      "Soy": "Soy"
     }
   },
   "allergens": {

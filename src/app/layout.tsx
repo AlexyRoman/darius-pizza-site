@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { fontPrimary, fontSecondary } from '@/lib/fonts';
+import { ThemeProvider as AppThemeProvider } from '@/contexts/ThemeContext';
 
 export const metadata: Metadata = {
   // Title and description are set by locale-specific layouts
@@ -131,9 +132,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Root layout with <html>/<body> tags for 404 pages and other root-level pages
-  // The locale layout also has html/body, but Next.js will merge them correctly
-  // For locale routes, the [locale]/layout.tsx provides html/body
+  // Root layout with <html>/<body> tags
+  // For locale routes, the [locale]/layout.tsx provides content without html/body
   // For root-level routes like 404, this layout provides html/body
   return (
     <html
@@ -141,6 +141,76 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${fontPrimary.variable} ${fontSecondary.variable}`}
     >
+      <head>
+        {/* Preconnect for Google Fonts (Next.js recommendation) */}
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='anonymous'
+        />
+        {/* DNS prefetch for other external resources */}
+        <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
+
+        {/* Theme color for mobile browsers - matches light theme background */}
+        <meta name='theme-color' content='oklch(0.98 0.01 85)' />
+        <meta
+          name='theme-color'
+          media='(prefers-color-scheme: light)'
+          content='oklch(0.98 0.01 85)'
+        />
+        <meta
+          name='theme-color'
+          media='(prefers-color-scheme: dark)'
+          content='oklch(0.12 0.02 45)'
+        />
+
+        {/* Apple-specific status bar configuration */}
+        <meta name='apple-mobile-web-app-capable' content='yes' />
+        <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+        <meta name='apple-mobile-web-app-title' content='Darius Pizza' />
+
+        {/* Additional mobile optimizations */}
+        <meta name='format-detection' content='telephone=no' />
+        <meta name='mobile-web-app-capable' content='yes' />
+        <meta
+          name='msapplication-navbutton-color'
+          content='oklch(0.98 0.01 85)'
+        />
+        <meta name='msapplication-TileColor' content='oklch(0.98 0.01 85)' />
+
+        {/* Preload critical resources for LCP */}
+        <link
+          rel='preload'
+          href='/static/hero-background.webp'
+          as='image'
+          type='image/webp'
+          fetchPriority='high'
+        />
+        <link
+          rel='preload'
+          href='/static/hero-pizza.webp'
+          as='image'
+          type='image/webp'
+          fetchPriority='high'
+        />
+
+        {/* Preload critical fonts - only bold weight for LCP */}
+        <link
+          rel='preload'
+          href='/fonts/playfair-display-700.woff2'
+          as='font'
+          type='font/woff2'
+          crossOrigin='anonymous'
+        />
+        <link
+          rel='preload'
+          href='/fonts/inter-400.woff2'
+          as='font'
+          type='font/woff2'
+          crossOrigin='anonymous'
+        />
+      </head>
       <body className='font-secondary antialiased'>
         <script
           suppressHydrationWarning
@@ -149,7 +219,7 @@ export default function RootLayout({
               "!function(){try{const t=localStorage.getItem('darius-pizza-theme'),e=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches,n='dark'===t||(!t&&e),r=document.documentElement;n?(r.classList.add('dark'),r.style.setProperty('--effective-theme','dark')):(r.classList.remove('dark'),r.style.setProperty('--effective-theme','light'))}catch(e){}}();",
           }}
         />
-        {children}
+        <AppThemeProvider>{children}</AppThemeProvider>
       </body>
     </html>
   );

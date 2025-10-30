@@ -1,0 +1,239 @@
+{
+  "items": [
+    {
+      "id": "product-6156553",
+      "title": "Margherita",
+      "description": "Tomatensauce, Mozza Fior di Latte, Oliven. (Max. 1 zusätzliche Zutat. Preis der zusätzlichen Zutat wird verdoppelt, außer bei Ei)"
+    },
+    {
+      "id": "product-78927006",
+      "title": "Basilico",
+      "description": "Tomatensauce, Mozza Fior di Latte, Olivenöl, Basilikumblätter. (Max. 1 zusätzliche Zutat. Preis der zusätzlichen Zutat wird verdoppelt, außer bei Ei)"
+    },
+    {
+      "id": "product-428817123",
+      "title": "Toad",
+      "description": "Tomatensauce, Mozza Fior di Latte, Frische Champignons, Oliven. (Max. 1 zusätzliche Zutat. Preis der zusätzlichen Zutat wird verdoppelt, außer bei Ei)"
+    },
+    {
+      "id": "product-451379312",
+      "title": "Romaine",
+      "description": "Tomatensauce, Mozza Fior di Latte, Schinken, Oliven"
+    },
+    {
+      "id": "product-524183493",
+      "title": "Reine",
+      "description": "Tomatensauce, Mozza Fior di Latte, Schinken, Frische Champignons, Oliven"
+    },
+    {
+      "id": "product-359764159",
+      "title": "5 Käse",
+      "description": "Tomatensauce, Mozza Fior di Latte, Emmentaler, Ziegenkäse, Blauschimmelkäse, Oliven"
+    },
+    {
+      "id": "product-373847564",
+      "title": "Ziegenkäse-Honig oder Hirtin",
+      "description": "Tomatensauce ODER Crème fraîche, Mozza Fior di Latte, Ziegenkäse, Honig, Walnüsse, Oliven"
+    },
+    {
+      "id": "product-805020646",
+      "title": "Raclette",
+      "description": "Crème Fraîche, Mozza Fior di Latte, Bacon ODER Speckwürfel, Raclette-Käse, Kartoffeln, Oliven"
+    },
+    {
+      "id": "product-550635851",
+      "title": "Tartiflette",
+      "description": "Crème Fraîche, Mozza Fior di Latte, Speckwürfel, Zwiebeln, Kartoffeln, Tartiflette-Käse, Oliven"
+    },
+    {
+      "id": "product-623570136",
+      "title": "Chorizo",
+      "description": "Tomatensauce, Mozza Fior di Latte, Iberische Chorizo, Zwiebeln, Paprika, Oliven"
+    },
+    {
+      "id": "product-637907501",
+      "title": "Nach Bauernart",
+      "description": "Tomatensauce ODER Crème Fraîche, Mozza Fior di Latte, Speckwürfel, Zwiebeln, Oliven"
+    },
+    {
+      "id": "product-995891634",
+      "title": "Hawaii",
+      "description": "Tomatensauce, Mozza Fior di Latte, Schinken, Ananas, Oliven"
+    },
+    {
+      "id": "product-1068826375",
+      "title": "Pepperoni",
+      "description": "Tomatensauce, Mozza Fior di Latte, Pepperoni-Salami, Neapolitanischer Friarielli, Zwiebeln, Oliven"
+    },
+    {
+      "id": "product-814695060",
+      "title": "Englische Art",
+      "description": "Tomatensauce, Mozza Fior di Latte, Bacon, Cheddar, Zwiebeln, Ei, Oliven"
+    },
+    {
+      "id": "product-904276217",
+      "title": "Italienische Art",
+      "description": "Tomatensauce, Mozza Fior di Latte, Rohschinken, Kirschtomaten, Grana Padano-Späne, Oliven"
+    },
+    {
+      "id": "product-910069326",
+      "title": "Auvergnate",
+      "description": "Crème Fraîche, Mozza Fior di Latte, Rohschinken, Blauschimmelkäse, Walnüsse, Oliven"
+    },
+    {
+      "id": "product-1259951571",
+      "title": "San Marco",
+      "description": "Tomatensauce, Mozza Fior di Latte, Italienische Coppa, Frische Champignons in Petersilie, Grana Padano-Späne, Oliven"
+    },
+    {
+      "id": "product-1282423584",
+      "title": "Corsica",
+      "description": "Tomatensauce, Mozza Fior di Latte, Figatelli, Ziegenkäse, Zwiebeln, Oliven"
+    },
+    {
+      "id": "product-374908687",
+      "title": "Gariguette",
+      "description": "Crème fraîche, Mozza, Speckwürfel, Ziegenkäse, Frische Champignons in Petersilie, Grana-Späne, Oliven"
+    },
+    {
+      "id": "product-1095278261",
+      "title": "Sizilianische Art",
+      "description": "Tomatensauce, Mozza Fior di Latte, Sardellen, Mini-Kapern, Oliven"
+    },
+    {
+      "id": "product-1168335898",
+      "title": "Marseillaise",
+      "description": "Tomatensauce, Sardellen, Rote Zwiebeln, Große Kapern, Oliven"
+    },
+    {
+      "id": "product-1190906479",
+      "title": "Thunfisch",
+      "description": "Tomatensauce, Mozza Fior di Latte, Thunfisch, Kirschtomaten, Crème fraîche, Oliven"
+    },
+    {
+      "id": "product-1546483521",
+      "title": "Norwegische Art",
+      "description": "Crème fraîche, Mozza Fior di Latte, Räucherlachs, Dill, Kirschtomaten, Oliven"
+    },
+    {
+      "id": "product-1359338198",
+      "title": "Orientalisch",
+      "description": "Tomatensauce, Mozza Fior di Latte, Merguez, Zwiebeln, Paprika, Oliven"
+    },
+    {
+      "id": "product-1381802043",
+      "title": "Cheeseburger",
+      "description": "Tomatensauce, Mozza Fior di Latte, Hackfleisch, Cheddar, Burgersauce, Oliven"
+    },
+    {
+      "id": "product-1454835592",
+      "title": "Texas Ranger",
+      "description": "Tomatensauce, Mozza Fior di Latte, Hackfleisch, Paprika, Zwiebeln, Barbecuesauce, Oliven"
+    },
+    {
+      "id": "product-1804594461",
+      "title": "Indische Art",
+      "description": "Tomatensauce, Mozza Fior di Latte, Kokos-Curry-Hähnchen, Paprika, Kirschtomaten, Currysauce, Oliven"
+    },
+    {
+      "id": "product-1827058530",
+      "title": "Kebab",
+      "description": "Crème fraîche, Mozza Fior di Latte, Kebabfleisch, Zwiebeln, Kirschtomaten, Kebabsauce, Oliven"
+    },
+    {
+      "id": "product-1640044279",
+      "title": "Power Ranger",
+      "description": "Tomatensauce, Mozza Fior di Latte, Hackfleisch, Merguez ODER Hähnchen, Zwiebeln, Samuraisauce, Oliven"
+    },
+    {
+      "id": "product-1645870148",
+      "title": "Dijonnaise",
+      "description": "Crème fraîche, Mozza Fior di Latte, Hähnchen, Zwiebeln, Frische Champignons, Creme mit altem Senf, Oliven"
+    },
+    {
+      "id": "product-1735410601",
+      "title": "Kretische Art",
+      "description": "Tomatensauce, Mozza Fior di Latte, Hackfleisch, Zwiebeln, Marinierte Auberginen, Grana Padano-Späne, Oliven"
+    },
+    {
+      "id": "product-1510173889",
+      "title": "Brooklyn",
+      "description": "Tomatensauce, Mozza Fior di Latte, Hähnchen, Cheddar, Ei, Oliven"
+    },
+    {
+      "id": "product-1599746646",
+      "title": "Espelette",
+      "description": "Tomatensauce, Mozza Fior di Latte, Hähnchen, Paprika, Zwiebeln, Piment d'Espelette, Oliven"
+    },
+    {
+      "id": "product-2018191678",
+      "title": "4 Jahreszeiten",
+      "description": "Tomatensauce, Mozza Fior di Latte, Frische Champignons, Artischockenherzen, Kirschtomaten, Oliven"
+    },
+    {
+      "id": "product-2091093123",
+      "title": "Provençalische Art",
+      "description": "Tomatensauce, Mozza Fior di Latte, Marinierte Zucchini und Auberginen, Zwiebeln, Pesto, Oliven"
+    },
+    {
+      "id": "product-1912230416",
+      "title": "Mediterrane Art",
+      "description": "Tomatensauce, Mozza Fior di Latte, Ziegenkäse, Kirschtomaten, Marinierte Zucchini, Oliven"
+    },
+    {
+      "id": "product-1495828860",
+      "title": "Piperade",
+      "description": "Tomatensauce, Mozza Fior di Latte, Paprika, Zwiebeln, Ei, Piment d'Espelette, Oliven"
+    },
+    {
+      "id": "product-1926576229",
+      "title": "La Dauphinoise",
+      "description": "Basis aus Knoblauch-Kräuter-Creme, Mozza Fior di Latte, Ravioles du Dauphiné, Speckwürfel, Parmesan-Späne, Oliven"
+    },
+    {
+      "id": "product-1999478730",
+      "title": "La Parma",
+      "description": "Tomatensauce, Mozza Fior di Latte, Parmaschinken, Stracciatella di Burrata, Rucola, Parmesan-Späne"
+    },
+    {
+      "id": "product-134505823",
+      "title": "La Darius",
+      "description": "Tomatensauce, Mozza, Italienische Coppa, Kirschtomaten, Stracciatella di Burrata, Rucola, Parmesan, Balsamico-Essig"
+    },
+    {
+      "id": "product-224184492",
+      "title": "Al Tartufo",
+      "description": "Trüffelcreme, Mozza, Hauchdünner gekochter Schinken, Burrata, Rucola, Parmesan, Olivenöl mit Trüffel"
+    },
+    {
+      "id": "product-28814897",
+      "title": "Classico",
+      "description": "Tomatensauce, Mozza Fior di Latte, Gekochter Schinken, Frische Champignons, Ei"
+    },
+    {
+      "id": "product-42890630",
+      "title": "Iberico",
+      "description": "Tomatensauce, Mozza Fior di Latte, Gekochter Schinken, Chorizo, Frische Champignons, Ei"
+    },
+    {
+      "id": "product-132570091",
+      "title": "Perfetta",
+      "description": "Tomatensauce, Mozza Fior di Latte, Emmentaler, Ziegenkäse, Blauschimmelkäse, Gekochter Schinken, Ei"
+    },
+    {
+      "id": "product-415342968",
+      "title": "Nutella - Banane",
+      "description": "Süße Creme, Bananenscheiben, Nutella, Schokoladensauce"
+    },
+    {
+      "id": "product-510716498",
+      "title": "Karibik",
+      "description": "Creme und Kokoscreme, Ananas, Nutella, Schokoladensauce"
+    },
+    {
+      "id": "product-323727783",
+      "title": "Bounty",
+      "description": "Creme und Kokoscreme, Kokosraspeln, Nutella, Schokoladensauce"
+    }
+  ]
+}

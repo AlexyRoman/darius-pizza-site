@@ -1,0 +1,239 @@
+{
+  "items": [
+    {
+      "id": "product-6156553",
+      "title": "Margherita",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Aceitunas. (1 suplemento máx. Precio del suplemento duplicado excepto huevo)"
+    },
+    {
+      "id": "product-78927006",
+      "title": "Basilico",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Aceite de Oliva, Hojas de Albahaca. (1 suplemento máx. Precio del suplemento duplicado excepto huevo)"
+    },
+    {
+      "id": "product-428817123",
+      "title": "Toad",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Champiñones Frescos, Aceitunas. (1 suplemento máx. Precio del suplemento duplicado excepto huevo)"
+    },
+    {
+      "id": "product-451379312",
+      "title": "Romana",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón, Aceitunas"
+    },
+    {
+      "id": "product-524183493",
+      "title": "Reina",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón, Champiñones Frescos, Aceitunas"
+    },
+    {
+      "id": "product-359764159",
+      "title": "5 Quesos",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Emmental, Queso de Cabra, Queso Azul, Aceitunas"
+    },
+    {
+      "id": "product-373847564",
+      "title": "Cabra Miel o Pastora",
+      "description": "Salsa de Tomate O Nata, Mozza Fior di Latte, Queso de Cabra, Miel, Nueces, Aceitunas"
+    },
+    {
+      "id": "product-805020646",
+      "title": "Raclette",
+      "description": "Nata Fresca (Crème Fraîche), Mozza Fior di Latte, Bacon O Panceta, Queso Raclette, Patatas, Aceitunas"
+    },
+    {
+      "id": "product-550635851",
+      "title": "Tartiflette",
+      "description": "Nata Fresca (Crème Fraîche), Mozza Fior di Latte, Panceta, Cebollas, Patatas, Queso Tartiflette, Aceitunas"
+    },
+    {
+      "id": "product-623570136",
+      "title": "Chorizo",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Chorizo ibérico, Cebollas, Pimientos, Aceitunas"
+    },
+    {
+      "id": "product-637907501",
+      "title": "Campesina",
+      "description": "Salsa de Tomate O Nata Fresca (Crème Fraîche), Mozza Fior di Latte, Panceta, Cebollas, Aceitunas"
+    },
+    {
+      "id": "product-995891634",
+      "title": "Hawaiana",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón, Piña, Aceitunas"
+    },
+    {
+      "id": "product-1068826375",
+      "title": "Pepperoni",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Pepperoni, Friarielli Napolitanos, Cebollas, Aceitunas"
+    },
+    {
+      "id": "product-814695060",
+      "title": "Inglesa",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Bacon, Cheddar, Cebollas, Huevo, Aceitunas"
+    },
+    {
+      "id": "product-904276217",
+      "title": "Italiana",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón Serrano, Tomates cherry, Virutas de Grana Padano, Aceitunas"
+    },
+    {
+      "id": "product-910069326",
+      "title": "Auvernesa",
+      "description": "Nata Fresca (Crème Fraîche), Mozza Fior di Latte, Jamón Serrano, Queso Azul, Nueces, Aceitunas"
+    },
+    {
+      "id": "product-1259951571",
+      "title": "San Marco",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Coppa Italiana, Champiñones Frescos en Persillade, Virutas de Grana Padano, Aceitunas"
+    },
+    {
+      "id": "product-1282423584",
+      "title": "Corsica",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Figatelli, Queso de Cabra, Cebollas, Aceitunas"
+    },
+    {
+      "id": "product-374908687",
+      "title": "Gariguette",
+      "description": "Nata, Mozza, Panceta, Queso de Cabra, Champiñones frescos en persillade, Virutas de Grana, Aceitunas"
+    },
+    {
+      "id": "product-1095278261",
+      "title": "Siciliana",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Anchoas, Mini Alcaparras, Aceitunas"
+    },
+    {
+      "id": "product-1168335898",
+      "title": "Marsellesa",
+      "description": "Salsa de Tomate, Anchoas, Cebollas Rojas, Alcaparras Grandes, Aceitunas"
+    },
+    {
+      "id": "product-1190906479",
+      "title": "Atún",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Atún, Tomates Cherry, Nata, Aceitunas"
+    },
+    {
+      "id": "product-1546483521",
+      "title": "Noruega",
+      "description": "Nata, Mozza Fior di Latte, Salmón Ahumado, Eneldo, Tomates Cherry, Aceitunas"
+    },
+    {
+      "id": "product-1359338198",
+      "title": "Oriental",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Merguez, Cebollas, Pimientos, Aceitunas"
+    },
+    {
+      "id": "product-1381802043",
+      "title": "Cheeseburger",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Carne Picada, Cheddar, Salsa Burger, Aceitunas"
+    },
+    {
+      "id": "product-1454835592",
+      "title": "Texas Ranger",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Carne Picada, Pimientos, Cebollas, Salsa Barbacoa, Aceitunas"
+    },
+    {
+      "id": "product-1804594461",
+      "title": "India",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Pollo Coco-Curry, Pimientos, Tomates Cherry, Salsa Curry, Aceitunas"
+    },
+    {
+      "id": "product-1827058530",
+      "title": "Kebab",
+      "description": "Nata, Mozza Fior di Latte, Kebab, Cebollas, Tomates Cherry, Salsa Kebab, Aceitunas"
+    },
+    {
+      "id": "product-1640044279",
+      "title": "Power Ranger",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Carne Picada, Merguez O Pollo, Cebollas, Salsa Samurái, Aceitunas"
+    },
+    {
+      "id": "product-1645870148",
+      "title": "Dijonesa",
+      "description": "Nata, Mozza Fior di Latte, Pollo, Cebollas, Champiñones Frescos, Nata a la Mostaza Antigua, Aceitunas"
+    },
+    {
+      "id": "product-1735410601",
+      "title": "Cretense",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Carne Picada, Cebollas, Berenjenas marinadas, Virutas Grana Padano, Aceitunas"
+    },
+    {
+      "id": "product-1510173889",
+      "title": "Brooklyn",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Pollo, Cheddar, Huevo, Aceitunas"
+    },
+    {
+      "id": "product-1599746646",
+      "title": "Espelette",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Pollo, Pimientos, Cebollas, Pimiento de Espelette, Aceitunas"
+    },
+    {
+      "id": "product-2018191678",
+      "title": "4 Estaciones",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Champiñones Frescos, Corazón de Alcachofa, Tomates Cherry, Aceitunas"
+    },
+    {
+      "id": "product-2091093123",
+      "title": "Provenzal",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Calabacines y Berenjenas marinadas, Cebollas, Pesto, Aceitunas"
+    },
+    {
+      "id": "product-1912230416",
+      "title": "Mediterránea",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Queso de Cabra, Tom. Cherry, Calabacines marinados, Aceitunas"
+    },
+    {
+      "id": "product-1495828860",
+      "title": "Piperrada",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Pimientos, Cebollas, Huevo, Pimiento de Espelette, Aceitunas"
+    },
+    {
+      "id": "product-1926576229",
+      "title": "La Dauphinoise",
+      "description": "Base de Nata con Ajo y Finas Hierbas, Mozza Fior di Latte, Ravioles del Dauphiné, Panceta, Virutas de Parmesano, Aceitunas"
+    },
+    {
+      "id": "product-1999478730",
+      "title": "La Parma",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón de Parma, Stracciatella di Burrata, Rúcula, Virutas de Parmesano"
+    },
+    {
+      "id": "product-134505823",
+      "title": "La Darius",
+      "description": "Salsa de Tomate, Mozza, Coppa Italiana, Tomates Cherry, Stracciatella di Burrata, Rúcula, Parmesano, Vinagre Balsámico"
+    },
+    {
+      "id": "product-224184492",
+      "title": "Al Tartufo",
+      "description": "Nata de Trufa, Mozza, Finas lonchas de Jamón cocido, Burrata, Rúcula, Parmesano, Aceite de Oliva de Trufa"
+    },
+    {
+      "id": "product-28814897",
+      "title": "Classico",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón Cocido, Champiñones Frescos, Huevo"
+    },
+    {
+      "id": "product-42890630",
+      "title": "Iberico",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Jamón Cocido, Chorizo, Champiñones Frescos, Huevo"
+    },
+    {
+      "id": "product-132570091",
+      "title": "Perfetta",
+      "description": "Salsa de Tomate, Mozza Fior di Latte, Emmental, Queso de Cabra, Queso Azul, Jamón Cocido, Huevo"
+    },
+    {
+      "id": "product-415342968",
+      "title": "Nutella - Plátano",
+      "description": "Nata dulce, Plátano en Rodajas, Nutella, Salsa de Chocolate"
+    },
+    {
+      "id": "product-510716498",
+      "title": "Caribe",
+      "description": "Nata y Crema de Coco, Piña, Nutella, Salsa de Chocolate"
+    },
+    {
+      "id": "product-323727783",
+      "title": "Bounty",
+      "description": "Nata y Crema de Coco, Coco Rallado, Nutella, Salsa de Chocolate"
+    }
+  ]
+}

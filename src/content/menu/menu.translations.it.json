@@ -1,0 +1,239 @@
+{
+  "items": [
+    {
+      "id": "product-6156553",
+      "title": "Margherita",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Olive. (1 supplemento max. Prezzo del supplemento raddoppiato tranne uovo)"
+    },
+    {
+      "id": "product-78927006",
+      "title": "Basilico",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Olio d'Oliva, Foglie di Basilico. (1 supplemento max. Prezzo del supplemento raddoppiato tranne uovo)"
+    },
+    {
+      "id": "product-428817123",
+      "title": "Toad",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Funghi Freschi, Olive. (1 supplemento max. Prezzo del supplemento raddoppiato tranne uovo)"
+    },
+    {
+      "id": "product-451379312",
+      "title": "Romana",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Prosciutto Cotto, Olive"
+    },
+    {
+      "id": "product-524183493",
+      "title": "Regina",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Prosciutto Cotto, Funghi Freschi, Olive"
+    },
+    {
+      "id": "product-359764159",
+      "title": "5 Formaggi",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Emmental, Caprino, Blu, Olive"
+    },
+    {
+      "id": "product-373847564",
+      "title": "Capra e Miele",
+      "description": "Salsa di Pomodoro O Panna, Mozzarella Fior di Latte, Caprino, Miele, Noci, Olive"
+    },
+    {
+      "id": "product-805020646",
+      "title": "Raclette",
+      "description": "Panna, Mozzarella Fior di Latte, Bacon O pancetta, Raclette, Patate, Olive"
+    },
+    {
+      "id": "product-550635851",
+      "title": "Tartiflette",
+      "description": "Panna, Mozzarella Fior di Latte, Pancetta, Cipolle, Patate, Tartiflette, Olive"
+    },
+    {
+      "id": "product-623570136",
+      "title": "Chorizo",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Chorizo iberico, Cipolle, Peperoni, Olive"
+    },
+    {
+      "id": "product-637907501",
+      "title": "Contadina",
+      "description": "Salsa di Pomodoro O Panna, Mozzarella Fior di Latte, Pancetta, Cipolle, Olive"
+    },
+    {
+      "id": "product-995891634",
+      "title": "Hawaiana",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Prosciutto Cotto, Ananas, Olive"
+    },
+    {
+      "id": "product-1068826375",
+      "title": "Pepperonni",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Salame piccante, Friarielli napoletani, Cipolle, Olive"
+    },
+    {
+      "id": "product-814695060",
+      "title": "Inglese",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Bacon, Cheddar, Cipolle, Uovo, Olive"
+    },
+    {
+      "id": "product-904276217",
+      "title": "Italiana",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Prosciutto Crudo, Pomodorini, Scaglie di Grana Padano, Olive"
+    },
+    {
+      "id": "product-910069326",
+      "title": "Alverniate",
+      "description": "Panna, Mozzarella Fior di Latte, Prosciutto Crudo, Formaggio Blu, Noci, Olive"
+    },
+    {
+      "id": "product-1259951571",
+      "title": "San Marco",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Coppa Italiana, Funghi Freschi in Persillade, Scaglie di Grana Padano, Olive"
+    },
+    {
+      "id": "product-1282423584",
+      "title": "Corsica",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Figatelli, Caprino, Cipolle, Olive"
+    },
+    {
+      "id": "product-374908687",
+      "title": "Gariguette",
+      "description": "Panna, Mozzarella, Pancetta, Caprino, Funghi freschi in persillade, Scaglie di Grana, Olive"
+    },
+    {
+      "id": "product-1095278261",
+      "title": "Siciliana",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Acciughe, Capperi piccoli, Olive"
+    },
+    {
+      "id": "product-1168335898",
+      "title": "Marsigliese",
+      "description": "Salsa di Pomodoro, Acciughe, Cipolle Rosse, Capperi grandi, Olive"
+    },
+    {
+      "id": "product-1190906479",
+      "title": "Tonno",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Tonno , Pomodorini, Panna, Olive"
+    },
+    {
+      "id": "product-1546483521",
+      "title": "Norvegese",
+      "description": "Panna, Mozzarella Fior di Latte, Salmone Affumicato, Aneto, Pomodorini, Olive"
+    },
+    {
+      "id": "product-1359338198",
+      "title": "Orientale",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Merguez, Cipolle, Peperoni, Olive"
+    },
+    {
+      "id": "product-1381802043",
+      "title": "Cheeseburger",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Manzo Macinato, Cheddar, Salsa Burger, Olive"
+    },
+    {
+      "id": "product-1454835592",
+      "title": "Texas Ranger",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Carne Macinata, Peperoni, Cipolle, Salsa Barbecue, Olive"
+    },
+    {
+      "id": "product-1804594461",
+      "title": "Indiana",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Pollo Cocco-Curry, Peperoni, Pomodorini, Salsa Curry, Olive"
+    },
+    {
+      "id": "product-1827058530",
+      "title": "Kebab",
+      "description": "Panna, Mozzarella Fior di Latte, Kebab, Cipolle, Pomodorini, Salsa Kebab, Olive"
+    },
+    {
+      "id": "product-1640044279",
+      "title": "Power Ranger",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Manzo Macinato, Merguez O Pollo, Cipolle, Salsa Samourai, Olive"
+    },
+    {
+      "id": "product-1645870148",
+      "title": "Digionese",
+      "description": "Panna, Mozzarella Fior di Latte, Pollo , Cipolle, Funghi Freschi, Panna alla Senape Antica, Olive"
+    },
+    {
+      "id": "product-1735410601",
+      "title": "Cretese",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Manzo Macinato, Cipolle, Melanzane marinate, Scaglie di Grana Padano, Olive"
+    },
+    {
+      "id": "product-1510173889",
+      "title": "Brooklyn",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Pollo, Cheddar, Uovo, Olive"
+    },
+    {
+      "id": "product-1599746646",
+      "title": "Espelette",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Pollo, Peperoni, Cipolle, Peperoncino d'Espelette, Olive"
+    },
+    {
+      "id": "product-2018191678",
+      "title": "4 Stagioni",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Funghi Freschi, Cuore di Carciofo, Pomodorini, Olive"
+    },
+    {
+      "id": "product-2091093123",
+      "title": "Provenzale",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Zucchine e Melanzane marinate, Cipolle, Pesto, Olive"
+    },
+    {
+      "id": "product-1912230416",
+      "title": "Mediterranea",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Caprino, Pomodorini, Zucchine marinate, Olive"
+    },
+    {
+      "id": "product-1495828860",
+      "title": "Piperade",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Peperoni, Cipolle, Uovo, Peperoncino d'Espelette, Olive"
+    },
+    {
+      "id": "product-1926576229",
+      "title": "La Delfina",
+      "description": "Base di Panna Aglio ed Erbe Fini, Mozzarella Fior di Latte, Ravioli del Delfinato, Pancetta, Scaglie di Parmigiano, Olive"
+    },
+    {
+      "id": "product-1999478730",
+      "title": "La Parma",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Prosciutto di Parma, Stracciatella di Burrata, Rucola, Scaglie di Parmigiano"
+    },
+    {
+      "id": "product-134505823",
+      "title": "La Darius",
+      "description": "Salsa di Pomodoro, Mozzarella, Coppa Italiana, Pomodorini, Stracciatella di Burrata, Rucola, Parmigiano, Aceto Balsamico"
+    },
+    {
+      "id": "product-224184492",
+      "title": "Al Tartufo",
+      "description": "Crema al Tartufo, Mozzarella, Sfilacci di Prosciutto Cotto, Burrata, Rucola, Parmigiano, Olio d'Oliva al Tartufo"
+    },
+    {
+      "id": "product-28814897",
+      "title": "Classico",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Prosciutto Cotto, Funghi Freschi, Uovo"
+    },
+    {
+      "id": "product-42890630",
+      "title": "Iberico",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Prosciutto Cotto, Chorizo , Funghi Freschi, Uovo"
+    },
+    {
+      "id": "product-132570091",
+      "title": "Perfetta",
+      "description": "Salsa di Pomodoro, Mozzarella Fior di Latte, Emmental, Caprino, Blu, Prosciutto Cotto, Uovo"
+    },
+    {
+      "id": "product-415342968",
+      "title": "Nutella - Banana",
+      "description": "Crema zuccherata, Banana a Rondelle, Nutella, Salsa al Cioccolato"
+    },
+    {
+      "id": "product-510716498",
+      "title": "Caraibi",
+      "description": "Panna e Crema di Cocco, Ananas, Nutella, Salsa al Cioccolato"
+    },
+    {
+      "id": "product-323727783",
+      "title": "Bounty",
+      "description": "Panna e Crema di Cocco, Cocco Grattugiato, Nutella, Salsa al Cioccolato"
+    }
+  ]
+}

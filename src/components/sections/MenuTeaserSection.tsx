@@ -7,8 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
-import menuEn from '@/content/menu/menu.en.json';
-import menuFr from '@/content/menu/menu.fr.json';
+import type { MenuItem } from '@/types/menu';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { formatCurrency } from '@/lib/site-utils';
@@ -22,12 +21,22 @@ export default function MenuTeaserSection() {
     useRestaurantConfig('starred-pizzas', locale);
   const starredPizzas = starredPizzasConfig?.starredPizzas || [];
 
-  type MenuItem = { id: string; title: string; description: string };
-  const menuData: MenuItem[] =
-    locale === 'fr'
-      ? (menuFr as { items: MenuItem[] }).items
-      : (menuEn as { items: MenuItem[] }).items;
-  const idToLocalized = new Map<string, MenuItem>(menuData.map(i => [i.id, i]));
+  // Get menu items for the current locale
+  const [menuItems, setMenuItems] = React.useState<MenuItem[]>([]);
+
+  React.useEffect(() => {
+    import('@/lib/menu-loader').then(({ loadMenuItems }) => {
+      loadMenuItems(locale)
+        .then(items => setMenuItems(items))
+        .catch(error => console.error('Failed to load menu items:', error));
+    });
+  }, [locale]);
+
+  // Create a map for quick lookup by ID
+  const idToLocalized = React.useMemo(
+    () => new Map<string, MenuItem>(menuItems.map(i => [i.id, i])),
+    [menuItems]
+  );
 
   return (
     <section className='py-16 bg-gradient-to-b from-background via-background-secondary to-background-secondary'>

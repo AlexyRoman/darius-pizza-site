@@ -69,6 +69,7 @@
     "title": "Menu",
     "subtitle": "Ontdek onze selectie",
     "allergens": "Allergenen",
+    "loading": "Menu laden...",
     "itemsCount": "{count} pizza{count, plural, =1 {} other {'s}}",
     "filters": {
       "allCategories": "Alle categorieën",
@@ -78,6 +79,27 @@
     },
     "cta": {
       "action": "Actie"
+    },
+    "categories": {
+      "The Classics": "De Klassiekers",
+      "Cheese Pizzas": "De Kazen",
+      "Cured Meat Pizzas": "De Vleeswaren",
+      "Seafood Pizzas": "De Zeevruchten",
+      "Meat Pizzas": "De Vleesliefhebbers",
+      "Vegetarian Pizzas": "De Vegetarische",
+      "Signature Pizzas": "De Specialiteiten",
+      "Calzones": "De Calzones",
+      "Desserts": "De Desserts"
+    },
+    "allergenLabels": {
+      "Vegetarian": "Vegetarisch",
+      "Gluten": "Gluten",
+      "Milk": "Melk",
+      "Eggs": "Eieren",
+      "Fish": "Vis",
+      "Nuts": "Noten",
+      "Mustard": "Mosterd",
+      "Soy": "Soja"
     }
   },
   "allergens": {

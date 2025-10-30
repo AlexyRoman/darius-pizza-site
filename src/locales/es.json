@@ -69,6 +69,7 @@
     "title": "Menú",
     "subtitle": "Descubra nuestra selección",
     "allergens": "Alérgenos",
+    "loading": "Cargando menú...",
     "itemsCount": "{count} pizza{count, plural, =1 {} other {s}}",
     "filters": {
       "allCategories": "Todas las categorías",
@@ -78,6 +79,27 @@
     },
     "cta": {
       "action": "Acción"
+    },
+    "categories": {
+      "The Classics": "Las Clásicas",
+      "Cheese Pizzas": "Las de Queso",
+      "Cured Meat Pizzas": "Las de Embutido",
+      "Seafood Pizzas": "Las del Mar",
+      "Meat Pizzas": "Las de Carne",
+      "Vegetarian Pizzas": "Las Vegetarianas",
+      "Signature Pizzas": "Las de Autor",
+      "Calzones": "Los Calzones",
+      "Desserts": "Los Postres"
+    },
+    "allergenLabels": {
+      "Vegetarian": "Vegetarian",
+      "Gluten": "Gluten",
+      "Milk": "Leche",
+      "Eggs": "Huevos",
+      "Fish": "Pescado",
+      "Nuts": "Frutos secos",
+      "Mustard": "Mostaza",
+      "Soy": "Soja"
     }
   },
   "allergens": {

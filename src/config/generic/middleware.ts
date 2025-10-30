@@ -79,4 +79,3 @@ export const TEMPORARY_REDIRECT_STATUS = 307 as const;
  * This is a middleware behavior setting - generic but potentially configurable
  */
 export const CONVERT_TEMPORARY_TO_PERMANENT = true as const;
-

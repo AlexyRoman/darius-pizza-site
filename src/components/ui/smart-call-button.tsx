@@ -11,9 +11,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { getSitePhone } from '@/config/site';
+import { getSitePhone } from '@/lib/site-utils';
 import { isTimeInPeriods } from '@/lib/opening-hours-utils';
-import hoursConfig from '@/config/restaurant/hours.json';
+import hoursConfig from '@/config/site/restaurant/hours.json';
 
 interface OpeningHours {
   [key: string]: {

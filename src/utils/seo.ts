@@ -1,7 +1,7 @@
 import {
   getEnabledLocaleCodes,
   getDefaultLocale,
-} from '@/config/locales-config';
+} from '@/config/generic/locales-config';
 
 import type { Metadata } from 'next';
 

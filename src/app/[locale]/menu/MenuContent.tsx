@@ -36,8 +36,8 @@ import menuFr from '@/content/menu/menu.fr.json';
 import menuDe from '@/content/menu/menu.de.json';
 import menuIt from '@/content/menu/menu.it.json';
 import menuEs from '@/content/menu/menu.es.json';
-import { isItemCtaEnabled } from '@/config/feature-flags';
-import { formatCurrency } from '@/config/site';
+import { isItemCtaEnabled } from '@/config/generic/feature-flags';
+import { formatCurrency } from '@/lib/site-utils';
 import { AllergenLegend } from '@/components/header/AllergenLegend';
 import { useLocale, useTranslations } from 'next-intl';
 

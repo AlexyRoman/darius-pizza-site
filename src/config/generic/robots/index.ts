@@ -1,6 +1,6 @@
 import type { RobotsConfig } from '@/types/config';
 
-import disallowedPaths from './settings/disallowed-paths.json';
+import disallowedPaths from '@/config/site/robots/settings/disallowed-paths.json';
 import settings from './settings/settings.json';
 import userAgents from './settings/user-agents.json';
 

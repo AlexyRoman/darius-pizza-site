@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { getEnabledLocaleCodes } from '@/config/locales-config';
+import { getEnabledLocaleCodes } from '@/config/generic/locales-config';
 
 export interface OGMetadata {
   title: string;

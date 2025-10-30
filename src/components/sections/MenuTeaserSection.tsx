@@ -11,7 +11,7 @@ import menuEn from '@/content/menu/menu.en.json';
 import menuFr from '@/content/menu/menu.fr.json';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
-import { formatCurrency } from '@/config/site';
+import { formatCurrency } from '@/lib/site-utils';
 
 export default function MenuTeaserSection() {
   const t = useTranslations('menuTeaser');

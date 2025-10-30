@@ -2,11 +2,10 @@
  * @jest-environment node
  */
 import { NextRequest, NextResponse } from 'next/server';
-import * as middlewareConfig from '@/config/middleware';
+import * as genericMiddlewareConfig from '@/config/generic/middleware';
 
 // Use a global variable that can be accessed from the hoisted mock
 declare global {
-  // eslint-disable-next-line no-var
   var mockIntlMiddlewareFunction: jest.Mock | undefined;
 }
 
@@ -22,7 +21,7 @@ jest.mock('next-intl/middleware', () => {
 });
 
 // Mock locales config
-jest.mock('@/config/locales-config', () => ({
+jest.mock('@/config/generic/locales-config', () => ({
   getLocaleSettings: jest.fn(() => ({
     localeDetection: true,
     localePrefix: 'always',
@@ -46,7 +45,10 @@ describe('Middleware', () => {
   });
 
   // Helper to create a NextRequest mock
-  function createRequest(pathname: string, baseUrl = 'https://example.com'): NextRequest {
+  function createRequest(
+    pathname: string,
+    baseUrl = 'https://example.com'
+  ): NextRequest {
     const url = new URL(pathname, baseUrl);
     return {
       nextUrl: url,
@@ -192,8 +194,12 @@ describe('Middleware', () => {
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
-      expect(nextResponse.status).toBe(middlewareConfig.PERMANENT_REDIRECT_STATUS);
-      expect(nextResponse.headers.get('location')).toBe('https://example.com/menu');
+      expect(nextResponse.status).toBe(
+        genericMiddlewareConfig.PERMANENT_REDIRECT_STATUS
+      );
+      expect(nextResponse.headers.get('location')).toBe(
+        'https://example.com/menu'
+      );
     });
 
     it('should redirect /gallery to /', () => {
@@ -202,7 +208,9 @@ describe('Middleware', () => {
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
-      expect(nextResponse.status).toBe(middlewareConfig.PERMANENT_REDIRECT_STATUS);
+      expect(nextResponse.status).toBe(
+        genericMiddlewareConfig.PERMANENT_REDIRECT_STATUS
+      );
       expect(nextResponse.headers.get('location')).toBe('https://example.com/');
     });
 
@@ -212,7 +220,9 @@ describe('Middleware', () => {
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
-      expect(nextResponse.status).toBe(middlewareConfig.PERMANENT_REDIRECT_STATUS);
+      expect(nextResponse.status).toBe(
+        genericMiddlewareConfig.PERMANENT_REDIRECT_STATUS
+      );
       expect(nextResponse.headers.get('location')).toBe('https://example.com/');
     });
 
@@ -222,7 +232,9 @@ describe('Middleware', () => {
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
-      expect(nextResponse.status).toBe(middlewareConfig.PERMANENT_REDIRECT_STATUS);
+      expect(nextResponse.status).toBe(
+        genericMiddlewareConfig.PERMANENT_REDIRECT_STATUS
+      );
       expect(nextResponse.headers.get('location')).toBe('https://example.com/');
     });
 
@@ -232,7 +244,9 @@ describe('Middleware', () => {
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
-      expect(nextResponse.status).toBe(middlewareConfig.PERMANENT_REDIRECT_STATUS);
+      expect(nextResponse.status).toBe(
+        genericMiddlewareConfig.PERMANENT_REDIRECT_STATUS
+      );
       expect(nextResponse.headers.get('location')).toBe('https://example.com/');
     });
 
@@ -242,7 +256,9 @@ describe('Middleware', () => {
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
-      expect(nextResponse.status).toBe(middlewareConfig.PERMANENT_REDIRECT_STATUS);
+      expect(nextResponse.status).toBe(
+        genericMiddlewareConfig.PERMANENT_REDIRECT_STATUS
+      );
       expect(nextResponse.headers.get('location')).toBe('https://example.com/');
     });
 
@@ -297,7 +313,7 @@ describe('Middleware', () => {
       const request = createRequest('/');
       const tempRedirect = NextResponse.redirect(
         new URL('/fr', request.url),
-        middlewareConfig.TEMPORARY_REDIRECT_STATUS
+        genericMiddlewareConfig.TEMPORARY_REDIRECT_STATUS
       );
       global.mockIntlMiddlewareFunction!.mockReturnValue(tempRedirect);
 
@@ -305,8 +321,12 @@ describe('Middleware', () => {
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
-      expect(nextResponse.status).toBe(middlewareConfig.PERMANENT_REDIRECT_STATUS);
-      expect(nextResponse.headers.get('location')).toBe('https://example.com/fr');
+      expect(nextResponse.status).toBe(
+        genericMiddlewareConfig.PERMANENT_REDIRECT_STATUS
+      );
+      expect(nextResponse.headers.get('location')).toBe(
+        'https://example.com/fr'
+      );
     });
 
     it('should not convert non-307 redirects', () => {
@@ -326,9 +346,11 @@ describe('Middleware', () => {
     it('should not convert responses without location header', () => {
       const request = createRequest('/');
       const responseWithoutLocation = new NextResponse(null, {
-        status: middlewareConfig.TEMPORARY_REDIRECT_STATUS,
+        status: genericMiddlewareConfig.TEMPORARY_REDIRECT_STATUS,
       });
-      global.mockIntlMiddlewareFunction!.mockReturnValue(responseWithoutLocation);
+      global.mockIntlMiddlewareFunction!.mockReturnValue(
+        responseWithoutLocation
+      );
 
       const response = middleware(request);
 
@@ -416,14 +438,16 @@ describe('Middleware', () => {
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
-      expect(nextResponse.status).toBe(middlewareConfig.PERMANENT_REDIRECT_STATUS);
+      expect(nextResponse.status).toBe(
+        genericMiddlewareConfig.PERMANENT_REDIRECT_STATUS
+      );
     });
 
     it('should handle complete flow: regular path with locale redirect conversion', () => {
       const request = createRequest('/');
       const tempRedirect = NextResponse.redirect(
         new URL('/en', request.url),
-        middlewareConfig.TEMPORARY_REDIRECT_STATUS
+        genericMiddlewareConfig.TEMPORARY_REDIRECT_STATUS
       );
       global.mockIntlMiddlewareFunction!.mockReturnValue(tempRedirect);
 
@@ -432,7 +456,9 @@ describe('Middleware', () => {
       expect(global.mockIntlMiddlewareFunction!).toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
-      expect(nextResponse.status).toBe(middlewareConfig.PERMANENT_REDIRECT_STATUS);
+      expect(nextResponse.status).toBe(
+        genericMiddlewareConfig.PERMANENT_REDIRECT_STATUS
+      );
     });
   });
 });

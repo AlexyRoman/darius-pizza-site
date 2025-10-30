@@ -1,6 +1,6 @@
 import type { Locale, LocalesConfig, LocaleCode } from '@/types/locales';
 
-import localesData from './locales.json';
+import localesData from '@/config/site/locales.json';
 
 const config = localesData as LocalesConfig;
 

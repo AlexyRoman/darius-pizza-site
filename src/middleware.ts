@@ -3,16 +3,16 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 import { routing } from '@/i18n/routing';
-import { getLocaleSettings } from '@/config/locales-config';
+import { getLocaleSettings } from '@/config/generic/locales-config';
 import {
   STATIC_PATH_PREFIXES,
   STATIC_FILE_EXTENSIONS,
   STATIC_FILE_PATTERN,
-  REDIRECT_MAPPINGS,
   PERMANENT_REDIRECT_STATUS,
   TEMPORARY_REDIRECT_STATUS,
   CONVERT_TEMPORARY_TO_PERMANENT,
-} from '@/config/middleware';
+} from '@/config/generic/middleware';
+import { REDIRECT_MAPPINGS } from '@/config/site/redirects';
 
 const localeSettings = getLocaleSettings();
 

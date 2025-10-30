@@ -1,4 +1,4 @@
-import { getDefaultLocale } from '@/config/locales-config';
+import { getDefaultLocale } from '@/config/generic/locales-config';
 import {
   RestaurantConfigMap,
   RestaurantConfigType,
@@ -20,7 +20,7 @@ export async function loadRestaurantConfig<T extends RestaurantConfigType>(
   try {
     // Import the configuration file for the specified locale
     const config = await import(
-      `@/config/restaurant/${configType}/${locale}.json`
+      `@/config/site/restaurant/${configType}/${locale}.json`
     );
     return config.default;
   } catch (error) {
@@ -33,7 +33,7 @@ export async function loadRestaurantConfig<T extends RestaurantConfigType>(
     if (locale !== defaultLocale) {
       try {
         const fallbackConfig = await import(
-          `@/config/restaurant/${configType}/${defaultLocale}.json`
+          `@/config/site/restaurant/${configType}/${defaultLocale}.json`
         );
         return fallbackConfig.default;
       } catch (fallbackError) {

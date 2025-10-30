@@ -98,7 +98,7 @@ export async function getStarredPizzasConfig(
  */
 export async function getHoursConfig(): Promise<HoursConfig> {
   // Hours are not localized, so we import the static file
-  const hoursConfig = await import('@/config/restaurant/hours.json');
+  const hoursConfig = await import('@/config/site/restaurant/hours.json');
   return hoursConfig.default;
 }
 

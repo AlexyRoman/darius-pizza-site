@@ -1,4 +1,4 @@
-import { getEnabledLocaleCodes, getDefaultLocale } from '@/config/locales-config';
+import { getEnabledLocaleCodes, getDefaultLocale } from '@/config/generic/locales-config';
 
 const config = {
   locales: getEnabledLocaleCodes(),

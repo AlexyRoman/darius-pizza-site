@@ -2,7 +2,7 @@ import { Metadata, Viewport } from 'next';
 import {
   getEnabledLocaleCodes,
   getDefaultLocale,
-} from '@/config/locales-config';
+} from '@/config/generic/locales-config';
 
 export interface LocalizedMetadataOptions {
   locale: string;

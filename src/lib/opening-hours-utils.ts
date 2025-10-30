@@ -1,4 +1,4 @@
-import hoursConfig from '@/config/restaurant/hours.json';
+import hoursConfig from '@/config/site/restaurant/hours.json';
 
 interface OpeningHours {
   [key: string]: {

@@ -10,7 +10,7 @@ import {
   getEnabledLocaleCodes,
   isLocaleEnabled,
   getDefaultLocale,
-} from '@/config/locales-config';
+} from '@/config/generic/locales-config';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import ReactCountryFlag from 'react-country-flag';
 import { Button } from '@/components/ui/button';

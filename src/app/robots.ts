@@ -1,4 +1,4 @@
-import robotsConfig from '@/config/robots';
+import robotsConfig from '@/config/generic/robots';
 
 import type { MetadataRoute } from 'next';
 

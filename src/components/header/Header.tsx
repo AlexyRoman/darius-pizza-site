@@ -32,8 +32,8 @@ const ThemeToggle = dynamic(
 import RadialSettings from '@/components/header/RadialSettings';
 import { TimeClock } from '@/components/header/TimeClock';
 import { buttonVariants } from '@/components/ui/button';
-import { PAGES } from '@/config/pages';
-import { getSiteTimeZone } from '@/config/site';
+import { PAGES } from '@/config/site/pages';
+import { getSiteTimeZone } from '@/lib/site-utils';
 import { SmartCallButton } from '@/components/ui/smart-call-button';
 import { cn } from '@/lib/utils';
 

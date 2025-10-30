@@ -4,7 +4,7 @@ import {
   getEnabledLocaleCodes,
   getDefaultLocale,
   getLocaleSettings,
-} from '@/config/locales-config';
+} from '@/config/generic/locales-config';
 
 const settings = getLocaleSettings();
 

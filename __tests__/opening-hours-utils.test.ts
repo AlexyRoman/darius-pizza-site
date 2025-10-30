@@ -1,4 +1,4 @@
-import { isTimeInPeriods, getNextOpeningTime, formatNextOpeningTime } from '@/lib/opening-hours-utils';
+import { isTimeInPeriods, getNextOpeningTime, formatNextOpeningTime } from '@/utils/opening-hours-utils';
 import type { OpeningHours } from '@/types/opening-hours';
 import hoursConfig from '@/content/restaurant/hours.json';
 

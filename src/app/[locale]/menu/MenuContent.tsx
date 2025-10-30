@@ -33,7 +33,7 @@ import * as React from 'react';
 import MenuFilters from './MenuFilters';
 import type { MenuItem } from '@/types/menu';
 import { isItemCtaEnabled } from '@/config/generic/feature-flags';
-import { formatCurrency } from '@/lib/site-utils';
+import { formatCurrency } from '@/utils/site-utils';
 import { useLocale, useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
 

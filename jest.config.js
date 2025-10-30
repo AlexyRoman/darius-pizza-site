@@ -40,7 +40,7 @@ const customJestConfig = {
     // ============================================================================
     
     // GDPR compliance and user tracking - CRITICAL for legal compliance
-    'src/utils/**/*.{ts,tsx}': {
+    'src/utils/{analytics,cookie-utils}.ts': {
       branches: 85,
       functions: 90,
       lines: 90,
@@ -49,7 +49,7 @@ const customJestConfig = {
     
     // Core library utilities - Complex logic with caching, merging, validation
     // High priority: Complex loading, merging, and validation logic (75/85/80/80)
-    'src/lib/{metadata,menu-loader,restaurant-config,opening-hours-utils}.ts': {
+    'src/lib/{metadata,menu-loader,restaurant-config}.ts': {
       branches: 75,
       functions: 85,
       lines: 80,
@@ -63,7 +63,13 @@ const customJestConfig = {
       statements: 85,
     },
     // Medium priority: Date utilities and rate limiting (70/80/75/75)
-    'src/lib/{date-utils,pacer}.ts': {
+    'src/lib/pacer.ts': {
+      branches: 70,
+      functions: 80,
+      lines: 75,
+      statements: 75,
+    },
+    'src/utils/{date-utils,opening-hours-utils}.ts': {
       branches: 70,
       functions: 80,
       lines: 75,
@@ -79,7 +85,7 @@ const customJestConfig = {
     // Special cases with lower thresholds
     // Currency formatting - branch threshold is 33% because dollar branch requires complex mocking
     // Primary use case (euro) is fully tested - dollar is edge case
-    'src/lib/site-utils.ts': {
+    'src/utils/site-utils.ts': {
       branches: 33,
       functions: 75,
       lines: 80,

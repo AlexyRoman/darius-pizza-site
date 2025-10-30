@@ -11,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { getSitePhone } from '@/lib/site-utils';
+import { getSitePhone } from '@/utils/site-utils';
 import hoursConfig from '@/content/restaurant/hours.json';
 import type { OpeningHours } from '@/types/opening-hours';
 import {

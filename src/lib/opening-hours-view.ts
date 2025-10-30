@@ -1,4 +1,4 @@
-import { isTimeInPeriods } from '@/lib/opening-hours-utils';
+import { isTimeInPeriods } from '@/utils/opening-hours-utils';
 import type {
   OpeningHours as OpeningHoursMap,
   DayHours,

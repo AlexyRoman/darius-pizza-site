@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { formatHourMinute } from '@/lib/date-utils';
+import { formatHourMinute } from '@/utils/date-utils';
 
 export function TimeClock({
   timeZone,

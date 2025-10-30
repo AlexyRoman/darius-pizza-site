@@ -10,7 +10,7 @@ import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import type { MenuItem } from '@/types/menu';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
-import { formatCurrency } from '@/lib/site-utils';
+import { formatCurrency } from '@/utils/site-utils';
 
 export default function MenuTeaserSection() {
   const t = useTranslations('menuTeaser');

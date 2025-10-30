@@ -18,8 +18,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/content/restaurant/hours.json';
-import { formatDate, formatDateTime } from '@/lib/date-utils';
-import { formatNextOpeningTime } from '@/lib/opening-hours-utils';
+import { formatDate, formatDateTime } from '@/utils/date-utils';
+import { formatNextOpeningTime } from '@/utils/opening-hours-utils';
 import { SmartCallButton } from '@/components/ui/smart-call-button';
 import {
   computeIsCurrentlyOpen,

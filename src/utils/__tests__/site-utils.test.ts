@@ -17,7 +17,11 @@ jest.mock('@/lib/env', () => ({
   }),
 }));
 
-import { formatCurrency, getSiteTimeZone, getSitePhone } from '../site-utils';
+import {
+  formatCurrency,
+  getSiteTimeZone,
+  getSitePhone,
+} from '../../utils/site-utils';
 
 describe('site-utils', () => {
   describe('getSiteTimeZone', () => {

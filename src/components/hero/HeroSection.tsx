@@ -10,7 +10,7 @@ import { ArrowRight, Star, Clock, MapPin } from 'lucide-react';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
 import hoursConfig from '@/content/restaurant/hours.json';
 import { useThemeContext } from '@/contexts/ThemeContext';
-import { formatNextOpeningTime } from '@/lib/opening-hours-utils';
+import { formatNextOpeningTime } from '@/utils/opening-hours-utils';
 import { SmartCallButton } from '@/components/ui/smart-call-button';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import type { OpeningHours } from '@/types/opening-hours';

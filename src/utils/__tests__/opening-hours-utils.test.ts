@@ -7,7 +7,7 @@ import {
   formatNextOpeningTime,
   isTimeInPeriods,
   getNextOpeningFromPeriods,
-} from '../opening-hours-utils';
+} from '../../utils/opening-hours-utils';
 import type { OpeningHoursPeriod } from '@/types/opening-hours';
 
 describe('opening-hours-utils', () => {

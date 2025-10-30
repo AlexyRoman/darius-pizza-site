@@ -44,6 +44,7 @@ export const STATIC_FILE_EXTENSIONS = [
   'jpeg',
   'svg',
   'webp',
+  'webmanifest',
 ] as const;
 
 /**

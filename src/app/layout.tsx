@@ -142,6 +142,9 @@ export default function RootLayout({
       className={`${fontPrimary.variable} ${fontSecondary.variable}`}
     >
       <head>
+        {/* Ensure manifest link is always present with absolute path to avoid
+            locale-prefixed fetches during client-side navigation in dev */}
+        <link rel='manifest' href='/site.webmanifest' />
         {/* Preconnect for Google Fonts (Next.js recommendation) */}
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
@@ -195,21 +198,9 @@ export default function RootLayout({
           fetchPriority='high'
         />
 
-        {/* Preload critical fonts - only bold weight for LCP */}
-        <link
-          rel='preload'
-          href='/fonts/playfair-display-700.woff2'
-          as='font'
-          type='font/woff2'
-          crossOrigin='anonymous'
-        />
-        <link
-          rel='preload'
-          href='/fonts/inter-400.woff2'
-          as='font'
-          type='font/woff2'
-          crossOrigin='anonymous'
-        />
+        {/* Fonts are loaded via next/font in config/site/brand/fonts.ts.
+            Remove manual local font preloads to avoid 404s in dev when
+            no local /public/fonts assets exist and rely on next/font. */}
       </head>
       <body className='font-secondary antialiased'>
         <script

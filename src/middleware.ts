@@ -118,6 +118,11 @@ export default function middleware(request: NextRequest) {
       ? '/' + pathSegments.slice(1).join('/')
       : pathname;
 
+  // Special-case: always serve the web app manifest from root without locale
+  if (pathWithoutLocale === '/site.webmanifest') {
+    return NextResponse.rewrite(new URL('/site.webmanifest', request.url));
+  }
+
   // Check if the path (with or without locale) is static
   if (isStaticPath(pathname) || isStaticPath(pathWithoutLocale)) {
     // For static paths, return NextResponse.next() to skip middleware processing
@@ -158,7 +163,7 @@ export default function middleware(request: NextRequest) {
 // Note: Uses non-capturing groups (?:) to avoid Next.js errors
 export const config = {
   matcher: [
-    '/((?!api|_next|static|images|flags|fonts|_vercel|[\\w-]+\\.(?:ico|png|jpg|jpeg|svg|webp)$).*)',
+    '/((?!api|_next|static|images|flags|fonts|_vercel|[\\w-]+\\.(?:ico|png|jpg|jpeg|svg|webp|webmanifest)$).*)',
   ],
 };
 

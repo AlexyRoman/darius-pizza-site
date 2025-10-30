@@ -1,12 +1,9 @@
 import hoursConfig from '@/content/restaurant/hours.json';
-
-interface OpeningHours {
-  [key: string]: {
-    day: string;
-    periods: { open: string; close: string }[];
-    isOpen: boolean;
-  };
-}
+import type {
+  OpeningHours,
+  OpeningHoursPeriod,
+  NextOpeningTime,
+} from '@/types/opening-hours';
 
 const hours = hoursConfig.openingHours as OpeningHours;
 
@@ -23,7 +20,7 @@ const dayOrder = [
 // Helper function to check if current time is within any period
 function isTimeInPeriods(
   currentTime: string,
-  periods: { open: string; close: string }[]
+  periods: OpeningHoursPeriod[]
 ): boolean {
   return periods.some(
     period => currentTime >= period.open && currentTime <= period.close
@@ -33,7 +30,7 @@ function isTimeInPeriods(
 // Helper function to get next opening time from periods
 function getNextOpeningFromPeriods(
   currentTime: string,
-  periods: { open: string; close: string }[]
+  periods: OpeningHoursPeriod[]
 ): string | null {
   // Find the next period that opens after current time
   const sortedPeriods = periods.sort((a, b) => a.open.localeCompare(b.open));
@@ -47,9 +44,7 @@ function getNextOpeningFromPeriods(
   return null; // No more openings today
 }
 
-export function getNextOpeningTime(
-  now: Date
-): { day: string; time: string; isToday: boolean } | null {
+export function getNextOpeningTime(now: Date): NextOpeningTime | null {
   const currentDayName = now
     .toLocaleDateString('en-US', { weekday: 'long' })
     .toLowerCase();

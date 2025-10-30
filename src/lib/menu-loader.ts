@@ -1,27 +1,9 @@
 import type { MenuItem } from '@/types/menu';
-
-type MenuTranslation = {
-  id: string;
-  title: string;
-  description: string;
-};
-
-type MenuTranslations = {
-  items: MenuTranslation[];
-};
-
-type MenuBaseItem = {
-  id: string;
-  price: number;
-  discount: number;
-  image: string;
-  categories: string[];
-  allergens: string[];
-};
-
-type MenuBase = {
-  items: MenuBaseItem[];
-};
+import type {
+  MenuTranslation,
+  MenuTranslations,
+  MenuBase,
+} from '@/types/menu-loader';
 
 // Cache for loaded modules
 let menuBaseCache: MenuBase | null = null;
@@ -97,10 +79,4 @@ export async function loadMenuItems(
 
     throw error;
   }
-}
-
-export function getMenuItemsSync(_locale: string): MenuItem[] {
-  throw new Error(
-    'getMenuItemsSync is deprecated. Use loadMenuItems() instead for async loading.'
-  );
 }

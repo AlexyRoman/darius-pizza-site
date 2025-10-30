@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import { fontPrimary, fontSecondary } from '@/lib/fonts';
+import { fontPrimary, fontSecondary } from '@/config/site/brand/fonts';
 import { ThemeProvider as AppThemeProvider } from '@/contexts/ThemeContext';
 
 export const metadata: Metadata = {

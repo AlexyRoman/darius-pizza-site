@@ -1,4 +1,11 @@
-import { Playfair_Display, Inter, JetBrains_Mono } from 'next/font/google';
+/**
+ * Next.js Font Configuration for Darius Pizza Brand
+ *
+ * This file configures Next.js font loading using next/font/google.
+ * The fonts are optimized for performance with proper preloading and fallbacks.
+ */
+
+import { Playfair_Display, Inter } from 'next/font/google';
 
 export const fontPrimary = Playfair_Display({
   subsets: ['latin'],
@@ -18,12 +25,4 @@ export const fontSecondary = Inter({
   variable: '--font-secondary',
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: true,
-});
-
-export const fontMono = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  style: ['normal', 'italic'],
-  display: 'swap',
-  variable: '--font-mono',
 });

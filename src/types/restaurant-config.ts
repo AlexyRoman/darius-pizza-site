@@ -1,5 +1,7 @@
 // Restaurant configuration types
 
+import type { DayHours } from './opening-hours';
+
 export type RestaurantConfigType =
   | 'closings'
   | 'messages'
@@ -91,12 +93,6 @@ export interface ContactInfo {
 
 export interface ContactConfig {
   contact: ContactInfo;
-}
-
-export interface DayHours {
-  day: string;
-  periods: { open: string; close: string }[];
-  isOpen: boolean;
 }
 
 export interface HoursConfig {

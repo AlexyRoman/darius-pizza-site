@@ -3,16 +3,11 @@ import {
   getEnabledLocaleCodes,
   getDefaultLocale,
 } from '@/config/generic/locales-config';
+import { PAGES } from '@/config/site/pages';
+import { siteMetadataConfig } from '@/config/site/metadata';
+import type { LocalizedMetadataOptions, PageName } from '@/types/metadata';
 
-export interface LocalizedMetadataOptions {
-  locale: string;
-  path?: string;
-  customTitle?: string;
-  customDescription?: string;
-  type?: 'default' | 'menu' | 'info';
-  publishedTime?: string;
-  modifiedTime?: string;
-}
+export type { LocalizedMetadataOptions, PageName };
 
 export async function generateLocalizedMetadata(
   options: LocalizedMetadataOptions
@@ -161,10 +156,10 @@ export async function generateLocalizedMetadata(
     },
 
     // Category
-    category: 'Food & Dining',
+    category: siteMetadataConfig.category,
 
     // Classification
-    classification: 'Restaurant',
+    classification: siteMetadataConfig.classification,
 
     // Referrer
     referrer: 'origin-when-cross-origin',
@@ -180,7 +175,7 @@ export async function generateLocalizedMetadata(
 
 export async function generatePageMetadata(
   locale: string,
-  page: 'home' | 'menu' | 'info' | 'privacy' | 'cookies' | 'legalMentions',
+  page: PageName,
   customTitle?: string,
   customDescription?: string
 ): Promise<Metadata> {
@@ -188,16 +183,18 @@ export async function generatePageMetadata(
   const messages = (await import(`@/locales/${locale}.json`)).default;
   const seoData = messages.seo || {};
 
-  const pageConfig = {
-    home: { path: '/', type: 'default' as const },
-    menu: { path: '/menu', type: 'menu' as const },
-    info: { path: '/info', type: 'info' as const },
-    privacy: { path: '/privacy', type: 'default' as const },
-    cookies: { path: '/cookies', type: 'default' as const },
-    legalMentions: { path: '/legal-mentions', type: 'default' as const },
+  // Map page keys to metadata types
+  const pageTypeMap: Record<PageName, 'default' | 'menu' | 'info'> = {
+    home: 'default',
+    menu: 'menu',
+    info: 'info',
+    privacy: 'default',
+    cookies: 'default',
+    legalMentions: 'default',
   };
 
-  const config = pageConfig[page];
+  const pageConfig = PAGES[page];
+  const metadataType = pageTypeMap[page];
 
   // Get page-specific or fallback to default
   const pageData = seoData[page] || {};
@@ -208,10 +205,10 @@ export async function generatePageMetadata(
 
   return generateLocalizedMetadata({
     locale,
-    path: config.path,
+    path: pageConfig.path,
     customTitle: title,
     customDescription: description,
-    type: config.type,
+    type: metadataType,
   });
 }
 

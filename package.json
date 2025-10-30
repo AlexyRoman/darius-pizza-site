@@ -37,7 +37,8 @@
     "lighthouse:collect": "node -e \"console.log('lighthouse disabled in template');\"",
     "lighthouse:assert": "node -e \"console.log('lighthouse disabled in template');\"",
     "lighthouse": "node -e \"console.log('lighthouse disabled in template');\"",
-    "fix": "eslint --fix src tests && npm run format"
+    "fix": "eslint --fix src tests && npm run format",
+    "master": "npm run fix && npm run lint && npm run type-check && npm run build && npm run test:coverage"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

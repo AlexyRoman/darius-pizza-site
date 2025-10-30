@@ -7,60 +7,19 @@ import {
   StarredPizzasConfig,
   ContactConfig,
 } from '@/types/restaurant-config';
+import type {
+  ClosingTranslation,
+  ClosingsTranslations,
+  MessageTranslation,
+  MessagesTranslations,
+  StarredPizzaTranslation,
+  StarredPizzasTranslations,
+  ContactTranslations,
+  TranslationData,
+} from '@/types/restaurant-config-translations';
 
 // Re-export the type for convenience
 export type { RestaurantConfigType };
-
-// Translation types
-type ClosingTranslation = {
-  id: string;
-  title: string;
-  description: string;
-};
-
-type ClosingsTranslations = {
-  scheduledClosings: ClosingTranslation[];
-  emergencyClosings: ClosingTranslation[];
-};
-
-type MessageTranslation = {
-  id: string;
-  title: string;
-  message: string;
-};
-
-type MessagesTranslations = {
-  specialMessages: MessageTranslation[];
-};
-
-type StarredPizzaTranslation = {
-  id: string;
-  title: string;
-  description: string;
-  starReason: string;
-  category?: string;
-};
-
-type StarredPizzasTranslations = {
-  starredPizzas: StarredPizzaTranslation[];
-  month: string;
-};
-
-type ContactTranslations = {
-  contact: {
-    address: {
-      state?: string;
-      fullAddress?: string;
-      description?: string;
-    };
-  };
-};
-
-type TranslationData =
-  | ClosingsTranslations
-  | MessagesTranslations
-  | StarredPizzasTranslations
-  | ContactTranslations;
 
 // Cache for loaded modules
 const baseCache: Record<
@@ -288,21 +247,4 @@ export async function loadMultipleRestaurantConfigs(
   );
 
   return configs;
-}
-
-/**
- * Gets all available locales for restaurant configurations
- * @returns string[] - Array of available locale codes
- */
-export function getAvailableRestaurantLocales(): string[] {
-  return ['en', 'fr', 'de', 'it', 'es', 'nl'];
-}
-
-/**
- * Validates if a locale is supported for restaurant configurations
- * @param locale - The locale code to validate
- * @returns boolean - True if the locale is supported
- */
-export function isValidRestaurantLocale(locale: string): boolean {
-  return getAvailableRestaurantLocales().includes(locale);
 }

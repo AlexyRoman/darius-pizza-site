@@ -11,6 +11,7 @@ export * from './colors';
 export * from './typography';
 export * from './spacing';
 export * from './theme';
+export * from './fonts';
 
 // Re-export commonly used types from centralized types file
 export type {

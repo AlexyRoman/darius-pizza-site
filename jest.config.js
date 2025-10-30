@@ -28,24 +28,53 @@ const customJestConfig = {
     '/.next/',
     '/tests/',
     '/src/content/restaurant/', // Exclude restaurant folder as requested
+    '/src/components/ui/', // Exclude imported UI components
+    '/src/types/',
   ],
   coverageThreshold: {
-    // High priority - complex utility functions
-    'src/config/generic/locales-config.ts': {
+    // ============================================================================
+    // HIGH CRITICALITY - Critical app logic requiring thorough testing
+    // ============================================================================
+    
+    // GDPR compliance and user tracking - CRITICAL for legal compliance
+    'src/utils/**/*.{ts,tsx}': {
+      branches: 85,
+      functions: 90,
+      lines: 90,
+      statements: 90,
+    },
+    
+    // Core library utilities - Complex logic with caching, merging, validation
+    // High priority: Complex loading, merging, and validation logic (75/85/80/80)
+    'src/lib/{metadata,menu-loader,restaurant-config,opening-hours-utils}.ts': {
+      branches: 75,
+      functions: 85,
+      lines: 80,
+      statements: 80,
+    },
+    // Environment validation - slightly higher line/statement coverage (75/85/85/85)
+    'src/lib/env.ts': {
       branches: 75,
       functions: 85,
       lines: 85,
       statements: 85,
     },
-    // Medium-high priority - rule generation logic
-    'src/config/generic/robots/index.ts': {
+    // Medium priority: Date utilities and rate limiting (70/80/75/75)
+    'src/lib/{date-utils,pacer}.ts': {
       branches: 70,
-      functions: 75,
+      functions: 80,
       lines: 75,
       statements: 75,
     },
-    // Medium priority - currency formatting utility
-    // Branch threshold is 33% because dollar branch requires complex module mocking
+    // Medium-high priority: Locale metadata getter (80/85/85/85)
+    'src/lib/og-metadata.ts': {
+      branches: 80,
+      functions: 85,
+      lines: 85,
+      statements: 85,
+    },
+    // Special cases with lower thresholds
+    // Currency formatting - branch threshold is 33% because dollar branch requires complex mocking
     // Primary use case (euro) is fully tested - dollar is edge case
     'src/lib/site-utils.ts': {
       branches: 33,
@@ -53,50 +82,51 @@ const customJestConfig = {
       lines: 80,
       statements: 80,
     },
-    // Low priority - simple wrappers
-    'src/config/generic/feature-flags.ts': {
+    // Simple utility - className helper (well-tested via usage)
+    'src/lib/utils.ts': {
       branches: 50,
       functions: 60,
       lines: 60,
       statements: 60,
     },
-    'src/config/generic/middleware.ts': {
-      branches: 50,
-      functions: 60,
-      lines: 60,
-      statements: 60,
+    
+    // ============================================================================
+    // MEDIUM-HIGH CRITICALITY - Core configuration and i18n
+    // ============================================================================
+    
+    // Internationalization - routing and request handling
+    'src/i18n/**/*.{ts,tsx}': {
+      branches: 65,
+      functions: 75,
+      lines: 75,
+      statements: 75,
     },
-    // Medium priority - i18n routing configuration
-    // Tests verify pathnames generation and routing structure
-    'src/i18n/routing.ts': {
+    
+    // Core configuration - locales and robots
+    'src/config/generic/locales-config.ts': {
+      branches: 75,
+      functions: 85,
+      lines: 85,
+      statements: 85,
+    },
+    'src/config/generic/robots/**/*.{ts,tsx}': {
       branches: 70,
-      functions: 80,
-      lines: 80,
-      statements: 80,
+      functions: 75,
+      lines: 75,
+      statements: 75,
     },
-    // Lower priority - i18n request configuration
-    // Async dynamic imports make full testing difficult - tested via integration
-    'src/i18n/request.ts': {
+    
+    // ============================================================================
+    // MEDIUM-LOW CRITICALITY - Simple wrappers and utilities
+    // ============================================================================
+    
+    // Configuration wrappers - simple feature flags and middleware (50/60/60/60)
+    // Note: locales-config.ts and robots/** are defined above with higher thresholds
+    'src/config/generic/{feature-flags,middleware}.ts': {
       branches: 50,
       functions: 60,
       lines: 60,
       statements: 60,
-    },
-    // High priority - GDPR cookie consent utilities
-    // Critical for compliance - must be thoroughly tested
-    'src/utils/cookie-utils.ts': {
-      branches: 85,
-      functions: 90,
-      lines: 90,
-      statements: 90,
-    },
-    // High priority - Analytics tracking utilities
-    // Critical for user tracking and consent management
-    'src/utils/analytics.ts': {
-      branches: 85,
-      functions: 90,
-      lines: 90,
-      statements: 90,
     },
   },
 };

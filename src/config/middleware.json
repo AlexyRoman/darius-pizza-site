@@ -1,0 +1,10 @@
+{
+  "redirects": {
+    "/carte": "/menu",
+    "/gallery": "/",
+    "/contact": "/",
+    "/rs": "/",
+    "/horaires": "/",
+    "/terms": "/"
+  }
+}

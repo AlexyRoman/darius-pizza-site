@@ -1,5 +1,5 @@
 import { localesConfig } from '@/config/locales-config';
-import { PAGES, PATHNAMES } from '@/config/pages';
+import { PAGES } from '@/config/pages';
 
 import type { MetadataRoute } from 'next';
 

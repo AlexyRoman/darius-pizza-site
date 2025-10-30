@@ -45,9 +45,14 @@ export default async function LocaleLayout(props: {
       className={`${fontPrimary.variable} ${fontSecondary.variable}`}
     >
       <head>
-        {/* DNS prefetch for external resources */}
-        <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
-        <link rel='dns-prefetch' href='https://fonts.gstatic.com' />
+        {/* Preconnect for Google Fonts (Next.js recommendation) */}
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='anonymous'
+        />
+        {/* DNS prefetch for other external resources */}
         <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
 
         {/* Theme color for mobile browsers - matches light theme background */}

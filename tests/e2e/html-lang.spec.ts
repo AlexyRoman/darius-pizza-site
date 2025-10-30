@@ -80,7 +80,11 @@ test.describe('HTML lang attribute', () => {
 
   test('sets correct lang for nested pages', async ({ page }) => {
     await page.goto(`${BASE}/fr/menu`);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+    await page.waitForFunction(
+      () => document.documentElement.getAttribute('lang') === 'fr',
+      { timeout: 5000 }
+    );
 
     let htmlLang = await page.evaluate(() =>
       document.documentElement.getAttribute('lang')
@@ -88,7 +92,11 @@ test.describe('HTML lang attribute', () => {
     expect(htmlLang).toBe('fr');
 
     await page.goto(`${BASE}/de/cookies`);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+    await page.waitForFunction(
+      () => document.documentElement.getAttribute('lang') === 'de',
+      { timeout: 5000 }
+    );
 
     htmlLang = await page.evaluate(() =>
       document.documentElement.getAttribute('lang')
@@ -96,7 +104,11 @@ test.describe('HTML lang attribute', () => {
     expect(htmlLang).toBe('de');
 
     await page.goto(`${BASE}/en/info`);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+    await page.waitForFunction(
+      () => document.documentElement.getAttribute('lang') === 'en',
+      { timeout: 5000 }
+    );
 
     htmlLang = await page.evaluate(() =>
       document.documentElement.getAttribute('lang')

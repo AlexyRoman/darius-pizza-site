@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { fontPrimary, fontSecondary } from '@/config/site/brand/fonts';
 import { ThemeProvider as AppThemeProvider } from '@/contexts/ThemeContext';
-import { headers } from 'next/headers';
 import { routing } from '@/i18n/routing';
 
 export const metadata: Metadata = {
@@ -129,7 +128,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -137,16 +136,10 @@ export default async function RootLayout({
   // Root layout with <html>/<body> tags
   // For locale routes, the [locale]/layout.tsx provides content without html/body
   // For root-level routes like 404, this layout provides html/body
-  // Read locale from middleware-set header for html lang attribute
-  const headersList = await headers();
-  const headerLocale = headersList.get('x-locale');
-  const htmlLang =
-    headerLocale && routing.locales.includes(headerLocale)
-      ? headerLocale
-      : routing.defaultLocale;
+  // html lang is set via client-side script to read from URL path
   return (
     <html
-      lang={htmlLang}
+      lang={routing.defaultLocale}
       suppressHydrationWarning
       className={`${fontPrimary.variable} ${fontSecondary.variable}`}
     >
@@ -216,7 +209,7 @@ export default async function RootLayout({
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html:
-              "!function(){try{const t=localStorage.getItem('darius-pizza-theme'),e=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches,n='dark'===t||(!t&&e),r=document.documentElement;n?(r.classList.add('dark'),r.style.setProperty('--effective-theme','dark')):(r.classList.remove('dark'),r.style.setProperty('--effective-theme','light'))}catch(e){}}();",
+              "!function(){try{const t=localStorage.getItem('darius-pizza-theme'),e=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches,n='dark'===t||(!t&&e),r=document.documentElement;n?(r.classList.add('dark'),r.style.setProperty('--effective-theme','dark')):(r.classList.remove('dark'),r.style.setProperty('--effective-theme','light'))}catch(e){}}();!function(){try{const locales=['en','fr','de','it','es','nl'],path=window.location.pathname,segments=path.split('/').filter(Boolean),firstSegment=segments[0],defaultLocale='fr';if(locales.includes(firstSegment)){document.documentElement.setAttribute('lang',firstSegment)}else{document.documentElement.setAttribute('lang',defaultLocale)}}catch(e){}}();",
           }}
         />
         <AppThemeProvider>{children}</AppThemeProvider>

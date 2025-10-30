@@ -8,7 +8,7 @@ import {
 } from '@/emails/contact-admin';
 import { renderContactAutoReplyEmail } from '@/emails/contact-auto-reply';
 
-const resend = new Resend(envServer.RESEND_API_KEY);
+export const dynamic = 'force-dynamic';
 
 const contactFormSchema = z.object({
   name: z.string().min(2),
@@ -88,6 +88,9 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
+
+    // Initialize Resend lazily to avoid build-time initialization
+    const resend = new Resend(envServer.RESEND_API_KEY);
 
     // Format the inquiry type for display
     const inquiryTypes: Record<string, string> = {

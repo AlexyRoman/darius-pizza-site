@@ -33,18 +33,30 @@ export async function generateLocalizedMetadata(
   const ogImageUrl = '/static/hero-main-pizza.webp';
   const imageAlt = seoData.imageAlt || 'Darius Pizza';
 
-  // Dynamically get enabled locales for hreflang
-  const enabledLocales = getEnabledLocaleCodes();
+  // Dynamically get enabled locales for hreflang (ensure uniqueness)
+  const enabledLocales = Array.from(new Set(getEnabledLocaleCodes()));
   const defaultLocale = getDefaultLocale();
 
   // Build languages object for hreflang - ensure x-default is first
-  const languages: Record<string, string> = {
-    'x-default': `${baseUrl}/${defaultLocale}${normalizedPath}`,
+  // and normalize to avoid accidental duplicates or redirecting root URLs
+  const normalizeHref = (href: string): string => {
+    // Remove any accidental double slashes after protocol
+    const url = new URL(href, baseUrl);
+    // Normalize: remove trailing slash except for root path
+    if (url.pathname !== '/' && url.pathname.endsWith('/')) {
+      url.pathname = url.pathname.replace(/\/+$/, '');
+    }
+    return url.toString().replace(/\/$/, '');
   };
 
-  // Add all enabled locales
+  const languages: Record<string, string> = {
+    'x-default': normalizeHref(`${baseUrl}/${defaultLocale}${normalizedPath}`),
+  };
+
+  // Add all enabled locales (skip any non-prefixed root urls defensively)
   enabledLocales.forEach(localeCode => {
-    languages[localeCode] = `${baseUrl}/${localeCode}${normalizedPath}`;
+    const href = normalizeHref(`${baseUrl}/${localeCode}${normalizedPath}`);
+    languages[localeCode] = href;
   });
 
   return {

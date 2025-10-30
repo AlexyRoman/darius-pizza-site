@@ -23,11 +23,22 @@ function mockNowTo(page: any, iso: string) {
 test.describe('Hero badge and Call CTA behavior', () => {
   test('shows status badge and Menu CTA', async ({ page }) => {
     await page.goto(`${BASE}/en`);
-    // Badge present via translated text
+    // Dismiss cookie banner if it appears
+    await page
+      .getByRole('button', { name: /Accept All|Decline All/i })
+      .first()
+      .click({ timeout: 2000 })
+      .catch(() => {});
+
+    // Wait for hydrated badge text to appear
+    await page.waitForSelector(
+      'text=/Open now|Currently closed|Opens in|Closed/i',
+      { timeout: 5000 }
+    );
+    // Badge present via translated text (scope to hero section to avoid strict mode)
+    const hero = page.locator('section').first();
     await expect(
-      page
-        .locator('section')
-        .filter({ hasText: /Open now|Currently closed|Opens in|Closed/i })
+      hero.getByText(/Open now|Currently closed|Opens in|Closed/i)
     ).toBeVisible();
     // Menu CTA exists and navigates
     const menuCta = page
@@ -42,6 +53,12 @@ test.describe('Hero badge and Call CTA behavior', () => {
   }) => {
     await mockNowTo(page, '2024-06-10T03:30:00.000Z'); // Monday 03:30 UTC
     await page.goto(`${BASE}/en`);
+    // Dismiss cookie banner if it appears
+    await page
+      .getByRole('button', { name: /Accept All|Decline All/i })
+      .first()
+      .click({ timeout: 2000 })
+      .catch(() => {});
     const callBtn = page
       .getByRole('button', { name: /Order by phone/i })
       .first();

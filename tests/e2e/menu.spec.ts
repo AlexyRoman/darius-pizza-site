@@ -21,5 +21,3 @@ test.describe('Menu page', () => {
     await expect(page).toHaveURL(/\/fr\/menu/);
   });
 });
-
-

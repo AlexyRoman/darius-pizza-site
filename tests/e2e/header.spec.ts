@@ -3,6 +3,7 @@ import { test, expect } from '@playwright/test';
 const BASE = 'http://localhost:3000';
 
 test.describe('Header - locale and theme', () => {
+  //eslint-disable-next-line @typescript-eslint/no-explicit-any
   async function mockNowTo(page: any, iso: string) {
     await page.addInitScript(`
       (() => {
@@ -28,7 +29,10 @@ test.describe('Header - locale and theme', () => {
 
     await expect(page).toHaveURL(/\/fr(\/?|$)/);
     // Assert that a Menu link points to fr path
-    const menuLink = page.getByRole('navigation').getByRole('link', { name: /Menu/i }).first();
+    const menuLink = page
+      .getByRole('navigation')
+      .getByRole('link', { name: /Menu/i })
+      .first();
     await expect(menuLink).toHaveAttribute('href', /\/fr\/menu/);
   });
 
@@ -38,13 +42,20 @@ test.describe('Header - locale and theme', () => {
     const html = page.locator('html');
     const toggle = page.getByRole('button', { name: /Switch theme/ }).first();
 
-    const initialIsDark = await html.evaluate(el => el.classList.contains('dark'));
+    const initialIsDark = await html.evaluate(el =>
+      el.classList.contains('dark')
+    );
     for (let i = 0; i < 3; i++) {
       await toggle.click();
-      const changed = await html.evaluate((el, initial) => el.classList.contains('dark') !== initial, initialIsDark);
+      const changed = await html.evaluate(
+        (el, initial) => el.classList.contains('dark') !== initial,
+        initialIsDark
+      );
       if (changed) break;
     }
-    const finalIsDark = await html.evaluate(el => el.classList.contains('dark'));
+    const finalIsDark = await html.evaluate(el =>
+      el.classList.contains('dark')
+    );
     expect(finalIsDark).not.toBe(initialIsDark);
   });
 
@@ -57,5 +68,3 @@ test.describe('Header - locale and theme', () => {
     await expect(page.getByRole('dialog')).toBeVisible();
   });
 });
-
-

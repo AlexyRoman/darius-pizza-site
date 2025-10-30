@@ -7,7 +7,9 @@ test.describe('Info page basic content and contact form', () => {
     await page.goto(`${BASE}/en/info`);
 
     // Main page heading present
-    await expect(page.getByRole('heading', { name: 'Our Craft' })).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: 'Our Craft' })
+    ).toBeVisible();
 
     // Scroll to contact form section
     await page.locator('#contact-form').scrollIntoViewIfNeeded();
@@ -22,12 +24,12 @@ test.describe('Info page basic content and contact form', () => {
     await page.getByLabel(/Phone/i).fill('+123456789');
     await page.getByRole('combobox', { name: /Inquiry Type/i }).click();
     await page.getByRole('option').first().click();
-    await page.getByLabel(/Message/i).fill('This is a test message long enough.');
+    await page
+      .getByLabel(/Message/i)
+      .fill('This is a test message long enough.');
 
     // Submit and observe button state/text changes
     // Submit click (no assertion on network or toast due to env constraints)
     await page.getByRole('button', { name: /Send message/i }).click();
   });
 });
-
-

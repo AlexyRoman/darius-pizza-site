@@ -129,6 +129,13 @@ const customJestConfig = {
       lines: 60,
       statements: 60,
     },
+    // Hooks - simple wrappers around libs/contexts
+    'src/hooks/**/*.{ts,tsx}': {
+      branches: 70,
+      functions: 85,
+      lines: 85,
+      statements: 85,
+    },
   },
 };
 

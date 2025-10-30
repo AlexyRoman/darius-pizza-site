@@ -10,8 +10,13 @@ import {
   SiGooglemaps,
 } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
+import socialConfig from '@/config/site/social.json';
 
 type SocialItem = { href: string; label: string; icon?: React.ReactNode };
+type SocialConfigItem = {
+  key: 'googleMaps' | 'instagram' | 'facebook' | 'tripadvisor';
+  href: string;
+};
 
 type FooterSocialProps = {
   title: string;
@@ -23,28 +28,20 @@ export function FooterSocial(props: FooterSocialProps) {
   const { title, items, className } = props;
   const tSocial = useTranslations('footer.social');
 
-  const defaultSocialItems: SocialItem[] = [
-    {
-      href: 'https://www.google.com/maps/place/Darius+Pizza/@43.1744,6.5282769,16.38z/data=!4m6!3m5!1s0x12cecfc35d6ab941:0x566b87a459a79c32!8m2!3d43.1719212!4d6.5298349!16s%2Fg%2F11j37b_scj?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D',
-      label: tSocial('googleMaps'),
-      icon: <SiGooglemaps className='size-5' />,
-    },
-    {
-      href: 'https://www.instagram.com/le_darius_cavalaire?igsh=NjdsdzM2amUzOW1m',
-      label: tSocial('instagram'),
-      icon: <SiInstagram className='size-5' />,
-    },
-    {
-      href: 'https://www.facebook.com/share/174FixgsBD/?mibextid=wwXIfr',
-      label: tSocial('facebook'),
-      icon: <SiFacebook className='size-5' />,
-    },
-    {
-      href: 'https://www.tripadvisor.fr/Restaurant_Review-g666994-d23745036-Reviews-Darius_Pizza-Cavalaire_Sur_Mer_Var_Provence_Alpes_Cote_d_Azur.html',
-      label: tSocial('tripadvisor'),
-      icon: <SiTripadvisor className='size-5' />,
-    },
-  ];
+  const iconByKey: Record<SocialConfigItem['key'], React.ReactNode> = {
+    googleMaps: <SiGooglemaps className='size-5' />,
+    instagram: <SiInstagram className='size-5' />,
+    facebook: <SiFacebook className='size-5' />,
+    tripadvisor: <SiTripadvisor className='size-5' />,
+  };
+
+  const defaultSocialItems: SocialItem[] = (
+    socialConfig as SocialConfigItem[]
+  ).map(item => ({
+    href: item.href,
+    label: tSocial(item.key),
+    icon: iconByKey[item.key],
+  }));
 
   const list = items ?? defaultSocialItems;
   return (

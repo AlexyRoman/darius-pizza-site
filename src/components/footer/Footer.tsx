@@ -7,6 +7,7 @@ import FooterLeft from '@/components/footer/FooterLeft';
 import FooterLegal from '@/components/footer/FooterLegal';
 import FooterMenu from '@/components/footer/FooterMenu';
 import FooterSocial from '@/components/footer/FooterSocial';
+import { PAGES } from '@/config/site/pages';
 
 type LinkItem = { href: string; label: string };
 
@@ -48,17 +49,23 @@ export function Footer(props: FooterProps) {
   };
 
   const legalLinks: LinkItem[] = [
-    { href: withLocale('/privacy'), label: legalLabels?.privacy ?? 'Privacy' },
-    { href: withLocale('/cookies'), label: legalLabels?.cookies ?? 'Cookies' },
     {
-      href: withLocale('/legal-mentions'),
+      href: withLocale(PAGES.privacy.path),
+      label: legalLabels?.privacy ?? 'Privacy',
+    },
+    {
+      href: withLocale(PAGES.cookies.path),
+      label: legalLabels?.cookies ?? 'Cookies',
+    },
+    {
+      href: withLocale(PAGES.legalMentions.path),
       label: legalLabels?.imprint ?? 'Legal Mentions',
     },
   ];
   const menuLinks: LinkItem[] = [
-    { href: withLocale('/'), label: menuLabels?.home ?? 'Home' },
-    { href: withLocale('/menu'), label: menuLabels?.menu ?? 'Menu' },
-    { href: withLocale('/info'), label: menuLabels?.info ?? 'Info' },
+    { href: withLocale(PAGES.home.path), label: menuLabels?.home ?? 'Home' },
+    { href: withLocale(PAGES.menu.path), label: menuLabels?.menu ?? 'Menu' },
+    { href: withLocale(PAGES.info.path), label: menuLabels?.info ?? 'Info' },
   ];
 
   return (

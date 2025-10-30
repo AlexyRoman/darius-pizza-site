@@ -30,6 +30,7 @@ const customJestConfig = {
     '/src/content/restaurant/', // Exclude restaurant folder as requested
     '/src/components/ui/', // Exclude imported UI components
     '/src/types/',
+    '/src/config/site/',
   ],
   coverageThreshold: {
     // ============================================================================

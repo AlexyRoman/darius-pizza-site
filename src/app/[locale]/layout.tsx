@@ -11,6 +11,7 @@ import GoogleTagManager from '@/components/analytics/GoogleTagManager';
 import PageTracker from '@/components/analytics/PageTracker';
 import AnalyticsDebug from '@/components/analytics/AnalyticsDebug';
 import { Toaster } from '@/components/ui/sonner';
+import { HtmlLangSetter } from '@/components/HtmlLangSetter';
 
 async function getMessages(locale: string) {
   try {
@@ -38,6 +39,7 @@ export default async function LocaleLayout(props: {
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
+      <HtmlLangSetter />
       {/* Google Consent Mode - MUST be before GTM */}
       <script
         dangerouslySetInnerHTML={{

@@ -36,6 +36,11 @@ test.describe('HTML lang attribute', () => {
     await page.getByRole('menuitem').filter({ hasText: 'FR' }).click();
 
     await expect(page).toHaveURL(/\/fr(\/?|$)/);
+    // Wait for lang attribute to update
+    await page.waitForFunction(
+      () => document.documentElement.getAttribute('lang') === 'fr',
+      { timeout: 5000 }
+    );
     await page.waitForLoadState('networkidle');
 
     htmlLang = await page.evaluate(() =>
@@ -48,6 +53,11 @@ test.describe('HTML lang attribute', () => {
     await page.getByRole('menuitem').filter({ hasText: 'DE' }).click();
 
     await expect(page).toHaveURL(/\/de(\/?|$)/);
+    // Wait for lang attribute to update
+    await page.waitForFunction(
+      () => document.documentElement.getAttribute('lang') === 'de',
+      { timeout: 5000 }
+    );
     await page.waitForLoadState('networkidle');
 
     htmlLang = await page.evaluate(() =>

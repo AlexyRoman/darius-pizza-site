@@ -217,7 +217,7 @@ export default async function RootLayout({
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html:
-              "!function(){try{const t=localStorage.getItem('darius-pizza-theme'),e=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches,n='dark'===t||(!t&&e),r=document.documentElement;n?(r.classList.add('dark'),r.style.setProperty('--effective-theme','dark')):(r.classList.remove('dark'),r.style.setProperty('--effective-theme','light'))}catch(e){}}();!function(){try{const locales=['en','fr','de','it','es','nl'],path=window.location.pathname,segments=path.split('/').filter(Boolean),firstSegment=segments[0],defaultLocale='fr';if(locales.includes(firstSegment)){document.documentElement.setAttribute('lang',firstSegment)}else{document.documentElement.setAttribute('lang',defaultLocale)}}catch(e){}}();",
+              "!function(){try{const t=localStorage.getItem('darius-pizza-theme'),e=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches,n='dark'===t||(!t&&e),r=document.documentElement;n?(r.classList.add('dark'),r.style.setProperty('--effective-theme','dark')):(r.classList.remove('dark'),r.style.setProperty('--effective-theme','light'))}catch(e){}}();!function(){try{const locales=['en','fr','de','it','es','nl'],path=window.location.pathname,segments=path.split('/').filter(Boolean),firstSegment=segments[0],defaultLocale='fr';const lang=locales.includes(firstSegment)?firstSegment:defaultLocale;document.documentElement.setAttribute('lang',lang)}catch(e){}}();",
           }}
         />
         <AppThemeProvider>{children}</AppThemeProvider>

@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { fontPrimary, fontSecondary } from '@/config/site/brand/fonts';
 import { ThemeProvider as AppThemeProvider } from '@/contexts/ThemeContext';
-import { cookies } from 'next/headers';
+import { headers } from 'next/headers';
 import { routing } from '@/i18n/routing';
 
 export const metadata: Metadata = {
@@ -137,11 +137,13 @@ export default async function RootLayout({
   // Root layout with <html>/<body> tags
   // For locale routes, the [locale]/layout.tsx provides content without html/body
   // For root-level routes like 404, this layout provides html/body
-  const cookieStore = await cookies();
-  const cookieLocale = cookieStore.get('NEXT_LOCALE')?.value;
-  const htmlLang = routing.locales.includes((cookieLocale as string) || '')
-    ? (cookieLocale as string)
-    : routing.defaultLocale;
+  // Read locale from middleware-set header for html lang attribute
+  const headersList = await headers();
+  const headerLocale = headersList.get('x-locale');
+  const htmlLang =
+    headerLocale && routing.locales.includes(headerLocale)
+      ? headerLocale
+      : routing.defaultLocale;
   return (
     <html
       lang={htmlLang}

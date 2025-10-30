@@ -147,10 +147,14 @@ export default function middleware(request: NextRequest) {
   // Apply next-intl middleware for locale handling
   const response = intl(request);
 
-  // Ensure locale cookie is set based on URL prefix (helps RootLayout set html[lang])
+  // Set locale cookie and header for RootLayout to read html[lang]
   if (response instanceof NextResponse) {
     if (isKnownLocale) {
       response.cookies.set('NEXT_LOCALE', possibleLocale, { path: '/' });
+      response.headers.set('x-locale', possibleLocale);
+    } else {
+      // Default locale for root paths
+      response.headers.set('x-locale', routing.defaultLocale);
     }
 
     // Convert temporary redirects to permanent for SEO benefits

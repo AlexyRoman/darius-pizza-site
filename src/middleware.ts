@@ -147,8 +147,13 @@ export default function middleware(request: NextRequest) {
   // Apply next-intl middleware for locale handling
   const response = intl(request);
 
-  // Convert temporary redirects to permanent for SEO benefits
+  // Ensure locale cookie is set based on URL prefix (helps RootLayout set html[lang])
   if (response instanceof NextResponse) {
+    if (isKnownLocale) {
+      response.cookies.set('NEXT_LOCALE', possibleLocale, { path: '/' });
+    }
+
+    // Convert temporary redirects to permanent for SEO benefits
     const permanentRedirect = convertToPermanentRedirect(response);
     if (permanentRedirect) {
       return permanentRedirect;

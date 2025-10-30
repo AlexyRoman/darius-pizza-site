@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { fontPrimary, fontSecondary } from '@/config/site/brand/fonts';
 import { ThemeProvider as AppThemeProvider } from '@/contexts/ThemeContext';
+import { cookies } from 'next/headers';
+import { routing } from '@/i18n/routing';
 
 export const metadata: Metadata = {
   // Title and description are set by locale-specific layouts
@@ -127,7 +129,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -135,9 +137,14 @@ export default function RootLayout({
   // Root layout with <html>/<body> tags
   // For locale routes, the [locale]/layout.tsx provides content without html/body
   // For root-level routes like 404, this layout provides html/body
+  const cookieStore = await cookies();
+  const cookieLocale = cookieStore.get('NEXT_LOCALE')?.value;
+  const htmlLang = routing.locales.includes((cookieLocale as string) || '')
+    ? (cookieLocale as string)
+    : routing.defaultLocale;
   return (
     <html
-      lang='en'
+      lang={htmlLang}
       suppressHydrationWarning
       className={`${fontPrimary.variable} ${fontSecondary.variable}`}
     >

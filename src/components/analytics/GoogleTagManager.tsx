@@ -32,7 +32,7 @@ export default function GoogleTagManager({
       // Don't auto-enable analytics on page load
       if (newPreferences && gaId && gaId !== 'G-XXXXXXXXXX') {
         if (newPreferences.analytics) {
-          enableAnalytics(gaId);
+          enableAnalytics();
         } else {
           disableAnalytics();
         }

@@ -9,6 +9,12 @@ export interface CookiePreferences {
 
 export type ConsentStatus = 'accepted' | 'declined' | 'customized';
 
+const COOKIE_EXPIRY_YEARS = 10;
+const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
+
+// Helper to check if we're in browser environment
+const isBrowser = (): boolean => typeof window !== 'undefined';
+
 /**
  * Set a cookie with proper encoding and expiration
  */
@@ -17,10 +23,10 @@ export const setCookie = (
   value: string,
   days: number = 365
 ): void => {
-  if (typeof window === 'undefined') return;
+  if (!isBrowser()) return;
 
   const expires = new Date();
-  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  expires.setTime(expires.getTime() + days * MILLISECONDS_PER_DAY);
 
   document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
 };
@@ -29,16 +35,16 @@ export const setCookie = (
  * Get a cookie value by name
  */
 export const getCookie = (name: string): string | null => {
-  if (typeof window === 'undefined') return null;
+  if (!isBrowser()) return null;
 
-  const nameEQ = name + '=';
-  const ca = document.cookie.split(';');
+  const cookies = document.cookie.split(';');
+  const prefix = `${name}=`;
 
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) === 0)
-      return decodeURIComponent(c.substring(nameEQ.length, c.length));
+  for (const cookie of cookies) {
+    const trimmed = cookie.trim();
+    if (trimmed.startsWith(prefix)) {
+      return decodeURIComponent(trimmed.slice(prefix.length));
+    }
   }
 
   return null;
@@ -73,33 +79,7 @@ export const saveCookieConsent = (
   status: ConsentStatus,
   preferences: CookiePreferences
 ): void => {
-  setCookie('cookieConsent', status, 365 * 10); // 10 years
-  setCookie('cookiePreferences', JSON.stringify(preferences), 365 * 10); // 10 years
-};
-
-/**
- * Clear all consent cookies
- */
-export const clearCookieConsent = (): void => {
-  if (typeof window === 'undefined') return;
-
-  document.cookie =
-    'cookieConsent=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
-  document.cookie =
-    'cookiePreferences=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
-};
-
-/**
- * Update analytics consent status
- */
-export const updateAnalyticsConsent = (enabled: boolean): void => {
-  const preferences = getCookiePreferences();
-  if (!preferences) return;
-
-  const updatedPreferences = {
-    ...preferences,
-    analytics: enabled,
-  };
-
-  saveCookieConsent('customized', updatedPreferences);
+  const expiryDays = 365 * COOKIE_EXPIRY_YEARS;
+  setCookie('cookieConsent', status, expiryDays);
+  setCookie('cookiePreferences', JSON.stringify(preferences), expiryDays);
 };

@@ -67,9 +67,7 @@ const GdprCookieConsent = React.forwardRef<
       saveCookieConsent('accepted', allAccepted);
 
       // Enable analytics
-      if (process.env.NEXT_PUBLIC_GA_ID) {
-        enableAnalytics(process.env.NEXT_PUBLIC_GA_ID);
-      }
+      enableAnalytics();
 
       // Dispatch custom event to notify other components
       window.dispatchEvent(new CustomEvent('cookieConsentChanged'));
@@ -112,8 +110,8 @@ const GdprCookieConsent = React.forwardRef<
       saveCookieConsent('customized', preferences);
 
       // Enable/disable analytics based on preferences
-      if (preferences.analytics && process.env.NEXT_PUBLIC_GA_ID) {
-        enableAnalytics(process.env.NEXT_PUBLIC_GA_ID);
+      if (preferences.analytics) {
+        enableAnalytics();
       } else {
         disableAnalytics();
       }

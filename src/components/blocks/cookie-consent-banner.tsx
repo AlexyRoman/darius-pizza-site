@@ -54,9 +54,7 @@ const CookieConsentBanner = React.forwardRef<
       saveCookieConsent('accepted', allAccepted);
 
       // Enable analytics
-      if (process.env.NEXT_PUBLIC_GA_ID) {
-        enableAnalytics(process.env.NEXT_PUBLIC_GA_ID);
-      }
+      enableAnalytics();
 
       // Dispatch custom event to notify other components
       window.dispatchEvent(new CustomEvent('cookieConsentChanged'));

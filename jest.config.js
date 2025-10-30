@@ -82,6 +82,22 @@ const customJestConfig = {
       lines: 60,
       statements: 60,
     },
+    // High priority - GDPR cookie consent utilities
+    // Critical for compliance - must be thoroughly tested
+    'src/utils/cookie-utils.ts': {
+      branches: 85,
+      functions: 90,
+      lines: 90,
+      statements: 90,
+    },
+    // High priority - Analytics tracking utilities
+    // Critical for user tracking and consent management
+    'src/utils/analytics.ts': {
+      branches: 85,
+      functions: 90,
+      lines: 90,
+      statements: 90,
+    },
   },
 };
 

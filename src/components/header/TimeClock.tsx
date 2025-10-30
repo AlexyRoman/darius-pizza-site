@@ -1,39 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-
-function formatHourMinute(
-  date: Date,
-  timeZone: string,
-  locale: string
-): { hour: string; minute: string } {
-  try {
-    const parts = new Intl.DateTimeFormat(locale, {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false,
-      timeZone,
-    }).formatToParts(date);
-
-    const hourPart = parts.find(p => p.type === 'hour')?.value ?? '';
-    const minutePart = parts.find(p => p.type === 'minute')?.value ?? '';
-
-    const hour = hourPart.padStart(2, '0');
-    const minute = minutePart.padStart(2, '0');
-    return { hour, minute };
-  } catch {
-    // Fallback without timezone if the above fails for some reason
-    const parts = new Intl.DateTimeFormat(locale, {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false,
-    }).formatToParts(date);
-    const hourPart = parts.find(p => p.type === 'hour')?.value ?? '';
-    const minutePart = parts.find(p => p.type === 'minute')?.value ?? '';
-    const hour = hourPart.padStart(2, '0');
-    const minute = minutePart.padStart(2, '0');
-    return { hour, minute };
-  }
-}
+import { formatHourMinute } from '@/lib/date-utils';
 
 export function TimeClock({
   timeZone,

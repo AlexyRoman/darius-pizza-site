@@ -6,73 +6,10 @@ import { X } from 'lucide-react';
 import ThemeToggle from '@/components/header/ThemeToggle';
 import LocaleToggle from '@/components/header/LocaleToggle';
 import { withDebounce } from '@/lib/pacer';
-import Image from 'next/image';
-import ReactCountryFlag from 'react-country-flag';
 
 const RADIUS = 48;
 
-function codeToCountry(code: string): string {
-  switch (code) {
-    case 'en':
-      return 'EN-CUSTOM';
-    case 'fr':
-      return 'FR';
-    case 'nl':
-      return 'NL';
-    default:
-      return code.toUpperCase();
-  }
-}
-
-function getLanguageName(code: string): string {
-  switch (code.toLowerCase()) {
-    case 'en':
-    case 'en-custom':
-      return 'English';
-    case 'fr':
-      return 'Français';
-    case 'de':
-      return 'Deutsch';
-    case 'it':
-      return 'Italiano';
-    case 'es':
-      return 'Español';
-    case 'nl':
-      return 'Nederlands';
-    default:
-      return code.toUpperCase();
-  }
-}
-
-function FlagIcon({ code, size = 20 }: { code: string; size?: number }) {
-  const languageName = getLanguageName(code);
-
-  if (code === 'EN-CUSTOM') {
-    return (
-      <Image
-        src={'/flags/en.svg'}
-        width={size}
-        height={Math.round((size * 3) / 4)}
-        alt={languageName}
-        className='block rounded-full overflow-hidden'
-        priority={false}
-      />
-    );
-  }
-  return (
-    <ReactCountryFlag
-      svg
-      countryCode={code}
-      title={languageName}
-      aria-label={languageName}
-      style={{
-        width: size,
-        height: Math.round((size * 3) / 4),
-        borderRadius: 999,
-      }}
-    />
-  );
-}
+import { codeToCountry, FlagIcon } from '@/lib/i18n/flags';
 
 export function RadialSettings({ currentLocale }: { currentLocale: string }) {
   const [isOpen, _setIsOpen] = React.useState(false);

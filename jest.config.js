@@ -27,11 +27,12 @@ const customJestConfig = {
     '/node_modules/',
     '/.next/',
     '/tests/',
-    '/src/content/restaurant/', // Exclude restaurant folder as requested
-    '/src/components/ui/', // Exclude imported UI components
+    '/src/content/restaurant/',
+    '/src/components/ui/',
     '/src/types/',
     '/src/config/site/',
     'src/components/',
+    'src/lib/i18n/flags.tsx',
   ],
   coverageThreshold: {
     // ============================================================================

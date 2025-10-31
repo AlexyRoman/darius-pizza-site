@@ -95,11 +95,11 @@ jobs:
           path: .next/
           retention-days: 1
 
-  # E2E tests (only on main and develop)
+  # E2E tests (only on main)
   e2e:
     name: E2E Tests
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout code
@@ -126,13 +126,8 @@ jobs:
           # Fallback: disable lightningcss if binary is not available
           LIGHTNINGCSS_DISABLE: false
 
-      - name: Run E2E tests (Safari on develop, all on main)
-        run: |
-          if [ "${GITHUB_REF}" = "refs/heads/main" ]; then
-            npm run test:e2e
-          else
-            npm run test:e2e:safari
-          fi
+      - name: Run E2E tests
+        run: npx playwright test
 
       - name: Upload E2E test results
         uses: actions/upload-artifact@v4

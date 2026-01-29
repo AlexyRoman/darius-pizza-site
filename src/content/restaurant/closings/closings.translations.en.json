@@ -9,7 +9,13 @@
       "id": "future-closing",
       "title": "Vacation",
       "description": "The Darius Pizza team is taking a vacation this October to spend time with family."
+    },
+    {
+      "id": "closing-renov",
+      "title": "Renovations",
+      "description": "Darius Pizza will be closed for a few weeks for renovations."
     }
+    
   ],
   "emergencyClosings": [
     {

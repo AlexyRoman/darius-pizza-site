@@ -15,6 +15,14 @@
       "endDate": "2025-10-29T22:00:00Z",
       "isRecurring": false,
       "isActive": true
+    },
+    {
+      "id": "closing-renov",
+      "date": null,
+      "startDate": "2026-01-25T00:00:00Z",
+      "endDate": "2026-02-18T22:00:00Z",
+      "isRecurring": false,
+      "isActive": true
     }
   ],
   "emergencyClosings": [

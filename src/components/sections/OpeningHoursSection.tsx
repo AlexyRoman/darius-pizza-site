@@ -17,7 +17,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
-import hoursConfig from '@/content/restaurant/hours.json';
+import { useHours } from '@/hooks/useHours';
 import { formatDate, formatDateTime } from '@/utils/date-utils';
 import { formatNextOpeningTime } from '@/utils/opening-hours-utils';
 import { SmartCallButton } from '@/components/ui/smart-call-button';
@@ -59,12 +59,10 @@ export default function OpeningHoursSection() {
   const tHero = useTranslations('hero');
   const locale = useLocale();
 
-  // Load restaurant configurations with locale support (except hours which uses original system)
   const { data: messagesConfig } = useRestaurantConfig('messages', locale);
   const { data: closingsConfig } = useRestaurantConfig('closings', locale);
   const { data: contactConfig } = useRestaurantConfig('contact', locale);
-
-  // Hours use the original system (not localized)
+  const { data: hoursConfig } = useHours();
   const hours = hoursConfig.openingHours as OpeningHours;
   const messages = (messagesConfig?.specialMessages || []) as SpecialMessage[];
   const closings = (closingsConfig?.scheduledClosings ||
@@ -271,7 +269,7 @@ export default function OpeningHoursSection() {
                             {t('badge.closed')}
                           </div>
                           <div className='text-xs opacity-90'>
-                            {formatNextOpeningTime(now, t)}
+                            {formatNextOpeningTime(now, t, hours)}
                           </div>
                         </div>
                       </div>

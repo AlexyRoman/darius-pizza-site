@@ -1,0 +1,9 @@
+{
+  "routes": ["/dashboard"],
+  "description": "List of routes that require password authentication. Routes should be specified without locale prefix (e.g., '/dashboard' not '/en/dashboard')",
+  "password": {
+    "note": "The password is configured via the PAGE_ACCESS_PASSWORD environment variable in .env.local",
+    "example": "PAGE_ACCESS_PASSWORD=your-secure-password-here",
+    "location": ".env.local (not tracked in git for security)"
+  }
+}

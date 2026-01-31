@@ -6,6 +6,59 @@
     "info": "Info",
     "call": "Order"
   },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Management overview",
+    "stats": {
+      "ordersToday": "Orders today",
+      "pendingOrders": "Pending orders",
+      "revenue": "Revenue (MTD)",
+      "avgOrderValue": "Avg. order value"
+    },
+    "cards": {
+      "welcome": {
+        "title": "Welcome",
+        "description": "You are viewing the protected management dashboard.",
+        "content": "This area is password-protected. Use the quick actions below to manage your pizzeria."
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "description": "Common management tasks",
+        "editMenu": "Edit menu",
+        "updateHours": "Update hours",
+        "viewOrders": "View orders",
+        "manageStock": "Manage stock"
+      },
+      "recentActivity": {
+        "title": "Recent Activity",
+        "description": "Latest orders and updates",
+        "empty": "No recent activity"
+      }
+    },
+    "hours": {
+      "title": "Opening Hours",
+      "description": "Edit opening hours. Changes appear on the website immediately.",
+      "save": "Save",
+      "saving": "Saving...",
+      "saved": "Saved",
+      "error": "Failed to save",
+      "closed": "Closed",
+      "open": "Open",
+      "addPeriod": "Add period",
+      "removePeriod": "Remove"
+    },
+    "table": {
+      "recentOrders": "Recent orders",
+      "orderId": "Order #",
+      "customer": "Customer",
+      "items": "Items",
+      "total": "Total",
+      "status": "Status",
+      "statusPending": "Pending",
+      "statusCompleted": "Completed",
+      "statusPreparing": "Preparing"
+    }
+  },
   "callDialog": {
     "title": "Pizzeria Closed",
     "description": "The pizzeria is currently closed and your call may not be answered. Would you like to call anyway or try again later?",

@@ -6,6 +6,59 @@
     "info": "Info",
     "call": "Pedir"
   },
+  "dashboard": {
+    "title": "Panel de control",
+    "subtitle": "Resumen de gestión",
+    "stats": {
+      "ordersToday": "Pedidos hoy",
+      "pendingOrders": "Pedidos pendientes",
+      "revenue": "Ingresos (mes)",
+      "avgOrderValue": "Valor medio del pedido"
+    },
+    "cards": {
+      "welcome": {
+        "title": "Bienvenido",
+        "description": "Está viendo el panel de gestión protegido.",
+        "content": "Esta zona está protegida con contraseña. Use las acciones rápidas a continuación para gestionar su pizzería."
+      },
+      "quickActions": {
+        "title": "Acciones rápidas",
+        "description": "Tareas de gestión habituales",
+        "editMenu": "Editar menú",
+        "updateHours": "Actualizar horarios",
+        "viewOrders": "Ver pedidos",
+        "manageStock": "Gestionar stock"
+      },
+      "recentActivity": {
+        "title": "Actividad reciente",
+        "description": "Últimos pedidos y actualizaciones",
+        "empty": "Sin actividad reciente"
+      }
+    },
+    "hours": {
+      "title": "Horario de apertura",
+      "description": "Edite el horario. Los cambios aparecen inmediatamente en el sitio web.",
+      "save": "Guardar",
+      "saving": "Guardando...",
+      "saved": "Guardado",
+      "error": "Error al guardar",
+      "closed": "Cerrado",
+      "open": "Abierto",
+      "addPeriod": "Añadir período",
+      "removePeriod": "Eliminar"
+    },
+    "table": {
+      "recentOrders": "Pedidos recientes",
+      "orderId": "Pedido n°",
+      "customer": "Cliente",
+      "items": "Artículos",
+      "total": "Total",
+      "status": "Estado",
+      "statusPending": "Pendiente",
+      "statusCompleted": "Completado",
+      "statusPreparing": "En preparación"
+    }
+  },
   "callDialog": {
     "title": "Pizzería Cerrada",
     "description": "La pizzería está cerrada actualmente y es posible que no respondamos a su llamada. ¿Desea llamar de todos modos o volver a intentarlo más tarde?",

@@ -6,6 +6,59 @@
     "info": "Info",
     "call": "Bestellen"
   },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Beheeroverzicht",
+    "stats": {
+      "ordersToday": "Bestellingen vandaag",
+      "pendingOrders": "Openstaande bestellingen",
+      "revenue": "Omzet (maand)",
+      "avgOrderValue": "Gem. bestelwaarde"
+    },
+    "cards": {
+      "welcome": {
+        "title": "Welkom",
+        "description": "U bekijkt het beveiligde beheerdashboard.",
+        "content": "Dit gebied is met een wachtwoord beveiligd. Gebruik de snelacties hieronder om uw pizzeria te beheren."
+      },
+      "quickActions": {
+        "title": "Snelacties",
+        "description": "Veelvoorkomende beheertaken",
+        "editMenu": "Menu bewerken",
+        "updateHours": "Openingstijden bijwerken",
+        "viewOrders": "Bestellingen bekijken",
+        "manageStock": "Voorraad beheren"
+      },
+      "recentActivity": {
+        "title": "Recente activiteit",
+        "description": "Laatste bestellingen en updates",
+        "empty": "Geen recente activiteit"
+      }
+    },
+    "hours": {
+      "title": "Openingstijden",
+      "description": "Bewerk openingstijden. Wijzigingen verschijnen direct op de website.",
+      "save": "Opslaan",
+      "saving": "Opslaan...",
+      "saved": "Opgeslagen",
+      "error": "Opslaan mislukt",
+      "closed": "Gesloten",
+      "open": "Open",
+      "addPeriod": "Periode toevoegen",
+      "removePeriod": "Verwijderen"
+    },
+    "table": {
+      "recentOrders": "Recente bestellingen",
+      "orderId": "Bestelling nr.",
+      "customer": "Klant",
+      "items": "Artikelen",
+      "total": "Totaal",
+      "status": "Status",
+      "statusPending": "In behandeling",
+      "statusCompleted": "Voltooid",
+      "statusPreparing": "In voorbereiding"
+    }
+  },
   "callDialog": {
     "title": "Pizzeria Gesloten",
     "description": "De pizzeria is momenteel gesloten en uw oproep wordt mogelijk niet beantwoord. Wilt u toch bellen of het later opnieuw proberen?",

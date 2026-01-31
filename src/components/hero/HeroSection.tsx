@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Star, Clock, MapPin } from 'lucide-react';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
-import hoursConfig from '@/content/restaurant/hours.json';
+import { useHours } from '@/hooks/useHours';
 import { useThemeContext } from '@/contexts/ThemeContext';
 import { formatNextOpeningTime } from '@/utils/opening-hours-utils';
 import { SmartCallButton } from '@/components/ui/smart-call-button';
@@ -26,11 +26,10 @@ export default function HeroSection() {
   const t = useTranslations('hero');
   const {} = useThemeContext();
 
-  // Load closings configuration with locale support (hours use original system)
+  // Load closings configuration with locale support
   const { data: closingsConfig, loading: closingsLoading } =
     useRestaurantConfig('closings');
-
-  // Hours use the original system (not localized)
+  const { data: hoursConfig } = useHours();
   const hours = hoursConfig.openingHours as OpeningHours;
   const closings = closingsConfig?.scheduledClosings || [];
 
@@ -105,7 +104,7 @@ export default function HeroSection() {
     }
 
     // When closed, show 2-line format
-    const nextOpeningText = formatNextOpeningTime(now, t);
+    const nextOpeningText = formatNextOpeningTime(now, t, hours);
     return {
       text: nextOpeningText,
       className: 'bg-secondary text-secondary-foreground',

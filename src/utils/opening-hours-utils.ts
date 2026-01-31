@@ -1,11 +1,8 @@
-import hoursConfig from '@/content/restaurant/hours.json';
 import type {
   OpeningHours,
   OpeningHoursPeriod,
   NextOpeningTime,
 } from '@/types/opening-hours';
-
-const hours = hoursConfig.openingHours as OpeningHours;
 
 const dayOrder = [
   'monday',
@@ -44,7 +41,10 @@ function getNextOpeningFromPeriods(
   return null; // No more openings today
 }
 
-export function getNextOpeningTime(now: Date): NextOpeningTime | null {
+export function getNextOpeningTime(
+  now: Date,
+  hours: OpeningHours
+): NextOpeningTime | null {
   const currentDayName = now
     .toLocaleDateString('en-US', { weekday: 'long' })
     .toLowerCase();
@@ -96,9 +96,10 @@ export function getNextOpeningTime(now: Date): NextOpeningTime | null {
 
 export function formatNextOpeningTime(
   now: Date,
-  t: (key: string, params?: Record<string, string | number | Date>) => string
+  t: (key: string, params?: Record<string, string | number | Date>) => string,
+  hours: OpeningHours
 ): string {
-  const nextOpening = getNextOpeningTime(now);
+  const nextOpening = getNextOpeningTime(now, hours);
 
   if (!nextOpening) {
     return t('badge.closed');

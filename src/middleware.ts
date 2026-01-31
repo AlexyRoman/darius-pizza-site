@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 import { routing } from '@/i18n/routing';
+import { isRouteProtected } from '@/config/site/protected-routes';
+import { AUTH_COOKIE_NAME } from '@/lib/auth-constants';
 import { getLocaleSettings } from '@/config/generic/locales-config';
 import {
   STATIC_PATH_PREFIXES,
@@ -146,6 +148,23 @@ export default function middleware(request: NextRequest) {
 
   // Apply next-intl middleware for locale handling
   const response = intl(request);
+
+  // If intl issued a redirect, return it (after optional conversion below)
+  if (response instanceof NextResponse && response.headers.get('Location')) {
+    const permanentRedirect = convertToPermanentRedirect(response);
+    if (permanentRedirect) return permanentRedirect;
+    return response;
+  }
+
+  // Protected route check: rewrite to auth-gate if not authenticated
+  if (isRouteProtected(pathWithoutLocale)) {
+    const token = request.cookies.get(AUTH_COOKIE_NAME);
+    if (!token || token.value !== 'authenticated') {
+      const locale = isKnownLocale ? possibleLocale : routing.defaultLocale;
+      const redirectUrl = `/${locale}/auth-gate?redirect=${encodeURIComponent(pathname)}`;
+      return NextResponse.rewrite(new URL(redirectUrl, request.url));
+    }
+  }
 
   // Set locale cookie and header for RootLayout to read html[lang]
   if (response instanceof NextResponse) {

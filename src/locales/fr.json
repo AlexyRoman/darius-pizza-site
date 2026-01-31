@@ -6,6 +6,59 @@
     "info": "Infos",
     "call": "Commander"
   },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "subtitle": "Vue d'ensemble de la gestion",
+    "stats": {
+      "ordersToday": "Commandes aujourd'hui",
+      "pendingOrders": "Commandes en attente",
+      "revenue": "Chiffre d'affaires (mois)",
+      "avgOrderValue": "Panier moyen"
+    },
+    "cards": {
+      "welcome": {
+        "title": "Bienvenue",
+        "description": "Vous consultez le tableau de bord de gestion protégé.",
+        "content": "Cette zone est protégée par mot de passe. Utilisez les actions rapides ci-dessous pour gérer votre pizzeria."
+      },
+      "quickActions": {
+        "title": "Actions rapides",
+        "description": "Tâches de gestion courantes",
+        "editMenu": "Modifier le menu",
+        "updateHours": "Mettre à jour les horaires",
+        "viewOrders": "Voir les commandes",
+        "manageStock": "Gérer les stocks"
+      },
+      "recentActivity": {
+        "title": "Activité récente",
+        "description": "Dernières commandes et mises à jour",
+        "empty": "Aucune activité récente"
+      }
+    },
+    "hours": {
+      "title": "Horaires d'ouverture",
+      "description": "Modifiez les horaires. Les changements apparaissent immédiatement sur le site.",
+      "save": "Enregistrer",
+      "saving": "Enregistrement...",
+      "saved": "Enregistré",
+      "error": "Échec de l'enregistrement",
+      "closed": "Fermé",
+      "open": "Ouvert",
+      "addPeriod": "Ajouter une période",
+      "removePeriod": "Supprimer"
+    },
+    "table": {
+      "recentOrders": "Commandes récentes",
+      "orderId": "Commande n°",
+      "customer": "Client",
+      "items": "Articles",
+      "total": "Total",
+      "status": "Statut",
+      "statusPending": "En attente",
+      "statusCompleted": "Terminée",
+      "statusPreparing": "En préparation"
+    }
+  },
   "callDialog": {
     "title": "Pizzeria Fermée",
     "description": "La pizzeria est actuellement fermée et votre appel pourrait ne pas être pris en charge. Souhaitez-vous appeler quand même ou réessayer plus tard ?",

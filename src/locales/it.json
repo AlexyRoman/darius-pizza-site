@@ -6,6 +6,59 @@
     "info": "Info",
     "call": "Ordina"
   },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Panoramica gestione",
+    "stats": {
+      "ordersToday": "Ordini oggi",
+      "pendingOrders": "Ordini in attesa",
+      "revenue": "Fatturato (mese)",
+      "avgOrderValue": "Valore medio ordine"
+    },
+    "cards": {
+      "welcome": {
+        "title": "Benvenuto",
+        "description": "Stai visualizzando la dashboard di gestione protetta.",
+        "content": "Questa area è protetta da password. Usa le azioni rapide qui sotto per gestire la tua pizzeria."
+      },
+      "quickActions": {
+        "title": "Azioni rapide",
+        "description": "Attività di gestione comuni",
+        "editMenu": "Modifica menu",
+        "updateHours": "Aggiorna orari",
+        "viewOrders": "Visualizza ordini",
+        "manageStock": "Gestisci scorte"
+      },
+      "recentActivity": {
+        "title": "Attività recente",
+        "description": "Ultimi ordini e aggiornamenti",
+        "empty": "Nessuna attività recente"
+      }
+    },
+    "hours": {
+      "title": "Orari di apertura",
+      "description": "Modifica gli orari. Le modifiche appaiono immediatamente sul sito.",
+      "save": "Salva",
+      "saving": "Salvataggio...",
+      "saved": "Salvato",
+      "error": "Salvataggio fallito",
+      "closed": "Chiuso",
+      "open": "Aperto",
+      "addPeriod": "Aggiungi periodo",
+      "removePeriod": "Rimuovi"
+    },
+    "table": {
+      "recentOrders": "Ordini recenti",
+      "orderId": "Ordine n°",
+      "customer": "Cliente",
+      "items": "Articoli",
+      "total": "Totale",
+      "status": "Stato",
+      "statusPending": "In attesa",
+      "statusCompleted": "Completato",
+      "statusPreparing": "In preparazione"
+    }
+  },
   "callDialog": {
     "title": "Pizzeria Chiusa",
     "description": "La pizzeria è attualmente chiusa e la sua chiamata potrebbe non ricevere risposta. Desidera chiamare comunque o riprovare più tardi?",

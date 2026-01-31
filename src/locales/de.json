@@ -6,6 +6,59 @@
     "info": "Infos",
     "call": "Bestellen"
   },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Management-Übersicht",
+    "stats": {
+      "ordersToday": "Bestellungen heute",
+      "pendingOrders": "Ausstehende Bestellungen",
+      "revenue": "Umsatz (Monat)",
+      "avgOrderValue": "Durchschn. Bestellwert"
+    },
+    "cards": {
+      "welcome": {
+        "title": "Willkommen",
+        "description": "Sie sehen das geschützte Management-Dashboard.",
+        "content": "Dieser Bereich ist passwortgeschützt. Nutzen Sie die Schnellaktionen unten zur Verwaltung Ihrer Pizzeria."
+      },
+      "quickActions": {
+        "title": "Schnellaktionen",
+        "description": "Häufige Verwaltungsaufgaben",
+        "editMenu": "Menü bearbeiten",
+        "updateHours": "Öffnungszeiten aktualisieren",
+        "viewOrders": "Bestellungen anzeigen",
+        "manageStock": "Bestand verwalten"
+      },
+      "recentActivity": {
+        "title": "Letzte Aktivität",
+        "description": "Neueste Bestellungen und Updates",
+        "empty": "Keine aktuelle Aktivität"
+      }
+    },
+    "hours": {
+      "title": "Öffnungszeiten",
+      "description": "Öffnungszeiten bearbeiten. Änderungen erscheinen sofort auf der Website.",
+      "save": "Speichern",
+      "saving": "Speichern...",
+      "saved": "Gespeichert",
+      "error": "Speichern fehlgeschlagen",
+      "closed": "Geschlossen",
+      "open": "Geöffnet",
+      "addPeriod": "Zeitraum hinzufügen",
+      "removePeriod": "Entfernen"
+    },
+    "table": {
+      "recentOrders": "Letzte Bestellungen",
+      "orderId": "Bestellung Nr.",
+      "customer": "Kunde",
+      "items": "Artikel",
+      "total": "Gesamt",
+      "status": "Status",
+      "statusPending": "Ausstehend",
+      "statusCompleted": "Abgeschlossen",
+      "statusPreparing": "In Vorbereitung"
+    }
+  },
   "callDialog": {
     "title": "Pizzeria geschlossen",
     "description": "Die Pizzeria ist derzeit geschlossen und Ihr Anruf wird möglicherweise nicht entgegengenommen. Möchten Sie trotzdem anrufen oder es später erneut versuchen?",

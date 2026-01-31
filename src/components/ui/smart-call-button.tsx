@@ -12,7 +12,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { getSitePhone } from '@/utils/site-utils';
-import hoursConfig from '@/content/restaurant/hours.json';
+import { useHours } from '@/hooks/useHours';
 import type { OpeningHours } from '@/types/opening-hours';
 import {
   getTodayHours,
@@ -45,12 +45,12 @@ export function SmartCallButton({
   ...props
 }: SmartCallButtonProps) {
   const t = useTranslations('callDialog');
+  const { data: hoursConfig } = useHours();
+  const hours = hoursConfig.openingHours as OpeningHours;
   const [isMounted, setIsMounted] = useState(false);
   const [isCurrentlyOpen, setIsCurrentlyOpen] = useState(false);
   const [isOpeningSoon, setIsOpeningSoon] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-  const hours = hoursConfig.openingHours as OpeningHours;
 
   useEffect(() => {
     setIsMounted(true);

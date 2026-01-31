@@ -1,0 +1,76 @@
+{
+  "openingHours": {
+    "monday": {
+      "day": "monday",
+      "periods": [
+        {
+          "open": "18:00",
+          "close": "21:30"
+        }
+      ],
+      "isOpen": false
+    },
+    "tuesday": {
+      "day": "tuesday",
+      "periods": [
+        {
+          "open": "18:00",
+          "close": "21:30"
+        }
+      ],
+      "isOpen": true
+    },
+    "wednesday": {
+      "day": "wednesday",
+      "periods": [
+        {
+          "open": "18:00",
+          "close": "21:30"
+        }
+      ],
+      "isOpen": true
+    },
+    "thursday": {
+      "day": "thursday",
+      "periods": [
+        {
+          "open": "18:00",
+          "close": "21:30"
+        }
+      ],
+      "isOpen": true
+    },
+    "friday": {
+      "day": "friday",
+      "periods": [
+        {
+          "open": "18:00",
+          "close": "21:30"
+        }
+      ],
+      "isOpen": true
+    },
+    "saturday": {
+      "day": "saturday",
+      "periods": [
+        {
+          "open": "18:00",
+          "close": "21:30"
+        }
+      ],
+      "isOpen": true
+    },
+    "sunday": {
+      "day": "sunday",
+      "periods": [
+        {
+          "open": "18:00",
+          "close": "21:30"
+        }
+      ],
+      "isOpen": true
+    }
+  },
+  "timezone": "Europe/Paris",
+  "lastUpdated": "2026-01-31T15:38:52.152Z"
+}

@@ -10,6 +10,48 @@ import {
 } from '../opening-hours-utils';
 import type { OpeningHoursPeriod } from '@/types/opening-hours';
 
+// Inline hours config matching hours.json structure (avoids Jest JSON import issues)
+const hours: Record<
+  string,
+  { day: string; periods: OpeningHoursPeriod[]; isOpen: boolean }
+> = {
+  monday: {
+    day: 'monday',
+    periods: [{ open: '18:00', close: '21:30' }],
+    isOpen: false,
+  },
+  tuesday: {
+    day: 'tuesday',
+    periods: [{ open: '18:00', close: '21:30' }],
+    isOpen: true,
+  },
+  wednesday: {
+    day: 'wednesday',
+    periods: [{ open: '18:00', close: '21:30' }],
+    isOpen: true,
+  },
+  thursday: {
+    day: 'thursday',
+    periods: [{ open: '18:00', close: '21:30' }],
+    isOpen: true,
+  },
+  friday: {
+    day: 'friday',
+    periods: [{ open: '18:00', close: '21:30' }],
+    isOpen: true,
+  },
+  saturday: {
+    day: 'saturday',
+    periods: [{ open: '18:00', close: '21:30' }],
+    isOpen: true,
+  },
+  sunday: {
+    day: 'sunday',
+    periods: [{ open: '18:00', close: '21:30' }],
+    isOpen: true,
+  },
+};
+
 describe('opening-hours-utils', () => {
   describe('isTimeInPeriods', () => {
     const periods: OpeningHoursPeriod[] = [
@@ -110,7 +152,7 @@ describe('opening-hours-utils', () => {
     it('should return next opening time for today if available', () => {
       // Mock Tuesday 10:00 AM (before opening)
       const tuesday = new Date('2024-01-16T10:00:00Z'); // Tuesday
-      const result = getNextOpeningTime(tuesday);
+      const result = getNextOpeningTime(tuesday, hours);
 
       expect(result).toBeTruthy();
       expect(result?.isToday).toBe(true);
@@ -121,7 +163,7 @@ describe('opening-hours-utils', () => {
     it('should return next opening time for tomorrow if no opening today', () => {
       // Mock Monday 10:00 AM (closed on Monday)
       const monday = new Date('2024-01-15T10:00:00Z'); // Monday
-      const result = getNextOpeningTime(monday);
+      const result = getNextOpeningTime(monday, hours);
 
       expect(result).toBeTruthy();
       expect(result?.isToday).toBe(false);
@@ -132,7 +174,7 @@ describe('opening-hours-utils', () => {
     it('should return next opening time later today if current time is before opening', () => {
       // Mock Wednesday 10:00 AM (before 18:00 opening)
       const wednesday = new Date('2024-01-17T10:00:00Z'); // Wednesday
-      const result = getNextOpeningTime(wednesday);
+      const result = getNextOpeningTime(wednesday, hours);
 
       expect(result).toBeTruthy();
       expect(result?.isToday).toBe(true);
@@ -143,7 +185,7 @@ describe('opening-hours-utils', () => {
     it('should return next opening time tomorrow if current time is after closing', () => {
       // Mock Tuesday 22:00 (after 21:30 closing)
       const tuesday = new Date('2024-01-16T22:00:00Z'); // Tuesday
-      const result = getNextOpeningTime(tuesday);
+      const result = getNextOpeningTime(tuesday, hours);
 
       expect(result).toBeTruthy();
       expect(result?.isToday).toBe(false);
@@ -155,7 +197,7 @@ describe('opening-hours-utils', () => {
       // This test might need adjustment based on actual hours config
       // For now, we'll test with a date that should find next opening
       const date = new Date('2024-01-15T10:00:00Z'); // Monday
-      const result = getNextOpeningTime(date);
+      const result = getNextOpeningTime(date, hours);
 
       // Should find next opening (Tuesday)
       expect(result).toBeTruthy();
@@ -166,7 +208,7 @@ describe('opening-hours-utils', () => {
       // Use a date that's actually a Sunday
       // January 14, 2024 is a Sunday
       const sunday = new Date('2024-01-14T10:00:00Z');
-      const result = getNextOpeningTime(sunday);
+      const result = getNextOpeningTime(sunday, hours);
 
       expect(result).toBeTruthy();
       // Sunday is open according to hours.json, so it should return Sunday or next day
@@ -194,7 +236,7 @@ describe('opening-hours-utils', () => {
       // Mock a scenario where getNextOpeningTime returns null
       // This is difficult to achieve with real hours config, so we'll test the translation integration
       const now = new Date('2024-01-15T10:00:00Z'); // Monday
-      const result = formatNextOpeningTime(now, mockT);
+      const result = formatNextOpeningTime(now, mockT, hours);
 
       // Should call the translation function
       expect(mockT).toHaveBeenCalled();
@@ -203,7 +245,7 @@ describe('opening-hours-utils', () => {
 
     it('should format opening time for today', () => {
       const now = new Date('2024-01-16T10:00:00Z'); // Tuesday before opening
-      const result = formatNextOpeningTime(now, mockT);
+      const result = formatNextOpeningTime(now, mockT, hours);
 
       expect(mockT).toHaveBeenCalled();
       expect(result).toContain('today');
@@ -211,7 +253,7 @@ describe('opening-hours-utils', () => {
 
     it('should format opening time for tomorrow', () => {
       const now = new Date('2024-01-16T22:00:00Z'); // Tuesday after closing
-      const result = formatNextOpeningTime(now, mockT);
+      const result = formatNextOpeningTime(now, mockT, hours);
 
       expect(mockT).toHaveBeenCalled();
       expect(result).toContain('tomorrow');
@@ -219,7 +261,7 @@ describe('opening-hours-utils', () => {
 
     it('should pass time parameter to translation function', () => {
       const now = new Date('2024-01-16T10:00:00Z'); // Tuesday before opening
-      formatNextOpeningTime(now, mockT);
+      formatNextOpeningTime(now, mockT, hours);
 
       const calls = mockT.mock.calls;
       const todayCall = calls.find(call => call[0] === 'badge.closedOpenToday');

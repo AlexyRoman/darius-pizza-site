@@ -1,6 +1,8 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
+import { Home } from 'lucide-react';
 
 import { Separator } from '@/components/ui/separator';
 import FooterLeft from '@/components/footer/FooterLeft';
@@ -102,14 +104,23 @@ export function Footer(props: FooterProps) {
           <div>
             © {new Date().getFullYear()} {rightsReservedText}
           </div>
-          <div>
-            <span className='mr-1'>{designedByPrefix}</span>
-            <a
-              className='underline underline-offset-4 hover:text-primary transition-colors duration-200'
-              href='https://alexyroman.com'
+          <div className='flex flex-wrap items-center justify-between gap-2'>
+            <div>
+              <span className='mr-1'>{designedByPrefix}</span>
+              <a
+                className='underline underline-offset-4 hover:text-primary transition-colors duration-200'
+                href='https://alexyroman.com'
+              >
+                {designedByName}
+              </a>
+            </div>
+            <Link
+              href={`/${locale}/dashboard`}
+              className='inline-flex size-6 items-center justify-center rounded-md text-foreground-secondary hover:text-primary hover:bg-accent transition-colors duration-200 shrink-0'
+              aria-label='Dashboard'
             >
-              {designedByName}
-            </a>
+              <Home className='size-3' />
+            </Link>
           </div>
         </div>
       </div>

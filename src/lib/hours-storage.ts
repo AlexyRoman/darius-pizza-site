@@ -35,8 +35,17 @@ async function getFromUpstash(): Promise<HoursConfig | null> {
       token: process.env.UPSTASH_REDIS_REST_TOKEN!,
     });
     const data = await redis.get<HoursConfig>(REDIS_KEY);
+    if (process.env.NODE_ENV === 'development' && !data) {
+      console.warn(
+        '[hours-storage] Redis get returned null/empty for key:',
+        REDIS_KEY
+      );
+    }
     return data ?? null;
-  } catch {
+  } catch (err) {
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('[hours-storage] Redis get failed, falling back:', err);
+    }
     return null;
   }
 }
@@ -50,8 +59,17 @@ async function saveToUpstash(config: HoursConfig): Promise<boolean> {
       token: process.env.UPSTASH_REDIS_REST_TOKEN!,
     });
     await redis.set(REDIS_KEY, config);
+    if (process.env.NODE_ENV === 'development') {
+      console.log(
+        '[hours-storage] Saved to Redis, monday isOpen:',
+        config.openingHours.monday?.isOpen
+      );
+    }
     return true;
-  } catch {
+  } catch (err) {
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[hours-storage] Redis set failed:', err);
+    }
     return false;
   }
 }
@@ -81,10 +99,26 @@ async function saveToFile(config: HoursConfig): Promise<boolean> {
  */
 export async function getHoursConfig(): Promise<HoursConfig> {
   const fromUpstash = await getFromUpstash();
-  if (fromUpstash) return fromUpstash;
+  if (fromUpstash) {
+    if (process.env.NODE_ENV === 'development') {
+      console.log(
+        '[hours-storage] Read from Redis, monday isOpen:',
+        fromUpstash.openingHours.monday?.isOpen
+      );
+    }
+    return fromUpstash;
+  }
 
   const fromFile = await getFromFile();
-  if (fromFile) return fromFile;
+  if (fromFile) {
+    if (process.env.NODE_ENV === 'development') {
+      console.log(
+        '[hours-storage] Read from file (Redis empty/failed), monday isOpen:',
+        fromFile.openingHours.monday?.isOpen
+      );
+    }
+    return fromFile;
+  }
 
   return staticHours;
 }

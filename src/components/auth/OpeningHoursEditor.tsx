@@ -113,6 +113,9 @@ export function OpeningHoursEditor() {
       if (!res.ok) {
         throw new Error(json.error || t('error'));
       }
+      if (json.config) {
+        setForm(structuredClone(json.config));
+      }
       setSaveStatus('saved');
       await refetch();
       toast.success(t('saved'));

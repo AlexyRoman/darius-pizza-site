@@ -29,7 +29,10 @@ export function useHours(): UseHoursResult {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/hours', { cache: 'no-store' });
+      const res = await fetch(`/api/hours?_=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { Pragma: 'no-cache', 'Cache-Control': 'no-cache' },
+      });
       if (!res.ok) throw new Error('Failed to fetch hours');
       const json = (await res.json()) as HoursConfig;
       setData(json);

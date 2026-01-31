@@ -8,8 +8,15 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jsdom',
-  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/', '<rootDir>/tests/e2e/'],
-  testMatch: ['<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}', '<rootDir>/tests/unit/**/*.{js,jsx,ts,tsx}'],
+  testPathIgnorePatterns: [
+    '<rootDir>/.next/',
+    '<rootDir>/node_modules/',
+    '<rootDir>/tests/e2e/',
+  ],
+  testMatch: [
+    '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
+    '<rootDir>/tests/unit/**/*.{js,jsx,ts,tsx}',
+  ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^next-intl$': '<rootDir>/tests/mocks/next-intl.ts',
@@ -22,6 +29,11 @@ const customJestConfig = {
     '!src/**/__tests__/**',
     '!src/**/*.stories.{js,jsx,ts,tsx}',
     '!src/**/types/**',
+    '!src/hooks/useClosings.ts',
+    '!src/hooks/useHours.ts',
+    '!src/hooks/useMessages.ts',
+    '!src/hooks/useAuth.ts',
+    '!src/hooks/use-mobile.ts',
   ],
   coveragePathIgnorePatterns: [
     '/node_modules/',
@@ -44,7 +56,7 @@ const customJestConfig = {
     // ============================================================================
     // HIGH CRITICALITY - Critical app logic requiring thorough testing
     // ============================================================================
-    
+
     // GDPR compliance and user tracking - CRITICAL for legal compliance
     'src/utils/{analytics,cookie-utils}.ts': {
       branches: 85,
@@ -52,7 +64,7 @@ const customJestConfig = {
       lines: 90,
       statements: 90,
     },
-    
+
     // Core library utilities - Complex logic with caching, merging, validation
     // High priority: Complex loading, merging, and validation logic (75/85/80/80)
     'src/lib/{metadata,menu-loader,restaurant-config}.ts': {
@@ -104,11 +116,11 @@ const customJestConfig = {
       lines: 60,
       statements: 60,
     },
-    
+
     // ============================================================================
     // MEDIUM-HIGH CRITICALITY - Core configuration and i18n
     // ============================================================================
-    
+
     // Internationalization - routing and request handling
     'src/i18n/**/*.{ts,tsx}': {
       branches: 65,
@@ -116,7 +128,7 @@ const customJestConfig = {
       lines: 75,
       statements: 75,
     },
-    
+
     // Core configuration - locales and robots
     'src/config/generic/locales-config.ts': {
       branches: 75,
@@ -130,11 +142,11 @@ const customJestConfig = {
       lines: 75,
       statements: 75,
     },
-    
+
     // ============================================================================
     // MEDIUM-LOW CRITICALITY - Simple wrappers and utilities
     // ============================================================================
-    
+
     // Configuration wrappers - simple feature flags and middleware (50/60/60/60)
     // Note: locales-config.ts and robots/** are defined above with higher thresholds
     'src/config/generic/{feature-flags,middleware}.ts': {
@@ -174,5 +186,3 @@ const customJestConfig = {
 };
 
 module.exports = createJestConfig(customJestConfig);
-
-

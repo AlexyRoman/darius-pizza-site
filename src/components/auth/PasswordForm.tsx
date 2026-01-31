@@ -26,6 +26,7 @@ export function PasswordForm({
   locale = 'en',
   redirectTo,
 }: PasswordFormProps) {
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -39,7 +40,7 @@ export function PasswordForm({
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ username, password }),
       });
 
       const data = await response.json();
@@ -90,9 +91,10 @@ export function PasswordForm({
     title: locale === 'fr' ? 'Contenu protégé' : 'Protected Content',
     description:
       locale === 'fr'
-        ? 'Veuillez entrer le mot de passe pour accéder à ce contenu.'
-        : 'Please enter the password to access this content.',
-    label: locale === 'fr' ? 'Mot de passe' : 'Password',
+        ? 'Veuillez entrer vos identifiants pour accéder à ce contenu.'
+        : 'Please enter your credentials to access this content.',
+    usernameLabel: locale === 'fr' ? "Nom d'utilisateur" : 'Username',
+    passwordLabel: locale === 'fr' ? 'Mot de passe' : 'Password',
     submit: loading
       ? locale === 'fr'
         ? 'Vérification...'
@@ -112,14 +114,26 @@ export function PasswordForm({
         <CardContent>
           <form onSubmit={handleSubmit} className='space-y-4'>
             <div className='space-y-2'>
-              <Label htmlFor='password'>{t.label}</Label>
+              <Label htmlFor='username'>{t.usernameLabel}</Label>
+              <Input
+                id='username'
+                type='text'
+                autoComplete='username'
+                value={username}
+                onChange={e => setUsername(e.target.value)}
+                required
+                autoFocus
+              />
+            </div>
+            <div className='space-y-2'>
+              <Label htmlFor='password'>{t.passwordLabel}</Label>
               <Input
                 id='password'
                 type='password'
+                autoComplete='current-password'
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 required
-                autoFocus
               />
             </div>
 

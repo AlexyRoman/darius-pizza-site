@@ -41,24 +41,37 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
+    const username =
+      typeof body?.username === 'string' ? body.username.trim() : '';
     const password = typeof body?.password === 'string' ? body.password : '';
 
+    const expectedUsername = process.env.PAGE_ACCESS_USERNAME;
     const expectedPassword = process.env.PAGE_ACCESS_PASSWORD;
 
-    if (!expectedPassword) {
+    if (!expectedUsername || !expectedPassword) {
       return NextResponse.json(
         { error: 'Authentication not configured' },
         { status: 500 }
       );
     }
 
+    const usernameBuffer = Buffer.from(username, 'utf8');
+    const expectedUsernameBuffer = Buffer.from(expectedUsername, 'utf8');
     const passwordBuffer = Buffer.from(password, 'utf8');
-    const expectedBuffer = Buffer.from(expectedPassword, 'utf8');
-    if (
-      passwordBuffer.length !== expectedBuffer.length ||
-      !timingSafeEqual(passwordBuffer, expectedBuffer)
-    ) {
-      return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
+    const expectedPasswordBuffer = Buffer.from(expectedPassword, 'utf8');
+
+    const usernameMatch =
+      usernameBuffer.length === expectedUsernameBuffer.length &&
+      timingSafeEqual(usernameBuffer, expectedUsernameBuffer);
+    const passwordMatch =
+      passwordBuffer.length === expectedPasswordBuffer.length &&
+      timingSafeEqual(passwordBuffer, expectedPasswordBuffer);
+
+    if (!usernameMatch || !passwordMatch) {
+      return NextResponse.json(
+        { error: 'Invalid username or password' },
+        { status: 401 }
+      );
     }
 
     const cookieStore = await cookies();

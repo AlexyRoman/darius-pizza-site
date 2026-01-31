@@ -36,6 +36,7 @@ const ServerEnvSchema = z.object({
   SITE_TIME_ZONE: z.string().default('Europe/Paris'),
   SITE_PHONE: z.string().default('+33494640511'),
   // Protected routes (dashboard) - set in .env.local
+  PAGE_ACCESS_USERNAME: z.string().optional(),
   PAGE_ACCESS_PASSWORD: z.string().optional(),
 });
 
@@ -64,6 +65,7 @@ const rawServer = {
   TURNSTILE_SECRET_KEY: process.env.TURNSTILE_SECRET_KEY,
   SITE_TIME_ZONE: process.env.SITE_TIME_ZONE,
   SITE_PHONE: process.env.SITE_PHONE,
+  PAGE_ACCESS_USERNAME: process.env.PAGE_ACCESS_USERNAME,
   PAGE_ACCESS_PASSWORD: process.env.PAGE_ACCESS_PASSWORD,
 };
 

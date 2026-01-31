@@ -58,7 +58,7 @@ export function RadialSettings({ currentLocale }: { currentLocale: string }) {
                   delay: index * 0.02,
                 }}
               >
-                <div className='rounded-full border border-white/10 ring-1 ring-border bg-background/40 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background/40'>
+                <div className='rounded-full border border-border/60 bg-background/40 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background/40'>
                   {item.node}
                 </div>
               </motion.div>
@@ -78,7 +78,7 @@ export function RadialSettings({ currentLocale }: { currentLocale: string }) {
         }}
         size='icon'
         variant='ghost'
-        className='relative z-50 rounded-full border border-white/10 ring-1 ring-border bg-background/40 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background/40 hover:bg-background/40 active:bg-background/40 focus:bg-background/40 focus-visible:outline-none focus:outline-none focus:ring-0'
+        className='relative z-50 rounded-full border border-border/60 bg-background/40 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background/40 hover:bg-background/40 active:bg-background/40 focus:bg-background/40 focus-visible:outline-none focus:outline-none focus:ring-0'
         aria-label='Settings'
       >
         {isOpen ? (

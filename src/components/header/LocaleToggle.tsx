@@ -65,7 +65,7 @@ export function LocaleToggle({
           variant='ghost'
           size='icon'
           aria-label='Change language'
-          className='rounded-full overflow-hidden border-2 border-orange-500 bg-transparent shadow-none ring-2 ring-orange-500/50'
+          className='rounded-full overflow-hidden border-2 border-primary/60 bg-transparent shadow-none ring-2 ring-primary/30'
           onClick={() => !expanded && setIsOpen(!isOpen)}
         >
           <FlagIcon code={codeToCountry(displayLocale)} size={16} />
@@ -94,7 +94,7 @@ export function LocaleToggle({
                         variant='outline'
                         size='icon'
                         aria-label={`Switch to ${loc.nativeName}`}
-                        className='rounded-full border border-border/50 bg-background backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background hover:bg-background active:bg-background focus:bg-background focus-visible:outline-none focus:outline-none focus:ring-0'
+                        className='rounded-full border border-border/60 ring-1 ring-primary/20 bg-background backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-background hover:bg-background active:bg-background focus:bg-background focus-visible:outline-none focus:outline-none focus:ring-0'
                         onClick={() => onSelect(loc.code)}
                       >
                         <FlagIcon code={codeToCountry(loc.code)} size={16} />
@@ -127,7 +127,11 @@ export function LocaleToggle({
           sideOffset={8}
           align='start'
           alignOffset={12}
-          className='z-50 min-w-40 rounded-md border border-border/50 bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30 p-1 text-popover-foreground shadow-md focus:outline-none'
+          style={{
+            WebkitBackdropFilter: 'saturate(150%) blur(24px)',
+            backdropFilter: 'saturate(150%) blur(24px)',
+          }}
+          className='z-50 min-w-40 rounded-md border border-border dropdown-liquid-glass p-1 text-popover-foreground shadow-md outline-none ring-0 [&>*]:relative [&>*]:z-10'
         >
           {locales.map(loc => (
             <DropdownMenu.Item

@@ -399,4 +399,88 @@
   .border-secondary {
     border-color: var(--color-secondary);
   }
+
+  /* Liquid glass for dropdowns (locale toggle, etc.) */
+  .dropdown-liquid-glass {
+    position: relative;
+    isolation: isolate;
+    -webkit-backdrop-filter: saturate(150%) blur(24px);
+    backdrop-filter: saturate(150%) blur(24px);
+    background-color: rgba(250, 248, 245, 0.4);
+    border: 1px solid var(--color-border);
+    outline: none !important;
+    box-shadow: none !important;
+    --tw-ring-color: var(--color-border) !important;
+  }
+
+  .dark .dropdown-liquid-glass {
+    background-color: rgba(31, 25, 20, 0.5);
+    border: 1px solid var(--color-border);
+  }
+
+  @supports (color-mix(in oklch, red, blue)) {
+    .dropdown-liquid-glass {
+      background-color: color-mix(
+        in oklch,
+        var(--color-background) 25%,
+        transparent
+      );
+    }
+    .dark .dropdown-liquid-glass {
+      background-color: color-mix(
+        in oklch,
+        var(--color-background) 30%,
+        transparent
+      );
+    }
+  }
+
+  .dropdown-liquid-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0.6;
+    pointer-events: none;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.35) 0%,
+      transparent 40%,
+      rgba(255, 255, 255, 0.25) 100%
+    );
+    mix-blend-mode: overlay;
+  }
+
+  .dark .dropdown-liquid-glass::before {
+    opacity: 0.4;
+  }
+
+  .dropdown-liquid-glass::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    opacity: 0.25;
+    pointer-events: none;
+    background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.5),
+      transparent 70%
+    );
+  }
+
+  .dark .dropdown-liquid-glass::after {
+    opacity: 0.2;
+  }
+
+  /* Override blue focus rings on header / liquid glass - use theme colors */
+  header button:focus-visible,
+  header [role='button']:focus-visible,
+  header a:focus-visible,
+  [data-liquid-glass] button:focus-visible,
+  [data-liquid-glass] [role='button']:focus-visible,
+  [data-liquid-glass] a:focus-visible {
+    outline: none !important;
+    --tw-ring-color: var(--color-primary) !important;
+  }
 }

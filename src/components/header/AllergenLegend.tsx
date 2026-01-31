@@ -54,7 +54,7 @@ export function AllergenLegend() {
             variant='ghost'
             size='icon'
             aria-label='Allergens legend'
-            className='rounded-full border border-white/10 ring-1 ring-border bg-background/40 backdrop-blur-md supports-[backdrop-filter]:bg-background/40 hover:bg-background/40 focus:bg-background/40 active:bg-background/40'
+            className='rounded-full border border-border/60 bg-background/40 backdrop-blur-md supports-[backdrop-filter]:bg-background/40 hover:bg-background/40 focus:bg-background/40 active:bg-background/40 focus-visible:ring-primary/40'
           >
             <Info className='size-5' />
           </Button>

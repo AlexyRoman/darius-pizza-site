@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description: 'Darius Pizza',
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
     ],

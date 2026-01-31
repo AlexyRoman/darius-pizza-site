@@ -9,6 +9,11 @@
       "id": "future-closing",
       "title": "Vakantie",
       "description": "Het team van Darius Pizza neemt deze oktober vakantie om tijd met familie door te brengen."
+    },
+    {
+      "id": "closing-renov",
+      "title": "Renovaties",
+      "description": "Darius Pizza is enkele weken gesloten voor renovaties."
     }
   ],
   "emergencyClosings": [

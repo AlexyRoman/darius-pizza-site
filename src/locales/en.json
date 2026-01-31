@@ -36,6 +36,7 @@
       }
     },
     "hours": {
+      "loading": "Loading…",
       "title": "Opening Hours",
       "description": "Edit opening hours. Changes appear on the website immediately.",
       "save": "Save",
@@ -45,7 +46,112 @@
       "closed": "Closed",
       "open": "Open",
       "addPeriod": "Add period",
-      "removePeriod": "Remove"
+      "removePeriod": "Remove",
+      "confirmTitle": "Save opening hours?",
+      "confirmDescription": "Changes will appear on the website immediately.",
+      "confirmButton": "Save",
+      "cancelButton": "Cancel",
+      "days": {
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday"
+      }
+    },
+    "home": {
+      "welcome": "Dashboard",
+      "subtitle": "Manage your pizzeria settings and content.",
+      "comingSoon": "Coming soon",
+      "modules": {
+        "openingHours": {
+          "title": "Opening Hours",
+          "description": "Edit opening hours. Changes appear on the website immediately."
+        },
+        "closings": {
+          "title": "Special Closings",
+          "description": "Manage scheduled and emergency closings displayed on the site."
+        },
+        "messages": {
+          "title": "Special Messages",
+          "description": "Display banners and announcements to your customers."
+        }
+      }
+    },
+    "sidebar": {
+      "title": "Darius Pizza",
+      "home": "Home",
+      "settings": "Settings",
+      "openingHours": "Opening Hours",
+      "closings": "Special Closings",
+      "messages": "Special Messages",
+      "goBackToWebsite": "Back to website"
+    },
+    "breadcrumb": {
+      "dashboard": "Dashboard",
+      "openingHours": "Opening Hours",
+      "closings": "Special Closings",
+      "messages": "Special Messages"
+    },
+    "closings": {
+      "loading": "Loading…",
+      "description": "Manage scheduled and emergency closings. Changes appear on the website immediately.",
+      "scheduled": "Scheduled closings",
+      "emergency": "Emergency closings",
+      "addScheduled": "Add scheduled closing",
+      "addEmergency": "Add emergency closing",
+      "addScheduledTitle": "New scheduled closing",
+      "addEmergencyTitle": "New emergency closing",
+      "title": "Title",
+      "descriptionField": "Description",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "isActive": "Active",
+      "priority": "Priority",
+      "idPlaceholder": "Unique ID (e.g. christmas-2025)",
+      "save": "Save",
+      "saving": "Saving...",
+      "saved": "Saved",
+      "error": "Failed to save",
+      "remove": "Remove",
+      "removeConfirm": "Remove this closing?",
+      "confirmTitle": "Save closings?",
+      "confirmDescription": "Changes will appear on the website immediately.",
+      "confirmButton": "Save",
+      "cancelButton": "Cancel",
+      "add": "Add"
+    },
+    "messages": {
+      "loading": "Loading…",
+      "description": "Manage special messages and banners. Changes appear on the website immediately.",
+      "addMessage": "Add message",
+      "addMessageTitle": "New message",
+      "title": "Title",
+      "message": "Message",
+      "type": "Type",
+      "typeInfo": "Info",
+      "typeWarning": "Warning",
+      "typeError": "Error",
+      "typeSuccess": "Success",
+      "isActive": "Active",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "priority": "Priority",
+      "idLabel": "ID",
+      "idPlaceholder": "e.g. summer-special",
+      "save": "Save",
+      "saving": "Saving...",
+      "saved": "Saved",
+      "error": "Failed to save",
+      "remove": "Remove",
+      "removeConfirm": "Remove this message?",
+      "confirmTitle": "Save messages?",
+      "confirmDescription": "Changes will appear on the website immediately.",
+      "confirmButton": "Save",
+      "cancelButton": "Cancel",
+      "add": "Add"
     },
     "table": {
       "recentOrders": "Recent orders",

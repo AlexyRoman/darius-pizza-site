@@ -36,6 +36,7 @@
       }
     },
     "hours": {
+      "loading": "Chargement…",
       "title": "Horaires d'ouverture",
       "description": "Modifiez les horaires. Les changements apparaissent immédiatement sur le site.",
       "save": "Enregistrer",
@@ -45,7 +46,113 @@
       "closed": "Fermé",
       "open": "Ouvert",
       "addPeriod": "Ajouter une période",
-      "removePeriod": "Supprimer"
+      "removePeriod": "Supprimer",
+      "confirmTitle": "Enregistrer les horaires ?",
+      "confirmDescription": "Les changements apparaîtront immédiatement sur le site.",
+      "confirmButton": "Enregistrer",
+      "cancelButton": "Annuler",
+      "days": {
+        "monday": "Lundi",
+        "tuesday": "Mardi",
+        "wednesday": "Mercredi",
+        "thursday": "Jeudi",
+        "friday": "Vendredi",
+        "saturday": "Samedi",
+        "sunday": "Dimanche"
+      }
+    },
+    "home": {
+      "welcome": "Tableau de bord",
+      "subtitle": "Gérez les paramètres et le contenu de votre pizzeria.",
+      "comingSoon": "Bientôt disponible",
+      "modules": {
+        "openingHours": {
+          "title": "Horaires d'ouverture",
+          "description": "Modifiez les horaires. Les changements apparaissent immédiatement sur le site."
+        },
+        "closings": {
+          "title": "Fermetures exceptionnelles",
+          "description": "Gérez les fermetures programmées et d'urgence affichées sur le site."
+        },
+        "messages": {
+          "title": "Messages spéciaux",
+          "description": "Affichez des bannières et annonces à vos clients."
+        }
+      }
+    },
+    "sidebar": {
+      "title": "Darius Pizza",
+      "home": "Accueil",
+      "settings": "Paramètres",
+      "openingHours": "Horaires d'ouverture",
+      "closings": "Fermetures exceptionnelles",
+      "messages": "Messages spéciaux",
+      "goBackToWebsite": "Retour au site"
+    },
+    "breadcrumb": {
+      "dashboard": "Tableau de bord",
+      "openingHours": "Horaires d'ouverture",
+      "closings": "Fermetures exceptionnelles",
+      "messages": "Messages spéciaux"
+    },
+    "closings": {
+      "loading": "Chargement…",
+      "description": "Gérez les fermetures programmées et d'urgence. Les changements apparaissent immédiatement sur le site.",
+      "scheduled": "Fermetures programmées",
+      "emergency": "Fermetures d'urgence",
+      "addScheduled": "Ajouter une fermeture programmée",
+      "addEmergency": "Ajouter une fermeture d'urgence",
+      "addScheduledTitle": "Nouvelle fermeture programmée",
+      "addEmergencyTitle": "Nouvelle fermeture d'urgence",
+      "title": "Titre",
+      "descriptionField": "Description",
+      "startDate": "Date de début",
+      "endDate": "Date de fin",
+      "isActive": "Actif",
+      "priority": "Priorité",
+      "save": "Enregistrer",
+      "saving": "Enregistrement...",
+      "saved": "Enregistré",
+      "error": "Échec de l'enregistrement",
+      "confirmTitle": "Enregistrer les fermetures ?",
+      "confirmDescription": "Les changements apparaîtront immédiatement sur le site.",
+      "confirmButton": "Enregistrer",
+      "cancelButton": "Annuler",
+      "idLabel": "ID",
+      "idPlaceholder": "ex. noel-2025",
+      "remove": "Supprimer",
+      "removeConfirm": "Supprimer cette fermeture ?",
+      "add": "Ajouter"
+    },
+    "messages": {
+      "loading": "Chargement…",
+      "description": "Gérez les messages spéciaux et bannières. Les changements apparaissent immédiatement sur le site.",
+      "addMessage": "Ajouter un message",
+      "addMessageTitle": "Nouveau message",
+      "title": "Titre",
+      "message": "Message",
+      "type": "Type",
+      "typeInfo": "Info",
+      "typeWarning": "Avertissement",
+      "typeError": "Erreur",
+      "typeSuccess": "Succès",
+      "isActive": "Actif",
+      "startDate": "Date de début",
+      "endDate": "Date de fin",
+      "priority": "Priorité",
+      "save": "Enregistrer",
+      "saving": "Enregistrement...",
+      "saved": "Enregistré",
+      "error": "Échec de l'enregistrement",
+      "confirmTitle": "Enregistrer les messages ?",
+      "confirmDescription": "Les changements apparaîtront immédiatement sur le site.",
+      "confirmButton": "Enregistrer",
+      "cancelButton": "Annuler",
+      "idLabel": "ID",
+      "idPlaceholder": "ex. offre-ete",
+      "remove": "Supprimer",
+      "removeConfirm": "Supprimer ce message ?",
+      "add": "Ajouter"
     },
     "table": {
       "recentOrders": "Commandes récentes",

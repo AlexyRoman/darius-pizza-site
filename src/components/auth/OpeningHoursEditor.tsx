@@ -2,19 +2,23 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
 
 import { useHours } from '@/hooks/useHours';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
 
 import type { HoursConfig } from '@/types/restaurant-config';
 import type { DayHours } from '@/types/opening-hours';
@@ -29,16 +33,6 @@ const DAYS = [
   'sunday',
 ] as const;
 
-const DAY_LABELS: Record<string, string> = {
-  monday: 'Monday',
-  tuesday: 'Tuesday',
-  wednesday: 'Wednesday',
-  thursday: 'Thursday',
-  friday: 'Friday',
-  saturday: 'Saturday',
-  sunday: 'Sunday',
-};
-
 export function OpeningHoursEditor() {
   const t = useTranslations('dashboard.hours');
   const { data, loading, refetch } = useHours();
@@ -46,7 +40,7 @@ export function OpeningHoursEditor() {
   const [saveStatus, setSaveStatus] = useState<
     'idle' | 'saving' | 'saved' | 'error'
   >('idle');
-  const [errorMsg, setErrorMsg] = useState('');
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
   useEffect(() => {
     if (data) setForm(structuredClone(data));
@@ -105,10 +99,10 @@ export function OpeningHoursEditor() {
     }));
   };
 
-  const handleSave = async () => {
+  const performSave = async () => {
     if (!form) return;
+    setConfirmOpen(false);
     setSaveStatus('saving');
-    setErrorMsg('');
     try {
       const res = await fetch('/api/hours', {
         method: 'PUT',
@@ -117,42 +111,39 @@ export function OpeningHoursEditor() {
       });
       const json = await res.json();
       if (!res.ok) {
-        throw new Error(json.error || 'Failed to save');
+        throw new Error(json.error || t('error'));
       }
       setSaveStatus('saved');
       await refetch();
+      toast.success(t('saved'));
       setTimeout(() => setSaveStatus('idle'), 2000);
     } catch (err) {
       setSaveStatus('error');
-      setErrorMsg(err instanceof Error ? err.message : 'Failed to save');
+      const message = err instanceof Error ? err.message : t('error');
+      toast.error(message);
     }
   };
 
   if (loading || !form) {
     return (
-      <Card>
-        <CardContent className='py-8'>
-          <p className='text-center text-muted-foreground'>Loading...</p>
-        </CardContent>
-      </Card>
+      <div className='flex flex-1 items-center justify-center py-12'>
+        <p className='text-muted-foreground'>{t('loading')}</p>
+      </div>
     );
   }
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{t('title')}</CardTitle>
-        <CardDescription>{t('description')}</CardDescription>
-      </CardHeader>
-      <CardContent className='space-y-6'>
+    <div className='space-y-6'>
+      <p className='text-sm text-muted-foreground'>{t('description')}</p>
+      <div className='space-y-1'>
         {DAYS.map(day => (
           <div
             key={day}
-            className='flex flex-col gap-3 rounded-lg border p-4 sm:flex-row sm:items-start sm:justify-between'
+            className='flex flex-col gap-3 py-3 px-4 rounded-md hover:bg-muted/50 transition-colors sm:flex-row sm:items-center sm:justify-between'
           >
             <div className='flex items-center gap-3'>
-              <Label className='min-w-[100px] font-medium capitalize'>
-                {DAY_LABELS[day]}
+              <Label className='min-w-[100px] font-medium'>
+                {t(`days.${day}`)}
               </Label>
               <Switch
                 checked={form.openingHours[day].isOpen}
@@ -163,7 +154,7 @@ export function OpeningHoursEditor() {
               </span>
             </div>
             {form.openingHours[day].isOpen && (
-              <div className='flex flex-1 flex-col gap-2 sm:max-w-xs'>
+              <div className='flex flex-1 flex-col gap-2 sm:max-w-xs sm:flex-row sm:flex-wrap sm:items-center'>
                 {form.openingHours[day].periods.map((period, idx) => (
                   <div key={idx} className='flex items-center gap-2'>
                     <Input
@@ -172,22 +163,23 @@ export function OpeningHoursEditor() {
                       onChange={e =>
                         updatePeriod(day, idx, 'open', e.target.value)
                       }
-                      className='h-9'
+                      className='h-9 w-28'
                     />
-                    <span className='text-muted-foreground'>–</span>
+                    <span className='text-muted-foreground shrink-0'>–</span>
                     <Input
                       type='time'
                       value={period.close}
                       onChange={e =>
                         updatePeriod(day, idx, 'close', e.target.value)
                       }
-                      className='h-9'
+                      className='h-9 w-28'
                     />
                     {form.openingHours[day].periods.length > 1 && (
                       <Button
                         type='button'
                         variant='ghost'
-                        size='sm'
+                        size='icon'
+                        className='h-9 w-9 shrink-0'
                         onClick={() => removePeriod(day, idx)}
                         aria-label={t('removePeriod')}
                       >
@@ -208,19 +200,36 @@ export function OpeningHoursEditor() {
             )}
           </div>
         ))}
+      </div>
 
-        {errorMsg && <p className='text-sm text-destructive'>{errorMsg}</p>}
-
-        <div className='flex items-center gap-2'>
-          <Button onClick={handleSave} disabled={saveStatus === 'saving'}>
+      <div className='pt-2 flex items-center gap-2'>
+        <AlertDialog open={confirmOpen} onOpenChange={setConfirmOpen}>
+          <Button
+            onClick={() => setConfirmOpen(true)}
+            disabled={saveStatus === 'saving'}
+          >
             {saveStatus === 'saving'
               ? t('saving')
               : saveStatus === 'saved'
                 ? t('saved')
                 : t('save')}
           </Button>
-        </div>
-      </CardContent>
-    </Card>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>{t('confirmTitle')}</AlertDialogTitle>
+              <AlertDialogDescription>
+                {t('confirmDescription')}
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>{t('cancelButton')}</AlertDialogCancel>
+              <AlertDialogAction onClick={performSave}>
+                {t('confirmButton')}
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+      </div>
+    </div>
   );
 }

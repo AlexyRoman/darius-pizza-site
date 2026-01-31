@@ -30,7 +30,7 @@ import {
 } from 'lucide-react';
 
 import * as React from 'react';
-import MenuFilters from '../../../components/MenuFilters';
+import MenuFilters from '@/components/MenuFilters';
 import type { MenuItem } from '@/types/menu';
 import { isItemCtaEnabled } from '@/config/generic/feature-flags';
 import { formatCurrency } from '@/utils/site-utils';

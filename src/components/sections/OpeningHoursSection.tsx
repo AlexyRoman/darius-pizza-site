@@ -17,6 +17,8 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
+import { useClosings } from '@/hooks/useClosings';
+import { useMessages } from '@/hooks/useMessages';
 import { useHours } from '@/hooks/useHours';
 import { formatDate, formatDateTime } from '@/utils/date-utils';
 import { formatNextOpeningTime } from '@/utils/opening-hours-utils';
@@ -59,8 +61,8 @@ export default function OpeningHoursSection() {
   const tHero = useTranslations('hero');
   const locale = useLocale();
 
-  const { data: messagesConfig } = useRestaurantConfig('messages', locale);
-  const { data: closingsConfig } = useRestaurantConfig('closings', locale);
+  const { data: messagesConfig } = useMessages(locale);
+  const { data: closingsConfig } = useClosings(locale);
   const { data: contactConfig } = useRestaurantConfig('contact', locale);
   const { data: hoursConfig } = useHours();
   const hours = hoursConfig.openingHours as OpeningHours;

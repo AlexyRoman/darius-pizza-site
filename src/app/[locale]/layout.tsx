@@ -4,8 +4,6 @@ import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
 import { routing } from '@/i18n/routing';
-import Header from '@/components/header/Header';
-import Footer from '@/components/footer/Footer';
 import CookieConsentBanner from '@/components/blocks/cookie-consent-banner';
 import GoogleTagManager from '@/components/analytics/GoogleTagManager';
 import PageTracker from '@/components/analytics/PageTracker';
@@ -65,35 +63,10 @@ export default async function LocaleLayout(props: {
       {process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true' ? (
         <AnalyticsDebug />
       ) : null}
-      <Header currentLocale={locale} />
-      <main className='pt-0 md:pt-16 pb-2 md:pb-0'>
-        <div suppressHydrationWarning>{children}</div>
-      </main>
+      {children}
       {/* Defer non-critical content */}
       <CookieConsentBanner />
       <Toaster />
-      <Footer
-        currentLocale={locale}
-        titles={{
-          legal: messages.footer.titles.legal,
-          social: messages.footer.titles.social,
-          explore: messages.footer.titles.explore,
-        }}
-        brandSubtitle={messages.footer.brandSubtitle}
-        rightsReservedText={messages.footer.rightsReserved}
-        designedByPrefix={messages.footer.designedByPrefix}
-        designedByName={messages.footer.designedByName}
-        legalLabels={{
-          privacy: messages.footer.legal.privacy,
-          imprint: messages.footer.legal.imprint,
-          cookies: messages.footer.legal.cookies,
-        }}
-        menuLabels={{
-          home: messages.common.home,
-          menu: messages.common.menu,
-          info: messages.common.info,
-        }}
-      />
     </NextIntlClientProvider>
   );
 }

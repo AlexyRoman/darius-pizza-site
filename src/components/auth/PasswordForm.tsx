@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -26,12 +27,10 @@ export function PasswordForm({
   redirectTo,
 }: PasswordFormProps) {
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError('');
     setLoading(true);
 
     try {
@@ -46,17 +45,42 @@ export function PasswordForm({
       const data = await response.json();
 
       if (response.ok) {
+        toast.success(locale === 'fr' ? 'Accès autorisé' : 'Access granted', {
+          description: locale === 'fr' ? 'Redirection...' : 'Redirecting...',
+        });
         onSuccess?.();
         if (redirectTo) {
-          window.location.href = redirectTo;
+          // When auth-gate is shown via rewrite, browser URL already equals redirectTo.
+          // Navigating to same URL can be cached; force reload so cookie is sent.
+          const currentPath = window.location.pathname;
+          const targetPath = new URL(redirectTo, window.location.origin)
+            .pathname;
+          if (currentPath === targetPath) {
+            window.location.reload();
+          } else {
+            window.location.href = redirectTo;
+          }
         } else {
           window.location.reload();
         }
       } else {
-        setError(data.error || 'Invalid password');
+        const message =
+          data.error ||
+          (locale === 'fr' ? 'Mot de passe invalide' : 'Invalid password');
+        toast.error(
+          locale === 'fr' ? 'Échec de la connexion' : 'Login failed',
+          {
+            description: message,
+          }
+        );
       }
     } catch {
-      setError('An error occurred. Please try again.');
+      toast.error(locale === 'fr' ? 'Erreur' : 'Error', {
+        description:
+          locale === 'fr'
+            ? 'Une erreur est survenue. Veuillez réessayer.'
+            : 'An error occurred. Please try again.',
+      });
     } finally {
       setLoading(false);
     }
@@ -98,12 +122,6 @@ export function PasswordForm({
                 autoFocus
               />
             </div>
-
-            {error && (
-              <div className='rounded-md bg-destructive/10 p-3 text-sm text-destructive'>
-                {error}
-              </div>
-            )}
 
             <Button type='submit' className='w-full' disabled={loading}>
               {t.submit}

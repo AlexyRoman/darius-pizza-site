@@ -81,6 +81,17 @@ const config: Config = {
           DEFAULT: 'var(--color-error)',
           foreground: 'var(--color-background)',
         },
+        // Sidebar (shadcn sidebar-07)
+        sidebar: {
+          DEFAULT: 'var(--sidebar)',
+          foreground: 'var(--sidebar-foreground)',
+          primary: 'var(--sidebar-primary)',
+          'primary-foreground': 'var(--sidebar-primary-foreground)',
+          accent: 'var(--sidebar-accent)',
+          'accent-foreground': 'var(--sidebar-accent-foreground)',
+          border: 'var(--sidebar-border)',
+          ring: 'var(--sidebar-ring)',
+        },
       },
       fontFamily: {
         primary: ['var(--font-primary)', 'serif'],
@@ -90,16 +101,46 @@ const config: Config = {
         serif: ['var(--font-primary)', 'serif'],
       },
       fontSize: {
-        xs: ['var(--font-size-xs)', { lineHeight: 'var(--line-height-normal)' }],
-        sm: ['var(--font-size-sm)', { lineHeight: 'var(--line-height-normal)' }],
-        base: ['var(--font-size-base)', { lineHeight: 'var(--line-height-normal)' }],
-        lg: ['var(--font-size-lg)', { lineHeight: 'var(--line-height-normal)' }],
-        xl: ['var(--font-size-xl)', { lineHeight: 'var(--line-height-normal)' }],
-        '2xl': ['var(--font-size-2xl)', { lineHeight: 'var(--line-height-snug)' }],
-        '3xl': ['var(--font-size-3xl)', { lineHeight: 'var(--line-height-snug)' }],
-        '4xl': ['var(--font-size-4xl)', { lineHeight: 'var(--line-height-tight)' }],
-        '5xl': ['var(--font-size-5xl)', { lineHeight: 'var(--line-height-tight)' }],
-        '6xl': ['var(--font-size-6xl)', { lineHeight: 'var(--line-height-tight)' }],
+        xs: [
+          'var(--font-size-xs)',
+          { lineHeight: 'var(--line-height-normal)' },
+        ],
+        sm: [
+          'var(--font-size-sm)',
+          { lineHeight: 'var(--line-height-normal)' },
+        ],
+        base: [
+          'var(--font-size-base)',
+          { lineHeight: 'var(--line-height-normal)' },
+        ],
+        lg: [
+          'var(--font-size-lg)',
+          { lineHeight: 'var(--line-height-normal)' },
+        ],
+        xl: [
+          'var(--font-size-xl)',
+          { lineHeight: 'var(--line-height-normal)' },
+        ],
+        '2xl': [
+          'var(--font-size-2xl)',
+          { lineHeight: 'var(--line-height-snug)' },
+        ],
+        '3xl': [
+          'var(--font-size-3xl)',
+          { lineHeight: 'var(--line-height-snug)' },
+        ],
+        '4xl': [
+          'var(--font-size-4xl)',
+          { lineHeight: 'var(--line-height-tight)' },
+        ],
+        '5xl': [
+          'var(--font-size-5xl)',
+          { lineHeight: 'var(--line-height-tight)' },
+        ],
+        '6xl': [
+          'var(--font-size-6xl)',
+          { lineHeight: 'var(--line-height-tight)' },
+        ],
       },
       fontWeight: {
         light: 'var(--font-weight-light)',
@@ -168,5 +209,3 @@ const config: Config = {
 };
 
 export default config;
-
-

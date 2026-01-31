@@ -2,12 +2,12 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useState, useEffect, startTransition } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Star, Clock, MapPin } from 'lucide-react';
-import { useRestaurantConfig } from '@/hooks/useRestaurantConfig';
+import { useClosings } from '@/hooks/useClosings';
 import { useHours } from '@/hooks/useHours';
 import { useThemeContext } from '@/contexts/ThemeContext';
 import { formatNextOpeningTime } from '@/utils/opening-hours-utils';
@@ -24,11 +24,12 @@ import {
 
 export default function HeroSection() {
   const t = useTranslations('hero');
+  const locale = useLocale();
   const {} = useThemeContext();
 
   // Load closings configuration with locale support
   const { data: closingsConfig, loading: closingsLoading } =
-    useRestaurantConfig('closings');
+    useClosings(locale);
   const { data: hoursConfig } = useHours();
   const hours = hoursConfig.openingHours as OpeningHours;
   const closings = closingsConfig?.scheduledClosings || [];

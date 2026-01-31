@@ -1,0 +1,37 @@
+{
+  "fr": {
+    "specialMessages": [
+      {
+        "id": "takeaway-only",
+        "type": "info",
+        "isActive": true,
+        "startDate": "2024-01-01T00:00:00Z",
+        "endDate": null,
+        "priority": 1,
+        "title": "Commandes à emporter uniquement",
+        "message": "Le Darius Pizza est ouvert uniquement pour les commandes à emporter et ne possède pas de salle de restaurant."
+      },
+      {
+        "id": "welcome",
+        "type": "info",
+        "isActive": true,
+        "startDate": "2024-01-01T00:00:00Z",
+        "endDate": null,
+        "priority": 1,
+        "title": "Prises de commande par téléphone ou sur place",
+        "message": "Vous pouvez prendre votre commande par téléphone ou sur place. Nous vous conseillons de nous contacter au plus tôt pour éviter les attentes."
+      },
+      {
+        "id": "no-delivery",
+        "type": "warning",
+        "isActive": true,
+        "startDate": "2024-01-01T00:00:00Z",
+        "endDate": null,
+        "priority": 2,
+        "title": "Pas de livraison disponible",
+        "message": "Le Darius Pizza ne propose pas de livraison. Vous pouvez prendre votre commande par téléphone ou sur place. Vous devrez venir chercher votre commande sur place."
+      }
+    ],
+    "lastUpdated": "2026-01-31T17:06:11.830Z"
+  }
+}

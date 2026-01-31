@@ -36,6 +36,7 @@
       }
     },
     "hours": {
+      "loading": "Cargando…",
       "title": "Horario de apertura",
       "description": "Edite el horario. Los cambios aparecen inmediatamente en el sitio web.",
       "save": "Guardar",
@@ -45,7 +46,97 @@
       "closed": "Cerrado",
       "open": "Abierto",
       "addPeriod": "Añadir período",
-      "removePeriod": "Eliminar"
+      "removePeriod": "Eliminar",
+      "confirmTitle": "¿Guardar horario?",
+      "confirmDescription": "Los cambios aparecerán inmediatamente en el sitio web.",
+      "confirmButton": "Guardar",
+      "cancelButton": "Cancelar",
+      "days": {
+        "monday": "Lunes",
+        "tuesday": "Martes",
+        "wednesday": "Miércoles",
+        "thursday": "Jueves",
+        "friday": "Viernes",
+        "saturday": "Sábado",
+        "sunday": "Domingo"
+      }
+    },
+    "home": {
+      "welcome": "Panel de control",
+      "subtitle": "Gestione la configuración y el contenido de su pizzería.",
+      "comingSoon": "Próximamente",
+      "modules": {
+        "openingHours": {
+          "title": "Horario de apertura",
+          "description": "Edite el horario. Los cambios aparecen inmediatamente en el sitio web."
+        },
+        "closings": {
+          "title": "Cierres especiales",
+          "description": "Gestione los cierres programados y de emergencia mostrados en el sitio."
+        },
+        "messages": {
+          "title": "Mensajes especiales",
+          "description": "Muestre banners y anuncios a sus clientes."
+        }
+      }
+    },
+    "sidebar": {
+      "title": "Darius Pizza",
+      "home": "Inicio",
+      "settings": "Configuración",
+      "openingHours": "Horario de apertura",
+      "closings": "Cierres especiales",
+      "messages": "Mensajes especiales",
+      "goBackToWebsite": "Volver al sitio"
+    },
+    "breadcrumb": {
+      "dashboard": "Panel",
+      "openingHours": "Horario de apertura",
+      "closings": "Cierres especiales",
+      "messages": "Mensajes especiales"
+    },
+    "closings": {
+      "loading": "Cargando…",
+      "description": "Gestione los cierres programados y de emergencia.",
+      "scheduled": "Cierres programados",
+      "emergency": "Cierres de emergencia",
+      "title": "Título",
+      "descriptionField": "Descripción",
+      "startDate": "Fecha de inicio",
+      "endDate": "Fecha de fin",
+      "isActive": "Activo",
+      "priority": "Prioridad",
+      "save": "Guardar",
+      "saving": "Guardando...",
+      "saved": "Guardado",
+      "error": "Error al guardar",
+      "confirmTitle": "¿Guardar cierres?",
+      "confirmDescription": "Los cambios aparecerán inmediatamente en el sitio web.",
+      "confirmButton": "Guardar",
+      "cancelButton": "Cancelar"
+    },
+    "messages": {
+      "loading": "Cargando…",
+      "description": "Gestione los mensajes especiales y banners.",
+      "title": "Título",
+      "message": "Mensaje",
+      "type": "Tipo",
+      "typeInfo": "Info",
+      "typeWarning": "Advertencia",
+      "typeError": "Error",
+      "typeSuccess": "Éxito",
+      "isActive": "Activo",
+      "startDate": "Fecha de inicio",
+      "endDate": "Fecha de fin",
+      "priority": "Prioridad",
+      "save": "Guardar",
+      "saving": "Guardando...",
+      "saved": "Guardado",
+      "error": "Error al guardar",
+      "confirmTitle": "¿Guardar mensajes?",
+      "confirmDescription": "Los cambios aparecerán inmediatamente en el sitio web.",
+      "confirmButton": "Guardar",
+      "cancelButton": "Cancelar"
     },
     "table": {
       "recentOrders": "Pedidos recientes",

@@ -36,6 +36,7 @@
       }
     },
     "hours": {
+      "loading": "Laden…",
       "title": "Öffnungszeiten",
       "description": "Öffnungszeiten bearbeiten. Änderungen erscheinen sofort auf der Website.",
       "save": "Speichern",
@@ -45,7 +46,97 @@
       "closed": "Geschlossen",
       "open": "Geöffnet",
       "addPeriod": "Zeitraum hinzufügen",
-      "removePeriod": "Entfernen"
+      "removePeriod": "Entfernen",
+      "confirmTitle": "Öffnungszeiten speichern?",
+      "confirmDescription": "Änderungen erscheinen sofort auf der Website.",
+      "confirmButton": "Speichern",
+      "cancelButton": "Abbrechen",
+      "days": {
+        "monday": "Montag",
+        "tuesday": "Dienstag",
+        "wednesday": "Mittwoch",
+        "thursday": "Donnerstag",
+        "friday": "Freitag",
+        "saturday": "Samstag",
+        "sunday": "Sonntag"
+      }
+    },
+    "home": {
+      "welcome": "Dashboard",
+      "subtitle": "Verwalten Sie die Einstellungen und Inhalte Ihrer Pizzeria.",
+      "comingSoon": "Demnächst verfügbar",
+      "modules": {
+        "openingHours": {
+          "title": "Öffnungszeiten",
+          "description": "Bearbeiten Sie die Öffnungszeiten. Änderungen erscheinen sofort auf der Website."
+        },
+        "closings": {
+          "title": "Außerplanmäßige Schließungen",
+          "description": "Verwalten Sie geplante und Notfall-Schließungen auf der Website."
+        },
+        "messages": {
+          "title": "Sondermeldungen",
+          "description": "Zeigen Sie Banner und Ankündigungen Ihren Kunden an."
+        }
+      }
+    },
+    "sidebar": {
+      "title": "Darius Pizza",
+      "home": "Startseite",
+      "settings": "Einstellungen",
+      "openingHours": "Öffnungszeiten",
+      "closings": "Außerplanmäßige Schließungen",
+      "messages": "Sondermeldungen",
+      "goBackToWebsite": "Zurück zur Website"
+    },
+    "breadcrumb": {
+      "dashboard": "Dashboard",
+      "openingHours": "Öffnungszeiten",
+      "closings": "Außerplanmäßige Schließungen",
+      "messages": "Sondermeldungen"
+    },
+    "closings": {
+      "loading": "Laden…",
+      "description": "Verwalten Sie geplante und Notfall-Schließungen.",
+      "scheduled": "Geplante Schließungen",
+      "emergency": "Notfall-Schließungen",
+      "title": "Titel",
+      "descriptionField": "Beschreibung",
+      "startDate": "Startdatum",
+      "endDate": "Enddatum",
+      "isActive": "Aktiv",
+      "priority": "Priorität",
+      "save": "Speichern",
+      "saving": "Speichern...",
+      "saved": "Gespeichert",
+      "error": "Speichern fehlgeschlagen",
+      "confirmTitle": "Schließungen speichern?",
+      "confirmDescription": "Änderungen erscheinen sofort auf der Website.",
+      "confirmButton": "Speichern",
+      "cancelButton": "Abbrechen"
+    },
+    "messages": {
+      "loading": "Laden…",
+      "description": "Verwalten Sie Sondermeldungen und Banner.",
+      "title": "Titel",
+      "message": "Nachricht",
+      "type": "Typ",
+      "typeInfo": "Info",
+      "typeWarning": "Warnung",
+      "typeError": "Fehler",
+      "typeSuccess": "Erfolg",
+      "isActive": "Aktiv",
+      "startDate": "Startdatum",
+      "endDate": "Enddatum",
+      "priority": "Priorität",
+      "save": "Speichern",
+      "saving": "Speichern...",
+      "saved": "Gespeichert",
+      "error": "Speichern fehlgeschlagen",
+      "confirmTitle": "Nachrichten speichern?",
+      "confirmDescription": "Änderungen erscheinen sofort auf der Website.",
+      "confirmButton": "Speichern",
+      "cancelButton": "Abbrechen"
     },
     "table": {
       "recentOrders": "Letzte Bestellungen",

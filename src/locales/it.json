@@ -36,6 +36,7 @@
       }
     },
     "hours": {
+      "loading": "Caricamento…",
       "title": "Orari di apertura",
       "description": "Modifica gli orari. Le modifiche appaiono immediatamente sul sito.",
       "save": "Salva",
@@ -45,7 +46,97 @@
       "closed": "Chiuso",
       "open": "Aperto",
       "addPeriod": "Aggiungi periodo",
-      "removePeriod": "Rimuovi"
+      "removePeriod": "Rimuovi",
+      "confirmTitle": "Salvare gli orari?",
+      "confirmDescription": "Le modifiche appariranno immediatamente sul sito.",
+      "confirmButton": "Salva",
+      "cancelButton": "Annulla",
+      "days": {
+        "monday": "Lunedì",
+        "tuesday": "Martedì",
+        "wednesday": "Mercoledì",
+        "thursday": "Giovedì",
+        "friday": "Venerdì",
+        "saturday": "Sabato",
+        "sunday": "Domenica"
+      }
+    },
+    "home": {
+      "welcome": "Dashboard",
+      "subtitle": "Gestisci le impostazioni e i contenuti della tua pizzeria.",
+      "comingSoon": "Prossimamente",
+      "modules": {
+        "openingHours": {
+          "title": "Orari di apertura",
+          "description": "Modifica gli orari. Le modifiche appaiono immediatamente sul sito web."
+        },
+        "closings": {
+          "title": "Chiusure straordinarie",
+          "description": "Gestisci le chiusure programmate e di emergenza mostrate sul sito."
+        },
+        "messages": {
+          "title": "Messaggi speciali",
+          "description": "Mostra banner e annunci ai tuoi clienti."
+        }
+      }
+    },
+    "sidebar": {
+      "title": "Darius Pizza",
+      "home": "Home",
+      "settings": "Impostazioni",
+      "openingHours": "Orari di apertura",
+      "closings": "Chiusure straordinarie",
+      "messages": "Messaggi speciali",
+      "goBackToWebsite": "Torna al sito"
+    },
+    "breadcrumb": {
+      "dashboard": "Dashboard",
+      "openingHours": "Orari di apertura",
+      "closings": "Chiusure straordinarie",
+      "messages": "Messaggi speciali"
+    },
+    "closings": {
+      "loading": "Caricamento…",
+      "description": "Gestisci le chiusure programmate e di emergenza.",
+      "scheduled": "Chiusure programmate",
+      "emergency": "Chiusure di emergenza",
+      "title": "Titolo",
+      "descriptionField": "Descrizione",
+      "startDate": "Data di inizio",
+      "endDate": "Data di fine",
+      "isActive": "Attivo",
+      "priority": "Priorità",
+      "save": "Salva",
+      "saving": "Salvataggio...",
+      "saved": "Salvato",
+      "error": "Salvataggio fallito",
+      "confirmTitle": "Salvare le chiusure?",
+      "confirmDescription": "Le modifiche appariranno immediatamente sul sito web.",
+      "confirmButton": "Salva",
+      "cancelButton": "Annulla"
+    },
+    "messages": {
+      "loading": "Caricamento…",
+      "description": "Gestisci i messaggi speciali e i banner.",
+      "title": "Titolo",
+      "message": "Messaggio",
+      "type": "Tipo",
+      "typeInfo": "Info",
+      "typeWarning": "Avviso",
+      "typeError": "Errore",
+      "typeSuccess": "Successo",
+      "isActive": "Attivo",
+      "startDate": "Data di inizio",
+      "endDate": "Data di fine",
+      "priority": "Priorità",
+      "save": "Salva",
+      "saving": "Salvataggio...",
+      "saved": "Salvato",
+      "error": "Salvataggio fallito",
+      "confirmTitle": "Salvare i messaggi?",
+      "confirmDescription": "Le modifiche appariranno immediatamente sul sito web.",
+      "confirmButton": "Salva",
+      "cancelButton": "Annulla"
     },
     "table": {
       "recentOrders": "Ordini recenti",

@@ -41,10 +41,16 @@ function validateHoursConfig(body: unknown): body is HoursConfig {
 
 export const dynamic = 'force-dynamic';
 
+const CACHE_MAX_AGE = 3600; // 1 hour - hours rarely change
+
 export async function GET() {
   try {
     const config = await getHoursConfig();
-    return NextResponse.json(config);
+    return NextResponse.json(config, {
+      headers: {
+        'Cache-Control': `s-maxage=${CACHE_MAX_AGE}, stale-while-revalidate`,
+      },
+    });
   } catch (err) {
     console.error('GET /api/hours:', err);
     return NextResponse.json(
@@ -73,6 +79,7 @@ export async function PUT(request: NextRequest) {
       return NextResponse.json({ error: result.error }, { status: 503 });
     }
 
+    revalidatePath('/api/hours');
     revalidatePath('/', 'layout');
     return NextResponse.json({ success: true });
   } catch (err) {

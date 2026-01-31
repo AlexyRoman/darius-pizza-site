@@ -36,6 +36,7 @@
       }
     },
     "hours": {
+      "loading": "Laden…",
       "title": "Openingstijden",
       "description": "Bewerk openingstijden. Wijzigingen verschijnen direct op de website.",
       "save": "Opslaan",
@@ -45,7 +46,97 @@
       "closed": "Gesloten",
       "open": "Open",
       "addPeriod": "Periode toevoegen",
-      "removePeriod": "Verwijderen"
+      "removePeriod": "Verwijderen",
+      "confirmTitle": "Openingstijden opslaan?",
+      "confirmDescription": "Wijzigingen verschijnen direct op de website.",
+      "confirmButton": "Opslaan",
+      "cancelButton": "Annuleren",
+      "days": {
+        "monday": "Maandag",
+        "tuesday": "Dinsdag",
+        "wednesday": "Woensdag",
+        "thursday": "Donderdag",
+        "friday": "Vrijdag",
+        "saturday": "Zaterdag",
+        "sunday": "Zondag"
+      }
+    },
+    "home": {
+      "welcome": "Dashboard",
+      "subtitle": "Beheer de instellingen en inhoud van uw pizzeria.",
+      "comingSoon": "Binnenkort beschikbaar",
+      "modules": {
+        "openingHours": {
+          "title": "Openingstijden",
+          "description": "Bewerk de openingstijden. Wijzigingen verschijnen direct op de website."
+        },
+        "closings": {
+          "title": "Buitengewone sluitingen",
+          "description": "Beheer geplande en noodsluitingen die op de site worden getoond."
+        },
+        "messages": {
+          "title": "Speciale berichten",
+          "description": "Toon banners en aankondigingen aan uw klanten."
+        }
+      }
+    },
+    "sidebar": {
+      "title": "Darius Pizza",
+      "home": "Home",
+      "settings": "Instellingen",
+      "openingHours": "Openingstijden",
+      "closings": "Buitengewone sluitingen",
+      "messages": "Speciale berichten",
+      "goBackToWebsite": "Terug naar website"
+    },
+    "breadcrumb": {
+      "dashboard": "Dashboard",
+      "openingHours": "Openingstijden",
+      "closings": "Buitengewone sluitingen",
+      "messages": "Speciale berichten"
+    },
+    "closings": {
+      "loading": "Laden…",
+      "description": "Beheer geplande en noodsluitingen.",
+      "scheduled": "Geplande sluitingen",
+      "emergency": "Noodsluitingen",
+      "title": "Titel",
+      "descriptionField": "Beschrijving",
+      "startDate": "Startdatum",
+      "endDate": "Einddatum",
+      "isActive": "Actief",
+      "priority": "Prioriteit",
+      "save": "Opslaan",
+      "saving": "Opslaan...",
+      "saved": "Opgeslagen",
+      "error": "Opslaan mislukt",
+      "confirmTitle": "Sluitingen opslaan?",
+      "confirmDescription": "Wijzigingen verschijnen direct op de website.",
+      "confirmButton": "Opslaan",
+      "cancelButton": "Annuleren"
+    },
+    "messages": {
+      "loading": "Laden…",
+      "description": "Beheer speciale berichten en banners.",
+      "title": "Titel",
+      "message": "Bericht",
+      "type": "Type",
+      "typeInfo": "Info",
+      "typeWarning": "Waarschuwing",
+      "typeError": "Fout",
+      "typeSuccess": "Succes",
+      "isActive": "Actief",
+      "startDate": "Startdatum",
+      "endDate": "Einddatum",
+      "priority": "Prioriteit",
+      "save": "Opslaan",
+      "saving": "Opslaan...",
+      "saved": "Opgeslagen",
+      "error": "Opslaan mislukt",
+      "confirmTitle": "Berichten opslaan?",
+      "confirmDescription": "Wijzigingen verschijnen direct op de website.",
+      "confirmButton": "Opslaan",
+      "cancelButton": "Annuleren"
     },
     "table": {
       "recentOrders": "Recente bestellingen",

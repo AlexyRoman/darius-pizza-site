@@ -146,6 +146,20 @@ export default function middleware(request: NextRequest) {
     return legacyRedirect;
   }
 
+  // Dashboard: only fr and en supported; other locales redirect to en
+  const DASHBOARD_LOCALES = ['fr', 'en'];
+  if (
+    pathWithoutLocale.startsWith('/dashboard') &&
+    isKnownLocale &&
+    !DASHBOARD_LOCALES.includes(possibleLocale)
+  ) {
+    const rest = pathWithoutLocale.slice('/dashboard'.length) || '';
+    return NextResponse.redirect(
+      new URL(`/en/dashboard${rest}`, request.url),
+      PERMANENT_REDIRECT_STATUS
+    );
+  }
+
   // Apply next-intl middleware for locale handling
   const response = intl(request);
 

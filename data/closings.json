@@ -1,0 +1,48 @@
+{
+  "fr": {
+    "scheduledClosings": [
+      {
+        "id": "christmas",
+        "date": null,
+        "startDate": "2025-12-24T00:00:00Z",
+        "endDate": "2025-12-25T00:00:00Z",
+        "isRecurring": false,
+        "isActive": false,
+        "title": "Noël",
+        "description": "La pizzeria sera fermée du 24 décembre au 25 décembre."
+      },
+      {
+        "id": "future-closing",
+        "date": null,
+        "startDate": "2025-10-10T00:00:00Z",
+        "endDate": "2025-10-29T22:00:00Z",
+        "isRecurring": false,
+        "isActive": false,
+        "title": "Vacances",
+        "description": "L'équipe du Darius Pizza prend des vacances en ce mois d'octobre pour passer du temps en famille."
+      },
+      {
+        "id": "closing-renov",
+        "date": null,
+        "startDate": "2026-01-25T00:00:00Z",
+        "endDate": "2026-02-18T22:00:00Z",
+        "isRecurring": false,
+        "isActive": true,
+        "title": "Rénovations",
+        "description": "Le Darius Pizza restera fermé pendant quelques semaines pour des rénovations."
+      }
+    ],
+    "emergencyClosings": [
+      {
+        "id": "weather",
+        "isActive": false,
+        "startDate": null,
+        "endDate": null,
+        "priority": 1,
+        "title": "Alerte météo",
+        "description": "En raison de conditions météorologiques sévères, nous pourrions avoir des horaires limités ou des services de livraison réduits."
+      }
+    ],
+    "lastUpdated": "2026-01-31T17:02:57.940Z"
+  }
+}

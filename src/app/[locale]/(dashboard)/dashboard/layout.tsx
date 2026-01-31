@@ -37,11 +37,11 @@ export default async function DashboardLayout({
       <SidebarProvider>
         <AppSidebar />
         <SidebarInset>
-          <header className='relative flex h-16 shrink-0 items-center gap-2 pt-5 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:pt-0 md:bg-transparent'>
+          <header className='relative flex h-16 shrink-0 items-center gap-2 pt-5 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:pt-0 md:bg-transparent md:pl-6'>
             {/* Mobile: fixed circular trigger (phone CTA style) */}
-            <div className='fixed left-4 top-5 z-50 md:static md:left-auto md:top-auto'>
+            <div className='fixed left-4 top-5 z-50 md:static md:left-auto md:top-auto md:ml-2'>
               <SidebarTrigger
-                className='h-12 w-12 rounded-full !bg-primary !text-primary-foreground shadow-lg hover:!bg-primary/90 active:!bg-primary md:h-7 md:w-7 md:rounded-md md:!bg-transparent md:shadow-none md:hover:!bg-accent md:hover:!text-accent-foreground'
+                className='h-12 w-12 rounded-full !bg-primary !text-primary-foreground shadow-lg hover:!bg-primary/90 active:!bg-primary md:h-7 md:w-7 md:rounded-md md:border md:border-sidebar-border md:!bg-sidebar-accent/60 md:!text-sidebar-foreground md:hover:!bg-sidebar-accent md:hover:!text-sidebar-accent-foreground'
                 aria-label='Toggle sidebar'
               />
             </div>

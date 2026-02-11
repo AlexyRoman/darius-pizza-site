@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "defaultStatus": 302,
+  "campaigns": [
+    {
+      "code": "DEMO",
+      "target": "/en",
+      "status": 302
+    }
+  ]
+}

@@ -15,6 +15,7 @@ import {
   CONVERT_TEMPORARY_TO_PERMANENT,
 } from '@/config/generic/middleware';
 import { REDIRECT_MAPPINGS } from '@/config/site/redirects';
+import { resolveCampaignRedirect } from '@/lib/campaignRedirects';
 
 const localeSettings = getLocaleSettings();
 
@@ -106,6 +107,12 @@ function convertToPermanentRedirect(
 
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Handle campaign short links like /q/AB12 as early as possible
+  const campaignResponse = resolveCampaignRedirect(request);
+  if (campaignResponse) {
+    return campaignResponse;
+  }
 
   // Skip middleware entirely for static files and Next.js internal routes
   // These should be served directly by Next.js without any processing

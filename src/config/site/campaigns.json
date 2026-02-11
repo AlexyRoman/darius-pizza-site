@@ -6,6 +6,11 @@
       "code": "DEMO",
       "target": "/en",
       "status": 302
+    },
+    {
+      "code": "BT26",
+      "target": "/",
+      "status": 302
     }
   ]
 }

@@ -49,6 +49,15 @@ export async function POST(request: NextRequest) {
     const expectedPassword = process.env.PAGE_ACCESS_PASSWORD;
 
     if (!expectedUsername || !expectedPassword) {
+      const hasUser = expectedUsername !== undefined && expectedUsername !== '';
+      const hasPass = expectedPassword !== undefined && expectedPassword !== '';
+      console.warn(
+        '[auth] 500: PAGE_ACCESS_USERNAME',
+        hasUser ? 'set' : 'missing/empty',
+        '| PAGE_ACCESS_PASSWORD',
+        hasPass ? 'set' : 'missing/empty',
+        '— check .env.local (exact names, no spaces around =), then restart dev server.'
+      );
       return NextResponse.json(
         { error: 'Authentication not configured' },
         { status: 500 }

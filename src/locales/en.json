@@ -110,6 +110,7 @@
       "endDate": "End date",
       "isActive": "Active",
       "priority": "Priority",
+      "idLabel": "ID",
       "idPlaceholder": "Unique ID (e.g. christmas-2025)",
       "save": "Save",
       "saving": "Saving...",

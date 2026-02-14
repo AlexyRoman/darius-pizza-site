@@ -104,8 +104,9 @@ export function Footer(props: FooterProps) {
           <div>
             © {new Date().getFullYear()} {rightsReservedText}
           </div>
-          <div className='flex flex-wrap items-center justify-between gap-2'>
-            <div>
+          {/* Mobile: copyright, then created by, then home icon (stacked, centered). Desktop: created by + icon on one row */}
+          <div className='flex flex-col items-center gap-2 md:flex-row md:items-center md:justify-between'>
+            <div className='text-center md:text-left'>
               <span className='mr-1'>{designedByPrefix}</span>
               <a
                 className='underline underline-offset-4 hover:text-primary transition-colors duration-200'

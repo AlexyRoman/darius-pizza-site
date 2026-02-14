@@ -51,16 +51,10 @@ export function PasswordForm({
         });
         onSuccess?.();
         if (redirectTo) {
-          // When auth-gate is shown via rewrite, browser URL already equals redirectTo.
-          // Navigating to same URL can be cached; force reload so cookie is sent.
-          const currentPath = window.location.pathname;
-          const targetPath = new URL(redirectTo, window.location.origin)
-            .pathname;
-          if (currentPath === targetPath) {
-            window.location.reload();
-          } else {
-            window.location.href = redirectTo;
-          }
+          // Always do a full navigation with cache-buster so the browser never
+          // serves a cached auth-gate response (e.g. after middleware rewrite).
+          const separator = redirectTo.includes('?') ? '&' : '?';
+          window.location.href = `${redirectTo}${separator}_=${Date.now()}`;
         } else {
           window.location.reload();
         }

@@ -191,6 +191,41 @@ await supabase.from('opening_hours').upsert({ id: 'default', config: hours });
 
 ---
 
+## Short links and analytics (`/q/XXXX` → `?qr=XXXX`)
+
+The app supports dynamic short links for campaigns/analytics. This is independent of Supabase; it lives in middleware and a small lib.
+
+### Behaviour
+
+- **Path:** Any URL of the form `/q/XXXX` where `XXXX` is exactly 4 alphanumeric characters (e.g. `/q/DEMO`, `/q/BT26`).
+- **Redirect:** 302 to the site root with the code exposed as a query parameter:
+  - **Query param:** `qr=XXXX` (e.g. `/?qr=DEMO`).
+- **Other query params:** Preserved and merged (e.g. `/q/DEMO?ref=flyer` → `/?qr=DEMO&ref=flyer`).
+- **No config:** No JSON or config lookup; any valid 4-char code is accepted.
+
+### Implementation
+
+| Piece      | Location                               | Role                                                                                                                               |
+| ---------- | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Resolver   | `src/lib/qRedirect.ts`                 | `resolveQRedirect(request)` — matches `/q/([A-Za-z0-9]{4})`, builds redirect URL with `qr=code`, preserves existing search params. |
+| Middleware | `src/middleware.ts`                    | Calls `resolveQRedirect(request)` first; if non-null, returns that redirect before locale/static/legacy logic.                     |
+| Unit tests | `src/lib/__tests__/qRedirect.test.ts`  | Non-match, any code, param preservation, overwrite of existing `qr`.                                                               |
+| E2E        | `tests/e2e/campaign-redirects.spec.ts` | `/q/DEMO` and `/q/BT26` redirect and final URL has `qr`; existing params preserved.                                                |
+
+### Flow
+
+1. User hits `https://site.com/q/DEMO` or `https://site.com/q/DEMO?ref=flyer`.
+2. Middleware runs; `resolveQRedirect` matches and returns `NextResponse.redirect(targetUrl, 302)`.
+3. Target URL is `https://site.com/?qr=DEMO` (or `/?qr=DEMO&ref=flyer`).
+4. Subsequent middleware (e.g. next-intl) may redirect to a locale path (e.g. `/fr?qr=DEMO`); `qr` remains in the URL for analytics/tracking.
+
+### Removal / legacy
+
+- The previous campaign redirect (config-driven, `campaigns.json`) was removed in favour of this dynamic behaviour.
+- `src/config/site/campaigns.json` and `src/config/generic/campaigns-config.ts` remain in the repo but are no longer used for redirects.
+
+---
+
 ## Checklist Summary
 
 - [ ] Supabase project + tables + RLS

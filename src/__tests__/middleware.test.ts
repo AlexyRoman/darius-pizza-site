@@ -9,10 +9,9 @@ declare global {
   var mockIntlMiddlewareFunction: jest.Mock | undefined;
 }
 
-// Mock next-intl/middleware - this must be hoisted
+// Mock next-intl/middleware - this must be hoisted (sync factory so default is a function)
 jest.mock('next-intl/middleware', () => {
   const mockFn = jest.fn();
-  // Store reference to the mock function in global scope
   global.mockIntlMiddlewareFunction = mockFn;
   return {
     __esModule: true,
@@ -36,6 +35,12 @@ jest.mock('@/i18n/routing', () => ({
   },
 }));
 
+// Mock qr-analytics so middleware does not call Redis
+jest.mock('@/lib/qr-analytics', () => ({
+  recordQrHit: jest.fn().mockResolvedValue(undefined),
+  isValidQrCode: jest.fn((code: string) => /^[A-Za-z0-9]{4}$/.test(code)),
+}));
+
 // Import middleware after mocks are set up
 import middleware from '@/middleware';
 
@@ -57,130 +62,130 @@ describe('Middleware', () => {
   }
 
   describe('Static path handling', () => {
-    it('should skip middleware for /api paths', () => {
+    it('should skip middleware for /api paths', async () => {
       const request = createRequest('/api/test');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
       expect((response as NextResponse).status).toBe(200);
     });
 
-    it('should skip middleware for /_next paths', () => {
+    it('should skip middleware for /_next paths', async () => {
       const request = createRequest('/_next/static/chunks/main.js');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for /static paths', () => {
+    it('should skip middleware for /static paths', async () => {
       const request = createRequest('/static/image.jpg');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for /images paths', () => {
+    it('should skip middleware for /images paths', async () => {
       const request = createRequest('/images/logo.png');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for /flags paths', () => {
+    it('should skip middleware for /flags paths', async () => {
       const request = createRequest('/flags/en.svg');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for /fonts paths', () => {
+    it('should skip middleware for /fonts paths', async () => {
       const request = createRequest('/fonts/inter.woff2');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for static file extensions (.ico)', () => {
+    it('should skip middleware for static file extensions (.ico)', async () => {
       const request = createRequest('/favicon.ico');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for static file extensions (.png)', () => {
+    it('should skip middleware for static file extensions (.png)', async () => {
       const request = createRequest('/some-image.png');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for static file extensions (.jpg)', () => {
+    it('should skip middleware for static file extensions (.jpg)', async () => {
       const request = createRequest('/photo.jpg');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for static file extensions (.jpeg)', () => {
+    it('should skip middleware for static file extensions (.jpeg)', async () => {
       const request = createRequest('/photo.jpeg');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for static file extensions (.svg)', () => {
+    it('should skip middleware for static file extensions (.svg)', async () => {
       const request = createRequest('/icon.svg');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for static file extensions (.webp)', () => {
+    it('should skip middleware for static file extensions (.webp)', async () => {
       const request = createRequest('/image.webp');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for locale-prefixed static paths', () => {
+    it('should skip middleware for locale-prefixed static paths', async () => {
       const request = createRequest('/fr/_next/static/chunks/main.js');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for locale-prefixed static file paths', () => {
+    it('should skip middleware for locale-prefixed static file paths', async () => {
       const request = createRequest('/en/static/hero.webp');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for locale-prefixed API paths', () => {
+    it('should skip middleware for locale-prefixed API paths', async () => {
       const request = createRequest('/de/api/test');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should skip middleware for locale-prefixed images paths', () => {
+    it('should skip middleware for locale-prefixed images paths', async () => {
       const request = createRequest('/it/images/logo.png');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
@@ -188,9 +193,9 @@ describe('Middleware', () => {
   });
 
   describe('Legacy redirect handling', () => {
-    it('should redirect /carte to /menu', () => {
+    it('should redirect /carte to /menu', async () => {
       const request = createRequest('/carte');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
@@ -202,9 +207,9 @@ describe('Middleware', () => {
       );
     });
 
-    it('should redirect /gallery to /', () => {
+    it('should redirect /gallery to /', async () => {
       const request = createRequest('/gallery');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
@@ -214,9 +219,9 @@ describe('Middleware', () => {
       expect(nextResponse.headers.get('location')).toBe('https://example.com/');
     });
 
-    it('should redirect /contact to /', () => {
+    it('should redirect /contact to /', async () => {
       const request = createRequest('/contact');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
@@ -226,9 +231,9 @@ describe('Middleware', () => {
       expect(nextResponse.headers.get('location')).toBe('https://example.com/');
     });
 
-    it('should redirect /rs to /', () => {
+    it('should redirect /rs to /', async () => {
       const request = createRequest('/rs');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
@@ -238,9 +243,9 @@ describe('Middleware', () => {
       expect(nextResponse.headers.get('location')).toBe('https://example.com/');
     });
 
-    it('should redirect /horaires to /', () => {
+    it('should redirect /horaires to /', async () => {
       const request = createRequest('/horaires');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
@@ -250,9 +255,9 @@ describe('Middleware', () => {
       expect(nextResponse.headers.get('location')).toBe('https://example.com/');
     });
 
-    it('should redirect /terms to /', () => {
+    it('should redirect /terms to /', async () => {
       const request = createRequest('/terms');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
@@ -262,46 +267,46 @@ describe('Middleware', () => {
       expect(nextResponse.headers.get('location')).toBe('https://example.com/');
     });
 
-    it('should not redirect paths not in redirect mappings', () => {
+    it('should not redirect paths not in redirect mappings', async () => {
       const request = createRequest('/some-path');
       const mockIntlResponse = NextResponse.next();
       global.mockIntlMiddlewareFunction!.mockReturnValue(mockIntlResponse);
 
-      middleware(request);
+      await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).toHaveBeenCalled();
     });
   });
 
   describe('Locale handling', () => {
-    it('should pass non-static, non-redirect paths to next-intl middleware', () => {
+    it('should pass non-static, non-redirect paths to next-intl middleware', async () => {
       const request = createRequest('/');
       const mockIntlResponse = NextResponse.next();
       global.mockIntlMiddlewareFunction!.mockReturnValue(mockIntlResponse);
 
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).toHaveBeenCalledWith(request);
       expect(response).toBe(mockIntlResponse);
     });
 
-    it('should pass localized paths to next-intl middleware', () => {
+    it('should pass localized paths to next-intl middleware', async () => {
       const request = createRequest('/fr/menu');
       const mockIntlResponse = NextResponse.next();
       global.mockIntlMiddlewareFunction!.mockReturnValue(mockIntlResponse);
 
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).toHaveBeenCalledWith(request);
       expect(response).toBe(mockIntlResponse);
     });
 
-    it('should pass non-localized paths to next-intl middleware', () => {
+    it('should pass non-localized paths to next-intl middleware', async () => {
       const request = createRequest('/menu');
       const mockIntlResponse = NextResponse.next();
       global.mockIntlMiddlewareFunction!.mockReturnValue(mockIntlResponse);
 
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).toHaveBeenCalledWith(request);
       expect(response).toBe(mockIntlResponse);
@@ -309,7 +314,7 @@ describe('Middleware', () => {
   });
 
   describe('Temporary to permanent redirect conversion', () => {
-    it('should convert 307 redirects to 301 for SEO', () => {
+    it('should convert 307 redirects to 301 for SEO', async () => {
       const request = createRequest('/');
       const tempRedirect = NextResponse.redirect(
         new URL('/fr', request.url),
@@ -317,7 +322,7 @@ describe('Middleware', () => {
       );
       global.mockIntlMiddlewareFunction!.mockReturnValue(tempRedirect);
 
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(response).toBeInstanceOf(NextResponse);
       const nextResponse = response as NextResponse;
@@ -329,7 +334,7 @@ describe('Middleware', () => {
       );
     });
 
-    it('should not convert non-307 redirects', () => {
+    it('should not convert non-307 redirects', async () => {
       const request = createRequest('/');
       const redirect302 = NextResponse.redirect(
         new URL('/fr', request.url),
@@ -337,13 +342,13 @@ describe('Middleware', () => {
       );
       global.mockIntlMiddlewareFunction!.mockReturnValue(redirect302);
 
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(response).toBe(redirect302);
       expect(redirect302.status).toBe(302);
     });
 
-    it('should not convert responses without location header', () => {
+    it('should not convert responses without location header', async () => {
       const request = createRequest('/');
       const responseWithoutLocation = new NextResponse(null, {
         status: genericMiddlewareConfig.TEMPORARY_REDIRECT_STATUS,
@@ -352,17 +357,17 @@ describe('Middleware', () => {
         responseWithoutLocation
       );
 
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(response).toBe(responseWithoutLocation);
     });
 
-    it('should not convert non-redirect responses', () => {
+    it('should not convert non-redirect responses', async () => {
       const request = createRequest('/');
       const normalResponse = NextResponse.next();
       global.mockIntlMiddlewareFunction!.mockReturnValue(normalResponse);
 
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(response).toBe(normalResponse);
       expect(normalResponse.status).toBe(200);
@@ -370,70 +375,70 @@ describe('Middleware', () => {
   });
 
   describe('Edge cases', () => {
-    it('should handle root path', () => {
+    it('should handle root path', async () => {
       const request = createRequest('/');
       const mockIntlResponse = NextResponse.next();
       global.mockIntlMiddlewareFunction!.mockReturnValue(mockIntlResponse);
 
-      middleware(request);
+      await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).toHaveBeenCalled();
     });
 
-    it('should handle paths with query parameters', () => {
+    it('should handle paths with query parameters', async () => {
       const request = createRequest('/menu?param=value');
       const mockIntlResponse = NextResponse.next();
       global.mockIntlMiddlewareFunction!.mockReturnValue(mockIntlResponse);
 
-      middleware(request);
+      await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).toHaveBeenCalled();
     });
 
-    it('should handle paths with hash', () => {
+    it('should handle paths with hash', async () => {
       const request = createRequest('/menu#section');
       const mockIntlResponse = NextResponse.next();
       global.mockIntlMiddlewareFunction!.mockReturnValue(mockIntlResponse);
 
-      middleware(request);
+      await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).toHaveBeenCalled();
     });
 
-    it('should handle unknown locale prefixes as regular paths', () => {
+    it('should handle unknown locale prefixes as regular paths', async () => {
       const request = createRequest('/unknown-locale/page');
       const mockIntlResponse = NextResponse.next();
       global.mockIntlMiddlewareFunction!.mockReturnValue(mockIntlResponse);
 
-      middleware(request);
+      await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).toHaveBeenCalled();
     });
 
-    it('should handle locale-only paths', () => {
+    it('should handle locale-only paths', async () => {
       const request = createRequest('/fr');
       const mockIntlResponse = NextResponse.next();
       global.mockIntlMiddlewareFunction!.mockReturnValue(mockIntlResponse);
 
-      middleware(request);
+      await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).toHaveBeenCalled();
     });
   });
 
   describe('Integration scenarios', () => {
-    it('should handle complete flow: static path with locale prefix', () => {
+    it('should handle complete flow: static path with locale prefix', async () => {
       const request = createRequest('/en/static/image.webp');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
     });
 
-    it('should handle complete flow: legacy redirect then locale handling', () => {
+    it('should handle complete flow: legacy redirect then locale handling', async () => {
       // Note: Legacy redirects happen before locale handling
       const request = createRequest('/carte');
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).not.toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);
@@ -443,7 +448,7 @@ describe('Middleware', () => {
       );
     });
 
-    it('should handle complete flow: regular path with locale redirect conversion', () => {
+    it('should handle complete flow: regular path with locale redirect conversion', async () => {
       const request = createRequest('/');
       const tempRedirect = NextResponse.redirect(
         new URL('/en', request.url),
@@ -451,7 +456,7 @@ describe('Middleware', () => {
       );
       global.mockIntlMiddlewareFunction!.mockReturnValue(tempRedirect);
 
-      const response = middleware(request);
+      const response = await middleware(request);
 
       expect(global.mockIntlMiddlewareFunction!).toHaveBeenCalled();
       expect(response).toBeInstanceOf(NextResponse);

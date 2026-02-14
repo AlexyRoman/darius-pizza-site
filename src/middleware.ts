@@ -15,7 +15,8 @@ import {
   CONVERT_TEMPORARY_TO_PERMANENT,
 } from '@/config/generic/middleware';
 import { REDIRECT_MAPPINGS } from '@/config/site/redirects';
-import { resolveCampaignRedirect } from '@/lib/campaignRedirects';
+import { recordQrHit, isValidQrCode } from '@/lib/qr-analytics';
+import { resolveQRedirect } from '@/lib/qRedirect';
 
 const localeSettings = getLocaleSettings();
 
@@ -105,13 +106,13 @@ function convertToPermanentRedirect(
   return null;
 }
 
-export default function middleware(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Handle campaign short links like /q/AB12 as early as possible
-  const campaignResponse = resolveCampaignRedirect(request);
-  if (campaignResponse) {
-    return campaignResponse;
+  // Handle /q/XXXX short links: redirect to / with ?qr=XXXX (any 4-char code)
+  const qRedirectResponse = resolveQRedirect(request);
+  if (qRedirectResponse) {
+    return qRedirectResponse;
   }
 
   // Skip middleware entirely for static files and Next.js internal routes
@@ -167,8 +168,20 @@ export default function middleware(request: NextRequest) {
     );
   }
 
-  // Apply next-intl middleware for locale handling
-  const response = intl(request);
+  // Apply next-intl middleware for locale handling (may be async)
+  const response = await intl(request);
+
+  // Record code-tag landing when request is for root (or locale root) with qr param
+  if (
+    response instanceof NextResponse &&
+    !response.headers.get('Location') &&
+    pathWithoutLocale === '/'
+  ) {
+    const qr = request.nextUrl.searchParams.get('qr') || '';
+    if (isValidQrCode(qr)) {
+      await recordQrHit(qr);
+    }
+  }
 
   // If intl issued a redirect, return it (after optional conversion below)
   if (response instanceof NextResponse && response.headers.get('Location')) {
@@ -207,20 +220,19 @@ export default function middleware(request: NextRequest) {
   return response;
 }
 
-// Matcher pattern excludes static paths and file extensions
+// Matcher pattern excludes static paths, file extensions, and static route files
 //
 // ⚠️ IMPORTANT: Next.js requires this to be a static string literal (no function calls, no template literals)
 // This pattern must be manually kept in sync with STATIC_PATH_PREFIXES and STATIC_FILE_EXTENSIONS
-// in src/config/middleware.ts
+// in src/config/generic/middleware.ts
 //
-// Current static paths from config: api, _next, static, images, flags, fonts
-// Current file extensions from config: ico, png, jpg, jpeg, svg, webp
+// Also excluded: robots.txt, sitemap.xml (served by app/robots.ts, app/sitemap.ts without middleware)
 //
-// Pattern: exclude paths starting with static prefixes OR ending with file extensions
+// Pattern: exclude paths starting with static prefixes OR ending with file extensions OR robots/sitemap
 // Note: Uses non-capturing groups (?:) to avoid Next.js errors
 export const config = {
   matcher: [
-    '/((?!api|_next|static|images|flags|fonts|_vercel|[\\w-]+\\.(?:ico|png|jpg|jpeg|svg|webp|webmanifest)$).*)',
+    '/((?!api|_next|static|images|flags|fonts|_vercel|robots\\.txt$|sitemap\\.xml$|[\\w-]+\\.(?:ico|png|jpg|jpeg|svg|webp|webmanifest)$).*)',
   ],
 };
 

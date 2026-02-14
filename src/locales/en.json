@@ -77,6 +77,10 @@
         "messages": {
           "title": "Special Messages",
           "description": "Display banners and announcements to your customers."
+        },
+        "codeTags": {
+          "title": "Code tags",
+          "description": "View hit counts for short links (/q/XXXX) used in campaigns."
         }
       }
     },
@@ -87,13 +91,28 @@
       "openingHours": "Opening Hours",
       "closings": "Special Closings",
       "messages": "Special Messages",
+      "codeTags": "Code tags",
       "goBackToWebsite": "Back to website"
     },
     "breadcrumb": {
       "dashboard": "Dashboard",
       "openingHours": "Opening Hours",
       "closings": "Special Closings",
-      "messages": "Special Messages"
+      "messages": "Special Messages",
+      "codeTags": "Code tags"
+    },
+    "codeTags": {
+      "title": "Code tags",
+      "description": "Hit counts for short links (/q/XXXX). Each visit with a code is counted.",
+      "loading": "Loading…",
+      "error": "Failed to load code tags.",
+      "retry": "Retry",
+      "refresh": "Refresh",
+      "tableTitle": "Codes and counts",
+      "tableDescription": "All codes that have received at least one visit.",
+      "empty": "No code tags yet. Use links like /q/DEMO to track visits.",
+      "columnCode": "Code",
+      "columnCount": "Hits"
     },
     "closings": {
       "loading": "Loading…",

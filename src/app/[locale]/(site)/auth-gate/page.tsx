@@ -3,6 +3,9 @@ import { redirect } from 'next/navigation';
 import { isAuthenticated } from '@/lib/auth';
 import { PasswordForm } from '@/components/auth/PasswordForm';
 
+// Ensure auth-gate is never cached so post-login reload/navigation gets fresh dashboard
+export const dynamic = 'force-dynamic';
+
 type PageProps = {
   params: Promise<{ locale: string }>;
   searchParams?: Promise<Record<string, string | string[] | undefined>>;

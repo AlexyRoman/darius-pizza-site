@@ -21,6 +21,7 @@ export function DashboardBreadcrumb() {
   const isOpeningHours = pathname?.includes('/opening-hours');
   const isClosings = pathname?.includes('/closings');
   const isMessages = pathname?.includes('/messages');
+  const isCodeTags = pathname?.includes('/code-tags');
 
   const subPage = isOpeningHours
     ? t('openingHours')
@@ -28,7 +29,9 @@ export function DashboardBreadcrumb() {
       ? t('closings')
       : isMessages
         ? t('messages')
-        : null;
+        : isCodeTags
+          ? t('codeTags')
+          : null;
 
   return (
     <Breadcrumb>

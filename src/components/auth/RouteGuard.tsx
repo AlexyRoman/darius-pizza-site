@@ -16,7 +16,14 @@ export async function RouteGuard({ path, locale, children }: RouteGuardProps) {
   const authenticated = await isAuthenticated();
 
   if (!authenticated) {
-    return <PasswordForm locale={locale} onSuccess={() => {}} />;
+    const redirectTo = `/${locale}${path}`;
+    return (
+      <PasswordForm
+        locale={locale}
+        redirectTo={redirectTo}
+        onSuccess={() => {}}
+      />
+    );
   }
 
   return <>{children}</>;

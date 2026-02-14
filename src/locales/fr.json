@@ -77,6 +77,10 @@
         "messages": {
           "title": "Messages spéciaux",
           "description": "Affichez des bannières et annonces à vos clients."
+        },
+        "codeTags": {
+          "title": "Codes courts",
+          "description": "Consultez les nombres de visites des liens courts (/q/XXXX) des campagnes."
         }
       }
     },
@@ -87,13 +91,28 @@
       "openingHours": "Horaires d'ouverture",
       "closings": "Fermetures exceptionnelles",
       "messages": "Messages spéciaux",
+      "codeTags": "Codes courts",
       "goBackToWebsite": "Retour au site"
     },
     "breadcrumb": {
       "dashboard": "Tableau de bord",
       "openingHours": "Horaires d'ouverture",
       "closings": "Fermetures exceptionnelles",
-      "messages": "Messages spéciaux"
+      "messages": "Messages spéciaux",
+      "codeTags": "Codes courts"
+    },
+    "codeTags": {
+      "title": "Codes courts",
+      "description": "Nombre de visites par lien court (/q/XXXX). Chaque visite avec un code est comptée.",
+      "loading": "Chargement…",
+      "error": "Impossible de charger les codes.",
+      "retry": "Réessayer",
+      "refresh": "Actualiser",
+      "tableTitle": "Codes et compteurs",
+      "tableDescription": "Tous les codes ayant reçu au moins une visite.",
+      "empty": "Aucun code pour l'instant. Utilisez des liens comme /q/DEMO pour suivre les visites.",
+      "columnCode": "Code",
+      "columnCount": "Visites"
     },
     "closings": {
       "loading": "Chargement…",

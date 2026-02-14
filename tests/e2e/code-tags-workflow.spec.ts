@@ -14,6 +14,9 @@ const BASE = process.env['BASE_URL'] || 'http://localhost:3000';
 const hasAuth =
   !!process.env['PAGE_ACCESS_USERNAME'] &&
   !!process.env['PAGE_ACCESS_PASSWORD'];
+const hasRedis =
+  !!process.env['UPSTASH_REDIS_REST_URL'] &&
+  !!process.env['UPSTASH_REDIS_REST_TOKEN'];
 
 test.describe('Code tags: tag access to dashboard display', () => {
   test.skip(
@@ -27,7 +30,7 @@ test.describe('Code tags: tag access to dashboard display', () => {
     const username = process.env['PAGE_ACCESS_USERNAME']!;
     const password = process.env['PAGE_ACCESS_PASSWORD']!;
 
-    // 1) Fire a tag access so middleware records the hit (if Redis configured)
+    // 1) Fire a tag access so middleware records the hit in Redis
     await page.goto(`${BASE}/q/DEMO`);
     const urlAfterRedirect = new URL(page.url());
     expect(urlAfterRedirect.searchParams.get('qr')).toBe('DEMO');
@@ -58,28 +61,42 @@ test.describe('Code tags: tag access to dashboard display', () => {
       page.getByRole('heading', { name: /code tags|codes courts/i }).first()
     ).toBeVisible({ timeout: 10000 });
 
-    // 4) If we have Redis, DEMO should appear in the table with count >= 1
     const table = page.locator('table');
     const emptyMessage = page.getByText(/no code tags yet|aucun code/i);
-
     await expect(table.or(emptyMessage)).toBeVisible({ timeout: 8000 });
 
     const codeCell = page.getByRole('cell', { name: 'DEMO' });
-    const emptyVisible = await emptyMessage.isVisible().catch(() => false);
-    const demoSingleCell = (await codeCell.count()) >= 1;
 
-    expect(
-      demoSingleCell || emptyVisible,
-      'Either DEMO appears in the table (Redis recorded the hit) or empty state is shown (Redis not configured)'
-    ).toBe(true);
-
-    if (demoSingleCell) {
-      const row = page.locator('tr').filter({ has: codeCell });
+    if (hasRedis) {
+      // 4) With Redis configured: DEMO must appear in the table with count >= 1
+      await expect(
+        codeCell.first(),
+        'Redis is configured but DEMO not in table; check UPSTASH_* in .env.local and that middleware records /q/DEMO'
+      ).toBeVisible({ timeout: 5000 });
+      const row = page.locator('tr').filter({ has: codeCell.first() });
       await expect(row).toBeVisible();
       const countCell = row.locator('td').nth(1);
       const countText = await countCell.textContent();
       const count = parseInt(countText ?? '0', 10);
-      expect(count).toBeGreaterThanOrEqual(1);
+      expect(
+        count,
+        'DEMO hit count should be >= 1 after visiting /q/DEMO'
+      ).toBeGreaterThanOrEqual(1);
+    } else {
+      // Without Redis: accept either DEMO in table or empty state
+      const emptyVisible = await emptyMessage.isVisible().catch(() => false);
+      const demoSingleCell = (await codeCell.count()) >= 1;
+      expect(
+        demoSingleCell || emptyVisible,
+        'Either DEMO appears in the table or empty state is shown'
+      ).toBe(true);
+      if (demoSingleCell) {
+        const row = page.locator('tr').filter({ has: codeCell.first() });
+        const countCell = row.locator('td').nth(1);
+        const countText = await countCell.textContent();
+        const count = parseInt(countText ?? '0', 10);
+        expect(count).toBeGreaterThanOrEqual(1);
+      }
     }
   });
 });

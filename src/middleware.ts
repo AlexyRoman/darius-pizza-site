@@ -112,6 +112,10 @@ export default async function middleware(request: NextRequest) {
   // Handle /q/XXXX short links: redirect to / with ?qr=XXXX (any 4-char code)
   const qRedirectResponse = resolveQRedirect(request);
   if (qRedirectResponse) {
+    const qCodeMatch = pathname.match(/^\/q\/([A-Za-z0-9]{4})$/);
+    if (qCodeMatch && isValidQrCode(qCodeMatch[1])) {
+      await recordQrHit(qCodeMatch[1]);
+    }
     return qRedirectResponse;
   }
 

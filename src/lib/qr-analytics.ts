@@ -7,6 +7,8 @@ const CODE_PATTERN = /^[A-Za-z0-9]{4}$/;
 const REDIS_CODES_SET = 'qr:codes';
 const REDIS_COUNT_PREFIX = 'qr:count:';
 
+let devLoggedNoRedis = false;
+
 function isUpstashConfigured(): boolean {
   return !!(
     process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
@@ -34,7 +36,15 @@ export function isValidQrCode(code: string): boolean {
  */
 export async function recordQrHit(code: string): Promise<void> {
   if (!isValidQrCode(code)) return;
-  if (!isUpstashConfigured()) return;
+  if (!isUpstashConfigured()) {
+    if (process.env.NODE_ENV === 'development' && !devLoggedNoRedis) {
+      devLoggedNoRedis = true;
+      console.warn(
+        '[qr-analytics] recordQrHit skipped: set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN in .env.local to store code-tag counts'
+      );
+    }
+    return;
+  }
 
   try {
     const redis = await getRedis();

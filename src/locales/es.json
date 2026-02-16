@@ -87,13 +87,26 @@
       "openingHours": "Horario de apertura",
       "closings": "Cierres especiales",
       "messages": "Mensajes especiales",
+      "codeTags": "Códigos de campaña",
       "goBackToWebsite": "Volver al sitio"
     },
     "breadcrumb": {
       "dashboard": "Panel",
       "openingHours": "Horario de apertura",
       "closings": "Cierres especiales",
-      "messages": "Mensajes especiales"
+      "messages": "Mensajes especiales",
+      "codeTags": "Códigos de campaña"
+    },
+    "codeTags": {
+      "title": "Códigos de campaña",
+      "description": "Visitas por código (QR / enlace corto).",
+      "loading": "Cargando…",
+      "error": "Error al cargar.",
+      "retry": "Reintentar",
+      "empty": "Sin códigos. Usa enlaces como ?qr=DEMO.",
+      "count": "{count} visitas",
+      "refresh": "Actualizar",
+      "copyLink": "Copiar enlace"
     },
     "closings": {
       "loading": "Cargando…",

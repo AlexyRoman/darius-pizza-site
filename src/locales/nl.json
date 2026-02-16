@@ -77,6 +77,10 @@
         "messages": {
           "title": "Speciale berichten",
           "description": "Toon banners en aankondigingen aan uw klanten."
+        },
+        "codeTags": {
+          "title": "Campagnecodes",
+          "description": "Bekijk bezoeken per code (QR, korte links)."
         }
       }
     },
@@ -87,13 +91,26 @@
       "openingHours": "Openingstijden",
       "closings": "Buitengewone sluitingen",
       "messages": "Speciale berichten",
+      "codeTags": "Campagnecodes",
       "goBackToWebsite": "Terug naar website"
     },
     "breadcrumb": {
       "dashboard": "Dashboard",
       "openingHours": "Openingstijden",
       "closings": "Buitengewone sluitingen",
-      "messages": "Speciale berichten"
+      "messages": "Speciale berichten",
+      "codeTags": "Campagnecodes"
+    },
+    "codeTags": {
+      "title": "Campagnecodes",
+      "description": "Bezoeken per code (QR / korte link).",
+      "loading": "Laden…",
+      "error": "Laden mislukt.",
+      "retry": "Opnieuw",
+      "empty": "Geen codes. Gebruik links zoals ?qr=DEMO.",
+      "count": "{count} bezoeken",
+      "refresh": "Vernieuwen",
+      "copyLink": "Link kopiëren"
     },
     "closings": {
       "loading": "Laden…",

@@ -77,6 +77,10 @@
         "messages": {
           "title": "Messaggi speciali",
           "description": "Mostra banner e annunci ai tuoi clienti."
+        },
+        "codeTags": {
+          "title": "Codici campagna",
+          "description": "Visualizza i conteggi per codice (QR, link brevi)."
         }
       }
     },
@@ -87,13 +91,26 @@
       "openingHours": "Orari di apertura",
       "closings": "Chiusure straordinarie",
       "messages": "Messaggi speciali",
+      "codeTags": "Codici campagna",
       "goBackToWebsite": "Torna al sito"
     },
     "breadcrumb": {
       "dashboard": "Dashboard",
       "openingHours": "Orari di apertura",
       "closings": "Chiusure straordinarie",
-      "messages": "Messaggi speciali"
+      "messages": "Messaggi speciali",
+      "codeTags": "Codici campagna"
+    },
+    "codeTags": {
+      "title": "Codici campagna",
+      "description": "Visite per codice (QR / link breve).",
+      "loading": "Caricamento…",
+      "error": "Caricamento fallito.",
+      "retry": "Riprova",
+      "empty": "Nessun codice. Usa link come ?qr=DEMO.",
+      "count": "{count} visite",
+      "refresh": "Aggiorna",
+      "copyLink": "Copia link"
     },
     "closings": {
       "loading": "Caricamento…",

@@ -77,6 +77,10 @@
         "messages": {
           "title": "Special Messages",
           "description": "Display banners and announcements to your customers."
+        },
+        "codeTags": {
+          "title": "Code Tags",
+          "description": "View campaign code hit counts from QR scans and short links."
         }
       }
     },
@@ -87,13 +91,26 @@
       "openingHours": "Opening Hours",
       "closings": "Special Closings",
       "messages": "Special Messages",
+      "codeTags": "Code Tags",
       "goBackToWebsite": "Back to website"
     },
     "breadcrumb": {
       "dashboard": "Dashboard",
       "openingHours": "Opening Hours",
       "closings": "Special Closings",
-      "messages": "Special Messages"
+      "messages": "Special Messages",
+      "codeTags": "Code Tags"
+    },
+    "codeTags": {
+      "title": "Code Tags",
+      "description": "Hits per campaign code (QR / short link).",
+      "loading": "Loading…",
+      "error": "Failed to load code tags.",
+      "retry": "Retry",
+      "empty": "No codes yet. Use links like ?qr=DEMO to track visits.",
+      "count": "{count} hits",
+      "refresh": "Refresh",
+      "copyLink": "Copy link"
     },
     "closings": {
       "loading": "Loading…",
@@ -913,6 +930,11 @@
               "name": "Cookie name, e.g.: theme",
               "purpose": "Remembers the display theme (e.g., \"light\" or \"dark\") you have chosen.",
               "duration": "Duration: 12 months"
+            },
+            {
+              "name": "qr_counted",
+              "purpose": "Remembers which campaign codes we have already counted for your visit so we do not count again on reload or revisit within one day (core functionality).",
+              "duration": "Duration: 1 day"
             }
           ]
         },

@@ -1,9 +1,12 @@
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
 import { routing } from '@/i18n/routing';
+import { QueryProvider } from '@/providers/QueryProvider';
+import { QrRecordCaller } from '@/components/analytics/QrRecordCaller';
 import CookieConsentBanner from '@/components/blocks/cookie-consent-banner';
 import GoogleTagManager from '@/components/analytics/GoogleTagManager';
 import PageTracker from '@/components/analytics/PageTracker';
@@ -37,11 +40,15 @@ export default async function LocaleLayout(props: {
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      <HtmlLangSetter />
-      {/* Google Consent Mode - MUST be before GTM */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
+      <QueryProvider>
+        <Suspense fallback={null}>
+          <QrRecordCaller />
+        </Suspense>
+        <HtmlLangSetter />
+        {/* Google Consent Mode - MUST be before GTM */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             // Set default consent state to 'denied' BEFORE GTM loads
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -53,20 +60,21 @@ export default async function LocaleLayout(props: {
               'ad_personalization': 'denied'
             });
           `,
-        }}
-      />
-      <GoogleTagManager
-        gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''}
-        gaId={process.env.NEXT_PUBLIC_GA_ID || ''}
-      />
-      <PageTracker />
-      {process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true' ? (
-        <AnalyticsDebug />
-      ) : null}
-      {children}
-      {/* Defer non-critical content */}
-      <CookieConsentBanner />
-      <Toaster />
+          }}
+        />
+        <GoogleTagManager
+          gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''}
+          gaId={process.env.NEXT_PUBLIC_GA_ID || ''}
+        />
+        <PageTracker />
+        {process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === 'true' ? (
+          <AnalyticsDebug />
+        ) : null}
+        {children}
+        {/* Defer non-critical content */}
+        <CookieConsentBanner />
+        <Toaster />
+      </QueryProvider>
     </NextIntlClientProvider>
   );
 }

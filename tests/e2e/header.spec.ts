@@ -84,8 +84,10 @@ test.describe('Header - locale and theme', () => {
     // The SmartCallButton needs to mount and compute shouldShowAlert
     await page.waitForTimeout(800);
 
-    // Find the Call button by aria-label in header
-    const headerCall = page.getByRole('button', { name: /^Call$/i }).first();
+    // Header CTA uses common.call: "Order" (en), "Commander" (fr), etc. — find it in the banner
+    const headerCall = page
+      .getByRole('banner')
+      .getByRole('button', { name: /order|commander|bestellen|pedir|ordina/i });
     await headerCall.waitFor({ state: 'visible' });
     // Ensure in viewport then click
     await headerCall.scrollIntoViewIfNeeded();

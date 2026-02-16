@@ -16,6 +16,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:e2e": "node -e \"process.exit(process.env.CI?0:1)\" || playwright test",
+    "test:e2e:install": "playwright install",
     "test:e2e:safari": "node -e \"process.exit(process.env.CI?0:1)\" || cross-env E2E_ALL_BROWSERS=0 playwright test",
     "test:og": "node scripts/test-og.js",
     "test:og:en": "node scripts/test-og.js http://localhost:3000/en",

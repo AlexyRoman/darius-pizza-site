@@ -2,7 +2,13 @@
 
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { Clock, CalendarOff, MessageSquare, ChevronRight } from 'lucide-react';
+import {
+  Clock,
+  CalendarOff,
+  MessageSquare,
+  Tag,
+  ChevronRight,
+} from 'lucide-react';
 
 import {
   Card,
@@ -108,6 +114,12 @@ export function DashboardHomeCards() {
           icon={<MessageSquare className='size-6' />}
           titleKey='dashboard.home.modules.messages.title'
           descriptionKey='dashboard.home.modules.messages.description'
+        />
+        <ModuleCard
+          href={`/${locale}/dashboard/code-tags`}
+          icon={<Tag className='size-6' />}
+          titleKey='dashboard.home.modules.codeTags.title'
+          descriptionKey='dashboard.home.modules.codeTags.description'
         />
       </div>
     </div>

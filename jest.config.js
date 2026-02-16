@@ -44,6 +44,7 @@ const customJestConfig = {
     '/src/types/',
     '/src/config/site/',
     '/src/components/',
+    '/src/providers/',
     '/src/lib/i18n/flags.tsx',
     '/src/emails/',
     '/src/app/\\[locale\\]/.*',

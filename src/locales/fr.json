@@ -77,6 +77,10 @@
         "messages": {
           "title": "Messages spéciaux",
           "description": "Affichez des bannières et annonces à vos clients."
+        },
+        "codeTags": {
+          "title": "Codes campagne",
+          "description": "Consultez les visites par code (QR, liens courts)."
         }
       }
     },
@@ -87,13 +91,26 @@
       "openingHours": "Horaires d'ouverture",
       "closings": "Fermetures exceptionnelles",
       "messages": "Messages spéciaux",
+      "codeTags": "Codes campagne",
       "goBackToWebsite": "Retour au site"
     },
     "breadcrumb": {
       "dashboard": "Tableau de bord",
       "openingHours": "Horaires d'ouverture",
       "closings": "Fermetures exceptionnelles",
-      "messages": "Messages spéciaux"
+      "messages": "Messages spéciaux",
+      "codeTags": "Codes campagne"
+    },
+    "codeTags": {
+      "title": "Codes campagne",
+      "description": "Visites par code (QR / lien court).",
+      "loading": "Chargement…",
+      "error": "Échec du chargement.",
+      "retry": "Réessayer",
+      "empty": "Aucun code. Utilisez des liens ?qr=DEMO pour suivre les visites.",
+      "count": "{count} visites",
+      "refresh": "Actualiser",
+      "copyLink": "Copier le lien"
     },
     "closings": {
       "loading": "Chargement…",
@@ -914,6 +931,11 @@
               "name": "Nom du cookie, ex: theme",
               "purpose": "Mémorise le thème d'affichage (par exemple, \"clair\" ou \"sombre\") que vous avez choisi.",
               "duration": "Durée : 12 mois"
+            },
+            {
+              "name": "qr_counted",
+              "purpose": "Mémorise quels codes campagne nous avons déjà comptés pour votre visite afin de ne pas compter à nouveau lors d'un rechargement ou d'une nouvelle visite dans la journée (fonctionnalité essentielle).",
+              "duration": "Durée : 1 jour"
             }
           ]
         },

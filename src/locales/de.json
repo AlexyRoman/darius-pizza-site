@@ -77,6 +77,10 @@
         "messages": {
           "title": "Sondermeldungen",
           "description": "Zeigen Sie Banner und Ankündigungen Ihren Kunden an."
+        },
+        "codeTags": {
+          "title": "Kampagnen-Codes",
+          "description": "Aufrufe pro Code (QR, Kurzlinks) anzeigen."
         }
       }
     },
@@ -87,13 +91,26 @@
       "openingHours": "Öffnungszeiten",
       "closings": "Außerplanmäßige Schließungen",
       "messages": "Sondermeldungen",
+      "codeTags": "Kampagnen-Codes",
       "goBackToWebsite": "Zurück zur Website"
     },
     "breadcrumb": {
       "dashboard": "Dashboard",
       "openingHours": "Öffnungszeiten",
       "closings": "Außerplanmäßige Schließungen",
-      "messages": "Sondermeldungen"
+      "messages": "Sondermeldungen",
+      "codeTags": "Kampagnen-Codes"
+    },
+    "codeTags": {
+      "title": "Kampagnen-Codes",
+      "description": "Aufrufe pro Code (QR / Kurzlink).",
+      "loading": "Laden…",
+      "error": "Laden fehlgeschlagen.",
+      "retry": "Erneut versuchen",
+      "empty": "Noch keine Codes. Nutzen Sie Links wie ?qr=DEMO.",
+      "count": "{count} Aufrufe",
+      "refresh": "Aktualisieren",
+      "copyLink": "Link kopieren"
     },
     "closings": {
       "loading": "Laden…",

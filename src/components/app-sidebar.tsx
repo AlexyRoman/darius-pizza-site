@@ -12,6 +12,7 @@ import {
   CalendarOff,
   MessageSquare,
   Settings,
+  Tag,
 } from 'lucide-react';
 
 import {
@@ -46,6 +47,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const isOpeningHours = pathname?.includes('/opening-hours');
   const isClosings = pathname?.includes('/closings');
   const isMessages = pathname?.includes('/messages');
+  const isCodeTags = pathname?.includes('/code-tags');
 
   return (
     <Sidebar collapsible='icon' {...props}>
@@ -77,14 +79,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenuItem>
             <Collapsible
               asChild
-              defaultOpen={isOpeningHours || isClosings || isMessages}
+              defaultOpen={
+                isOpeningHours || isClosings || isMessages || isCodeTags
+              }
               className='group/collapsible'
             >
               <SidebarMenuItem>
                 <CollapsibleTrigger asChild>
                   <SidebarMenuButton
                     tooltip={t('settings')}
-                    isActive={isOpeningHours || isClosings || isMessages}
+                    isActive={
+                      isOpeningHours || isClosings || isMessages || isCodeTags
+                    }
                   >
                     <Settings className='size-4' />
                     <span>{t('settings')}</span>
@@ -114,6 +120,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         <Link href={`${basePath}/messages`}>
                           <MessageSquare className='size-4' />
                           <span>{t('messages')}</span>
+                        </Link>
+                      </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
+                    <SidebarMenuSubItem>
+                      <SidebarMenuSubButton asChild isActive={isCodeTags}>
+                        <Link href={`${basePath}/code-tags`}>
+                          <Tag className='size-4' />
+                          <span>{t('codeTags')}</span>
                         </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>

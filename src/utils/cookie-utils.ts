@@ -9,6 +9,23 @@ export interface CookiePreferences {
 
 export type ConsentStatus = 'accepted' | 'declined' | 'customized';
 
+/**
+ * Cookie names that are strictly necessary (core functionality).
+ * They bypass cookie consent: always set/read regardless of banner choice,
+ * and must never be cleared or blocked when the user declines analytics.
+ */
+export const NECESSARY_COOKIE_NAMES: readonly string[] = [
+  'qr_counted', // QR campaign dedupe (rate-limit duplicate counts), 1 day
+  'authToken', // Dashboard auth
+  'cookieConsent',
+  'cookiePreferences',
+  'NEXT_LOCALE',
+] as const;
+
+export function isNecessaryCookie(name: string): boolean {
+  return (NECESSARY_COOKIE_NAMES as readonly string[]).includes(name);
+}
+
 const COOKIE_EXPIRY_YEARS = 10;
 const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
 

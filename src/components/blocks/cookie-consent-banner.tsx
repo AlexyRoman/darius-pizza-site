@@ -73,6 +73,8 @@ const CookieConsentBanner = React.forwardRef<
       };
       setIsOpen(false);
       saveCookieConsent('declined', declined);
+      // Do not clear or block cookies in NECESSARY_COOKIE_NAMES (e.g. qr_counted, authToken);
+      // they bypass consent and are core-only.
 
       // Disable analytics
       disableAnalytics();

@@ -8,6 +8,8 @@ import {
   hasConsent,
   getCookiePreferences,
   saveCookieConsent,
+  NECESSARY_COOKIE_NAMES,
+  isNecessaryCookie,
   type CookiePreferences,
 } from '../cookie-utils';
 
@@ -265,6 +267,24 @@ describe('cookie-utils', () => {
       expect(cookieValue).toBeTruthy();
       const parsed = JSON.parse(cookieValue!);
       expect(parsed).toEqual(preferences);
+    });
+  });
+
+  describe('NECESSARY_COOKIE_NAMES / isNecessaryCookie', () => {
+    it('includes qr_counted and authToken (bypass consent)', () => {
+      expect(NECESSARY_COOKIE_NAMES).toContain('qr_counted');
+      expect(NECESSARY_COOKIE_NAMES).toContain('authToken');
+    });
+
+    it('isNecessaryCookie returns true for necessary names', () => {
+      expect(isNecessaryCookie('qr_counted')).toBe(true);
+      expect(isNecessaryCookie('authToken')).toBe(true);
+      expect(isNecessaryCookie('cookieConsent')).toBe(true);
+    });
+
+    it('isNecessaryCookie returns false for other names', () => {
+      expect(isNecessaryCookie('_ga')).toBe(false);
+      expect(isNecessaryCookie('other')).toBe(false);
     });
   });
 });

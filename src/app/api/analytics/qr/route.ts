@@ -4,6 +4,7 @@ import { cookies } from 'next/headers';
 import { recordQrHit } from '@/lib/qr-analytics';
 
 const CODE_PATTERN = /^[A-Za-z0-9]{4}$/;
+/** Strictly necessary cookie: bypasses cookie consent (core dedupe only). See cookie-utils NECESSARY_COOKIE_NAMES. */
 const COOKIE_NAME = 'qr_counted';
 const COOKIE_MAX_AGE = 86400; // 1 day
 const MAX_CODES_IN_COOKIE = 10;

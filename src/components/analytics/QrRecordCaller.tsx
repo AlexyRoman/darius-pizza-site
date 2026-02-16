@@ -3,6 +3,7 @@
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 
+/** QR record runs regardless of cookie consent; qr_counted is a strictly necessary cookie (bypass). */
 const CODE_PATTERN = /^[A-Za-z0-9]{4}$/;
 
 function isValidCode(value: string | null): boolean {

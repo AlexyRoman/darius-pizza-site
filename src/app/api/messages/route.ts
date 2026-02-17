@@ -5,7 +5,6 @@ import { getMessagesConfig, saveMessagesConfig } from '@/lib/messages-storage';
 import { isAuthenticated } from '@/lib/auth';
 import type { MessagesConfig } from '@/types/restaurant-config';
 
-const CACHE_MAX_AGE = 3600;
 const DASHBOARD_LOCALES = ['en', 'fr'] as const;
 
 function validateMessagesConfig(body: unknown): body is MessagesConfig {
@@ -29,7 +28,8 @@ export async function GET(request: NextRequest) {
     const config = await getMessagesConfig(safeLocale);
     return NextResponse.json(config, {
       headers: {
-        'Cache-Control': `s-maxage=${CACHE_MAX_AGE}, stale-while-revalidate`,
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+        Pragma: 'no-cache',
       },
     });
   } catch (err) {

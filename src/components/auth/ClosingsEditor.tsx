@@ -35,11 +35,18 @@ import type {
   EmergencyClosing,
 } from '@/types/restaurant-config';
 
+/** Format ISO date for datetime-local input (local time, no timezone). */
 function formatDateForInput(iso: string | null): string {
   if (!iso) return '';
   try {
     const d = new Date(iso);
-    return d.toISOString().slice(0, 16);
+    if (Number.isNaN(d.getTime())) return '';
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const h = String(d.getHours()).padStart(2, '0');
+    const min = String(d.getMinutes()).padStart(2, '0');
+    return `${y}-${m}-${day}T${h}:${min}`;
   } catch {
     return '';
   }
@@ -419,6 +426,36 @@ export function ClosingsEditor() {
                     className='mt-1 min-h-[80px]'
                   />
                 </div>
+                <div className='grid gap-2 sm:grid-cols-2'>
+                  <div className='min-w-0'>
+                    <Label>{t('startDate')}</Label>
+                    <Input
+                      type='datetime-local'
+                      value={formatDateForInput(item.startDate)}
+                      onChange={e =>
+                        updateEmergency(idx, s => ({
+                          ...s,
+                          startDate: toISOString(e.target.value) || null,
+                        }))
+                      }
+                      className='mt-1 min-w-[14rem] w-full'
+                    />
+                  </div>
+                  <div className='min-w-0'>
+                    <Label>{t('endDate')}</Label>
+                    <Input
+                      type='datetime-local'
+                      value={formatDateForInput(item.endDate)}
+                      onChange={e =>
+                        updateEmergency(idx, s => ({
+                          ...s,
+                          endDate: toISOString(e.target.value) || null,
+                        }))
+                      }
+                      className='mt-1 min-w-[14rem] w-full'
+                    />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -566,6 +603,36 @@ export function ClosingsEditor() {
                 }
                 className='mt-1'
               />
+            </div>
+            <div className='grid gap-2 sm:grid-cols-2'>
+              <div className='min-w-0'>
+                <Label>{t('startDate')}</Label>
+                <Input
+                  type='datetime-local'
+                  value={formatDateForInput(newEmergency.startDate)}
+                  onChange={e =>
+                    setNewEmergency(s => ({
+                      ...s,
+                      startDate: toISOString(e.target.value) || null,
+                    }))
+                  }
+                  className='mt-1 min-w-[14rem] w-full'
+                />
+              </div>
+              <div className='min-w-0'>
+                <Label>{t('endDate')}</Label>
+                <Input
+                  type='datetime-local'
+                  value={formatDateForInput(newEmergency.endDate)}
+                  onChange={e =>
+                    setNewEmergency(s => ({
+                      ...s,
+                      endDate: toISOString(e.target.value) || null,
+                    }))
+                  }
+                  className='mt-1 min-w-[14rem] w-full'
+                />
+              </div>
             </div>
             <div className='flex items-center gap-2'>
               <Switch

@@ -5,7 +5,6 @@ import { getClosingsConfig, saveClosingsConfig } from '@/lib/closings-storage';
 import { isAuthenticated } from '@/lib/auth';
 import type { ClosingsConfig } from '@/types/restaurant-config';
 
-const CACHE_MAX_AGE = 3600;
 const DASHBOARD_LOCALES = ['en', 'fr'] as const;
 
 function validateClosingsConfig(body: unknown): body is ClosingsConfig {
@@ -30,7 +29,8 @@ export async function GET(request: NextRequest) {
     const config = await getClosingsConfig(safeLocale);
     return NextResponse.json(config, {
       headers: {
-        'Cache-Control': `s-maxage=${CACHE_MAX_AGE}, stale-while-revalidate`,
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+        Pragma: 'no-cache',
       },
     });
   } catch (err) {

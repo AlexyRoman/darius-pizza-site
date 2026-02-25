@@ -33,7 +33,7 @@ describe('GET /api/dashboard/code-tags', () => {
     mockIsAuthenticated.mockResolvedValue(true);
     mockGetQrCounts.mockResolvedValue([
       { code: 'DEMO', count: 5 },
-      { code: 'BT26', count: 3 },
+      { code: 'QR02', count: 3 },
     ]);
 
     const res = await GET();
@@ -43,7 +43,7 @@ describe('GET /api/dashboard/code-tags', () => {
     expect(json).toEqual({
       codes: [
         { code: 'DEMO', count: 5 },
-        { code: 'BT26', count: 3 },
+        { code: 'QR02', count: 3 },
       ],
     });
     expect(mockGetQrCounts).toHaveBeenCalled();

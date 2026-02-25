@@ -17,7 +17,7 @@ test.describe('Code tags analytics', () => {
     expect(response.status()).toBe(200);
   });
 
-  test('different code BT26 triggers analytics API', async ({
+  test('different code QR02 triggers analytics API', async ({
     page,
     context,
   }) => {
@@ -26,11 +26,11 @@ test.describe('Code tags analytics', () => {
       page.waitForResponse(
         res =>
           res.url().includes('/api/analytics/qr') &&
-          res.url().includes('code=BT26') &&
+          res.url().includes('code=QR02') &&
           res.status() === 200,
         { timeout: 15000 }
       ),
-      page.goto(`${BASE}/en?qr=BT26`),
+      page.goto(`${BASE}/en?qr=QR02`),
     ]);
     expect(response.status()).toBe(200);
   });

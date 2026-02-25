@@ -38,7 +38,7 @@
     {
       "id": "product-805020646",
       "title": "Raclette",
-      "description": "Crème Fraîche, Mozza Fior di Latte, Bacon OR Lardons, Raclette Cheese, Potatoes, Olives"
+      "description": "Crème Fraîche, Mozza Fior di Latte, Bacon, Raclette Cheese, Potatoes, Olives"
     },
     {
       "id": "product-550635851",
@@ -153,7 +153,7 @@
     {
       "id": "product-1735410601",
       "title": "Cretan",
-      "description": "Tomato Sauce, Mozza Fior di Latte, Ground Beef, Onions, Marinated Eggplant, Grana Padano Shavings, Olives"
+      "description": "Tomato Sauce, Mozza Fior di Latte, Ground Beef, Onions, Marinated Eggplant, Moussaka Spices, Grana Padano Shavings, Olives"
     },
     {
       "id": "product-1510173889",
@@ -234,6 +234,11 @@
       "id": "product-323727783",
       "title": "Bounty",
       "description": "Cream and Coconut Cream, Grated Coconut, Nutella, Chocolate Sauce"
+    },
+    {
+      "id": "product-test-hidden",
+      "title": "Test Hidden Pizza",
+      "description": "Test-only pizza used to verify the menu visibility flag. It should never be shown to customers."
     }
   ]
 }

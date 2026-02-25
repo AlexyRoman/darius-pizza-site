@@ -277,5 +277,70 @@ describe('menu-loader', () => {
         expect(item).toHaveProperty('allergens');
       });
     });
+
+    it('should ignore items explicitly marked as not visible in base menu', async () => {
+      // Remock English translations to ensure they load successfully
+      jest.doMock(
+        '@/content/menu/menu.translations.en.json',
+        () => ({
+          __esModule: true,
+          default: {
+            items: [
+              {
+                id: 'product-1',
+                title: 'Product 1 EN',
+                description: 'Description 1 EN',
+              },
+              {
+                id: 'product-2',
+                title: 'Product 2 EN',
+                description: 'Description 2 EN',
+              },
+            ],
+          },
+        }),
+        { virtual: true }
+      );
+
+      jest.doMock(
+        '@/content/menu/menu.base.json',
+        () => ({
+          __esModule: true,
+          default: {
+            items: [
+              {
+                id: 'product-1',
+                price: 10.5,
+                discount: 0,
+                image: 'image1.jpg',
+                categories: ['category1'],
+                allergens: ['allergen1'],
+                visible: true,
+              },
+              {
+                id: 'product-2',
+                price: 12.0,
+                discount: 10,
+                image: 'image2.jpg',
+                categories: ['category2'],
+                allergens: ['allergen2'],
+                visible: false,
+              },
+            ],
+          },
+        }),
+        { virtual: true }
+      );
+
+      jest.resetModules();
+      const { loadMenuItems: loadMenuItemsWithVisibility } = await import(
+        '../menu-loader'
+      );
+
+      const items = await loadMenuItemsWithVisibility('en');
+
+      expect(items).toHaveLength(1);
+      expect(items[0].id).toBe('product-1');
+    });
   });
 });

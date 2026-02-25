@@ -20,4 +20,16 @@ test.describe('Menu page', () => {
     await page.getByRole('menuitem').filter({ hasText: 'FR' }).click();
     await expect(page).toHaveURL(/\/fr\/menu/);
   });
+
+  test('does not render items marked as invisible in base menu', async ({
+    page,
+  }) => {
+    await page.goto(`${BASE}/en/menu`);
+
+    // Wait for menu items to load
+    await expect(page.locator('img[alt$=" image"]').first()).toBeVisible();
+
+    // Test-only product with id product-test-hidden ("Test Hidden Pizza") is marked visible: false and should not appear
+    await expect(page.getByText('Test Hidden Pizza')).toHaveCount(0);
+  });
 });

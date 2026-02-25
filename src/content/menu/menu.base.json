@@ -2,7 +2,7 @@
   "items": [
     {
       "id": "product-6156553",
-      "price": 7.9,
+      "price": 8.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1843979396/e6873a40676873a8d04dcd6f71027834_lg.jpeg",
       "categories": ["The Classics"],
@@ -70,7 +70,8 @@
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/151427441/9ad0ea84ec2ad5778c59599700157400_lg.jpg",
       "categories": ["Cheese Pizzas"],
-      "allergens": ["Gluten", "Milk"]
+      "allergens": ["Gluten", "Milk"],
+      "visible": false
     },
     {
       "id": "product-623570136",
@@ -102,7 +103,8 @@
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/82513677/f92afd79e751fbb8aca70091555ea6f2_lg.jpg",
       "categories": ["Cured Meat Pizzas"],
-      "allergens": ["Gluten", "Milk"]
+      "allergens": ["Gluten", "Milk"],
+      "visible": false
     },
     {
       "id": "product-814695060",
@@ -146,7 +148,7 @@
     },
     {
       "id": "product-374908687",
-      "price": 12.9,
+      "price": 13.9,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1218850122/fe0ec9465826af86e1517913687c3127_lg.jpeg",
       "categories": ["Cured Meat Pizzas"],
@@ -242,7 +244,7 @@
     },
     {
       "id": "product-1735410601",
-      "price": 13.9,
+      "price": 14.5,
       "discount": 0,
       "image": "https://cdn.reflowhq.com/media/702608174/1336202199/eb556f46da128df86110dfdeb2587b62_lg.jpg",
       "categories": ["Meat Pizzas"],
@@ -375,6 +377,15 @@
       "image": "https://cdn.reflowhq.com/media/702608174/2080358829/e7c1b10467d2f5b8537c7a38bb6f44eb_lg.jpg",
       "categories": ["Desserts"],
       "allergens": ["Gluten", "Milk", "Nuts", "Soy"]
+    },
+    {
+      "id": "product-test-hidden",
+      "price": 9.9,
+      "discount": 0,
+      "image": "https://cdn.reflowhq.com/media/702608174/2080358829/e7c1b10467d2f5b8537c7a38bb6f44eb_lg.jpg",
+      "categories": ["Signature Pizzas"],
+      "allergens": ["Gluten", "Milk"],
+      "visible": false
     }
   ]
 }

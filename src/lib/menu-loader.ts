@@ -36,27 +36,29 @@ export async function loadMenuItems(
       translationLookup.set(item.id, item);
     });
 
-    // Merge base data with translations
-    const mergedItems: MenuItem[] = baseMenu.items.map(baseItem => {
-      const translation = translationLookup.get(baseItem.id);
-      if (!translation) {
-        console.warn(
-          `Missing translation for menu item ${baseItem.id} in locale ${locale}`
-        );
-        throw new Error(`Missing translation for menu item ${baseItem.id}`);
-      }
+    // Merge base data with translations, skipping items explicitly marked as not visible
+    const mergedItems: MenuItem[] = baseMenu.items
+      .filter(baseItem => baseItem.visible !== false)
+      .map(baseItem => {
+        const translation = translationLookup.get(baseItem.id);
+        if (!translation) {
+          console.warn(
+            `Missing translation for menu item ${baseItem.id} in locale ${locale}`
+          );
+          throw new Error(`Missing translation for menu item ${baseItem.id}`);
+        }
 
-      return {
-        id: baseItem.id,
-        title: translation.title,
-        description: translation.description,
-        categories: baseItem.categories,
-        price: baseItem.price,
-        discount: baseItem.discount,
-        image: baseItem.image,
-        allergens: baseItem.allergens,
-      };
-    });
+        return {
+          id: baseItem.id,
+          title: translation.title,
+          description: translation.description,
+          categories: baseItem.categories,
+          price: baseItem.price,
+          discount: baseItem.discount,
+          image: baseItem.image,
+          allergens: baseItem.allergens,
+        };
+      });
 
     return mergedItems;
   } catch (error) {

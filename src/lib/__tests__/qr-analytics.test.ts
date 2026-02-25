@@ -54,10 +54,10 @@ describe('qr-analytics', () => {
     it('accepts 4 alphanumeric code', async () => {
       mockIncr.mockResolvedValue(1);
 
-      await recordQrHit('BT26');
+      await recordQrHit('TEST');
       await recordQrHit('ab12');
 
-      expect(mockIncr).toHaveBeenCalledWith('qr:count:BT26');
+      expect(mockIncr).toHaveBeenCalledWith('qr:count:TEST');
       expect(mockIncr).toHaveBeenCalledWith('qr:count:ab12');
     });
 
@@ -72,15 +72,15 @@ describe('qr-analytics', () => {
 
   describe('getQrCounts', () => {
     it('returns array of { code, count } sorted by count descending', async () => {
-      mockKeys.mockResolvedValue(['qr:count:DEMO', 'qr:count:BT26']);
+      mockKeys.mockResolvedValue(['qr:count:DEMO', 'qr:count:TEST']);
       mockMget.mockResolvedValue([5, 10]);
 
       const result = await getQrCounts();
 
       expect(mockKeys).toHaveBeenCalledWith('qr:count:*');
-      expect(mockMget).toHaveBeenCalledWith('qr:count:DEMO', 'qr:count:BT26');
+      expect(mockMget).toHaveBeenCalledWith('qr:count:DEMO', 'qr:count:TEST');
       expect(result).toEqual([
-        { code: 'BT26', count: 10 },
+        { code: 'TEST', count: 10 },
         { code: 'DEMO', count: 5 },
       ]);
     });

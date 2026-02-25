@@ -66,7 +66,7 @@ describe('GET /api/analytics/qr', () => {
   });
 
   it('calls recordQrHit and appends to cookie when cookie has other codes', async () => {
-    mockCookiesGet.mockReturnValue({ value: 'BT26' });
+    mockCookiesGet.mockReturnValue({ value: 'AB12' });
 
     const req = createGetRequest('http://localhost/api/analytics/qr?code=DEMO');
     const res = await GET(req);
@@ -75,7 +75,7 @@ describe('GET /api/analytics/qr', () => {
     expect(mockRecordQrHit).toHaveBeenCalledWith('DEMO', expect.any(Request));
     const setCookieHeader = res.headers.get('set-cookie');
     expect(setCookieHeader).toContain('qr_counted');
-    expect(setCookieHeader).toMatch(/DEMO|BT26/);
+    expect(setCookieHeader).toMatch(/DEMO|AB12/);
   });
 });
 

@@ -478,9 +478,9 @@ export default function OpeningHoursSection() {
             </div>
           )}
 
-          {/* Special Messages */}
+          {/* Special Messages — data-nosnippet so search engines prefer meta description for snippet */}
           {activeMessages.length > 0 && (
-            <div className='mt-12 space-y-4'>
+            <div data-nosnippet className='mt-12 space-y-4'>
               <h3 className='text-2xl font-primary font-semibold text-foreground text-center mb-6'>
                 {t('importantUpdates')}
               </h3>

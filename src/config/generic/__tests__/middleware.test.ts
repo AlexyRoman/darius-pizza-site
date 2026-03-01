@@ -38,6 +38,8 @@ describe('middleware config', () => {
       expect(STATIC_FILE_EXTENSIONS).toContain('jpeg');
       expect(STATIC_FILE_EXTENSIONS).toContain('svg');
       expect(STATIC_FILE_EXTENSIONS).toContain('webp');
+      expect(STATIC_FILE_EXTENSIONS).toContain('webmanifest');
+      expect(STATIC_FILE_EXTENSIONS).toContain('txt');
     });
   });
 
@@ -49,6 +51,7 @@ describe('middleware config', () => {
       expect(STATIC_FILE_PATTERN.test('picture.jpeg')).toBe(true);
       expect(STATIC_FILE_PATTERN.test('icon.svg')).toBe(true);
       expect(STATIC_FILE_PATTERN.test('image.webp')).toBe(true);
+      expect(STATIC_FILE_PATTERN.test('key.txt')).toBe(true);
     });
 
     it('should be case insensitive', () => {

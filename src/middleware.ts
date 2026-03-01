@@ -213,7 +213,7 @@ export default function middleware(request: NextRequest) {
 // Note: Uses non-capturing groups (?:) to avoid Next.js errors
 export const config = {
   matcher: [
-    '/((?!api|_next|static|images|flags|fonts|_vercel|[\\w-]+\\.(?:ico|png|jpg|jpeg|svg|webp|webmanifest)$).*)',
+    '/((?!api|_next|static|images|flags|fonts|_vercel|[\\w-]+\\.(?:ico|png|jpg|jpeg|svg|webp|webmanifest|txt)$).*)',
   ],
 };
 
@@ -230,7 +230,7 @@ if (process.env.NODE_ENV === 'development') {
   const configExtensions = [...STATIC_FILE_EXTENSIONS].sort().join(',');
 
   const expectedPaths = 'api,flags,fonts,images,static,_next'; // sorted
-  const expectedExtensions = 'ico,jpeg,jpg,png,svg,webmanifest,webp'; // sorted
+  const expectedExtensions = 'ico,jpeg,jpg,png,svg,webmanifest,txt,webp'; // sorted
 
   if (configPaths !== expectedPaths) {
     console.warn(

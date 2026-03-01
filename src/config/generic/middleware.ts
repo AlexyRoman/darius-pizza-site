@@ -45,6 +45,7 @@ export const STATIC_FILE_EXTENSIONS = [
   'svg',
   'webp',
   'webmanifest',
+  'txt', // IndexNow key file (e.g. /dariuspizza2026.txt) and other static text
 ] as const;
 
 /**

@@ -118,7 +118,18 @@ export function OpeningHoursEditor() {
       }
       setSaveStatus('saved');
       await refetch();
-      toast.success(t('saved'));
+      const googleSync = json.googleSync as
+        | 'ok'
+        | 'skipped'
+        | 'failed'
+        | undefined;
+      if (googleSync === 'ok') {
+        toast.success(t('savedAndSyncedGoogle'));
+      } else if (googleSync === 'failed') {
+        toast.warning(t('savedSyncFailedGoogle'));
+      } else {
+        toast.success(t('saved'));
+      }
       setTimeout(() => setSaveStatus('idle'), 2000);
     } catch (err) {
       setSaveStatus('error');

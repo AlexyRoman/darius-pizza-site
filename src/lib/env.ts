@@ -38,6 +38,12 @@ const ServerEnvSchema = z.object({
   // Protected routes (dashboard) - set in .env.local
   PAGE_ACCESS_USERNAME: z.string().optional(),
   PAGE_ACCESS_PASSWORD: z.string().optional(),
+  // Google Business Profile sync (server-only; all optional so app runs without GBP)
+  GOOGLE_CLIENT_ID: z.string().optional(),
+  GOOGLE_CLIENT_SECRET: z.string().optional(),
+  GOOGLE_REFRESH_TOKEN: z.string().optional(),
+  GOOGLE_LOCATION_NAME: z.string().optional(),
+  GOOGLE_SYNC_ENABLED: z.string().optional(),
 });
 
 // Capture raw
@@ -67,6 +73,11 @@ const rawServer = {
   SITE_PHONE: process.env.SITE_PHONE,
   PAGE_ACCESS_USERNAME: process.env.PAGE_ACCESS_USERNAME,
   PAGE_ACCESS_PASSWORD: process.env.PAGE_ACCESS_PASSWORD,
+  GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+  GOOGLE_REFRESH_TOKEN: process.env.GOOGLE_REFRESH_TOKEN,
+  GOOGLE_LOCATION_NAME: process.env.GOOGLE_LOCATION_NAME,
+  GOOGLE_SYNC_ENABLED: process.env.GOOGLE_SYNC_ENABLED,
 };
 
 // Validate

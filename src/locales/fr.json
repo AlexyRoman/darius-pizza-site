@@ -51,6 +51,8 @@
       "confirmDescription": "Les changements apparaîtront immédiatement sur le site.",
       "confirmButton": "Enregistrer",
       "cancelButton": "Annuler",
+      "savedAndSyncedGoogle": "Enregistré et synchronisé avec Google",
+      "savedSyncFailedGoogle": "Enregistré. La synchronisation Google a échoué — réessayez plus tard ou vérifiez la configuration.",
       "days": {
         "monday": "Lundi",
         "tuesday": "Mardi",
@@ -139,7 +141,12 @@
       "idPlaceholder": "ex. noel-2025",
       "remove": "Supprimer",
       "removeConfirm": "Supprimer cette fermeture ?",
-      "add": "Ajouter"
+      "add": "Ajouter",
+      "savedAndSyncedGoogle": "Enregistré et synchronisé avec Google",
+      "savedSyncFailedGoogle": "Enregistré. La synchronisation Google a échoué.",
+      "gbpManualStepTitle": "Google Business Profile — action manuelle requise",
+      "gbpManualStepDescription": "Cette fermeture dure plus de 5 jours. Google n'autorise que 5 jours consécutifs maximum via notre synchronisation. Vous devrez définir une fermeture annuelle (ou « Temporairement fermé ») manuellement sur votre fiche Google pour cette période, et la retirer à la réouverture.",
+      "gbpManualStepOk": "J'ai compris"
     },
     "messages": {
       "loading": "Chargement…",

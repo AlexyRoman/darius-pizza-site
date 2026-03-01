@@ -3,6 +3,7 @@ import { revalidatePath } from 'next/cache';
 
 import { getHoursConfig, saveHoursConfig } from '@/lib/hours-storage';
 import { isAuthenticated } from '@/lib/auth';
+import { syncRegularHours } from '@/lib/google-business-profile';
 import type { HoursConfig } from '@/types/restaurant-config';
 
 const DAYS = [
@@ -81,7 +82,29 @@ export async function PUT(request: NextRequest) {
     revalidatePath('/api/hours');
     revalidatePath('/', 'layout');
     const saved = await getHoursConfig();
-    return NextResponse.json({ success: true, config: saved });
+
+    let googleSync: 'ok' | 'skipped' | 'failed' = 'skipped';
+    let googleSyncError: string | undefined;
+    try {
+      const syncResult = await syncRegularHours(saved);
+      if (syncResult.skipped) googleSync = 'skipped';
+      else if (syncResult.ok) googleSync = 'ok';
+      else {
+        googleSync = 'failed';
+        googleSyncError = syncResult.error;
+      }
+    } catch (syncErr) {
+      googleSync = 'failed';
+      googleSyncError =
+        syncErr instanceof Error ? syncErr.message : 'Unknown error';
+    }
+
+    return NextResponse.json({
+      success: true,
+      config: saved,
+      googleSync,
+      ...(googleSyncError && { googleSyncError }),
+    });
   } catch (err) {
     console.error('PUT /api/hours:', err);
     return NextResponse.json(

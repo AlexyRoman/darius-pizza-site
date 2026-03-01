@@ -51,6 +51,8 @@
       "confirmDescription": "Changes will appear on the website immediately.",
       "confirmButton": "Save",
       "cancelButton": "Cancel",
+      "savedAndSyncedGoogle": "Saved and synced to Google",
+      "savedSyncFailedGoogle": "Saved. Google sync failed — try again later or check setup.",
       "days": {
         "monday": "Monday",
         "tuesday": "Tuesday",
@@ -138,7 +140,12 @@
       "confirmDescription": "Changes will appear on the website immediately.",
       "confirmButton": "Save",
       "cancelButton": "Cancel",
-      "add": "Add"
+      "add": "Add",
+      "savedAndSyncedGoogle": "Saved and synced to Google",
+      "savedSyncFailedGoogle": "Saved. Google sync failed.",
+      "gbpManualStepTitle": "Google Business Profile — manual step required",
+      "gbpManualStepDescription": "This closure is longer than 5 days. Google only allows up to 5 consecutive days via our sync. You will need to set annual closure (or \"Temporarily closed\") on your Google Business Profile manually for this period, and remove it when you reopen.",
+      "gbpManualStepOk": "I understand"
     },
     "messages": {
       "loading": "Loading…",

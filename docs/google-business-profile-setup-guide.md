@@ -184,6 +184,7 @@ The API uses a **location resource name** in the form `locations/{locationId}`. 
 3. **List accounts:**
    - Request URI: `GET https://mybusinessaccountmanagement.googleapis.com/v1/accounts`
    - Click **“Send the request”**. In the response, note the **name** of the account (e.g. `accounts/1234567890123456789`). Use the first account if you have only one.
+     accounts/117189554499707928719
 4. **List locations:**
    - Request URI: `GET https://mybusinessbusinessinformation.googleapis.com/v1/accounts/{accountId}/locations`  
      Replace `{accountId}` with the numeric part of the account name (e.g. `1234567890123456789`).  

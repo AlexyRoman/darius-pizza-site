@@ -100,6 +100,7 @@ export function ClosingsEditor() {
     'idle' | 'saving' | 'saved' | 'error'
   >('idle');
   const [confirmOpen, setConfirmOpen] = useState(false);
+  const [gbpManualStepOpen, setGbpManualStepOpen] = useState(false);
 
   const [addScheduledOpen, setAddScheduledOpen] = useState(false);
   const [addEmergencyOpen, setAddEmergencyOpen] = useState(false);
@@ -205,6 +206,28 @@ export function ClosingsEditor() {
     setRemoveIndex(null);
   };
 
+  /** True if any active scheduled closing spans more than 5 days. */
+  const hasClosingLongerThan5Days = form?.scheduledClosings?.some(c => {
+    if (!c.isActive) return false;
+    const start = new Date(c.startDate).getTime();
+    const end = new Date(c.endDate).getTime();
+    const days = Math.round((end - start) / 86400000) + 1;
+    return days > 5;
+  });
+
+  const onSaveClick = () => {
+    if (hasClosingLongerThan5Days) {
+      setGbpManualStepOpen(true);
+    } else {
+      setConfirmOpen(true);
+    }
+  };
+
+  const onGbpManualStepAck = () => {
+    setGbpManualStepOpen(false);
+    setConfirmOpen(true);
+  };
+
   const performSave = async () => {
     if (!form) return;
     setConfirmOpen(false);
@@ -219,7 +242,18 @@ export function ClosingsEditor() {
       if (!res.ok) throw new Error(json.error || t('error'));
       setSaveStatus('saved');
       await refetch();
-      toast.success(t('saved'));
+      const googleSync = json.googleSync as
+        | 'ok'
+        | 'skipped'
+        | 'failed'
+        | undefined;
+      if (googleSync === 'ok') {
+        toast.success(t('savedAndSyncedGoogle'));
+      } else if (googleSync === 'failed') {
+        toast.warning(t('savedSyncFailedGoogle'));
+      } else {
+        toast.success(t('saved'));
+      }
       setTimeout(() => setSaveStatus('idle'), 2000);
     } catch (err) {
       setSaveStatus('error');
@@ -680,12 +714,26 @@ export function ClosingsEditor() {
         </AlertDialogContent>
       </AlertDialog>
 
+      {/* Google manual step for closures >5 days */}
+      <AlertDialog open={gbpManualStepOpen} onOpenChange={setGbpManualStepOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>{t('gbpManualStepTitle')}</AlertDialogTitle>
+            <AlertDialogDescription>
+              {t('gbpManualStepDescription')}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction onClick={onGbpManualStepAck}>
+              {t('gbpManualStepOk')}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
       <div className='pt-2 flex items-center gap-2'>
         <AlertDialog open={confirmOpen} onOpenChange={setConfirmOpen}>
-          <Button
-            onClick={() => setConfirmOpen(true)}
-            disabled={saveStatus === 'saving'}
-          >
+          <Button onClick={onSaveClick} disabled={saveStatus === 'saving'}>
             {saveStatus === 'saving'
               ? t('saving')
               : saveStatus === 'saved'

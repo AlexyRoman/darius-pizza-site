@@ -127,7 +127,13 @@
     "git-semver-tags": "^7.0.1",
     "conventional-changelog": "^6.0.0",
     "conventional-changelog-core": "^7.0.0",
-    "@conventional-changelog/git-client": "^1.0.2"
+    "@conventional-changelog/git-client": "^1.0.2",
+    "next": {
+      "postcss": "^8.5.10"
+    },
+    "jsdom": {
+      "http-proxy-agent": "^7.0.0"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

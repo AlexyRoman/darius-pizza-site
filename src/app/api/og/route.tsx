@@ -37,57 +37,55 @@ export async function GET(request: NextRequest) {
     const currentColors = colors[type as keyof typeof colors] || colors.default;
 
     return new ImageResponse(
-      (
+      <div
+        style={{
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: currentColors.background,
+          fontFamily: 'system-ui, sans-serif',
+        }}
+      >
+        <div style={{ fontSize: 120, marginBottom: 20 }}>🍕</div>
         <div
           style={{
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: currentColors.background,
-            fontFamily: 'system-ui, sans-serif',
+            fontSize: 48,
+            fontWeight: 'bold',
+            color: currentColors.text,
+            textAlign: 'center',
+            marginBottom: 20,
+            maxWidth: '800px',
+            lineHeight: 1.2,
           }}
         >
-          <div style={{ fontSize: 120, marginBottom: 20 }}>🍕</div>
-          <div
-            style={{
-              fontSize: 48,
-              fontWeight: 'bold',
-              color: currentColors.text,
-              textAlign: 'center',
-              marginBottom: 20,
-              maxWidth: '800px',
-              lineHeight: 1.2,
-            }}
-          >
-            {title}
-          </div>
-          <div
-            style={{
-              fontSize: 24,
-              color: currentColors.primary,
-              textAlign: 'center',
-              marginBottom: 30,
-              fontWeight: 500,
-            }}
-          >
-            {localeInfo.flag} {localeInfo.nativeName}
-          </div>
-          <div
-            style={{
-              fontSize: 32,
-              fontWeight: 'bold',
-              color: currentColors.secondary,
-              textAlign: 'center',
-              marginTop: 20,
-            }}
-          >
-            Darius Pizza
-          </div>
+          {title}
         </div>
-      ),
+        <div
+          style={{
+            fontSize: 24,
+            color: currentColors.primary,
+            textAlign: 'center',
+            marginBottom: 30,
+            fontWeight: 500,
+          }}
+        >
+          {localeInfo.flag} {localeInfo.nativeName}
+        </div>
+        <div
+          style={{
+            fontSize: 32,
+            fontWeight: 'bold',
+            color: currentColors.secondary,
+            textAlign: 'center',
+            marginTop: 20,
+          }}
+        >
+          Darius Pizza
+        </div>
+      </div>,
       { width: 1200, height: 630 }
     );
   } catch (e) {

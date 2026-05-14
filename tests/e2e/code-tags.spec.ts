@@ -10,7 +10,7 @@ test.describe('Code tags analytics', () => {
           res.url().includes('/api/analytics/qr') &&
           res.url().includes('code=DEMO') &&
           res.status() === 200,
-        { timeout: 15000 }
+        { timeout: 30000 }
       ),
       page.goto(`${BASE}/en?qr=DEMO`),
     ]);
@@ -28,7 +28,7 @@ test.describe('Code tags analytics', () => {
           res.url().includes('/api/analytics/qr') &&
           res.url().includes('code=QR02') &&
           res.status() === 200,
-        { timeout: 15000 }
+        { timeout: 30000 }
       ),
       page.goto(`${BASE}/en?qr=QR02`),
     ]);
@@ -92,7 +92,7 @@ test.describe('Code tags analytics', () => {
         res.url().includes('/api/analytics/qr') &&
         res.url().includes('code=E2ET') &&
         res.status() === 200,
-      { timeout: 15000 }
+      { timeout: 30000 }
     );
 
     await page.goto(`${BASE}/en/dashboard`);

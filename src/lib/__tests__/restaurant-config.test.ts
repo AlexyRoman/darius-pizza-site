@@ -335,9 +335,8 @@ describe('restaurant-config', () => {
       );
 
       jest.resetModules();
-      const { loadRestaurantConfig: loadRestaurantConfigNew } = await import(
-        '../restaurant-config'
-      );
+      const { loadRestaurantConfig: loadRestaurantConfigNew } =
+        await import('../restaurant-config');
 
       const config = await loadRestaurantConfigNew('closings', 'en');
 
@@ -385,9 +384,8 @@ describe('restaurant-config', () => {
       );
 
       jest.resetModules();
-      const { loadRestaurantConfig: loadRestaurantConfigNew } = await import(
-        '../restaurant-config'
-      );
+      const { loadRestaurantConfig: loadRestaurantConfigNew } =
+        await import('../restaurant-config');
 
       await expect(loadRestaurantConfigNew('closings', 'fr')).rejects.toThrow(
         'Unable to load closings configuration'

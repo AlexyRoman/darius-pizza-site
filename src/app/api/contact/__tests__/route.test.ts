@@ -83,9 +83,8 @@ describe('POST /api/contact', () => {
     }));
 
     // Re-import route to pick up new mock
-    const { POST: POSTWithMissingEnv } = await import(
-      '@/app/api/contact/route'
-    );
+    const { POST: POSTWithMissingEnv } =
+      await import('@/app/api/contact/route');
 
     const request = { json: async () => validBody } as unknown as NextRequest;
     const response = await POSTWithMissingEnv(request);

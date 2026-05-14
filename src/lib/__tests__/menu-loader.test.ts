@@ -215,9 +215,8 @@ describe('menu-loader', () => {
 
       // Re-import to get the new mock
       jest.resetModules();
-      const { loadMenuItems: loadMenuItemsNew } = await import(
-        '../menu-loader'
-      );
+      const { loadMenuItems: loadMenuItemsNew } =
+        await import('../menu-loader');
 
       await expect(loadMenuItemsNew('en')).rejects.toThrow(
         'Missing translation for menu item'
@@ -253,9 +252,8 @@ describe('menu-loader', () => {
       );
 
       jest.resetModules();
-      const { loadMenuItems: loadMenuItemsNew } = await import(
-        '../menu-loader'
-      );
+      const { loadMenuItems: loadMenuItemsNew } =
+        await import('../menu-loader');
 
       await expect(loadMenuItemsNew('es')).rejects.toThrow(
         'Unable to load menu data'
@@ -333,9 +331,8 @@ describe('menu-loader', () => {
       );
 
       jest.resetModules();
-      const { loadMenuItems: loadMenuItemsWithVisibility } = await import(
-        '../menu-loader'
-      );
+      const { loadMenuItems: loadMenuItemsWithVisibility } =
+        await import('../menu-loader');
 
       const items = await loadMenuItemsWithVisibility('en');
 

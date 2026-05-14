@@ -126,3 +126,5 @@ temp/
 
 # Bundle analyzer reports
 /analyze/
+
+/.claude

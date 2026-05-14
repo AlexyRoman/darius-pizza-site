@@ -22,6 +22,8 @@ test.describe('Header - locale and theme', () => {
   }
   test('change locale switches URL and text', async ({ page }) => {
     await page.goto(`${BASE}/en`);
+    // Wait for dynamic LocaleToggle import to fully hydrate
+    await page.waitForLoadState('networkidle');
 
     // Open locale dropdown and select FR
     await page.getByRole('button', { name: 'Change language' }).click();
